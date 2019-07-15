@@ -1,5 +1,5 @@
 {
-  "name": "stylr",
+  "name": "sass-styler",
   "version": "1.0.0",
   "description": "An scss library to style default elements",
   "main": "stylr.scss",
@@ -10,7 +10,7 @@
   "keywords": [
     "scss",
     "sass",
-    "stylr",
+    "styler",
     "frontend"
   ],
   "author": "Arpad Hegedus <hegedus.arpad@gmail.com>",
