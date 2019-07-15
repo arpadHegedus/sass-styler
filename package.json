@@ -2,10 +2,10 @@
   "name": "sass-styler",
   "version": "1.0.0",
   "description": "An scss library to style default elements",
-  "main": "stylr.scss",
+  "main": "styler.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://hegedusarpad@bitbucket.org/hegedusarpad/stylr.git"
+    "url": "git+https://hegedusarpad@bitbucket.org/hegedusarpad/sass-styler.git"
   },
   "keywords": [
     "scss",
@@ -15,5 +15,5 @@
   ],
   "author": "Arpad Hegedus <hegedus.arpad@gmail.com>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/hegedusarpad/stylr#readme"
+  "homepage": "https://bitbucket.org/hegedusarpad/sass-styler#readme"
 }
