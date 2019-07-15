@@ -1,0 +1,82 @@
+/**
+* Update base font settings
+*/
+@mixin font-styles(
+  $color: null,
+  $font-size: null,
+  $line-height: null,
+  $font-family: null,
+  $text-align: null,
+  $background: null,
+  $code-background: null,
+  $code-font-family: null,
+  $code-font-size: null,
+  $code-line-height: null,
+  $code-color: null,
+  $mark-background: null,
+  $mark-color: null,
+  $selector: null,
+  $selector-heading: null,
+  $selector-code: null,
+  $selector-mark: null,
+  $selector-hr: null,
+) {
+  background: $background;
+
+  @if $selector == null and global-variable-exists(font-style-selector) {
+    $selector: $font-style-selector;
+  }
+
+  @if $selector {
+    $selector: "&, " + $selector;
+  }
+
+  @else {
+    $selector: "&";
+  }
+
+  #{$selector} {
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: $text-align;
+    @content;
+  }
+
+  @if $selector-heading == null and global-variable-exists(heading-selector) {
+    $selector-heading: $heading-selector;
+  }
+
+  @if $selector-heading {
+    $selector-heading: $selector + ", " + $selector-heading;
+  }
+
+  @else {
+    $selector-heading: $selector;
+  }
+
+  #{$selector-heading} {
+    color: $color;
+  }
+
+  @if $selector-code == null and global-variable-exists(code-selector) {
+    $selector-code: $code-selector;
+  }
+
+  #{$selector-code} {
+    background: $code-background;
+    font-family: $code-font-family;
+    font-size: $code-font-size;
+    line-height: $code-line-height;
+    color: $code-color;
+  }
+
+  @if $selector-mark == null and global-variable-exists(mark-selector) {
+    $selector-mark: $mark-selector;
+  }
+
+  #{$selector-mark} {
+    background: $mark-background;
+    color: $mark-color;
+  }
+}

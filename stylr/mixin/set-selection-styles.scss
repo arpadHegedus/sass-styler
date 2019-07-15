@@ -1,0 +1,15 @@
+/**
+ * Set up default styles of selections in the document
+ *
+ * @requires "mixin/selection-styles"
+ * @requires "variables"
+ */
+@mixin set-selection-styles(
+  $background: $selection-background,
+  $color: $selection-color
+) {
+  @include selection-styles(
+    $background: $background,
+    $color: $color
+  );
+}

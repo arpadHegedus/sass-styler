@@ -1,0 +1,512 @@
+/**
+* Set defaults for all variables within Stylr
+*/
+
+/**
+* Document script direction
+*/
+$script-direction: ltr !default;
+$script-direction-align: left !default;
+
+@if $script-direction == rtl {
+  $script-direction-align: right !default;
+}
+
+/**
+* Spacing
+*/
+$spacing-mode: top-and-bottom !default;
+$spacing-selector: "h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, " +
+  "address, figure, pre, table, dorm, details" !default;
+$indent-selector: "ul, ol, dd" !default;
+$owl-selector: "* + *" !default;
+$element-spacing: 1rem !default;
+$element-indent: 1.5em !default;
+
+$owl-selector: null;
+
+@each $sel1 in h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details {
+  @each $sel2 in h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details {
+    @if $owl-selector == null {
+      $owl-selector: "#{$sel1} + #{$sel2}";
+    }
+
+    @else {
+      $owl-selector: "#{$owl-selector}, #{$sel1} + #{$sel2}";
+    }
+  }
+}
+
+/**
+* Base
+*/
+$font-style-selector: "p, ul, ol" !default;
+$font-family: "BlonkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue",
+  "Helvetica", "Arial", "Oxygen-Sans", "Ubuntu", "Cantrell",
+  sans-serif !default;
+$font-size: 16px !default;
+$font-weight: null !default;
+$line-height: 1.3 !default;
+$text-align: $script-direction-align !default;
+$vertical-align: middle !default;
+$color: #616161 !default;
+$background: null !default;
+
+/**
+* Link
+*/
+$link-selector: "a" !default;
+$link-color: #3b50ce !default;
+$link-text-decoration: null !default;
+$link-hover-color: #2a36b1 !default;
+$link-hover-text-decoration: null !default;
+$link-active-color: null !default;
+$link-active-text-decoration: null !default;
+$link-visited-color: null !default;
+$link-visited-text-decoration: null !default;
+
+/**
+* Blockquote
+*/
+$quote-selector: "blockquote, q" !default;
+$blockquote-selector: "blockquote" !default;
+$quote-indent: $element-indent !default;
+$quote-border: 0.25rem solid $color !default;
+$quote-font-family: null !default;
+$quote-font-size: null !default;
+$quote-font-style: null !default;
+$quote-font-weight: null !default;
+$quote-line-height: null !default;
+$quote-color: null !default;
+
+/**
+* Common formats for all headings
+*/
+$heading-selector: "h1, h2, h3, h4, h5, h6" !default;
+$heading-font-family: null !default;
+$heading-font-size: null !default;
+$heading-font-weight: bold !default;
+$heading-line-height: 1.3 !default;
+$heading-color: null !default;
+
+/**
+* H1
+*/
+$h1-selector: "h1" !default;
+$h1-font-family: null !default;
+$h1-font-size: 2.427em !default;
+$h1-font-weight: null !default;
+$h1-line-height: null !default;
+$h1-color: null !default;
+
+/**
+* H2
+*/
+$h2-selector: "h2" !default;
+$h2-font-family: null !default;
+$h2-font-size: 2.0225em !default;
+$h2-font-weight: null !default;
+$h2-line-height: null !default;
+$h2-color: null !default;
+
+/**
+* H3
+*/
+$h3-selector: "h3" !default;
+$h3-font-family: null !default;
+$h3-font-size: 1.618em !default;
+$h3-font-weight: null !default;
+$h3-line-height: null !default;
+$h3-color: null !default;
+
+/**
+* H4
+*/
+$h4-selector: "h4" !default;
+$h4-font-family: null !default;
+$h4-font-size: 1.2135em !default;
+$h4-font-weight: null !default;
+$h4-line-height: null !default;
+$h4-color: null !default;
+
+/**
+* H5
+*/
+$h5-selector: "h5" !default;
+$h5-font-family: null !default;
+$h5-font-size: 1em !default;
+$h5-font-weight: null !default;
+$h5-line-height: null !default;
+$h5-color: null !default;
+
+/**
+* H6
+*/
+$h6-selector: "h6" !default;
+$h6-font-family: null !default;
+$h6-font-size: 1em !default;
+$h6-font-weight: null !default;
+$h6-line-height: null !default;
+$h6-color: null !default;
+
+/**
+* Code blocks
+*/
+$code-selector: "code, kbd, pre, samp" !default;
+$code-background: null !default;
+$code-font-family: consolas, monospace, monospace !default;
+$code-font-size: 1em !default;
+$code-line-height: null !default;
+$code-color: null !default;
+
+/**
+* Marked text
+*/
+$mark-selector: "mark" !default;
+$mark-background: #ff0 !default;
+$mark-color: #000 !default;
+
+/**
+* Highlighted text
+*/
+$selection-background: null !default;
+$selection-color: null !default;
+
+/**
+* Horizontal ruler
+*/
+$hr-selector: "hr" !default;
+$hr: 1px solid $color !default;
+
+/**
+* Input base
+*/
+$input-selector: "input:not([type]), [type=\"color\"], [type=\"date\"], " +
+  "[type=\"datetime\"], [type=\"datetime-local\"], [type=\"email\"], " +
+  "[type=\"image\"], [type=\"month\"], [type=\"number\"], " +
+  "[type=\"password\"], [type=\"search\"], [type=\"tel\"], " +
+  "[type=\"text\"], [type=\"time\"], [type=\"url\"], [type=\"week\"], " +
+  "select, textarea" !default;
+$placeholder-selector: "::placeholder" !default;
+$file-input-selector: "[type=\"file\"]" !default;
+$textarea-selector: "textarea" !default;
+$multiple-select-selector: "select[multiple]" !default;
+$clickable-input-selector: "[type=\"checkbox\"], [type=\"radio\"]" !default;
+$input-width: auto !default;
+$input-height: 2em !default;
+$input-multiline-height: 8.1em !default;
+$input-padding: 0 0.5em !default;
+$input-inline-spacing: 0.5em !default;
+$input-vertical-align: $vertical-align !default;
+$input-border-radius: null !default;
+$input-outline: 0 !default;
+$input-font-family: null !default;
+$input-font-size: null !default;
+$input-font-weight: null !default;
+$input-line-height: null !default;
+
+/**
+* Input label
+*/
+$label-selector: "label" !default;
+$label-font-family: null !default;
+$label-font-size: null !default;
+$label-font-weight: null !default;
+$label-line-height: $input-height !default;
+$label-color: null !default;
+
+/**
+* Input idle state
+*/
+$input-border: 1px solid #bdbdbd !default;
+$input-border-top: null !default;
+$input-border-right: null !default;
+$input-border-bottom: null !default;
+$input-border-left: null !default;
+$input-background: #fff !default;
+$input-box-shadow: null !default;
+$input-color: null !default;
+$input-placeholder-color: #bdbdbd !default;
+
+/**
+* Input hover state
+*/
+$input-hover-border: null !default;
+$input-hover-border-top: null !default;
+$input-hover-border-right: null !default;
+$input-hover-border-bottom: null !default;
+$input-hover-border-left: null !default;
+$input-hover-outline: null !default;
+$input-hover-background: null !default;
+$input-hover-box-shadow: null !default;
+$input-hover-color: null !default;
+
+/**
+* Input focus state
+*/
+$input-focus-border: 1px solid #9e9e9e !default;
+$input-focus-border-top: null !default;
+$input-focus-border-right: null !default;
+$input-focus-border-bottom: null !default;
+$input-focus-border-left: null !default;
+$input-focus-outline: null !default;
+$input-focus-background: null !default;
+$input-focus-box-shadow: null !default;
+$input-focus-color: null !default;
+
+/**
+* Input active state
+*/
+$input-active-border: null !default;
+$input-active-border-top: null !default;
+$input-active-border-right: null !default;
+$input-active-border-bottom: nullee !default;
+$input-active-border-left: null !default;
+$input-active-outline: null !default;
+$input-active-background: null !default;
+$input-active-box-shadow: null !default;
+$input-active-color: null !default;
+
+/**
+* Input disabled state
+*/
+$input-disabled-border: null !default;
+$input-disabled-border-top: null !default;
+$input-disabled-border-right: null !default;
+$input-disabled-border-bottom: null !default;
+$input-disabled-border-left: null !default;
+$input-disabled-outline: null !default;
+$input-disabled-background: #eee !default;
+$input-disabled-box-shadow: null !default;
+$input-disabled-color: #9e9e9e !default;
+
+/**
+* Button
+*/
+$button-selector: "button, [type=\"button\"], [type=\"reset\"], " +
+  "[type=\"submit\"], summary" !default;
+$button-width: $input-width !default;
+$button-height: $input-height !default;
+$button-padding: 0 1em !default;
+$button-vertical-align: $vertical-align !default;
+$button-border-radius: $input-border-radius !default;
+$button-outline: $input-outline !default;
+$button-border: 1px solid #bdbdbd !default;
+$button-border-top: null !default;
+$button-border-right: null !default;
+$button-border-bottom: null !default;
+$button-border-left: null !default;
+$button-background: #f5f5f5 !default;
+$button-box-shadow: null !default;
+$button-font-family: null !default;
+$button-font-size: null !default;
+$button-font-weight: null !default;
+$button-line-height: null !default;
+$button-text-align: null !default;
+$button-color: null !default;
+
+/**
+* Button hover state
+*/
+$button-hover-border: 1px solid #9e9e9e !default;
+$button-hover-border-top: null !default;
+$button-hover-border-right: null !default;
+$button-hover-border-bottom: null !default;
+$button-hover-border-left: null !default;
+$button-hover-outline: null !default;
+$button-hover-background: #eee !default;
+$button-hover-box-shadow: null !default;
+$button-hover-color: null !default;
+
+/**
+* Button active state
+*/
+$button-active-border: null !default;
+$button-active-border-top: null !default;
+$button-active-border-right: null !default;
+$button-active-border-bottom: null !default;
+$button-active-border-left: null !default;
+$button-active-outline: null !default;
+$button-active-background: null !default;
+$button-active-box-shadow: null !default;
+$button-active-color: null !default;
+
+/**
+* Button disabled state
+*/
+$button-disabled-border: 1px solid #bdbdbd !default;
+$button-disabled-border-top: null !default;
+$button-disabled-border-right: null !default;
+$button-disabled-border-bottom: null !default;
+$button-disabled-border-left: null !default;
+$button-disabled-outline: null !default;
+$button-disabled-background: #e0e0e0 !default;
+$button-disabled-box-shadow: null !default;
+$button-disabled-color: #9e9e9e !default;
+$button-disabled-opacity: null !default;
+
+/**
+* Table base
+*/
+$table-selector: "table" !default;
+$table-row-selector: "tr" !default;
+$table-caption-selector: "caption" !default;
+$table-width: 100% !default;
+$table-padding: 0 !default;
+$table-border: null !default;
+$table-border-top: null !default;
+$table-border-right: null !default;
+$table-border-bottom: null !default;
+$table-border-left: null !default;
+$table-border-spacing: 0 !default;
+$table-background: null !default;
+$table-font-family: null !default;
+$table-font-size: null !default;
+$table-font-weight: null !default;
+$table-line-height: null !default;
+$table-color: null !default;
+$table-text-align: inherit !default;
+
+/**
+* Table cell
+*/
+$table-cell-selector: "td, th" !default;
+$table-cell-border: null !default;
+$table-cell-border-top: null !default;
+$table-cell-border-right: null !default;
+$table-cell-border-bottom: null !default;
+$table-cell-border-left: null !default;
+$table-cell-background: null !default;
+
+/**
+* Table head
+*/
+$table-head-selector: "thead" !default;
+$table-head-padding: null !default;
+$table-head-border: null !default;
+$table-head-border-top: null !default;
+$table-head-border-right: null !default;
+$table-head-border-bottom: null !default;
+$table-head-border-left: null !default;
+$table-head-background: null !default;
+$table-head-font-family: null !default;
+$table-head-font-size: null !default;
+$table-head-font-weight: 400 !default;
+$table-head-line-height: null !default;
+$table-head-color: null !default;
+$table-head-text-align: inherit !default;
+
+/**
+* Table head cell
+*/
+$table-head-cell-selector: "thead td, th" !default;
+$table-head-cell-border: null !default;
+$table-head-cell-border-top: null !default;
+$table-head-cell-border-right: null !default;
+$table-head-cell-border-bottom: null !default;
+$table-head-cell-border-left: null !default;
+$table-head-cell-background: null !default;
+
+/**
+* Table foot
+*/
+$table-foot-selector: "tfoot" !default;
+$table-foot-padding: null !default;
+$table-foot-border: null !default;
+$table-foot-border-top: null !default;
+$table-foot-border-right: null !default;
+$table-foot-border-bottom: null !default;
+$table-foot-border-left: null !default;
+$table-foot-background: null !default;
+$table-foot-font-family: null !default;
+$table-foot-font-size: null !default;
+$table-foot-font-weight: null !default;
+$table-foot-line-height: null !default;
+$table-foot-color: null !default;
+$table-foot-text-align: inherit !default;
+
+/**
+* Table foot cell
+*/
+$table-foot-cell-selector: "tfoot td, tfoot th" !default;
+$table-foot-cell-border: null !default;
+$table-foot-cell-border-top: null !default;
+$table-foot-cell-border-right: null !default;
+$table-foot-cell-border-bottom: null !default;
+$table-foot-cell-border-left: null !default;
+$table-foot-cell-background: null !default;
+
+/**
+* Table odd rows
+*/
+$table-odd-row-padding: null !default;
+$table-odd-row-border: null !default;
+$table-odd-row-border-top: null !default;
+$table-odd-row-border-right: null !default;
+$table-odd-row-border-bottom: null !default;
+$table-odd-row-border-left: null !default;
+$table-odd-row-background: null !default;
+$table-odd-row-font-family: null !default;
+$table-odd-row-font-size: null !default;
+$table-odd-row-font-weight: null !default;
+$table-odd-row-line-height: null !default;
+$table-odd-row-color: null !default;
+$table-odd-row-text-align: null !default;
+
+/**
+* Table even rows
+*/
+$table-even-row-padding: null !default;
+$table-even-row-border: null !default;
+$table-even-row-border-top: null !default;
+$table-even-row-border-right: null !default;
+$table-even-row-border-bottom: null !default;
+$table-even-row-border-left: null !default;
+$table-even-row-background: null !default;
+$table-even-row-font-family: null !default;
+$table-even-row-font-size: null !default;
+$table-even-row-font-weight: null !default;
+$table-even-row-line-height: null !default;
+$table-even-row-color: null !default;
+$table-even-row-text-align: null !default;
+
+/**
+* Table odd columns
+*/
+$table-odd-column-padding: null !default;
+$table-odd-column-border: null !default;
+$table-odd-column-border-top: null !default;
+$table-odd-column-border-right: null !default;
+$table-odd-column-border-bottom: null !default;
+$table-odd-column-border-left: null !default;
+$table-odd-column-background: null !default;
+$table-odd-column-font-family: null !default;
+$table-odd-column-font-size: null !default;
+$table-odd-column-font-weight: null !default;
+$table-odd-column-line-height: null !default;
+$table-odd-column-color: null !default;
+$table-odd-column-text-align: null !default;
+
+/**
+* Table even columns
+*/
+$table-even-column-padding: null !default;
+$table-even-column-border: null !default;
+$table-even-column-border-top: null !default;
+$table-even-column-border-right: null !default;
+$table-even-column-border-bottom: null !default;
+$table-even-column-border-left: null !default;
+$table-even-column-background: null !default;
+$table-even-column-font-family: null !default;
+$table-even-column-font-size: null !default;
+$table-even-column-font-weight: null !default;
+$table-even-column-line-height: null !default;
+$table-even-column-color: null !default;
+$table-even-column-text-align: null !default;
+
+/**
+* Set transition defaults
+*/
+$transition-duration: 0.3s !default;
+$transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1) !default;
+$transition: $transition-duration $transition-timing-function !default;

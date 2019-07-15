@@ -1,0 +1,29 @@
+/**
+ * Set up default styles of links in the document
+ *
+ * @requires "mixin/link-styles"
+ * @requires "variables"
+ */
+@mixin set-link-styles(
+  $color: $link-color,
+  $text-decoration: $link-text-decoration,
+  $hover-color: $link-hover-color,
+  $hover-text-decoration: $link-hover-text-decoration,
+  $active-color: $link-active-color,
+  $active-text-decoration: $link-active-text-decoration,
+  $visited-color: $link-visited-color,
+  $visited-text-decoration: $link-visited-text-decoration,
+  $selector: $link-selector
+) {
+  @include link-styles(
+    $color: $color,
+    $text-decoration: $text-decoration,
+    $hover-color: $hover-color,
+    $hover-text-decoration: $hover-text-decoration,
+    $active-color: $active-color,
+    $active-text-decoration: $active-text-decoration,
+    $visited-color: $visited-color,
+    $visited-text-decoration: $visited-text-decoration,
+    $selector: $selector
+  );
+}

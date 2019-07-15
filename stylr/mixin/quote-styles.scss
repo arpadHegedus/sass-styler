@@ -1,0 +1,62 @@
+/**
+* Update base quote styles in your element
+*/
+@mixin quote-styles(
+  $indent: null,
+  $border: null,
+  $color: null,
+  $font-size: null,
+  $font-style: null,
+  $font-weight: null,
+  $line-height: null,
+  $font-family: null,
+  $selector: null,
+  $selector-blockquote: null,
+  $direction: null
+) {
+  @if $selector == null and global-variable-exists(quote-selector) {
+    $selector: $quote-selector;
+  }
+
+  @if $selector {
+    #{$selector} {
+      margin-right: 0;
+      margin-left: 0;
+      font-family: $font-family;
+      font-size: $font-size;
+      font-style: $font-style;
+      font-weight: $font-weight;
+      line-height: $line-height;
+      color: $color;
+    }
+  }
+
+  @if $selector-blockquote == null and
+    global-variable-exists(blockquote-selector) {
+    $selector-blockquote: $blockquote-selector;
+  }
+
+  $other-align: null;
+
+  @if $direction == null and global-variable-exists(script-direction) {
+    $direction: $script-direction;
+  }
+
+  @if $selector-blockquote and $direction {
+    #{$selector-blockquote} {
+      @if $direction == ltr {
+        padding-right: 0;
+        padding-left: $indent;
+        border-left: $border;
+      }
+
+      @else {
+        padding-right: $indent;
+        padding-left: 0;
+        border-right: $border;
+      }
+
+      @content;
+    }
+  }
+}
