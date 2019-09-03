@@ -511,6 +511,18 @@ textarea {
 }
 
 /**
+ * Fix inheritance of box sizing
+ */
+button,
+input,
+optgroup,
+option,
+select,
+textarea {
+  box-sizing: border-box;
+}
+
+/**
 * Fix firefox issue with line-height
 */
 input {
