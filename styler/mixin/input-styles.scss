@@ -10,6 +10,7 @@
   $border-radius: null,
   $width: null,
   $multiline-height: null,
+  $select-height: null,
   $inline-spacing: null,
   $vertical-align: null,
   $outline: null,
@@ -71,6 +72,7 @@
   $selector-textarea: null,
   $selector-multiple-select: null,
   $selector-clickable: null,
+  $selector-select: null,
   $side: null
 ) {
   @if $selector-placeholder == null and
@@ -169,6 +171,12 @@
         background: $disabled-background;
         color: $disabled-color;
       }
+    }
+  }
+
+  @if $selector-select {
+    #{$selector-select} {
+      min-height: $select-height;
     }
   }
 

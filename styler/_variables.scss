@@ -190,12 +190,14 @@ $input-selector: "input:not([type]), [type=\"color\"], [type=\"date\"], " +
 $placeholder-selector: "::placeholder" !default;
 $file-input-selector: "[type=\"file\"]" !default;
 $textarea-selector: "textarea" !default;
+$select-selector: "select:not([multiple])" !default;
 $multiple-select-selector: "select[multiple]" !default;
 $clickable-input-selector: "[type=\"checkbox\"], [type=\"radio\"]" !default;
 $input-width: auto !default;
-$input-height: 2em !default;
+$input-height: null !default;
 $input-multiline-height: 8.1em !default;
-$input-padding: 0 0.5em !default;
+$select-height: null !default;
+$input-padding: 0.5em !default;
 $input-inline-spacing: 0.5em !default;
 $input-vertical-align: $vertical-align !default;
 $input-border-radius: null !default;

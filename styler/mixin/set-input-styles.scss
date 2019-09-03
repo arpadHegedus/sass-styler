@@ -8,6 +8,7 @@
   $width: $input-width,
   $height: $input-height,
   $multiline-height: $input-multiline-height,
+  $select-height: $select-height,
   $padding: $input-padding,
   $inline-spacing: $input-inline-spacing,
   $vertical-align: $input-vertical-align,
@@ -74,12 +75,14 @@
   $selector-textarea: $textarea-selector,
   $selector-multiple-select: $multiple-select-selector,
   $selector-clickable: $clickable-input-selector,
+  $selector-select: $select-selector,
   $side: $script-direction-align
 ) {
   @include input-styles(
     $width: $width,
     $height: $height,
     $multiline-height: $multiline-height,
+    $select-height: $select-height,
     $padding: $padding,
     $inline-spacing: $inline-spacing,
     $vertical-align: $vertical-align,
@@ -146,6 +149,7 @@
     $selector-textarea: $selector-textarea,
     $selector-multiple-select: $selector-multiple-select,
     $selector-clickable: $selector-clickable,
+    $selector-select: $selector-select,
     $side: $side
   );
 }
