@@ -1,0 +1,5 @@
+@mixin select-after($nth, $selector: "&") {
+  #{$selector}:nth-child(n + #{$nth + 1}) {
+    @content;
+  }
+}

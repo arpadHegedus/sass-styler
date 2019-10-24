@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-out-bottom-left($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-out-bl, $animation-settings);
+
+  @include keyframes(rotate-out-bl) {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform-origin: bottom left;
+      transform-origin: bottom left;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+      -webkit-transform-origin: bottom left;
+      transform-origin: bottom left;
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+/// Returns the greatest common divisor
+/// @example
+///     gcd(2, 3)   // 1
+///     gcd(54, 24) // 6
+/// @param {Number} $a A
+/// @param {Number} $b B
+
+@function gcd($a, $b) {
+  @return if($b == 0, $a, gcd($b, $a % $b));
+}

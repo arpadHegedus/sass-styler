@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-out-backward-bottom-left($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-out-bck-bl, $animation-settings);
+
+  @include keyframes(slide-out-bck-bl) {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+      transform: translateZ(0) translateY(0) translateX(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform:
+        translateZ(-1100px) translateY(1000px)
+        translateX(-1000px);
+      transform: translateZ(-1100px) translateY(1000px) translateX(-1000px);
+      opacity: 0;
+    }
+  }
+}
+

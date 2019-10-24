@@ -1,0 +1,5 @@
+@mixin select-nth-between($num, $first, $last, $selector: "&") {
+  #{$selector}:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+    @content;
+  }
+}

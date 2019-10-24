@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-out-2-bottom-right-counter-clock-wise($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-out-2-br-counter-clock-wise, $animation-settings);
+
+  @include keyframes(rotate-out-2-br-counter-clock-wise) {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,24 @@
+@use "sass:math";
+
+/// Returns $x * 2^$exp
+/// @param {number} $x X
+/// @param {number} $exp Extp
+/// @return {number}
+
+@function ldexp($x, $exp) {
+  $b: if($exp >= 0, 2, 1 / 2);
+
+  @if $exp < 0 {
+    $exp: $exp * -1;
+  }
+
+  @while $exp > 0 {
+    @if $exp % 2 == 1 {
+      $x: $x * $b;
+    }
+    $b: $b * $b;
+    $exp: math.floor($exp * 0.5);
+  }
+
+  @return $x;
+}

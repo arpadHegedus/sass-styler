@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-flip-2-horizontal-bottom-forward($animation-settings: null) {
+  @include animation-name-or-shorthand(flip-2-hor-bottom-fwd, $animation-settings);
+
+  @include keyframes(flip-2-hor-bottom-fwd) {
+    0% {
+      -webkit-transform: translateY(0) translateZ(0) rotateX(0);
+      transform: translateY(0) translateZ(0) rotateX(0);
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+    }
+
+    100% {
+      -webkit-transform: translateY(100%) translateZ(160px) rotateX(180deg);
+      transform: translateY(100%) translateZ(160px) rotateX(180deg);
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+    }
+  }
+}
+

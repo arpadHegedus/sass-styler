@@ -1,0 +1,28 @@
+@use "sass:meta";
+@use "sass:list";
+@use "../utility/grid-column-width" as *;
+
+@mixin flex-grid($columns: 1 of 2, $gap: 1rem, $vgap: $gap, $justify-content: center, $selector: "> *") {
+  $col: list.nth($columns, 1);
+  $of: list.nth($columns, 3);
+  $selector-gap: "#{$selector}:nth-child(#{$of}n+1)";
+  $selector-vgap: "#{$selector}:nth-child(n+#{($of + 1)})";
+  $width: grid-column-width($columns, $gap);
+
+  display: flex;
+  justify-content: $justify-content;
+  flex-wrap: wrap;
+
+  #{$selector} {
+    width: $width;
+    margin-left: $gap;
+  }
+
+  #{$selector-gap} {
+    margin-left: 0;
+  }
+
+  #{$selector-vgap} {
+    margin-top: $vgap;
+  }
+}

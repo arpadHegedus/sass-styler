@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function same-units($number, $number2) {
+  @return math.unit($number) == math.unit($number2);
+}

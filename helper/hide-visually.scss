@@ -1,0 +1,13 @@
+@mixin hide-visually(
+  $position: absolute,
+  $overflow: hidden,
+  $visibility: hidden,
+  $opacity: 0.00001,
+  $left: -999999px
+) {
+  position: $position;
+  left: $left;
+  overflow: $overflow;
+  visibility: $visibility;
+  opacity: $opacity;
+}

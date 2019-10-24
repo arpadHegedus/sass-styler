@@ -1,0 +1,21 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-out-right($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-out-right, $animation-settings);
+
+  @include keyframes(slide-out-right) {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translateX(1000px);
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+  }
+}
+

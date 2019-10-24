@@ -1,0 +1,5 @@
+@mixin select-only-child($selector: "&") {
+  #{$selector}:only-child {
+    @content;
+  }
+}

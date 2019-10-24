@@ -1,0 +1,10 @@
+@use "sass:color";
+
+/// Mix a color with black
+/// @param {color} $color Color
+/// @param {number} $ratio Ratio (default: 50)
+/// @return {color}
+
+@function shade($color, $ratio: 50) {
+  @return color.mix(#000, $color, $ratio);
+}

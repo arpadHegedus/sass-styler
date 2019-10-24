@@ -1,0 +1,21 @@
+/// Returns the square root of a number
+/// @example
+///   sqrt(2) // 1.41421
+///   sqrt(5) // 2.23607
+/// @param {number} $x X
+/// @return {number}
+
+@function sqrt($x) {
+  @if $x < 0 {
+    @warn "Argument for `sqrt()` must be a positive number.";
+
+    @return null;
+  }
+  $ret: 1;
+
+  @for $i from 1 through 24 {
+    $ret: $ret - ($ret * $ret - $x) / (2 * $ret);
+  }
+
+  @return $ret;
+}

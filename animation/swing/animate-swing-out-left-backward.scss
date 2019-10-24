@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-swing-out-left-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(swing-out-left-bck, $animation-settings);
+
+  @include keyframes(swing-out-left-bck) {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      -webkit-transform-origin: left;
+      transform-origin: left;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: rotateY(100deg);
+      transform: rotateY(100deg);
+      -webkit-transform-origin: left;
+      transform-origin: left;
+      opacity: 0;
+    }
+  }
+}
+

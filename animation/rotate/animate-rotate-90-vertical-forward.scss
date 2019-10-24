@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-90-vertical-forward($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-90-vertical-fwd, $animation-settings);
+
+  @include keyframes(rotate-90-vertical-fwd) {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+
+    100% {
+      -webkit-transform: rotateY(90deg);
+      transform: rotateY(90deg);
+    }
+  }
+}
+

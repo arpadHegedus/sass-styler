@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-top-left($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-tl, $animation-settings);
+
+  @include keyframes(slide-tl) {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+      transform: translateY(0) translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateY(-100px) translateX(-100px);
+      transform: translateY(-100px) translateX(-100px);
+    }
+  }
+}
+

@@ -1,0 +1,48 @@
+@use "sass:list";
+@use "sass:meta";
+@use "is-property" as *;
+@use "is-state" as *;
+
+@mixin declare-map($map: (), $strict: true) {
+  @each $key, $value in $map {
+    @if $key and $map {
+      @if meta.type-of($value) == map {
+        @if is-state($key) or list.index(hover-focus disabled-readonly, $key) {
+          $selector: "&";
+
+          @if list.index(after before first-letter first-line selection, $key) {
+            $selector: "&::#{$key}";
+          }
+
+          @else {
+            $selector: "&:#{$key}";
+          }
+
+          @if $key == hover-focus {
+            $selector: "&:hover, &:focus";
+          }
+
+          @if $key == disabled-readonly {
+            $selector: "&:disabled, &:readonly";
+          }
+
+          #{$selector} {
+            @include declare-map($value, $strict);
+          }
+        }
+      }
+
+      @else {
+        @if not $strict or is-property($key) {
+          #{$key}: $value;
+        }
+      }
+    }
+
+    @else if meta.type-of($value) != map {
+      @if not $strict or is-property($key) {
+        #{$key}: $value;
+      }
+    }
+  }
+}

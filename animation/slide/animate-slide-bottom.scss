@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-bottom($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-bottom, $animation-settings);
+
+  @include keyframes(slide-bottom) {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    100% {
+      -webkit-transform: translateY(100px);
+      transform: translateY(100px);
+    }
+  }
+}
+

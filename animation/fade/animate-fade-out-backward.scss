@@ -1,0 +1,21 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-fade-out-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(fade-out-bck, $animation-settings);
+
+  @include keyframes(fade-out-bck) {
+    0% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translateZ(-80px);
+      transform: translateZ(-80px);
+      opacity: 0;
+    }
+  }
+}
+

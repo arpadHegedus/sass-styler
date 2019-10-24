@@ -1,0 +1,11 @@
+@mixin pseudo(
+  $content: "",
+  $display: block,
+  $selector: "&::before"
+) {
+  #{$selector} {
+    content: $content;
+    display: $display;
+    @content;
+  }
+}

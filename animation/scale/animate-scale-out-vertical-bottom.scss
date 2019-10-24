@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-scale-out-vertical-bottom($animation-settings: null) {
+  @include animation-name-or-shorthand(scale-out-ver-bottom, $animation-settings);
+
+  @include keyframes(scale-out-ver-bottom) {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+      transform-origin: 0% 100%;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 0% 100%;
+      transform-origin: 0% 100%;
+      opacity: 1;
+    }
+  }
+}
+

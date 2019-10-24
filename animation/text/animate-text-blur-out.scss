@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-text-blur-out($animation-settings: null) {
+  @include animation-name-or-shorthand(text-blur-out, $animation-settings);
+
+  @include keyframes(text-blur-out) {
+    0% {
+      -webkit-filter: blur(0.01);
+      filter: blur(0.01);
+    }
+
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+      filter: blur(12px) opacity(0%);
+    }
+  }
+}
+

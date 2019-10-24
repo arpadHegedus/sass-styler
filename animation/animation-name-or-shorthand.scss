@@ -1,0 +1,9 @@
+@mixin animation-name-or-shorthand($name, $settings: null) {
+  @if $settings {
+    animation: #{$name} #{$settings};
+  }
+
+  @else {
+    animation-name: #{$name};
+  }
+}

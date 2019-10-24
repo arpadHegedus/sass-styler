@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-puff-in-horizontal($animation-settings: null) {
+  @include animation-name-or-shorthand(puff-in-hor, $animation-settings);
+
+  @include keyframes(puff-in-hor) {
+    0% {
+      -webkit-transform: scaleX(2);
+      transform: scaleX(2);
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+}
+

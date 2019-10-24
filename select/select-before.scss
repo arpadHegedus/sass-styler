@@ -1,0 +1,5 @@
+@mixin select-before($nth, $selector: "&") {
+  #{$selector}:nth-last-child(#{$nth}) {
+    @content;
+  }
+}

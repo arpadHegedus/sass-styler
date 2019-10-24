@@ -1,0 +1,16 @@
+@use "sass:string";
+
+@mixin responsive-ratio($x: 16, $y: 9, $selector: &) {
+  $padding: $y/$x*100%;
+
+  #{$selector} {
+    position: relative;
+    padding-top: $padding;
+
+    @if string.index($selector, "::") {
+      content: "";
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-tracking-out-expand-forward-bottom($animation-settings: null) {
+  @include animation-name-or-shorthand(tracking-out-expand-fwd-bottom, $animation-settings);
+
+  @include keyframes(tracking-out-expand-fwd-bottom) {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+
+    60% {
+      opacity: 0.8;
+    }
+
+    100% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(300px) translateY(200px);
+      transform: translateZ(300px) translateY(200px);
+      opacity: 0;
+    }
+  }
+}
+

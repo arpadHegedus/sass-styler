@@ -1,0 +1,27 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-ping($animation-settings: null) {
+  @include animation-name-or-shorthand(ping, $animation-settings);
+
+  @include keyframes(ping) {
+    0% {
+      -webkit-transform: scale(0.2);
+      transform: scale(0.2);
+      opacity: 0.8;
+    }
+
+    80% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: scale(2.2);
+      transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+}
+

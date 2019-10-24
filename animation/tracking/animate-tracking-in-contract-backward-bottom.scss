@@ -1,0 +1,26 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-tracking-in-contract-backward-bottom($animation-settings: null) {
+  @include animation-name-or-shorthand(tracking-in-contract-bck-bottom, $animation-settings);
+
+  @include keyframes(tracking-in-contract-bck-bottom) {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px) translateY(300px);
+      transform: translateZ(400px) translateY(300px);
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 0.6;
+    }
+
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+}
+

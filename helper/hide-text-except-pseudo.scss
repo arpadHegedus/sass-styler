@@ -1,0 +1,20 @@
+@mixin hide-text-except-pseudo(
+  $font-size: 1rem,
+  $color: null,
+  $line-height: null,
+  $font-family: null,
+  $text-align: null
+) {
+  font-size: 0;
+
+  &::before,
+  &::after {
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+    line-height: $line-height;
+    text-align: $text-align;
+
+    @content;
+  }
+}

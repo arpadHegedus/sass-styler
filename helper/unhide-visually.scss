@@ -1,0 +1,13 @@
+@mixin unhide-visually(
+  $position: static,
+  $overflow: visible,
+  $visibility: visible,
+  $opacity: 1,
+  $left: auto
+) {
+  position: $position;
+  left: $left;
+  overflow: $overflow;
+  visibility: $visibility;
+  opacity: $opacity;
+}

@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "sides" as *;
+
+@function right-side($value) {
+  @return map.get(sides($value), right);
+}

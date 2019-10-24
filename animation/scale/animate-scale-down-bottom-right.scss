@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-scale-down-bottom-right($animation-settings: null) {
+  @include animation-name-or-shorthand(scale-down-br, $animation-settings);
+
+  @include keyframes(scale-down-br) {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+
+    100% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+  }
+}
+

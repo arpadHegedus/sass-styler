@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-tracking-out-contract($animation-settings: null) {
+  @include animation-name-or-shorthand(tracking-out-contract, $animation-settings);
+
+  @include keyframes(tracking-out-contract) {
+    0%,
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+  }
+}
+

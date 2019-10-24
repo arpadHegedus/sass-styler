@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-flip-horizontal-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(flip-horizontal-bck, $animation-settings);
+
+  @include keyframes(flip-horizontal-bck) {
+    0% {
+      -webkit-transform: translateZ(0) rotateX(0);
+      transform: translateZ(0) rotateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateZ(-260px) rotateX(180deg);
+      transform: translateZ(-260px) rotateX(180deg);
+    }
+  }
+}
+

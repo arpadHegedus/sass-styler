@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-vert-right($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-vert-right, $animation-settings);
+
+  @include keyframes(rotate-vert-right) {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      -webkit-transform-origin: right;
+      transform-origin: right;
+    }
+
+    100% {
+      -webkit-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+      -webkit-transform-origin: right;
+      transform-origin: right;
+    }
+  }
+}
+

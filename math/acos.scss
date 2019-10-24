@@ -1,0 +1,19 @@
+@use "asin" as *;
+@use "constants" as *;
+
+/// Returns the arccosine of a number
+/// @example
+///   acos(0.1) // 1.47063
+///   acos(-1)  // 3.14159
+/// @param {number} $x X
+/// @return {number}
+
+@function acos($x) {
+  @if $x > 1 or $x < -1 {
+    @warn "Argument for `acos()` must be a number between -1 and 1";
+
+    @return null;
+  }
+
+  @return $PI / 2 - asin($x);
+}

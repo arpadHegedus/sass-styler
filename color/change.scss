@@ -1,0 +1,23 @@
+@use "sass:color";
+
+@function change(
+  $color,
+  $red: null,
+  $green: null,
+  $blue: null,
+  $hue: null,
+  $saturation: null,
+  $lightness: null,
+  $alpha: null
+) {
+  @return color.change(
+    $color,
+    $red: null,
+    $green: null,
+    $blue: null,
+    $hue: null,
+    $saturation: null,
+    $lightness: null,
+    $alpha: null
+  );
+}

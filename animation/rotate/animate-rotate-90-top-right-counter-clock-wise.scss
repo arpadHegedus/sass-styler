@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-90-top-right-counter-clock-wise($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-90-tr-counter-clock-wise, $animation-settings);
+
+  @include keyframes(rotate-90-tr-counter-clock-wise) {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform-origin: top right;
+      transform-origin: top right;
+    }
+
+    100% {
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      -webkit-transform-origin: top right;
+      transform-origin: top right;
+    }
+  }
+}
+

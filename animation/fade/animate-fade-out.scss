@@ -1,0 +1,17 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-fade-out($animation-settings: null) {
+  @include animation-name-or-shorthand(fade-out, $animation-settings);
+
+  @include keyframes(fade-out) {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
+

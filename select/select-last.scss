@@ -1,0 +1,13 @@
+@mixin select-last($nth: 1, $selector: "&") {
+  @if $nth == 1 {
+    #{$selector}:last-child {
+      @content;
+    }
+  }
+
+  @else {
+    #{$selector}:nth-last-child(-n + #{$nth}) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "sides" as *;
+
+@function horizontal-sides($value, $mode: average) {
+  $sides: sides($value);
+
+  @if $mode == average {
+    @return ( map.get($sides, right) + map.get($sides, left) ) / 2;
+  }
+
+  @else {
+    @return map.get($sides, right) + map.get($sides, left);
+  }
+}

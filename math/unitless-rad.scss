@@ -1,0 +1,7 @@
+/// Convert to unitless rad
+/// @param {number} $angle The angle to convert
+/// @return {number}
+
+@function unitless-rad($angle) {
+  @return (0rad + $angle) / 1rad;
+}

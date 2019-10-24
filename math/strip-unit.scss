@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "sass:meta";
+
+/// Remove units from a number
+/// @example
+///   strip-unit(12px)    // 12
+///   strip-unit(-12em)   // -12
+///   strip-unit(12rem)   // 12
+///   strip-unit(2.2deg)  // 2.2
+/// @param {number} $number Number with a unit
+/// @return {number}
+
+@function strip-unit($number) {
+  @if meta.type-of($number) == number and not math.is-unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}

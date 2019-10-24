@@ -1,0 +1,42 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-shake-bottom-right($animation-settings: null) {
+  @include animation-name-or-shorthand(shake-br, $animation-settings);
+
+  @include keyframes(shake-br) {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+
+    10%,
+    90% {
+      -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+    }
+
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+    }
+
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+    }
+
+    80% {
+      -webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+    }
+  }
+}
+

@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-swing-in-bottom-forward($animation-settings: null) {
+  @include animation-name-or-shorthand(swing-in-bottom-fwd, $animation-settings);
+
+  @include keyframes(swing-in-bottom-fwd) {
+    0% {
+      -webkit-transform: rotateX(100deg);
+      transform: rotateX(100deg);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 1;
+    }
+  }
+}
+

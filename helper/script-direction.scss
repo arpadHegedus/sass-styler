@@ -1,0 +1,20 @@
+$script-direction: ltr !default;
+
+@use "sass:map";
+
+$script-direction-map: (
+  ltr: (
+    forward: left,
+    backward: right
+  ),
+  rtl: (
+    forward: right,
+    backward: left
+  )
+);
+
+@function script-direction($way: forward, $direction: $script-direction) {
+  $way: if($way != forward, backward, forward);
+
+  @return map.get(map.get($script-direction-map, $direction), $way);
+}

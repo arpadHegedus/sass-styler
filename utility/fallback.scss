@@ -1,0 +1,11 @@
+@function fallback($values...) {
+  $value: null;
+
+  @each $v in $values {
+    @if $v {
+      @return $v;
+    }
+  }
+
+  @return $value;
+}

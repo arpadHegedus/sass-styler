@@ -1,0 +1,15 @@
+@use "sin" as *;
+@use "unitless-rad" as *;
+
+/// Returns the cosecant of a number
+/// @example
+///   csc(1.0472) // 1.1547
+///   csc(60deg)  // 1.1547
+/// @param {number} $x X
+/// @return {number}
+
+@function csc($x) {
+  $x: unitless-rad($x);
+
+  @return 1 / sin($x);
+}

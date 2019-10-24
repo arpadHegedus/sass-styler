@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-swirl-out-top-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(swirl-out-top-bck, $animation-settings);
+
+  @include keyframes(swirl-out-top-bck) {
+    0% {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: rotate(-540deg) scale(0);
+      transform: rotate(-540deg) scale(0);
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      opacity: 0;
+    }
+  }
+}
+

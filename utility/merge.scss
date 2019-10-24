@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "sass:meta";
+
+@function merge($map1, $map2) {
+  $map: $map1;
+
+  @each $key, $value in $map2 {
+    @if
+      meta.type-of($value) == map and
+      map.has-key($map1, $key) and
+      meta.type-of(map.get($map1, $key)) == map
+    {
+      $map: map.merge($map, ($key: merge(map.get($map1, $key), $value)));
+    }
+
+    @else {
+      $map: map.merge($map, ($key: $value));
+    }
+  }
+
+  @return $map;
+}

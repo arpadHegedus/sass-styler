@@ -1,0 +1,5 @@
+@mixin select-except($nth, $selector: "&") {
+  #{$selector}:not(:nth-child(#{$nth})) {
+    @content;
+  }
+}

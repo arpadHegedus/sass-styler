@@ -1,0 +1,20 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-pulsate($animation-settings: null) {
+  @include animation-name-or-shorthand(pulsate, $animation-settings);
+
+  @include keyframes(pulsate) {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}

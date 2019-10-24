@@ -1,0 +1,7 @@
+@mixin hardware-accelerate($perspective: 1000, $backface: true) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+
+  perspective: $perspective;
+}

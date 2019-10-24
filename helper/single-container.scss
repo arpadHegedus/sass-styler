@@ -1,0 +1,24 @@
+@use "container" as *;
+@use "sass:map";
+
+@mixin single-container($width: null, $padding: null) {
+  $width: if(
+    $width and map.has-key($container, $width), 
+    map.get($container, $width), 
+    if(
+      $width, 
+      $width, 
+      map.get($container, $container-default)
+    )
+  );
+  $padding: if($padding, $padding, map.get($container, padding));
+
+  max-width: $width;
+  margin-right: $padding;
+  margin-left: $padding;
+
+  @media only screen and (min-width: #{$width + 2 * $padding}) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

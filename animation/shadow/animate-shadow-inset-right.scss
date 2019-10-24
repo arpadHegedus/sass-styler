@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-shadow-inset-right($animation-settings: null) {
+  @include animation-name-or-shorthand(shadow-inset-right, $animation-settings);
+
+  @include keyframes(shadow-inset-right) {
+    0% {
+      -webkit-box-shadow: inset 0 0 0 0 transparent;
+      box-shadow: inset 0 0 0 0 transparent;
+    }
+
+    100% {
+      -webkit-box-shadow: inset -6px 0 14px -6px rgba(0, 0, 0, 0.5);
+      box-shadow: inset -6px 0 14px -6px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+

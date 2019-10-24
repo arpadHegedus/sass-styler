@@ -1,0 +1,10 @@
+@use "sass:color";
+
+/// Mix a color with white
+/// @param {color} $color Color
+/// @param {number} $ratio Ratio (default: 50)
+/// @return {color}
+
+@function tint($color, $ratio: 50) {
+  @return color.mix(#fff, $color, $ratio);
+}

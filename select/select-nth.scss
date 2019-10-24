@@ -1,0 +1,18 @@
+@mixin select-nth($nth, $selector: "&") {
+  #{$selector}:nth-child(#{$nth}n) {
+    @content;
+  }
+}
+
+@mixin select-nth-from($nth, $from, $selector: "&") {
+  #{$selector}:nth-child(#{$nth}n + #{$from}) {
+    @content;
+  }
+}
+
+@mixin select-nth-both-sides($nth, $from, $selector: "&") {
+  #{$selector}:nth-child(#{$nth}),
+  #{$selector}:nth-last-child(#{$nth}) {
+    @content;
+  }
+}

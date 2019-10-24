@@ -1,0 +1,16 @@
+@use "constants" as *;
+@use "cos" as *;
+@use "unitless-rad" as *;
+
+/// Returns the sine of a numbe
+/// @example
+///   sin(1.0472) // 0.86603
+///   sin(60deg)  // 0.86603
+/// @param {number} $x X
+/// @return {number}
+
+@function sin($x) {
+  $x: unitless-rad($x);
+
+  @return cos($x - $PI / 2);
+}

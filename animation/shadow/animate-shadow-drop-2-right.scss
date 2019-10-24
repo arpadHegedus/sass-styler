@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-shadow-drop-2-right($animation-settings: null) {
+  @include animation-name-or-shorthand(shadow-drop-2-right, $animation-settings);
+
+  @include keyframes(shadow-drop-2-right) {
+    0% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      -webkit-box-shadow: 0 0 0 0 transparent;
+      box-shadow: 0 0 0 0 transparent;
+    }
+
+    100% {
+      -webkit-transform: translateZ(50px) translateX(-12px);
+      transform: translateZ(50px) translateX(-12px);
+      -webkit-box-shadow: 12px 0 20px -12px rgba(0, 0, 0, 0.35);
+      box-shadow: 12px 0 20px -12px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+

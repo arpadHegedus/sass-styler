@@ -1,0 +1,20 @@
+@use "luminance" as *;
+@use "shade" as *;
+@use "tint" as *;
+
+/// Make a dark color lighter or a light color darker
+/// @param {color} $color Color
+/// @param {number} $ratio Ratio (default: 10)
+/// @return {color}
+
+@function weaken($color, $ratio: 10) {
+  @if luminance($color) > 0.5 {
+    $color: shade($color, $ratio);
+  }
+
+  @else {
+    $color: tint($color, $ratio);
+  }
+
+  @return $color;
+}

@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-forward-top-right($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-fwd-tr, $animation-settings);
+
+  @include keyframes(slide-fwd-tr) {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+      transform: translateZ(0) translateY(0) translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateZ(160px) translateY(-100px) translateX(100px);
+      transform: translateZ(160px) translateY(-100px) translateX(100px);
+    }
+  }
+}
+

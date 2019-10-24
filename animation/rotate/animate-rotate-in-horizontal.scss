@@ -1,0 +1,21 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-in-horizontal($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-in-hor, $animation-settings);
+
+  @include keyframes(rotate-in-hor) {
+    0% {
+      -webkit-transform: rotateX(360deg);
+      transform: rotateX(360deg);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+}
+

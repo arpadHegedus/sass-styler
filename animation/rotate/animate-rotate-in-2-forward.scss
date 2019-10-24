@@ -1,0 +1,21 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-rotate-in-2-forward($animation-settings: null) {
+  @include animation-name-or-shorthand(rotate-in-2-fwd, $animation-settings);
+
+  @include keyframes(rotate-in-2-fwd) {
+    0% {
+      -webkit-transform: translateZ(-200px) rotate(-45deg);
+      transform: translateZ(-200px) rotate(-45deg);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateZ(0) rotate(0);
+      transform: translateZ(0) rotate(0);
+      opacity: 1;
+    }
+  }
+}
+

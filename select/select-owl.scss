@@ -1,0 +1,20 @@
+@use "sass:list";
+@use "../utility/owl" as *;
+@use "../utility/owl-after" as *;
+@use "../utility/owl-before" as *;
+
+@mixin select-owl($selectors, $before: null, $after: null) {
+  $owl-selector: owl($selectors);
+
+  @if $before {
+    $owl-selector: list.join($owl-selector, owl-before($selectors, $before), comma);
+  }
+
+  @if $after {
+    $owl-selector: list.join($owl-selector, owl-after($selectors, $after), comma);
+  }
+
+  #{$owl-selector} {
+    @content;
+  }
+}

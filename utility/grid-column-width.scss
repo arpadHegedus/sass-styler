@@ -1,0 +1,20 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:string";
+
+@function grid-column-width($columns: 1 of 2, $gap: 0) {
+  $col: list.nth($columns, 1);
+  $of: list.nth($columns, 3);
+  $width: auto;
+  $colof: math.round($col/$of * 10000) / 10000;
+
+  @if math.unit($gap) == "%" or math.unit($gap) == "" {
+    $width: 99.99% * $colof - ($gap - $gap * $col/$of);
+  }
+
+  @else {
+    $width: string.unquote("calc(99.99% * #{$colof} - (#{$gap} - #{$gap} * #{$colof}))");
+  }
+
+  @return $width;
+}

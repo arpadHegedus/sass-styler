@@ -1,0 +1,60 @@
+@use "sass:color";
+@use "sass:math";
+@use "luminance" as *;
+@use "srgb" as *;
+@use "xyz" as *;
+@use "../utility/clip-number" as *;
+@use "../utility/is-between" as *;
+
+/// Scale a luminance of a color by a set value
+/// @param {color} $color Color
+/// @param {number} $luminance Luminance
+/// @return {color}
+
+@function scale-luminance($color, $luminance) {
+  $scale: $luminance / luminance($color);
+  $red: clip-number(xyz(color.red($color))) * $scale;
+  $green: clip-number(xyz(color.green($color))) * $scale;
+  $blue: clip-number(xyz(color.blue($color))) * $scale;
+  $red-passes: is-between($red);
+  $green-passes: is-between($green);
+  $blue-passes: is-between($blue);
+
+  @if not $red-passes or not $green-passes or not $blue-passes {
+    $baseline: math.min($red, $green, $blue);
+    $r: $red / $baseline;
+    $g: $green / $baseline;
+    $b: $blue / $baseline;
+
+    @if not $red-passes {
+      $luminance: $luminance - 0.2126;
+      $r: 0;
+    }
+
+    @if not $green-passes {
+      $luminance: $luminance - 0.7152;
+      $g: 0;
+    }
+
+    @if not $blue-passes {
+      $luminance: $luminance - 0.0722;
+      $b: 0;
+    }
+
+    $x: $luminance / ($r * 0.2126 + $g * 0.7152 + $b * 0.0722);
+
+    @if $red-passes {
+      $red: $r * $x;
+    }
+
+    @if $green-passes {
+      $green: $g * $x;
+    }
+
+    @if $blue-passes {
+      $blue: $b * $x;
+    }
+  }
+
+  @return rgb(srgb($red), srgb($green), srgb($blue));
+}

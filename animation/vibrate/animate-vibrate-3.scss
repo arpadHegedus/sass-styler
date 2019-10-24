@@ -1,0 +1,40 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-vibrate-3($animation-settings: null) {
+  @include animation-name-or-shorthand(vibrate-3, $animation-settings);
+
+  @include keyframes(vibrate-3) {
+    0%,
+    100% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+
+    10%,
+    50%,
+    80% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+
+    20%,
+    60%,
+    90% {
+      -webkit-transform: translate(2px, -2px);
+      transform: translate(2px, -2px);
+    }
+
+    30%,
+    70% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      -webkit-transform: translate(2px, 2px);
+      transform: translate(2px, 2px);
+    }
+  }
+}
+

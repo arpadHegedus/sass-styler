@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-in-elliptic-top-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-in-elliptic-top-bck, $animation-settings);
+
+  @include keyframes(slide-in-elliptic-top-bck) {
+    0% {
+      -webkit-transform: translateY(-600px) rotateX(30deg) scale(6.5);
+      transform: translateY(-600px) rotateX(30deg) scale(6.5);
+      -webkit-transform-origin: 50% 200%;
+      transform-origin: 50% 200%;
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+      transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% -500px;
+      transform-origin: 50% -500px;
+      opacity: 1;
+    }
+  }
+}
+

@@ -1,7 +1,7 @@
 {
   "name": "sass-styler",
-  "version": "1.0.2",
-  "description": "An scss library to style default elements",
+  "version": "2.0.0",
+  "description": "A collection of useful scss",
   "main": "styler.scss",
   "repository": {
     "type": "git",

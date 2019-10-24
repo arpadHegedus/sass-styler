@@ -1,0 +1,18 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-roll-out($animation-settings: null) {
+  @include animation-name-or-shorthand(roll-out, $animation-settings);
+
+  @include keyframes(roll-out) {
+    0% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+  }
+}

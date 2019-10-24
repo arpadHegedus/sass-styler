@@ -1,0 +1,6 @@
+@use "sass:string";
+@use "../math/strip-unit" as *;
+
+@function remtoem($value) {
+  @return string.unquote(strip-unit($value) + 'em');
+}

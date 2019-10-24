@@ -1,0 +1,21 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-flip-out-vertical-left($animation-settings: null) {
+  @include animation-name-or-shorthand(flip-out-ver-left, $animation-settings);
+
+  @include keyframes(flip-out-ver-left) {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: rotateY(-70deg);
+      transform: rotateY(-70deg);
+      opacity: 0;
+    }
+  }
+}
+

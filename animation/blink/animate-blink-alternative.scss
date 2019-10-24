@@ -1,0 +1,17 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-blink-alternative($animation-settings: null) {
+  @include animation-name-or-shorthand(blink-alternative, $animation-settings);
+
+  @include keyframes(blink-alternative) {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.2;
+    }
+  }
+}

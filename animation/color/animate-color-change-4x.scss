@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-color-change-4x($animation-settings: null) {
+  @include animation-name-or-shorthand(color-change-4x, $animation-settings);
+
+  @include keyframes(color-change-4x) {
+    0% {
+      background: #19dcea;
+    }
+
+    33.3333% {
+      background: #b22cff;
+    }
+
+    66.666% {
+      background: #ea2222;
+    }
+
+    100% {
+      background: #f5be10;
+    }
+  }
+}
+

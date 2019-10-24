@@ -1,0 +1,22 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-tracking-out-expand($animation-settings: null) {
+  @include animation-name-or-shorthand(tracking-out-expand, $animation-settings);
+
+  @include keyframes(tracking-out-expand) {
+    0% {
+      opacity: 1;
+    }
+
+    60% {
+      opacity: 0.8;
+    }
+
+    100% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,31 @@
+$container: (
+  normal: 60rem,
+  wide: 80rem,
+  narrow: 40rem,
+  padding: 1rem
+) !default;
+$container-default: normal !default;
+
+@use "sass:map";
+
+@mixin container($width: null, $padding: null, $selector: "> div") {
+  $width: if(
+    $width and map.has-key($container, $width), 
+    map.get($container, $width), 
+    if(
+      $width, 
+      $width, 
+      map.get($container, $container-default)
+    )
+  );
+  $padding: if($padding, $padding, map.get($container, padding));
+
+  padding-right: $padding;
+  padding-left: $padding;
+
+  #{$selector} {
+    max-width: $width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-scale-down-vertical-center($animation-settings: null) {
+  @include animation-name-or-shorthand(scale-down-ver-center, $animation-settings);
+
+  @include keyframes(scale-down-ver-center) {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+
+    100% {
+      -webkit-transform: scaleY(0.3);
+      transform: scaleY(0.3);
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+@use "script-direction" as *;
+
+@mixin horizontal-list($gap: null, $justify-content: null, $align-items: null, $flex-wrap: null) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+  list-style: none;
+  padding-#{script-direction()}: 0;
+
+  > * + * {
+    margin-#{script-direction()}: $gap;
+  }
+}

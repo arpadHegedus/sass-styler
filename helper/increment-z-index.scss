@@ -1,0 +1,21 @@
+@mixin increment-z-index($top, $direction: forward, $start-index: 1, $selector: "&") {
+  @for $i from 1 through $num {
+    @if $direction == forward {
+      #{$selector} {
+        &:nth-child(#{$i}) {
+          z-index: $start-index + $i - 1;
+          @content;
+        }
+      }
+    }
+
+    @else {
+      #{$selector} {
+        &:nth-last-child(#{$i}) {
+          z-index: $start-index + $i - 1;
+          @content;
+        }
+      }
+    }
+  }
+}

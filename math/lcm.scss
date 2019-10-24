@@ -1,0 +1,12 @@
+@use "gcd" as *;
+
+/// Returns the least common multiple
+/// @example
+///     lcm(4, 6)   // 12
+///     lcm(30, 42) // 210
+/// @param {Number} $a A
+/// @param {Number} $b B
+
+@function lcm($a, $b) {
+  @return $a * $b / gcd($a, $b);
+}

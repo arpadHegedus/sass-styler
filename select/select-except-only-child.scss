@@ -1,0 +1,5 @@
+@mixin select-except-only-child($selector: "&") {
+  #{$selector}:not(:only-child) {
+    @content;
+  }
+}

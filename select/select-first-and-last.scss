@@ -1,0 +1,6 @@
+@mixin select-first-last($selector: "&") {
+  #{$selector}:first-child,
+  #{$selector}:last-child {
+    @content;
+  }
+}

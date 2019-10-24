@@ -1,0 +1,13 @@
+@mixin long-shadow($color) {
+  text-shadow: long-shadow($color);
+}
+
+@function long-shadow($color) {
+  $val: 0 0 $color;
+
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+
+  @return $val;
+}

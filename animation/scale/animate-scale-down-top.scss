@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-scale-down-top($animation-settings: null) {
+  @include animation-name-or-shorthand(scale-down-top, $animation-settings);
+
+  @include keyframes(scale-down-top) {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+    }
+
+    100% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+    }
+  }
+}
+

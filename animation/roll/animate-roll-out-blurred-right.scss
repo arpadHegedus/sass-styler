@@ -1,0 +1,25 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-roll-out-blurred-right($animation-settings: null) {
+  @include animation-name-or-shorthand(roll-out-blurred-right, $animation-settings);
+
+  @include keyframes(roll-out-blurred-right) {
+    0% {
+      -webkit-transform: translateX(0) rotate(0deg);
+      transform: translateX(0) rotate(0deg);
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translateX(1000px) rotate(720deg);
+      transform: translateX(1000px) rotate(720deg);
+      -webkit-filter: blur(50px);
+      filter: blur(50px);
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-bg-pan-top-left($animation-settings: null) {
+  @include animation-name-or-shorthand(bg-pan-tl, $animation-settings);
+
+  @include keyframes(bg-pan-tl) {
+    0% {
+      background-position: 100% 100%;
+    }
+
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+}

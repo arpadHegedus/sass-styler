@@ -1,0 +1,17 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-text-shadow-drop-right($animation-settings: null) {
+  @include animation-name-or-shorthand(text-shadow-drop-right, $animation-settings);
+
+  @include keyframes(text-shadow-drop-right) {
+    0% {
+      text-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+      text-shadow: 6px 0 18px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+

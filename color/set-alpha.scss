@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "sass:math";
+
+/// Set the alpha value of a color
+/// @param {color} $color Color
+/// @param {number} $alpha Alpha
+/// @return {color}
+
+@function set-alpha($color, $alpha) {
+  @if math.is-unitless($alpha) {
+    $alpha: 1% * $alpha;
+  }
+  @return hsla(color.hue($color), color.saturation($color), color.lightness($color), $alpha);
+}

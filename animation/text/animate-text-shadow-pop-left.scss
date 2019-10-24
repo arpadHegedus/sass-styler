@@ -1,0 +1,37 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-text-shadow-pop-left($animation-settings: null) {
+  @include animation-name-or-shorthand(text-shadow-pop-left, $animation-settings);
+
+  @include keyframes(text-shadow-pop-left) {
+    0% {
+      text-shadow:
+        0 0 #555,
+        0 0 #555,
+        0 0 #555,
+        0 0 #555,
+        0 0 #555,
+        0 0 #555,
+        0 0 #555,
+        0 0 #555;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      text-shadow:
+        -1px 0 #555,
+        -2px 0 #555,
+        -3px 0 #555,
+        -4px 0 #555,
+        -5px 0 #555,
+        -6px 0 #555,
+        -7px 0 #555,
+        -8px 0 #555;
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px);
+    }
+  }
+}
+

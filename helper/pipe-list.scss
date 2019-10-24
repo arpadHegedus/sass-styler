@@ -1,0 +1,19 @@
+@use "script-direction" as *;
+
+@mixin pipe-list($gap: null, $border: null, $justify-content: null, $align-items: null, $flex-wrap: null) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+  list-style: none;
+  padding-#{script-direction()}: 0;
+
+  > * + * {
+    @if $gap {
+      margin-#{script-direction()}: 0.5 * $gap;
+      padding-#{script-direction()}: 0.5 * $gap;
+    }
+
+    border-#{script-direction()}: $border;
+  }
+}

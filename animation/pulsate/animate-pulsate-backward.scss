@@ -1,0 +1,20 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-pulsate-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(pulsate-bck, $animation-settings);
+
+  @include keyframes(pulsate-bck) {
+    0%,
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    50% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+}
+

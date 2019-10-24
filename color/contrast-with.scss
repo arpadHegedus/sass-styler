@@ -1,0 +1,62 @@
+@use "sass:color";
+@use "sass:math";
+@use "../utility/clip-number" as *;
+@use "contrast-ratio-by-name" as *;
+@use "is-contrasting" as *;
+@use "luminance" as *;
+@use "scale-light" as *;
+@use "scale-luminance" as *;
+
+/// Adjust color towards a target color until it reaches a contrast ratio
+/// @param {color} $color Color
+/// @param {color} $target Target color
+/// @param {string|number} $ratio Contrast ratio
+/// @param {number} $iterations Iteration count for checking
+/// @return {number}
+
+@function contrast-with($color, $target: #fff, $ratio: "AA", $iterations: 5) {
+  $ratio: contrast-ratio-by-name($ratio);
+
+  @if not is-contrasting($color, $target, $ratio) {
+    $luminance: clip-number(luminance($color));
+    $target-luminance: clip-number(luminance($target));
+    $operation: "";
+
+    @if $luminance == $target-luminance {
+      @if $luminance > 0.5 {
+        $color: color.darken($color, 1%);
+        $luminance: luminance($color);
+      }
+
+      @else {
+        $color: color.adjust($color, $lightness: 1%);
+        $luminance: luminance($color);
+      }
+    }
+
+    @if math.max($luminance, $target-luminance) == $luminance {
+      $target-luminance: (($target-luminance + 0.05) * $ratio - 0.05);
+      $operation: lighten;
+    }
+
+    @else {
+      $target-luminance: (($target-luminance + 0.05) / $ratio - 0.05);
+      $operation: darken;
+    }
+
+    @if $target-luminance >= 1 {
+      @return #fff;
+    }
+
+    @else if $target-luminance <= 0 {
+      @return #000;
+    }
+
+    @else {
+      $color: scale-luminance($color, $target-luminance);
+      $color: scale-light($color, $target, $ratio, $operation, $iterations);
+    }
+  }
+
+  @return $color;
+}

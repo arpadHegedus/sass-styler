@@ -1,0 +1,17 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-fade-in($animation-settings: null) {
+  @include animation-name-or-shorthand(fade-in, $animation-settings);
+
+  @include keyframes(fade-in) {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+

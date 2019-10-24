@@ -1,0 +1,13 @@
+@use "sass:list";
+
+@function owl-after($selectors, $after) {
+  $owl-selector: ();
+
+  @each $sel1 in $after {
+    @each $sel2 in $selectors {
+      $owl-selector: list.append($owl-selector, #{$sel1 + " + " + $sel2}, comma);
+    }
+  }
+
+  @return $owl-selector;
+}

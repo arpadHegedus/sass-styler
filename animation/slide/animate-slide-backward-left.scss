@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-backward-left($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-bck-left, $animation-settings);
+
+  @include keyframes(slide-bck-left) {
+    0% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateZ(-400px) translateX(-200px);
+      transform: translateZ(-400px) translateX(-200px);
+    }
+  }
+}
+

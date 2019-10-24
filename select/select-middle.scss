@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@mixin select-middle($num, $selector: "&") {
+  #{$selector}:nth-child(#{math.round($num / 2)}) {
+    @content;
+  }
+}

@@ -1,0 +1,17 @@
+@use "position" as *;
+
+@mixin cover-link($selector: "a::before", $position: relative, $z-index: 2) {
+  position: $position;
+
+  #{$selector} {
+    z-index: $z-index;
+
+    @include position(0, 0, 0, 0, absolute, 100%, 100%);
+
+    @if str-index($selector, ":before") or str-index($selector, ":after") {
+      content: "";
+    }
+
+    @content;
+  }
+}

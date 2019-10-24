@@ -1,0 +1,13 @@
+@mixin select-first($nth: 1, $selector: "&") {
+  @if $nth == 1 {
+    #{$selector}:first-child {
+      @content;
+    }
+  }
+
+  @else {
+    #{$selector}:nth-child(-n + #{$nth}) {
+      @content;
+    }
+  }
+}

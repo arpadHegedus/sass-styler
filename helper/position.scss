@@ -1,0 +1,20 @@
+@mixin position(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $position: absolute,
+  $width: null,
+  $height: null,
+  $z-index: null
+) {
+  position: $position;
+  z-index: $z-index;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $width;
+  height: $height;
+  @content;
+}

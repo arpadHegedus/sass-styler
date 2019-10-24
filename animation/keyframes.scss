@@ -1,0 +1,12 @@
+@use "sass:map";
+
+$_keyframes: ();
+
+@mixin keyframes($name) {
+  @if not map.has-key($_keyframes, $name) {
+    @keyframes #{$name} {
+      @content;
+    }
+    $_keyframes: map.merge($_keyframes, (#{$name}: true)) !global;
+  }
+}

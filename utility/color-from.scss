@@ -1,0 +1,15 @@
+@use "sass:meta";
+
+@function color-from($value) {
+  @if meta.type-of($value) == color {
+    @return $value;
+  }
+
+  @each $v in $value {
+    @if meta.type-of($v) == color {
+      @return $v;
+    }
+  }
+
+  @return null;
+}

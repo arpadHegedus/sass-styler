@@ -1,0 +1,5 @@
+@use "sass:color";
+
+@function saturate($color, $amount) {
+  @return color.saturate($color, $amount);
+}

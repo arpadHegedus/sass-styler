@@ -1,0 +1,44 @@
+@use "sass:list";
+
+@mixin select-first-out-of($num, $selector: "&") {
+  #{$selector}:nth-last-child(#{$num}):first-child {
+    @content;
+  }
+}
+
+@mixin select-last-out-of($num, $selector: "&") {
+  #{$selector}:nth-of-type(#{$num}):nth-last-of-type(1) {
+    @content;
+  }
+}
+
+@mixin select-all-out-of-at-least($num, $selector: "&") {
+  $child: list.nth(list.nth($selector, -1), -1);
+
+  #{$selector}:nth-last-child(n + #{$num}),
+  #{$selector}:nth-last-child(n + #{$num}) ~ #{$child} {
+    @content;
+  }
+}
+
+@mixin select-all-out-of-at-most($num, $selector: "&") {
+  $child: list.nth(list.nth($selector, -1), -1);
+
+  #{$selector}:nth-last-child(-n + #{$num}):first-child,
+  #{$selector}:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
+    @content;
+  }
+}
+
+@mixin select-all-out-of-between($min, $max, $selector: "&") {
+  $child: list.nth(list.nth($selector, -1), -1);
+
+  #{$selector} {
+    &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}) {
+      &:first-child,
+      &:first-child ~ #{$child} {
+        @content;
+      }
+    }
+  }
+}

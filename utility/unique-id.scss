@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+
+$unique-ids: ();
+
+@function unique-id($values...) {
+
+  $found: list.index(map.values($unique-ids), $values);
+
+  @if $found {
+    @return list.nth(list.nth($unique-ids, $found), 1);
+  }
+
+  @else {
+    $id: string.unique-id();
+    $unique-ids: map.merge($unique-ids, ($id: $values)) !global;
+
+    @return $id;
+  }
+}

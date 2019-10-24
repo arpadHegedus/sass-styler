@@ -1,0 +1,19 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-slide-right($animation-settings: null) {
+  @include animation-name-or-shorthand(slide-right, $animation-settings);
+
+  @include keyframes(slide-right) {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+  }
+}
+

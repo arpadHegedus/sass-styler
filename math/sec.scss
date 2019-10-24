@@ -1,0 +1,15 @@
+@use "cos" as *;
+@use "unitless-rad" as *;
+
+/// Returns the secant of a number
+/// @example
+///   sec(0.7854) // 1.41422
+///   sec(45deg)  // 1.41422
+/// @param {number} $x X
+/// @return {number}
+
+@function sec($x) {
+  $x: unitless-rad($x);
+
+  @return 1 / cos($x);
+}

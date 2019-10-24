@@ -1,0 +1,49 @@
+@use "../animation/keyframes" as *;
+@use "pseudo-with-position" as *;
+
+@mixin loader(
+  $color: rgba(#000, 0.5),
+  $bg: rgba(#000, 0.2),
+  $size: 1.5rem,
+  $width: 2px,
+  $animation-speed: 1s,
+  $inner-opacity: 0.5,
+  $inner-color: null
+) {
+  position: relative;
+  color: $inner-color;
+
+  > * {
+    opacity: $inner-opacity;
+  }
+
+  @include pseudo-with-position(50%, auto, auto, 50%, absolute, $size, $size, null, "", block, "&::before, &::after") {
+    border-width: $width;
+    border-radius: 100%;
+    border-style: solid;
+    transform: translate3d(-50%, -50%, 0);
+
+    @content;
+  }
+
+  &::before {
+    z-index: 1;
+    border-color: $bg;
+  }
+
+  &::after {
+    z-index: 2;
+    border-color: $color transparent transparent transparent;
+    animation: loader-spinner $animation-speed linear infinite;
+
+    @include keyframes(loader-spin) {
+      0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0);
+      }
+
+      100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+      }
+    }
+  }
+}

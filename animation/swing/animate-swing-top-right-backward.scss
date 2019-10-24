@@ -1,0 +1,23 @@
+@use "../keyframes" as *;
+@use "../animation-name-or-shorthand" as *;
+
+@mixin animate-swing-top-right-backward($animation-settings: null) {
+  @include animation-name-or-shorthand(swing-top-right-bck, $animation-settings);
+
+  @include keyframes(swing-top-right-bck) {
+    0% {
+      -webkit-transform: rotate3d(1, 1, 0, 0deg);
+      transform: rotate3d(1, 1, 0, 0deg);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+
+    100% {
+      -webkit-transform: rotate3d(1, 1, 0, -180deg);
+      transform: rotate3d(1, 1, 0, -180deg);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+  }
+}
+

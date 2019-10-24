@@ -1,0 +1,15 @@
+@use "sass:color";
+@use "sass:math";
+
+/// Set the lightness value of a color
+/// @param {color} $color Color
+/// @param {number} $lightness Lightness
+/// @return {color}
+
+@function set-lightness($color, $lightness) {
+  @if math.is-unitless($lightness) {
+    $lightness: 1% * $lightness;
+  }
+
+  @return hsla(color.hue($color), color.saturation($color), $lightness, color.alpha($color));
+}

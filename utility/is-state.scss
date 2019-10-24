@@ -1,0 +1,63 @@
+$css-states: (
+  active,
+  after,
+  before,
+  checked,
+  disabled,
+  empty,
+  enabled,
+  first-child,
+  first-letter,
+  first-line,
+  first-of-type,
+  focus,
+  hover,
+  in-range,
+  invalid,
+  last-child,
+  last-of-type,
+  link,
+  only-of-type,
+  only-child,
+  optional,
+  out-of-range,
+  read-only,
+  read-write,
+  required,
+  root,
+  selection,
+  target,
+  valid,
+  visited
+) !default;
+
+@use "sass:list";
+@use "sass:string";
+
+@function is-state($state, $strict: false) {
+
+  @if $strict and string.index($state, ':') != 1 {
+    @return false;
+  }
+
+  $state: if(string.index($state, ":"), string.slice($state, 2), $state);
+  $state: if(string.index($state, ":"), string.slice($state, 2), $state);
+
+  @if list.index($css-states, $state) {
+    @return true;
+  }
+
+  @if
+    string.index($state, "lang(") == 1 or
+    string.index($state, "not(") == 1 or
+    string.index($state, "lang(") == 1 or
+    string.index($state, "not(") == 1 or
+    string.index($state, "nth-child(") == 1 or
+    string.index($state, "nth-last-child(") == 1 or
+    string.index($state, "nth-last-of-type(") == 1 or
+    string.index($state, "nth-of-type(") == 1 {
+    @return true;
+  }
+
+  @return false;
+}

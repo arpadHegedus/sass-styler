@@ -1,0 +1,12 @@
+@use "sass:color";
+@use "../math/pow" as *;
+
+/// Return an RGB channel processed as XYZ
+/// @param {number} $channel Channel value
+/// @return {list}
+
+@function xyz($channel) {
+  $channel: $channel / 255;
+
+  @return if($channel <= 0.03928, $channel / 12.92, pow((($channel + 0.055) / 1.055), 2.4));
+}

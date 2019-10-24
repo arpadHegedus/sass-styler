@@ -1,0 +1,6 @@
+@use "script-direction" as *;
+
+@mixin unstyled-list() {
+  list-style: none;
+  padding-#{script-direction()}: 0;
+}

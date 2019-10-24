@@ -1,0 +1,5 @@
+@use "sass:color";
+
+@function complement($color) {
+  @return color.complement($color);
+}

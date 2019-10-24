@@ -1,0 +1,5 @@
+@mixin select-odd($selector: "&") {
+  #{$selector}:nth-child(odd) {
+    @content;
+  }
+}
