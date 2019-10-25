@@ -1,6 +1,6 @@
 {
   "name": "sass-styler",
-  "version": "2.0.1",
+  "version": "2.0.0-rc2",
   "description": "A collection of useful scss",
   "main": "styler.scss",
   "repository": {
@@ -8,8 +8,8 @@
     "url": "git+https://hegedusarpad@bitbucket.org/hegedusarpad/sass-styler.git"
   },
   "keywords": [
-    "scss",
     "sass",
+    "scss",
     "styler",
     "frontend"
   ],

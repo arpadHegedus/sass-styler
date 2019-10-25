@@ -9,15 +9,23 @@ $spacing-mode: vertical !default;
   $mode: null,
   $selector: (h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details)
 ) {
+  $owl-selector: ();
   $space: if($space, $space, $spacing);
   $mode: if($mode, $mode, $spacing-mode);
 
+  @debug $mode;
+
   @if $mode == owl {
-    $selector: owl($selector);
+    $owl-selector: owl($selector);
   }
 
   @if $mode == vertical or $mode == top or $mode == bottom or $mode == owl {
     #{$selector} {
+      margin-top: if($mode != vertical and $mode != top, 0, null);
+      margin-bottom: if($mode != vertical and $mode != bottom, 0, null);
+    }
+
+    #{if($mode == owl, $owl-selector, $selector)} {
       margin-top: if($mode != bottom, $space, null);
       margin-bottom: if($mode == bottom or $mode == vertical, $space, null);
     }
