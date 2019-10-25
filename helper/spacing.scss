@@ -2,19 +2,18 @@ $spacing: null !default;
 $spacing-mode: vertical !default;
 
 @use "sass:list";
-@use "../select/select-owl" as *;
+@use "../utility/owl" as *;
 
 @mixin spacing(
   $space: null,
   $mode: null,
   $selector: (h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details)
 ) {
-  $owl-selector: ();
   $space: if($space, $space, $spacing);
   $mode: if($mode, $mode, $spacing-mode);
 
   @if $mode == owl {
-    $selector: owl($owl-selector);
+    $selector: owl($selector);
   }
 
   @if $mode == vertical or $mode == top or $mode == bottom or $mode == owl {
