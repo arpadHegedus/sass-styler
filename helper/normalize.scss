@@ -28,7 +28,7 @@ $defaults: (
   vertical-align: middle,
   /* bold elements */
   bold: (
-    font-weight: bolder
+    font-weight: 700
   ),
   /* italic elements */
   italic: (
@@ -58,7 +58,7 @@ $defaults: (
   /* superscript */
   sup: (
     position: relative,
-    top: 0.5em,
+    top: -0.5em,
     vertical-align: baseline,
     line-height: 0,
     font-size: 75%
