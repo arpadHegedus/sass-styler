@@ -7,24 +7,27 @@ $container: (
 $container-default: normal !default;
 
 @use "sass:map";
+@use "../utility/same-units" as *;
 
-@mixin container($width: null, $padding: null, $selector: "> div") {
+@mixin container($width: null, $padding: null) {
   $width: if(
-    $width and map.has-key($container, $width), 
-    map.get($container, $width), 
+    $width and map.has-key($container, $width),
+    map.get($container, $width),
     if(
-      $width, 
-      $width, 
+      $width,
+      $width,
       map.get($container, $container-default)
     )
   );
   $padding: if($padding, $padding, map.get($container, padding));
 
-  padding-right: $padding;
-  padding-left: $padding;
+  max-width: $width;
+  margin-right: $padding;
+  margin-left: $padding;
 
-  #{$selector} {
-    max-width: $width;
+  $min-width: if(same-units($width, $padding), $width + 2 * $padding, calc($width + 2 * $padding));
+
+  @media only screen and (min-width: #{$min-width}) {
     margin-right: auto;
     margin-left: auto;
   }

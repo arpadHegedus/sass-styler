@@ -1,0 +1,21 @@
+@mixin extended-background($background, $position: relative, $z-index: 1) {
+  position: $position;
+  z-index: $z-index;
+  background: $background;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 50rem;
+    background: $background;
+  }
+
+  &::before {
+    right: 50%;
+  }
+
+  &::after {
+    left: 50%;
+  }
+}

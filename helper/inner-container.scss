@@ -1,0 +1,24 @@
+@use "container" as *;
+@use "sass:map";
+
+@mixin inner-container($width: null, $padding: null, $selector: "> div") {
+  $width: if(
+    $width and map.has-key($container, $width),
+    map.get($container, $width),
+    if(
+      $width,
+      $width,
+      map.get($container, $container-default)
+    )
+  );
+  $padding: if($padding, $padding, map.get($container, padding));
+
+  padding-right: $padding;
+  padding-left: $padding;
+
+  #{$selector} {
+    max-width: $width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

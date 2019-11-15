@@ -3,12 +3,14 @@
 @forward "helper/clearfix";
 @forward "helper/container";
 @forward "helper/cover-link";
+@forward "helper/extended-background";
 @forward "helper/flex-grid";
 @forward "helper/hardware-accelerate";
 @forward "helper/hide-text-except-pseudo";
 @forward "helper/hide-visually";
 @forward "helper/horizontal-list";
 @forward "helper/increment-z-index";
+@forward "helper/inner-container";
 @forward "helper/loader";
 @forward "helper/long-shadow";
 @forward "helper/media";
@@ -19,7 +21,6 @@
 @forward "helper/pseudo";
 @forward "helper/responsive-ratio";
 @forward "helper/script-direction";
-@forward "helper/single-container";
 @forward "helper/spacing";
 @forward "helper/triangle";
 @forward "helper/truncate";

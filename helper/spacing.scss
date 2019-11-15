@@ -13,8 +13,6 @@ $spacing-mode: vertical !default;
   $space: if($space, $space, $spacing);
   $mode: if($mode, $mode, $spacing-mode);
 
-  @debug $mode;
-
   @if $mode == owl {
     $owl-selector: owl($selector);
   }
