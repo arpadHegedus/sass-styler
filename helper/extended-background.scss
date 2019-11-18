@@ -1,13 +1,19 @@
 @mixin extended-background($background, $position: relative, $z-index: 1) {
   position: $position;
-  z-index: $z-index;
   background: $background;
+
+  > * {
+    position: $position;
+    z-index: $z-index;
+  }
 
   &::before,
   &::after {
+    content: "";
     position: absolute;
     top: 0;
     width: 50rem;
+    height: 100%;
     background: $background;
   }
 

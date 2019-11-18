@@ -1,0 +1,8 @@
+@use "../utility/inline-svg" as *;
+
+/// Base64 encode svg code
+/// @param {String} $svg - The svg code
+
+@function inline-svg-url($svg) {
+  @return url(inline-svg($svg));
+}

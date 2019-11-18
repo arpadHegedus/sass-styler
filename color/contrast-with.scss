@@ -1,6 +1,6 @@
 @use "sass:color";
 @use "sass:math";
-@use "../utility/clip-number" as *;
+@use "../math/clip-number" as *;
 @use "contrast-ratio-by-name" as *;
 @use "is-contrasting" as *;
 @use "luminance" as *;

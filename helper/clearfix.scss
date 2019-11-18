@@ -1,3 +1,6 @@
+/// Prevent elements flowing around floating elements
+/// @param {String} $selector ["&::after"] The selector for the code to be added
+
 @mixin clearfix($selector: "&::after") {
   #{$selector} {
     content: "";

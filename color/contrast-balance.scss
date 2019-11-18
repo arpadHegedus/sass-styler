@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "../utility/is-between" as *;
+@use "../math/is-between" as *;
 @use "contrast-with" as *;
 @use "is-contrasting" as *;
 @use "luminance" as *;

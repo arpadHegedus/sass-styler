@@ -9,6 +9,10 @@ $container-default: normal !default;
 @use "sass:map";
 @use "../utility/same-units" as *;
 
+/// Create a width-limited container with padding on smaller screens
+/// @param {number} $width [null] The width-limit
+/// @param {number} $padding [null] the padding size
+
 @mixin container($width: null, $padding: null) {
   $width: if(
     $width and map.has-key($container, $width),

@@ -1,0 +1,12 @@
+@use "str-replace" as *;
+
+/// Base64 encode svg code
+/// @param {String} $svg - The svg code
+
+@function inline-svg($svg) {
+  $svg: str-replace($svg, "<", "%3C");
+  $svg: str-replace($svg, ">", "%3E");
+  $svg: str-replace($svg, '"', "'");
+
+  @return "data:image/svg+xml,#{$svg}";
+}

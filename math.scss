@@ -2,6 +2,7 @@
 @forward "math/asin";
 @forward "math/atan";
 @forward "math/atan2";
+@forward "math/clip-number";
 @forward "math/constants";
 @forward "math/cos";
 @forward "math/cot";
@@ -12,6 +13,7 @@
 @forward "math/fact";
 @forward "math/frexp";
 @forward "math/gcd";
+@forward "math/is-between";
 @forward "math/lcm";
 @forward "math/ldexp";
 @forward "math/log-approx";

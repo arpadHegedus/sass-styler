@@ -3,8 +3,8 @@
 @use "luminance" as *;
 @use "srgb" as *;
 @use "xyz" as *;
-@use "../utility/clip-number" as *;
-@use "../utility/is-between" as *;
+@use "../math/clip-number" as *;
+@use "../math/is-between" as *;
 
 /// Scale a luminance of a color by a set value
 /// @param {color} $color Color

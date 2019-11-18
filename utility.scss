@@ -1,5 +1,4 @@
 @forward "utility/bottom-side";
-@forward "utility/clip-number";
 @forward "utility/color-from";
 @forward "utility/declare-map";
 @forward "utility/emtopx";
@@ -8,7 +7,7 @@
 @forward "utility/get";
 @forward "utility/grid-column-width";
 @forward "utility/horizontal-sides";
-@forward "utility/is-between";
+@forward "utility/inline-svg";
 @forward "utility/is-property";
 @forward "utility/is-state";
 @forward "utility/left-side";
@@ -24,6 +23,7 @@
 @forward "utility/same-units";
 @forward "utility/set";
 @forward "utility/sides";
+@forward "utility/str-replace";
 @forward "utility/top-side";
 @forward "utility/unique-id";
 @forward "utility/vertical-sides";
