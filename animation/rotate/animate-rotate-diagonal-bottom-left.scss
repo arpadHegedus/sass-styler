@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate rotate diagonal bottom left
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-rotate-diagonal-bottom-left($animation-settings: null) {
   @include animation-name-or-shorthand(rotate-diagonal-bl, $animation-settings);
 

@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate color change 4x
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-color-change-4x($animation-settings: null) {
   @include animation-name-or-shorthand(color-change-4x, $animation-settings);
 

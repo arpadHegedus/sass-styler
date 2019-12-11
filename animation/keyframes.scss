@@ -2,6 +2,9 @@
 
 $_keyframes: ();
 
+/// Add CSS animation only once
+/// @param {String} $name The animation name
+
 @mixin keyframes($name) {
   @if not map.has-key($_keyframes, $name) {
     @keyframes #{$name} {

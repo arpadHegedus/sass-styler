@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate scale down center
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-scale-down-center($animation-settings: null) {
   @include animation-name-or-shorthand(scale-down-center, $animation-settings);
 

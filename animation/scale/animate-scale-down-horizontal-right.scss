@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate scale down horizontal right
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-scale-down-horizontal-right($animation-settings: null) {
   @include animation-name-or-shorthand(scale-down-hor-right, $animation-settings);
 

@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate flip in vertical left
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-flip-in-vertical-left($animation-settings: null) {
   @include animation-name-or-shorthand(flip-in-ver-left, $animation-settings);
 

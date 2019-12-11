@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate tracking in expand forward
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-tracking-in-expand-forward($animation-settings: null) {
   @include animation-name-or-shorthand(tracking-in-expand-fwd, $animation-settings);
 

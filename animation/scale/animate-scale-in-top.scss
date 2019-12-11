@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate scale in top
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-scale-in-top($animation-settings: null) {
   @include animation-name-or-shorthand(scale-in-top, $animation-settings);
 

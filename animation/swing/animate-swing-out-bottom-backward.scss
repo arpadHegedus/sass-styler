@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate swing out bottom backward
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-swing-out-bottom-backward($animation-settings: null) {
   @include animation-name-or-shorthand(swing-out-bottom-bck, $animation-settings);
 

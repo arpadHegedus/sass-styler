@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate rotate out 2 top left counter clock wise
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-rotate-out-2-top-left-counter-clock-wise($animation-settings: null) {
   @include animation-name-or-shorthand(rotate-out-2-tl-counter-clock-wise, $animation-settings);
 

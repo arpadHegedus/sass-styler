@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate focus in contract backward
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-focus-in-contract-backward($animation-settings: null) {
   @include animation-name-or-shorthand(focus-in-contract-bck, $animation-settings);
 

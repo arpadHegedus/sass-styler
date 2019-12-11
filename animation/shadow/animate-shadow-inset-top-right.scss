@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate shadow inset top right
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-shadow-inset-top-right($animation-settings: null) {
   @include animation-name-or-shorthand(shadow-inset-tr, $animation-settings);
 

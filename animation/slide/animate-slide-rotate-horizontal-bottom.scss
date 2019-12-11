@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate slide rotate horizontal bottom
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-slide-rotate-horizontal-bottom($animation-settings: null) {
   @include animation-name-or-shorthand(slide-rotate-hor-bottom, $animation-settings);
 

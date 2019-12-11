@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate fade in right
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-fade-in-right($animation-settings: null) {
   @include animation-name-or-shorthand(fade-in-right, $animation-settings);
 

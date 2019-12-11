@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate flip vertical forward
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-flip-vertical-forward($animation-settings: null) {
   @include animation-name-or-shorthand(flip-vertical-fwd, $animation-settings);
 

@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate bg pan bottom
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-bg-pan-bottom($animation-settings: null) {
   @include animation-name-or-shorthand(bg-pan-bottom, $animation-settings);
 

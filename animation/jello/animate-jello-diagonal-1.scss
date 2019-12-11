@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate jello diagonal 1
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-jello-diagonal-1($animation-settings: null) {
   @include animation-name-or-shorthand(jello-diagonal-1, $animation-settings);
 

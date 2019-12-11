@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate rotate scale down diagonal 2
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-rotate-scale-down-diagonal-2($animation-settings: null) {
   @include animation-name-or-shorthand(rotate-scale-down-diag-2, $animation-settings);
 

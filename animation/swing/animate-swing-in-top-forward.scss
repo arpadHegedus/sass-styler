@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate swing in top forward
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-swing-in-top-forward($animation-settings: null) {
   @include animation-name-or-shorthand(swing-in-top-fwd, $animation-settings);
 

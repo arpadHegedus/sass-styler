@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate rotate 90 top right clock wise
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-rotate-90-top-right-clock-wise($animation-settings: null) {
   @include animation-name-or-shorthand(rotate-90-tr-clock-wise, $animation-settings);
 

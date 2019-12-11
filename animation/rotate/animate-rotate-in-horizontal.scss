@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate rotate in horizontal
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-rotate-in-horizontal($animation-settings: null) {
   @include animation-name-or-shorthand(rotate-in-hor, $animation-settings);
 

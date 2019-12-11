@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate slide out left
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-slide-out-left($animation-settings: null) {
   @include animation-name-or-shorthand(slide-out-left, $animation-settings);
 

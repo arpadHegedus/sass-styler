@@ -1,6 +1,10 @@
 @use "../keyframes" as *;
 @use "../animation-name-or-shorthand" as *;
 
+/// Animate flip diagonal 2 bottom right
+/// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @link https://animista.net/
+
 @mixin animate-flip-diagonal-2-bottom-right($animation-settings: null) {
   @include animation-name-or-shorthand(flip-diagonal-2-br, $animation-settings);
 
