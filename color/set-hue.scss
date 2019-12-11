@@ -1,9 +1,9 @@
 @use "sass:color";
 
 /// Set the hue value of a color
-/// @param {color} $color Color
-/// @param {number} $hue Hue
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $hue Hue
+/// @return {Color}
 
 @function set-hue($color, $hue) {
   @return hsla($hue, color.saturation($color), color.lightness($color), color.alpha($color));

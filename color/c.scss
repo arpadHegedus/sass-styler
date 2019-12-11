@@ -19,6 +19,21 @@ $palette: (
 @use "triad" as *;
 @use "weaken" as *;
 
+/// A color short function
+/// @param {Color} $color The base color
+/// @param {Number} $strength [null] Strength change value
+/// @param {Number} $shade [null] Shade value
+/// @param {Number} $tint [null] Tint value
+/// @param {Number} $triad [null] Triad value
+/// @param {Number} $tetrad [null] Tetrad value
+/// @param {Boolean} $complement [null] Whether to get the complementary color
+/// @param {Number} $hue [null] hue value
+/// @param {Number} $saturation [null] Saturation value
+/// @param {Number} $lightness [null] Lightness value
+/// @param {Color|List} $best-contrast [null] Contrasting candidates
+/// @param {Color} $contrast-with [null] Target color
+/// @return {Color}
+
 @function c(
   $color,
   $strength: null,

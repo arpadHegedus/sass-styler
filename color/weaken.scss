@@ -3,9 +3,9 @@
 @use "tint" as *;
 
 /// Make a dark color lighter or a light color darker
-/// @param {color} $color Color
-/// @param {number} $ratio Ratio (default: 10)
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $ratio [10] Ratio
+/// @return {Color}
 
 @function weaken($color, $ratio: 10) {
   @if luminance($color) > 0.5 {

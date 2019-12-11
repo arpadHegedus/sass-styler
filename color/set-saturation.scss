@@ -2,9 +2,9 @@
 @use "sass:math";
 
 /// Set the saturation value of a color
-/// @param {color} $color Color
-/// @param {number} $saturation Saturation
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $saturation Saturation
+/// @return {Color}
 
 @function set-saturation($color, $saturation) {
   @if math.is-unitless($saturation) {

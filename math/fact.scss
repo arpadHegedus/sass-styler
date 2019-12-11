@@ -2,10 +2,11 @@
 
 /// Returns the factorial of a non-negative integer
 /// @example
-///   fact(0) // 1
-///   fact(8) // 40320
-/// @param {number} $x X
-/// @return {number}
+///   fact(0) /// 1
+///   fact(8) /// 40320
+/// @param {Number} $x X
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_fact.scss
 
 @function fact($x) {
   @if $x < 0 or $x != math.floor($x) {

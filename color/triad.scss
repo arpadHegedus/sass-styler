@@ -1,9 +1,9 @@
 @use "sass:color";
 
 /// Get the triad pairs of a color
-/// @param {color} $color Color
-/// @param {number} $step Which triad to get (default: 1)
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $step [1] Which triad to get
+/// @return {Color}
 
 @function triad($color, $step: 1) {
   @return color.adjust($color, $hue: $step * 120);

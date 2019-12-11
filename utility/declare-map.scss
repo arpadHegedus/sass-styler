@@ -3,6 +3,16 @@
 @use "is-property" as *;
 @use "is-state" as *;
 
+/// Declare properties via sass maps
+/// @example
+///   @include declare-map((color: red, margin: 0)) /// color: red; margin: 0;
+/// @example
+///   @include declare-map((color: red, hover: (color: blue))) /// color: red; &:hover { color: blue; }
+/// @example
+///   @include declare-map((color: red, hover-focus: (color: blue))) /// color: red; &:hover, &:focus { color: blue; }
+/// @param {Map} $map [()] Property declaration
+/// @param {Boolean} $strict [true] Whether to check for valid html
+
 @mixin declare-map($map: (), $strict: true) {
   @each $key, $value in $map {
     @if $key and $map {

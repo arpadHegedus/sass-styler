@@ -1,6 +1,7 @@
 /// Returns a two-element list containing the normalized fraction and exponent of number
-/// @param {number} $x X
-/// @return {list}
+/// @param {Number} $x X
+/// @return {List}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_frexp.scss
 
 @function frexp($x) {
   $exp: 0;

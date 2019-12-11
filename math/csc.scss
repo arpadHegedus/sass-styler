@@ -3,10 +3,11 @@
 
 /// Returns the cosecant of a number
 /// @example
-///   csc(1.0472) // 1.1547
-///   csc(60deg)  // 1.1547
-/// @param {number} $x X
-/// @return {number}
+///   csc(1.0472) /// 1.1547
+///   csc(60deg)  /// 1.1547
+/// @param {Number} $x X
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_csc.scss
 
 @function csc($x) {
   $x: unitless-rad($x);

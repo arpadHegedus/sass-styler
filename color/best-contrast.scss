@@ -2,10 +2,10 @@
 @use "contrast" as *;
 
 /// Get the best contrasting color from a list of colors compared to a base
-/// @param {color} $base Base color
-/// @param {color|list} $colors Contrasting candidates (default: #fff #000)
-/// @param {number} $tolerance Tolerance of checks
-/// @return {color}
+/// @param {Color} $base Base color
+/// @param {Color|List} $colors [#fff, #000] Contrasting candidates (default: #fff #000)
+/// @param {Number} $tolerance [0] Tolerance of checks
+/// @return {Color}
 
 @function best-contrast($base, $colors: #fff #000, $tolerance: 0) {
   $best: list.nth($colors, 1);

@@ -2,9 +2,9 @@
 @use "sass:math";
 
 /// Set the lightness value of a color
-/// @param {color} $color Color
-/// @param {number} $lightness Lightness
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $lightness Lightness
+/// @return {Color}
 
 @function set-lightness($color, $lightness) {
   @if math.is-unitless($lightness) {

@@ -1,5 +1,10 @@
 @use "sass:color";
 
+/// Desaturate a color
+/// @param {Color} $color The base color
+/// @param {Number} $amount The amount of desaturation
+/// @return {Color}
+
 @function desaturate($color, $amount) {
   @return color.desaturate($color, $amount);
 }

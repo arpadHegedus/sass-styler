@@ -3,9 +3,9 @@
 @use "tint" as *;
 
 /// Make a dark color darker or a light color lighter
-/// @param {color} $color Color
-/// @param {number} $ratio Ratio (default: 10)
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $ratio [50] Ratio
+/// @return {Color}
 
 @function strengthen($color, $ratio: 10) {
   @if luminance($color) > 0.5 {

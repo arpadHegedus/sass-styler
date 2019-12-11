@@ -2,8 +2,8 @@
 @use "xyz" as *;
 
 /// Returns XYZ value to RGB channel
-/// @param {color} $color Color
-/// @return {number}
+/// @param {Color} $color Color
+/// @return {Number}
 
 @function luminance($color) {
   $red:   xyz(color.red($color));

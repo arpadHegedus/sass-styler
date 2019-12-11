@@ -3,9 +3,9 @@
 @use "luminance" as *;
 
 /// Get the contrast between 2 colors
-/// @param {color} $color1 Color 1
-/// @param {color} $color2 Color 2
-/// @return {number}
+/// @param {Color} $color1 Color 1
+/// @param {Color} $color2 Color 2
+/// @return {Number}
 
 @function contrast($color1, $color2) {
   $lum1: luminance($color1);

@@ -7,9 +7,9 @@
 @use "../math/is-between" as *;
 
 /// Scale a luminance of a color by a set value
-/// @param {color} $color Color
-/// @param {number} $luminance Luminance
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $luminance Luminance
+/// @return {Color}
 
 @function scale-luminance($color, $luminance) {
   $scale: $luminance / luminance($color);

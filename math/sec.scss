@@ -3,10 +3,11 @@
 
 /// Returns the secant of a number
 /// @example
-///   sec(0.7854) // 1.41422
-///   sec(45deg)  // 1.41422
-/// @param {number} $x X
-/// @return {number}
+///   sec(0.7854) /// 1.41422
+///   sec(45deg)  /// 1.41422
+/// @param {Number} $x X
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_sec.scss
 
 @function sec($x) {
   $x: unitless-rad($x);

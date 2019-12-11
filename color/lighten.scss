@@ -1,5 +1,10 @@
 @use "sass:color";
 
+/// Lighten a color
+/// @param {Color} $color The base color
+/// @param {Number} $amount The amount of lighten
+/// @return {Color}
+
 @function lighten($color, $amount) {
   @return color.adjust($color, $lighten: $amount);
 }

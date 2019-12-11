@@ -1,7 +1,7 @@
 @use "str-replace" as *;
 
 /// Base64 encode svg code
-/// @param {String} $svg - The svg code
+/// @param {String} $svg The svg code
 
 @function inline-svg($svg) {
   $svg: str-replace($svg, "<", "%3C");

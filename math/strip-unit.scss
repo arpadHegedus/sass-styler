@@ -3,12 +3,13 @@
 
 /// Remove units from a number
 /// @example
-///   strip-unit(12px)    // 12
-///   strip-unit(-12em)   // -12
-///   strip-unit(12rem)   // 12
-///   strip-unit(2.2deg)  // 2.2
-/// @param {number} $number Number with a unit
-/// @return {number}
+///   strip-unit(12px)    /// 12
+///   strip-unit(-12em)   /// -12
+///   strip-unit(12rem)   /// 12
+///   strip-unit(2.2deg)  /// 2.2
+/// @param {Number} $number Number with a unit
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
 
 @function strip-unit($number) {
   @if meta.type-of($number) == number and not math.is-unitless($number) {

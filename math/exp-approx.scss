@@ -1,6 +1,7 @@
 /// A good approximation for $x close to 0
-/// @param {number} $x X
-/// @return {number}
+/// @param {Number} $x X
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_exp.scss
 
 @function exp-approx($x) {
   $ret: 0;

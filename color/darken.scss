@@ -1,5 +1,10 @@
 @use "sass:color";
 
+/// Darken color
+/// @param {Color} $color The base color
+/// @param {Number} $amount The amount of darkening
+/// @return {Color}
+
 @function darken($color, $amount) {
   @return color.darken($color, $amount);
 }

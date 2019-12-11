@@ -6,11 +6,11 @@
 
 /// Change 2 colors contrast ratio by weighted balance(0-100)
 /// 0 means only second color is changed, while 100 means only the first one
-/// @param {color} $color1 Color 1
-/// @param {color} $color2 Color 2
-/// @param {number|string} $ratio Name or value of contrast ratio
-/// @param {number} $balance Balance (default: 50)
-/// @return {list}
+/// @param {Color} $color1 Color 1
+/// @param {Color} $color2 Color 2
+/// @param {Number|String} $ratio ["AA"] Name or value of contrast ratio
+/// @param {Number} $balance [50] Balance
+/// @return {List}
 
 @function contrast-balance($color1, $color2, $ratio: "AA", $balance: 50) {
   $fixed1: contrast-with($color1, $color2, $ratio);

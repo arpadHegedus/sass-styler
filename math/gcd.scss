@@ -1,9 +1,10 @@
 /// Returns the greatest common divisor
 /// @example
-///     gcd(2, 3)   // 1
-///     gcd(54, 24) // 6
+///     gcd(2, 3)   /// 1
+///     gcd(54, 24) /// 6
 /// @param {Number} $a A
 /// @param {Number} $b B
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_gcd.scss
 
 @function gcd($a, $b) {
   @return if($b == 0, $a, gcd($b, $a % $b));

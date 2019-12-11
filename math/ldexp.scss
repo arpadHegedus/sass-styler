@@ -1,9 +1,10 @@
 @use "sass:math";
 
 /// Returns $x * 2^$exp
-/// @param {number} $x X
-/// @param {number} $exp Extp
-/// @return {number}
+/// @param {Number} $x X
+/// @param {Number} $exp Extp
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_ldexp.scss
 
 @function ldexp($x, $exp) {
   $b: if($exp >= 0, 2, 1 / 2);

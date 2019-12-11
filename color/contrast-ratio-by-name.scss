@@ -1,6 +1,6 @@
 /// Get a contrast ratio by its official codename
-/// @param {string} $ratio Ratio
-/// @return {string}
+/// @param {String} $ratio Ratio
+/// @return {String}
 
 @function contrast-ratio-by-name($ratio) {
   @if $ratio == "AA" or $ratio == "AAALG" {

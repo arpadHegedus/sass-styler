@@ -1,5 +1,8 @@
 @use "sass:meta";
 
+/// Get the color value from a list like border or background
+/// @param {Color|List} $value The list value
+
 @function color-from($value) {
   @if meta.type-of($value) == color {
     @return $value;

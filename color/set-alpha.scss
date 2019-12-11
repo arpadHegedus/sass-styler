@@ -2,9 +2,9 @@
 @use "sass:math";
 
 /// Set the alpha value of a color
-/// @param {color} $color Color
-/// @param {number} $alpha Alpha
-/// @return {color}
+/// @param {Color} $color Color
+/// @param {Number} $alpha Alpha
+/// @return {Color}
 
 @function set-alpha($color, $alpha) {
   @if math.is-unitless($alpha) {

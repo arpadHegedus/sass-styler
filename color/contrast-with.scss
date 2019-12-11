@@ -8,11 +8,11 @@
 @use "scale-luminance" as *;
 
 /// Adjust color towards a target color until it reaches a contrast ratio
-/// @param {color} $color Color
-/// @param {color} $target Target color
-/// @param {string|number} $ratio Contrast ratio
-/// @param {number} $iterations Iteration count for checking
-/// @return {number}
+/// @param {Color} $color Color
+/// @param {Color} $target [#fff] Target color
+/// @param {String|Number} $ratio ["AA"] Contrast ratio
+/// @param {Number} $iterations [5] Iteration count for checking
+/// @return {Number}
 
 @function contrast-with($color, $target: #fff, $ratio: "AA", $iterations: 5) {
   $ratio: contrast-ratio-by-name($ratio);

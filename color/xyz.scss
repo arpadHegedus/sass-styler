@@ -2,8 +2,8 @@
 @use "../math/pow" as *;
 
 /// Return an RGB channel processed as XYZ
-/// @param {number} $channel Channel value
-/// @return {list}
+/// @param {Number} $channel Channel value
+/// @return {List}
 
 @function xyz($channel) {
   $channel: $channel / 255;
