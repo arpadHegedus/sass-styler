@@ -4,6 +4,15 @@
 @use "sass:math";
 @use "inline-svg-url" as *;
 
+/// Add an angled edge to a container using a generated SVG
+/// @param {Color} $fill The color of the angled area
+/// @param {Number} $height [50] The height of the angled area
+/// @param {String} $location [outside-top] Where to put the angle (outside-top, outside-bottom, inside-top, inside-bottom)
+/// @param {Srting} $hypotenuse [upper-left] The hypotenuse of the angled area (upper-left, upper-right, lower-left, lower-right)
+/// @param {Number} $width [null] The width of the angled area
+/// @param {String|List} $selector ["&::after"] The selector the angled area should be generated in
+/// @group helper
+
 @mixin angled-edge(
   $fill,
   $height: 50,

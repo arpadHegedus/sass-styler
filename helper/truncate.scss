@@ -1,3 +1,7 @@
+/// Truncate text in a container
+/// @param {Number} $width [100%] The max-width of the container
+/// @group helper
+
 @mixin truncate($width: 100%) {
   max-width: $width;
   white-space: nowrap;

@@ -3,6 +3,7 @@
 
 /// Animate roll out blurred left
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-roll-out-blurred-left($animation-settings: null) {

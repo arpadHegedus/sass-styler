@@ -7,6 +7,7 @@
 /// @param {Number} $a A
 /// @param {Number} $b B
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_lcm.scss
+/// @group math
 
 @function lcm($a, $b) {
   @return $a * $b / gcd($a, $b);

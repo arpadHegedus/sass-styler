@@ -3,6 +3,7 @@
 
 /// Animate shake left right
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-shake-left-right($animation-settings: null) {

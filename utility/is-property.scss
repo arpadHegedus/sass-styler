@@ -1,3 +1,6 @@
+/// All CSS properties
+/// @group utility
+
 $css-properties: (
   align-content,
   align-items,
@@ -554,6 +557,11 @@ $css-properties: (
 @use "sass:list";
 @use "sass:meta";
 @use "sass:string";
+
+/// Check whether a property is valid in CSS3
+/// @param {String} $property The property
+/// @return {Boolean}
+/// @group utility
 
 @function is-property($property) {
   @if meta.type-of($property) != string {

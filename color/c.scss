@@ -1,3 +1,6 @@
+/// The color palette of named colors
+/// @group color
+
 $palette: (
   black: #000,
   white: #fff
@@ -33,6 +36,7 @@ $palette: (
 /// @param {Color|List} $best-contrast [null] Contrasting candidates
 /// @param {Color} $contrast-with [null] Target color
 /// @return {Color}
+/// @group color
 
 @function c(
   $color,

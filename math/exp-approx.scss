@@ -2,6 +2,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_exp.scss
+/// @group math
 
 @function exp-approx($x) {
   $ret: 0;

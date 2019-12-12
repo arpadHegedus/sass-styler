@@ -1,3 +1,6 @@
+/// Normalize options to set up default element styles with
+/// @group helper
+
 $normalize: () !default;
 
 @use "sass:map";
@@ -7,7 +10,10 @@ $normalize: () !default;
 @use "script-direction" as *;
 @use "spacing" as *;
 
-$defaults: (
+/// The default normalize options
+/// @group helper
+
+$_defaults: (
   /* prevent ios and windows phone text size changes on orientation change */
   -ms-text-size-adjust: 100%,
   -webkit-text-size-adjust: 100%,
@@ -200,7 +206,7 @@ $defaults: (
   /* table */
   table: (
     text-align: inherit,
-    /* prevent incomatibilties with border behaviour */
+    /* prevent incompatibilties with border behaviour */
     border-collapse: collapse,
     border-spacing: 0
   ),
@@ -218,8 +224,11 @@ $defaults: (
   )
 );
 
+/* Normalize with configurable  */
+/* @group helper */
+
 @mixin normalize() {
-  $settings: merge($defaults, $normalize);
+  $settings: merge($_defaults, $normalize);
 
   /* stylelint-disable no-descending-specificity */
 

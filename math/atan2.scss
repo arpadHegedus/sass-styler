@@ -13,6 +13,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_atan2.scss
+/// @group math
 
 @function atan2($y, $x) {
   @if $x > 0 {

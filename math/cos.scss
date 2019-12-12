@@ -8,6 +8,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_cos.scss
+/// @group math
 
 @function cos($x) {
   $x: unitless-rad($x) % ($PI * 2);

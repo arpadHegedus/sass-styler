@@ -1,3 +1,10 @@
+/// Select all elements before a specific nth value
+/// @param {Number} $nth The nth element
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
+
 @mixin select-before($nth, $selector: "&") {
   #{$selector}:nth-last-child(#{$nth}) {
     @content;

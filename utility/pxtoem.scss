@@ -4,6 +4,12 @@
 @use "../helper/normalize";
 @use "../math/strip-unit" as *;
 
+/// Px to Em calculation
+/// @param {Number} $px Size value
+/// @param {Number} $default [null] Set a default, otherwise styler:normalize.$normalize.font-size will be used
+/// @return {Number}
+/// @group utility
+
 @function pxtoem($px, $default: null) {
   $default: if(
     $default,

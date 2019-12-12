@@ -3,6 +3,7 @@
 
 /// Animate rotate 90 bottom right counter clock wise
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-rotate-90-bottom-right-counter-clock-wise($animation-settings: null) {

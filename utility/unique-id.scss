@@ -2,19 +2,26 @@
 @use "sass:list";
 @use "sass:string";
 
-$unique-ids: ();
+/// Unique IDs cache
+/// @group utility
+
+$_unique-ids: ();
+
+/// Generate a unique ID depending on passed-in attributes
+/// @param {Mixed} $values... Attributes
+/// @group utility
 
 @function unique-id($values...) {
 
-  $found: list.index(map.values($unique-ids), $values);
+  $found: list.index(map.values($_unique-ids), $values);
 
   @if $found {
-    @return list.nth(list.nth($unique-ids, $found), 1);
+    @return list.nth(list.nth($_unique-ids, $found), 1);
   }
 
   @else {
     $id: string.unique-id();
-    $unique-ids: map.merge($unique-ids, ($id: $values)) !global;
+    $_unique-ids: map.merge($_unique-ids, ($id: $values)) !global;
 
     @return $id;
   }

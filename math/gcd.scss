@@ -5,6 +5,7 @@
 /// @param {Number} $a A
 /// @param {Number} $b B
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_gcd.scss
+/// @group math
 
 @function gcd($a, $b) {
   @return if($b == 0, $a, gcd($b, $a % $b));

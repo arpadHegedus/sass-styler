@@ -3,6 +3,7 @@
 /// Set box shadow per a depth level
 /// @param {Number} $depth [1] - The depth from 1 to 5
 /// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/
+/// @group helper
 
 @mixin depth-shadow($depth: 1) {
   $d: clip-number($depth, 0, 5);

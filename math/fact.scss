@@ -7,6 +7,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_fact.scss
+/// @group math
 
 @function fact($x) {
   @if $x < 0 or $x != math.floor($x) {

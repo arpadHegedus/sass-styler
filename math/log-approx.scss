@@ -1,8 +1,8 @@
-/// A good aproximation for $x close to 1.
-/// @group math
+/// A good aproximation for $x close to 1
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_log.scss
+/// @group math
 
 @function log-approx($x) {
   $x: ($x - 1) / ($x + 1);

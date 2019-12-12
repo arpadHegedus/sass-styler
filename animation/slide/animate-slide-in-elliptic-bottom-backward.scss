@@ -3,6 +3,7 @@
 
 /// Animate slide in elliptic bottom backward
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-slide-in-elliptic-bottom-backward($animation-settings: null) {

@@ -144,11 +144,19 @@ $selectors: (
 
 @use "sass:map";
 
+/// Get selectors from a named selector group
+/// @param {String} $id Selector group id
+/// @group select
+
 @mixin select($id) {
   #{select($id)} {
     @content;
   }
 }
+
+/// Get selectors from a named selector group
+/// @param {String} $id Selector group id
+/// @group select
 
 @function select($id) {
   @if map.has-key($selectors, $id) {

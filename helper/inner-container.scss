@@ -1,6 +1,12 @@
 @use "container" as *;
 @use "sass:map";
 
+/// Set styles for containers without media queries where you use a main and a wrapper element
+/// @param {Number} $width [null] Max-width value
+/// @param {Number} $padding [null] Padding value
+/// @param {String|List} $selector [">div"] The inner element selector within the wrapper
+/// @group helper
+
 @mixin inner-container($width: null, $padding: null, $selector: "> div") {
   $width: if(
     $width and map.has-key($container, $width),

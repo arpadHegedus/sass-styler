@@ -1,3 +1,8 @@
+/// Select all even nth elements
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
 @mixin select-even($selector: "&") {
   #{$selector}:nth-child(even) {
     @content;

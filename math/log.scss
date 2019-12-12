@@ -9,11 +9,11 @@
 ///   log(2)     /// 0.69315
 ///   log(10)    /// 2.30259
 ///   log(2, 10) /// 0.30103
-/// @group math
 /// @param {Number} $x X
 /// @param {Null|Number} $b B
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_log.scss
+/// @group math
 
 @function log($x, $b: null) {
   @if $b != null {

@@ -1,5 +1,11 @@
 @use "sass:math";
 
+/// Check whether 2 numbers have the same units
+/// @param {Number} $number Number 1
+/// @param {Number} $number2 Number 2
+/// @return {Boolean}
+/// @group utility
+
 @function same-units($number, $number2) {
   @return math.unit($number) == math.unit($number2);
 }

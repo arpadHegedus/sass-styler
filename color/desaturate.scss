@@ -4,6 +4,7 @@
 /// @param {Color} $color The base color
 /// @param {Number} $amount The amount of desaturation
 /// @return {Color}
+/// @group color
 
 @function desaturate($color, $amount) {
   @return color.desaturate($color, $amount);

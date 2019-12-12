@@ -7,11 +7,11 @@
 ///   pow(4, 2)   /// 16
 ///   pow(4, -2)  /// 0.0625
 ///   pow(4, 0.2) /// 1.31951
-/// @group math
 /// @param {Number} $base Base
 /// @param {Number} $exp Exponent
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_pow.scss
+/// @group math
 
 @function pow($base, $exp) {
   @if $exp == math.floor($exp) {

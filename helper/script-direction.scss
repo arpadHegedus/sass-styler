@@ -1,8 +1,14 @@
+/// Default script direction
+/// @group helper
+
 $script-direction: ltr !default;
 
 @use "sass:map";
 
-$script-direction-map: (
+/// A map to get forward and backward values for ltr and rtl
+/// @group helper
+
+$_script-direction-map: (
   ltr: (
     forward: left,
     backward: right
@@ -13,8 +19,13 @@ $script-direction-map: (
   )
 );
 
+/// Get the current script direction
+/// @param {String} $way [forward] Whether to get the direction or the opposite
+/// @param {String} $direction [ltr] The default direction
+/// @group helper
+
 @function script-direction($way: forward, $direction: $script-direction) {
   $way: if($way != forward, backward, forward);
 
-  @return map.get(map.get($script-direction-map, $direction), $way);
+  @return map.get(map.get($_script-direction-map, $direction), $way);
 }

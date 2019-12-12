@@ -1,7 +1,8 @@
 @use "../utility/inline-svg" as *;
 
 /// Base64 encode svg code
-/// @param {String} $svg - The svg code
+/// @param {String} $svg The svg code
+/// @group helper
 
 @function inline-svg-url($svg) {
   @return url(inline-svg($svg));

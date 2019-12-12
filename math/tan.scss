@@ -9,6 +9,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_tan.scss
+/// @group math
 
 @function tan($x) {
   $x: unitless-rad($x);

@@ -1,9 +1,16 @@
+/// Default named container widths and padding
+/// @group helper
+
 $container: (
   normal: 60rem,
   wide: 80rem,
   narrow: 40rem,
   padding: 1rem
 ) !default;
+
+/// Default named container
+/// @group helper
+
 $container-default: normal !default;
 
 @use "sass:map";
@@ -12,6 +19,7 @@ $container-default: normal !default;
 /// Create a width-limited container with padding on smaller screens
 /// @param {number} $width [null] The width-limit
 /// @param {number} $padding [null] the padding size
+/// @group helper
 
 @mixin container($width: null, $padding: null) {
   $width: if(

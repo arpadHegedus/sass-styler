@@ -1,8 +1,21 @@
+/// Default spacing
+/// @group helper
+
 $spacing: null !default;
+
+/// Spacing mode
+/// @group helper
+
 $spacing-mode: vertical !default;
 
 @use "sass:list";
 @use "../utility/owl" as *;
+
+/// Set vertical spacing between elements in a container
+/// @param {Number} $space [null] The space size
+/// @param {String} $mode [null] The mode for the spacing (vertical meaning top and bottom, top, bottom, owl)
+/// @param {String|List} $selector [(h1,h2,h3,h4,h5,h6,p,ul,ol,blockquote,dl,dt,address,figure,pre,table,dorm,details)] Selectors to apply the spacing to
+/// @group helper
 
 @mixin spacing(
   $space: null,

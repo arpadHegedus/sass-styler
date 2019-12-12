@@ -3,6 +3,7 @@
 
 /// Animate flicker 4
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-flicker-4($animation-settings: null) {

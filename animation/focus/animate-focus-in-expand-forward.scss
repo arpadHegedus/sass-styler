@@ -3,6 +3,7 @@
 
 /// Animate focus in expand forward
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-focus-in-expand-forward($animation-settings: null) {

@@ -4,6 +4,7 @@
 /// Returns XYZ value to RGB channel
 /// @param {Color} $color Color
 /// @return {Number}
+/// @group color
 
 @function luminance($color) {
   $red:   xyz(color.red($color));

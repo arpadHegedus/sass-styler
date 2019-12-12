@@ -6,6 +6,7 @@
 /// @param {Color} $color1 Color 1
 /// @param {Color} $color2 Color 2
 /// @return {Number}
+/// @group color
 
 @function contrast($color1, $color2) {
   $lum1: luminance($color1);

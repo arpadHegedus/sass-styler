@@ -1,6 +1,11 @@
 @use "sass:string";
 @use "../math/strip-unit" as *;
 
-@function emtorem($value) {
-  @return string.unquote(strip-unit($value) + 'rem');
+/// Change em to rem (units only, no calculations)
+/// @param {Number} $em Size value
+/// @return {Number}
+/// @group utility
+
+@function emtorem($em) {
+  @return string.unquote(strip-unit($em) + 'rem');
 }

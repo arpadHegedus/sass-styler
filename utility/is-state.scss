@@ -1,3 +1,6 @@
+/// All CSS states
+/// @group utility
+
 $css-states: (
   active,
   after,
@@ -33,6 +36,12 @@ $css-states: (
 
 @use "sass:list";
 @use "sass:string";
+
+/// Check whether a state is valid in CSS3
+/// @param {String} $state The state
+/// @param {Boolean} $string Whether to check it strictly
+/// @return {Boolean}
+/// @group utility
 
 @function is-state($state, $strict: false) {
 

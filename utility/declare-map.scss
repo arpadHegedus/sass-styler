@@ -12,6 +12,7 @@
 ///   @include declare-map((color: red, hover-focus: (color: blue))) /// color: red; &:hover, &:focus { color: blue; }
 /// @param {Map} $map [()] Property declaration
 /// @param {Boolean} $strict [true] Whether to check for valid html
+/// @group utility
 
 @mixin declare-map($map: (), $strict: true) {
   @each $key, $value in $map {

@@ -5,6 +5,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_sqrt.scss
+/// @group math
 
 @function sqrt($x) {
   @if $x < 0 {

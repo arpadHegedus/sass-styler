@@ -1,6 +1,13 @@
 @use "sass:map";
 @use "merge" as *;
 
+/// Recusrively set map values based on keys
+/// @param {Map} $map The base map
+/// @param {List|String} $keys The key or list of keys (if lookup is supposed to go deeper)
+/// @param {Mixed} $value The value to be set
+/// @param {Boolean} $recursive [true] Whether the system should set recursively
+/// @group utility
+
 @function set($map, $keys, $value, $recursive: true) {
   $maps: ($map,);
   $result: null;

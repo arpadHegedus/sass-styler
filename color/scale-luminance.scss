@@ -10,6 +10,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $luminance Luminance
 /// @return {Color}
+/// @group color
 
 @function scale-luminance($color, $luminance) {
   $scale: $luminance / luminance($color);

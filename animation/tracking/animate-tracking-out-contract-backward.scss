@@ -3,6 +3,7 @@
 
 /// Animate tracking out contract backward
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-tracking-out-contract-backward($animation-settings: null) {

@@ -3,6 +3,7 @@
 
 /// Animate roll in blurred right
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-roll-in-blurred-right($animation-settings: null) {

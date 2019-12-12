@@ -1,3 +1,8 @@
+/// Select the first and last elements
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
 @mixin select-first-last($selector: "&") {
   #{$selector}:first-child,
   #{$selector}:last-child {

@@ -3,6 +3,7 @@
 
 /// Animate color change 2x
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-color-change-2x($animation-settings: null) {

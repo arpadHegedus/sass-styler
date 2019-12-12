@@ -1,0 +1,13 @@
+@use "sass:list";
+
+/// Select first element if the number of elements in the container equals to a number
+/// @param {Number} $num The number of elements
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
+@mixin select-first-out-of($num, $selector: "&") {
+  #{$selector}:nth-last-child(#{$num}):first-child {
+    @content;
+  }
+}

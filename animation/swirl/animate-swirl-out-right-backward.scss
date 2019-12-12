@@ -3,6 +3,7 @@
 
 /// Animate swirl out right backward
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-swirl-out-right-backward($animation-settings: null) {

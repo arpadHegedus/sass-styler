@@ -3,6 +3,7 @@
 
 /// Animate text blur out
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-text-blur-out($animation-settings: null) {

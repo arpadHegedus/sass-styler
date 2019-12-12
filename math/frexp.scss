@@ -2,6 +2,7 @@
 /// @param {Number} $x X
 /// @return {List}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_frexp.scss
+/// @group math
 
 @function frexp($x) {
   $exp: 0;

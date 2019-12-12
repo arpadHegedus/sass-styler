@@ -8,6 +8,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_cot.scss
+/// @group math
 
 @function cot($x) {
   $x: unitless-rad($x);

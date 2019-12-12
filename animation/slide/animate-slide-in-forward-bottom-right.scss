@@ -3,6 +3,7 @@
 
 /// Animate slide in forward bottom right
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-slide-in-forward-bottom-right($animation-settings: null) {

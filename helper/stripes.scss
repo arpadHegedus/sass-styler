@@ -1,9 +1,10 @@
 @use "sass:list";
 
 /// Background gradient stripes from a list of colors
-/// @param {Direction} $direction - Gradient direction
-/// @param {List} $colors - List of colors
+/// @param {String|Number} $direction Gradient direction
+/// @param {List} $colors List of colors
 /// @link https://css-tricks.com/snippets/sass/striped-gradient-mixin/
+/// @group helper
 
 @mixin stripes($direction, $colors...) {
   background-image: linear-gradient($direction, list.join((), $colors, $separator: comma));

@@ -1,3 +1,11 @@
+/// Unhide a previously visually hidden element
+/// @param {String} $position [static] Position value
+/// @param {String} $overflow [visible] Overflow value
+/// @param {String} $visibility [visible] Visibility value
+/// @param {Number} $opacity [1] Opacity value
+/// @param {Number} $left [auto] Left property
+/// @group helper
+
 @mixin unhide-visually(
   $position: static,
   $overflow: visible,

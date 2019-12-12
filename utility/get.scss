@@ -1,5 +1,11 @@
 @use "sass:map";
 
+/// Deeply get a value from a map
+/// @param {Map} $map The map
+/// @param {List|String} $keys The key or list of keys (if lookup is supposed to go deeper)
+/// @return {Mixed}
+/// @group utility
+
 @function get($map, $keys) {
   @each $key in $keys {
       $map: map.get($map, $key);

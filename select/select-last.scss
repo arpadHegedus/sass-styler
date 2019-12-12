@@ -1,3 +1,8 @@
+/// Select the last element
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
 @mixin select-last($nth: 1, $selector: "&") {
   @if $nth == 1 {
     #{$selector}:last-child {

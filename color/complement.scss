@@ -3,6 +3,7 @@
 /// Change color (alias of sass:color)
 /// @param {Color} $color Base color
 /// @return {Color}
+/// @group color
 
 @function complement($color) {
   @return color.complement($color);

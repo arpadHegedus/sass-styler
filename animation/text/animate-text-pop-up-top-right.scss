@@ -3,6 +3,7 @@
 
 /// Animate text pop up top right
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-text-pop-up-top-right($animation-settings: null) {

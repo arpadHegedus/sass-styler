@@ -5,6 +5,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $lightness Lightness
 /// @return {Color}
+/// @group color
 
 @function set-lightness($color, $lightness) {
   @if math.is-unitless($lightness) {

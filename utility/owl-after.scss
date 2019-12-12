@@ -1,5 +1,10 @@
 @use "sass:list";
 
+/// Mingle lists of selectors to go after the other adjacently
+/// @param {List|String} $selectors The base selectors
+/// @param {List|String} $after The after selectors
+/// @group utility
+
 @function owl-after($selectors, $after) {
   $owl-selector: ();
 

@@ -8,6 +8,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_sec.scss
+/// @group math
 
 @function sec($x) {
   $x: unitless-rad($x);

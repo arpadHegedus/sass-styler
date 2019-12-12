@@ -1,6 +1,7 @@
 /// Get the animation or animation-name property depending if you have other values
 /// @param {String} $name The animation name
 /// @param {List} $settings [null] The animation settings
+/// @group animation
 
 @mixin animation-name-or-shorthand($name, $settings: null) {
   @if $settings {

@@ -1,6 +1,11 @@
 @use "sass:map";
 @use "sass:meta";
 
+/// Merge maps recursively
+/// @param {Map} $map1 Map 1
+/// @param {Map} $map2 Map 2
+/// @group utility
+
 @function merge($map1, $map2) {
   $map: $map1;
 

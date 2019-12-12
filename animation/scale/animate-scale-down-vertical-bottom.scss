@@ -3,6 +3,7 @@
 
 /// Animate scale down vertical bottom
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-scale-down-vertical-bottom($animation-settings: null) {

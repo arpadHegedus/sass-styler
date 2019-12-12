@@ -4,6 +4,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $hue Hue
 /// @return {Color}
+/// @group color
 
 @function set-hue($color, $hue) {
   @return hsla($hue, color.saturation($color), color.lightness($color), color.alpha($color));

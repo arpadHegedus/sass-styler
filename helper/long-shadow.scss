@@ -1,6 +1,17 @@
+/// Create a long shadow
+/// @param {Color} $color The color of the shadow
+/// @link https://codepen.io/danieltott/pen/AjKay
+/// @group helper
+
 @mixin long-shadow($color) {
   text-shadow: long-shadow($color);
 }
+
+/// Create a long shadow
+/// @param {Color} $color The color of the shadow
+/// @return {List}
+/// @link https://codepen.io/danieltott/pen/AjKay
+/// @group helper
 
 @function long-shadow($color) {
   $val: 0 0 $color;

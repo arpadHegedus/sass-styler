@@ -10,6 +10,7 @@
 /// @param {Number} $number Number with a unit
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
+/// @group math
 
 @function strip-unit($number) {
   @if meta.type-of($number) == number and not math.is-unitless($number) {

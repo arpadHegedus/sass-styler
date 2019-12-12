@@ -2,6 +2,7 @@
 /// @param {Number} $angle The angle to convert
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_unitless-rad.scss
+/// @group math
 
 @function unitless-rad($angle) {
   @return (0rad + $angle) / 1rad;

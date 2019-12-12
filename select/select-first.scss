@@ -1,3 +1,8 @@
+/// Select the first element
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
 @mixin select-first($nth: 1, $selector: "&") {
   @if $nth == 1 {
     #{$selector}:first-child {

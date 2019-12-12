@@ -1,3 +1,11 @@
+/// Select all even nth elements between a specific first and last nth value
+/// @param {Number} $first The first nth element
+/// @param {Number} $last The last nth element
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
+
 @mixin select-even-between($first, $last, $selector: "&") {
   #{$selector}:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
     @content;

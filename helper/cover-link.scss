@@ -1,5 +1,11 @@
 @use "position" as *;
 
+/// Cover a container with a link
+/// @param {String|List} $selector ["a::before"] The cover to be generated to
+/// @param {String} $position [relative] The position of the parent container
+/// @param {Number} $z-index [2] The z-indx value of the cover
+/// @group helper
+
 @mixin cover-link($selector: "a::before", $position: relative, $z-index: 2) {
   position: $position;
 

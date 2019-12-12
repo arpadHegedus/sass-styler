@@ -1,4 +1,11 @@
-@mixin increment-z-index($top, $direction: forward, $start-index: 1, $selector: "&") {
+/// Increment z-index value for each element in a container
+/// @param {Number} $num The number of increments
+/// @param {String} $direction [forward] Whether to go forward or backward the elements
+/// @param {Number} $start-index [1] The starting element index
+/// @param {String|List} $selector ["&"] The selector
+/// @group helper
+
+@mixin increment-z-index($num, $direction: forward, $start-index: 1, $selector: "&") {
   @for $i from 1 through $num {
     @if $direction == forward {
       #{$selector} {

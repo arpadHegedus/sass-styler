@@ -1,0 +1,12 @@
+/// Select nth elements from both sides of the container
+/// @param {Number} $num The segment number
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
+@mixin select-nth-both-sides($nth, $selector: "&") {
+    #{$selector}:nth-child(#{$nth}),
+    #{$selector}:nth-last-child(#{$nth}) {
+        @content;
+    }
+}

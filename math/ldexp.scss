@@ -5,6 +5,7 @@
 /// @param {Number} $exp Extp
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_ldexp.scss
+/// @group math
 
 @function ldexp($x, $exp) {
   $b: if($exp >= 0, 2, 1 / 2);

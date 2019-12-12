@@ -5,6 +5,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $alpha Alpha
 /// @return {Color}
+/// @group color
 
 @function set-alpha($color, $alpha) {
   @if math.is-unitless($alpha) {

@@ -6,9 +6,9 @@
 ///   sides(1px 2px)         // (top: 1px, right: 2px, bottom: 1px, left: 2px)
 ///   sides(1px 2px 3px)     // (top: 1px, right: 2px, bottom: 3px, left: 2px)
 ///   sides(1px 2px 3px 4px) // (top: 1px, right: 2px, bottom: 3px, left: 4px)
+/// @param {List} $value Multi-size value (like margin, padding)
+/// @return {Map}
 /// @group utility
-/// @param {list} $value Multi-size value (like margin, padding)
-/// @return {map}
 
 @function sides($value) {
   $top: null;

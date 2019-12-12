@@ -1,3 +1,11 @@
+/// Hide text within a container but keep pesudo elements visible
+/// @param {Number} $font-size [1rem] Font size of the pseudo elements
+/// @param {Color} $color [null] Color of the pseudo elements
+/// @param {Number} $line-height [null] Line height of the pseudo elements
+/// @param {String|List} $font-family [null] Font family of the pseudo elements
+/// @param {String} $text-align [null] Text alignment of the pseudo elements
+/// @group helper
+
 @mixin hide-text-except-pseudo(
   $font-size: 1rem,
   $color: null,

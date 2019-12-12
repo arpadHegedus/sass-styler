@@ -13,6 +13,7 @@
 /// @param {String|Number} $ratio ["AA"] Contrast ratio
 /// @param {Number} $iterations [5] Iteration count for checking
 /// @return {Number}
+/// @group color
 
 @function contrast-with($color, $target: #fff, $ratio: "AA", $iterations: 5) {
   $ratio: contrast-ratio-by-name($ratio);

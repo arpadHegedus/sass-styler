@@ -3,11 +3,12 @@
 
 /// Viewport sized typography with minimum and maximum values
 /// @author Eduardo Boucas
-/// @param {Number} $responsive - Responsive font size (in vw or vh)
-/// @param {Number} $min (null) - Minimum font size
-/// @param {Number} $max (null) - Maximum font size
-/// @param {Number} $fallback (null) - A fallback size for browsers without vw and vh unit support
+/// @param {Number} $responsive Responsive font size (in vw or vh)
+/// @param {Number} $min [null] Minimum font size
+/// @param {Number} $max [null] Maximum font size
+/// @param {Number} $fallback [null] A fallback size for browsers without vw and vh unit support
 /// @link https://css-tricks.com/snippets/sass/viewport-sized-typography-minimum-maximum-sizes/
+/// @group helper
 
 @mixin responsive-font($responsive, $min: null, $max: null, $fallback: null) {
   $unitless: strip-unit($responsive);

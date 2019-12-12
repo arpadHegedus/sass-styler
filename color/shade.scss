@@ -4,6 +4,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $ratio [50] Ratio
 /// @return {Color}
+/// @group color
 
 @function shade($color, $ratio: 50) {
   @return color.mix(#000, $color, $ratio);

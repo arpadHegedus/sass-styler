@@ -10,6 +10,7 @@
 /// @param {Number} $lightness [null] Lightness value
 /// @param {Number} $alpha [null] Alpha value
 /// @return {Color}
+/// @group color
 
 @function adjust(
   $color,

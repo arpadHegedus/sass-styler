@@ -3,6 +3,7 @@
 
 /// Animate rotate out bottom left
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-rotate-out-bottom-left($animation-settings: null) {

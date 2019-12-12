@@ -8,6 +8,7 @@
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_acos.scss
+/// @group math
 
 @function acos($x) {
   @if $x > 1 or $x < -1 {

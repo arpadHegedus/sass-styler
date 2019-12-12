@@ -1,5 +1,9 @@
 @use "sass:list";
 
+/// Mingle a list of selectors to go before and after the other adjacently
+/// @param {List|String} $selectors The base selectors
+/// @group utility
+
 @function owl($selectors) {
   $owl-selector: ();
 

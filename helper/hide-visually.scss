@@ -1,3 +1,11 @@
+/// Visually hide an element
+/// @param {String} $position [absolute] Position value
+/// @param {String} $overflow [hidden] Overflow value
+/// @param {String} $visibility [hidden] Visibility value
+/// @param {Number} $opacity [0.00001] Opacity value
+/// @param {Number} $left [-999999px] Left property
+/// @group helper
+
 @mixin hide-visually(
   $position: absolute,
   $overflow: hidden,

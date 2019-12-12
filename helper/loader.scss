@@ -1,6 +1,16 @@
 @use "../animation/keyframes" as *;
 @use "pseudo-with-position" as *;
 
+/// Create a dynamic, animated CSS circle loader spinner
+/// @param {Color} $color [rgba(#000, 0.5)] The spinner circle segment color
+/// @param {Color} $bg [rgba(#000, 0.2)] The spinner circle background
+/// @param {Number} $size [1.5rem] The size of the circle
+/// @param {Number} $width [2px] The width of the circle line
+/// @param {Number} $animation-speed [1s] Animation speed
+/// @param {Number} $inner-opacity [0.5] The opacity of the elements in the container
+/// @param {Color} $inner-color [null] Set the container font color
+/// @group helper
+
 @mixin loader(
   $color: rgba(#000, 0.5),
   $bg: rgba(#000, 0.2),

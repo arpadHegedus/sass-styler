@@ -1,5 +1,12 @@
 @use "sass:list";
 
+/// Create a CSS-only triangle
+/// @param {String} $direction [right] The triangle pointing direction
+/// @param {Color} $color [#000] The triangle color
+/// @param {Number|List} $size [0.5rem 0.75rem] The width and height or size of the triangle
+/// @param {String|List} $selector ["&::after"] The triangle selector
+/// @group helper
+
 @mixin triangle($direction: right, $color: #000, $size: 0.5rem 0.75rem, $selector: "&::after") {
   $width: $size;
   $height: $size;

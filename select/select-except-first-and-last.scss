@@ -1,3 +1,8 @@
+/// Select all elements except the first and last
+/// @param {String|List} $selector ["&"] The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group select
+
 @mixin select-except-first-last($selector: "&") {
   #{$selector}:not(:first-child):not(:last-child) {
     @content;

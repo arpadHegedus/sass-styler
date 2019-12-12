@@ -2,6 +2,8 @@
 
 /// Get the color value from a list like border or background
 /// @param {Color|List} $value The list value
+/// @return {Null|Color}
+/// @group utility
 
 @function color-from($value) {
   @if meta.type-of($value) == color {

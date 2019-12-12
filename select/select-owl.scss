@@ -3,6 +3,12 @@
 @use "../utility/owl-after" as *;
 @use "../utility/owl-before" as *;
 
+/// Mingle a list of selectors to go before and/or after the other adjacently
+/// @param {String|List} $selectors The cross-mingle elements
+/// @param {String|List} $before [null] The before elements
+/// @param {String|List} $after [null] The after elements
+/// @group select
+
 @mixin select-owl($selectors, $before: null, $after: null) {
   $owl-selector: owl($selectors);
 

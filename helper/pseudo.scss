@@ -1,3 +1,9 @@
+/// Add a pseduo element
+/// @param {String} $content [""] The content value
+/// @param {String} $display [block] The display value
+/// @param {String|List} $selector ["&"] The selector
+/// @group helper
+
 @mixin pseudo(
   $content: "",
   $display: block,

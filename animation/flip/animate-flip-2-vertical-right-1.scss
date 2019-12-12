@@ -3,6 +3,7 @@
 
 /// Animate flip 2 vertical right 1
 /// @param {List} $animation-settings [null] Animation shorthand settings (anything except the animation-name)
+/// @group animation
 /// @link https://animista.net/
 
 @mixin animate-flip-2-vertical-right-1($animation-settings: null) {

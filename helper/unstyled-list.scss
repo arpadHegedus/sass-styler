@@ -1,5 +1,8 @@
 @use "script-direction" as *;
 
+/// Remove list styles
+/// @group helper
+
 @mixin unstyled-list() {
   list-style: none;
   padding-#{script-direction()}: 0;

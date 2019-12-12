@@ -1,3 +1,8 @@
+/// Turn on the hardware acceleration of the browser for element
+/// @param {Number} $perspective [1000] The perspective value
+/// @param {Boolean} $backface [true] Hide backface visibility
+/// @group helper
+
 @mixin hardware-accelerate($perspective: 1000, $backface: true) {
   @if $backface {
     backface-visibility: hidden;

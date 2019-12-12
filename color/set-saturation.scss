@@ -5,6 +5,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $saturation Saturation
 /// @return {Color}
+/// @group color
 
 @function set-saturation($color, $saturation) {
   @if math.is-unitless($saturation) {

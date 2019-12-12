@@ -8,6 +8,7 @@
 /// @param {String} $operation [darken] Operation
 /// @param {Number} $iterations Iterations
 /// @return {Color}
+/// @group color
 
 @function scale-light($color1, $color2, $ratio, $operation, $iterations) {
   @for $i from 1 through $iterations {

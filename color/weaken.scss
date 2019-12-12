@@ -6,6 +6,7 @@
 /// @param {Color} $color Color
 /// @param {Number} $ratio [10] Ratio
 /// @return {Color}
+/// @group color
 
 @function weaken($color, $ratio: 10) {
   @if luminance($color) > 0.5 {

@@ -4,6 +4,7 @@
 /// Return an RGB channel processed as XYZ
 /// @param {Number} $channel Channel value
 /// @return {List}
+/// @group color
 
 @function xyz($channel) {
   $channel: $channel / 255;

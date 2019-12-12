@@ -2,6 +2,12 @@
 @use "sass:math";
 @use "sass:string";
 
+/// Calculate the coluns width from a columns ratio and a gap value
+/// @param {List|String} $columns [1 of 2] The columns ratio (x of y)
+/// @param {Number} $gap [0] The gap value
+/// @return {Number}
+/// @group utility
+
 @function grid-column-width($columns: 1 of 2, $gap: 0) {
   $col: list.nth($columns, 1);
   $of: list.nth($columns, 3);
