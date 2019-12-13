@@ -3,8 +3,8 @@
 
 /// Returns the arcsine of a number
 /// @example
-///   asin(0.1) /// 0.10017
-///   asin(-1)  /// -1.5708
+///   $result: asin(0.1); /* 0.10017 */
+///   $result: asin(-1);  /* -1.5708 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_asin.scss

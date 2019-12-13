@@ -4,8 +4,8 @@
 
 /// Returns the tangent of a number
 /// @example
-///   tan(0.5236) /// 0.57735
-///   tan(30deg)  /// 0.57735
+///   $result: tan(0.5236); /* 0.57735 */
+///   $result: tan(30deg);  /* 0.57735 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_tan.scss

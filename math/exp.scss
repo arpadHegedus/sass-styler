@@ -3,8 +3,8 @@
 
 /// Returns E^x, where x is the argument, and E is Euler's constant, the base of the natural logarithms
 /// @example
-///   exp(1)  /// 2.71828
-///   exp(-1) /// 0.36788
+///   $result: exp(1);  /* 2.71828 */
+///   $result: exp(-1); /* 0.36788 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_exp.scss

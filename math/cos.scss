@@ -3,8 +3,8 @@
 
 /// Returns the cosine of a number
 /// @example
-///   cos(0.7854) /// 0.70711
-///   cos(45deg)  /// 0.70711
+///   $result: cos(0.7854); /* 0.70711 */
+///   $result: cos(45deg);  /* 0.70711 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_cos.scss

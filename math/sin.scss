@@ -4,8 +4,8 @@
 
 /// Returns the sine of a numbe
 /// @example
-///   sin(1.0472) /// 0.86603
-///   sin(60deg)  /// 0.86603
+///   $result: sin(1.0472); /* 0.86603 */
+///   $result: sin(60deg);  /* 0.86603 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_sin.scss

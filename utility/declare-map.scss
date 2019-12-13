@@ -5,11 +5,9 @@
 
 /// Declare properties via sass maps
 /// @example
-///   @include declare-map((color: red, margin: 0)) /// color: red; margin: 0;
-/// @example
-///   @include declare-map((color: red, hover: (color: blue))) /// color: red; &:hover { color: blue; }
-/// @example
-///   @include declare-map((color: red, hover-focus: (color: blue))) /// color: red; &:hover, &:focus { color: blue; }
+///   @include declare-map((color: red, margin: 0));                  /* color: red; margin: 0; */
+///   @include declare-map((color: red, hover: (color: blue)));       /* color: red; &:hover { color: blue; } */
+///   @include declare-map((color: red, hover-focus: (color: blue))); /* color: red; &:hover, &:focus { color: blue; } */
 /// @param {Map} $map [()] Property declaration
 /// @param {Boolean} $strict [true] Whether to check for valid html
 /// @group utility

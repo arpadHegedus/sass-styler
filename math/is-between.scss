@@ -1,10 +1,10 @@
 /// Check if a number is between a min and max value
 /// @example
-///   clip-number(1)         /// false
-///   clip-number(-1)        /// false
-///   clip-number(7, 3, 5)   /// false
-///   clip-number(15, 0, 10) /// false
-///   clip-number(6, 0, 10)  /// true
+///   $result: clip-number(1);         /* false */
+///   $result: clip-number(-1);        /* false */
+///   $result: clip-number(7, 3, 5);   /* false */
+///   $result: clip-number(15, 0, 10); /* false */
+///   $result: clip-number(6, 0, 10);  /* true */
 /// @param {Number} $value The value to constrain
 /// @param {Number} $min [0.0001] The minimum value
 /// @param {Number} $max [0.9999] The maximum value

@@ -3,8 +3,8 @@
 
 /// Returns the secant of a number
 /// @example
-///   sec(0.7854) /// 1.41422
-///   sec(45deg)  /// 1.41422
+///   $result: sec(0.7854); /* 1.41422 */
+///   $result: sec(45deg);  /* 1.41422 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_sec.scss

@@ -1,13 +1,9 @@
-/// Normalize options to set up default element styles with
-/// @group helper
-
-$normalize: () !default;
-
 @use "sass:map";
 @use "../utility/declare-map" as *;
 @use "../utility/get" as *;
 @use "../utility/merge" as *;
 @use "script-direction" as *;
+@use "set-styles";
 @use "spacing" as *;
 
 /// The default normalize options
@@ -224,11 +220,11 @@ $_defaults: (
   )
 );
 
-/* Normalize with configurable  */
-/* @group helper */
+/// Normalize with configurable variables
+/// @group helper
 
 @mixin normalize() {
-  $settings: merge($_defaults, $normalize);
+  $settings: merge($_defaults, set-styles.$styles);
 
   /* stylelint-disable no-descending-specificity */
 

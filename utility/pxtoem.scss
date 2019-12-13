@@ -1,12 +1,12 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-@use "../helper/normalize";
+@use "../helper/set-styles";
 @use "../math/strip-unit" as *;
 
 /// Px to Em calculation
 /// @param {Number} $px Size value
-/// @param {Number} $default [null] Set a default, otherwise styler:normalize.$normalize.font-size will be used
+/// @param {Number} $default [null] Set a default, otherwise styler:set-styles.$styles.font-size will be used
 /// @return {Number}
 /// @group utility
 
@@ -15,8 +15,8 @@
     $default,
     $default,
     if(
-      meta.type-of(normalize.$normalize) == map and map.get(normalize.$normalize, font-size),
-      map.get(normalize.$normalize, font-size),
+      meta.type-of(set-styles.$styles) == map and map.get(set-styles.$styles, font-size),
+      map.get(set-styles.$styles, font-size),
       null
     )
   );

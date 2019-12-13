@@ -2,8 +2,8 @@
 
 /// Returns the factorial of a non-negative integer
 /// @example
-///   fact(0) /// 1
-///   fact(8) /// 40320
+///   $result: fact(0); /* 1 */
+///   $result: fact(8); /* 40320 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_fact.scss

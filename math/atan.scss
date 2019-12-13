@@ -2,8 +2,8 @@
 
 /// Returns the arctangent of a number
 /// @example
-///   atan(0.1) /// 0.09967
-///   atan(-1)  /// -0.7854
+///   $result: atan(0.1); /* 0.09967 */
+///   $result: atan(-1);  /* -0.7854 */
 /// @param {Number} $x X
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/functions/_atan.scss

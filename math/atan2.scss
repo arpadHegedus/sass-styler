@@ -3,12 +3,12 @@
 
 /// Returns the arctangent of the quotient of its arguments
 /// @example
-///   atan2(0, 0)       /// 0
-///   atan2(0, -0.0)    /// 3.14159
-///   atan2(-0.0, 0)    /// 0
-///   atan2(-0.0, -0.0) /// -3.14159
-///   atan2(0, 1)       /// 0
-///   atan2(0, -1)      /// 3.14159
+///   $result: atan2(0, 0);       /* 0 */
+///   $result: atan2(0, -0.0);    /* 3.14159 */
+///   $result: atan2(-0.0, 0);    /* 0 */
+///   $result: atan2(-0.0, -0.0); /* -3.14159 */
+///   $result: atan2(0, 1);       /* 0 */
+///   $result: atan2(0, -1);      /* 3.14159 */
 /// @param {Number} $y Y
 /// @param {Number} $x X
 /// @return {Number}

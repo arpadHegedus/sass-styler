@@ -4,9 +4,9 @@
 
 /// Returns base to the exponent power
 /// @example
-///   pow(4, 2)   /// 16
-///   pow(4, -2)  /// 0.0625
-///   pow(4, 0.2) /// 1.31951
+///   $result: pow(4, 2);   /* 16 */
+///   $result: pow(4, -2);  /* 0.0625 */
+///   $result: pow(4, 0.2); /* 1.31951 */
 /// @param {Number} $base Base
 /// @param {Number} $exp Exponent
 /// @return {Number}

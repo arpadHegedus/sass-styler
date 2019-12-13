@@ -9930,21 +9930,23 @@ Generate media queries via saved keywords or simplified syntax
 ##### Example
 
 ```scss
-@include media(1024px)                     /* @media (min-width: 1024px) */
-@include media(screen 1024px)              /* @media only screen and (min-width: 1024px) */
-@include media(max 1024px)                 /* @media (max-width: 1024px) */
-@include media(height 300px)               /* @media (min-height: 300px) */
-@include media(max-height 300px)           /* @media (max-height: 300px) */
-@include media(screen (max 1024px))        /* @media only screen and (max-width: 1024px) */
-@include media(screen 620px (max 1024px))  /* @media only screen and (min-width: 620px) and (max-width: 1024px) */
-@include media(620px, max 1024px)          /* @media (min-width: 620px), (max-width: 1024px) */
-```
-```scss
+@include media(1024px);                    /* @media (min-width: 1024px) */
+@include media(screen 1024px);             /* @media only screen and (min-width: 1024px) */
+@include media(max 1024px);                /* @media (max-width: 1024px) */
+@include media(height 300px);              /* @media (min-height: 300px) */
+@include media(max-height 300px);          /* @media (max-height: 300px) */
+@include media(screen (max 1024px));       /* @media only screen and (max-width: 1024px) */
+@include media(screen 620px (max 1024px)); /* @media only screen and (min-width: 620px) and (max-width: 1024px) */
+@include media(620px, max 1024px);         /* @media (min-width: 620px), (max-width: 1024px) */
 $media-queries: (
   large: 1024px
 );
-@include media(large)                      /* @media (min-width: 1024px) */
+@include media(large);                     /* @media (min-width: 1024px) */
 ```
+
+#### normalize
+
+Normalize with configurable variables
 
 #### on-circle
 
@@ -10054,6 +10056,38 @@ Use the padding trick to keep a container the same ratio in different screen siz
 | `$y` | Height raio | Number | `9` |
 | `$selector` | The selector | String|List | `"&"` |
 
+#### set-styles
+
+Set default styles for common elements
+
+##### Example
+
+```scss
+@use "../node_modules/sass-styler/styler";
+styler.styles: (
+  font-size: 18px,
+  font-family: Arial, sans-serif;
+  color: #333;
+  link: (
+    color: blue,
+    text-decoration: none,
+    hover-focus: (
+      text-decotaion: underline
+    )
+  ),
+  heading: (
+    font-weight: 700
+  ),
+  h1: (
+    font-size: 3em
+  ),
+  input: (
+    border: 1px solid #333
+  )
+);
+@include set-styles();
+```
+
 #### spacing
 
 Set vertical spacing between elements in a container
@@ -10144,10 +10178,6 @@ Default named container
 
 Default saved media queries
 
-#### $normalize
-
-Normalize options to set up default element styles with
-
 #### $script-direction
 
 Default script direction
@@ -10159,6 +10189,10 @@ Default spacing
 #### $spacing-mode
 
 Spacing mode
+
+#### $styles
+
+Style options to set up default element styles with
 
 ### functions
 
@@ -10236,8 +10270,8 @@ Returns the accosine of a number
 ##### Example
 
 ```scss
-acos(0.1)  /* 1.47063 */
-acos(-1)   /* 3.14159 */
+$result: acos(0.1);  /* 1.47063 */
+$result: acos(-1);   /* 3.14159 */
 ```
 
 ##### Links
@@ -10260,8 +10294,8 @@ Returns the arcsine of a number
 ##### Example
 
 ```scss
-asin(0.1)  /* 0.10017 */
-asin(-1)   /* -1.5708 */
+$result: asin(0.1);  /* 0.10017 */
+$result: asin(-1);   /* -1.5708 */
 ```
 
 ##### Links
@@ -10284,8 +10318,8 @@ Returns the arctangent of a number
 ##### Example
 
 ```scss
-atan(0.1)  /* 0.09967 */
-atan(-1)   /* -0.7854 */
+$result: atan(0.1);  /* 0.09967 */
+$result: atan(-1);   /* -0.7854 */
 ```
 
 ##### Links
@@ -10309,12 +10343,12 @@ Returns the arctangent of the quotient of its arguments
 ##### Example
 
 ```scss
-atan2(0, 0)        /* 0 */
-atan2(0, -0.0)     /* 3.14159 */
-atan2(-0.0, 0)     /* 0 */
-atan2(-0.0, -0.0)  /* -3.14159 */
-atan2(0, 1)        /* 0 */
-atan2(0, -1)       /* 3.14159 */
+$result: atan2(0, 0);        /* 0 */
+$result: atan2(0, -0.0);     /* 3.14159 */
+$result: atan2(-0.0, 0);     /* 0 */
+$result: atan2(-0.0, -0.0);  /* -3.14159 */
+$result: atan2(0, 1);        /* 0 */
+$result: atan2(0, -1);       /* 3.14159 */
 ```
 
 ##### Links
@@ -10339,11 +10373,11 @@ Constrain a number between a min and max value
 ##### Example
 
 ```scss
-clip-number(1)          /* 0.9999 */
-clip-number(-1)         /* 0.0001 */
-clip-number(7, 3, 5)    /* 5 */
-clip-number(15, 0, 10)  /* 10 */
-clip-number(6, 0, 10)   /* 6 */
+$result: clip-number(1);          /* 0.9999 */
+$result: clip-number(-1);         /* 0.0001 */
+$result: clip-number(7, 3, 5);    /* 5 */
+$result: clip-number(15, 0, 10);  /* 10 */
+$result: clip-number(6, 0, 10);   /* 6 */
 ```
 
 #### cos
@@ -10362,8 +10396,8 @@ Returns the cosine of a number
 ##### Example
 
 ```scss
-cos(0.7854)  /* 0.70711 */
-cos(45deg)   /* 0.70711 */
+$result: cos(0.7854);  /* 0.70711 */
+$result: cos(45deg);   /* 0.70711 */
 ```
 
 ##### Links
@@ -10386,8 +10420,8 @@ Returns the cotangent of a number
 ##### Example
 
 ```scss
-cot(0.5236)  /* 1.73205 */
-cot(30deg)   /* 1.73205 */
+$result: cot(0.5236);  /* 1.73205 */
+$result: cot(30deg);   /* 1.73205 */
 ```
 
 ##### Links
@@ -10410,8 +10444,8 @@ Returns the cosecant of a number
 ##### Example
 
 ```scss
-csc(1.0472)  /* 1.1547 */
-csc(60deg)   /* 1.1547 */
+$result: csc(1.0472);  /* 1.1547 */
+$result: csc(60deg);   /* 1.1547 */
 ```
 
 ##### Links
@@ -10469,8 +10503,8 @@ Returns E^x, where x is the argument, and E is Euler's constant, the base of the
 ##### Example
 
 ```scss
-exp(1)   /* 2.71828 */
-exp(-1)  /* 0.36788 */
+$result: exp(1);   /* 2.71828 */
+$result: exp(-1);  /* 0.36788 */
 ```
 
 ##### Links
@@ -10493,8 +10527,8 @@ Returns the factorial of a non-negative integer
 ##### Example
 
 ```scss
-fact(0)  /* 1 */
-fact(8)  /* 40320 */
+$result: fact(0);  /* 1 */
+$result: fact(8);  /* 40320 */
 ```
 
 ##### Links
@@ -10532,8 +10566,8 @@ Returns the greatest common divisor
 ##### Example
 
 ```scss
-gcd(2, 3)    /* 1 */
-gcd(54, 24)  /* 6 */
+$result: gcd(2, 3);    /* 1 */
+$result: gcd(54, 24);  /* 6 */
 ```
 
 ##### Links
@@ -10558,11 +10592,11 @@ Check if a number is between a min and max value
 ##### Example
 
 ```scss
-clip-number(1)          /* false */
-clip-number(-1)         /* false */
-clip-number(7, 3, 5)    /* false */
-clip-number(15, 0, 10)  /* false */
-clip-number(6, 0, 10)   /* true */
+$result: clip-number(1);          /* false */
+$result: clip-number(-1);         /* false */
+$result: clip-number(7, 3, 5);    /* false */
+$result: clip-number(15, 0, 10);  /* false */
+$result: clip-number(6, 0, 10);   /* true */
 ```
 
 #### lcm
@@ -10579,8 +10613,8 @@ Returns the least common multiple
 ##### Example
 
 ```scss
-lcm(4, 6)    /* 12 */
-lcm(30, 42)  /* 210 */
+$result: lcm(4, 6);    /* 12 */
+$result: lcm(30, 42);  /* 210 */
 ```
 
 ##### Links
@@ -10639,9 +10673,9 @@ Returns the natural logarithm of a number
 ##### Example
 
 ```scss
-log(2)      /* 0.69315 */
-log(10)     /* 2.30259 */
-log(2, 10)  /* 0.30103 */
+$result: log(2);      /* 0.69315 */
+$result: log(10);     /* 2.30259 */
+$result: log(2, 10);  /* 0.30103 */
 ```
 
 ##### Links
@@ -10665,9 +10699,9 @@ Returns base to the exponent power
 ##### Example
 
 ```scss
-pow(4, 2)    /* 16 */
-pow(4, -2)   /* 0.0625 */
-pow(4, 0.2)  /* 1.31951 */
+$result: pow(4, 2);    /* 16 */
+$result: pow(4, -2);   /* 0.0625 */
+$result: pow(4, 0.2);  /* 1.31951 */
 ```
 
 ##### Links
@@ -10708,8 +10742,8 @@ Returns the secant of a number
 ##### Example
 
 ```scss
-sec(0.7854)  /* 1.41422 */
-sec(45deg)   /* 1.41422 */
+$result: sec(0.7854);  /* 1.41422 */
+$result: sec(45deg);   /* 1.41422 */
 ```
 
 ##### Links
@@ -10732,8 +10766,8 @@ Returns the sine of a numbe
 ##### Example
 
 ```scss
-sin(1.0472)  /* 0.86603 */
-sin(60deg)   /* 0.86603 */
+$result: sin(1.0472);  /* 0.86603 */
+$result: sin(60deg);   /* 0.86603 */
 ```
 
 ##### Links
@@ -10756,8 +10790,8 @@ Returns the square root of a number
 ##### Example
 
 ```scss
-sqrt(2)  /* 1.41421 */
-sqrt(5)  /* 2.23607 */
+$result: sqrt(2);  /* 1.41421 */
+$result: sqrt(5);  /* 2.23607 */
 ```
 
 ##### Links
@@ -10780,10 +10814,10 @@ Remove units from a number
 ##### Example
 
 ```scss
-strip-unit(12px)     /* 12 */
-strip-unit(-12em)    /* -12 */
-strip-unit(12rem)    /* 12 */
-strip-unit(2.2deg)   /* 2.2 */
+$result: strip-unit(12px);     /* 12 */
+$result: strip-unit(-12em);    /* -12 */
+$result: strip-unit(12rem);    /* 12 */
+$result: strip-unit(2.2deg);   /* 2.2 */
 ```
 
 ##### Links
@@ -10806,8 +10840,8 @@ Returns the tangent of a number
 ##### Example
 
 ```scss
-tan(0.5236)  /* 0.57735 */
-tan(30deg)   /* 0.57735 */
+$result: tan(0.5236);  /* 0.57735 */
+$result: tan(30deg);   /* 0.57735 */
 ```
 
 ##### Links
@@ -11317,7 +11351,7 @@ Em to Px conversion
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$em` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:normalize.$normalize.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11492,7 +11526,7 @@ Px to Em calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:normalize.$normalize.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11506,7 +11540,7 @@ Px to Rem calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:normalize.$normalize.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11533,7 +11567,7 @@ Rem to Px calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$rem` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:normalize.$normalize.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11594,10 +11628,10 @@ Get a map of sides from a value or list (like margin, padding)
 ##### Example
 
 ```scss
-sides(1px)             /* (top: 1px, right: 1px, bottom: 1px, left: 1px) */
-sides(1px 2px)         /* (top: 1px, right: 2px, bottom: 1px, left: 2px) */
-sides(1px 2px 3px)     /* (top: 1px, right: 2px, bottom: 3px, left: 2px) */
-sides(1px 2px 3px 4px) /* (top: 1px, right: 2px, bottom: 3px, left: 4px) */
+$result: sides(1px);             /* (top: 1px, right: 1px, bottom: 1px, left: 1px) */
+$result: sides(1px 2px);         /* (top: 1px, right: 2px, bottom: 1px, left: 2px) */
+$result: sides(1px 2px 3px);     /* (top: 1px, right: 2px, bottom: 3px, left: 2px) */
+$result: sides(1px 2px 3px 4px); /* (top: 1px, right: 2px, bottom: 3px, left: 4px) */
 ```
 
 #### str-replace

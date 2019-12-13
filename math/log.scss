@@ -6,9 +6,9 @@
 
 /// Returns the natural logarithm of a number
 /// @example
-///   log(2)     /// 0.69315
-///   log(10)    /// 2.30259
-///   log(2, 10) /// 0.30103
+///   $result: log(2);     /* 0.69315 */
+///   $result: log(10);    /* 2.30259 */
+///   $result: log(2, 10); /* 0.30103 */
 /// @param {Number} $x X
 /// @param {Null|Number} $b B
 /// @return {Number}

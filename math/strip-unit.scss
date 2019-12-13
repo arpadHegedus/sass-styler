@@ -3,10 +3,10 @@
 
 /// Remove units from a number
 /// @example
-///   strip-unit(12px)    /// 12
-///   strip-unit(-12em)   /// -12
-///   strip-unit(12rem)   /// 12
-///   strip-unit(2.2deg)  /// 2.2
+///   $result: strip-unit(12px);    /* 12 */
+///   $result: strip-unit(-12em);   /* -12 */
+///   $result: strip-unit(12rem);   /* 12 */
+///   $result: strip-unit(2.2deg);  /* 2.2 */
 /// @param {Number} $number Number with a unit
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
