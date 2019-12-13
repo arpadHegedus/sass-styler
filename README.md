@@ -4,18 +4,18 @@ A collection of useful scss
 
 The main modules in Sass Styler are:
 
-* <a href="#animation">animation</a>
-* <a href="#color">color</a>
-* <a href="#helper">helper</a>
-* <a href="#math">math</a>
-* <a href="#select">select</a>
-* <a href="#utility">utility</a>
+* <a href="#animation">Animation</a>
+* <a href="#color">Color</a>
+* <a href="#helper">Helper</a>
+* <a href="#math">Math</a>
+* <a href="#select">Select</a>
+* <a href="#utility">Utility</a>
 
 <div id="#animation"></div>
 
-## animation
+## Animation
 
-### mixins
+### Mixins
 
 #### animation-name-or-shorthand
 
@@ -9252,9 +9252,9 @@ Animate wobble
 
 <div id="#color"></div>
 
-## color
+## Color
 
-### functions
+### Functions
 
 #### adjust
 
@@ -9690,7 +9690,7 @@ Return an RGB channel processed as XYZ
 ##### Returns
 `List`
 
-### variables
+### Variables
 
 #### $palette
 
@@ -9698,9 +9698,9 @@ The color palette of named colors
 
 <div id="#helper"></div>
 
-## helper
+## Helper
 
-### mixins
+### Mixins
 
 #### angled-edge
 
@@ -10160,7 +10160,7 @@ Remove list styles
 
 None
 
-### variables
+### Variables
 
 #### $asset-path
 
@@ -10194,7 +10194,7 @@ Spacing mode
 
 Style options to set up default element styles with
 
-### functions
+### Functions
 
 #### asset
 
@@ -10250,9 +10250,9 @@ Get the current script direction
 
 <div id="#math"></div>
 
-## math
+## Math
 
-### functions
+### Functions
 
 #### acos
 
@@ -10865,7 +10865,7 @@ Convert to unitless rad
 
 * [https://github.com/terkel/mathsass/blob/master/dist/helpers/_unitless-rad.scss](https://github.com/terkel/mathsass/blob/master/dist/helpers/_unitless-rad.scss)
 
-### variables
+### Variables
 
 #### $E
 
@@ -10885,9 +10885,9 @@ The quare root of 2
 
 <div id="#select"></div>
 
-## select
+## Select
 
-### mixins
+### Mixins
 
 #### select-after
 
@@ -11298,7 +11298,7 @@ Get selectors from a named selector group
 | ---- | ----------- | ---- | ------------- |
 | `$id` | Selector group id | String | - |
 
-### functions
+### Functions
 
 #### select
 
@@ -11312,9 +11312,9 @@ Get selectors from a named selector group
 
 <div id="#utility"></div>
 
-## utility
+## Utility
 
-### functions
+### Functions
 
 #### bottom-side
 
@@ -11690,7 +11690,7 @@ Get the top-bottom value from a list like margin or padding
 ##### Returns
 `Null|Number`
 
-### mixins
+### Mixins
 
 #### declare-map
 
@@ -11711,7 +11711,7 @@ Declare properties via sass maps
 @include declare-map((color: red, hover-focus: (color: blue))); /* color: red; &:hover, &:focus { color: blue; } */
 ```
 
-### variables
+### Variables
 
 #### $css-properties
 
