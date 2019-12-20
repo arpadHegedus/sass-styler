@@ -35,7 +35,7 @@ $palette: (
 /// @param {Number} $lightness [null] Lightness value
 /// @param {Color|List} $best-contrast [null] Contrasting candidates
 /// @param {Color} $contrast-with [null] Target color
-/// @return {Color}
+/// @return {Null|Color}
 /// @group color
 
 @function c(
@@ -138,6 +138,10 @@ $palette: (
 
   @if $contrast-with {
     $color: contrast-with($color, $contrast-with);
+  }
+
+  @if type-of($color) != color {
+    @return null;
   }
 
   @return $color;

@@ -9313,7 +9313,7 @@ A color short function
 | `$contrast-with` | Target color | Color | `null` |
 
 ##### Returns
-`Color`
+`Null|Color`
 
 #### change
 

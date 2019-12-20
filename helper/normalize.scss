@@ -3,7 +3,7 @@
 @use "../utility/get" as *;
 @use "../utility/merge" as *;
 @use "script-direction" as *;
-@use "set-styles";
+@use "set-styles" as *;
 @use "spacing" as *;
 
 /// The default normalize options
@@ -224,7 +224,7 @@ $_defaults: (
 /// @group helper
 
 @mixin normalize() {
-  $settings: merge($_defaults, set-styles.$styles);
+  $settings: merge($_defaults, $styles);
 
   /* stylelint-disable no-descending-specificity */
 
