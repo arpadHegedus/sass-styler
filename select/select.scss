@@ -142,25 +142,39 @@ $selectors: (
   )
 ) !default;
 
+@use "sass:list";
 @use "sass:map";
+@use "sass:meta";
+@use "sass:string";
 
 /// Get selectors from a named selector group
-/// @param {String} $id Selector group id
+/// @param {String} $ids Selector group id(s)
 /// @group select
 
-@mixin select($id) {
-  #{select($id)} {
+@mixin select($ids) {
+  #{select($ids)} {
     @content;
   }
 }
 
 /// Get selectors from a named selector group
-/// @param {String} $id Selector group id
+/// @param {String} $ids Selector group id(s)
 /// @group select
 
-@function select($id) {
-  @if map.has-key($selectors, $id) {
-    @return map.get($selectors, $id);
+@function select($ids: null) {
+  $selector: ();
+  @if not $ids {
+    @return &;
   }
-  @return &;
+  $ids: if(meta.type-of($ids) == list, $ids, ($ids));
+  @each $id in $ids {
+    @if map.has-key($selectors, $id) {
+      @each $i in map.get($selectors, $id) {
+        $selector: list.append($selector, $i, comma);
+      }
+    } @else {
+      $selector: list.append($selector, $id, comma);
+    }
+  }
+  @return if(list.length($selector) > 0, $selector, &);
 }

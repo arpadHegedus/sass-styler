@@ -11296,7 +11296,7 @@ Get selectors from a named selector group
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
-| `$id` | Selector group id | String | - |
+| `$ids` | Selector group id(s) | String | - |
 
 ### Functions
 
@@ -11308,7 +11308,7 @@ Get selectors from a named selector group
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
-| `$id` | Selector group id | String | - |
+| `$ids` | Selector group id(s) | String | - |
 
 <div id="#utility"></div>
 
