@@ -499,6 +499,14 @@ $_defaults: (
     @include declare-map(map.get($settings, h6));
   }
 
+  /* list */
+  ul,
+  ol {
+    padding-#{script-direction()}: get($settings, list indent);
+
+    @include declare-map(map.remove(map.get($settings, list), indent));
+  }
+
   /* link */
   a {
     /* fix underline issues in webkit */
