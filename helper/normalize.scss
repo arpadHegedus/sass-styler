@@ -498,13 +498,15 @@ $_defaults: (
   h6 {
     @include declare-map(map.get($settings, h6));
   }
-
+  
   /* list */
   ul,
   ol {
-    padding-#{script-direction()}: get($settings, list indent);
+    @if map.has-key($settings, list) {
+      padding-#{script-direction()}: get($settings, list indent);
 
-    @include declare-map(map.remove(map.get($settings, list), indent));
+      @include declare-map(map.remove(map.get($settings, list), indent));
+    }
   }
 
   /* link */

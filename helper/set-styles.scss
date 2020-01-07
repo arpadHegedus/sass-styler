@@ -181,9 +181,11 @@ $styles: () !default;
   /* list */
   ul,
   ol {
-    padding-#{script-direction()}: get($settings, list indent);
+    @if map.has-key($settings, list) {
+      padding-#{script-direction()}: get($settings, list indent);
 
-    @include declare-map(map.remove(map.get($settings, list), indent));
+      @include declare-map(map.remove(map.get($settings, list), indent));
+    }
   }
 
   /* link */
