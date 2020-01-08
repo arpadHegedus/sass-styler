@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
+@use "./strtonum" as *;
 @use "../helper/set-styles";
 @use "../math/strip-unit" as *;
 
@@ -25,5 +26,5 @@
     @return 1em * strip-unit($px) / strip-unit($default);
   }
 
-  @return $px;
+  @return strtonum($px);
 }

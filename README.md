@@ -11485,6 +11485,24 @@ Merge maps recursively
 | `$map1` | Map 1 | Map | - |
 | `$map2` | Map 2 | Map | - |
 
+#### numtolength
+
+Add `$unit` to `$value`
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$value` | The number value | Number | - |
+| `$unit` | The unit (eg. px) | String | - |
+
+##### Returns
+`Number`
+
+##### Links
+
+* [https://www.sassmeister.com/gist/9fa19d254864f33d4a80](https://www.sassmeister.com/gist/9fa19d254864f33d4a80)
+
 #### owl-after
 
 Mingle lists of selectors to go after the other adjacently
@@ -11652,6 +11670,23 @@ Replace `$search` with `$replace` in `$string`
 ##### Links
 
 * [https://css-tricks.com/snippets/sass/str-replace-function/](https://css-tricks.com/snippets/sass/str-replace-function/)
+
+#### strtonum
+
+Cast a string `$value` into a number
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$value` | The value to be cast | Number|String | - |
+
+##### Returns
+`Number`
+
+##### Links
+
+* [https://www.sassmeister.com/gist/9fa19d254864f33d4a80](https://www.sassmeister.com/gist/9fa19d254864f33d4a80)
 
 #### top-side
 

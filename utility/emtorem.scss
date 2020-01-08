@@ -1,4 +1,5 @@
 @use "sass:string";
+@use "./strtonum" as *;
 @use "../math/strip-unit" as *;
 
 /// Change em to rem (units only, no calculations)
@@ -7,5 +8,5 @@
 /// @group utility
 
 @function emtorem($em) {
-  @return string.unquote(strip-unit($em) + 'rem');
+  @return strnum(string.unquote(strip-unit($em) + 'rem'));
 }
