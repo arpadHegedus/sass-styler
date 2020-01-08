@@ -8,5 +8,5 @@
 /// @group utility
 
 @function emtorem($em) {
-  @return strnum(string.unquote(strip-unit($em) + 'rem'));
+  @return strtonum(string.unquote(strip-unit($em) + 'rem'));
 }
