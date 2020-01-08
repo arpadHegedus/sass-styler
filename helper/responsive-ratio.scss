@@ -6,7 +6,7 @@
 /// @param {String|List} $selector ["&"] The selector
 /// @group helper
 
-@mixin responsive-ratio($x: 16, $y: 9, $selector: &) {
+@mixin responsive-ratio($x: 16, $y: 9, $selector: "&") {
   $padding: $y/$x*100%;
 
   #{$selector} {
