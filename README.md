@@ -9750,6 +9750,21 @@ A tritone angled CSS background
 
 * [https://codepen.io/mirisuzanne/pen/BEvjbm?editors=0100](https://codepen.io/mirisuzanne/pen/BEvjbm?editors=0100)
 
+#### background-dim
+
+Add background dim to a container
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$opacity` | The opacity of the dim | Number | `0.5` |
+| `$background-color` | Background color | Color | `0.5` |
+| `$z-index` | The z-index of the dim | Number | `0.5` |
+| `$selector` | Dim selector | String | `"&::before"` |
+| `$position` | Postition of the parent | String | `relative` |
+| `$position-children` | Position of the children (to go above dim) | String | `relative` |
+
 #### clearfix
 
 Prevent elements flowing around floating elements
@@ -9960,6 +9975,19 @@ $media-queries: (
 #### normalize
 
 Normalize with configurable variables
+
+#### object-fit
+
+Create object fitted elements
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$object-fit` | The object fit | String | `cover` |
+| `$object-position` | The object position | Number|List | `50% 50%` |
+| `$width` | The element width | Number | `100%` |
+| `$height` | The element height | Number | `100%` |
 
 #### on-circle
 
@@ -11317,8 +11345,8 @@ Round a number to specified digits
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$number` | The base number | Number | - |
-| `$digits` | Digits to output | Number | 0 |
-| `$mode` | How to round the number | String | round |
+| `$digits` | Digits to output | Number | `0` |
+| `$mode` | How to round the number | String | `round` |
 
 ##### Returns
 `Number`
