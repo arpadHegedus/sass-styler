@@ -3,7 +3,7 @@
 @use "sass:meta";
 @use "./strtonum" as *;
 @use "../helper/set-styles";
-@use "../math/strip-unit" as *;
+@use "./strip-unit" as *;
 
 /// Rem to Px calculation
 /// @param {Number} $rem Size value
