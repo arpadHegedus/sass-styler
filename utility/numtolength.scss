@@ -23,6 +23,7 @@ $units: (
 /// @param {String} $unit The unit (eg. px)
 /// @return {Number}
 /// @link https://www.sassmeister.com/gist/9fa19d254864f33d4a80
+/// @group utility
 
 @function numtolength($value, $unit) {
     @return $value * map.get($units, $unit);

@@ -1,7 +1,9 @@
 /// Load all utility modules
 
 @forward "utility/bottom-side";
+@forward "utility/clip-number";
 @forward "utility/color-from";
+@forward "utility/decimal-round";
 @forward "utility/declare-map";
 @forward "utility/emtopx";
 @forward "utility/emtorem";
@@ -10,6 +12,7 @@
 @forward "utility/grid-column-width";
 @forward "utility/horizontal-sides";
 @forward "utility/inline-svg";
+@forward "utility/is-between";
 @forward "utility/is-property";
 @forward "utility/is-state";
 @forward "utility/left-side";
@@ -26,6 +29,7 @@
 @forward "utility/set";
 @forward "utility/sides";
 @forward "utility/str-replace";
+@forward "utility/strip-unit";
 @forward "utility/top-side";
 @forward "utility/unique-id";
 @forward "utility/vertical-sides";

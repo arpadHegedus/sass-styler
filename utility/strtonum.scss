@@ -20,6 +20,7 @@ $numbers: (
 /// @param {Number|String} $value The value to be cast
 /// @return {Number}
 /// @link https://www.sassmeister.com/gist/9fa19d254864f33d4a80
+/// @group utility
 
 @function strtonum($value) {
     @if meta.type-of($value) == number {

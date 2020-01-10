@@ -1,4 +1,4 @@
-@use "../math/clip-number" as *;
+@use "../utility/clip-number" as *;
 
 /// Set box shadow per a depth level
 /// @param {Number} $depth [1] - The depth from 1 to 5

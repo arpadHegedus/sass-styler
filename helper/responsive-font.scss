@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../math/strip-unit" as *;
+@use "../utility/strip-unit" as *;
 
 /// Viewport sized typography with minimum and maximum values
 /// @author Eduardo Boucas

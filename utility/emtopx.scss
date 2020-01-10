@@ -3,7 +3,7 @@
 @use "sass:meta";
 @use "./strtonum" as *;
 @use "../helper/set-styles";
-@use "../math/strip-unit" as *;
+@use "./strip-unit" as *;
 
 /// Em to Px conversion
 /// @param {Number} $em Size value

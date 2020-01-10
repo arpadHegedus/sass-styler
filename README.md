@@ -9335,6 +9335,19 @@ Change color (alias of sass:color)
 ##### Returns
 `Color`
 
+#### cmyk
+
+Get CMYK values from a color
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$color` | Base color | Color | - |
+
+##### Returns
+`Map`
+
 #### complement
 
 Change color (alias of sass:color)
@@ -10355,31 +10368,6 @@ $result: atan2(0, -1);       /* 3.14159 */
 
 * [https://github.com/terkel/mathsass/blob/master/dist/functions/_atan2.scss](https://github.com/terkel/mathsass/blob/master/dist/functions/_atan2.scss)
 
-#### clip-number
-
-Constrain a number between a min and max value
-
-##### Parameters
-
-| name | description | type | default value |
-| ---- | ----------- | ---- | ------------- |
-| `$value` | The value to constrain | Number | - |
-| `$min` | The minimum value | Number | `0.0001` |
-| `$max` | The maximum value | Number | `0.9999` |
-
-##### Returns
-`Number`
-
-##### Example
-
-```scss
-$result: clip-number(1);          /* 0.9999 */
-$result: clip-number(-1);         /* 0.0001 */
-$result: clip-number(7, 3, 5);    /* 5 */
-$result: clip-number(15, 0, 10);  /* 10 */
-$result: clip-number(6, 0, 10);   /* 6 */
-```
-
 #### cos
 
 Returns the cosine of a number
@@ -10573,31 +10561,6 @@ $result: gcd(54, 24);  /* 6 */
 ##### Links
 
 * [https://github.com/terkel/mathsass/blob/master/dist/functions/_gcd.scss](https://github.com/terkel/mathsass/blob/master/dist/functions/_gcd.scss)
-
-#### is-between
-
-Check if a number is between a min and max value
-
-##### Parameters
-
-| name | description | type | default value |
-| ---- | ----------- | ---- | ------------- |
-| `$value` | The value to constrain | Number | - |
-| `$min` | The minimum value | Number | `0.0001` |
-| `$max` | The maximum value | Number | `0.9999` |
-
-##### Returns
-`Boolean`
-
-##### Example
-
-```scss
-$result: clip-number(1);          /* false */
-$result: clip-number(-1);         /* false */
-$result: clip-number(7, 3, 5);    /* false */
-$result: clip-number(15, 0, 10);  /* false */
-$result: clip-number(6, 0, 10);   /* true */
-```
 
 #### lcm
 
@@ -10797,28 +10760,6 @@ $result: sqrt(5);  /* 2.23607 */
 ##### Links
 
 * [https://github.com/terkel/mathsass/blob/master/dist/functions/_sqrt.scss](https://github.com/terkel/mathsass/blob/master/dist/functions/_sqrt.scss)
-
-#### strip-unit
-
-Remove units from a number
-
-##### Parameters
-
-| name | description | type | default value |
-| ---- | ----------- | ---- | ------------- |
-| `$number` | Number with a unit | Number | - |
-
-##### Returns
-`Number`
-
-##### Example
-
-```scss
-$result: strip-unit(12px);     /* 12 */
-$result: strip-unit(-12em);    /* -12 */
-$result: strip-unit(12rem);    /* 12 */
-$result: strip-unit(2.2deg);   /* 2.2 */
-```
 
 ##### Links
 
@@ -11329,6 +11270,31 @@ Get the bottom value from a list like margin or padding
 ##### Returns
 `Null|Number`
 
+#### clip-number
+
+Constrain a number between a min and max value
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$value` | The value to constrain | Number | - |
+| `$min` | The minimum value | Number | `0.0001` |
+| `$max` | The maximum value | Number | `0.9999` |
+
+##### Returns
+`Number`
+
+##### Example
+
+```scss
+$result: clip-number(1);          /* 0.9999 */
+$result: clip-number(-1);         /* 0.0001 */
+$result: clip-number(7, 3, 5);    /* 5 */
+$result: clip-number(15, 0, 10);  /* 10 */
+$result: clip-number(6, 0, 10);   /* 6 */
+```
+
 #### color-from
 
 Get the color value from a list like border or background
@@ -11341,6 +11307,21 @@ Get the color value from a list like border or background
 
 ##### Returns
 `Null|Color`
+
+#### decimal-round
+
+Round a number to specified digits
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$number` | The base number | Number | - |
+| `$digits` | Digits to output | Number | 0 |
+| `$mode` | How to round the number | String | round |
+
+##### Returns
+`Number`
 
 #### emtopx
 
@@ -11433,6 +11414,31 @@ Base64 encode svg code
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$svg` | The svg code | String | - |
+
+#### is-between
+
+Check if a number is between a min and max value
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$value` | The value to constrain | Number | - |
+| `$min` | The minimum value | Number | `0.0001` |
+| `$max` | The maximum value | Number | `0.9999` |
+
+##### Returns
+`Boolean`
+
+##### Example
+
+```scss
+$result: is-between(1);          /* false */
+$result: is-between(-1);         /* false */
+$result: is-between(7, 3, 5);    /* false */
+$result: is-between(15, 0, 10);  /* false */
+$result: is-between(6, 0, 10);   /* true */
+```
 
 #### is-property
 
@@ -11670,6 +11676,28 @@ Replace `$search` with `$replace` in `$string`
 ##### Links
 
 * [https://css-tricks.com/snippets/sass/str-replace-function/](https://css-tricks.com/snippets/sass/str-replace-function/)
+
+#### strip-unit
+
+Remove units from a number
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$number` | Number with a unit | Number | - |
+
+##### Returns
+`Number`
+
+##### Example
+
+```scss
+$result: strip-unit(12px);     /* 12 */
+$result: strip-unit(-12em);    /* -12 */
+$result: strip-unit(12rem);    /* 12 */
+$result: strip-unit(2.2deg);   /* 2.2 */
+```
 
 #### strtonum
 

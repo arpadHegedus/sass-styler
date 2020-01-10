@@ -1,5 +1,5 @@
 @use "constants" as *;
-@use "strip-unit" as *;
+@use "../utility/strip-unit" as *;
 
 /// Convert rad to deg
 /// @param {Number} $rad Rad
