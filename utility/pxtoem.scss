@@ -3,7 +3,7 @@
 @use "sass:meta";
 @use "./strtonum" as *;
 @use "../helper/set-styles";
-@use "../strip-unit" as *;
+@use "./strip-unit" as *;
 
 /// Px to Em calculation
 /// @param {Number} $px Size value

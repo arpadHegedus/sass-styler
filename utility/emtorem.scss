@@ -1,6 +1,6 @@
 @use "sass:string";
 @use "./strtonum" as *;
-@use "../strip-unit" as *;
+@use "./strip-unit" as *;
 
 /// Change em to rem (units only, no calculations)
 /// @param {Number} $em Size value
