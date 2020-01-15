@@ -9777,14 +9777,14 @@ Prevent elements flowing around floating elements
 
 #### container
 
-Create a width-limited container with padding on smaller screens
+Create a width-limited container with margin on smaller screens
 
 ##### Parameters
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$width` | The width-limit | number | `null` |
-| `$padding` | the padding size | number | `null` |
+| `$margin` | The margin size | number | `null` |
 
 #### cover-link
 
@@ -10209,7 +10209,7 @@ The default asset path to prepend
 
 #### $container
 
-Default named container widths and padding
+Default named container widths and margin
 
 #### $container-default
 
@@ -11596,6 +11596,34 @@ Px to Rem calculation
 
 ##### Returns
 `Number`
+
+#### remove-nth
+
+Remove the $nth value of a $list
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$list` | Size value | List | - |
+| `$nth` | Index of the value to be removed from list | Number | - |
+
+##### Returns
+`List|Mixed`
+
+#### remove
+
+Remove $keys (deeply) from $map
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$map` | The map to remove keys from | Map | - |
+| `$keys...` | Keys to be removed | String|List | - |
+
+##### Returns
+`Map`
 
 #### remtoem
 

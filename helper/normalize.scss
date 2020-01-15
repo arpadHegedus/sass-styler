@@ -1,7 +1,7 @@
-@use "sass:map";
 @use "../utility/declare-map" as *;
 @use "../utility/get" as *;
 @use "../utility/merge" as *;
+@use "../utility/remove" as *;
 @use "script-direction" as *;
 @use "set-styles" as *;
 @use "spacing" as *;
@@ -243,7 +243,7 @@ $_defaults: (
   /* document root */
   html {
     @include declare-map(
-      map.remove(
+      remove(
         $settings,
         height,
         hr,
@@ -302,7 +302,7 @@ $_defaults: (
   progress,
   video,
   iframe {
-    vertical-align: map.get($settings, vertical-align);
+    vertical-align: get($settings, vertical-align);
 
     /* fix html5 display settings for inline elements */
     display: inline-block;
@@ -353,58 +353,58 @@ $_defaults: (
   b,
   strong,
   dt {
-    @include declare-map(map.get($settings, bold));
+    @include declare-map(get($settings, bold));
   }
 
   /* italic elements */
   em,
   dfn,
   var {
-    @include declare-map(map.get($settings, italic));
+    @include declare-map(get($settings, italic));
   }
 
   /* underline elements */
   ins,
   u  {
-    @include declare-map(map.get($settings, underline));
+    @include declare-map(get($settings, underline));
   }
 
   /* line-through elements */
   del,
   s {
-    @include declare-map(map.get($settings, line-through));
+    @include declare-map(get($settings, line-through));
   }
 
   /* small */
   small {
-    @include declare-map(map.get($settings, small));
+    @include declare-map(get($settings, small));
   }
 
   /* subscript */
   sub {
-    @include declare-map(map.get($settings, sub));
+    @include declare-map(get($settings, sub));
   }
 
   /* superscript */
   sup {
-    @include declare-map(map.get($settings, sup));
+    @include declare-map(get($settings, sup));
   }
 
   /* code elements */
   code,
   kbd,
   samp {
-    @include declare-map(map.get($settings, code));
+    @include declare-map(get($settings, code));
   }
 
   /* pre */
   pre {
-    @include declare-map(map.get($settings, pre));
+    @include declare-map(get($settings, pre));
   }
 
   /* mark */
   mark {
-    @include declare-map(map.get($settings, mark));
+    @include declare-map(get($settings, mark));
   }
 
   /* standardize cursor behaviour for help elements */
@@ -415,18 +415,18 @@ $_defaults: (
 
   /* abbr with title */
   abbr[title] {
-    @include declare-map(map.get($settings, abbr));
+    @include declare-map(get($settings, abbr));
   }
 
   /* blockquote and quote */
   blockquote,
   q {
-    @include declare-map(map.get($settings, quote));
+    @include declare-map(get($settings, quote));
   }
 
   /* cite */
   cite {
-    @include declare-map(map.get($settings, cite));
+    @include declare-map(get($settings, cite));
   }
 
   /* horizontal ruler */
@@ -440,7 +440,7 @@ $_defaults: (
 
     /* reset border */
     border: 0;
-    border-top: map.get($settings, hr);
+    border-top: get($settings, hr);
   }
 
   /* image element */
@@ -466,47 +466,45 @@ $_defaults: (
   h4,
   h5,
   h6 {
-    @include declare-map(map.get($settings, heading));
+    @include declare-map(get($settings, heading));
   }
 
   /* h1 */
   h1 {
-    @include declare-map(map.get($settings, h1));
+    @include declare-map(get($settings, h1));
   }
 
   /* h2 */
   h2 {
-    @include declare-map(map.get($settings, h2));
+    @include declare-map(get($settings, h2));
   }
 
   /* h3 */
   h3 {
-    @include declare-map(map.get($settings, h3));
+    @include declare-map(get($settings, h3));
   }
 
   /* h4 */
   h4 {
-    @include declare-map(map.get($settings, h4));
+    @include declare-map(get($settings, h4));
   }
 
   /* h5 */
   h5 {
-    @include declare-map(map.get($settings, h5));
+    @include declare-map(get($settings, h5));
   }
 
   /* h6 */
   h6 {
-    @include declare-map(map.get($settings, h6));
+    @include declare-map(get($settings, h6));
   }
   
   /* list */
   ul,
   ol {
-    @if map.has-key($settings, list) {
       padding-#{script-direction()}: get($settings, list indent);
 
-      @include declare-map(map.remove(map.get($settings, list), indent));
-    }
+      @include declare-map(remove(get($settings, list), indent));
   }
 
   /* link */
@@ -520,12 +518,12 @@ $_defaults: (
       outline: 0;
     }
 
-    @include declare-map(map.get($settings, link));
+    @include declare-map(get($settings, link));
   }
 
   /* dialog */
   dialog {
-    @include declare-map(map.get($settings, dialog));
+    @include declare-map(get($settings, dialog));
 
     &:not([open]) {
       display: none;
@@ -534,17 +532,17 @@ $_defaults: (
 
   /* fieldset */
   fieldset {
-    @include declare-map(map.get($settings, fieldset));
+    @include declare-map(get($settings, fieldset));
   }
 
   /* legend */
   legend {
-    @include declare-map(map.get($settings, legend));
+    @include declare-map(get($settings, legend));
   }
 
   /* optgroup */
   optgroup {
-    @include declare-map(map.get($settings, optgroup));
+    @include declare-map(get($settings, optgroup));
   }
 
   /* prevent inheritance for certain elements */
@@ -567,7 +565,7 @@ $_defaults: (
   select,
   textarea,
   summary {
-    box-sizing: map.get($settings, box-sizing);
+    box-sizing: get($settings, box-sizing);
   }
 
   /* show overflow in edge */
@@ -652,7 +650,7 @@ $_defaults: (
 
   /* label */
   label {
-    @include declare-map(map.get($settings, label));
+    @include declare-map(get($settings, label));
   }
 
   /* input */
@@ -674,7 +672,7 @@ $_defaults: (
   [type="week"],
   select,
   textarea {
-    @include declare-map(map.remove(map.get($settings, input), gap));
+    @include declare-map(remove(get($settings, input), gap));
   }
 
   /* file input */
@@ -682,18 +680,18 @@ $_defaults: (
     /* prevent padding issue appearing in some browsers */
     padding-#{script-direction(backward)}: 0;
 
-    @include declare-map(merge(map.remove(map.get($settings, input), gap), map.get($settings, file)));
+    @include declare-map(merge(remove(get($settings, input), gap), get($settings, file)));
   }
 
   /* multiline inputs */
   textarea,
   select[multiple] {
-    @include declare-map(map.get($settings, input-multiline));
+    @include declare-map(get($settings, input-multiline));
   }
 
   /* textarea */
   textarea {
-    @include declare-map(map.get($settings, textarea));
+    @include declare-map(get($settings, textarea));
   }
 
   /* select */
@@ -701,7 +699,7 @@ $_defaults: (
     /* prevent padding issue appearing in some browsers */
     padding-#{script-direction(backward)}: 0;
 
-    @include declare-map(map.get($settings, select));
+    @include declare-map(get($settings, select));
   }
 
   /* standardize option in browsers */
@@ -729,7 +727,7 @@ $_defaults: (
   [type="reset"],
   [type="submit"],
   summary {
-    @include declare-map(map.get($settings, button));
+    @include declare-map(get($settings, button));
   }
 
   /* ensure font inheritance for table elements */
@@ -741,27 +739,27 @@ $_defaults: (
 
   /* caption */
   caption {
-    @include declare-map(map.get($settings, caption));
+    @include declare-map(get($settings, caption));
   }
 
   /* table */
   table {
-    @include declare-map(map.get($settings, table));
+    @include declare-map(get($settings, table));
   }
 
   /* table cell */
   th,
   td {
-    @include declare-map(map.get($settings, table-cell));
+    @include declare-map(get($settings, table-cell));
 
     /* table odd column */
     &:nth-child(2n+1) {
-      @include declare-map(map.get($settings, table-odd-column));
+      @include declare-map(get($settings, table-odd-column));
     }
 
     /* table even column */
     &:nth-child(2n) {
-      @include declare-map(map.get($settings, table-even-column));
+      @include declare-map(get($settings, table-even-column));
     }
   }
 
@@ -770,73 +768,73 @@ $_defaults: (
     /* table odd row */
     &:nth-child(2n + 1) td,
     &:nth-child(2n + 1) th {
-      @include declare-map(map.get($settings, table-odd-row));
+      @include declare-map(get($settings, table-odd-row));
     }
 
     /* table even row */
     &:nth-child(2n) td,
     &:nth-child(2n) th {
-      @include declare-map(map.get($settings, table-even-row));
+      @include declare-map(get($settings, table-even-row));
     }
   }
 
   /* thead */
   thead {
-    @include declare-map(map.get($settings, thead));
+    @include declare-map(get($settings, thead));
   }
 
   /* table head */
   th,
   thead td {
-    @include declare-map(map.get($settings, table-head));
+    @include declare-map(get($settings, table-head));
   }
 
   /* tfoot */
   tfoot {
-    @include declare-map(map.get($settings, tfoot));
+    @include declare-map(get($settings, tfoot));
   }
 
   /* table foot */
   tfoot th,
   tfoot td {
-    @include declare-map(map.get($settings, table-foot));
+    @include declare-map(get($settings, table-foot));
   }
 
   /* selection */
   ::-webkit-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   ::-moz-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   ::selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   input::-webkit-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   input::-moz-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   input::selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   textarea::-webkit-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   textarea::-moz-selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   textarea::selection {
-    @include declare-map(map.get($settings, selection));
+    @include declare-map(get($settings, selection));
   }
 
   /* apply spacing to common elements */

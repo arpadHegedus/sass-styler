@@ -1,4 +1,6 @@
+@use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 @use "merge" as *;
 
 /// Recusrively set map values based on keys
@@ -9,6 +11,11 @@
 /// @group utility
 
 @function set($map, $keys, $value, $recursive: true) {
+
+  @if meta.type-of($map) != map {
+    @return $map;
+  }
+
   $maps: ($map,);
   $result: null;
 
@@ -17,12 +24,17 @@
   }
 
   @for $i from 1 through list.length($keys) - 1 {
-    $current-key: list.nth($keys, $i);
+	$current-key: list.nth($keys, $i);
+	$next-key: list.nth($keys, $i + 1);
     $current-map: list.nth($maps, -1);
     $current-get: map.get($current-map, $current-key);
-    @if $current-get == null {
-      @error "Key `#{$key}` doesn't exist at current level in map.";
-    }
+
+    @if $current-get == null and $next-key {
+      $current-get: ($next-key: null);
+	}
+	@if $current-get == null {
+		@return $map;
+	}
     $maps: list.append($maps, $current-get);
   }
 

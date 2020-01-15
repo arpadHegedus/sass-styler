@@ -1,11 +1,11 @@
-/// Default named container widths and padding
+/// Default named container widths and margin
 /// @group helper
 
 $container: (
   normal: 60rem,
   wide: 80rem,
   narrow: 40rem,
-  padding: 1rem
+  margin: 1rem
 ) !default;
 
 /// Default named container
@@ -16,12 +16,12 @@ $container-default: normal !default;
 @use "sass:map";
 @use "../utility/same-units" as *;
 
-/// Create a width-limited container with padding on smaller screens
+/// Create a width-limited container with side-margin on smaller screens
 /// @param {number} $width [null] The width-limit
-/// @param {number} $padding [null] the padding size
+/// @param {number} $margin [null] The margin size (on smaller screens)
 /// @group helper
 
-@mixin container($width: null, $padding: null) {
+@mixin container($width: null, $margin: null) {
   $width: if(
     $width and map.has-key($container, $width),
     map.get($container, $width),
@@ -31,13 +31,13 @@ $container-default: normal !default;
       map.get($container, $container-default)
     )
   );
-  $padding: if($padding, $padding, map.get($container, padding));
+  $margin: if($margin, $margin, map.get($container, margin));
 
   max-width: $width;
-  margin-right: $padding;
-  margin-left: $padding;
+  margin-right: $margin;
+  margin-left: $margin;
 
-  $min-width: if(same-units($width, $padding), $width + 2 * $padding, calc($width + 2 * $padding));
+  $min-width: if(same-units($width, $margin), $width + 2 * $margin, calc($width + 2 * $margin));
 
   @media only screen and (min-width: #{$min-width}) {
     margin-right: auto;

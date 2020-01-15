@@ -9,7 +9,12 @@
 @function merge($map1, $map2) {
   $map: $map1;
 
+  @if meta.type-of($map) != map or meta.type-of($map2) != map {
+    @return $map1;
+  }
+
   @each $key, $value in $map2 {
+
     @if
       meta.type-of($value) == map and
       map.has-key($map1, $key) and
