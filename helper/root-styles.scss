@@ -11,6 +11,7 @@ $styles: () !default;
 @use "spacing" as *;
 
 /// Set default styles for common elements
+/// @param {String} $root-selector [html] Selector to add root styles to
 /// @example
 ///   @use "../node_modules/sass-styler/styler";
 ///   styler.styles: (
@@ -34,14 +35,14 @@ $styles: () !default;
 ///       border: 1px solid #333
 ///     )
 ///   );
-///   @include set-styles();
+///   @include root-styles();
 /// @group helper
 
-@mixin set-styles() {
+@mixin root-styles($root-selector: "html") {
   /* stylelint-disable no-descending-specificity */
 
   /* document root */
-  html {
+  #{$root-selector} {
     @include declare-map(
       remove(
         $styles,
@@ -121,6 +122,15 @@ $styles: () !default;
     @include declare-map(get($styles, abbr));
   }
 
+  /* indent */
+  blockquote,
+  q,
+  ul,
+  ol,
+  dt {
+    padding-#{script-direction()}: get($settings, indent);
+  }
+
   /* blockquote and quote */
   blockquote,
   q {
@@ -181,9 +191,7 @@ $styles: () !default;
   /* list */
   ul,
   ol {
-    padding-#{script-direction()}: get($styles, list indent);
-
-    @include declare-map(remove(get($styles, list), indent));
+    @include declare-map(get($styles, list));
   }
 
   /* link */
@@ -285,9 +293,13 @@ $styles: () !default;
   button,
   [type="button"],
   [type="reset"],
-  [type="submit"],
+  [type="submit"] {
+    @include declare-map(get($settings, button));
+  }
+
+  /* summary */
   summary {
-    @include declare-map(get($styles, button));
+    @include declare-map(remove(get($settings, button), display));
   }
 
   /* caption */

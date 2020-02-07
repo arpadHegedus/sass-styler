@@ -10097,9 +10097,15 @@ Use the padding trick to keep a container the same ratio in different screen siz
 | `$y` | Height raio | Number | `9` |
 | `$selector` | The selector | String|List | `"&"` |
 
-#### set-styles
+#### root-styles
 
 Set default styles for common elements
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$root-selector` | Selector to add root styles to | String | `"html"` |
 
 ##### Example
 
@@ -10126,7 +10132,7 @@ styler.styles: (
     border: 1px solid #333
   )
 );
-@include set-styles();
+@include root-styles();
 ```
 
 #### spacing
@@ -11360,7 +11366,7 @@ Em to Px conversion
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$em` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11578,7 +11584,7 @@ Px to Em calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11592,7 +11598,7 @@ Px to Rem calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11647,7 +11653,7 @@ Rem to Px calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$rem` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`

@@ -3,7 +3,7 @@
 @use "../utility/merge" as *;
 @use "../utility/remove" as *;
 @use "script-direction" as *;
-@use "set-styles" as *;
+@use "root-styles" as *;
 @use "spacing" as *;
 
 /// The default normalize options
@@ -418,6 +418,15 @@ $_defaults: (
     @include declare-map(get($settings, abbr));
   }
 
+  /* indent */
+  blockquote,
+  q,
+  ul,
+  ol,
+  dt {
+    padding-#{script-direction()}: get($settings, indent);
+  }
+
   /* blockquote and quote */
   blockquote,
   q {
@@ -502,9 +511,7 @@ $_defaults: (
   /* list */
   ul,
   ol {
-      padding-#{script-direction()}: get($settings, list indent);
-
-      @include declare-map(remove(get($settings, list), indent));
+      @include declare-map(get($settings, list));
   }
 
   /* link */
@@ -725,9 +732,13 @@ $_defaults: (
   button,
   [type="button"],
   [type="reset"],
-  [type="submit"],
-  summary {
+  [type="submit"] {
     @include declare-map(get($settings, button));
+  }
+
+  /* summary */
+  summary {
+    @include declare-map(remove(get($settings, button), display));
   }
 
   /* ensure font inheritance for table elements */
