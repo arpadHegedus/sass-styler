@@ -1,269 +1,56 @@
-@use "../utility/declare-map" as *;
 @use "../utility/get" as *;
-@use "../utility/merge" as *;
-@use "../utility/remove" as *;
 @use "script-direction" as *;
-@use "root-styles" as *;
-@use "spacing" as *;
-
-/// The default normalize options
-/// @group helper
-
-$_defaults: (
-  /* prevent ios and windows phone text size changes on orientation change */
-  -ms-text-size-adjust: 100%,
-  -webkit-text-size-adjust: 100%,
-  /* optimize font display */
-  -webkit-font-smoothing: antialiased,
-  -moz-font-smoothing: greyscale,
-  -moz-osx-font-smoothing: grayscale,
-  text-rendering: optimizeSpeed,
-  /* prevent webkit tap highlight inconsistency */
-  -webkit-tap-highlight-color: transparent,
-  /* prevent scrollbar issues in ie and edge */
-  -ms-overflow-style: scrollbar,
-  /* standardize browser behaviour */
-  scroll-behavior: smooth,
-  tab-size: 4,
-  /* set standardized defaults */
-  box-sizing: border-box,
-  vertical-align: middle,
-  /* bold elements */
-  bold: (
-    font-weight: 700
-  ),
-  /* italic elements */
-  italic: (
-    line-height: inherit,
-    font-style: italic
-  ),
-  /* underline elements */
-  underline: (
-    text-decoration: underline
-  ),
-  /* line-through */
-  line-through: (
-    text-decoration: line-through
-  ),
-  /* small */
-  small: (
-    font-size: 80%
-  ),
-  /* subscript */
-  sub: (
-    position: relative,
-    bottom: -0.25em,
-    vertical-align: baseline,
-    line-height: 0,
-    font-size: 75%
-  ),
-  /* superscript */
-  sup: (
-    position: relative,
-    top: -0.5em,
-    vertical-align: baseline,
-    line-height: 0,
-    font-size: 75%
-  ),
-  /* code elements */
-  code: (
-    font-size: 1em,
-    font-family: (consolas, monospace, monospace)
-  ),
-  /* pre */
-  pre: (
-    font-size: 1em,
-    font-family: (consolas, monospace, monospace)
-  ),
-  /* abbr */
-  abbr: (
-    border-bottom: none,
-    text-decoration: underline dotted
-  ),
-  /* quote */
-  quote: (
-    quotes: none
-  ),
-  /* horizontal ruler */
-  hr: 1px solid rgba(0, 0, 0, 0.5),
-  /* h1 */
-  h1: (
-    font-size: 2em
-  ),
-  /* link */
-  link: (
-    background: transparent
-  ),
-  /* dialog */
-  dialog: (
-    position: absolute,
-    right: 0,
-    left: 0,
-    display: block,
-    width: fit-content,
-    height: fit-content,
-    padding: 1em,
-    border: solid
-  ),
-  /* normalize fieldset styles in all browsers */
-  fieldset: (
-    min-height: 0,
-    margin: 0 2px,
-    padding: 0.35em 0.624em 0.75em,
-    border: 1px solid #000
-  ),
-  /* label */
-  label: (
-    display: inline-block
-  ),
-  /* prevent inheritance and text wrapping issues */
-  legend: (
-    box-sizing: border-box,
-    display: table,
-    max-width: 100%,
-    padding: 0,
-    border: 0,
-    white-space: normal,
-    color: inherit
-  ),
-  /* optgroup */
-  optgroup: (
-    /* prevent optgroup from inheriting font-weight */
-    font-weight: 700
-  ),
-  /* input */
-  input: (
-    display: inline-block,
-    max-width: 100%,
-    disabled-readonly: (
-      cursor: default
-    ),
-    /* prevent firefox issue with line-height */
-    line-height: normal
-  ),
-  /* file input overwrites */
-  file: (
-    max-width: 100%,
-    padding: 0,
-    padding-right: null,
-    padding-left: null,
-    border: 0,
-    background: transparent,
-    cursor: pointer,
-    hover: (
-      background: null,
-      border: null
-    ),
-    focus: (
-      background: null,
-      border: null
-    ),
-    hover-focus: (
-      background: null,
-      border: null
-    ),
-    active: (
-      background: null,
-      border: null
-    ),
-    disabled-readonly: (
-      background: null,
-      border: null
-    )
-  ),
-  /* textarea */
-  textarea: (
-    /* remove scrollbar automatically added in ie and prevent horizontal resizing */
-    overflow: auto,
-    resize: vertical
-  ),
-  button: (
-    display: inline-block,
-    max-width: 100%,
-    text-transform: none,
-    text-decoration: none,
-    cursor: pointer,
-    disabled-readonly: (
-      cursor: default
-    ),
-    /* remove auto-applied styles for clickables in ios */
-    -webkit-appearance: none,
-    /* make unselectable */
-    user-select: none,
-    /* set flags */
-    will-change: auto,
-    /* hide webkit tap highlight */
-    -webkit-tap-highlight-color: transparent
-  ),
-  /* caption */
-  caption: (
-    caption-side: bottom
-  ),
-  /* table */
-  table: (
-    text-align: inherit,
-    /* prevent incompatibilties with border behaviour */
-    border-collapse: collapse,
-    border-spacing: 0
-  ),
-  /* table cell */
-  table-cell: (
-    padding: 0
-  ),
-  /* table head */
-  table-head: (
-    text-align: inherit
-  ),
-  /* table foot */
-  table-foot: (
-    text-align: inherit
-  )
-);
 
 /// Normalize with configurable variables
+/// @param {Map} $styles [()] Default styles for some elements
 /// @group helper
 
-@mixin normalize() {
-  $settings: merge($_defaults, $styles);
+@mixin normalize($styles: ()) {
 
-  /* stylelint-disable no-descending-specificity */
-
-  /* microsoft viewport */
+  /// microsoft viewport
   @-ms-viewport {
     width: devide-width;
   }
 
-  /* normalize box model for elements */
+  /// normalize box model for elements
   *,
   *::before,
   *::after {
     box-sizing: inherit;
   }
 
-  /* document root */
+  // root settings
   html {
-    @include declare-map(
-      remove(
-        $settings,
-        height,
-        hr,
-        link,
-        max-width,
-        max-height,
-        min-height,
-        min-width,
-        vertical-align,
-        width
-      )
-    );
+    /// prevent ios and windows phone text size changes on orientation change
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+
+    /// optimize font display
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: greyscale;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+
+    /// prevent webkit tap highlight inconsistency
+    -webkit-tap-highlight-color: transparent;
+
+    /// prevent scrollbar issues in ie and edge
+    -ms-overflow-style: scrollbar;
+
+    /// standardize browser behaviour
+    scroll-behavior: smooth;
+    tab-size: 4;
+
+    /// set standardized defaults
+    box-sizing: get($styles, box-sizing, border-box);
   }
 
-  /* ensure the body covers the height of the window */
+  /// ensure the body covers the height of the window
   body {
-    min-height: 100vh;
+    min-height: get($styles, min-height, 100vh);
   }
 
-  /* reset margin and padding for common layout elements */
+  /// reset margin and padding for common layout elements
   body,
   div,
   form,
@@ -274,7 +61,7 @@ $_defaults: (
     padding: 0;
   }
 
-  /* html5 display for block elements */
+  /// html5 display for block elements
   address,
   article,
   aside,
@@ -286,47 +73,49 @@ $_defaults: (
   hgroup,
   main,
   nav,
-  section {
+  pre,
+  section,
+  summary {
     display: block;
   }
 
-  /* display for output elements */
+  /// display for output elements
   output {
     display: inline-block;
   }
 
-  /* vertical alignments */
+  /// vertical alignments
   audio,
   canvas,
   img,
   progress,
   video,
   iframe {
-    vertical-align: get($settings, vertical-align);
+    vertical-align: get($styles, vertical-align, middle);
 
-    /* fix html5 display settings for inline elements */
+    /// fix html5 display settings for inline elements
     display: inline-block;
     max-width: 100%;
   }
 
-  /* fix display issues for summaries */
+  /// fix display issues for summaries
   summary {
     display: list-item;
     cursor: pointer;
   }
 
-  /* natively hidden elements */
+  /// natively hidden elements
   [hidden],
   template {
     display: none;
   }
 
-  /* remove outline for elements that are focusable programatically only */
+  /// remove outline for elements that are focusable programatically only
   [tabindex="-1"]:focus {
     outline: none !important;
   }
 
-  /* touch action */
+  /// touch action
   a,
   area,
   button,
@@ -338,221 +127,194 @@ $_defaults: (
     touch-action: manipulation;
   }
 
-  /* prevent display of audio with no control */
+  /// prevent display of audio with no control
   audio:not([controls]) {
     display: none;
     height: 0;
   }
 
-  /* prevent overflow for svg in ie */
+  /// prevent overflow for svg in ie
   svg:not(:root) {
     overflow: hidden;
   }
 
-  /* bold elements */
+  /// bold elements
   b,
   strong,
   dt {
-    @include declare-map(get($settings, bold));
+    font-weight: get($styles, bold font-weight, 700);
   }
 
-  /* italic elements */
+  /// italic elements
   em,
   dfn,
   var {
-    @include declare-map(get($settings, italic));
+    line-height:inherit;
+    font-style: italic;
   }
 
-  /* underline elements */
+  /// underline elements
   ins,
   u  {
-    @include declare-map(get($settings, underline));
+    text-decoration:underline;
   }
 
-  /* line-through elements */
+  /// line-through elements
   del,
   s {
-    @include declare-map(get($settings, line-through));
+    text-decoration: line-through;
   }
 
-  /* small */
+  /// small
   small {
-    @include declare-map(get($settings, small));
+    font-size: get($styles, small font-size, 80%);
   }
 
-  /* subscript */
+  /// subscript
   sub {
-    @include declare-map(get($settings, sub));
+    position: relative;
+    bottom: -0.25em;
+    vertical-align: baseline;
+    line-height: 0;
+    font-size: 75%;
   }
 
-  /* superscript */
+  /// superscript
   sup {
-    @include declare-map(get($settings, sup));
+    position: relative;
+    top: -0.5em;
+    vertical-align: baseline;
+    line-height: 0;
+    font-size: 75%;
   }
 
-  /* code elements */
+  /// code elements
   code,
   kbd,
+  pre,
   samp {
-    @include declare-map(get($settings, code));
+    font-size: get($styles, code font-size, 1em);
+    font-family: get($styles, code font-family, (consolas, monospace, monospace));
   }
 
-  /* pre */
-  pre {
-    @include declare-map(get($settings, pre));
-  }
-
-  /* mark */
-  mark {
-    @include declare-map(get($settings, mark));
-  }
-
-  /* standardize cursor behaviour for help elements */
+  /// standardize cursor behaviour for help elements
   abbr[title],
   dfn[title] {
     cursor: help;
   }
 
-  /* abbr with title */
+  /// abbr with title
   abbr[title] {
-    @include declare-map(get($settings, abbr));
+    border-bottom: none;
+    text-decoration: underline dotted;
   }
 
-  /* indent */
+  /// indent
   blockquote,
   q,
   ul,
   ol,
   dt {
-    padding-#{script-direction()}: get($settings, indent);
+    padding-#{script-direction()}: get($styles, indent, 1.5em);
   }
 
-  /* blockquote and quote */
+  /// blockquote and quote
   blockquote,
   q {
-    @include declare-map(get($settings, quote));
+    quotes: none
   }
 
-  /* cite */
-  cite {
-    @include declare-map(get($settings, cite));
-  }
-
-  /* horizontal ruler */
+  /// horizontal ruler
   hr {
-    /* add the correct box sizing in Firefox */
+    /// add the correct box sizing in Firefox
     box-sizing: content-box;
     height: 0;
 
-    /* show the overflow in Edge and IE */
+    /// show the overflow in Edge and IE
     overflow: visible;
 
-    /* reset border */
+    /// reset border
     border: 0;
-    border-top: get($settings, hr);
+
+    border-top: get($styles, hr, rgba(#000, 0.5));
   }
 
-  /* image element */
+  /// image element
   img {
-    /* prevent unexpected behaviour */
+    /// prevent unexpected behaviour
     height: auto;
     vertical-align: middle;
 
-    /* set microsoft interpolation */
+    /// set microsoft interpolation
     -ms-interpolation-mode: bicubic;
 
-    /* remove the border on images inside links in IE10 */
+    /// remove the border on images inside links in IE10
     &,
     a & {
       border-style: none;
     }
   }
 
-  /* headings */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @include declare-map(get($settings, heading));
-  }
-
-  /* h1 */
+  /// h1
   h1 {
-    @include declare-map(get($settings, h1));
+    font-size: get($styles, h1 font-size, 2em);
   }
 
-  /* h2 */
-  h2 {
-    @include declare-map(get($settings, h2));
-  }
-
-  /* h3 */
-  h3 {
-    @include declare-map(get($settings, h3));
-  }
-
-  /* h4 */
-  h4 {
-    @include declare-map(get($settings, h4));
-  }
-
-  /* h5 */
-  h5 {
-    @include declare-map(get($settings, h5));
-  }
-
-  /* h6 */
-  h6 {
-    @include declare-map(get($settings, h6));
-  }
-  
-  /* list */
-  ul,
-  ol {
-      @include declare-map(get($settings, list));
-  }
-
-  /* link */
+  /// link
   a {
-    /* fix underline issues in webkit */
+    background: transparent;
+
+    /// fix underline issues in webkit
     -webkit-text-decoration-skip: objects;
 
-    /* improve readability for focus and hovered anchors */
+    /// improve readability for focus and hovered anchors
     &:active,
     &:hover {
       outline: 0;
     }
-
-    @include declare-map(get($settings, link));
   }
 
-  /* dialog */
+  /// dialog
   dialog {
-    @include declare-map(get($settings, dialog));
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: 1em;
+    border: solid;
 
     &:not([open]) {
       display: none;
     }
   }
 
-  /* fieldset */
+  /// normalize fieldset styles in all browsers
   fieldset {
-    @include declare-map(get($settings, fieldset));
+    min-height: 0;
+    margin: 0 2px;
+    padding: get($styles, fieldset padding, 0.35em 0.624em 0.75em);
+    border: get($styles, fieldset border, 1px solid rgba(#000, 0.5));
   }
 
-  /* legend */
+  /// prevent inheritance and text wrapping issues
   legend {
-    @include declare-map(get($settings, legend));
+    box-sizing: get($styles, box-sizing, border-box);
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    white-space: normal;
+    color: inherit;
   }
 
-  /* optgroup */
+  /// prevent optgroup from inheriting font-weight
   optgroup {
-    @include declare-map(get($settings, optgroup));
+    font-weight: get($styles, bold font-weight, 700);
   }
 
-  /* prevent inheritance for certain elements */
+  /// prevent inheritance for certain elements
   address,
   button,
   input,
@@ -564,7 +326,7 @@ $_defaults: (
     color: inherit;
   }
 
-  /* prevent inheritance of box sizing */
+  /// prevent inheritance of box sizing
   button,
   input,
   optgroup,
@@ -572,22 +334,22 @@ $_defaults: (
   select,
   textarea,
   summary {
-    box-sizing: get($settings, box-sizing);
+    box-sizing: get($styles, box-sizing, border-box);
   }
 
-  /* show overflow in edge */
+  /// show overflow in edge
   button,
   input {
     overflow: visible;
   }
 
-  /* remove the inheritance of text transform in firefox */
+  /// remove the inheritance of text transform in firefox
   button,
   select {
     text-transform: none;
   }
 
-  /* prevent forced appearance for input elements on ios */
+  /// prevent forced appearance for input elements on ios
   input[type="text"],
   input[type="email"],
   input[type="search"],
@@ -596,13 +358,13 @@ $_defaults: (
     -moz-appearance: none;
   }
 
-  /* prevent cursor style for spinner */
+  /// prevent cursor style for spinner
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     height: auto;
   }
 
-  /* correct appearance for date input */
+  /// correct appearance for date input
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"],
@@ -610,41 +372,41 @@ $_defaults: (
     -webkit-appearance: listbox;
   }
 
-  /* minimum width to color input */
+  /// minimum width to color input
   [type="color"] {
     min-width: 4em;
   }
 
-  /* prevent forced styling for upload button in webkit */
+  /// prevent forced styling for upload button in webkit
   ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
     vertical-align: baseline;
   }
 
-  /* multi-select */
+  /// multi-select
   select[multiple] {
     overflow-y: auto;
     padding: 0;
   }
 
-  /* remove the inner border and padding in firefox */
+  /// remove the inner border and padding in firefox
   ::-moz-focus-inner {
     padding: 0;
     border-style: none;
   }
 
-  /* restore the focus styles unset previously */
+  /// restore the focus styles unset previously
   :-moz-focusring {
     outline: 1px dotted ButtonText;
   }
 
-  /* remove the additional invalid styles in Firefox */
+  /// remove the additional invalid styles in Firefox
   :-moz-ui-invalid {
     box-shadow: none;
   }
 
-  /* webkit appearance for search inputs */
+  /// webkit appearance for search inputs
   [type="search"] {
     -webkit-appearance: textfield;
     outline-offset: -2px;
@@ -655,12 +417,12 @@ $_defaults: (
     }
   }
 
-  /* label */
+  /// label
   label {
-    @include declare-map(get($settings, label));
+    display: get($styles, label display, inline-block);
   }
 
-  /* input */
+  /// input
   input:not([type]),
   [type="color"],
   [type="date"],
@@ -679,175 +441,130 @@ $_defaults: (
   [type="week"],
   select,
   textarea {
-    @include declare-map(remove(get($settings, input), gap));
-  }
+    display: get($styles, input display, inline-block);
+    max-width: 100%;
 
-  /* file input */
-  [type="file"] {
-    /* prevent padding issue appearing in some browsers */
-    padding-#{script-direction(backward)}: 0;
+    /// prevent firefox issue with line-height
+    line-height: normal;
 
-    @include declare-map(merge(remove(get($settings, input), gap), get($settings, file)));
-  }
-
-  /* multiline inputs */
-  textarea,
-  select[multiple] {
-    @include declare-map(get($settings, input-multiline));
-  }
-
-  /* textarea */
-  textarea {
-    @include declare-map(get($settings, textarea));
-  }
-
-  /* select */
-  select:not([multiple]) {
-    /* prevent padding issue appearing in some browsers */
-    padding-#{script-direction(backward)}: 0;
-
-    @include declare-map(get($settings, select));
-  }
-
-  /* standardize option in browsers */
-  select[multiple] option {
-    padding: if(get($settings, input padding), get($settings, input padding), 0.25em 0);
-  }
-
-  /* clickable inputs */
-  [type="checkbox"],
-  [type="radio"] {
-    outline: get($settings, input outline);
-
-    /* prevent ie10 issues with clickable inputs */
-    padding: 0;
-
-    label > &,
-    > label {
-      margin-#{script-direction()}: get($settings, input gap);
+    &:disabled,
+    &:read-only {
+      cursor: default
     }
   }
 
-  /* button */
+  /// file input
+  [type="file"] {
+    display: get($styles, input display, inline-block);
+    max-width: 100%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    /// prevent firefox issue with line-height
+    line-height: normal;
+
+    /// prevent padding issue appearing in some browsers
+    padding-#{script-direction(backward)}: 0;
+  }
+
+  /// textarea
+  textarea {
+    /// remove scrollbar automatically added in ie and prevent horizontal resizing
+    overflow: auto;
+    resize: vertical;
+  }
+
+  /// select
+  select:not([multiple]) {
+    /// prevent padding issue appearing in some browsers
+    padding-#{script-direction(backward)}: 0;
+  }
+
+  /// standardize option in browsers
+  select[multiple] option {
+    padding: get($styles, input padding, 0.25em 0);
+  }
+
+  /// clickable inputs
+  [type="checkbox"],
+  [type="radio"] {
+
+    /// prevent ie10 issues with clickable inputs
+    padding: 0;
+  }
+
+  /// button
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  summary {
+    max-width: 100%;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+    
+    /// remove auto-applied styles for clickables in ios
+    -webkit-appearance: none;
+
+    /// make unselectable
+    user-select: none;
+
+    /// set flags
+    will-change: auto;
+
+    /// hide webkit tap highlight
+    -webkit-tap-highlight-color: transparent;
+    
+    &:disabled,
+    &:read-only {
+      cursor: default
+    }
+  }
+
   button,
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    @include declare-map(get($settings, button));
+    display: inline-block;
   }
 
-  /* summary */
-  summary {
-    @include declare-map(remove(get($settings, button), display));
-  }
-
-  /* ensure font inheritance for table elements */
+  /// ensure font inheritance for table elements
   table,
   th,
   td {
     font: inherit;
   }
 
-  /* caption */
+  /// caption
   caption {
-    @include declare-map(get($settings, caption));
+    caption-side: get($styles, caption caption-side, bottom);
   }
 
-  /* table */
+  /// table
   table {
-    @include declare-map(get($settings, table));
+    text-align: inherit;
+    /// prevent incompatibilties with border behaviour
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 
-  /* table cell */
+  /// table cell
   th,
   td {
-    @include declare-map(get($settings, table-cell));
-
-    /* table odd column */
-    &:nth-child(2n+1) {
-      @include declare-map(get($settings, table-odd-column));
-    }
-
-    /* table even column */
-    &:nth-child(2n) {
-      @include declare-map(get($settings, table-even-column));
-    }
+    padding: get($styles, table-cell padding, 0);
   }
 
-  /* odd/even table rows */
-  tr {
-    /* table odd row */
-    &:nth-child(2n + 1) td,
-    &:nth-child(2n + 1) th {
-      @include declare-map(get($settings, table-odd-row));
-    }
-
-    /* table even row */
-    &:nth-child(2n) td,
-    &:nth-child(2n) th {
-      @include declare-map(get($settings, table-even-row));
-    }
-  }
-
-  /* thead */
-  thead {
-    @include declare-map(get($settings, thead));
-  }
-
-  /* table head */
+  /// table head
   th,
   thead td {
-    @include declare-map(get($settings, table-head));
+    text-align: inherit;
   }
 
-  /* tfoot */
-  tfoot {
-    @include declare-map(get($settings, tfoot));
-  }
-
-  /* table foot */
+  /// table foot
   tfoot th,
   tfoot td {
-    @include declare-map(get($settings, table-foot));
+    text-align: inherit;
   }
-
-  /* selection */
-  ::-webkit-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  ::-moz-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  ::selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  input::-webkit-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  input::-moz-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  input::selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  textarea::-webkit-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  textarea::-moz-selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  textarea::selection {
-    @include declare-map(get($settings, selection));
-  }
-
-  /* apply spacing to common elements */
-  @include spacing();
 }

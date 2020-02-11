@@ -9976,6 +9976,12 @@ $media-queries: (
 
 Normalize with configurable variables
 
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$styles` | Default styles for some elements | Map | `()` |
+
 #### object-fit
 
 Create object fitted elements
@@ -10097,7 +10103,7 @@ Use the padding trick to keep a container the same ratio in different screen siz
 | `$y` | Height raio | Number | `9` |
 | `$selector` | The selector | String|List | `"&"` |
 
-#### root-styles
+#### set-styles
 
 Set default styles for common elements
 
@@ -10105,7 +10111,9 @@ Set default styles for common elements
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
-| `$root-selector` | Selector to add root styles to | String | `"html"` |
+| `$styles` | Style settings map | Map | `$styles` |
+| `$normalize` | Whether to also normalize | Boolean | `false` |
+| `$root-selector` | Selector to add root styles to | String | `"&"` |
 
 ##### Example
 
@@ -10132,7 +10140,7 @@ styler.styles: (
     border: 1px solid #333
   )
 );
-@include root-styles();
+@include set-styles();
 ```
 
 #### spacing
@@ -10559,7 +10567,7 @@ $result: fact(8);  /* 40320 */
 
 #### frexp
 
-Returns a two-element list containing the normalized fraction and exponent of number
+Returns a two-element list containing the set-stylesd fraction and exponent of number
 
 ##### Parameters
 
@@ -11366,7 +11374,7 @@ Em to Px conversion
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$em` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11584,7 +11592,7 @@ Px to Em calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11598,7 +11606,7 @@ Px to Rem calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$px` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`
@@ -11653,7 +11661,7 @@ Rem to Px calculation
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$rem` | Size value | Number | - |
-| `$default` | Set a default, otherwise styler:root-styles.$styles.font-size will be used | Number | `null` |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
 
 ##### Returns
 `Number`

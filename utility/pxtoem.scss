@@ -2,12 +2,12 @@
 @use "sass:math";
 @use "sass:meta";
 @use "./strtonum" as *;
-@use "../helper/root-styles";
+@use "../helper/set-styles";
 @use "./strip-unit" as *;
 
 /// Px to Em calculation
 /// @param {Number} $px Size value
-/// @param {Number} $default [null] Set a default, otherwise styler:root-styles.$styles.font-size will be used
+/// @param {Number} $default [null] Set a default, otherwise styler:set-styles.$styles.font-size will be used
 /// @return {Number}
 /// @group utility
 
@@ -16,8 +16,8 @@
     $default,
     $default,
     if(
-      meta.type-of(root-styles.$styles) == map and map.get(root-styles.$styles, font-size),
-      map.get(root-styles.$styles, font-size),
+      meta.type-of(set-styles.$styles) == map and map.get(set-styles.$styles, font-size),
+      map.get(set-styles.$styles, font-size),
       null
     )
   );

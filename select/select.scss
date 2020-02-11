@@ -47,7 +47,8 @@ $selectors: (
   ),
   code: "code" "kdb" "samp",
   heading: "h1" "h2" "h3" "h4" "h5" "h6",
-  indented: "ul" "ol" "dd" "blockquote" "quote",
+  html: "html",
+  indent: "ul" "ol" "dd" "blockquote" "quote",
   inline: (
     "a",
     "abbr",

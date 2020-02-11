@@ -5,13 +5,15 @@ $styles: () !default;
 
 @use "../utility/declare-map" as *;
 @use "../utility/get" as *;
-@use "../utility/merge" as *;
 @use "../utility/remove" as *;
+@use "../utility/set" as *;
+@use "normalize" as *;
 @use "script-direction" as *;
-@use "spacing" as *;
 
 /// Set default styles for common elements
-/// @param {String} $root-selector [html] Selector to add root styles to
+/// @param {Map} $styles [$styles] Style settings map
+/// @param {Boolean} $normalize [false] Whether to also normalize
+/// @param {String} $root-selector ["&"] Selector to add root styles to
 /// @example
 ///   @use "../node_modules/sass-styler/styler";
 ///   styler.styles: (
@@ -35,120 +37,112 @@ $styles: () !default;
 ///       border: 1px solid #333
 ///     )
 ///   );
-///   @include root-styles();
+///   @include set-styles();
 /// @group helper
 
-@mixin root-styles($root-selector: "html") {
-  /* stylelint-disable no-descending-specificity */
+@mixin set-styles($styles: $styles, $normalize: false, $root-selector: "&") {
 
-  /* document root */
-  #{$root-selector} {
-    @include declare-map(
-      remove(
-        $styles,
-        height,
-        hr,
-        link,
-        max-width,
-        max-height,
-        min-height,
-        min-width,
-        vertical-align,
-        width
-      )
-    );
+  @if $normalize {
+    /// skip rules for normalize if they will be set for styles anyway
+    $skip-normalize: ( _name: skip-normalize );
+    @each $path in (box-sizing, min-height, vertical-align, bold font-weight, small font-size, code font-size, code font-family, indent, hr, h1 font-size, fieldset padding, fieldset border, label display, input display, input padding, caption caption-side, table-cell padding) {
+      @if get($styles, $path) {
+        $skip-normalize: set($skip-normalize, $path, null);
+      }
+    }
+    @include normalize($skip-normalize);
   }
 
-  /* bold elements */
+  /// root styles
+  #{$root-selector} {
+    @include declare-map($styles);
+  }
+
+  /// bold elements
   b,
   strong,
   dt {
     @include declare-map(get($styles, bold));
   }
 
-  /* italic elements */
+  /// italic elements
   em,
   dfn,
   var {
     @include declare-map(get($styles, italic));
   }
 
-  /* underline elements */
+  /// underline elements
   ins,
   u {
     @include declare-map(get($styles, underline));
   }
 
-  /* line-through elements */
+  /// line-through elements
   del,
   s {
     @include declare-map(get($styles, line-through));
   }
 
-  /* small */
+  /// small
   small {
     @include declare-map(get($styles, small));
   }
 
-  /* subscript */
+  /// subscript
   sub {
     @include declare-map(get($styles, sub));
   }
 
-  /* superscript */
+  /// superscript
   sup {
     @include declare-map(get($styles, sup));
   }
 
-  /* code elements */
+  /// code elements
   code,
   kbd,
+  pre,
   samp {
     @include declare-map(get($styles, code));
   }
 
-  /* pre */
-  pre {
-    @include declare-map(get($styles, pre));
-  }
-
-  /* mark */
+  /// mark
   mark {
     @include declare-map(get($styles, mark));
   }
 
-  /* abbr with title */
+  /// abbr with title
   abbr[title] {
     @include declare-map(get($styles, abbr));
   }
 
-  /* indent */
+  /// indent
   blockquote,
   q,
   ul,
   ol,
   dt {
-    padding-#{script-direction()}: get($settings, indent);
+    padding-#{script-direction()}: get($styles, indent);
   }
 
-  /* blockquote and quote */
+  /// blockquote and quote
   blockquote,
   q {
     @include declare-map(get($styles, quote));
   }
 
-  /* cite */
+  /// cite
   cite {
     @include declare-map(get($styles, cite));
   }
 
-  /* horizontal ruler */
+  /// horizontal ruler
   hr {
-    border: 0;
     border-top: get($styles, hr);
   }
 
-  /* headings */
+  /// headings
   h1,
   h2,
   h3,
@@ -158,73 +152,73 @@ $styles: () !default;
     @include declare-map(get($styles, heading));
   }
 
-  /* h1 */
+  /// h1
   h1 {
     @include declare-map(get($styles, h1));
   }
 
-  /* h2 */
+  /// h2
   h2 {
     @include declare-map(get($styles, h2));
   }
 
-  /* h3 */
+  /// h3
   h3 {
     @include declare-map(get($styles, h3));
   }
 
-  /* h4 */
+  /// h4
   h4 {
     @include declare-map(get($styles, h4));
   }
 
-  /* h5 */
+  /// h5
   h5 {
     @include declare-map(get($styles, h5));
   }
 
-  /* h6 */
+  /// h6
   h6 {
     @include declare-map(get($styles, h6));
   }
 
-  /* list */
+  /// list
   ul,
   ol {
     @include declare-map(get($styles, list));
   }
 
-  /* link */
+  /// link
   a {
     @include declare-map(get($styles, link));
   }
 
-  /* dialog */
+  /// dialog
   dialog {
     @include declare-map(get($styles, dialog));
   }
 
-  /* fieldset */
+  /// fieldset
   fieldset {
     @include declare-map(get($styles, fieldset));
   }
 
-  /* legend */
+  /// legend
   legend {
     @include declare-map(get($styles, legend));
   }
 
-  /* optgroup */
+  /// optgroup
   optgroup {
     @include declare-map(get($styles, optgroup));
   }
 
-  /* label */
+  /// label
   label {
     @include declare-map(get($styles, label));
   }
 
-  /* input */
+  /// input
   input:not([type]),
   [type="color"],
   [type="date"],
@@ -243,42 +237,36 @@ $styles: () !default;
   [type="week"],
   select,
   textarea {
-    @include declare-map(remove(get($styles, input), gap));
+    @include declare-map(get($styles, input));
   }
 
-  /* file input */
+  /// file input
   [type="file"] {
-    @include declare-map(
-      merge(remove(get($styles, input), gap), get($styles, file))
-    );
+    @include declare-map(get($styles, input-file));
   }
 
-  /* multiline inputs */
+  /// multiline inputs
   textarea,
   select[multiple] {
     @include declare-map(get($styles, input-multiline));
   }
 
-  /* textarea */
+  /// textarea
   textarea {
     @include declare-map(get($styles, textarea));
   }
 
-  /* select */
+  /// select
   select:not([multiple]) {
     @include declare-map(get($styles, select));
   }
 
-  /* standardize option in browsers */
+  /// standardize option in browsers
   select[multiple] option {
-    padding: if(
-      get($styles, input padding),
-      get($styles, input padding),
-      0.25em 0
-    );
+    padding: get($styles, input padding);
   }
 
-  /* clickable inputs */
+  /// clickable inputs
   [type="checkbox"],
   [type="radio"] {
     outline: get($styles, input outline);
@@ -289,83 +277,83 @@ $styles: () !default;
     }
   }
 
-  /* button */
+  /// button
   button,
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    @include declare-map(get($settings, button));
+    @include declare-map(get($styles, button));
   }
 
-  /* summary */
+  /// summary
   summary {
-    @include declare-map(remove(get($settings, button), display));
+    @include declare-map(remove(get($styles, button), display));
   }
 
-  /* caption */
+  /// caption
   caption {
     @include declare-map(get($styles, caption));
   }
 
-  /* table */
+  /// table
   table {
     @include declare-map(get($styles, table));
   }
 
-  /* table cell */
+  /// table cell
   th,
   td {
     @include declare-map(get($styles, table-cell));
 
-    /* table odd column */
+    /// table odd column
     &:nth-child(2n + 1) {
       @include declare-map(get($styles, table-odd-column));
     }
 
-    /* table even column */
+    /// table even column
     &:nth-child(2n) {
       @include declare-map(get($styles, table-even-column));
     }
   }
 
-  /* odd/even table rows */
+  /// odd/even table rows
   tr {
-    /* table odd row */
+    /// table odd row
     &:nth-child(2n + 1) td,
     &:nth-child(2n + 1) th {
       @include declare-map(get($styles, table-odd-row));
     }
 
-    /* table even row */
+    /// table even row
     &:nth-child(2n) td,
     &:nth-child(2n) th {
       @include declare-map(get($styles, table-even-row));
     }
   }
 
-  /* thead */
+  /// thead
   thead {
     @include declare-map(get($styles, thead));
   }
 
-  /* table head */
+  /// table head
   th,
   thead td {
     @include declare-map(get($styles, table-head));
   }
 
-  /* tfoot */
+  /// tfoot
   tfoot {
     @include declare-map(get($styles, tfoot));
   }
 
-  /* table foot */
+  /// table foot
   tfoot th,
   tfoot td {
     @include declare-map(get($styles, table-foot));
   }
 
-  /* selection */
+  /// selection
   ::-webkit-selection {
     @include declare-map(get($styles, selection));
   }
@@ -401,7 +389,4 @@ $styles: () !default;
   textarea::selection {
     @include declare-map(get($styles, selection));
   }
-
-  /* apply spacing to common elements */
-  @include spacing();
 }
