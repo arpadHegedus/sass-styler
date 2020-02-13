@@ -7,12 +7,12 @@
 
 @mixin normalize($styles: ()) {
 
-  /// microsoft viewport
+  // microsoft viewport
   @-ms-viewport {
     width: devide-width;
   }
 
-  /// normalize box model for elements
+  // normalize box model for elements
   *,
   *::before,
   *::after {
@@ -21,36 +21,36 @@
 
   // root settings
   html {
-    /// prevent ios and windows phone text size changes on orientation change
+    // prevent ios and windows phone text size changes on orientation change
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 
-    /// optimize font display
+    // optimize font display
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: greyscale;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
 
-    /// prevent webkit tap highlight inconsistency
+    // prevent webkit tap highlight inconsistency
     -webkit-tap-highlight-color: transparent;
 
-    /// prevent scrollbar issues in ie and edge
+    // prevent scrollbar issues in ie and edge
     -ms-overflow-style: scrollbar;
 
-    /// standardize browser behaviour
+    // standardize browser behaviour
     scroll-behavior: smooth;
     tab-size: 4;
 
-    /// set standardized defaults
+    // set standardized defaults
     box-sizing: get($styles, box-sizing, border-box);
   }
 
-  /// ensure the body covers the height of the window
+  // ensure the body covers the height of the window
   body {
     min-height: get($styles, min-height, 100vh);
   }
 
-  /// reset margin and padding for common layout elements
+  // reset margin and padding for common layout elements
   body,
   div,
   form,
@@ -61,7 +61,7 @@
     padding: 0;
   }
 
-  /// html5 display for block elements
+  // html5 display for block elements
   address,
   article,
   aside,
@@ -79,12 +79,12 @@
     display: block;
   }
 
-  /// display for output elements
+  // display for output elements
   output {
     display: inline-block;
   }
 
-  /// vertical alignments
+  // vertical alignments
   audio,
   canvas,
   img,
@@ -93,29 +93,29 @@
   iframe {
     vertical-align: get($styles, vertical-align, middle);
 
-    /// fix html5 display settings for inline elements
+    // fix html5 display settings for inline elements
     display: inline-block;
     max-width: 100%;
   }
 
-  /// fix display issues for summaries
+  // fix display issues for summaries
   summary {
     display: list-item;
     cursor: pointer;
   }
 
-  /// natively hidden elements
+  // natively hidden elements
   [hidden],
   template {
     display: none;
   }
 
-  /// remove outline for elements that are focusable programatically only
+  // remove outline for elements that are focusable programatically only
   [tabindex="-1"]:focus {
     outline: none !important;
   }
 
-  /// touch action
+  // touch action
   a,
   area,
   button,
@@ -127,25 +127,25 @@
     touch-action: manipulation;
   }
 
-  /// prevent display of audio with no control
+  // prevent display of audio with no control
   audio:not([controls]) {
     display: none;
     height: 0;
   }
 
-  /// prevent overflow for svg in ie
+  // prevent overflow for svg in ie
   svg:not(:root) {
     overflow: hidden;
   }
 
-  /// bold elements
+  // bold elements
   b,
   strong,
   dt {
     font-weight: get($styles, bold font-weight, 700);
   }
 
-  /// italic elements
+  // italic elements
   em,
   dfn,
   var {
@@ -153,24 +153,24 @@
     font-style: italic;
   }
 
-  /// underline elements
+  // underline elements
   ins,
   u  {
     text-decoration:underline;
   }
 
-  /// line-through elements
+  // line-through elements
   del,
   s {
     text-decoration: line-through;
   }
 
-  /// small
+  // small
   small {
     font-size: get($styles, small font-size, 80%);
   }
 
-  /// subscript
+  // subscript
   sub {
     position: relative;
     bottom: -0.25em;
@@ -179,7 +179,7 @@
     font-size: 75%;
   }
 
-  /// superscript
+  // superscript
   sup {
     position: relative;
     top: -0.5em;
@@ -188,7 +188,7 @@
     font-size: 75%;
   }
 
-  /// code elements
+  // code elements
   code,
   kbd,
   pre,
@@ -197,19 +197,19 @@
     font-family: get($styles, code font-family, (consolas, monospace, monospace));
   }
 
-  /// standardize cursor behaviour for help elements
+  // standardize cursor behaviour for help elements
   abbr[title],
   dfn[title] {
     cursor: help;
   }
 
-  /// abbr with title
+  // abbr with title
   abbr[title] {
     border-bottom: none;
     text-decoration: underline dotted;
   }
 
-  /// indent
+  // indent
   blockquote,
   q,
   ul,
@@ -218,63 +218,63 @@
     padding-#{script-direction()}: get($styles, indent, 1.5em);
   }
 
-  /// blockquote and quote
+  // blockquote and quote
   blockquote,
   q {
     quotes: none
   }
 
-  /// horizontal ruler
+  // horizontal ruler
   hr {
-    /// add the correct box sizing in Firefox
+    // add the correct box sizing in Firefox
     box-sizing: content-box;
     height: 0;
 
-    /// show the overflow in Edge and IE
+    // show the overflow in Edge and IE
     overflow: visible;
 
-    /// reset border
+    // reset border
     border: 0;
 
     border-top: get($styles, hr, rgba(#000, 0.5));
   }
 
-  /// image element
+  // image element
   img {
-    /// prevent unexpected behaviour
+    // prevent unexpected behaviour
     height: auto;
     vertical-align: middle;
 
-    /// set microsoft interpolation
+    // set microsoft interpolation
     -ms-interpolation-mode: bicubic;
 
-    /// remove the border on images inside links in IE10
+    // remove the border on images inside links in IE10
     &,
     a & {
       border-style: none;
     }
   }
 
-  /// h1
+  // h1
   h1 {
     font-size: get($styles, h1 font-size, 2em);
   }
 
-  /// link
+  // link
   a {
     background: transparent;
 
-    /// fix underline issues in webkit
+    // fix underline issues in webkit
     -webkit-text-decoration-skip: objects;
 
-    /// improve readability for focus and hovered anchors
+    // improve readability for focus and hovered anchors
     &:active,
     &:hover {
       outline: 0;
     }
   }
 
-  /// dialog
+  // dialog
   dialog {
     position: absolute;
     right: 0;
@@ -290,7 +290,7 @@
     }
   }
 
-  /// normalize fieldset styles in all browsers
+  // normalize fieldset styles in all browsers
   fieldset {
     min-height: 0;
     margin: 0 2px;
@@ -298,7 +298,7 @@
     border: get($styles, fieldset border, 1px solid rgba(#000, 0.5));
   }
 
-  /// prevent inheritance and text wrapping issues
+  // prevent inheritance and text wrapping issues
   legend {
     box-sizing: get($styles, box-sizing, border-box);
     display: table;
@@ -309,12 +309,12 @@
     color: inherit;
   }
 
-  /// prevent optgroup from inheriting font-weight
+  // prevent optgroup from inheriting font-weight
   optgroup {
     font-weight: get($styles, bold font-weight, 700);
   }
 
-  /// prevent inheritance for certain elements
+  // prevent inheritance for certain elements
   address,
   button,
   input,
@@ -326,7 +326,7 @@
     color: inherit;
   }
 
-  /// prevent inheritance of box sizing
+  // prevent inheritance of box sizing
   button,
   input,
   optgroup,
@@ -337,19 +337,19 @@
     box-sizing: get($styles, box-sizing, border-box);
   }
 
-  /// show overflow in edge
+  // show overflow in edge
   button,
   input {
     overflow: visible;
   }
 
-  /// remove the inheritance of text transform in firefox
+  // remove the inheritance of text transform in firefox
   button,
   select {
     text-transform: none;
   }
 
-  /// prevent forced appearance for input elements on ios
+  // prevent forced appearance for input elements on ios
   input[type="text"],
   input[type="email"],
   input[type="search"],
@@ -358,13 +358,13 @@
     -moz-appearance: none;
   }
 
-  /// prevent cursor style for spinner
+  // prevent cursor style for spinner
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     height: auto;
   }
 
-  /// correct appearance for date input
+  // correct appearance for date input
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"],
@@ -372,41 +372,41 @@
     -webkit-appearance: listbox;
   }
 
-  /// minimum width to color input
+  // minimum width to color input
   [type="color"] {
     min-width: 4em;
   }
 
-  /// prevent forced styling for upload button in webkit
+  // prevent forced styling for upload button in webkit
   ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
     vertical-align: baseline;
   }
 
-  /// multi-select
+  // multi-select
   select[multiple] {
     overflow-y: auto;
     padding: 0;
   }
 
-  /// remove the inner border and padding in firefox
+  // remove the inner border and padding in firefox
   ::-moz-focus-inner {
     padding: 0;
     border-style: none;
   }
 
-  /// restore the focus styles unset previously
+  // restore the focus styles unset previously
   :-moz-focusring {
     outline: 1px dotted ButtonText;
   }
 
-  /// remove the additional invalid styles in Firefox
+  // remove the additional invalid styles in Firefox
   :-moz-ui-invalid {
     box-shadow: none;
   }
 
-  /// webkit appearance for search inputs
+  // webkit appearance for search inputs
   [type="search"] {
     -webkit-appearance: textfield;
     outline-offset: -2px;
@@ -417,12 +417,12 @@
     }
   }
 
-  /// label
+  // label
   label {
     display: get($styles, label display, inline-block);
   }
 
-  /// input
+  // input
   input:not([type]),
   [type="color"],
   [type="date"],
@@ -444,7 +444,7 @@
     display: get($styles, input display, inline-block);
     max-width: 100%;
 
-    /// prevent firefox issue with line-height
+    // prevent firefox issue with line-height
     line-height: normal;
 
     &:disabled,
@@ -453,7 +453,7 @@
     }
   }
 
-  /// file input
+  // file input
   [type="file"] {
     display: get($styles, input display, inline-block);
     max-width: 100%;
@@ -461,40 +461,40 @@
     background: transparent;
     cursor: pointer;
 
-    /// prevent firefox issue with line-height
+    // prevent firefox issue with line-height
     line-height: normal;
 
-    /// prevent padding issue appearing in some browsers
+    // prevent padding issue appearing in some browsers
     padding-#{script-direction(backward)}: 0;
   }
 
-  /// textarea
+  // textarea
   textarea {
-    /// remove scrollbar automatically added in ie and prevent horizontal resizing
+    // remove scrollbar automatically added in ie and prevent horizontal resizing
     overflow: auto;
     resize: vertical;
   }
 
-  /// select
+  // select
   select:not([multiple]) {
-    /// prevent padding issue appearing in some browsers
+    // prevent padding issue appearing in some browsers
     padding-#{script-direction(backward)}: 0;
   }
 
-  /// standardize option in browsers
+  // standardize option in browsers
   select[multiple] option {
     padding: get($styles, input padding, 0.25em 0);
   }
 
-  /// clickable inputs
+  // clickable inputs
   [type="checkbox"],
   [type="radio"] {
 
-    /// prevent ie10 issues with clickable inputs
+    // prevent ie10 issues with clickable inputs
     padding: 0;
   }
 
-  /// button
+  // button
   button,
   [type="button"],
   [type="reset"],
@@ -505,16 +505,16 @@
     text-decoration: none;
     cursor: pointer;
     
-    /// remove auto-applied styles for clickables in ios
+    // remove auto-applied styles for clickables in ios
     -webkit-appearance: none;
 
-    /// make unselectable
+    // make unselectable
     user-select: none;
 
-    /// set flags
+    // set flags
     will-change: auto;
 
-    /// hide webkit tap highlight
+    // hide webkit tap highlight
     -webkit-tap-highlight-color: transparent;
     
     &:disabled,
@@ -530,39 +530,39 @@
     display: inline-block;
   }
 
-  /// ensure font inheritance for table elements
+  // ensure font inheritance for table elements
   table,
   th,
   td {
     font: inherit;
   }
 
-  /// caption
+  // caption
   caption {
     caption-side: get($styles, caption caption-side, bottom);
   }
 
-  /// table
+  // table
   table {
     text-align: inherit;
-    /// prevent incompatibilties with border behaviour
+    // prevent incompatibilties with border behaviour
     border-collapse: collapse;
     border-spacing: 0;
   }
 
-  /// table cell
+  // table cell
   th,
   td {
     padding: get($styles, table-cell padding, 0);
   }
 
-  /// table head
+  // table head
   th,
   thead td {
     text-align: inherit;
   }
 
-  /// table foot
+  // table foot
   tfoot th,
   tfoot td {
     text-align: inherit;

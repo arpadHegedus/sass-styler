@@ -7,6 +7,7 @@
 /// @param {String} $selector ["&::before"] Dim selector
 /// @param {String} $position [relative] Postition of the parent
 /// @param {String} $position-children [relative] Position of the children (to go above dim)
+/// @group helper
 
 @mixin background-dim(
     $opacity: 0.5,
