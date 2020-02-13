@@ -7,6 +7,7 @@
     "type": "git",
     "url": "git+https://hegedusarpad@bitbucket.org/hegedusarpad/sass-styler.git"
   },
+  "readme": "README.md",
   "keywords": [ "sass", "scss", "styler", "frontend" ],
   "author": "Arpad Hegedus <hegedus.arpad@gmail.com> (http://arpadhegedus.com)",
   "license": "ISC",
