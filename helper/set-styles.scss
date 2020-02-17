@@ -137,6 +137,22 @@ $styles: () !default;
     @include declare-map(get($styles, cite));
   }
 
+  // img
+  img {
+    @include declare-map(get($styles, img));
+  }
+
+  // figure
+  figure {
+    @include declare-map(get($styles, figure));
+  }
+
+  // figcaption
+  figcaption {
+    @include declare-map(get($styles, figcaption));
+  }
+
+
   // horizontal ruler
   hr {
     border-top: get($styles, hr);
