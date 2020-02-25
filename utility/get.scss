@@ -12,7 +12,7 @@
   
   @each $key in $keys {
 
-    @if meta.type-of($map) != map {
+    @if meta.type-of($map) != map or not map.has-key($map, $key) {
 			@return $fallback;
     }
     
