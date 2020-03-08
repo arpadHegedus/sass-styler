@@ -10179,7 +10179,7 @@ Display an svg icon as a base64 encoded background
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$icon` | The icon SVG code or key from $svg-icons | String | - |
-| `$width` | The width of the icon | Number | `1em` |
+| `$width` | The width of the icon | Number | `null` |
 | `$height` | The height of the icon | Number | `$width` |
 | `$color` | The icon color | List | `null` |
 | `$gap` | A gap between the icon and the text next to it | Number | `null` |

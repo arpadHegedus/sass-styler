@@ -22,26 +22,32 @@ $svg-icons: (
 ) !default;
 
 @use "sass:string";
-@use "../inline-svg-url" as *;
+@use "../utility/get" as *;
+@use "./inline-svg-url" as *;
+@use "./script-direction" as *;
 
 /// Display an svg icon as a base64 encoded background
 /// @param {String} $icon The icon SVG code or key from $svg-icons
-/// @param {Number} $width [1em] The width of the icon
-/// @param {Number} $height [$width] The height of the icon
 /// @param {Color} $color [null] The icon color
+/// @param {Number} $width [null] The width of the icon
+/// @param {Number} $height [$width] The height of the icon
 /// @param {Number} $gap [null] A gap between the icon and the text next to it
 /// @param {String} $selector ["&::before"] The selector for the icon background
 
-@mixin svg-bg-icon($icon, $width: 1em, $height: $width, $color: null, $gap: null, $selector: "&::before") {
+@mixin svg-bg-icon($icon, $color: null, $width: null, $height: $width, $gap: null, $selector: "&::before") {
     $svg: get($svg-icons, $icon);
     $svg: if($svg, $svg, $icon);
 
     #{$selector} {
         content: if(string.index($selector, "::"), "", null);
-        display: if(string.index($selector, "::"), inline-block, null);
+        display: if(string.index($selector, "::"), inline-flex, null);
         width: $width;
         height: $height;
+        margin-#{script-direction(backward)}: $gap;
         background-image: inline-svg-url($svg, $color);
         background-size: contain;
+        background-repeat: no-repeat;
+
+        @content;
     }
 }
