@@ -2,9 +2,11 @@
 
 /// Base64 encode svg code
 /// @param {String} $svg The svg code
+/// @param {Color} $fill A fill color to be added to svg
 /// @group utility
 
-@function inline-svg($svg) {
+@function inline-svg($svg, $fill: null) {
+  $svg: str-replace($svg, "<svg ", if($fill, '<svg fill="#{$fill}" ', "<svg "));
   $svg: str-replace($svg, "<", "%3C");
   $svg: str-replace($svg, ">", "%3E");
   $svg: str-replace($svg, "#", "%23");

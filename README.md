@@ -10170,6 +10170,21 @@ Background gradient stripes from a list of colors
 
 * [https://css-tricks.com/snippets/sass/striped-gradient-mixin/](https://css-tricks.com/snippets/sass/striped-gradient-mixin/)
 
+#### svg-bg-icon
+
+Display an svg icon as a base64 encoded background
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$icon` | The icon SVG code or key from $svg-icons | String | - |
+| `$width` | The width of the icon | Number | `1em` |
+| `$height` | The height of the icon | Number | `$width` |
+| `$color` | The icon color | List | `null` |
+| `$gap` | A gap between the icon and the text next to it | Number | `null` |
+| `$selector` |The selector for the icon | String | `"&::before"` |
+
 #### triangle
 
 Create a CSS-only triangle
@@ -10249,6 +10264,10 @@ Spacing mode
 
 Style options to set up default element styles with
 
+### $svg-icons
+
+SVG icons for base64 urls
+
 ### Functions
 
 #### asset
@@ -10274,6 +10293,7 @@ Base64 encode svg code
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$svg` | The svg code | String | - |
+| `$fill` | A fill color to be added to svg | Color | - |
 
 #### long-shadow
 
@@ -11456,6 +11476,7 @@ Base64 encode svg code
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
 | `$svg` | The svg code | String | - |
+| `$fill` | A fill color to be added to svg | Color | - |
 
 #### is-between
 
@@ -11785,6 +11806,9 @@ Cast a string `$value` into a number
 ##### Links
 
 * [https://www.sassmeister.com/gist/9fa19d254864f33d4a80](https://www.sassmeister.com/gist/9fa19d254864f33d4a80)
+
+##### Returns
+`String`
 
 #### top-side
 

@@ -2,8 +2,9 @@
 
 /// Base64 encode svg code
 /// @param {String} $svg The svg code
+/// @param {Color} $fill A fill color to be added to svg
 /// @group helper
 
-@function inline-svg-url($svg) {
-  @return url(inline-svg($svg));
+@function inline-svg-url($svg, $fill: null) {
+  @return url(inline-svg($svg, $fill));
 }
