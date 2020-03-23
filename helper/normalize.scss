@@ -45,6 +45,21 @@
     box-sizing: get($styles, box-sizing, border-box);
   }
 
+  // accessibility overrides
+  @media (prefers-reduced-motion: reduce) {
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0s !important;
+		  transition-duration: 0s !important;
+    }
+  }
+
   // ensure the body covers the height of the window
   body {
     min-height: get($styles, min-height, 100vh);
