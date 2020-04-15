@@ -60,5 +60,6 @@
       border-color: $color transparent transparent;
       border-width: $width $width 0 0;
     }
+    @content;
   }
 }
