@@ -44,7 +44,7 @@
   &::after {
     z-index: 2;
     border-color: $color transparent transparent transparent;
-    animation: loader-spinner $animation-speed linear infinite;
+    animation: loader-spin $animation-speed linear infinite;
 
     @include keyframes(loader-spin) {
       0% {
