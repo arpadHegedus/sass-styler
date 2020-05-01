@@ -10082,14 +10082,16 @@ Viewport sized typography with minimum and maximum values
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
-| `$responsive` | Responsive font size (in vw or vh) | Number | - |
-| `$min` | Minimum font size | Number | `null` |
-| `$max` | Maximum font size | Number | `null` |
+| `$min-font-size` | Minimum font size | Number | - |
+| `$min-viewport-width` | Minimum viewport width | Number |- |
+| `$max-font-size` | Maximum font size | Number | - |
+| `$max-viewport-width` | Maximum  viewport width | Number | - |
+| `$default-font-size` | Maximum font size | Number | `null` |
 | `$fallback` | A fallback size for browsers without vw and vh unit support | Number | `null` |
 
 ##### Links
 
-* [https://css-tricks.com/snippets/sass/viewport-sized-typography-minimum-maximum-sizes/](https://css-tricks.com/snippets/sass/viewport-sized-typography-minimum-maximum-sizes/)
+* [https://websemantics.uk/tools/responsive-font-calculator/](https://websemantics.uk/tools/responsive-font-calculator/)
 
 #### responsive-ratio
 
@@ -11686,6 +11688,28 @@ Rem to Px calculation
 
 ##### Returns
 `Number`
+
+#### responsive-font
+
+Viewport sized typography with minimum and maximum values
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$min-font-size` | Minimum font size | Number | - |
+| `$min-viewport-width` | Minimum viewport width | Number |- |
+| `$max-font-size` | Maximum font size | Number | - |
+| `$max-viewport-width` | Maximum  viewport width | Number | - |
+| `$default-font-size` | Maximum font size | Number | `null` |
+| `$fallback` | A fallback size for browsers without vw and vh unit support | Number | `null` |
+
+##### Returns
+`Number`
+
+##### Links
+
+* [https://websemantics.uk/tools/responsive-font-calculator/](https://websemantics.uk/tools/responsive-font-calculator/)
 
 #### right-side
 

@@ -1,38 +1,25 @@
 @use "sass:math";
-@use "../utility/strip-unit" as *;
+@use "../utility/responsive-font" as *;
 
 /// Viewport sized typography with minimum and maximum values
-/// @author Eduardo Boucas
-/// @param {Number} $responsive Responsive font size (in vw or vh)
-/// @param {Number} $min [null] Minimum font size
-/// @param {Number} $max [null] Maximum font size
+/// @author Mike Foskett
+/// @param {Number} $min-font-size [null] Minimum font size
+/// @param {Number} $min-viewport-width [null] Minimum viewport width
+/// @param {Number} $max-font-size [null] Maximum font size
+/// @param {Number} $max-viewport-width [null] Maximum viewport width
+/// @param {Number} $default-font-size [null] The default root font-size
 /// @param {Number} $fallback [null] A fallback size for browsers without vw and vh unit support
-/// @link https://css-tricks.com/snippets/sass/viewport-sized-typography-minimum-maximum-sizes/
+/// @link https://websemantics.uk/tools/responsive-font-calculator/
 /// @group helper
 
-@mixin responsive-font($responsive, $min: null, $max: null, $fallback: null) {
-  $unitless: strip-unit($responsive);
-  $dimension: if(math.unit($responsive) == "vh", "height", "width");
+@mixin responsive-font($min-font-size, $min-viewport-width, $max-font-size, $max-viewport-width, $default-font-size: null, $fallback: null) {
 
-  @if $min {
-    $min-breakpoint: $min / $unitless * 100;
+  @media (min-width: #{$min-viewport-width}) and (max-width: #{$max-viewport-width}) {
 
-    @media (max-#{$dimension}: #{$min-breakpoint}) {
-      font-size: $min;
-    }
+	  @if $fallback {
+	    font-size: $fallback;
+	  }
+
+	  font-size: responsive-font($min-font-size, $min-viewport-width, $max-font-size, $max-viewport-width, $default-font-size);
   }
-
-  @if $max {
-    $max-breakpoint: $max / $unitless * 100;
-
-    @media (min-#{$dimension}: #{$max-breakpoint}) {
-      font-size: $max;
-    }
-  }
-
-  @if $fallback {
-    font-size: $fallback;
-  }
-
-  font-size: $responsive;
 }
