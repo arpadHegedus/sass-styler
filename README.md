@@ -9379,6 +9379,20 @@ Change 2 colors contrast ratio by weighted balance(0-100)
 ##### Returns
 `List`
 
+#### contrast-between
+
+Get the contrast between 2 colors
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$color1` | Color 1 | Color | - |
+| `$color2` | Color 2 | Color | - |
+
+##### Returns
+`Number`
+
 #### contrast-ratio-by-name
 
 Get a contrast ratio by its official codename
@@ -9404,20 +9418,6 @@ Adjust color towards a target color until it reaches a contrast ratio
 | `$target` | Target color | Color | `#fff` |
 | `$ratio` | Contrast ratio | String|Number | `"AA"` |
 | `$iterations` | Iteration count for checking | Number | `5` |
-
-##### Returns
-`Number`
-
-#### contrast
-
-Get the contrast between 2 colors
-
-##### Parameters
-
-| name | description | type | default value |
-| ---- | ----------- | ---- | ------------- |
-| `$color1` | Color 1 | Color | - |
-| `$color2` | Color 2 | Color | - |
 
 ##### Returns
 `Number`

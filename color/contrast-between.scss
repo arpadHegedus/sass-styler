@@ -8,7 +8,7 @@
 /// @return {Number}
 /// @group color
 
-@function contrast-of($color1, $color2) {
+@function contrast-between($color1, $color2) {
   $lum1: luminance($color1);
   $lum2: luminance($color2);
 

@@ -1,5 +1,5 @@
 @use "sass:list";
-@use "contrast" as *;
+@use "contrast-between" as *;
 
 /// Get the best contrasting color from a list of colors compared to a base
 /// @param {Color} $base Base color
