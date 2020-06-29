@@ -10187,6 +10187,19 @@ Display an svg icon as a base64 encoded background
 | `$gap` | A gap between the icon and the text next to it | Number | `null` |
 | `$selector` |The selector for the icon | String | `"&::before"` |
 
+#### transition
+
+Add transition to elements with fallback to default settings
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$property` | Property or properties to transition | String|Array | `null` |
+| `$duration` | Duration of transition in seconds | Time | `null` |
+| `$timing-function` | Easing of transition | String | `null` |
+| `$delay` | Delay of transition in seconds | Time | `null` |
+
 #### triangle
 
 Create a CSS-only triangle
@@ -10269,6 +10282,10 @@ Style options to set up default element styles with
 ### $svg-icons
 
 SVG icons for base64 urls
+
+### $transition-settings
+
+Default transition settings
 
 ### Functions
 

@@ -21,6 +21,10 @@
     width: 0;
     height: 0;
 
+    @if str-index($selector, ":before") or str-index($selector, ":after") {
+      content: "";
+    }
+
     @if $direction == "up" {
       border-color: transparent transparent $color;
       border-width: 0 ($width / 2) $height;

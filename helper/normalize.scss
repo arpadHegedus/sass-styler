@@ -462,8 +462,7 @@
     // prevent firefox issue with line-height
     line-height: normal;
 
-    &:disabled,
-    &:read-only {
+    &:disabled {
       cursor: default
     }
   }
@@ -532,8 +531,7 @@
     // hide webkit tap highlight
     -webkit-tap-highlight-color: transparent;
     
-    &:disabled,
-    &:read-only {
+    &:disabled {
       cursor: default
     }
   }

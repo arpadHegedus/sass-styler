@@ -21,7 +21,10 @@ $svg-icons: (
     star-empty: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" /></svg>',
 ) !default;
 
+$_svg-icon-extends: () !default;
+
 @use "sass:string";
+@use "sass:map";
 @use "../utility/get" as *;
 @use "./inline-svg-url" as *;
 @use "./script-direction" as *;
@@ -34,20 +37,28 @@ $svg-icons: (
 /// @param {Number} $gap [null] A gap between the icon and the text next to it
 /// @param {String} $selector ["&::before"] The selector for the icon background
 
-@mixin svg-bg-icon($icon, $color: null, $width: null, $height: $width, $gap: null, $selector: "&::before") {
-    $svg: get($svg-icons, $icon);
-    $svg: if($svg, $svg, $icon);
+@mixin svg-bg-icon($icon, $color: null, $width: 1em, $height: $width, $gap: null, $selector: "&::before") {
+	$svg: get($svg-icons, $icon);
+	$svg: if($svg, $svg, $icon);
+	$extend-selector: "%svg-bg-icon#{unique-id($icon, $color)}";
 
-    #{$selector} {
-        content: if(string.index($selector, "::"), "", null);
-        display: if(string.index($selector, "::"), inline-flex, null);
-        width: $width;
-        height: $height;
-        margin-#{script-direction(backward)}: $gap;
-        background-image: inline-svg-url($svg, $color);
-        background-size: contain;
-        background-repeat: no-repeat;
+	@if not map.has-key($_svg-icon-extends, $extend-selector) {
+		@at-root #{$extend-selector} {
+			background-image: inline-svg-url($svg, $color);
+		}
+		$_svg-icon-extends: merge($_svg-icon-extends, (#{$extend-selector}: true)) !global;
+	}
 
-        @content;
-    }
+	#{$selector} {
+		display: if(string.index($selector, "::"), inline-flex, null);
+		content: if(string.index($selector, "::"), "", null);
+		width: $width;
+		height: $height;
+		margin-#{script-direction(if(string.index($selector, ":before"), backward, forward))}: $gap;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@extend #{$extend-selector};
+		@content;
+	}
 }
