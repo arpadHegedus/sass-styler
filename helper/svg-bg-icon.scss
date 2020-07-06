@@ -26,6 +26,7 @@ $_svg-icon-extends: () !default;
 @use "sass:string";
 @use "sass:map";
 @use "../utility/get" as *;
+@use "../utility/merge" as *;
 @use "../utility/unique-id" as *;
 @use "./inline-svg-url" as *;
 @use "./script-direction" as *;
