@@ -38,13 +38,14 @@ $_svg-icon-extends: () !default;
 /// @param {Number} $height [$width] The height of the icon
 /// @param {Number} $gap [null] A gap between the icon and the text next to it
 /// @param {String} $selector ["&::before"] The selector for the icon background
+/// @param {Boolean} $cache [true] Whether to cache and extend selector (disable it for use within media queries)
 
-@mixin svg-bg-icon($icon, $color: null, $width: 1em, $height: $width, $gap: null, $selector: "&::before") {
+@mixin svg-bg-icon($icon, $color: null, $width: 1em, $height: $width, $gap: null, $selector: "&::before", $cache: true) {
 	$svg: get($svg-icons, $icon);
 	$svg: if($svg, $svg, $icon);
 	$extend-selector: "%svg-bg-icon#{unique-id($icon, $color)}";
 
-	@if not map.has-key($_svg-icon-extends, $extend-selector) {
+	@if $cache and not map.has-key($_svg-icon-extends, $extend-selector) {
 		@at-root #{$extend-selector} {
 			background-image: inline-svg-url($svg, $color);
 		}
@@ -60,7 +61,12 @@ $_svg-icon-extends: () !default;
 		background-size: contain;
 		background-repeat: no-repeat;
 
-		@extend #{$extend-selector};
+		@if $cache {
+			@extend #{$extend-selector};
+		} @else {
+			background-image: inline-svg-url($svg, $color);
+		}
+		
 		@content;
 	}
 }

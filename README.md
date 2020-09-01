@@ -10185,7 +10185,8 @@ Display an svg icon as a base64 encoded background
 | `$height` | The height of the icon | Number | `$width` |
 | `$color` | The icon color | List | `null` |
 | `$gap` | A gap between the icon and the text next to it | Number | `null` |
-| `$selector` |The selector for the icon | String | `"&::before"` |
+| `$selector` | The selector for the icon | String | `"&::before"` |
+| `$cache` | Whether to cache and extend selector (disable it for use within media queries) | Boolean | `true` |
 
 #### transition
 
