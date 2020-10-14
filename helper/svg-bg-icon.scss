@@ -53,7 +53,7 @@ $_svg-icon-extends: () !default;
 	}
 
 	#{$selector} {
-		display: if(string.index($selector, "::"), inline-flex, null);
+		display: if(string.index($selector, "::"), inline-block, null);
 		content: if(string.index($selector, "::"), "", null);
 		width: $width;
 		height: $height;

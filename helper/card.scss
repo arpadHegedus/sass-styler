@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../utility/declare-map" as *;
+@use "../utility/get" as *;
+@use "../utility/merge" as *;
+@use "./elevation" as *;
+
+/// Named card styles presets
+/// @group helper
+
+$card-styles: (
+	normal: (
+		elevation: 1,
+		background: #fff,
+		padding: 1em,
+		border: 1px solid rgba(0, 0, 0, 0.05)
+	)
+) !default;
+
+/// Make an image behave like a background image
+/// @param {String} $elevation [null] Level of elevation
+/// @param {String} $background [null] Background setting for the card
+/// @param {Number} $padding [null] Card padding
+/// @param {String} $border [null] Card border
+/// @group helper
+
+@mixin card($elevation: null, $background: null, $padding: null, $border: null) {
+	$styles: (
+		background: $background,
+		padding: $padding,
+		border: $border
+	);
+	$elevation: if($elevation, $elevation, normal);
+	@if map.has-key($card-styles, $elevation) {
+		$styles: merge(
+			get($card-styles, $elevation),
+			(
+				background: get($card-styles, $elevation background, $background),
+				padding: get($card-styles, $elevation padding, $padding),
+				border: get($card-styles, $elevation border, $border)
+			)
+		);
+		$elevation: get($card-styles, $elevation elevation);
+	}
+	@if $elevation {
+		@include elevation($elevation);
+	}
+	@include declare-map($styles);
+	@content;
+}

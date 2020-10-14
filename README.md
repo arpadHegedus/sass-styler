@@ -9765,6 +9765,19 @@ Add background dim to a container
 | `$position` | Postition of the parent | String | `relative` |
 | `$position-children` | Position of the children (to go above dim) | String | `relative` |
 
+#### card
+
+Make an image behave like a background image
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$elevation` | Level of elevation | String | `null` |
+| `$background` | Background setting for the card | String | `null` |
+| `$padding` | Card padding | Number | `null` |
+| `$border` | Card border | String | `null` |
+
 #### clearfix
 
 Prevent elements flowing around floating elements
@@ -9812,6 +9825,16 @@ Set box shadow per a depth level
 
 * [https://css-tricks.com/snippets/sass/material-shadows-mixin/](https://css-tricks.com/snippets/sass/material-shadows-mixin/)
 
+#### elevation
+
+Make an element look elevated from the background using box shadow
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$level` | Level of elevation | Number | `1` |
+
 #### extended-background
 
 Extend the background sideways of a container
@@ -9837,6 +9860,20 @@ Create a flexbox grid from the wrapper and direct children elements
 | `$gap` | The vertical gap | Number | `0` |
 | `$justify-content` | The justify content value | String | `center` |
 | `$selector` | The child selector | String|List | `"> *"` |
+
+#### flex
+
+Shorthand for flex containers
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$justify-content` | Justify content | String | `null` |
+| `$align-items` | Align items | String | `null` |
+| `$flex-wrap` | Flex wrap mode | String | `null` |
+| `$flex-direction` | Flex direction | String | `null` |
+| `$gap` | Gap between inner elements | Number | `null` |
 
 #### hardware-accelerate
 
@@ -9994,6 +10031,7 @@ Create object fitted elements
 | `$object-position` | The object position | Number|List | `50% 50%` |
 | `$width` | The element width | Number | `100%` |
 | `$height` | The element height | Number | `100%` |
+| `$position` | Element position | String | `null` |
 
 #### on-circle
 
@@ -10252,6 +10290,10 @@ None
 
 The default asset path to prepend
 
+#### $card-styles
+
+Named card styles presets
+
 #### $container
 
 Default named container widths and margin
@@ -10259,6 +10301,10 @@ Default named container widths and margin
 #### $container-default
 
 Default named container
+
+#### $elevations
+
+Elevation level box-shadow settings
 
 #### $media_queries
 

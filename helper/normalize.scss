@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "../utility/get" as *;
 @use "script-direction" as *;
 
@@ -230,7 +231,7 @@
   ul,
   ol,
   dt {
-    padding-#{script-direction()}: get($styles, indent, 1.5em);
+    padding-#{script-direction()}: if(meta.variable-exists(gap), $gap, 1.5em);
   }
 
   // blockquote and quote
@@ -251,7 +252,7 @@
     // reset border
     border: 0;
 
-    border-top: get($styles, hr, rgba(#000, 0.5));
+    border-top: get($styles, hr, rgba(#000, 0.1));
   }
 
   // image element
@@ -503,6 +504,7 @@
   // clickable inputs
   [type="checkbox"],
   [type="radio"] {
+    outline: get($styles, input outline);
 
     // prevent ie10 issues with clickable inputs
     padding: 0;
