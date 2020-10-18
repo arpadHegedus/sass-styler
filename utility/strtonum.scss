@@ -3,7 +3,7 @@
 @use "sass:string";
 @use "./numtolength" as *;
 
-$numbers: (
+$_numbers: (
     '0': 0,
     '1': 1,
     '2': 2,
@@ -31,18 +31,18 @@ $numbers: (
     $minus: string.slice($value, 1, 1) == "-";    
     @for $i from if($minus, 2, 1) through string.length($value) {
         $character: string.slice($value, $i, $i);
-        @if not (map.has-key($numbers, $character) or $character == ".") {
+        @if not (map.has-key($_numbers, $character) or $character == ".") {
             @return numtolength(if($minus, -$result, $result), string.slice($value, $i));
         }
         @if $character == "." {
             $digits: 1;
         }
         @else if $digits == 0 {
-            $result: $result * 10 + map.get($numbers, $character);
+            $result: $result * 10 + map.get($_numbers, $character);
         }
         @else {
             $digits: $digits * 10;
-            $result: $result + map.get($numbers, $character) / $digits;
+            $result: $result + map.get($_numbers, $character) / $digits;
         }
     }
     @return if($minus, -$result, $result);

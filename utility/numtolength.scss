@@ -1,6 +1,6 @@
 @use "sass:map";
 
-$units: (
+$_units: (
     'px': 1px,
     'cm': 1cm,
     'mm': 1mm,
@@ -26,5 +26,5 @@ $units: (
 /// @group utility
 
 @function numtolength($value, $unit) {
-    @return $value * map.get($units, $unit);
+    @return $value * map.get($_units, $unit);
 }

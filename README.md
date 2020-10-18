@@ -9773,10 +9773,11 @@ Make an image behave like a background image
 
 | name | description | type | default value |
 | ---- | ----------- | ---- | ------------- |
-| `$elevation` | Level of elevation | String | `null` |
-| `$background` | Background setting for the card | String | `null` |
-| `$padding` | Card padding | Number | `null` |
-| `$border` | Card border | String | `null` |
+| `$preset` | The card preset style | Null|String | `null` |
+| `$padding` | Overwrite card padding | Null|False|Number | `false` |
+| `$border` | Overwrite card border | Null|False|String | `false` |
+| `$box-shadow` | Overwrite box-shadow | Null|False|String | `false` |
+| `$background` | Overwrite background setting for the card | Null|False|String | `false` |
 
 #### clearfix
 
@@ -10293,6 +10294,10 @@ The default asset path to prepend
 #### $card-styles
 
 Named card styles presets
+
+#### $card-styles-default
+
+Default card style from the presets
 
 #### $container
 
@@ -11451,6 +11456,16 @@ Round a number to specified digits
 ##### Returns
 `Number`
 
+#### elevation
+
+Get a preset for elevation box shadow
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$level` | Level of elevation | Number | `1` |
+
 #### emtopx
 
 Em to Px conversion
@@ -11965,3 +11980,7 @@ All CSS properties
 #### $css-states
 
 All CSS states
+
+#### $elevations
+
+Elevation level box-shadow settings

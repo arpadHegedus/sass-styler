@@ -9,40 +9,40 @@
 
 $card-styles: (
 	normal: (
-		elevation: 1,
-		background: #fff,
 		padding: 1em,
 		border: 1px solid rgba(0, 0, 0, 0.05)
+		box-shadow: elevation(1),
+		background: #fff,
 	)
 ) !default;
 
-/// Make an image behave like a background image
-/// @param {String} $elevation [null] Level of elevation
-/// @param {String} $background [null] Background setting for the card
-/// @param {Number} $padding [null] Card padding
-/// @param {String} $border [null] Card border
+/// Default card style from the presets
 /// @group helper
 
-@mixin card($elevation: null, $background: null, $padding: null, $border: null) {
-	$styles: (
-		background: $background,
-		padding: $padding,
-		border: $border
-	);
-	$elevation: if($elevation, $elevation, normal);
-	@if map.has-key($card-styles, $elevation) {
-		$styles: merge(
-			get($card-styles, $elevation),
-			(
-				background: get($card-styles, $elevation background, $background),
-				padding: get($card-styles, $elevation padding, $padding),
-				border: get($card-styles, $elevation border, $border)
-			)
-		);
-		$elevation: get($card-styles, $elevation elevation);
+$card-styles-default: normal !default;
+
+/// Make an image behave like a background image
+/// @param {Null|String} $preset [null] The card preset style
+/// @param {Null|False|Number} $padding [false] Overwrite card padding
+/// @param {Null|False|String} $border [false] Overwrite card border
+/// @param {Null|False|String} $box-shadow [false] Overwrite box-shadow
+/// @param {Null|False|String} $background [false] Overwrite background setting for the card
+/// @group helper
+
+@mixin card($preset: null, $padding: false, $border: false, $box-shadow: false, $background: false) {
+	$preset: if($preset, $preset, $card-styles-default);
+	$styles: if(map.has-key($card-styles, $preset), get($card-styles, $preset), null);
+	@if $padding != false {
+		$styles: if($styles, set($styles, padding, $padding), (padding: $padding));
 	}
-	@if $elevation {
-		@include elevation($elevation);
+	@if $border != false {
+		$styles: if($styles, set($styles, border, $border), (border: $border));
+	}
+	@if $box-shadow != false {
+		$styles: if($styles, set($styles, box-shadow, $box-shadow), (box-shadow: $box-shadow));
+	}
+	@if $background != false {
+		$styles: if($styles, set($styles, background, $background), (background: $background));
 	}
 	@include declare-map($styles);
 	@content;
