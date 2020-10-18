@@ -2,7 +2,8 @@
 @use "../utility/declare-map" as *;
 @use "../utility/get" as *;
 @use "../utility/merge" as *;
-@use "./elevation" as *;
+@use "../utility/set" as *;
+@use "../utility/elevation" as *;
 
 /// Named card styles presets
 /// @group helper
@@ -10,7 +11,7 @@
 $card-styles: (
 	normal: (
 		padding: 1em,
-		border: 1px solid rgba(0, 0, 0, 0.05)
+		border: 1px solid rgba(0, 0, 0, 0.05),
 		box-shadow: elevation(1),
 		background: #fff,
 	)
