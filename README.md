@@ -11493,6 +11493,21 @@ Change em to rem (units only, no calculations)
 ##### Returns
 `Number`
 
+#### ensure-unit
+
+Convert a number to another unit
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$num` | Size value | Number | - |
+| `$unit` | The required unit | String | - |
+| `$default` | Set a default, otherwise styler:set-styles.$styles.font-size will be used | Number | `null` |
+
+##### Returns
+`Number`
+
 #### fallback
 
 Fallback for possibly null values

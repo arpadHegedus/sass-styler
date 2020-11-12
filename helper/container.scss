@@ -15,6 +15,7 @@ $container: (
 $container-default: normal !default;
 
 @use "sass:map";
+@use "../utility/ensure-unit" as *;
 @use "../utility/same-units" as *;
 
 /// Create a width-limited container with side-margin on smaller screens
@@ -38,10 +39,10 @@ $container-default: normal !default;
   margin-right: $margin;
   margin-left: $margin;
 
-  $min-width: if(same-units($width, $margin), $width + 2 * $margin, calc($width + 2 * $margin));
+	$min-width: if(same-units($width, $margin), $width + 2 * $margin, ensure-unit($width, px) + ensure-unit(2 * $margin, px));
 
-  @media only screen and (min-width: #{$min-width}) {
-    margin-right: auto;
-    margin-left: auto;
-  }
+	@media only screen and (min-width: #{$min-width}) {
+		margin-right: auto;
+		margin-left: auto;
+	}
 }
