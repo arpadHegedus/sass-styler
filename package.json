@@ -1,6 +1,6 @@
 {
   "name": "sass-styler",
-  "version": "2.0.0-rc49",
+  "version": "2.0.0-rc50",
   "description": "A collection of useful scss",
   "main": "styler.scss",
   "repository": {
