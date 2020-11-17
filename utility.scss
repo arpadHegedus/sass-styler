@@ -1,6 +1,8 @@
 /// Load all utility modules
 
 @forward "utility/bottom-side";
+@forward "utility/calc-add";
+@forward "utility/calc-substract";
 @forward "utility/clip-number";
 @forward "utility/color-from";
 @forward "utility/decimal-round";

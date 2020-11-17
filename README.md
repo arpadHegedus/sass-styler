@@ -11403,6 +11403,36 @@ Get the bottom value from a list like margin or padding
 ##### Returns
 `Null|Number`
 
+#### calc-add
+
+Add 2 numbers or return calc if they are incompatible
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$left` | Number on the left of the operation | Number | - |
+| `$right` | Number on the right of the operation | Number | - |
+| `$ensure-unit` | Try to convert numbers so that they are compatible | String | - |
+
+##### Returns
+`Number|String`
+
+#### calc-substract
+
+Substract 2 numbers or return calc if they are incompatible
+
+##### Parameters
+
+| name | description | type | default value |
+| ---- | ----------- | ---- | ------------- |
+| `$left` | Number on the left of the operation | Number | - |
+| `$right` | Number on the right of the operation | Number | - |
+| `$ensure-unit` | Try to convert numbers so that they are compatible | String | - |
+
+##### Returns
+`Number|String`
+
 #### clip-number
 
 Constrain a number between a min and max value
