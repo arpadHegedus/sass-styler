@@ -1,15 +1,15 @@
 {
   "name": "sass-styler",
-  "version": "2.0.0-rc50",
+  "version": "2.0.0-rc51",
   "description": "A collection of useful scss",
   "main": "styler.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://hegedusarpad@bitbucket.org/hegedusarpad/sass-styler.git"
+    "url": "git+https://github.com/arpadHegedus/sass-styler.git"
   },
   "readme": "README.md",
-  "keywords": [ "sass", "scss", "styler", "frontend" ],
+  "keywords": [ "sass", "scss", "styler", "frontend", "utility", "helper" ],
   "author": "Arpad Hegedus <hegedus.arpad@gmail.com> (http://arpadhegedus.com)",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/hegedusarpad/sass-styler#readme"
+  "homepage": "https://github.com/arpadHegedus/sass-styler"
 }
