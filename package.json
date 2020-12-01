@@ -8,7 +8,14 @@
     "url": "git+https://github.com/arpadHegedus/sass-styler.git"
   },
   "readme": "README.md",
-  "keywords": [ "sass", "scss", "styler", "frontend", "utility", "helper" ],
+  "keywords": [
+    "sass",
+    "scss",
+    "styler",
+    "frontend",
+    "utility",
+    "helper"
+  ],
   "author": "Arpad Hegedus <hegedus.arpad@gmail.com> (http://arpadhegedus.com)",
   "license": "ISC",
   "homepage": "https://github.com/arpadHegedus/sass-styler"
