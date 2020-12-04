@@ -1,0 +1,29 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/sides-top.scss" as styler;
+
+@include test-module("sides-top [function]") {
+    @include test('Can extract value from a full list') {
+        @include assert-equal(
+            styler.sides-top(1px 2px 3px 4px),
+            1px
+        );
+    }
+    @include test('Can extract value from a list 3 numbers') {
+        @include assert-equal(
+            styler.sides-top(1px 2px 3px),
+            1px
+        );
+    }
+    @include test('Can extract value from a list 2 numbers') {
+        @include assert-equal(
+            styler.sides-top(1px 2px),
+            1px
+        );
+    }
+    @include test('Can extract value from a number') {
+        @include assert-equal(
+            styler.sides-top(1px),
+            1px
+        );
+    }
+}

@@ -1,0 +1,18 @@
+@use "sass:list";
+@use "../utility/get" as *;
+
+/// Theme settings global
+/// @type Map
+/// @group theme
+
+$theme: () !default;
+
+/// Get a setting from the global theme settings.
+/// @param {String|List} $path - Path to deeply get from the global theme settings.
+/// @param {*} $fallback [null] - A fallback value if the key is not found
+/// @return {*}
+/// @group theme
+
+@function theme($path, $fallback: null) {
+    @return if(get($theme, $path, "&%£@") == "&%£@", get($theme, list.join(default, $path), $fallback), get($theme, $path, $fallback));
+}

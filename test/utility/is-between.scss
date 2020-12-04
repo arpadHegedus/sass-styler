@@ -1,0 +1,65 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/is-between.scss" as styler;
+
+@include test-module("is-between [function]") {
+    @include test('Can check numbers and return a true') {
+        @include assert-equal(
+            styler.is-between(0.4),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(12, 1, 13),
+            true
+        );
+    }
+    @include test('Can check number and return a false') {
+        @include assert-equal(
+            styler.is-between(2),
+            false
+        );
+        @include assert-equal(
+            styler.is-between(15, 1, 13),
+            false
+        );
+    }
+    @include test('Can work with negative numbers') {
+        @include assert-equal(
+            styler.is-between(-1, -2, 1),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(0, -2, 1),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(1, -2, 1),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(0, -2, 1),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(1.1, -2, 1),
+            false
+        );
+    }
+    @include test('Can work with numbers with units') {
+        @include assert-equal(
+            styler.is-between(5px, 0, 10),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(50%, 0, 100),
+            true
+        );
+        @include assert-equal(
+            styler.is-between(15px, 0, 10),
+            false
+        );
+        @include assert-equal(
+            styler.is-between(150%, 0, 100),
+            false
+        );
+    }
+}

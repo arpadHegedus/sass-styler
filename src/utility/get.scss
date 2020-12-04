@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "sass:meta";
+
+/// Deeply get a value from a map
+/// @param {Map} $map - The map
+/// @param {List|String} $keys - The key or list of keys (if lookup is supposed to go deeper)
+/// @param {*} $fallback [null] - A fallback value if the key is not found
+/// @return {*}
+/// @group utility
+
+@function get($map, $keys, $fallback: null) {
+    @each $key in $keys {
+        @if meta.type-of($map) != map or not map.has-key($map, $key) {
+            @return $fallback;
+        } @else {
+            $map: map.get($map, $key);
+        }
+    }
+
+    @return $map;
+}

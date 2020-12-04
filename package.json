@@ -1,22 +1,56 @@
 {
   "name": "sass-styler",
-  "version": "2.0.1",
-  "description": "A collection of useful scss",
-  "main": "styler.scss",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arpadHegedus/sass-styler.git"
-  },
-  "readme": "README.md",
+  "version": "3.0.0-beta.0",
+  "description": "Modular scss utility library to build better styles faster",
   "keywords": [
     "sass",
     "scss",
     "styler",
     "frontend",
     "utility",
+    "modular",
+    "library",
     "helper"
   ],
-  "author": "Arpad Hegedus <hegedus.arpad@gmail.com> (http://arpadhegedus.com)",
+  "homepage": "https://github.com/arpadHegedus/sass-styler",
+  "bugs": "https://github.com/arpadHegedus/sass-styler/issues",
   "license": "ISC",
-  "homepage": "https://github.com/arpadHegedus/sass-styler"
+  "author": {
+    "name": "Arpad Hegedus",
+    "email": "hegedus.arpad@gmail.com",
+    "url": "http://arpadhegedus.com"
+  },
+  "contributors": [
+    {
+      "name": "Arpad Hegedus",
+      "email": "hegedus.arpad@gmail.com",
+      "url": "http://arpadhegedus.com"
+    }
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://www.paypal.com/donate?hosted_button_id=XWAPUXYW5UXYG"
+  },
+  "main": "styler.scss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpadHegedus/sass-styler.git"
+  },
+  "devDependencies": {
+    "globby": "^11.0.1",
+    "jest": "^26.6.3",
+    "sass": "^1.29.0",
+    "sass-true": "^6.0.1",
+    "sassdoc": "^2.7.3",
+    "sassdoc-theme-md": "^1.0.5",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "engines": {},
+  "scripts": {
+    "doc": "sassdoc ./src -d ./doc -c ./.sassdoc.config.json -v",
+    "stylelint": "stylelint ./src/**",
+    "test": "jest --env=node"
+  }
 }
