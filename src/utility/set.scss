@@ -1,0 +1,66 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "merge" as *;
+
+/// Recusrively set map values based on keys
+/// @param {Map} $map - The base map
+/// @param {List|String} $keys - The key or list of keys (if lookup is supposed to go deeper)
+/// @param {Mixed} $value - The value to be set
+/// @param {Boolean} $recursive [true] - Whether the system should set recursively
+/// @group utility
+
+@function set($map, $keys, $value, $recursive: true) {
+    @if meta.type-of($map) != map {
+        @return $map;
+    }
+    $maps: list.append((), $map);
+    $result: null;
+    @if list.length($keys) == 1 {
+        @return if(
+            $recursive,
+            merge(
+                $map,
+                (
+                    $keys: $value,
+                )
+            ),
+            map.merge(
+                $map,
+                (
+                    $keys: $value,
+                )
+            )
+        );
+    }
+    @for $i from 1 through list.length($keys) - 1 {
+        $current-key: list.nth($keys, $i);
+        $current-map: list.nth($maps, -1);
+        $current-get: map.get($current-map, $current-key);
+        @if $current-get == null {
+            @return $map;
+        }
+        $maps: list.append($maps, $current-get);
+    }
+    @for $i from list.length($maps) through 1 {
+        $current-map: list.nth($maps, $i);
+        $current-key: list.nth($keys, $i);
+        $current-val: if($i == list.length($maps), $value, $result);
+        $result: if(
+            $recursive,
+            merge(
+                $current-map,
+                (
+                    $current-key: $current-val,
+                )
+            ),
+            map.merge(
+                $current-map,
+                (
+                    $current-key: $current-val,
+                )
+            )
+        );
+    }
+    @return $result;
+}

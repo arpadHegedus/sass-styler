@@ -1,0 +1,16 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/srgb.scss" as styler;
+@use "../../src/utility/decimal-round.scss" as *;
+
+@include test-module("srgb [function]") {
+    @include test('Can get srgbs') {
+        @include assert-equal(
+            decimal-round(styler.srgb(0.57758)),
+            decimal-round(200)
+        );
+        @include assert-equal(
+            decimal-round(styler.srgb(0.127438)),
+            decimal-round(100)
+        );
+    }
+}

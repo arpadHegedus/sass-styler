@@ -1,0 +1,106 @@
+$modifiers: (
+    "hover": "&:hover",
+    "focus": "&:focus",
+    "active": "&:active",
+    "focus-within": "&:focus-within",
+    "focus-visible": "&:focus-visible",
+    "disabled": "&:disabled",
+    "visited": "&:visited",
+    "checked": "&:checked",
+    "first": "&:first-child",
+    "last": "&:last-child",
+    "odd": "&:nth-child(odd)",
+    "even": "&:nth-child(even)",
+) !default;
+
+$generate-classes: false !default;
+
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+@use "../utility/escape-classname" as *;
+@use "../utility/declare-map" as *;
+@use "media" as *;
+
+@mixin register-component($id, $map, $supports-media: false, $supports-modifiers: false, $generate-class: null) {
+    $should-generate-class: if($generate-class == null, $generate-classes, $generate-class);
+    $supported-media: $media-queries;
+    $supported-modifiers: $modifiers;
+
+    @if meta.type-of($supports-media) == list {
+        $supported-media: ();
+        @each $support in $supports-media {
+            $supported-media: map.set($supported-media, $support, map.get($media-queries, $support));
+        }
+    }
+    @if meta.type-of($supports-media) == map {
+        $supported-media: $supports-media;
+    }
+
+    @if meta.type-of($supports-modifiers) == list {
+        $supported-modifiers: ();
+        @each $support in $supports-modifiers {
+            $supported-modifiers: map.set($supported-modifiers, $support, map.get($modifiers, $support));
+        }
+    }
+    @if meta.type-of($supports-media) == map {
+        $supported-modifiers: $supports-modifiers;
+    }
+
+    #{"%#{escape-classname($id)}"} {
+        @include declare-map($map);
+    }
+
+    @if $should-generate-class {
+        #{".#{escape-classname($id)}"} {
+            @extend #{"%#{escape-classname($id)}"};
+        }
+    }
+    @if $supports-media {
+        @each $media, $setting in $supported-media {
+            #{"%#{escape-classname("#{$media}:#{$id}")}"} {
+                @include media($media) {
+                    @include declare-map($map);
+                }
+            }
+            @if $should-generate-class {
+                #{".#{escape-classname("#{$media}:#{$id}")}"} {
+                    @extend #{"%#{escape-classname("#{$media}:#{$id}")}"};
+                }
+
+            }
+        }
+    }
+    @if $supports-modifiers {
+        @each $modifier, $selector in $supported-modifiers {
+            #{"%#{escape-classname("#{$modifier}:#{$id}")}"} {
+                #{$selector} {
+                    @include declare-map($map);
+                }
+            }
+            @if $should-generate-class {
+                #{".#{escape-classname("#{$modifier}:#{$id}")}"} {
+                    @extend #{"%#{escape-classname("#{$modifier}:#{$id}")}"};
+                }
+            }
+        }
+    }
+    @if $supports-media and $supports-modifiers {
+        @each $media, $setting in $supported-media {
+            @each $modifier, $selector in $supported-modifiers {
+                #{"%#{escape-classname("#{$media}:#{$modifier}:#{$id}")}"} {
+                    @include media($media) {
+                        #{$selector} {
+                            @include declare-map($map);
+                        }
+                    }
+                }
+                @if $should-generate-class {
+                    #{".#{escape-classname("#{$media}:#{$modifier}:#{$id}")}"} {
+                        @extend #{"%#{escape-classname("#{$media}:#{$modifier}:#{$id}")}"};
+                    }
+                }
+            }
+        }
+    }
+}

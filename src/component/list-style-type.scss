@@ -1,0 +1,27 @@
+$component-list-style-type-support-media: true !default;
+$component-list-style-type-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "list-none",
+    (
+        list-style-type: none,
+    ),
+    $component-list-style-type-support-media,
+    $component-list-style-type-support-modifiers
+);
+@include register-component(
+    "list-disc",
+    (
+        list-style-type: disc,
+    ),
+    $component-list-style-type-support-media,
+    $component-list-style-type-support-modifiers
+);
+@include register-component(
+    "list-decimal",
+    (
+        list-style-type: decimal,
+    ),
+    $component-list-style-type-support-media,
+    $component-list-style-type-support-modifiers
+);

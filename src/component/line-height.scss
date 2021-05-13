@@ -1,0 +1,115 @@
+$component-line-height-support-media: true !default;
+$component-line-height-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "leading-3",
+    (
+        line-height: 0.75rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-4",
+    (
+        line-height: 1rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-5",
+    (
+        line-height: 1.25rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-6",
+    (
+        line-height: 1.5rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-7",
+    (
+        line-height: 1.75rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-8",
+    (
+        line-height: 2rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-9",
+    (
+        line-height: 2.25rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-10",
+    (
+        line-height: 2.5rem,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-none",
+    (
+        line-height: 1,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-tight",
+    (
+        line-height: 1.25,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-snug",
+    (
+        line-height: 1.375,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-normal",
+    (
+        line-height: 1.5,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-relaxed",
+    (
+        line-height: 1.625,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);
+@include register-component(
+    "leading-loose",
+    (
+        line-height: 2,
+    ),
+    $component-line-height-support-media,
+    $component-line-height-support-modifiers
+);

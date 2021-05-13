@@ -1,0 +1,35 @@
+$component-text-align-support-media: true !default;
+$component-text-align-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "text-left",
+    (
+        text-align: left,
+    ),
+    $component-text-align-support-media,
+    $component-text-align-support-modifiers
+);
+@include register-component(
+    "text-center",
+    (
+        text-align: center,
+    ),
+    $component-text-align-support-media,
+    $component-text-align-support-modifiers
+);
+@include register-component(
+    "text-right",
+    (
+        text-align: right,
+    ),
+    $component-text-align-support-media,
+    $component-text-align-support-modifiers
+);
+@include register-component(
+    "text-justify",
+    (
+        text-align: justify,
+    ),
+    $component-text-align-support-media,
+    $component-text-align-support-modifiers
+);

@@ -1,0 +1,75 @@
+$component-overscroll-behavior-support-media: true !default;
+$component-overscroll-behavior-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "overscroll-auto",
+    (
+        overscroll-behavior: auto,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-contain",
+    (
+        overscroll-behavior: contain,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-none",
+    (
+        overscroll-behavior: none,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-y-auto",
+    (
+        overscroll-behavior-y: auto,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-y-contain",
+    (
+        overscroll-behavior-y: contain,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-y-none",
+    (
+        overscroll-behavior-y: none,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-x-auto",
+    (
+        overscroll-behavior-x: auto,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-x-contain",
+    (
+        overscroll-behavior-x: contain,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);
+@include register-component(
+    "overscroll-x-none",
+    (
+        overscroll-behavior-x: none,
+    ),
+    $component-overscroll-behavior-support-media,
+    $component-overscroll-behavior-support-modifiers
+);

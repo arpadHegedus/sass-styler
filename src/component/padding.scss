@@ -1,0 +1,29 @@
+$component-padding-support-media: true !default;
+$component-padding-support-modifiers: false !default;
+@use "../theme/spacing" as *;
+@use "../theme/register-component" as *;
+@include register-component("p-0", (padding: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pt-0", (padding-top: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pr-0", (padding-right: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pb-0", (padding-bottom: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pl-0", (padding-left: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("px-0", (padding-right: 0, padding-left: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("py-0", (padding-top: 0, padding-bottom: 0), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("p-px", (padding: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pt-px", (padding-top: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pr-px", (padding-right: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pb-px", (padding-bottom: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("pl-px", (padding-left: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("px-px", (padding-right: 1px, padding-left: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@include register-component("py-px", (padding-top: 1px, padding-bottom: 1px), $component-padding-support-media, $component-padding-support-modifiers);
+@each $key, $value in $spacing {
+    @if $key != default {
+        @include register-component("p-#{$key}", (padding: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("pt-#{$key}", (padding-top: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("pr-#{$key}", (padding-right: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("pb-#{$key}", (padding-bottom: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("pl-#{$key}", (padding-left: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("px-#{$key}", (padding-right: $value, padding-left: $value), $component-padding-support-media, $component-padding-support-modifiers);
+        @include register-component("py-#{$key}", (padding-top: $value, padding-bottom: $value), $component-padding-support-media, $component-padding-support-modifiers);
+    }
+}

@@ -1,0 +1,35 @@
+$component-grid-auto-columns-support-media: true !default;
+$component-grid-auto-columns-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "auto-cols-auto",
+    (
+        grid-auto-columns: auto,
+    ),
+    $component-grid-auto-columns-support-media,
+    $component-grid-auto-columns-support-modifiers
+);
+@include register-component(
+    "auto-cols-min",
+    (
+        grid-auto-columns: min-content,
+    ),
+    $component-grid-auto-columns-support-media,
+    $component-grid-auto-columns-support-modifiers
+);
+@include register-component(
+    "auto-cols-max",
+    (
+        grid-auto-columns: max-content,
+    ),
+    $component-grid-auto-columns-support-media,
+    $component-grid-auto-columns-support-modifiers
+);
+@include register-component(
+    "auto-cols-fr",
+    (
+        grid-auto-columns: minmax(0, 1fr),
+    ),
+    $component-grid-auto-columns-support-media,
+    $component-grid-auto-columns-support-modifiers
+);

@@ -1,0 +1,51 @@
+$component-vertical-align-support-media: true !default;
+$component-vertical-align-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "align-baseline",
+    (
+        vertical-align: baseline,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);
+@include register-component(
+    "align-top",
+    (
+        vertical-align: top,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);
+@include register-component(
+    "align-middle",
+    (
+        vertical-align: middle,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);
+@include register-component(
+    "align-bottom",
+    (
+        vertical-align: bottom,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);
+@include register-component(
+    "align-text-top",
+    (
+        vertical-align: text-top,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);
+@include register-component(
+    "align-text-bottom",
+    (
+        vertical-align: text-bottom,
+    ),
+    $component-vertical-align-support-media,
+    $component-vertical-align-support-modifiers
+);

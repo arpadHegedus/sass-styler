@@ -1,0 +1,39 @@
+$component-container-support-media: true !default;
+$component-container-support-modifiers: false !default;
+@use "sass:meta";
+@use "../theme/media" as *;
+@use "../theme/register-component" as *;
+@use "../utility/get" as *;
+@include register-component(
+    "container-none",
+    (
+        width: 100%,
+    ),
+    $component-container-support-media,
+    $component-container-support-modifiers
+);
+@if $media-queries and meta.type-of($media-queries) == map {
+    @each $key, $value in $media-queries {
+        $width: null;
+        $current-media: get($media-queries, $key);
+        @if meta.type-of($current-media) == number {
+            $width: $current-media;
+        } @else if meta.type-of($current-media) == list {
+            @each $item in $current-media {
+                @if meta.type-of($item) == number {
+                    $width: $item;
+                }
+            }
+        }
+        @if $width {
+            @include register-component(
+                "container-#{$key}",
+                (
+                    max-width: $width,
+                ),
+                $component-container-support-media,
+                $component-container-support-modifiers
+            );
+        }
+    }
+}

@@ -1,0 +1,19 @@
+$component-table-layout-support-media: true !default;
+$component-table-layout-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "table-auto",
+    (
+        table-layout: auto,
+    ),
+    $component-table-layout-support-media,
+    $component-table-layout-support-modifiers
+);
+@include register-component(
+    "table-fixed",
+    (
+        table-layout: fixed,
+    ),
+    $component-table-layout-support-media,
+    $component-table-layout-support-modifiers
+);

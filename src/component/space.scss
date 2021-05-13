@@ -1,0 +1,16 @@
+$component-space-support-media: true !default;
+$component-space-support-modifiers: false !default;
+
+@use "../theme/register-component" as *;
+@use "../theme/spacing" as *;
+
+@each $key, $value in $spacing {
+    @if $key != default {
+        @include register-component("space-y-#{$key}", ("> * + *": (--space-y-reverse: 0, margin-top: calc($value * calc(1 - var(--space-y-reverse))), margin-bottom: calc($value * var(--space-y-reverse)))), $component-space-support-media, $component-space-support-modifiers);
+        @include register-component("space-x-#{$key}", ("> * + *": (--space-x-reverse: 0, margin-left: calc($value * calc(1 - var(--space-x-reverse))), margin-right: calc($value * var(--space-x-reverse)))), $component-space-support-media, $component-space-support-modifiers);
+        @include register-component("-space-y-#{$key}", ("> * + *": (--space-y-reverse: 0, margin-top: calc(-$value * calc(1 - var(--space-y-reverse))), margin-bottom: calc(-$value * var(--space-y-reverse)))), $component-space-support-media, $component-space-support-modifiers);
+        @include register-component("-space-x-#{$key}", ("> * + *": (--space-x-reverse: 0, margin-left: calc(-$value * calc(1 - var(--space-x-reverse))), margin-right: calc(-$value * var(--space-x-reverse)))), $component-space-support-media, $component-space-support-modifiers);
+    }
+}
+@include register-component("space-y-reverse", ("> * + *": (--space-y-reverse: 1)), $component-space-support-media, $component-space-support-modifiers);
+@include register-component("space-x-reverse", ("> * + *": (--space-x-reverse: 1)), $component-space-support-media, $component-space-support-modifiers);

@@ -1,0 +1,19 @@
+$component-box-sizing-support-media: true !default;
+$component-box-sizing-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "box-border",
+    (
+        box-sizing: border-box,
+    ),
+    $component-box-sizing-support-media,
+    $component-box-sizing-support-modifiers
+);
+@include register-component(
+    "box-content",
+    (
+        box-sizing: content-box,
+    ),
+    $component-box-sizing-support-media,
+    $component-box-sizing-support-modifiers
+);

@@ -1,0 +1,35 @@
+$component-resize-support-media: true !default;
+$component-resize-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "resize-none",
+    (
+        resize: none,
+    ),
+    $component-resize-support-media,
+    $component-resize-support-modifiers
+);
+@include register-component(
+    "resize-y",
+    (
+        resize: vertical,
+    ),
+    $component-resize-support-media,
+    $component-resize-support-modifiers
+);
+@include register-component(
+    "resize-x",
+    (
+        resize: horizontal,
+    ),
+    $component-resize-support-media,
+    $component-resize-support-modifiers
+);
+@include register-component(
+    "resize",
+    (
+        resize: both,
+    ),
+    $component-resize-support-media,
+    $component-resize-support-modifiers
+);

@@ -1,0 +1,65 @@
+$component-grid-row-support-media: true !default;
+$component-grid-row-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "row-auto",
+    (
+        grid-row: auto,
+    ),
+    $component-grid-row-support-media,
+    $component-grid-row-support-modifiers
+);
+@for $i from 1 through 6 {
+    @include register-component(
+        "row-span-#{$i}",
+        (
+            grid-row: span $i / span $i,
+        ),
+        $component-grid-row-support-media,
+        $component-grid-row-support-modifiers
+    );
+}
+@include register-component(
+    "row-span-full",
+    (
+        grid-row: 1 / -1,
+    ),
+    $component-grid-row-support-media,
+    $component-grid-row-support-modifiers
+);
+@for $i from 1 through 7 {
+    @include register-component(
+        "row-start-#{$i}",
+        (
+            grid-row-start: $i,
+        ),
+        $component-grid-row-support-media,
+        $component-grid-row-support-modifiers
+    );
+}
+@include register-component(
+    "row-start-auto",
+    (
+        grid-row-start: auto,
+    ),
+    $component-grid-row-support-media,
+    $component-grid-row-support-modifiers
+);
+@for $i from 1 through 7 {
+    @include register-component(
+        "row-end-#{$i}",
+        (
+            grid-row-end: $i,
+        ),
+        $component-grid-row-support-media,
+        $component-grid-row-support-modifiers
+    );
+}
+@include register-component(
+    "row-end-auto",
+    (
+        grid-row-end: auto,
+    ),
+    $component-grid-row-support-media,
+    $component-grid-row-support-modifiers
+);

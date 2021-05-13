@@ -1,0 +1,35 @@
+$component-clear-support-media: true !default;
+$component-clear-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "clear-left",
+    (
+        clear: left,
+    ),
+    $component-clear-support-media,
+    $component-clear-support-modifiers
+);
+@include register-component(
+    "clear-right",
+    (
+        clear: right,
+    ),
+    $component-clear-support-media,
+    $component-clear-support-modifiers
+);
+@include register-component(
+    "clear-both",
+    (
+        clear: both,
+    ),
+    $component-clear-support-media,
+    $component-clear-support-modifiers
+);
+@include register-component(
+    "clear-none",
+    (
+        clear: none,
+    ),
+    $component-clear-support-media,
+    $component-clear-support-modifiers
+);

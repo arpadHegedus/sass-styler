@@ -1,0 +1,19 @@
+$component-list-style-position-support-media: true !default;
+$component-list-style-position-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "list-inside",
+    (
+        list-style-position: inside,
+    ),
+    $component-list-style-position-support-media,
+    $component-list-style-position-support-modifiers
+);
+@include register-component(
+    "list-outside",
+    (
+        list-style-position: outside,
+    ),
+    $component-list-style-position-support-media,
+    $component-list-style-position-support-modifiers
+);

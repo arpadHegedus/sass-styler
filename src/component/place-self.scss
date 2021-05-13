@@ -1,0 +1,43 @@
+$component-place-self-support-media: true !default;
+$component-place-self-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "place-self-auto",
+    (
+        place-self: auto,
+    ),
+    $component-place-self-support-media,
+    $component-place-self-support-modifiers
+);
+@include register-component(
+    "place-self-start",
+    (
+        place-self: start,
+    ),
+    $component-place-self-support-media,
+    $component-place-self-support-modifiers
+);
+@include register-component(
+    "place-self-end",
+    (
+        place-self: end,
+    ),
+    $component-place-self-support-media,
+    $component-place-self-support-modifiers
+);
+@include register-component(
+    "place-self-center",
+    (
+        place-self: center,
+    ),
+    $component-place-self-support-media,
+    $component-place-self-support-modifiers
+);
+@include register-component(
+    "place-self-stretch",
+    (
+        place-self: stretch,
+    ),
+    $component-place-self-support-media,
+    $component-place-self-support-modifiers
+);

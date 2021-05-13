@@ -1,0 +1,74 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/theme/color.scss" as *;
+@use "../../src/utility/set.scss" as *;
+
+$palette: set($palette, shade, (default: rgba(#000, 0.5), 100: rgba(#000, 0.1), 900: rgba(#000, 0.9)));
+
+@include test-module("color [function]") {
+    @include test('Can get color') {
+        @include assert-equal(
+            color(#0d3f6e),
+            rgba(13, 63, 110, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(#0d3f6e, 50),
+            rgba(232, 243, 252, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(#0d3f6e, 100),
+            rgba(209, 230, 250, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(#0d3f6e, 500),
+            rgba(27, 131, 228, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(#0d3f6e, 900),
+            rgba(5, 26, 46, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(contrast, #0d3f6e),
+            rgba(255, 255, 255, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(contrast, #0d3f6e, 100),
+            rgba(0, 0, 0, var(--text-opacity, 1))
+        );
+    };
+    @include test('Can get color from palette') {
+        @include assert-equal(
+            color(red),
+            rgba(220, 38, 38, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(red, 200),
+            rgba(254, 202, 202, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(red, 900),
+            rgba(127, 29, 29, var(--text-opacity, 1))
+        );
+        @include assert-equal(
+            color(contrast, red, 900),
+            rgba(255, 255, 255, var(--text-opacity, 1))
+        );
+    };
+    @include test('Can get add color to palette with rgba') {
+        @include assert-equal(
+            color(shade),
+            rgba(0, 0, 0, 0.5)
+        );
+        @include assert-equal(
+            color(shade, 100),
+            rgba(0, 0, 0, 0.1)
+        );
+        @include assert-equal(
+            color(shade, 900),
+            rgba(0, 0, 0, 0.9)
+        );
+        @include assert-equal(
+            color(contrast, shade),
+            rgba(255, 255, 255, var(--text-opacity, 1))
+        );
+    }
+};

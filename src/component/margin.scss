@@ -1,0 +1,36 @@
+$component-margin-support-media: true !default;
+$component-margin-support-modifiers: false !default;
+@use "../theme/spacing" as *;
+@use "../theme/register-component" as *;
+@include register-component("m-0", (margin: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mt-0", (margin-top: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mr-0", (margin-right: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mb-0", (margin-bottom: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("ml-0", (margin-left: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mx-0", (margin-right: 0, margin-left: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("my-0", (margin-top: 0, margin-bottom: 0), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("m-px", (margin: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mt-px", (margin-top: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mr-px", (margin-right: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mb-px", (margin-bottom: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("ml-px", (margin-left: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mx-px", (margin-right: 1px, margin-left: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("my-px", (margin-top: 1px, margin-bottom: 1px), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("m-auto", (margin: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mt-auto", (margin-top: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mr-auto", (margin-right: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mb-auto", (margin-bottom: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("ml-auto", (margin-left: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("mx-auto", (margin-right: auto, margin-left: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@include register-component("my-auto", (margin-top: auto, margin-bottom: auto), $component-margin-support-media, $component-margin-support-modifiers);
+@each $key, $value in $spacing {
+    @if $key != default {
+        @include register-component("m-#{$key}", (margin: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("mt-#{$key}", (margin-top: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("mr-#{$key}", (margin-right: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("mb-#{$key}", (margin-bottom: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("ml-#{$key}", (margin-left: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("mx-#{$key}", (margin-right: $value, margin-left: $value), $component-margin-support-media, $component-margin-support-modifiers);
+        @include register-component("my-#{$key}", (margin-top: $value, margin-bottom: $value), $component-margin-support-media, $component-margin-support-modifiers);
+    }
+}

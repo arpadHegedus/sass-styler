@@ -1,0 +1,75 @@
+$component-font-variant-numberic-support-media: false !default;
+$component-font-variant-numberic-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "normal-nums",
+    (
+        font-variant-numeric: normal,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "ordinal",
+    (
+        font-variant-numeric: ordinal,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "slashed-zero",
+    (
+        font-variant-numeric: slashed-zero,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "lining-nums",
+    (
+        font-variant-numeric: lining-nums,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "oldstyle-nums",
+    (
+        font-variant-numeric: oldstyle-nums,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "proportional-nums",
+    (
+        font-variant-numeric: proportional-nums,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "tabular-nums",
+    (
+        font-variant-numeric: tabular-nums,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "diagonal-fractions",
+    (
+        font-variant-numeric: diagonal-fractions,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);
+@include register-component(
+    "stacked-fractions",
+    (
+        font-variant-numeric: stacked-fractions,
+    ),
+    $component-font-variant-numberic-support-media,
+    $component-font-variant-numberic-support-modifiers
+);

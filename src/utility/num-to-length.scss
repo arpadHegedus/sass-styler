@@ -1,0 +1,40 @@
+/// Units and corresponding lengths
+/// @type Map
+/// @group utility
+
+$_units: (
+    "px": 1px,
+    "cm": 1cm,
+    "mm": 1mm,
+    "%": 1%,
+    "ch": 1ch,
+    "pc": 1pc,
+    "in": 1in,
+    "em": 1em,
+    "rem": 1rem,
+    "pt": 1pt,
+    "ex": 1ex,
+    "vw": 1vw,
+    "vh": 1vh,
+    "vmin": 1vmin,
+    "vmax": 1vmax,
+    "deg": 1deg
+);
+
+@use "sass:map";
+@use "sass:meta";
+@use "str-to-num" as *;
+
+/// Add `$unit` to `$value`
+/// @param {Number} $value - The number value
+/// @param {String} $unit [px] - The unit (eg. px)
+/// @return {Number}
+/// @link https://www.sassmeister.com/gist/9fa19d254864f33d4a80
+/// @group utility
+
+@function num-to-length($value, $unit: px) {
+    @if meta.type-of($value) != number {
+        @return str-to-num($value + $unit);
+    }
+    @return $value * map.get($_units, $unit);
+}

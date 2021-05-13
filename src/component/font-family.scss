@@ -1,0 +1,45 @@
+$component-font-family-support-media: true !default;
+$component-font-family-support-modifiers: false !default;
+$component-font-family-values: (
+    "system": (
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+    ),
+    "monospace": (
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace,
+    ),
+    "sans": (
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+    ),
+    "serif": (
+        Merriweater,
+        Times,
+        serif,
+    ),
+) !default;
+@use "../theme/register-component" as *;
+@each $key, $value in $component-font-family-values {
+    @include register-component(
+        "font-#{$key}",
+        (
+            font-family: $value,
+        ),
+        $component-font-family-support-media,
+        $component-font-family-support-modifiers
+    );
+}

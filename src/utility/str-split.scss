@@ -1,0 +1,36 @@
+@use "sass:list";
+@use "sass:string";
+
+/// Split a string into a list of strings along a delimiter
+/// @param {String} $string - The string to split
+/// @param {String} $delimiter ["-"] - The delimiter to split along
+/// @param {Boolean} $clean [true] - Whether to remove empty strings from the array
+/// @group utility
+
+@function str-split($string, $delimiter: "-", $clean: true) {
+    $result: ();
+    $length: string.length($string);
+    @if string.length($delimiter) == 0 {
+        @for $i from 1 through $length {
+            $slice: string.slice($string, $i, $i);
+            $result: if(not $clean or string.length($slice) > 0, list.append($result, $slice), $result);
+        }
+        @return $result;
+    }
+    $splitting: true;
+    $remaining: $string;
+    @while $splitting {
+        $index: string.index($remaining, $delimiter);
+        @if $index {
+            $slice: string.slice($remaining, 1, ($index - 1));
+            $result: if(not $clean or string.length($slice) > 0, list.append($result, $slice), $result);
+            $remaining: string.slice(
+                $remaining,
+                $index + string.length($delimiter)
+            );
+        } @else {
+            $splitting: false;
+        }
+    }
+    @return if(not $clean or string.length($remaining) > 0, list.append($result, $remaining), $result);
+}

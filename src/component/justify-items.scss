@@ -1,0 +1,43 @@
+$component-justify-items-support-media: true !default;
+$component-justify-items-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "justify-items-auto",
+    (
+        justify-items: auto,
+    ),
+    $component-justify-items-support-media,
+    $component-justify-items-support-modifiers
+);
+@include register-component(
+    "justify-items-start",
+    (
+        justify-items: start,
+    ),
+    $component-justify-items-support-media,
+    $component-justify-items-support-modifiers
+);
+@include register-component(
+    "justify-items-end",
+    (
+        justify-items: end,
+    ),
+    $component-justify-items-support-media,
+    $component-justify-items-support-modifiers
+);
+@include register-component(
+    "justify-items-center",
+    (
+        justify-items: center,
+    ),
+    $component-justify-items-support-media,
+    $component-justify-items-support-modifiers
+);
+@include register-component(
+    "justify-items-stretch",
+    (
+        justify-items: stretch,
+    ),
+    $component-justify-items-support-media,
+    $component-justify-items-support-modifiers
+);

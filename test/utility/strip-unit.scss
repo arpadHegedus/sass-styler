@@ -1,20 +1,31 @@
-@use "sass:math";
-@use "sass:meta";
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/strip-unit" as styler;
 
-/// Remove units from a number
-/// @example
-///   $result: strip-unit(12px);    /* 12 */
-///   $result: strip-unit(-12em);   /* -12 */
-///   $result: strip-unit(12rem);   /* 12 */
-///   $result: strip-unit(2.2deg);  /* 2.2 */
-/// @param {Number} $number - Number with a unit
-/// @return {Number}
-/// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
-/// @group utility
-
-@function strip-unit($number) {
-    @if meta.type-of($number) == number and not math.is-unitless($number) {
-        @return $number / ($number * 0 + 1);
+@include test-module("strip-unit [function]") {
+    @include test('Can remove units') {
+        @include assert-equal(
+            styler.strip-unit(15px),
+            15
+        );
+        @include assert-equal(
+            styler.strip-unit(15%),
+            15
+        );
+        @include assert-equal(
+            styler.strip-unit(15em),
+            15
+        );
+        @include assert-equal(
+            styler.strip-unit(15rem),
+            15
+        );
+        @include assert-equal(
+            styler.strip-unit(15deg),
+            15
+        );
+        @include assert-equal(
+            styler.strip-unit("15deg"),
+            15
+        );
     }
-    @return $number;
 }

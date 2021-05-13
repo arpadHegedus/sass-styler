@@ -1,0 +1,43 @@
+$component-align-items-support-media: true !default;
+$component-align-items-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "items-start",
+    (
+        align-items: flex-start,
+    ),
+    $component-align-items-support-media,
+    $component-align-items-support-modifiers
+);
+@include register-component(
+    "items-end",
+    (
+        align-items: flex-end,
+    ),
+    $component-align-items-support-media,
+    $component-align-items-support-modifiers
+);
+@include register-component(
+    "items-center",
+    (
+        align-items: center,
+    ),
+    $component-align-items-support-media,
+    $component-align-items-support-modifiers
+);
+@include register-component(
+    "items-baseline",
+    (
+        align-items: baseline,
+    ),
+    $component-align-items-support-media,
+    $component-align-items-support-modifiers
+);
+@include register-component(
+    "items-stretch",
+    (
+        align-items: stretch,
+    ),
+    $component-align-items-support-media,
+    $component-align-items-support-modifiers
+);

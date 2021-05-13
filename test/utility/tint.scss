@@ -1,0 +1,41 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/tint.scss" as styler;
+
+@include test-module("tint [function]") {
+    @include test('Can tint colours') {
+        @include assert-equal(
+            styler.tint(#318de2),
+            #98c6f1
+        );
+        @include assert-equal(
+            styler.tint(#8de231),
+            #c6f198
+        );
+        @include assert-equal(
+            styler.tint(#ccc),
+            #e6e6e6
+        );
+        @include assert-equal(
+            styler.tint(#000),
+            #808080
+        );
+        @include assert-equal(
+            styler.tint(#fff),
+            #fff
+        );
+    }
+    @include test('Can tint colours with different ratio') {
+        @include assert-equal(
+            styler.tint(#318de2, 10),
+            #4698e5
+        );
+        @include assert-equal(
+            styler.tint(#8de231, 90),
+            #f4fcea
+        );
+        @include assert-equal(
+            styler.tint(#ccc, 100),
+            #fff
+        );
+    }
+}

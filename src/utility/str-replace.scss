@@ -11,7 +11,6 @@
 
 @function str-replace($string, $search, $replace: "") {
     $index: string.index($string, $search);
-
     @if $index {
         @return string.slice($string, 1, $index - 1) + $replace +
             str-replace(
@@ -20,6 +19,5 @@
                 $replace
             );
     }
-
     @return $string;
 }

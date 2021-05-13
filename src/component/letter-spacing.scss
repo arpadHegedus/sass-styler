@@ -1,0 +1,21 @@
+$component-letter-spacing-support-media: true !default;
+$component-letter-spacing-support-modifiers: false !default;
+$component-letter-spacing-values: (
+    tighter: -0.05em,
+    tight: -0.025em,
+    normal: 0,
+    wide: 0.025em,
+    wider: 0.05em,
+    widest: 0.1em
+) !default;
+@use "../theme/register-component" as *;
+@each $key, $value in $component-letter-spacing-values {
+    @include register-component(
+        "tracking-#{$key}",
+        (
+            letter-spacing: $value,
+        ),
+        $component-letter-spacing-support-media,
+        $component-letter-spacing-support-modifiers
+    );
+}

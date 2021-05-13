@@ -1,0 +1,63 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/calc-substract.scss" as styler;
+
+@include test-module("calc-substract [function]") {
+    @include test('Can substract numbers') {
+        @include assert-equal(
+            styler.calc-substract(15, 10),
+            5
+        );
+        @include assert-equal(
+            styler.calc-substract(15px, 10),
+            5px
+        );
+        @include assert-equal(
+            styler.calc-substract(15, 10px),
+            5px
+        );
+        @include assert-equal(
+            styler.calc-substract(15px, 5px),
+            10px
+        );
+        @include assert-equal(
+            styler.calc-substract(1em, 2em),
+            -1em
+        );
+    }
+    @include test('Can substract numbers and convert at the same time') {
+        @include assert-equal(
+            styler.calc-substract(15, 10, px),
+            5px
+        );
+        @include assert-equal(
+            styler.calc-substract(32px, 1em, px),
+            16px
+        );
+        @include assert-equal(
+            styler.calc-substract(2em, 1em, px),
+            16px
+        );
+        @include assert-equal(
+            styler.calc-substract(1.5rem, 16px, rem),
+            0.5rem
+        );
+        @include assert-equal(
+            styler.calc-substract(2rem, 16px, px),
+            16px
+        );
+    }
+    @include test('Can substract numbers with different units') {
+        @include assert-equal(
+            styler.calc-substract(16px, 1em),
+            calc(16px - 1em)
+        );
+        @include assert-equal(
+            styler.calc-substract(1em, 1rem),
+            calc(1em - 1rem)
+        );
+        @include assert-equal(
+            styler.calc-substract(1rem, 25%),
+            calc(1rem - 25%)
+        );
+    }
+}

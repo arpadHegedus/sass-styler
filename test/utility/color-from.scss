@@ -1,0 +1,49 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/color-from.scss" as styler;
+
+@include test-module("color-from [function]") {
+    @include test('Can extract color from border declarations') {
+        @include assert-equal(
+            styler.color-from(1px solid black),
+            black
+        );
+        @include assert-equal(
+            styler.color-from(1px solid #000),
+            #000
+        );
+        @include assert-equal(
+            styler.color-from(1px solid #000000),
+            #000000
+        );
+        @include assert-equal(
+            styler.color-from(1px solid rgb(0, 0, 0)),
+            rgb(0, 0, 0)
+        );
+        @include assert-equal(
+            styler.color-from(1px solid rgba(0, 0, 0, 0.5)),
+            rgba(0, 0, 0, 0.5)
+        );
+    }
+    @include test('Can extract color from background declarations') {
+        @include assert-equal(
+            styler.color-from(url("url") black no-repeat),
+            black
+        );
+        @include assert-equal(
+            styler.color-from(url("url") #000 no-repeat),
+            #000
+        );
+        @include assert-equal(
+            styler.color-from(url("url") #000000 no-repeat),
+            #000000
+        );
+        @include assert-equal(
+            styler.color-from(url("url") rgb(0, 0, 0) no-repeat),
+            rgb(0, 0, 0)
+        );
+        @include assert-equal(
+            styler.color-from(url("url") rgba(0, 0, 0, 0.5) no-repeat),
+            rgba(0, 0, 0, 0.5)
+        );
+    }
+}

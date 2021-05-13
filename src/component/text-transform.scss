@@ -1,0 +1,35 @@
+$component-text-transform-support-media: true !default;
+$component-text-transform-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "uppercase",
+    (
+        text-transform: uppercase,
+    ),
+    $component-text-transform-support-media,
+    $component-text-transform-support-modifiers
+);
+@include register-component(
+    "lowercase",
+    (
+        text-transform: lowercase,
+    ),
+    $component-text-transform-support-media,
+    $component-text-transform-support-modifiers
+);
+@include register-component(
+    "capitalize",
+    (
+        text-transform: capitalize,
+    ),
+    $component-text-transform-support-media,
+    $component-text-transform-support-modifiers
+);
+@include register-component(
+    "normal-case",
+    (
+        text-transform: none,
+    ),
+    $component-text-transform-support-media,
+    $component-text-transform-support-modifiers
+);

@@ -1,0 +1,82 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/cmyk.scss" as styler;
+@use "../../src/utility/decimal-round.scss" as *;
+@use "sass:map";
+
+@include test-module("cmyk [function]") {
+    @include test("Can get contrasting color") {
+        @include assert-equal(
+            styler.cmyk(#000),
+            (
+                c: 0,
+                cyan: 0,
+                m: 0,
+                magenta: 0,
+                y: 0,
+                yellow: 0,
+                k: 1,
+                black: 1,
+            )
+        );
+        @include assert-equal(
+            styler.cmyk(#fff),
+            (
+                c: 0,
+                cyan: 0,
+                m: 0,
+                magenta: 0,
+                y: 0,
+                yellow: 0,
+                k: 0,
+                black: 0,
+            )
+        );
+        @include assert-equal(
+            styler.cmyk(#ccc),
+            (
+                c: 0,
+                cyan: 0,
+                m: 0,
+                magenta: 0,
+                y: 0,
+                yellow: 0,
+                k: 0.2,
+                black: 0.2,
+            )
+        );
+        $light-blue: styler.cmyk(#6aaeee);
+        @each $key, $value in $light-blue {
+            $light-blue: map.set($light-blue, $key, decimal-round($value, 3));
+        }
+        @include assert-equal(
+            $light-blue,
+            (
+                c: 0.555,
+                cyan: 0.555,
+                m: 0.269,
+                magenta: 0.269,
+                y: 0,
+                yellow: 0,
+                k: 0.067,
+                black: 0.067,
+            )
+        );
+        $dark-blue: styler.cmyk(#6aaeee);
+        @each $key, $value in $dark-blue {
+            $dark-blue: map.set($dark-blue, $key, decimal-round($value, 3));
+        }
+        @include assert-equal(
+            $dark-blue,
+            (
+                c: 0.555,
+                cyan: 0.555,
+                m: 0.269,
+                magenta: 0.269,
+                y: 0,
+                yellow: 0,
+                k: 0.067,
+                black: 0.067,
+            )
+        );
+    }
+}

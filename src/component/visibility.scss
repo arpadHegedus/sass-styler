@@ -1,0 +1,19 @@
+$component-visibility-support-media: true !default;
+$component-visibility-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "visible",
+    (
+        visibility: visible,
+    ),
+    $component-visibility-support-media,
+    $component-visibility-support-modifiers
+);
+@include register-component(
+    "invisible",
+    (
+        visibility: hidden,
+    ),
+    $component-visibility-support-media,
+    $component-visibility-support-modifiers
+);

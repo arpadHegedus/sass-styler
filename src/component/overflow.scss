@@ -1,0 +1,99 @@
+$component-overflow-support-media: true !default;
+$component-overflow-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "overflow-auto",
+    (
+        overflow: auto,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-hidden",
+    (
+        overflow: hidden,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-visible",
+    (
+        overflow: visible,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-scroll",
+    (
+        overflow: scroll,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-x-auto",
+    (
+        overflow-x: auto,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-y-auto",
+    (
+        overflow-y: auto,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-x-hidden",
+    (
+        overflow-x: hidden,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-y-hidden",
+    (
+        overflow-y: hidden,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-x-visible",
+    (
+        overflow-x: visible,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-y-visible",
+    (
+        overflow-y: visible,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-x-scroll",
+    (
+        overflow-x: scroll,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);
+@include register-component(
+    "overflow-y-scroll",
+    (
+        overflow-y: scroll,
+    ),
+    $component-overflow-support-media,
+    $component-overflow-support-modifiers
+);

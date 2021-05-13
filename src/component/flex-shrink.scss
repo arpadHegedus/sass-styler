@@ -1,0 +1,28 @@
+$component-flex-shrink-support-media: true !default;
+$component-flex-shrink-support-modifiers: false !default;
+$component-flex-shrink-values: (
+    default: 1,
+    0: 0
+) !default;
+@use "sass:map";
+@use "../theme/register-component" as *;
+@include register-component(
+    "flex-shrink",
+    (
+        flex-shrink: map.get($component-flex-shrink-values, default),
+    ),
+    $component-flex-shrink-support-media,
+    $component-flex-shrink-support-modifiers
+);
+@each $key, $value in $component-flex-shrink-values {
+    @if $key != default {
+        @include register-component(
+            "flex-shrink-#{$key}",
+            (
+                flex-shrink: $value,
+            ),
+            $component-flex-shrink-support-media,
+            $component-flex-shrink-support-modifiers
+        );
+    }
+}

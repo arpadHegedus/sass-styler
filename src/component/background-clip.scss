@@ -1,0 +1,35 @@
+$component-background-clip-support-media: true !default;
+$component-background-clip-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "bg-clip-border",
+    (
+        background-clip: border-box,
+    ),
+    $component-background-clip-support-media,
+    $component-background-clip-support-modifiers
+);
+@include register-component(
+    "bg-clip-padding",
+    (
+        background-clip: padding-box,
+    ),
+    $component-background-clip-support-media,
+    $component-background-clip-support-modifiers
+);
+@include register-component(
+    "bg-clip-content",
+    (
+        background-clip: content-box,
+    ),
+    $component-background-clip-support-media,
+    $component-background-clip-support-modifiers
+);
+@include register-component(
+    "bg-clip-text",
+    (
+        background-clip: text,
+    ),
+    $component-background-clip-support-media,
+    $component-background-clip-support-modifiers
+);

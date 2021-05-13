@@ -1,0 +1,59 @@
+$component-place-content-support-media: true !default;
+$component-place-content-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "place-content-center",
+    (
+        place-content: center,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-start",
+    (
+        place-content: start,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-end",
+    (
+        place-content: end,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-between",
+    (
+        place-content: space-between,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-around",
+    (
+        place-content: space-around,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-evenly",
+    (
+        place-content: space-evenly,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);
+@include register-component(
+    "place-content-stretch",
+    (
+        place-content: stretch,
+    ),
+    $component-place-content-support-media,
+    $component-place-content-support-modifiers
+);

@@ -1,0 +1,43 @@
+$component-white-space-support-media: true !default;
+$component-white-space-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "whitespace-normal",
+    (
+        white-space: normal,
+    ),
+    $component-white-space-support-media,
+    $component-white-space-support-modifiers
+);
+@include register-component(
+    "whitespace-nowrap",
+    (
+        white-space: nowrap,
+    ),
+    $component-white-space-support-media,
+    $component-white-space-support-modifiers
+);
+@include register-component(
+    "whitespace-pre",
+    (
+        white-space: pre,
+    ),
+    $component-white-space-support-media,
+    $component-white-space-support-modifiers
+);
+@include register-component(
+    "whitespace-pre-line",
+    (
+        white-space: pre-line,
+    ),
+    $component-white-space-support-media,
+    $component-white-space-support-modifiers
+);
+@include register-component(
+    "whitespace-pre-wrap",
+    (
+        white-space: pre-wrap,
+    ),
+    $component-white-space-support-media,
+    $component-white-space-support-modifiers
+);

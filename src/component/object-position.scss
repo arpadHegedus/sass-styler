@@ -1,0 +1,24 @@
+$component-object-position-support-media: true !default;
+$component-object-position-support-modifiers: false !default;
+$component-object-position-values: (
+    "bottom": bottom,
+    "center": center,
+    "left": left,
+    "left-bottom": left bottom,
+    "left-top": left top,
+    "right": right,
+    "right-bottom": right bottom,
+    "right-top": right top,
+    "top": top
+) !default;
+@use "../theme/register-component" as *;
+@each $key, $value in $component-object-position-values {
+    @include register-component(
+        "object-#{$key}",
+        (
+            object-position: $value,
+        ),
+        $component-object-position-support-media,
+        $component-object-position-support-modifiers
+    );
+}

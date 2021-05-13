@@ -12,6 +12,7 @@
     "library",
     "helper"
   ],
+  "type": "module",
   "homepage": "https://github.com/arpadHegedus/sass-styler",
   "bugs": "https://github.com/arpadHegedus/sass-styler/issues",
   "license": "ISC",

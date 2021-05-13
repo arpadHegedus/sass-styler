@@ -16,11 +16,9 @@
     $right: null;
     $bottom: null;
     $left: null;
-
     @if meta.type-of($value) != list and meta.type-of($value) != number {
         @return (top: null, right: null, left: null, bottom: null);
     }
-
     @if list.length($value) == 1 {
         $top: $value;
         $right: $value;
@@ -42,6 +40,5 @@
         $bottom: list.nth($value, 3);
         $left: list.nth($value, 4);
     }
-
     @return (top: $top, right: $right, bottom: $bottom, left: $left);
 }

@@ -1,0 +1,19 @@
+$component-font-style-support-media: true !default;
+$component-font-style-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "italic",
+    (
+        font-style: italic,
+    ),
+    $component-font-style-support-media,
+    $component-font-style-support-modifiers
+);
+@include register-component(
+    "not-italic",
+    (
+        font-style: normal,
+    ),
+    $component-font-style-support-media,
+    $component-font-style-support-modifiers
+);

@@ -1,0 +1,180 @@
+$component-max-width-support-media: true !default;
+$component-max-width-support-modifiers: false !default;
+@use "sass:meta";
+@use "../theme/media" as *;
+@use "../theme/spacing" as *;
+@use "../theme/register-component" as *;
+@use "../utility/get" as *;
+@include register-component(
+    "max-w-0",
+    (
+        max-width: 0,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-none",
+    (
+        max-width: none,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-xs",
+    (
+        max-width: 20rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-sm",
+    (
+        max-width: 24rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-md",
+    (
+        max-width: 28rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-lg",
+    (
+        max-width: 32rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-xl",
+    (
+        max-width: 36rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-2xl",
+    (
+        max-width: 42rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-3xl",
+    (
+        max-width: 48rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-4xl",
+    (
+        max-width: 56rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-5xl",
+    (
+        max-width: 64rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-6xl",
+    (
+        max-width: 72rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-7xl",
+    (
+        max-width: 80rem,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-full",
+    (
+        max-width: 100%,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-min",
+    (
+        max-width: min-content,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-max",
+    (
+        max-width: max-content,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@include register-component(
+    "max-w-typography",
+    (
+        max-width: 65ch,
+    ),
+    $component-max-width-support-media,
+    $component-max-width-support-modifiers
+);
+@each $key, $value in $spacing {
+    @if $key != default {
+        @include register-component(
+            "max-w-#{$key}",
+            (
+                max-width: $value,
+            ),
+            $component-max-width-support-media,
+            $component-max-width-support-modifiers
+        );
+    }
+}
+@if $media-queries and meta.type-of($media-queries) == map {
+    @each $key, $value in $media-queries {
+        $width: null;
+        $current-media: get($media-queries, $key);
+        @if meta.type-of($current-media) == number {
+            $width: $current-media;
+        } @else if meta.type-of($current-media) == list {
+            @each $item in $current-media {
+                @if meta.type-of($item) == number {
+                    $width: $item;
+                }
+            }
+        }
+        @if $width {
+            @include register-component(
+                "max-w-screen-#{$key}",
+                (
+                    max-width: $width,
+                ),
+                $component-max-width-support-media,
+                $component-max-width-support-modifiers
+            );
+        }
+    }
+}

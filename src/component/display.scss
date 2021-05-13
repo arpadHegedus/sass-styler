@@ -1,0 +1,155 @@
+$component-display-support-media: true !default;
+$component-display-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "block",
+    (
+        display: block,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "inline-block",
+    (
+        display: inline-block,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "inline",
+    (
+        display: inline,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "flex",
+    (
+        display: flex,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "inline-flex",
+    (
+        display: inline-flex,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table",
+    (
+        display: table,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-caption",
+    (
+        display: table-caption,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-cell",
+    (
+        display: table-cell,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-column",
+    (
+        display: table-column,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-column-group",
+    (
+        display: table-column-group,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-footer-group",
+    (
+        display: table-footer-group,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-header-group",
+    (
+        display: table-header-group,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-row-group",
+    (
+        display: table-row-group,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "table-row",
+    (
+        display: table-row,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "flow-root",
+    (
+        display: flow-root,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "grid",
+    (
+        display: grid,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "inline-grid",
+    (
+        display: inline-grid,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "contents",
+    (
+        display: contents,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);
+@include register-component(
+    "hidden",
+    (
+        display: none,
+    ),
+    $component-display-support-media,
+    $component-display-support-modifiers
+);

@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "sass:meta";
+@use "str-to-num" as *;
+@use "strip-unit" as *;
+
+/// Px to Rem calculation
+/// @param {Number} $px - Size value
+/// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
+/// @return {Number}
+/// @group utility
+
+@function px-to-rem($px, $default: null) {
+    $default: if(
+        $default,
+        $default,
+        if(meta.global-variable-exists("font-size"), $font-size, 16px)
+    );
+    @if $default and math.unit($default) == px {
+        @return 1rem * strip-unit($px) / strip-unit($default);
+    }
+    @return str-to-num($px);
+}

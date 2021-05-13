@@ -1,0 +1,19 @@
+$component-border-collapse-support-media: true !default;
+$component-border-collapse-support-modifiers: false !default;
+@use "../theme/register-component" as *;
+@include register-component(
+    "border-collapse",
+    (
+        border-collapse: collapse,
+    ),
+    $component-border-collapse-support-media,
+    $component-border-collapse-support-modifiers
+);
+@include register-component(
+    "border-separate",
+    (
+        border-collapse: separate,
+    ),
+    $component-border-collapse-support-media,
+    $component-border-collapse-support-modifiers
+);

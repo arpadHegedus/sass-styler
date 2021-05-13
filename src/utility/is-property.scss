@@ -2,7 +2,7 @@
 /// @type Map
 /// @group utility
 
-$css-properties: (
+$_properties: (
     align-content,
     align-items,
     align-self,
@@ -553,7 +553,7 @@ $css-properties: (
     wrap-through,
     writing-mode,
     z-index
-) !default;
+);
 
 @use "sass:list";
 @use "sass:meta";
@@ -568,11 +568,9 @@ $css-properties: (
     @if meta.type-of($property) != string {
         @return false;
     }
-
-    @if list.index($css-properties, $property) {
+    @if list.index($_properties, $property) {
         @return true;
     }
-
     @if string.index($property, "--") ==
         1 or
         string.index($property, "-webkit-") ==
@@ -586,6 +584,5 @@ $css-properties: (
     {
         @return true;
     }
-
     @return false;
 }

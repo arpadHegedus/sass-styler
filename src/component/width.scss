@@ -1,0 +1,280 @@
+$component-width-support-media: true !default;
+$component-width-support-modifiers: false !default;
+@use "../theme/spacing" as *;
+@use "../theme/register-component" as *;
+@include register-component(
+    "w-0",
+    (
+        width: 0,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-auto",
+    (
+        width: auto,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-px",
+    (
+        width: 1px,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/2",
+    (
+        width: 50%,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/3",
+    (
+        width: 100% / 3,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-2/3",
+    (
+        width: 100% / 3 * 2,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/4",
+    (
+        width: 100% / 4,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-2/4",
+    (
+        width: 100% / 4 * 2,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-3/4",
+    (
+        width: 100% / 4 * 3,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/5",
+    (
+        width: 100% / 5,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-2/5",
+    (
+        width: 100% / 5 * 2,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-3/5",
+    (
+        width: 100% / 5 * 3,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-4/5",
+    (
+        width: 100% / 5 * 4,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/6",
+    (
+        width: 100% / 6,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-2/6",
+    (
+        width: 100% / 6 * 2,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-3/6",
+    (
+        width: 100% / 6 * 3,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-4/6",
+    (
+        width: 100% / 6 * 4,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-5/6",
+    (
+        width: 100% / 6 * 5,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-1/12",
+    (
+        width: 100% / 12,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-2/12",
+    (
+        width: 100% / 12 * 2,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-3/12",
+    (
+        width: 100% / 12 * 3,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-4/12",
+    (
+        width: 100% / 12 * 4,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-5/12",
+    (
+        width: 100% / 12 * 5,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-6/12",
+    (
+        width: 100% / 12 * 6,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-7/12",
+    (
+        width: 100% / 12 * 7,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-8/12",
+    (
+        width: 100% / 12 * 8,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-9/12",
+    (
+        width: 100% / 12 * 9,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-10/12",
+    (
+        width: 100% / 12 * 10,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-11/12",
+    (
+        width: 100% / 12 * 11,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-full",
+    (
+        width: 100%,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-screen",
+    (
+        width: 100vw,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-min",
+    (
+        width: min-content,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@include register-component(
+    "w-max",
+    (
+        width: max-content,
+    ),
+    $component-width-support-media,
+    $component-width-support-modifiers
+);
+@each $key, $value in $spacing {
+    @if $key != default {
+        @include register-component(
+            "w-#{$key}",
+            (
+                width: $value,
+            ),
+            $component-width-support-media,
+            $component-width-support-modifiers
+        );
+    }
+}

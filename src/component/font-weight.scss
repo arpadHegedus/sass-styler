@@ -1,0 +1,24 @@
+$component-font-weight-support-media: true !default;
+$component-font-weight-support-modifiers: false !default;
+$component-font-weight-values: (
+    thin: 100,
+    extralight: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extravold: 800,
+    black: 900
+) !default;
+@use "../theme/register-component" as *;
+@each $key, $value in $component-font-weight-values {
+    @include register-component(
+        "font-#{$key}",
+        (
+            font-weight: $value,
+        ),
+        $component-font-weight-support-media,
+        $component-font-weight-support-modifiers
+    );
+}
