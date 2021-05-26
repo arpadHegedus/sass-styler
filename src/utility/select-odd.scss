@@ -1,0 +1,10 @@
+@use "selector-combine" as *;
+
+/// Select all odd nth elements
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group Utility
+
+@function select-odd($selector: "&") {
+    @return selector-combine($selector, "&:nth-child(odd)");
+}

@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide backward left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-backward-left($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-bck-left #{$animation-settings}"}, slide-bck-left);
+
+	@include keyframes(slide-bck-left) {
+		0% {
+			-webkit-transform: translateZ(0) translateX(0);
+			transform: translateZ(0) translateX(0);
+		}
+
+		100% {
+			-webkit-transform: translateZ(-400px) translateX(-200px);
+			transform: translateZ(-400px) translateX(-200px);
+		}
+	}
+}
+

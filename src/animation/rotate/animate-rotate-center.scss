@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate center
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-center($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-center #{$animation-settings}"}, rotate-center);
+
+	@include keyframes(rotate-center) {
+		0% {
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+}
+

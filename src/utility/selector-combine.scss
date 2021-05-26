@@ -1,0 +1,55 @@
+@use "sass:list";
+@use "sass:string";
+@use "str-replace" as *;
+@use "str-split" as *;
+@use "str-trim" as *;
+@use "str-ends-with" as *;
+@use "str-starts-with" as *;
+
+/// Combine 2 CSS selectors
+/// @param {String|List} $selector1 Left selector
+/// @param {String|List} $selector2 Right selector
+/// @return {String}
+/// @group Utility
+
+@function selector-combine($selector1, $selector2) {
+    $selector-list: ();
+    $selector1-list: str-split("#{$selector1}", ",");
+    $selector2-list: str-split("#{$selector2}", ",");
+    @each $s1 in $selector1-list {
+        @each $s2 in $selector2-list {
+            $s1: str-trim($s1);
+            $s2: str-trim($s2);
+            @if string.index($s1, "&") and str-ends-with($s1, "&") and string.index($s2, "&") {
+                $selector-list: list.append(
+                    $selector-list,
+                    str-replace($s1, "&", $s2),
+                    comma
+                );
+            } @else if (string.index($s1, "&") == null or str-ends-with($s1, "&") == false) and string.index($s2, "&") and str-starts-with($s2, "&") {
+                $s2: string.slice($s2, 2);
+                $selector-list: list.append(
+                    $selector-list,
+                    "#{$s1}#{$s2}",
+                    comma
+                );
+            } @else if string.index($s1, "&") and str-ends-with($s1, "&") and (string.index($s2, "&") == false or str-starts-with($s2, "&") == false) {
+                $selector-list: list.append(
+                    $selector-list,
+                    "#{$s1} #{$s2}",
+                    comma
+                );
+            } @else if string.index($s2, "&") {
+                $selector-list: list.append(
+                    $selector-list,
+                    str-replace($s2, "&", $s1),
+                    comma
+                );
+            } @else {
+                $selector-list: list.append($selector-list, $s1, comma);
+                $selector-list: list.append($selector-list, $s2, comma);
+            }
+        }
+    }
+    @return str-replace("#{$selector-list}", "  ", " ");
+}

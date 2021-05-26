@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate text focus in
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-text-focus-in($animation-settings: null) {
+	animation: if($animation-settings, #{"text-focus-in #{$animation-settings}"}, text-focus-in);
+
+	@include keyframes(text-focus-in) {
+		0% {
+			-webkit-filter: blur(12px);
+			filter: blur(12px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+	}
+}
+

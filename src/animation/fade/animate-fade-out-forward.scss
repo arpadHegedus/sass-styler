@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate fade out forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-fade-out-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"fade-out-fwd #{$animation-settings}"}, fade-out-fwd);
+
+	@include keyframes(fade-out-fwd) {
+		0% {
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateZ(80px);
+			transform: translateZ(80px);
+			opacity: 0;
+		}
+	}
+}
+

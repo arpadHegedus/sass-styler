@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide out forward bottom left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-out-forward-bottom-left($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-out-fwd-bl #{$animation-settings}"}, slide-out-fwd-bl);
+
+	@include keyframes(slide-out-fwd-bl) {
+		0% {
+			-webkit-transform: translateZ(0) translateY(0) translateX(0);
+			transform: translateZ(0) translateY(0) translateX(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateZ(600px) translateY(300px) translateX(-400px);
+			transform: translateZ(600px) translateY(300px) translateX(-400px);
+			opacity: 0;
+		}
+	}
+}
+

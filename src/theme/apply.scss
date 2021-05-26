@@ -4,9 +4,9 @@
 @use "../utility/escape-classname" as *;
 @use "../utility/str-split" as *;
 
-/// Apply CSS utility components
+/// Add multiple extends
 /// @param {List|String} $keywords - CSS utility component ids to apply
-/// @group theme
+/// @group Theme
 
 @mixin apply($keywords...) {
     @if list.length($keywords) == 1 {

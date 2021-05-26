@@ -1,0 +1,14 @@
+@use "sass:selector";
+@use "selector-combine" as *;
+
+/// Mingle a list of selectors to go before and after the other adjacently
+/// @param {List|String} $selectors - The base selectors
+/// @group Utility
+
+@function select-owl($selector) {
+    @return selector.replace(
+        selector-combine($selector, "& + #___select-owl"),
+        "#___select-owl",
+        $selector
+    );
+}

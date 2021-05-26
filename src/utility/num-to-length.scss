@@ -1,6 +1,6 @@
 /// Units and corresponding lengths
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_units: (
     "px": 1px,
@@ -30,7 +30,7 @@ $_units: (
 /// @param {String} $unit [px] - The unit (eg. px)
 /// @return {Number}
 /// @link https://www.sassmeister.com/gist/9fa19d254864f33d4a80
-/// @group utility
+/// @group Utility
 
 @function num-to-length($value, $unit: px) {
     @if meta.type-of($value) != number {

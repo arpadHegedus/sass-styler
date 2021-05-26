@@ -7,7 +7,7 @@
 /// @param {Number} $right - Number on the right of the operation
 /// @param {Number} $ensure-unit [false] - Try to convert numbers so that they are compatible
 /// @return {Number|String}
-/// @group utility
+/// @group Utility
 
 @function calc-substract($left, $right, $ensure-unit: false) {
     @if math.is-unitless($left) and math.is-unitless($right) == false {

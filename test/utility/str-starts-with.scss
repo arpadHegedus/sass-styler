@@ -1,0 +1,23 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/str-starts-with.scss" as styler;
+
+@include test-module("str-starts-with [function]") {
+    @include test('Can check if string starts with') {
+        @include assert-equal(
+            styler.str-starts-with("i want it all", "i"),
+            true
+        );
+        @include assert-equal(
+            styler.str-starts-with("i want it all", "i want"),
+            true
+        );
+        @include assert-equal(
+            styler.str-starts-with("i want it all", "a"),
+            false
+        );
+        @include assert-equal(
+            styler.str-starts-with("i want it all", "iwant"),
+            false
+        );
+    }
+}

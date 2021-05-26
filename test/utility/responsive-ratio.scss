@@ -1,0 +1,15 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/responsive-ratio.scss" as *;
+
+@include test-module("responsive-ratio [mixin]") {
+    @include test("Can apply responsive-ratio") {
+        @include assert {
+            @include output {
+                @include responsive-ratio();
+            }
+            @include expect {
+                padding: 9/16*100% 0 0 0;
+            }
+        }
+    }
+}

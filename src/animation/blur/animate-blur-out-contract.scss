@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate blur out contract
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-blur-out-contract($animation-settings: null) {
+  animation: if($animation-settings, #{"blur-out-contract #{$animation-settings}"}, blur-out-contract);
+
+  @include keyframes(blur-out-contract) {
+    0% {
+      -webkit-filter: blur(0.01);
+      filter: blur(0.01);
+    }
+
+    100% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px) opacity(0%);
+      filter: blur(12px) opacity(0%);
+    }
+  }
+}

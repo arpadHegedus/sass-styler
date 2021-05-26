@@ -1,0 +1,32 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/flex-grid.scss" as *;
+
+@include test-module("flex-grid [mixin]") {
+    @include test("Can create flex-grid") {
+        @include assert {
+            @include output {
+                @include flex-grid();
+            }
+            @include expect {
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                flex-wrap: wrap;
+
+                > * {
+                    flex: 1 0 auto;
+                    width: calc(99.99% * 0.5 - (1rem - 1rem * 0.5));
+                    margin-left: 1rem;
+                }
+
+                > *:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+
+                > *:nth-child(n+3) {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

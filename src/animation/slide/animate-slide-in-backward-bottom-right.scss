@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide in backward bottom right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-in-backward-bottom-right($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-in-bck-br #{$animation-settings}"}, slide-in-bck-br);
+
+	@include keyframes(slide-in-bck-br) {
+		0% {
+			-webkit-transform: translateZ(700px) translateY(300px) translateX(400px);
+			transform: translateZ(700px) translateY(300px) translateX(400px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateZ(0) translateY(0) translateX(0);
+			transform: translateZ(0) translateY(0) translateX(0);
+			opacity: 1;
+		}
+	}
+}
+

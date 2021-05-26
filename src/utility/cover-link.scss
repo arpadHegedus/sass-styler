@@ -1,0 +1,20 @@
+@use "sass:string";
+@use "position" as *;
+
+/// Cover a container with a link
+/// @param {String|List} $selector ["a::before"] - The cover to be generated to
+/// @param {String} $position [relative] - The position of the parent container
+/// @param {Number} $z-index [2] - The z-indx value of the cover
+/// @group Utility
+
+@mixin cover-link($selector: "a::before", $position: relative, $z-index: 2) {
+    position: $position;
+    #{$selector} {
+        z-index: $z-index;
+        @include position(0, 0, 0, 0, absolute, 100%, 100%);
+        @if string.index($selector, ":before") or string.index($selector, ":after") {
+            content: "";
+        }
+        @content;
+    }
+}

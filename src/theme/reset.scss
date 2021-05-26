@@ -1,6 +1,7 @@
 @use "sass:meta";
 
 /// Reset styles
+/// @group Theme
 
 @mixin reset() {
     *,

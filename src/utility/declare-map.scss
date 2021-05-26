@@ -1,6 +1,5 @@
 @use "sass:list";
 @use "sass:meta";
-@use "sass:selector";
 @use "sass:string";
 @use "is-pseudo" as *;
 @use "str-replace" as *;
@@ -11,7 +10,7 @@
 ///   @include declare-map((color: red, "&:hover": (color: blue)));         /* color: red; &:hover { color: blue; } */
 ///   @include declare-map((color: red, "&:hover, &:focus": (color: blue))); /* color: red; &:hover, &:focus { color: blue; } */
 /// @param {Map} $map [()] - Property declaration
-/// @group utility
+/// @group Utility
 
 @mixin declare-map($map: ()) {
     @each $key, $value in $map {

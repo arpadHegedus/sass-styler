@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate swing top left backward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-swing-top-left-backward($animation-settings: null) {
+	animation: if($animation-settings, #{"swing-top-left-bck #{$animation-settings}"}, swing-top-left-bck);
+
+	@include keyframes(swing-top-left-bck) {
+		0% {
+			-webkit-transform: rotate3d(-1, 1, 0, 0deg);
+			transform: rotate3d(-1, 1, 0, 0deg);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+		}
+
+		100% {
+			-webkit-transform: rotate3d(-1, 1, 0, 180deg);
+			transform: rotate3d(-1, 1, 0, 180deg);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+		}
+	}
+}
+

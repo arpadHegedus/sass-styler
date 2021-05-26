@@ -9,7 +9,7 @@
 /// @param {Map} $map - The map to remove keys from
 /// @param {String|List} $keys... - Keys to be removed
 /// @return {Map}
-/// @group utility
+/// @group Utility
 
 @function remove($map, $keys...) {
     @if meta.type-of($map) != map {

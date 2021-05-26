@@ -3,7 +3,7 @@
 /// Base64 encode svg code
 /// @param {String} $svg - The svg code
 /// @param {Color} $fill [null] - A fill color to be added to svg
-/// @group utility
+/// @group Utility
 
 @function svg-base64($svg, $fill: null) {
     $svg: str-replace(

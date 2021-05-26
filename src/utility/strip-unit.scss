@@ -11,7 +11,7 @@
 /// @param {Number} $number - Number with a unit
 /// @return {Number}
 /// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
-/// @group utility
+/// @group Utility
 
 @function strip-unit($number) {
     @if meta.type-of($number) == string and meta.type-of(str-to-num($number)) == number {

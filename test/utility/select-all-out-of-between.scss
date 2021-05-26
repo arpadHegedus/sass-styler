@@ -1,0 +1,11 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-all-out-of-between.scss" as *;
+
+@include test-module("select-all-out-of-between [function]") {
+    @include test('Can select with select-all-out-of-between') {
+        @include assert-equal(
+            select-all-out-of-between(2, 5),
+            "&:nth-last-child(n + 2):nth-last-child(-n + 5):first-child, &:nth-last-child(n + 2):nth-last-child(-n + 5):first-child ~ &"
+        );
+    }
+}

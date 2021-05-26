@@ -7,7 +7,7 @@
 /// @param {String} $replace [""] - New value
 /// @return {String}
 /// @link https://css-tricks.com/snippets/sass/str-replace-function/
-/// @group utility
+/// @group Utility
 
 @function str-replace($string, $search, $replace: "") {
     $index: string.index($string, $search);

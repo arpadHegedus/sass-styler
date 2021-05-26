@@ -1,0 +1,34 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate diagonal top right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-diagonal-top-right($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-diagonal-tr #{$animation-settings}"}, rotate-diagonal-tr);
+
+	@include keyframes(rotate-diagonal-tr) {
+		0% {
+			-webkit-transform: rotate3d(1, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+
+		50% {
+			-webkit-transform: rotate3d(1, 1, 0, -180deg);
+			transform: rotate3d(1, 1, 0, -180deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+
+		100% {
+			-webkit-transform: rotate3d(1, 1, 0, -360deg);
+			transform: rotate3d(1, 1, 0, -360deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+	}
+}
+

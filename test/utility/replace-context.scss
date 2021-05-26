@@ -1,0 +1,49 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/replace-context.scss" as *;
+
+@include test-module("replace-context [mixin]") {
+    @include test("Can apply replace-context") {
+        @include assert {
+            @include output {
+                ul li {
+                    a {
+                        color: red;
+                        @include replace-context("li", "li:hover") {
+                            color: blue;
+                        }
+                    }
+                }
+            }
+            @include expect {
+                ul li a {
+                    color: red;
+                }
+                ul li:hover a {
+                    color: blue;
+                }
+            }
+        }
+
+        @include assert {
+            @include output {
+                ul li {
+                    a {
+                        color: red;
+                        @include replace-context("li", "li:hover", "&:focus") {
+                            color: blue;
+                        }
+                    }
+                }
+            }
+            @include expect {
+                ul li a {
+                    color: red;
+                }
+                ul li:hover a,
+                ul li a:focus {
+                    color: blue;
+                }
+            }
+        }
+    }
+}

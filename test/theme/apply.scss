@@ -1,10 +1,17 @@
 @use "../../node_modules/sass-true" as *;
 @use "../../src/theme/apply.scss" as *;
-@use "../../src/theme/register-component.scss" as *;
 
 @include test-module("apply [mixin]") {
+    %p-4 {
+        padding: 1rem
+    }
+    %p-8 {
+        padding: 2rem;
+    }
+    %m-8 {
+        margin: 2rem;
+    }
     @include test("Can apply component") {
-        @include register-component(p-4, (padding: 1rem));
         @include assert {
             @include output {
                 @include apply(p-4);
@@ -15,7 +22,6 @@
         }
     }
     @include test("Can apply component to multiple items with extend") {
-        @include register-component(p-2, (padding: 0.5rem));
         @include assert {
             @include output {
                 div {
@@ -33,8 +39,6 @@
         }
     }
     @include test('Can apply multipe components') {
-        @include register-component(p-8, (padding: 2rem));
-        @include register-component(m-8, (margin: 2rem));
         @include assert {
             @include output {
                 @include apply(p-8, m-8);
@@ -61,110 +65,6 @@
             @include expect {
                 margin: 2rem;
                 padding: 2rem;
-            }
-        }
-    }
-    @include test('Can apply component with modifier') {
-        @include register-component(text-red, (color: red), false, true);
-        @include assert {
-            @include output {
-                @include apply("hover:text-red");
-                div {
-                    @include apply("text-red" "focus:text-red");
-                }
-            }
-            @include expect {
-                div {
-                    color: red;
-                }
-                div:focus {
-                    color: red;
-                }
-                &:hover {
-                    color: red;
-                }
-            }
-        }
-    }
-    @include test('Can apply component with media') {
-        @include register-component(m-auto, (margin: auto), true);
-        @include assert {
-            @include output {
-                @include apply("md:m-auto");
-            }
-            @include expect {
-                @media (min-width: 768px) {
-                    margin: auto;
-                }
-            }
-        }
-    }
-    @include test('Can apply complex components and combinations') {
-        @include register-component("w-1/2", (width: 50%), true, true);
-        @include register-component("w-full", (width: 100%), true, true);
-        @include register-component("w-screen", (width: 100vw), true, true);
-        @include assert {
-            @include output {
-                div {
-                    @include apply("w-1/2" "md:w-full");
-                }
-                p {
-                    @include apply("w-full" "md:focus:w-screen")
-                }
-                ul {
-                    @include apply("w-full");
-                }
-            }
-            @include expect {
-                div {
-                    width: 50%;
-
-                    @media (min-width: 768px) {
-                        width: 100%
-                    }
-                }
-                ul, p {
-                    width: 100%;
-                }
-                p {
-                    @media (min-width: 768px) {
-                        &:focus {
-                            width: 100vw;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    @include test('Can apply components with restricted modifierss') {
-        @include register-component("h-1/2", (height: 50%), false, (hover));
-        @include register-component("h-full", (height: 50%), false, true);
-        @include assert {
-            @include output {
-                div {
-                    @include apply("h-1/2" "focus:h-full");
-                }
-                p {
-                    @include apply("h-full" "focus:h-1/2")
-                }
-                ul {
-                    @include apply("hover:h-1/2");
-                }
-            }
-            @include expect {
-                div {
-                    height: 50%;
-
-                    &:focus {
-                        height: 100vw;
-                    }
-                }
-                ul:hover {
-                    height: 50%;
-                }
-                p {
-                    height: 100%;
-                }
             }
         }
     }

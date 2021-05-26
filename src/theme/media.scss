@@ -1,12 +1,11 @@
-/// Load modules
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
 
-/// The named shorthands for media queries to be used by the theme
+/// Named shorthands for media queries
 /// @type Map
-/// @group theme
+/// @group Theme
 
 $media-queries: (
     sm: 640px,
@@ -21,7 +20,7 @@ $media-queries: (
 
 /// Possible media properties
 /// @type List
-/// @group theme
+/// @group Theme
 
 $_media-properties: (
     type,
@@ -69,7 +68,7 @@ $_media-properties: (
 
 /// Possible media types
 /// @type List
-/// @group theme
+/// @group Theme
 
 $_media-types: all print screen speech;
 
@@ -90,7 +89,7 @@ $_media-types: all print screen speech;
 ///   );
 ///   @include media(large);                     /* @media (min-width: 1024px) */
 /// @param {List} $query... Media query keywords or short syntax
-/// @group theme
+/// @group Theme
 
 @mixin media($query...) {
     $media-query: _media-parse-lists($query);
@@ -103,7 +102,7 @@ $_media-types: all print screen speech;
 /// Join multiple media queries
 /// @param {List} $queries - List of media query keywords or short syntax
 /// @return {String}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-lists($queries) {
     $media: null;
@@ -148,7 +147,7 @@ $_media-types: all print screen speech;
 /// Parse a singular media query
 /// @param {List|Number|String} $query - Media query short syntax
 /// @return {String}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-list($query) {
     $prop: _media-parse-list-prop($query);
@@ -163,7 +162,7 @@ $_media-types: all print screen speech;
 /// Get the items of a media query
 /// @param {List|Number|String} $query - Media query short syntax part
 /// @return {Null|Map}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-items($query) {
     $map: null;
@@ -186,7 +185,7 @@ $_media-types: all print screen speech;
 /// Get the parts of a media query item
 /// @param {List|Number|String} $part - Media query short syntax part
 /// @return {Null|Map}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-part($part) {
     @if map.has-key($media-queries, $part) {
@@ -224,7 +223,7 @@ $_media-types: all print screen speech;
 /// Get a property segment of a list in a media query part
 /// @param {List|String} $list - Media query proprety
 /// @return {Null|Map}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-list-prop($list) {
     @each $item in $list {
@@ -243,7 +242,7 @@ $_media-types: all print screen speech;
 /// Get a value segment of a list in a media query part
 /// @param {List|String} $list - Media query value
 /// @return {Mixed}
-/// @group theme
+/// @group Theme
 
 @function _media-parse-list-value($list) {
     $prop: _media-parse-list-prop($list);

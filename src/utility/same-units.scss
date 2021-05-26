@@ -4,7 +4,7 @@
 /// @param {Number} $number - Number 1
 /// @param {Number} $number2 - Number 2
 /// @return {Boolean}
-/// @group utility
+/// @group Utility
 
 @function same-units($number, $number2) {
     @return math.unit($number) == math.unit($number2);

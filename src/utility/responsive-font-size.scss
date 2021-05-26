@@ -10,7 +10,7 @@
 /// @param {Number} $max-viewport-width - Maximum viewport width
 /// @param {Number} $default-font-size - The default root font-size
 /// @link https://websemantics.uk/tools/responsive-font-calculator/
-/// @group utility
+/// @group Utility
 
 @function responsive-font-size(
     $min-font-size,
@@ -22,7 +22,7 @@
     $default-font-size: if(
         $default-font-size,
         $default-font-size,
-        if(meta.global-variable-exists("font-size"), $font-size, 16px)
+        if(meta.global-variable-exists("base-font-size"), $base-font-size, 16px)
     );
-    @return calc(#{px-to-rem($min-font-size, $default-font-size)} + ((1vw - #{$min-viewport-width / 100}) * #{100 * ($max-font-size - $min-font-size) / ($max-viewport-width - $min-viewport-width)}));
+    @return clamp(#{$min-font-size}, calc(#{px-to-rem($min-font-size, $default-font-size)} + ((1vw - #{$min-viewport-width / 100}) * #{100 * ($max-font-size - $min-font-size) / ($max-viewport-width - $min-viewport-width)})), #{$max-font-size});
 }

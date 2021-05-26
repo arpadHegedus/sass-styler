@@ -5,7 +5,7 @@
 /// @param {Number|List} $value - The list value
 /// @param {String} $mode [average] - Whether to return the average or summary of the values
 /// @return {Null|Number}
-/// @group utility
+/// @group Utility
 
 @function sides-x($value, $mode: average) {
     $sides: sides($value);

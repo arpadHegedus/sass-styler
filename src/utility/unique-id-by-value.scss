@@ -3,13 +3,13 @@
 @use "sass:string";
 
 /// Unique IDs cache
-/// @group utility
+/// @group Utility
 
 $_unique-ids: ();
 
 /// Generate a unique ID based on passed-in attributes
 /// @param {Mixed} $values... - Attributes
-/// @group utility
+/// @group Utility
 
 @function unique-id-by-value($values...) {
     $found: list.index(map.values($_unique-ids), $values);

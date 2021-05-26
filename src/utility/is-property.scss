@@ -1,6 +1,6 @@
 /// All CSS properties
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_properties: (
     align-content,
@@ -562,7 +562,7 @@ $_properties: (
 /// Check whether a property is valid in CSS3
 /// @param {String} $property - The property
 /// @return {Boolean}
-/// @group utility
+/// @group Utility
 
 @function is-property($property) {
     @if meta.type-of($property) != string {

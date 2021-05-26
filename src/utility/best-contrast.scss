@@ -6,7 +6,7 @@
 /// @param {Color|List} $colors [#fff, #000] - Contrasting candidates (default: #fff #000)
 /// @param {Number} $tolerance [0] - Tolerance of checks
 /// @return {Color}
-/// @group utility
+/// @group Utility
 
 @function best-contrast($base, $colors: #fff #000, $tolerance: 0) {
     $best: list.nth($colors, 1);

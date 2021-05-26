@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate swing left forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-swing-left-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"swing-left-fwd #{$animation-settings}"}, swing-left-fwd);
+
+	@include keyframes(swing-left-fwd) {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+
+		100% {
+			-webkit-transform: rotateY(-180deg);
+			transform: rotateY(-180deg);
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+	}
+}
+

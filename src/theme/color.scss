@@ -1,8 +1,8 @@
-/// Theme palette
+/// Named colors palette
 /// @type Map
-/// @group theme
+/// @group Theme
 
-$palette: (
+$color-palette: (
     transparent: transparent,
     black: #000,
     white: #fff,
@@ -119,10 +119,10 @@ $palette: (
 @use "../utility/get" as *;
 @use "../utility/best-contrast" as *;
 
-/// A color short function
+/// Return and manipulate color
 /// @param {List|Color|String|Number} $args - Color name, level and/or "contrast-of"
 /// @return {Null|Color}
-/// @group theme
+/// @group Theme
 
 @function color($args...) {
     $color: null;
@@ -133,8 +133,8 @@ $palette: (
         @if meta.type-of($item) == color {
             $color: $item;
         }
-        @if map.has-key($palette, $item) {
-            $color-map: get($palette, $item, $item);
+        @if map.has-key($color-palette, $item) {
+            $color-map: get($color-palette, $item, $item);
             @if meta.type-of($color-map) == color {
                 $color: $color-map;
                 $color-map: null;
@@ -171,10 +171,10 @@ $palette: (
     @return $color;
 }
 
-/// A color short function
+/// Return and manipulate color
 /// @param {List|Color|String|Number} $args - Color name, level and/or "contrast-of"
 /// @return {Null|Color}
-/// @group theme
+/// @group Theme
 
 @function c($args...) {
     @return color($args...);

@@ -1,0 +1,16 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/hardware-accelerate.scss" as *;
+
+@include test-module("hardware-accelerate [mixin]") {
+    @include test("Can apply hardware-accelerate") {
+        @include assert {
+            @include output {
+                @include hardware-accelerate();
+            }
+            @include expect {
+                backface-visibility: hidden;
+                perspective: 1000;
+            }
+        }
+    }
+}

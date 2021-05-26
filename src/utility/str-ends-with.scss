@@ -1,0 +1,19 @@
+@use "sass:string";
+
+/// Check if string ends with a substring
+/// @param {String} $haystack String to search in
+/// @param {String} $needle String to search for
+/// @return {String}
+/// @group Utility
+
+@function str-ends-with($haystack, $needle) {
+    $haystack-length: string.length($haystack);
+    $needle-length: string.length($needle);
+    @if $haystack-length < $needle-length {
+        @return false;
+    }
+    @if $haystack-length == $needle-length and $haystack == $needle {
+        @return true;
+    }
+    @return if($needle == string.slice($haystack, $haystack-length - $needle-length + 1), true, false);
+}

@@ -1,0 +1,37 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate hinge
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-hinge($animation-settings: null) {
+	animation: if($animation-settings, #{"hinge #{$animation-settings}"}, hinge);
+
+	@include keyframes(hinge) {
+		0% {
+			transform-origin: top left;
+			animation-timing-function: ease-in-out;
+		}
+
+		20%,
+		60% {
+			transform: rotate3d(0, 0, 1, 80deg);
+			transform-origin: top left;
+			animation-timing-function: ease-in-out;
+		}
+
+		40%,
+		80% {
+			transform: rotate3d(0, 0, 1, 60deg);
+			transform-origin: top left;
+			animation-timing-function: ease-in-out;
+			opacity: 1;
+		}
+
+		100% {
+			transform: translate3d(0, 700px, 0);
+			opacity: 0;
+		}
+	}
+}

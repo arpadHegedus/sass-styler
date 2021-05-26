@@ -1,8 +1,10 @@
 @forward "theme/apply";
+@forward "theme/asset";
 @forward "theme/color";
+@forward "theme/define-vars";
+@forward "theme/elevation";
+@forward "theme/font-family";
 @forward "theme/media";
 @forward "theme/normalize";
-@forward "theme/register-component";
 @forward "theme/reset";
-@forward "theme/spacing";
-@forward "theme/typography";
+@forward "theme/size";

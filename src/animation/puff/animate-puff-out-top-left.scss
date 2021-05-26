@@ -1,0 +1,33 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate puff out top left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-puff-out-top-left($animation-settings: null) {
+	animation: if($animation-settings, #{"puff-out-tl #{$animation-settings}"}, puff-out-tl);
+
+	@include keyframes(puff-out-tl) {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scale(2);
+			transform: scale(2);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+			-webkit-filter: blur(2px);
+			filter: blur(2px);
+			opacity: 0;
+		}
+	}
+}
+

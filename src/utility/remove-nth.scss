@@ -6,7 +6,7 @@
 /// @param {List} $list - The list
 /// @param {Number} $nth - Index of the value to be removed from list
 /// @return {List|Mixed}
-/// @group utility
+/// @group Utility
 
 @function remove-nth($list, $nth) {
     @if meta.type-of($list) !=

@@ -2,7 +2,7 @@
 @use "../../src/theme/color.scss" as *;
 @use "../../src/utility/set.scss" as *;
 
-$palette: set($palette, shade, (default: rgba(#000, 0.5), 100: rgba(#000, 0.1), 900: rgba(#000, 0.9)));
+$color-palette: set($color-palette, shade, (default: rgba(#000, 0.5), 100: rgba(#000, 0.1), 900: rgba(#000, 0.9)));
 
 @include test-module("color [function]") {
     @include test('Can get color') {

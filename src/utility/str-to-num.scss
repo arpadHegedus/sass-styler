@@ -1,6 +1,6 @@
 /// String and Number versions of digits
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_numbers: (
     "0": 0,
@@ -17,7 +17,7 @@ $_numbers: (
 
 /// Units and corresponding lengths
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_units: (
     "px": 1px,
@@ -46,7 +46,7 @@ $_units: (
 /// @param {Number|String} $value - The value to be cast
 /// @return {Number}
 /// @link https://www.sassmeister.com/gist/9fa19d254864f33d4a80
-/// @group utility
+/// @group Utility
 
 @function str-to-num($value) {
     @if meta.type-of($value) == number {

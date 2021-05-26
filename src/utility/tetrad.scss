@@ -4,7 +4,7 @@
 /// @param {Color} $color - Color
 /// @param {Number} $step [1] - Which tetrad to get
 /// @return {Color}
-/// @group utility
+/// @group Utility
 
 @function tetrad($color, $step: 1) {
     @return color.adjust($color, $hue: $step * 90);

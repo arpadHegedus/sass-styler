@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate shadow inset center
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-shadow-inset-center($animation-settings: null) {
+	animation: if($animation-settings, #{"shadow-inset-center #{$animation-settings}"}, shadow-inset-center);
+
+	@include keyframes(shadow-inset-center) {
+		0% {
+			-webkit-box-shadow: inset 0 0 0 0 transparent;
+			box-shadow: inset 0 0 0 0 transparent;
+		}
+
+		100% {
+			-webkit-box-shadow: inset 0 0 14px 0 rgba(0, 0, 0, 0.5);
+			box-shadow: inset 0 0 14px 0 rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+

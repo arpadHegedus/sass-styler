@@ -1,0 +1,13 @@
+@use "sass:list";
+@use "selector-combine" as *;
+
+/// Select all elements if the number of elements in the container is at least a number
+/// @param {Number} $num - The number of elements
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group Utility
+
+@function select-all-out-of-at-least($num, $selector: "&") {
+	$child: list.nth(list.nth($selector, -1), -1);
+    @return selector-combine($selector, "&:nth-last-child(n + #{$num}), &:nth-last-child(n + #{$num}) ~ #{$child}");
+}

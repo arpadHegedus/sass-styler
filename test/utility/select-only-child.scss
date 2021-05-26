@@ -1,0 +1,11 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-only-child.scss" as *;
+
+@include test-module("select-only-child [function]") {
+    @include test('Can select with select-only-child') {
+        @include assert-equal(
+            select-only-child(),
+            "&::only-child"
+        );
+    }
+}

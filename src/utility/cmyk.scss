@@ -4,7 +4,7 @@
 /// Get CMYK values from a color
 /// @param {Color} $color - base color
 /// @return {Map}
-/// @group utility
+/// @group Utility
 
 @function cmyk($color) {
     $black: 1 -

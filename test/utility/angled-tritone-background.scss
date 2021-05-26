@@ -1,0 +1,18 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/angled-tritone-background.scss" as *;
+
+@include test-module("angled-tritone-background [mixin]") {
+    @include test("Can create angled-tritone-background") {
+        @include assert {
+            @include output {
+                @include angled-tritone-background();
+            }
+            @include expect {
+                background:
+                    linear-gradient(-110deg, rgba(255, 255, 255, 0.1) 30%, transparent 30%),
+                    linear-gradient(-20deg, rgba(0, 0, 0, 0.1) 30%, transparent 30%),
+                    transparent;
+            }
+        }
+    }
+}

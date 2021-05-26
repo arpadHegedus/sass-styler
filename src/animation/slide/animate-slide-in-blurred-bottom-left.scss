@@ -1,0 +1,33 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide in blurred bottom left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-in-blurred-bottom-left($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-in-blurred-bl #{$animation-settings}"}, slide-in-blurred-bl);
+
+	@include keyframes(slide-in-blurred-bl) {
+		0% {
+			-webkit-transform: translate(-1000px, 1000px) skew(-80deg, -10deg);
+			transform: translate(-1000px, 1000px) skew(-80deg, -10deg);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+			-webkit-filter: blur(40px);
+			filter: blur(40px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translate(0, 0) skew(0deg, 0deg);
+			transform: translate(0, 0) skew(0deg, 0deg);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+	}
+}
+

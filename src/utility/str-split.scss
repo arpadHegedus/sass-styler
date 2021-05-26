@@ -5,7 +5,7 @@
 /// @param {String} $string - The string to split
 /// @param {String} $delimiter ["-"] - The delimiter to split along
 /// @param {Boolean} $clean [true] - Whether to remove empty strings from the array
-/// @group utility
+/// @group Utility
 
 @function str-split($string, $delimiter: "-", $clean: true) {
     $result: ();

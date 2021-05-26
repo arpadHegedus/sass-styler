@@ -1,0 +1,21 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate text shadow drop right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-text-shadow-drop-right($animation-settings: null) {
+	animation: if($animation-settings, #{"text-shadow-drop-right #{$animation-settings}"}, text-shadow-drop-right);
+
+	@include keyframes(text-shadow-drop-right) {
+		0% {
+			text-shadow: 0 0 0 transparent;
+		}
+
+		100% {
+			text-shadow: 6px 0 18px rgba(0, 0, 0, 0.35);
+		}
+	}
+}
+

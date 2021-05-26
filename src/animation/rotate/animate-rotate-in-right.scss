@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate in right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-in-right($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-in-right #{$animation-settings}"}, rotate-in-right);
+
+	@include keyframes(rotate-in-right) {
+		0% {
+			-webkit-transform: rotate(-360deg);
+			transform: rotate(-360deg);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+			opacity: 1;
+		}
+	}
+}
+

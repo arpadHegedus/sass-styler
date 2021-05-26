@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate shadow inset top bottom
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-shadow-inset-top-bottom($animation-settings: null) {
+	animation: if($animation-settings, #{"shadow-inset-tb #{$animation-settings}"}, shadow-inset-tb);
+
+	@include keyframes(shadow-inset-tb) {
+		0% {
+			-webkit-box-shadow: inset 0 0 0 0 transparent, inset 0 0 0 0 transparent;
+			box-shadow: inset 0 0 0 0 transparent, inset 0 0 0 0 transparent;
+		}
+
+		100% {
+			-webkit-box-shadow:
+				inset 0 -6px 14px -6px rgba(0, 0, 0, 0.5),
+				inset 0 6px 14px -6px rgba(0, 0, 0, 0.5);
+			box-shadow:
+				inset 0 -6px 14px -6px rgba(0, 0, 0, 0.5),
+				inset 0 6px 14px -6px rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+

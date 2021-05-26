@@ -4,7 +4,7 @@
 /// Merge maps recursively
 /// @param {Map} $map1 - Map 1
 /// @param {Map} $map2 - Map 2
-/// @group utility
+/// @group Utility
 
 @function merge($map1, $map2) {
     @if meta.type-of($map2) != map {

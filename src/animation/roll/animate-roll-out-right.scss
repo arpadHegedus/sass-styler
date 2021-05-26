@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate roll out right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-roll-out-right($animation-settings: null) {
+	animation: if($animation-settings, #{"roll-out-right #{$animation-settings}"}, roll-out-right);
+
+	@include keyframes(roll-out-right) {
+		0% {
+			-webkit-transform: translateX(0) rotate(0deg);
+			transform: translateX(0) rotate(0deg);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateX(1000px) rotate(540deg);
+			transform: translateX(1000px) rotate(540deg);
+			opacity: 0;
+		}
+	}
+}
+

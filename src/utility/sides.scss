@@ -9,7 +9,7 @@
 ///   sides(1px 2px 3px 4px) /* (top: 1px, right: 2px, bottom: 3px, left: 4px) */
 /// @param {Number|List} $value - Multi-size value (like margin, padding)
 /// @return {Map}
-/// @group utility
+/// @group Utility
 
 @function sides($value) {
     $top: null;

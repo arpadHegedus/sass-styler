@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate flip 2 vertical left backward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-flip-2-vertical-left-backward($animation-settings: null) {
+	animation: if($animation-settings, #{"flip-2-ver-left-bck #{$animation-settings}"}, flip-2-ver-left-bck);
+
+	@include keyframes(flip-2-ver-left-bck) {
+		0% {
+			-webkit-transform: translateX(0) translateZ(0) rotateY(0);
+			transform: translateX(0) translateZ(0) rotateY(0);
+			-webkit-transform-origin: 0% 50%;
+			transform-origin: 0% 50%;
+		}
+
+		100% {
+			-webkit-transform: translateX(-100%) translateZ(-260px) rotateY(-180deg);
+			transform: translateX(-100%) translateZ(-260px) rotateY(-180deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+	}
+}
+

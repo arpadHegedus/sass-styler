@@ -9,7 +9,7 @@
 /// @param {Number} $min [0.0001] - The minimum value
 /// @param {Number} $max [0.9999] - The maximum value
 /// @return {Boolean}
-/// @group utility
+/// @group Utility
 
 @function is-between($value, $min: 0, $max: 1) {
     @return if($value >= $min and $value <= $max, true, false);

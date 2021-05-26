@@ -1,0 +1,30 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/theme/font-family.scss" as *;
+
+@include test-module("font-family [function]") {
+    @include test('Can get font-family') {
+        @include assert-equal(
+            font-family(),
+            null
+        );
+        @include assert-equal(
+            font-family(monospace),
+            (
+                ui-monospace,
+                SFMono-Regular,
+                Consolas,
+                "Liberation Mono",
+                Menlo,
+                monospace
+            )
+        );
+        @include assert-equal(
+            font-family("serif"),
+            (
+                Merriweater,
+                Times,
+                serif
+            )
+        );
+    }
+};

@@ -1,0 +1,12 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-first-of-type.scss" as *;
+
+@include test-module("select-first-of-type [function]") {
+    @include test('Can select with select-first-of-type') {
+        @include assert-equal(
+            select-first-of-type(),
+            "&:first-of-type"
+        );
+    }
+
+}

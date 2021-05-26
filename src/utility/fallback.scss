@@ -1,7 +1,7 @@
 /// Fallback for possibly null values
 /// @param {List} $values... Values
 /// @return {Mixed}
-/// @group utility
+/// @group Utility
 
 @function fallback($values...) {
     $value: null;

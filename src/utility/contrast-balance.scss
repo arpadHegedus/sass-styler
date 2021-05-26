@@ -11,7 +11,7 @@
 /// @param {Number|String} $ratio ["AA"] - Name or value of contrast ratio
 /// @param {Number} $balance [50] - Balance
 /// @return {List}
-/// @group color
+/// @group Utility
 
 @function contrast-balance($color1, $color2, $ratio: "AA", $balance: 50) {
     $fixed1: contrast-with($color1, $color2, $ratio);

@@ -1,0 +1,25 @@
+/// A tritone angled CSS background
+/// @param {Color} $base [transparent] - The base color
+/// @param {Color} $color1 [rgba(#000, 0.1)] - The first color
+/// @param {Color} $color2 [rgba(#fff, 0.1)] - The second color
+/// @param {Number} $angle1 [-20deg] - The angle for the first color
+/// @param {Number} $angle2 [-110deg] - The angle for the second color
+/// @param {Number} $position1 [30%] - The position of the first color change
+/// @param {Number} $position2 [30%] - The position of the second color change
+/// @link https://codepen.io/mirisuzanne/pen/BEvjbm?editors=0100
+/// @group Utility
+
+@mixin angled-tritone-background(
+    $base: transparent,
+    $color1: rgba(0, 0, 0, 0.1),
+    $color2: rgba(255, 255, 255, 0.1),
+    $angle1: -20deg,
+    $angle2: -110deg,
+    $position1: 30%,
+    $position2: 30%
+) {
+    background:
+        linear-gradient(#{$angle2}, #{$color2} #{$position2}, transparent #{$position2}),
+        linear-gradient(#{$angle1}, #{$color1} #{$position1}, transparent #{$position1}),
+        $base;
+}

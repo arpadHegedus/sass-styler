@@ -1,0 +1,19 @@
+$var-prepend: "" !default;
+
+@mixin define-vars($vars-map) {
+    @each $name, $value in $vars-map {
+        --#{$var-prepend + $name}: $value;
+    }
+}
+
+@mixin define-var($name, $value) {
+    --#{$var-prepend + $name}: $value;
+}
+
+@function get-var($name, $fallback: null) {
+    @return if($fallback, var(--#{$var-prepend + $name}, $fallback), var(--#{$var-prepend + $name}));
+}
+
+@function v($name, $fallback: null) {
+    @return get-var($name, $fallback);
+}

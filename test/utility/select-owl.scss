@@ -1,0 +1,11 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-owl.scss" as *;
+
+@include test-module("select-owl [function]") {
+    @include test('Can select with select-owl') {
+        @include assert-equal(
+            "#{select-owl("div, > p, ul")}",
+            "div + div, > div + p, div + ul, > p + div, > p + p, > p + ul, ul + div, > ul + p, ul + ul"
+        );
+    }
+}

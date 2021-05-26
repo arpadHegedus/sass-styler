@@ -7,7 +7,7 @@
 /// @param {Number} $px - Size value
 /// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
 /// @return {Number}
-/// @group utility
+/// @group Utility
 
 @function px-to-em($px, $default: null) {
     $default: if(

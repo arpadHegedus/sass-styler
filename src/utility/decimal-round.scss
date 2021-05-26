@@ -14,7 +14,7 @@
 /// @param {String} $mode [round] - How to round the number
 /// @return {Number}
 /// @link https://gist.github.com/terkel/4373420
-/// @group utility
+/// @group Utility
 
 @function decimal-round($number, $digits: 0, $mode: round) {
     $n: 1;

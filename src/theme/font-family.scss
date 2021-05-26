@@ -1,0 +1,55 @@
+/// Named font families
+/// @type Map
+/// @group Theme
+
+$font-families: (
+    "system": (
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+    ),
+    "monospace": (
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace,
+    ),
+    "sans": (
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+    ),
+    "serif": (
+        Merriweater,
+        Times,
+        serif,
+    ),
+) !default;
+
+@use "../utility/get" as *;
+
+/// Return named font-family
+/// @param {Null|String|List} $id - Font Family name ID
+/// @return {List|Null}
+/// @group Theme
+
+@function font-family($id: null) {
+    @return get($font-families, $id, $id);
+}
+
+/// Add named font-family
+/// @param {Null|String|List} $id - Font Family name ID
+/// @group Theme
+
+@mixin font-family($id: null) {
+    font-family: font-family($id);
+}

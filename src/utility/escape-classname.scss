@@ -4,7 +4,7 @@
 /// Escape string to work as a classname
 /// @param {String} $classname - The classname to escape
 /// @return {String}
-/// @group utility
+/// @group Utility
 
 @function escape-classname($classname) {
     $starts-with-dot: false;

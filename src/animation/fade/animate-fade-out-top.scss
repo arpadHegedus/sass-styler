@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate fade out top
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-fade-out-top($animation-settings: null) {
+	animation: if($animation-settings, #{"fade-out-top #{$animation-settings}"}, fade-out-top);
+
+	@include keyframes(fade-out-top) {
+		0% {
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateY(-50px);
+			transform: translateY(-50px);
+			opacity: 0;
+		}
+	}
+}
+

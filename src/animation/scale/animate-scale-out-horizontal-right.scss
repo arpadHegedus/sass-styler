@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate scale out horizontal right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-scale-out-horizontal-right($animation-settings: null) {
+	animation: if($animation-settings, #{"scale-out-hor-right #{$animation-settings}"}, scale-out-hor-right);
+
+	@include keyframes(scale-out-hor-right) {
+		0% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+			opacity: 1;
+		}
+	}
+}
+

@@ -6,7 +6,7 @@
 /// @param {Color} $color2 - Color 2
 /// @param {String} $ratio ["AA"] - Ratio codename
 /// @return {Color}
-/// @group utility
+/// @group Utility
 
 @function is-contrasting($color1, $color2, $ratio: "AA") {
     $ratio: contrast-ratio-by-name($ratio);

@@ -4,7 +4,7 @@
 /// Returns XYZ value to RGB channel
 /// @param {Number} $channel - Channel value
 /// @return {List}
-/// @group utility
+/// @group Utility
 
 @function srgb($value) {
     @return 255 *

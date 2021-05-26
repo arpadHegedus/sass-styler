@@ -1,0 +1,28 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate diagonal 1
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-diagonal-1($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-diagonal-1 #{$animation-settings}"}, rotate-diagonal-1);
+
+	@include keyframes(rotate-diagonal-1) {
+		0% {
+			-webkit-transform: rotate3d(1, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
+		}
+
+		50% {
+			-webkit-transform: rotate3d(1, 1, 0, -180deg);
+			transform: rotate3d(1, 1, 0, -180deg);
+		}
+
+		100% {
+			-webkit-transform: rotate3d(1, 1, 0, -360deg);
+			transform: rotate3d(1, 1, 0, -360deg);
+		}
+	}
+}
+

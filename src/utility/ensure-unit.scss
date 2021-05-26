@@ -14,7 +14,7 @@
 /// @param {String} $unit - The required unit
 /// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
 /// @return {Number}
-/// @group utility
+/// @group Utility
 
 @function ensure-unit($num, $unit: px, $default: null) {
     $num-unit: math.unit($num);

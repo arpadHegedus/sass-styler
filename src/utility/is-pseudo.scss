@@ -1,6 +1,6 @@
 /// All CSS pseudo classes or elements
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_pseudo: (
     active,
@@ -64,7 +64,7 @@ $_pseudo: (
 
 /// All CSS pseudo classes or elements that have parameters
 /// @type Map
-/// @group utility
+/// @group Utility
 
 $_pseudo-parameters: (
     any,
@@ -96,7 +96,7 @@ $_pseudo-parameters: (
 /// @param {String} $pseudo - The state
 /// @param {Boolean} $string [false] - Whether to check it strictly
 /// @return {Boolean}
-/// @group utility
+/// @group Utility
 
 @function is-pseudo($pseudo, $strict: false) {
     @if $strict and string.index($pseudo, ":") != 1 {

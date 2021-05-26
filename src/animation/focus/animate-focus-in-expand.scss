@@ -1,0 +1,26 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate focus in expand
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-focus-in-expand($animation-settings: null) {
+	animation: if($animation-settings, #{"focus-in-expand #{$animation-settings}"}, focus-in-expand);
+
+	@include keyframes(focus-in-expand) {
+		0% {
+			letter-spacing: -0.5em;
+			-webkit-filter: blur(12px);
+			filter: blur(12px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+	}
+}
+
