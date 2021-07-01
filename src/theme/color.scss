@@ -161,7 +161,7 @@ $color-palette: (
         @return $color;
     }
     @if $level {
-        $level: if($level > 1, math.div($level, 1000,) $level);
+        $level: if($level > 1, math.div($level, 1000), $level);
         $color: color.change($color, $lightness: (1% - $level) * 100);
     }
     @if $contrast {
