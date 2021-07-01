@@ -24,5 +24,5 @@
         $default-font-size,
         if(meta.global-variable-exists("base-font-size"), $base-font-size, 16px)
     );
-    @return clamp(#{$min-font-size}, calc(#{px-to-rem($min-font-size, $default-font-size)} + ((1vw - #{$min-viewport-width / 100}) * #{100 * ($max-font-size - $min-font-size) / ($max-viewport-width - $min-viewport-width)})), #{$max-font-size});
+    @return clamp(#{$min-font-size}, calc(#{px-to-rem($min-font-size, $default-font-size)} + ((1vw - #{math.div($min-viewport-width, 100)}) * #{math.div(100 * ($max-font-size - $min-font-size), ($max-viewport-width - $min-viewport-width))})), #{$max-font-size});
 }

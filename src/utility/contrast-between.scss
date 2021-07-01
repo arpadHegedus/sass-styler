@@ -11,5 +11,5 @@
 @function contrast-between($color1, $color2) {
     $lum1: luminance($color1);
     $lum2: luminance($color2);
-    @return (math.max($lum1, $lum2) + 0.05) / (math.min($lum1, $lum2) + 0.05);
+    @return (math.div(math.max($lum1, $lum2) + 0.05), (math.min($lum1, $lum2)) + 0.05);
 }

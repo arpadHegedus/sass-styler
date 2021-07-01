@@ -12,7 +12,7 @@
 /// @group Utility
 
 @function scale-luminance($color, $luminance) {
-    $scale: $luminance / luminance($color);
+    $scale: math.div($luminance, luminance($color));
     $red: math.clamp(xyz(color.red($color)), 0, 1) * $scale;
     $green: math.clamp(xyz(color.green($color)), 0, 1) * $scale;
     $blue: math.clamp(xyz(color.blue($color)), 0, 1) * $scale;
@@ -21,9 +21,9 @@
     $blue-passes: is-between($blue);
     @if not $red-passes or not $green-passes or not $blue-passes {
         $baseline: math.min($red, $green, $blue);
-        $r: $red / $baseline;
-        $g: $green / $baseline;
-        $b: $blue / $baseline;
+        $r: math.div($red, $baseline);
+        $g: math.div($green, $baseline);
+        $b: math.div($blue, $baseline);
         @if not $red-passes {
             $luminance: $luminance - 0.2126;
             $r: 0;
@@ -36,7 +36,7 @@
             $luminance: $luminance - 0.0722;
             $b: 0;
         }
-        $x: $luminance / ($r * 0.2126 + $g * 0.7152 + $b * 0.0722);
+        $x: math.div($luminance, ($r * 0.2126 + $g * 0.7152 + $b * 0.0722));
         @if $red-passes {
             $red: $r * $x;
         }

@@ -33,7 +33,7 @@
             $target-luminance: (($target-luminance + 0.05) * $ratio - 0.05);
             $operation: lighten;
         } @else {
-            $target-luminance: (($target-luminance + 0.05) / $ratio - 0.05);
+            $target-luminance: math.div(($target-luminance + 0.05), $ratio-0.05);
             $operation: darken;
         }
         @if $target-luminance >= 1 {

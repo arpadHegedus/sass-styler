@@ -18,7 +18,7 @@
         $number: str-to-num($number);
     }
     @if meta.type-of($number) == number and not math.is-unitless($number) {
-        @return $number / ($number * 0 + 1);
+        @return math.div($number, ($number * 0 + 1));
     }
     @return $number;
 }

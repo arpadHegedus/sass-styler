@@ -8,5 +8,5 @@
 /// @group Utility
 
 @function select-middle($num, $selector: "&") {
-    @return selector-combine($selector, "&:nth-child(#{math.round($num / 2)})");
+    @return selector-combine($selector, "&:nth-child(#{math.round(math.div($num, 2))})");
 }

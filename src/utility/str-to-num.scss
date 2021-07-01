@@ -39,6 +39,7 @@ $_units: (
 );
 
 @use "sass:map";
+@use "sass:math";
 @use "sass:meta";
 @use "sass:string";
 
@@ -66,7 +67,7 @@ $_units: (
             $result: $result * 10 + map.get($_numbers, $character);
         } @else {
             $digits: $digits * 10;
-            $result: $result + map.get($_numbers, $character) / $digits;
+            $result: $result + math.div(map.get($_numbers, $character), $digits);
         }
     }
     @return if($minus, -$result, $result);

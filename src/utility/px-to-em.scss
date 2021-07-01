@@ -16,7 +16,7 @@
         if(meta.global-variable-exists("font-size"), $font-size, 16px)
     );
     @if $default and math.unit($default) == px {
-        @return 1em * strip-unit($px) / strip-unit($default);
+        @return math.div(1em * strip-unit($px), strip-unit($default));
     }
     @return str-to-num($px);
 }

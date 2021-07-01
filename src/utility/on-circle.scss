@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// Mixin to place items on a circle
 /// @author Hugo Giraudel
 /// @author Ana Tudor
@@ -22,16 +24,16 @@
         left: 50%;
         width: $item-size;
         height: $item-size;
-        margin: -1 * ($item-size / 2);
+        margin: -1 * math.div($item-size, 2);
 
-        $angle: (360 / $count);
+        $angle: math.div(360, $count);
         $rotation: 0;
 
         @for $i from 1 through $count {
             &:nth-of-type(#{$i}) {
                 transform:
                 rotate($rotation * 1deg)
-                translate($circle-size / 2)
+                translate(math.div($circle-size, 2))
                 rotate($rotation * -1deg);
             }
             $rotation: $rotation + $angle;
