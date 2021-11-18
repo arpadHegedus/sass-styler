@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "sass:string";
 
 /// The padding trick to keep a container the same ratio in different screen sizes
@@ -8,6 +9,6 @@
 
 @mixin responsive-ratio($x: 16, $y: 9, $position: null) {
     position: $position;
-    padding: $y/$x*100% 0 0 0;
+    padding: (math.div($y, $x) * 100%) 0 0 0;
     @content;
 }

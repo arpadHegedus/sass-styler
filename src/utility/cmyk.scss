@@ -7,9 +7,7 @@
 /// @group Utility
 
 @function cmyk($color) {
-    $black: 1 -
-        math.max(color.red($color), color.green($color), color.blue($color)) /
-        255;
+    $black: 1 - math.div(math.max(color.red($color), color.green($color), color.blue($color)), 255);
     $cyan: if($black < 1, 1 - math.div(math.div(color.red($color), 255), (1 - $black)), 0);
     $magenta: if($black < 1, 1 - math.div(math.div(color.green($color), 255), (1 - $black)), 0);
     $yellow: if($black < 1, 1 - math.div(math.div(color.blue($color), 255), (1 - $black)), 0);

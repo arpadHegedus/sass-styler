@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flip/animate-flip-vertical-right.scss" as *;
+
+@include test-module("animate-flip-vertical-right [mixin]") {
+    @include test("Can add animation animate-flip-vertical-right") {
+        @include assert {
+            @include output {
+            @include animate-flip-vertical-right();
+        }
+        @include expect {
+	animation: flip-vertical-right;
+
+	@keyframes flip-vertical-right {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+		}
+
+		100% {
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flip/animate-flip-diagonal-2-backward.scss" as *;
+
+@include test-module("animate-flip-diagonal-2-backward [mixin]") {
+    @include test("Can add animation animate-flip-diagonal-2-backward") {
+        @include assert {
+            @include output {
+            @include animate-flip-diagonal-2-backward();
+        }
+        @include expect {
+	animation: flip-diagonal-2-bck;
+
+	@keyframes flip-diagonal-2-bck {
+		0% {
+			-webkit-transform: translateZ(0) rotate3d(-1, 1, 0, 0deg);
+			transform: translateZ(0) rotate3d(-1, 1, 0, 0deg);
+		}
+
+		100% {
+			-webkit-transform: translateZ(-260px) rotate3d(-1, 1, 0, -180deg);
+			transform: translateZ(-260px) rotate3d(-1, 1, 0, -180deg);
+		}
+	}
+}        }
+    }
+}

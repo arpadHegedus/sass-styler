@@ -14,7 +14,7 @@
 /// @return {Number}
 /// @group Utility
 
-@function contrast-with($color, $target: #fff, $ratio: "AA", $iterations: 5) {
+@function contrast-with($color, $target: #fff, $ratio: "AA", $iterations: 10) {
     $ratio: contrast-ratio-by-name($ratio);
     @if is-contrasting($color, $target, $ratio) == false {
         $luminance: math.clamp(luminance($color), 0, 1);
@@ -33,7 +33,7 @@
             $target-luminance: (($target-luminance + 0.05) * $ratio - 0.05);
             $operation: lighten;
         } @else {
-            $target-luminance: math.div(($target-luminance + 0.05), $ratio-0.05);
+            $target-luminance: math.div(($target-luminance + 0.05), $ratio) - 0.05;
             $operation: darken;
         }
         @if $target-luminance >= 1 {

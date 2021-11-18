@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/swing/animate-swing-top-right-backward.scss" as *;
+
+@include test-module("animate-swing-top-right-backward [mixin]") {
+    @include test("Can add animation animate-swing-top-right-backward") {
+        @include assert {
+            @include output {
+            @include animate-swing-top-right-backward();
+        }
+        @include expect {
+	animation: swing-top-right-bck;
+
+	@keyframes swing-top-right-bck {
+		0% {
+			-webkit-transform: rotate3d(1, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+
+		100% {
+			-webkit-transform: rotate3d(1, 1, 0, -180deg);
+			transform: rotate3d(1, 1, 0, -180deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/roll/animate-roll-out-right.scss" as *;
+
+@include test-module("animate-roll-out-right [mixin]") {
+    @include test("Can add animation animate-roll-out-right") {
+        @include assert {
+            @include output {
+            @include animate-roll-out-right();
+        }
+        @include expect {
+	animation: roll-out-right;
+
+	@keyframes roll-out-right {
+		0% {
+			-webkit-transform: translateX(0) rotate(0deg);
+			transform: translateX(0) rotate(0deg);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateX(1000px) rotate(540deg);
+			transform: translateX(1000px) rotate(540deg);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

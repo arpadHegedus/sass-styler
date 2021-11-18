@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-out-2-top-right-counter-clock-wise.scss" as *;
+
+@include test-module("animate-rotate-out-2-top-right-counter-clock-wise [mixin]") {
+    @include test("Can add animation animate-rotate-out-2-top-right-counter-clock-wise") {
+        @include assert {
+            @include output {
+            @include animate-rotate-out-2-top-right-counter-clock-wise();
+        }
+        @include expect {
+	animation: rotate-out-2-tr-counter-clock-wise;
+
+	@keyframes rotate-out-2-tr-counter-clock-wise {
+		0% {
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

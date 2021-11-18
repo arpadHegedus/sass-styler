@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-backward-right.scss" as *;
+
+@include test-module("animate-slide-backward-right [mixin]") {
+    @include test("Can add animation animate-slide-backward-right") {
+        @include assert {
+            @include output {
+            @include animate-slide-backward-right();
+        }
+        @include expect {
+	animation: slide-bck-right;
+
+	@keyframes slide-bck-right {
+		0% {
+			-webkit-transform: translateZ(0) translateX(0);
+			transform: translateZ(0) translateX(0);
+		}
+
+		100% {
+			-webkit-transform: translateZ(-400px) translateX(200px);
+			transform: translateZ(-400px) translateX(200px);
+		}
+	}
+}        }
+    }
+}

@@ -17,11 +17,9 @@
     }
     $colof: math.div(math.round(math.div($col, $of) * 10000), 10000);
     @if math.unit($gap) == "%" or math.unit($gap) == "" {
-        $width: 99.99% * $colof - ($gap - $gap * $col/$of);
+        $width: 99.99% * $colof - ($gap - $gap * math.div($col, $of));
     } @else {
-        $width: string.unquote(
-            "calc(99.99% * #{$colof} - (#{$gap} - #{$gap} * #{$colof}))"
-        );
+        $width: calc(#{99.99% * $colof} - #{$gap - $gap * $colof});
     }
     @return $width;
 }

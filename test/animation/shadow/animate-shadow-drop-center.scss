@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/shadow/animate-shadow-drop-center.scss" as *;
+
+@include test-module("animate-shadow-drop-center [mixin]") {
+    @include test("Can add animation animate-shadow-drop-center") {
+        @include assert {
+            @include output {
+            @include animate-shadow-drop-center();
+        }
+        @include expect {
+	animation: shadow-drop-center;
+
+	@keyframes shadow-drop-center {
+		0% {
+			-webkit-box-shadow: 0 0 0 0 transparent;
+			box-shadow: 0 0 0 0 transparent;
+		}
+
+		100% {
+			-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+		}
+	}
+}        }
+    }
+}

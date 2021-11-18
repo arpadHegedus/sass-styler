@@ -1,18 +1,41 @@
+/// Manage CSS variables via Sass variables
+/// @type String
+/// @group Theme
+
 $var-prepend: "" !default;
+
+/// Define CSS variables via a Sass map
+/// @param {Map} $vars-map - The sass map data
+/// @group Theme
 
 @mixin define-vars($vars-map) {
     @each $name, $value in $vars-map {
-        --#{$var-prepend + $name}: $value;
+        --#{$var-prepend + $name}: #{$value};
     }
 }
 
+/// Define CSS variable
+/// @param {String} $name - Variable name
+/// @param {*} $value - Variable value
+/// @group Theme
+
 @mixin define-var($name, $value) {
-    --#{$var-prepend + $name}: $value;
+    --#{$var-prepend + $name}: #{$value};
 }
+
+/// Get a CSS variable defined via Sass
+/// @param {String} $name - Variable name
+/// @param {*} $fallback [null] - Fallback value
+/// @group Theme
 
 @function get-var($name, $fallback: null) {
     @return if($fallback, var(--#{$var-prepend + $name}, $fallback), var(--#{$var-prepend + $name}));
 }
+
+/// Get a CSS variable defined via Sass
+/// @param {String} $name - Variable name
+/// @param {*} $fallback [null] - Fallback value
+/// @group Theme
 
 @function v($name, $fallback: null) {
     @return get-var($name, $fallback);

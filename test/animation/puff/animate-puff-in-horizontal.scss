@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/puff/animate-puff-in-horizontal.scss" as *;
+
+@include test-module("animate-puff-in-horizontal [mixin]") {
+    @include test("Can add animation animate-puff-in-horizontal") {
+        @include assert {
+            @include output {
+            @include animate-puff-in-horizontal();
+        }
+        @include expect {
+	animation: puff-in-hor;
+
+	@keyframes puff-in-hor {
+		0% {
+			-webkit-transform: scaleX(2);
+			transform: scaleX(2);
+			-webkit-filter: blur(2px);
+			filter: blur(2px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

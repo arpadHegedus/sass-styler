@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-backward-bottom.scss" as *;
+
+@include test-module("animate-slide-backward-bottom [mixin]") {
+    @include test("Can add animation animate-slide-backward-bottom") {
+        @include assert {
+            @include output {
+            @include animate-slide-backward-bottom();
+        }
+        @include expect {
+	animation: slide-bck-bottom;
+
+	@keyframes slide-bck-bottom {
+		0% {
+			-webkit-transform: translateZ(0) translateY(0);
+			transform: translateZ(0) translateY(0);
+		}
+
+		100% {
+			-webkit-transform: translateZ(-400px) translateY(200px);
+			transform: translateZ(-400px) translateY(200px);
+		}
+	}
+}        }
+    }
+}

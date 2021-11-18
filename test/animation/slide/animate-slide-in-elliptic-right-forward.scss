@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-in-elliptic-right-forward.scss" as *;
+
+@include test-module("animate-slide-in-elliptic-right-forward [mixin]") {
+    @include test("Can add animation animate-slide-in-elliptic-right-forward") {
+        @include assert {
+            @include output {
+            @include animate-slide-in-elliptic-right-forward();
+        }
+        @include expect {
+	animation: slide-in-elliptic-right-fwd;
+
+	@keyframes slide-in-elliptic-right-fwd {
+		0% {
+			-webkit-transform: translateX(800px) rotateY(-30deg) scale(0);
+			transform: translateX(800px) rotateY(-30deg) scale(0);
+			-webkit-transform-origin: -100% 50%;
+			transform-origin: -100% 50%;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateX(0) rotateY(0) scale(1);
+			transform: translateX(0) rotateY(0) scale(1);
+			-webkit-transform-origin: -1800px 50%;
+			transform-origin: -1800px 50%;
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

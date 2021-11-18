@@ -1,0 +1,66 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/bounce/animate-bounce-in-backward.scss" as *;
+
+@include test-module("animate-bounce-in-backward [mixin]") {
+    @include test("Can add animation animate-bounce-in-backward") {
+        @include assert {
+            @include output {
+            @include animate-bounce-in-backward();
+        }
+        @include expect {
+            animation: bounce-in-bck;
+
+            @keyframes bounce-in-bck {
+                0% {
+      -webkit-transform: scale(7);
+      transform: scale(7);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      opacity: 0;
+    }
+
+                38% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      opacity: 1;
+    }
+
+                55% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+
+                72%,
+                89%,
+                100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+    }
+
+                81% {
+      -webkit-transform: scale(1.24);
+      transform: scale(1.24);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+
+                95% {
+      -webkit-transform: scale(1.04);
+      transform: scale(1.04);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+  }
+}        }
+    }
+}

@@ -9,7 +9,6 @@
   animation: if($animation-settings, #{"flicker-5 #{$animation-settings}"}, flicker-5);
 
   @include keyframes(flicker-5) {
-    -.02%,
     0%,
     1%,
     1.02%,

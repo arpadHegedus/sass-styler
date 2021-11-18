@@ -47,17 +47,18 @@
         );
     }
     @include test('Can add numbers with different units') {
+
         @include assert-equal(
             styler.calc-add(16px, 1em),
-            calc(16px + 1em)
+            calc(#{16px} + #{1em})
         );
         @include assert-equal(
             styler.calc-add(1em, 1rem),
-            calc(1em + 1rem)
+            calc(#{1em} + #{1rem})
         );
         @include assert-equal(
             styler.calc-add(1rem, 25%),
-            calc(1rem + 25%)
+            calc(#{1rem} + #{25%})
         );
     }
 }

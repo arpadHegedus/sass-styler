@@ -1,0 +1,16 @@
+/// Set styles for containers without media queries where you use a main and a wrapper element
+/// @param {Number} $width - Max-width value
+/// @param {Number} $padding - Padding value
+/// @param {String|List} $inner-selector [">*"] - The inner element selector within the wrapper
+/// @group Utility
+
+@mixin inner-container($width, $margin, $inner-selector: ">*") {
+    padding-right: $margin;
+    padding-left: $margin;
+
+    #{$inner-selector} {
+        max-width: $width;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

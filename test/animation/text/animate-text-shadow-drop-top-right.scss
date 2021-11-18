@@ -1,0 +1,28 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/text/animate-text-shadow-drop-top-right.scss" as *;
+
+@include test-module("animate-text-shadow-drop-top-right [mixin]") {
+    @include test("Can add animation animate-text-shadow-drop-top-right") {
+        @include assert {
+            @include output {
+            @include animate-text-shadow-drop-top-right();
+        }
+        @include expect {
+	animation: text-shadow-drop-tr;
+
+	@keyframes text-shadow-drop-tr {
+		0% {
+			text-shadow: 0 0 0 transparent;
+		}
+
+		100% {
+			text-shadow: 6px -6px 18px rgba(0, 0, 0, 0.35);
+		}
+	}
+}        }
+    }
+}

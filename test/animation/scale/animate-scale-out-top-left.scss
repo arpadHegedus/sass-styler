@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-out-top-left.scss" as *;
+
+@include test-module("animate-scale-out-top-left [mixin]") {
+    @include test("Can add animation animate-scale-out-top-left") {
+        @include assert {
+            @include output {
+            @include animate-scale-out-top-left();
+        }
+        @include expect {
+	animation: scale-out-tl;
+
+	@keyframes scale-out-tl {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

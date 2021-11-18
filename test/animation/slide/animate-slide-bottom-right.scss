@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-bottom-right.scss" as *;
+
+@include test-module("animate-slide-bottom-right [mixin]") {
+    @include test("Can add animation animate-slide-bottom-right") {
+        @include assert {
+            @include output {
+            @include animate-slide-bottom-right();
+        }
+        @include expect {
+	animation: slide-br;
+
+	@keyframes slide-br {
+		0% {
+			-webkit-transform: translateY(0) translateX(0);
+			transform: translateY(0) translateX(0);
+		}
+
+		100% {
+			-webkit-transform: translateY(100px) translateX(100px);
+			transform: translateY(100px) translateX(100px);
+		}
+	}
+}        }
+    }
+}

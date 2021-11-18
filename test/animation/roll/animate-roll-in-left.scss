@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/roll/animate-roll-in-left.scss" as *;
+
+@include test-module("animate-roll-in-left [mixin]") {
+    @include test("Can add animation animate-roll-in-left") {
+        @include assert {
+            @include output {
+            @include animate-roll-in-left();
+        }
+        @include expect {
+	animation: roll-in-left;
+
+	@keyframes roll-in-left {
+		0% {
+			-webkit-transform: translateX(-800px) rotate(-540deg);
+			transform: translateX(-800px) rotate(-540deg);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateX(0) rotate(0deg);
+			transform: translateX(0) rotate(0deg);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

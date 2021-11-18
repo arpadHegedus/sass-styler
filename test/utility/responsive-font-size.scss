@@ -1,11 +1,11 @@
 @use "../../node_modules/sass-true" as *;
-@use "../../src/utility/responsive-font-size.scss" as styler;
+@use "../../src/utility/responsive-font-size.scss" as *;
 
 @include test-module("responsive-font-size [function]") {
     @include test('Can create calc value') {
         @include assert-equal(
-            styler.responsive-font-size(16px, 320px, 46px, 1200px),
-            clamp(16px, calc(1rem + ((1vw - 3.2px) * 3.4090909091)), 46px)
+            "#{responsive-font-size(16px, 320px, 46px, 1200px)}",
+            "clamp(16px, calc(1rem + ((1vw - 3.2px) * 3.4090909091)), 46px)"
         );
     }
 }

@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/shadow/animate-shadow-inset-top-left.scss" as *;
+
+@include test-module("animate-shadow-inset-top-left [mixin]") {
+    @include test("Can add animation animate-shadow-inset-top-left") {
+        @include assert {
+            @include output {
+            @include animate-shadow-inset-top-left();
+        }
+        @include expect {
+	animation: shadow-inset-tl;
+
+	@keyframes shadow-inset-tl {
+		0% {
+			-webkit-box-shadow: inset 0 0 0 0 transparent;
+			box-shadow: inset 0 0 0 0 transparent;
+		}
+
+		100% {
+			-webkit-box-shadow: inset 6px 6px 14px -6px rgba(0, 0, 0, 0.5);
+			box-shadow: inset 6px 6px 14px -6px rgba(0, 0, 0, 0.5);
+		}
+	}
+}        }
+    }
+}

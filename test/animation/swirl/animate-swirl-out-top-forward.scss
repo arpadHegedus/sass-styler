@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/swirl/animate-swirl-out-top-forward.scss" as *;
+
+@include test-module("animate-swirl-out-top-forward [mixin]") {
+    @include test("Can add animation animate-swirl-out-top-forward") {
+        @include assert {
+            @include output {
+            @include animate-swirl-out-top-forward();
+        }
+        @include expect {
+	animation: swirl-out-top-fwd;
+
+	@keyframes swirl-out-top-fwd {
+		0% {
+			-webkit-transform: rotate(0) scale(1);
+			transform: rotate(0) scale(1);
+			-webkit-transform-origin: 50% 0%;
+			transform-origin: 50% 0%;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotate(540deg) scale(5);
+			transform: rotate(540deg) scale(5);
+			-webkit-transform-origin: 50% 0%;
+			transform-origin: 50% 0%;
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

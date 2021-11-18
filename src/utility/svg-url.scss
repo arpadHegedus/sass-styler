@@ -1,4 +1,4 @@
-@use "./svg-base64" as *;
+@use "svg-base64" as *;
 
 /// SVG base64 background url based on $svg with optional $fill color
 /// @param {String} $svg - The SVG code

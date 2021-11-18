@@ -1,0 +1,25 @@
+/// Default transition settings
+/// @type Map
+/// @group Theme
+
+$transition-settings: (
+  duration: 0.3s,
+  timing-function: cubic-bezier(0.4, 0.0, 0.2, 1),
+) !default;
+
+@use "sass:map";
+
+/// Add transition to elements with fallback to default settings
+/// @param {String|Array} $property [null] - Property or properties to transition
+/// @param {Time} $duration [null] - Duration of transition in seconds
+/// @param {String} $timing-function [null] - Easing of transition
+/// @param {Time} $delay [null] - Delay of transition in seconds
+/// @group Theme
+
+@mixin transition($property: null, $duration: null, $timing-function: null, $delay: null) {
+    transition-property: $property;
+    transition-duration: if(not $duration, if(map.has-key($transition-settings, duration), map.get($transition-settings, duration), null), $duration);
+    transition-delay: if(not $delay, if(map.has-key($transition-settings, delay), map.get($transition-settings, delay), null), $delay);
+    transition-timing-function: if(not $timing-function, if(map.has-key($transition-settings, timing-function), map.get($transition-settings, timing-function), null), $timing-function);
+}
+

@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/roll/animate-roll-in-blurred-bottom.scss" as *;
+
+@include test-module("animate-roll-in-blurred-bottom [mixin]") {
+    @include test("Can add animation animate-roll-in-blurred-bottom") {
+        @include assert {
+            @include output {
+            @include animate-roll-in-blurred-bottom();
+        }
+        @include expect {
+	animation: roll-in-blurred-bottom;
+
+	@keyframes roll-in-blurred-bottom {
+		0% {
+			-webkit-transform: translateY(800px) rotate(720deg);
+			transform: translateY(800px) rotate(720deg);
+			-webkit-filter: blur(50px);
+			filter: blur(50px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateY(0) rotate(0deg);
+			transform: translateY(0) rotate(0deg);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

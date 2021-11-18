@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-vert-right.scss" as *;
+
+@include test-module("animate-rotate-vert-right [mixin]") {
+    @include test("Can add animation animate-rotate-vert-right") {
+        @include assert {
+            @include output {
+            @include animate-rotate-vert-right();
+        }
+        @include expect {
+	animation: rotate-vert-right;
+
+	@keyframes rotate-vert-right {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+		}
+
+		100% {
+			-webkit-transform: rotateY(-360deg);
+			transform: rotateY(-360deg);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+		}
+	}
+}        }
+    }
+}

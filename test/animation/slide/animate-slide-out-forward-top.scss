@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-out-forward-top.scss" as *;
+
+@include test-module("animate-slide-out-forward-top [mixin]") {
+    @include test("Can add animation animate-slide-out-forward-top") {
+        @include assert {
+            @include output {
+            @include animate-slide-out-forward-top();
+        }
+        @include expect {
+	animation: slide-out-fwd-top;
+
+	@keyframes slide-out-fwd-top {
+		0% {
+			-webkit-transform: translateZ(1) translateY(0);
+			transform: translateZ(1) translateY(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateZ(600px) translateY(-300px);
+			transform: translateZ(600px) translateY(-300px);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

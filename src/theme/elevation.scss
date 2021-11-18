@@ -1,6 +1,7 @@
 @use "../utility/get" as *;
 
 /// Elevation level box-shadow settings
+/// @type Map
 /// @group Theme
 
 $elevations: (

@@ -1,0 +1,48 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/special/animate-tada.scss" as *;
+
+@include test-module("animate-tada [mixin]") {
+    @include test("Can add animation animate-tada") {
+        @include assert {
+            @include output {
+            @include animate-tada();
+        }
+        @include expect {
+	animation: tada;
+
+	@keyframes tada {
+		0% {
+			transform: scale3d(1, 1, 1);
+		}
+
+		10%,
+		20% {
+			transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+		}
+
+		30%,
+		50%,
+		70%,
+		90% {
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+		}
+
+		40%,
+		60%,
+		80% {
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+		}
+
+		100% {
+			transform: scale3d(1, 1, 1);
+		}
+	}
+}
+
+        }
+    }
+}

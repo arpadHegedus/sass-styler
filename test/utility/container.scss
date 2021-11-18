@@ -1,0 +1,37 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/container.scss" as *;
+
+@include test-module("container [mixin]") {
+    @include test("Can apply container") {
+        @include assert {
+            @include output {
+                @include container(1024px, 16px);
+            }
+            @include expect {
+                max-width: 1024px;
+                margin-right: 16px;
+                margin-left: 16px;
+
+                @media only screen and (min-width: #{1056px}) {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include container(64em, 16px);
+            }
+            @include expect {
+                max-width: 64em;
+                margin-right: 16px;
+                margin-left: 16px;
+
+                @media only screen and (min-width: #{1056px}) {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}

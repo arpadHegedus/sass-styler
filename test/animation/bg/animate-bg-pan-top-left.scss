@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/bg/animate-bg-pan-top-left.scss" as *;
+
+@include test-module("animate-bg-pan-top-left [mixin]") {
+    @include test("Can add animation animate-bg-pan-top-left") {
+        @include assert {
+            @include output {
+            @include animate-bg-pan-top-left();
+        }
+        @include expect {
+            animation: bg-pan-tl;
+
+            @keyframes bg-pan-tl {
+                0% {
+      background-position: 100% 100%;
+    }
+
+                100% {
+      background-position: 0% 0%;
+    }
+  }
+}
+
+        }
+    }
+}

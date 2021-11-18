@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/swing/animate-swing-in-bottom-backward.scss" as *;
+
+@include test-module("animate-swing-in-bottom-backward [mixin]") {
+    @include test("Can add animation animate-swing-in-bottom-backward") {
+        @include assert {
+            @include output {
+            @include animate-swing-in-bottom-backward();
+        }
+        @include expect {
+	animation: swing-in-bottom-bck;
+
+	@keyframes swing-in-bottom-bck {
+		0% {
+			-webkit-transform: rotateX(-70deg);
+			transform: rotateX(-70deg);
+			-webkit-transform-origin: bottom;
+			transform-origin: bottom;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: rotateX(0);
+			transform: rotateX(0);
+			-webkit-transform-origin: bottom;
+			transform-origin: bottom;
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

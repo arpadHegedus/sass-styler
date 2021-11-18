@@ -1,5 +1,6 @@
 @forward "utility/angled-edge";
 @forward "utility/angled-tritone-background";
+@forward "utility/apply";
 @forward "utility/background-stripes";
 @forward "utility/best-contrast";
 @forward "utility/calc-add";
@@ -7,6 +8,7 @@
 @forward "utility/clearfix";
 @forward "utility/cmyk";
 @forward "utility/color-from";
+@forward "utility/container";
 @forward "utility/contrast-balance";
 @forward "utility/contrast-between";
 @forward "utility/contrast-ratio-by-name";
@@ -18,6 +20,7 @@
 @forward "utility/em-to-rem";
 @forward "utility/ensure-unit";
 @forward "utility/escape-classname";
+@forward "utility/extend-background";
 @forward "utility/fallback";
 @forward "utility/flex-grid";
 @forward "utility/get";
@@ -25,7 +28,9 @@
 @forward "utility/hardware-accelerate";
 @forward "utility/hide-text-except-pseudo";
 @forward "utility/hide-visually";
+@forward "utility/horizontal-list";
 @forward "utility/increment-z-index";
+@forward "utility/inner-container";
 @forward "utility/is-between";
 @forward "utility/is-contrasting";
 @forward "utility/is-property";
@@ -39,6 +44,7 @@
 @forward "utility/num-to-length";
 @forward "utility/object-fit";
 @forward "utility/on-circle";
+@forward "utility/pipe-list";
 @forward "utility/position";
 @forward "utility/pseudo-with-position";
 @forward "utility/pseudo";
@@ -110,4 +116,5 @@
 @forward "utility/truncate";
 @forward "utility/unhide-visually";
 @forward "utility/unique-id-by-value";
+@forward "utility/unstyled-list";
 @forward "utility/xyz";

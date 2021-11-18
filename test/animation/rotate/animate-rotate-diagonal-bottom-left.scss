@@ -1,0 +1,41 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-diagonal-bottom-left.scss" as *;
+
+@include test-module("animate-rotate-diagonal-bottom-left [mixin]") {
+    @include test("Can add animation animate-rotate-diagonal-bottom-left") {
+        @include assert {
+            @include output {
+            @include animate-rotate-diagonal-bottom-left();
+        }
+        @include expect {
+	animation: rotate-diagonal-bl;
+
+	@keyframes rotate-diagonal-bl {
+		0% {
+			-webkit-transform: rotate3d(1, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
+			-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+		}
+
+		50% {
+			-webkit-transform: rotate3d(1, 1, 0, 180deg);
+			transform: rotate3d(1, 1, 0, 180deg);
+			-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+		}
+
+		100% {
+			-webkit-transform: rotate3d(1, 1, 0, 360deg);
+			transform: rotate3d(1, 1, 0, 360deg);
+			-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+		}
+	}
+}        }
+    }
+}

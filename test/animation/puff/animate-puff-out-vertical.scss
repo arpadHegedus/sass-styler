@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/puff/animate-puff-out-vertical.scss" as *;
+
+@include test-module("animate-puff-out-vertical [mixin]") {
+    @include test("Can add animation animate-puff-out-vertical") {
+        @include assert {
+            @include output {
+            @include animate-puff-out-vertical();
+        }
+        @include expect {
+	animation: puff-out-ver;
+
+	@keyframes puff-out-ver {
+		0% {
+			-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scaleY(2);
+			transform: scaleY(2);
+			-webkit-filter: blur(2px);
+			filter: blur(2px);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

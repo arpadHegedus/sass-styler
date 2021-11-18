@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flip/animate-flip-vertical-backward.scss" as *;
+
+@include test-module("animate-flip-vertical-backward [mixin]") {
+    @include test("Can add animation animate-flip-vertical-backward") {
+        @include assert {
+            @include output {
+            @include animate-flip-vertical-backward();
+        }
+        @include expect {
+	animation: flip-vertical-bck;
+
+	@keyframes flip-vertical-bck {
+		0% {
+			-webkit-transform: translateZ(0) rotateY(0);
+			transform: translateZ(0) rotateY(0);
+		}
+
+		100% {
+			-webkit-transform: translateZ(-260px) rotateY(-180deg);
+			transform: translateZ(-260px) rotateY(-180deg);
+		}
+	}
+}        }
+    }
+}

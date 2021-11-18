@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-up-vertical-bottom.scss" as *;
+
+@include test-module("animate-scale-up-vertical-bottom [mixin]") {
+    @include test("Can add animation animate-scale-up-vertical-bottom") {
+        @include assert {
+            @include output {
+            @include animate-scale-up-vertical-bottom();
+        }
+        @include expect {
+	animation: scale-up-ver-bottom;
+
+	@keyframes scale-up-ver-bottom {
+		0% {
+			-webkit-transform: scaleY(0.4);
+			transform: scaleY(0.4);
+			-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+		}
+
+		100% {
+			-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+			-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+		}
+	}
+}        }
+    }
+}

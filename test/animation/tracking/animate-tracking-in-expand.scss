@@ -1,0 +1,33 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/tracking/animate-tracking-in-expand.scss" as *;
+
+@include test-module("animate-tracking-in-expand [mixin]") {
+    @include test("Can add animation animate-tracking-in-expand") {
+        @include assert {
+            @include output {
+            @include animate-tracking-in-expand();
+        }
+        @include expect {
+	animation: tracking-in-expand;
+
+	@keyframes tracking-in-expand {
+		0% {
+			letter-spacing: -0.5em;
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0.6;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

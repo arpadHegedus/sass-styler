@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-out-horizontal.scss" as *;
+
+@include test-module("animate-scale-out-horizontal [mixin]") {
+    @include test("Can add animation animate-scale-out-horizontal") {
+        @include assert {
+            @include output {
+            @include animate-scale-out-horizontal();
+        }
+        @include expect {
+	animation: scale-out-horizontal;
+
+	@keyframes scale-out-horizontal {
+		0% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

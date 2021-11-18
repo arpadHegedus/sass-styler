@@ -1,0 +1,53 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/wobble/animate-wobble-vertical-left.scss" as *;
+
+@include test-module("animate-wobble-vertical-left [mixin]") {
+    @include test("Can add animation animate-wobble-vertical-left") {
+        @include assert {
+            @include output {
+            @include animate-wobble-vertical-left();
+        }
+        @include expect {
+	animation: wobble-ver-left;
+
+	@keyframes wobble-ver-left {
+		0%,
+		100% {
+			-webkit-transform: translateY(0) rotate(0);
+			transform: translateY(0) rotate(0);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+		}
+
+		15% {
+			-webkit-transform: translateY(-30px) rotate(-6deg);
+			transform: translateY(-30px) rotate(-6deg);
+		}
+
+		30% {
+			-webkit-transform: translateY(15px) rotate(6deg);
+			transform: translateY(15px) rotate(6deg);
+		}
+
+		45% {
+			-webkit-transform: translateY(-15px) rotate(-3.6deg);
+			transform: translateY(-15px) rotate(-3.6deg);
+		}
+
+		60% {
+			-webkit-transform: translateY(9px) rotate(2.4deg);
+			transform: translateY(9px) rotate(2.4deg);
+		}
+
+		75% {
+			-webkit-transform: translateY(-6px) rotate(-1.2deg);
+			transform: translateY(-6px) rotate(-1.2deg);
+		}
+	}
+}        }
+    }
+}

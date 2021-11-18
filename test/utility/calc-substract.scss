@@ -49,15 +49,15 @@
     @include test('Can substract numbers with different units') {
         @include assert-equal(
             styler.calc-substract(16px, 1em),
-            calc(16px - 1em)
+            calc(#{16px} - #{1em})
         );
         @include assert-equal(
             styler.calc-substract(1em, 1rem),
-            calc(1em - 1rem)
+            calc(#{1em} - #{1rem})
         );
         @include assert-equal(
             styler.calc-substract(1rem, 25%),
-            calc(1rem - 25%)
+            calc(#{1rem} - #{25%})
         );
     }
 }
