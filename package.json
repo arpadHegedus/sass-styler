@@ -37,20 +37,27 @@
     "type": "git",
     "url": "git+https://github.com/arpadHegedus/sass-styler.git"
   },
-  "dependencies": {
+  "devDependencies": {
+    "es6-denodeify": "^0.1.5",
+    "es6-promise": "^3.1.2",
+    "extend": "^3.0.2",
+    "fs-extra": "^0.28.0",
     "globby": "^11.0.4",
     "jest": "^26.1.0",
+    "markdown-table": "^0.4.0",
     "sass": "^1.43.4",
     "sass-true": "^6.0.1",
-    "sassdoc": "^1.10.12",
+    "sassdoc": "^2.1.20",
+    "sassdoc-extras": "^2.4.1",
     "sassdoc-theme-md": "^1.0.5",
     "stylelint": "^14.1.0",
     "stylelint-config-standard-scss": "^2.0.1",
-    "stylelint-scss": "^4.0.0"
+    "stylelint-scss": "^4.0.0",
+    "swig": "^1.4.2"
   },
   "engines": {},
   "scripts": {
-    "doc": "sassdoc ./src -d ./doc -c ./.sassdoc.config.json -v",
+    "doc": "npx sassdoc src doc -t .dev/sassdoc-theme-styler/ -v",
     "stylelint": "stylelint ./src/**",
     "test": "jest --env=node"
   }

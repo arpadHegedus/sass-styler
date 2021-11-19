@@ -1,7 +1,0 @@
-{
-  "autofill": ["throw", "content", "require"],
-  "theme": "md",
-  "groups": {
-    "utility": "Utilities"
-  }
-}
