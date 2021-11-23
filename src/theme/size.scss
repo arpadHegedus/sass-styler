@@ -56,6 +56,7 @@ $sizes: (
 /// Return named size
 /// @param {Null|String|List} $id - Size name ID
 /// @return {Size|Null}
+/// @alias size
 /// @group Theme
 
 @function s($id: null) {

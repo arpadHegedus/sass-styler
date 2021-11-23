@@ -1,1 +1,0 @@
-# SassDoc Markdown Theme

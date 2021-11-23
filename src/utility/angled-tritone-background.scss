@@ -1,19 +1,25 @@
-<a id="utility-mixin-angled-edge"></a>
+/// A tritone angled CSS background
+/// @param {Color} $base [transparent] - The base color
+/// @param {Color} $color1 [rgba(#000, 0.1)] - The first color
+/// @param {Color} $color2 [rgba(#fff, 0.1)] - The second color
+/// @param {Number} $angle1 [-20deg] - The angle for the first color
+/// @param {Number} $angle2 [-110deg] - The angle for the second color
+/// @param {Number} $position1 [30%] - The position of the first color change
+/// @param {Number} $position2 [30%] - The position of the second color change
+/// @link https://codepen.io/mirisuzanne/pen/BEvjbm?editors=0100
+/// @group Utility
 
-# @mixin angled-edge
-
-Add an angled edge to a container using a generated SVG
-
-+ **Group:** Utility
-+ **Access:** public
-
-## Parameters
-
-|Name|Type|Description|Default|
-|:--|:--|:--|:--|
-|`$fill`|**[Color](https://sass-lang.com/documentation/values/colors)**|The color of the angled area|-|
-|`$height`|**[Number](https://sass-lang.com/documentation/values/numbers)**|The height of the angled area|`50`|
-|`$location`|**[String](https://sass-lang.com/documentation/values/strings)**|Where to put the angle (outside-top, outside-bottom, inside-top, inside-bottom)|`outside-top`|
-|`$hypotenuse`|Srting|The hypotenuse of the angled area (upper-left, upper-right, lower-left, lower-right)|`upper-left`|
-|`$width`|**[Number](https://sass-lang.com/documentation/values/numbers)**|The width of the angled area|`null`|
-|`$selector`|**[String](https://sass-lang.com/documentation/values/strings)**, **[List](https://sass-lang.com/documentation/values/lists)**|The selector the angled area should be generated in|`"&::after"`|
+@mixin angled-tritone-background(
+    $base: transparent,
+    $color1: rgba(0, 0, 0, 0.1),
+    $color2: rgba(255, 255, 255, 0.1),
+    $angle1: -20deg,
+    $angle2: -110deg,
+    $position1: 30%,
+    $position2: 30%
+) {
+    background:
+        linear-gradient(#{$angle2}, #{$color2} #{$position2}, transparent #{$position2}),
+        linear-gradient(#{$angle1}, #{$color1} #{$position1}, transparent #{$position1}),
+        $base;
+}

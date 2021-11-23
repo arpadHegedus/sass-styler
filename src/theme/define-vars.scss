@@ -35,6 +35,7 @@ $var-prepend: "" !default;
 /// Get a CSS variable defined via Sass
 /// @param {String} $name - Variable name
 /// @param {*} $fallback [null] - Fallback value
+/// @alias get-var
 /// @group Theme
 
 @function v($name, $fallback: null) {
