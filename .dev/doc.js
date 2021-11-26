@@ -52,7 +52,6 @@ function parseData(data) {
 }
 
 function writeLongEntity(e, type = 'mixin') {
-    // console.log(e)
     let c = ''
     c += '\n'
     c += `#### ${e.context.name} <a id="${type}-${e.context.name}">&nbsp;</a>\n${e.description}\n`
@@ -61,7 +60,6 @@ function writeLongEntity(e, type = 'mixin') {
     if (e.parameter && e.parameter.length > 0) {
         c += `**Parameters:**\n<table>\n  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr>`
         e.parameter.forEach(p => {
-            console.log(p)
             c += `<tr><td>${p.name}</td><td>${p.description}</td><td>${p.type.split('|').map(pt => `<code>${pt}</code>`).join(' ')}</td><td>${p.default || '-'}</td></tr>`
         })
         c += '</table>\n'

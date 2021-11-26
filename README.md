@@ -204,6 +204,10 @@ $transition-settings
 @include horizontal-list($gap, $justify-content, $align-items, $flex-wrap, $side)
 ```
 ```scss
+/* Align an icon and text next to one another */
+@include icon-item($icon-size, $gap, $justify-content, $align-items, $align-icon, $media)
+```
+```scss
 /* Increment z-index value for each element in a container */
 @include increment-z-index($from, $to, $index, $selector)
 ```
