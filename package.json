@@ -32,7 +32,15 @@
     "type": "individual",
     "url": "https://www.paypal.com/donate?hosted_button_id=XWAPUXYW5UXYG"
   },
-  "main": "styler.scss",
+  "main": "src/styler.scss",
+  "exports": {
+    "animation": "./src/animation.scss",
+    "theme": "./src/theme.scss",
+    "utility": "./src/utility.scss",
+    "./animation": "./src/animation/",
+    "./theme": "./src/theme/",
+    "./utility": "./src/utility/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arpadHegedus/sass-styler.git"
