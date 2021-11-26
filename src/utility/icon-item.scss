@@ -30,4 +30,6 @@
             grid-template-columns: $template;
         }
     }
+
+    @content;
 }
