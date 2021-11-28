@@ -4,14 +4,15 @@
 /// Align an icon and text next to one another
 /// @param {Size} $icon-size [1em] - Icon size (width)
 /// @param {Size} $gap [null] - Gap between icon and text
+/// @param {String} $side [left] - Whether the icon is on the left or the right side
 /// @param {String} $justify-content [null] - Horizontal alignment of icon and text
 /// @param {String} $align-items [null] - Vertical alignment of icon and text
 /// @param {String} $align-icon [null] - Vertically align the icon in a different way
 /// @param {Size|String} $media [null] - Media to apply template from
 /// @group Utility
 
-@mixin icon-item($icon-size: 1em, $gap: null, $justify-content: null, $align-items: null, $align-icon: null, $media: null) {
-    $template: $icon-size repeat(auto-fit, minmax(10px, 100%));
+@mixin icon-item($icon-size: 1em, $gap: null, $side: left, $justify-content: null, $align-items: null, $align-icon: null, $media: null) {
+    $template: if($side == left, $icon-size repeat(auto-fit, minmax(10px, 100%)), repeat(auto-fit, minmax(10px, 100%)) $icon-size);
     display: grid;
     justify-content: $justify-content;
     align-items: $align-items;
@@ -30,6 +31,4 @@
             grid-template-columns: $template;
         }
     }
-
-    @content;
 }

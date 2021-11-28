@@ -44,6 +44,8 @@ A huge array of mixins and functions
         <br>
         <a href="#mixin-horizontal-list">horizontal-list</a>
         <br>
+        <a href="#mixin-icon-item">icon-item</a>
+        <br>
         <a href="#mixin-increment-z-index">increment-z-index</a>
         <br>
         <a href="#mixin-inner-container">inner-container</a>
@@ -525,6 +527,26 @@ Make a list horizontal
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr><tr><td>side</td><td>Side to calculate indent from</td><td><code>String</code></td><td>left</td></tr></table>
 
 **File source:** <a href="/src/utility/horizontal-list.scss">src/utility/horizontal-list.scss</a>
+
+<br>
+
+
+
+#### icon-item <a id="mixin-icon-item">&nbsp;</a>
+Align an icon and text next to one another
+
+```scss
+/* Align an icon and text next to one another */
+@include icon-item($icon-size, $gap, $side, $justify-content, $align-items, $align-icon, $media)
+```
+**Type:** mixin
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>icon-size</td><td>Icon size (width)</td><td><code>Size</code></td><td>1em</td></tr><tr><td>gap</td><td>Gap between icon and text</td><td><code>Size</code></td><td>null</td></tr><tr><td>side</td><td>Whether the icon is on the left or the right side</td><td><code>String</code></td><td>left</td></tr><tr><td>justify-content</td><td>Horizontal alignment of icon and text</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>Vertical alignment of icon and text</td><td><code>String</code></td><td>null</td></tr><tr><td>align-icon</td><td>Vertically align the icon in a different way</td><td><code>String</code></td><td>null</td></tr><tr><td>media</td><td>Media to apply template from</td><td><code>Size</code> <code>String</code></td><td>null</td></tr></table>
+
+**Requires:** <a href="/src/theme/media.scss">media</a>
+
+**File source:** <a href="/src/utility/icon-item.scss">src/utility/icon-item.scss</a>
 
 <br>
 
