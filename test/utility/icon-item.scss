@@ -19,7 +19,7 @@
         }
         @include assert {
             @include output {
-                @include icon-item(2em, 0.5em, center, flex-end, flex-start);
+                @include icon-item(2em, 0.5em, left, center, flex-end, flex-start);
             }
             @include expect {
                 display: grid;
@@ -37,7 +37,7 @@
         }
         @include assert {
             @include output {
-                @include icon-item(2em, 0.5em, center, flex-end, flex-start, 600px);
+                @include icon-item(2em, 0.5em, left, center, flex-end, flex-start, 600px);
             }
             @include expect {
                 display: grid;
