@@ -117,6 +117,7 @@ $color-palette: (
 @use "sass:math";
 @use "sass:meta";
 @use "sass:string";
+@use "define-vars" as *;
 @use "../utility/get" as *;
 @use "../utility/best-contrast" as *;
 
@@ -180,4 +181,20 @@ $color-palette: (
 
 @function c($args...) {
     @return color($args...);
+}
+
+/// Define color CSS variables for the palette
+/// @group Theme
+
+@mixin define-color-palette-vars() {
+    @each $name, $color in $color-palette {
+        @if meta.type-of($color) == map {
+            @each $level, $level-color in $color {
+                $name-with-level: if($level == "default", $name, "#{$name}-#{$level}");
+                @include define-var("color-#{$name-with-level}", $level-color);
+            }
+        } @else {
+            @include define-var("color-#{$name}", $color);
+        }
+    }
 }

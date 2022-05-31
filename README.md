@@ -21,6 +21,10 @@ Styler is made up of 3 main modules
 #### Mixins
 
 ```scss
+/* Define color CSS variables for the palette */
+@include define-color-palette-vars
+```
+```scss
 /* Define CSS variables via a Sass map */
 @include define-vars($vars-map)
 ```
@@ -37,6 +41,10 @@ Styler is made up of 3 main modules
 @include font-family($id)
 ```
 ```scss
+/* Define font family CSS variables */
+@include define-font-family-vars
+```
+```scss
 /* Generate media queries via saved keywords or simplified syntax */
 @include media($query...)
 ```
@@ -51,6 +59,10 @@ Styler is made up of 3 main modules
 ```scss
 /* Get selectors from a named selector group */
 @include select($ids)
+```
+```scss
+/* Define size CSS variables */
+@include define-size-vars
 ```
 ```scss
 /* Add transition to elements with fallback to default settings */

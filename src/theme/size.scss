@@ -41,6 +41,7 @@ $sizes: (
     "96": 24rem,
 ) !default;
 
+@use "define-vars" as *;
 @use "../utility/get" as *;
 
 /// Return named size
@@ -61,4 +62,13 @@ $sizes: (
 
 @function s($id: null) {
     @return size($id);
+}
+
+/// Define size CSS variables
+/// @group Theme
+
+@mixin define-size-vars() {
+    @each $name, $size in $sizes {
+        @include define-var("size-#{$name}", $size);
+    }
 }

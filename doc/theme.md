@@ -17,6 +17,8 @@ Helpers to create your own design system
   <tbody>
     <tr>
       <td style="vertical-align:top">
+        <a href="#mixin-define-color-palette-vars">define-color-palette-vars</a>
+        <br>
         <a href="#mixin-define-vars">define-vars</a>
         <br>
         <a href="#mixin-define-var">define-var</a>
@@ -25,6 +27,8 @@ Helpers to create your own design system
         <br>
         <a href="#mixin-font-family">font-family</a>
         <br>
+        <a href="#mixin-define-font-family-vars">define-font-family-vars</a>
+        <br>
         <a href="#mixin-media">media</a>
         <br>
         <a href="#mixin-normalize">normalize</a>
@@ -32,6 +36,8 @@ Helpers to create your own design system
         <a href="#mixin-reset">reset</a>
         <br>
         <a href="#mixin-select">select</a>
+        <br>
+        <a href="#mixin-define-size-vars">define-size-vars</a>
         <br>
         <a href="#mixin-transition">transition</a>
       </td>
@@ -80,6 +86,23 @@ Helpers to create your own design system
 </table>
 
 ### Mixins
+
+
+#### define-color-palette-vars <a id="mixin-define-color-palette-vars">&nbsp;</a>
+Define color CSS variables for the palette
+
+```scss
+/* Define color CSS variables for the palette */
+@include define-color-palette-vars
+```
+**Type:** mixin
+
+**Requires:** <a href="/src/theme/define-vars.scss">define-var</a>, <a href="/src/theme/color.scss">color-palette</a>
+
+**File source:** <a href="/src/theme/color.scss">src/theme/color.scss</a>
+
+<br>
+
 
 
 #### define-vars <a id="mixin-define-vars">&nbsp;</a>
@@ -162,6 +185,23 @@ Add named font-family
 
 
 
+#### define-font-family-vars <a id="mixin-define-font-family-vars">&nbsp;</a>
+Define font family CSS variables
+
+```scss
+/* Define font family CSS variables */
+@include define-font-family-vars
+```
+**Type:** mixin
+
+**Requires:** <a href="/src/theme/define-vars.scss">define-var</a>, <a href="/src/theme/font-family.scss">font-families</a>
+
+**File source:** <a href="/src/theme/font-family.scss">src/theme/font-family.scss</a>
+
+<br>
+
+
+
 #### media <a id="mixin-media">&nbsp;</a>
 Generate media queries via saved keywords or simplified syntax
 
@@ -227,6 +267,23 @@ Get selectors from a named selector group
 **Requires:** <a href="/src/theme/select.scss">select</a>
 
 **File source:** <a href="/src/theme/select.scss">src/theme/select.scss</a>
+
+<br>
+
+
+
+#### define-size-vars <a id="mixin-define-size-vars">&nbsp;</a>
+Define size CSS variables
+
+```scss
+/* Define size CSS variables */
+@include define-size-vars
+```
+**Type:** mixin
+
+**Requires:** <a href="/src/theme/define-vars.scss">define-var</a>, <a href="/src/theme/size.scss">sizes</a>
+
+**File source:** <a href="/src/theme/size.scss">src/theme/size.scss</a>
 
 <br>
 

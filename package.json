@@ -58,7 +58,7 @@
   },
   "engines": {},
   "scripts": {
-    "doc": "npx sassdoc src doc -t .dev/sassdoc-theme-styler/ -v",
+    "doc": "node ./.dev/doc.js",
     "stylelint": "stylelint ./src/**",
     "test": "jest --env=node"
   }
