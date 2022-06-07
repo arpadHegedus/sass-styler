@@ -223,13 +223,15 @@ Generate media queries via saved keywords or simplified syntax
 
 
 #### normalize <a id="mixin-normalize">&nbsp;</a>
-Modern Normalize
+Normalize with best practices combined from bootstrap, tailwind, etc
 
 ```scss
-/* Modern Normalize */
+/* Normalize with best practices combined from bootstrap, tailwind, etc */
 @include normalize
 ```
 **Type:** mixin
+
+**Requires:** <a href="/src/theme/define-vars.scss">v</a>
 
 **File source:** <a href="/src/theme/normalize.scss">src/theme/normalize.scss</a>
 

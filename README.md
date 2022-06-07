@@ -49,7 +49,7 @@ Styler is made up of 3 main modules
 @include media($query...)
 ```
 ```scss
-/* Modern Normalize */
+/* Normalize with best practices combined from bootstrap, tailwind, etc */
 @include normalize
 ```
 ```scss
@@ -3312,7 +3312,6 @@ Or you `@use` load a whole module to use all of its components
 ```scss
 @use "sass-styler/theme" as *;
 
-@include reset();
 @include normalize();
 
 .card {
