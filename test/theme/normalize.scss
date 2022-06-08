@@ -15,6 +15,9 @@
                     border-width: 0;
                     border-style: solid;
                     border-color: var(--boder-color, currentColor);
+                    transition-property: none;
+                    transition-duration: var(--transition-duration, 0.3s);
+                    transition-timing-function: var(--transition-easing, ease-in-out);
                 }
 
                 :root {

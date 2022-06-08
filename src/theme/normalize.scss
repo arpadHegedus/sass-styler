@@ -11,6 +11,9 @@
         border-width: 0;
         border-style: solid;
         border-color: v(boder-color, currentColor);
+        transition-property: none;
+        transition-duration: v(transition-duration, 0.3s);
+        transition-timing-function: v(transition-easing, ease-in-out);
     }
 
     :root {
