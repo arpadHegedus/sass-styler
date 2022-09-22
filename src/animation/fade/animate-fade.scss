@@ -36,12 +36,12 @@ $animate-fade-default-configuration: (
 	@include keyframes($name) {
 		0% {
 			opacity: get($configuration, from opacity);
-            transform: translate3d(#{get($configuration, from x)} #{get($configuration, from y)} #{get($configuration, from z)});
+            transform: translate3d(#{get($configuration, from x)}, #{get($configuration, from y)}, #{get($configuration, from z)});
 		}
 
 		100% {
 			opacity: get($configuration, to opacity);
-            transform: translate3d(#{get($configuration, to x)} #{get($configuration, to y)} #{get($configuration, to z)});
+            transform: translate3d(#{get($configuration, to x)}, #{get($configuration, to y)}, #{get($configuration, to z)});
 		}
 	}
 }
