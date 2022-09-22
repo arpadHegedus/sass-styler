@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "unique-id-by-value" as *;
 
 /// The keyframes cache
 /// @type Map

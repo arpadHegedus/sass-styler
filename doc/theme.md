@@ -21,7 +21,11 @@ Helpers to create your own design system
         <br>
         <a href="#mixin-define-vars">define-vars</a>
         <br>
+        <a href="#mixin-vars">vars</a>
+        <br>
         <a href="#mixin-define-var">define-var</a>
+        <br>
+        <a href="#mixin-v">v</a>
         <br>
         <a href="#mixin-elevation">elevation</a>
         <br>
@@ -105,6 +109,7 @@ Define color CSS variables for the palette
 
 
 
+
 #### define-vars <a id="mixin-define-vars">&nbsp;</a>
 Define CSS variables via a Sass map
 
@@ -122,6 +127,29 @@ Define CSS variables via a Sass map
 **File source:** <a href="/src/theme/define-vars.scss">src/theme/define-vars.scss</a>
 
 <br>
+
+
+
+
+#### vars <a id="mixin-vars">&nbsp;</a>
+Define CSS variables via a Sass map
+
+```scss
+/* Define CSS variables via a Sass map */
+/* alias of define-vars */
+@include vars($vars-map)
+```
+**Type:** mixin
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>vars-map</td><td>The sass map data</td><td><code>Map</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/theme/define-vars.scss">define-vars</a>
+
+**File source:** <a href="/src/theme/define-vars.scss">src/theme/define-vars.scss</a>
+
+<br>
+
 
 
 
@@ -145,6 +173,29 @@ Define CSS variable
 
 
 
+
+#### v <a id="mixin-v">&nbsp;</a>
+Define CSS variable
+
+```scss
+/* Define CSS variable */
+/* alias of define-var */
+@include v($name, $value)
+```
+**Type:** mixin
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>name</td><td>Variable name</td><td><code>String</code></td><td>-</td></tr><tr><td>value</td><td>Variable value</td><td><code>*</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/theme/define-vars.scss">var-prepend</a>
+
+**File source:** <a href="/src/theme/define-vars.scss">src/theme/define-vars.scss</a>
+
+<br>
+
+
+
+
 #### elevation <a id="mixin-elevation">&nbsp;</a>
 Add box shadow based on elevation settings
 
@@ -162,6 +213,7 @@ Add box shadow based on elevation settings
 **File source:** <a href="/src/theme/elevation.scss">src/theme/elevation.scss</a>
 
 <br>
+
 
 
 
@@ -185,6 +237,7 @@ Add named font-family
 
 
 
+
 #### define-font-family-vars <a id="mixin-define-font-family-vars">&nbsp;</a>
 Define font family CSS variables
 
@@ -199,6 +252,7 @@ Define font family CSS variables
 **File source:** <a href="/src/theme/font-family.scss">src/theme/font-family.scss</a>
 
 <br>
+
 
 
 
@@ -222,6 +276,7 @@ Generate media queries via saved keywords or simplified syntax
 
 
 
+
 #### normalize <a id="mixin-normalize">&nbsp;</a>
 Normalize with best practices combined from bootstrap, tailwind, etc
 
@@ -239,6 +294,7 @@ Normalize with best practices combined from bootstrap, tailwind, etc
 
 
 
+
 #### reset <a id="mixin-reset">&nbsp;</a>
 Reset styles
 
@@ -251,6 +307,7 @@ Reset styles
 **File source:** <a href="/src/theme/reset.scss">src/theme/reset.scss</a>
 
 <br>
+
 
 
 
@@ -274,6 +331,7 @@ Get selectors from a named selector group
 
 
 
+
 #### define-size-vars <a id="mixin-define-size-vars">&nbsp;</a>
 Define size CSS variables
 
@@ -288,6 +346,7 @@ Define size CSS variables
 **File source:** <a href="/src/theme/size.scss">src/theme/size.scss</a>
 
 <br>
+
 
 
 
@@ -308,6 +367,7 @@ Add transition to elements with fallback to default settings
 **File source:** <a href="/src/theme/transition.scss">src/theme/transition.scss</a>
 
 <br>
+
 ### Functions
 
 
@@ -338,6 +398,7 @@ asset($file)
 </details>
 
 <br>
+
 
 
 
@@ -414,6 +475,7 @@ color($args)
 
 
 
+
 #### c <a id="function-c">&nbsp;</a>
 Return and manipulate color
 
@@ -445,6 +507,7 @@ c($args)
 
 
 
+
 #### get-var <a id="function-get-var">&nbsp;</a>
 Get a CSS variable defined via Sass
 
@@ -472,6 +535,7 @@ get-var($name, $fallback)
 </details>
 
 <br>
+
 
 
 
@@ -506,6 +570,7 @@ v($name, $fallback)
 
 
 
+
 #### elevation <a id="function-elevation">&nbsp;</a>
 Return box shadow based on elevation settings
 
@@ -536,6 +601,7 @@ elevation($level)
 
 
 
+
 #### font-family <a id="function-font-family">&nbsp;</a>
 Return named font-family
 
@@ -563,6 +629,7 @@ font-family($id)
 </details>
 
 <br>
+
 
 
 
@@ -608,6 +675,7 @@ select($ids)
 
 
 
+
 #### size <a id="function-size">&nbsp;</a>
 Return named size
 
@@ -635,6 +703,7 @@ size($id)
 </details>
 
 <br>
+
 
 
 
@@ -666,6 +735,7 @@ s($id)
 </details>
 
 <br>
+
 ### Variables
 
 
@@ -684,6 +754,7 @@ $asset-path
 
 
 
+
 #### color-palette <a id="variable-color-palette">&nbsp;</a>
 Named colors palette
 
@@ -696,6 +767,7 @@ $color-palette
 **File source:** <a href="/src/theme/color.scss">src/theme/color.scss</a>
 
 <br>
+
 
 
 
@@ -714,6 +786,7 @@ $var-prepend
 
 
 
+
 #### elevations <a id="variable-elevations">&nbsp;</a>
 Elevation level box-shadow settings
 
@@ -726,6 +799,7 @@ $elevations
 **File source:** <a href="/src/theme/elevation.scss">src/theme/elevation.scss</a>
 
 <br>
+
 
 
 
@@ -744,6 +818,7 @@ $font-families
 
 
 
+
 #### media-queries <a id="variable-media-queries">&nbsp;</a>
 Named shorthands for media queries
 
@@ -756,6 +831,7 @@ $media-queries
 **File source:** <a href="/src/theme/media.scss">src/theme/media.scss</a>
 
 <br>
+
 
 
 
@@ -774,6 +850,7 @@ $selectors
 
 
 
+
 #### sizes <a id="variable-sizes">&nbsp;</a>
 Named size values
 
@@ -789,6 +866,7 @@ $sizes
 
 
 
+
 #### transition-settings <a id="variable-transition-settings">&nbsp;</a>
 Default transition settings
 
@@ -801,6 +879,7 @@ $transition-settings
 **File source:** <a href="/src/theme/transition.scss">src/theme/transition.scss</a>
 
 <br>
+
 
 
 <a href="/README.md">Back to Sass Styler</a>

@@ -1,0 +1,48 @@
+@use "../../utility/get" as *;
+@use "../../utility/merge" as *;
+@use "../../utility/keyframes" as *;
+@use "../../utility/keyframes-name" as *;
+
+/// Default configuration for the fade animation
+/// @type Map
+/// @group Animation
+
+$animate-fade-default-configuration: (
+    from: (
+        opacity: 0,
+        x: 0,
+        y: 0,
+        z: -20px
+    ),
+    to: (
+        opacity: 1,
+        x: 0,
+        y: 0,
+        z: 0
+    )
+) !default;
+
+/// Animate configurable fade
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @param {Null|Map} $configuration [null] - Animation config (fallback to $animate-fade-default-configuration)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-fade($animation-settings: null, $configuration: null) {
+    $name: if($configuration, keyframes-name(fade, $configuration), fade);
+    $configuration: merge($animate-fade-default-configuration, $configuration);
+	animation: if($animation-settings, #{"#{$name} #{$animation-settings}"}, $name);
+
+	@include keyframes($name) {
+		0% {
+			opacity: get($configuration, from opacity);
+            transform: translate3d(#{get($configuration, from x)} #{get($configuration, from y)} #{get($configuration, from z)});
+		}
+
+		100% {
+			opacity: get($configuration, to opacity);
+            transform: translate3d(#{get($configuration, to x)} #{get($configuration, to y)} #{get($configuration, to z)});
+		}
+	}
+}
+

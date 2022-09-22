@@ -125,6 +125,8 @@ A huge array of mixins and functions
         <br>
         <a href="#function-is-pseudo">is-pseudo</a>
         <br>
+        <a href="#function-keyframes-name">keyframes-name</a>
+        <br>
         <a href="#function-long-shadow">long-shadow</a>
         <br>
         <a href="#function-luminance">luminance</a>
@@ -288,6 +290,7 @@ Add an angled edge to a container using a generated SVG
 
 
 
+
 #### angled-tritone-background <a id="mixin-angled-tritone-background">&nbsp;</a>
 A tritone angled CSS background
 
@@ -303,6 +306,7 @@ A tritone angled CSS background
 **File source:** <a href="/src/utility/angled-tritone-background.scss">src/utility/angled-tritone-background.scss</a>
 
 <br>
+
 
 
 
@@ -326,6 +330,7 @@ Add multiple extends
 
 
 
+
 #### background-stripes <a id="mixin-background-stripes">&nbsp;</a>
 Background gradient stripes from a list of colors
 
@@ -344,6 +349,7 @@ Background gradient stripes from a list of colors
 
 
 
+
 #### clearfix <a id="mixin-clearfix">&nbsp;</a>
 Prevent elements flowing around floating elements
 
@@ -359,6 +365,7 @@ Prevent elements flowing around floating elements
 **File source:** <a href="/src/utility/clearfix.scss">src/utility/clearfix.scss</a>
 
 <br>
+
 
 
 
@@ -382,6 +389,7 @@ Create a width-limited container with side-margin on smaller screens
 
 
 
+
 #### cover-link <a id="mixin-cover-link">&nbsp;</a>
 Cover a container with a link
 
@@ -399,6 +407,7 @@ Cover a container with a link
 **File source:** <a href="/src/utility/cover-link.scss">src/utility/cover-link.scss</a>
 
 <br>
+
 
 
 
@@ -422,6 +431,7 @@ Declare properties via sass maps
 
 
 
+
 #### extend-background <a id="mixin-extend-background">&nbsp;</a>
 Extend the background sideways of a container
 
@@ -437,6 +447,7 @@ Extend the background sideways of a container
 **File source:** <a href="/src/utility/extend-background.scss">src/utility/extend-background.scss</a>
 
 <br>
+
 
 
 
@@ -460,6 +471,7 @@ Create a flexbox grid from the wrapper and direct children elements
 
 
 
+
 #### hardware-accelerate <a id="mixin-hardware-accelerate">&nbsp;</a>
 Turn on the hardware acceleration of the browser for element
 
@@ -475,6 +487,7 @@ Turn on the hardware acceleration of the browser for element
 **File source:** <a href="/src/utility/hardware-accelerate.scss">src/utility/hardware-accelerate.scss</a>
 
 <br>
+
 
 
 
@@ -496,6 +509,7 @@ Hide text within a container but keep pesudo elements visible
 
 
 
+
 #### hide-visually <a id="mixin-hide-visually">&nbsp;</a>
 Visually hide an element
 
@@ -514,6 +528,7 @@ Visually hide an element
 
 
 
+
 #### horizontal-list <a id="mixin-horizontal-list">&nbsp;</a>
 Make a list horizontal
 
@@ -529,6 +544,7 @@ Make a list horizontal
 **File source:** <a href="/src/utility/horizontal-list.scss">src/utility/horizontal-list.scss</a>
 
 <br>
+
 
 
 
@@ -552,6 +568,7 @@ Align an icon and text next to one another
 
 
 
+
 #### increment-z-index <a id="mixin-increment-z-index">&nbsp;</a>
 Increment z-index value for each element in a container
 
@@ -570,6 +587,7 @@ Increment z-index value for each element in a container
 
 
 
+
 #### inner-container <a id="mixin-inner-container">&nbsp;</a>
 Set styles for containers without media queries where you use a main and a wrapper element
 
@@ -585,6 +603,7 @@ Set styles for containers without media queries where you use a main and a wrapp
 **File source:** <a href="/src/utility/inner-container.scss">src/utility/inner-container.scss</a>
 
 <br>
+
 
 
 
@@ -608,6 +627,7 @@ Add CSS animation only once
 
 
 
+
 #### loader <a id="mixin-loader">&nbsp;</a>
 Create a dynamic, animated CSS circle loader spinner
 
@@ -625,6 +645,7 @@ Create a dynamic, animated CSS circle loader spinner
 **File source:** <a href="/src/utility/loader.scss">src/utility/loader.scss</a>
 
 <br>
+
 
 
 
@@ -648,6 +669,7 @@ Generate a menu icon from a single element
 
 
 
+
 #### menu-icon-close <a id="mixin-menu-icon-close">&nbsp;</a>
 Morph menu icon to a close (x) icon
 
@@ -665,6 +687,7 @@ Morph menu icon to a close (x) icon
 **File source:** <a href="/src/utility/menu-icon.scss">src/utility/menu-icon.scss</a>
 
 <br>
+
 
 
 
@@ -686,6 +709,7 @@ Create object fitted elements
 
 
 
+
 #### on-circle <a id="mixin-on-circle">&nbsp;</a>
 Mixin to place items on a circle
 
@@ -701,6 +725,7 @@ Mixin to place items on a circle
 **File source:** <a href="/src/utility/on-circle.scss">src/utility/on-circle.scss</a>
 
 <br>
+
 
 
 
@@ -722,6 +747,7 @@ Mixin to place items on a circle
 
 
 
+
 #### position <a id="mixin-position">&nbsp;</a>
 Set position top, right, bottom, left, position, width, height and z-index values
 
@@ -737,6 +763,7 @@ Set position top, right, bottom, left, position, width, height and z-index value
 **File source:** <a href="/src/utility/position.scss">src/utility/position.scss</a>
 
 <br>
+
 
 
 
@@ -760,6 +787,7 @@ Add a pseduo element with position
 
 
 
+
 #### pseudo <a id="mixin-pseudo">&nbsp;</a>
 Add a pseduo element
 
@@ -775,6 +803,7 @@ Add a pseduo element
 **File source:** <a href="/src/utility/pseudo.scss">src/utility/pseudo.scss</a>
 
 <br>
+
 
 
 
@@ -796,6 +825,7 @@ Replace part of the current selector
 
 
 
+
 #### responsive-ratio <a id="mixin-responsive-ratio">&nbsp;</a>
 The padding trick to keep a container the same ratio in different screen sizes
 
@@ -811,6 +841,7 @@ The padding trick to keep a container the same ratio in different screen sizes
 **File source:** <a href="/src/utility/responsive-ratio.scss">src/utility/responsive-ratio.scss</a>
 
 <br>
+
 
 
 
@@ -832,6 +863,7 @@ CSS-only triangle
 
 
 
+
 #### truncate <a id="mixin-truncate">&nbsp;</a>
 Truncate text in a container
 
@@ -847,6 +879,7 @@ Truncate text in a container
 **File source:** <a href="/src/utility/truncate.scss">src/utility/truncate.scss</a>
 
 <br>
+
 
 
 
@@ -868,6 +901,7 @@ Unhide a previously visually hidden element
 
 
 
+
 #### unstyled-list <a id="mixin-unstyled-list">&nbsp;</a>
 Remove list styles
 
@@ -883,6 +917,7 @@ Remove list styles
 **File source:** <a href="/src/utility/unstyled-list.scss">src/utility/unstyled-list.scss</a>
 
 <br>
+
 ### Functions
 
 
@@ -923,6 +958,7 @@ best-contrast($base, $colors, $tolerance)
 </details>
 
 <br>
+
 
 
 
@@ -977,6 +1013,7 @@ calc-add($left, $right, $ensure-unit)
 
 
 
+
 #### calc-substract <a id="function-calc-substract">&nbsp;</a>
 Substract 2 numbers or return calc if they are incompatible
 
@@ -1028,6 +1065,7 @@ calc-substract($left, $right, $ensure-unit)
 
 
 
+
 #### cmyk <a id="function-cmyk">&nbsp;</a>
 Get CMYK values from a color
 
@@ -1070,6 +1108,7 @@ cmyk($color)
 
 
 
+
 #### color-from <a id="function-color-from">&nbsp;</a>
 Get the color value from a list like border or background
 
@@ -1103,6 +1142,7 @@ color-from($value)
 </details>
 
 <br>
+
 
 
 
@@ -1150,6 +1190,7 @@ contrast-balance($color1, $color2, $ratio, $balance)
 
 
 
+
 #### contrast-between <a id="function-contrast-between">&nbsp;</a>
 Get the contrast between 2 colors
 
@@ -1179,6 +1220,7 @@ contrast-between($color1, $color2)
 </details>
 
 <br>
+
 
 
 
@@ -1214,6 +1256,7 @@ contrast-ratio-by-name($ratio)
 </details>
 
 <br>
+
 
 
 
@@ -1283,6 +1326,7 @@ contrast-with($color, $target, $ratio, $iterations)
 
 
 
+
 #### decimal-round <a id="function-decimal-round">&nbsp;</a>
 Round a number to specified digits
 
@@ -1327,6 +1371,7 @@ decimal-round($number, $digits, $mode)
 
 
 
+
 #### em-to-px <a id="function-em-to-px">&nbsp;</a>
 Em to Px conversion
 
@@ -1365,6 +1410,7 @@ em-to-px($em, $default)
 
 
 
+
 #### em-to-rem <a id="function-em-to-rem">&nbsp;</a>
 Change em to rem (units only, no calculations)
 
@@ -1392,6 +1438,7 @@ em-to-rem($em)
 </details>
 
 <br>
+
 
 
 
@@ -1452,6 +1499,7 @@ ensure-unit($num, $unit, $default)
 
 
 
+
 #### escape-classname <a id="function-escape-classname">&nbsp;</a>
 Escape string to work as a classname
 
@@ -1494,6 +1542,7 @@ escape-classname($classname)
 
 
 
+
 #### fallback <a id="function-fallback">&nbsp;</a>
 Fallback for possibly null values
 
@@ -1525,6 +1574,7 @@ fallback($values...)
 </details>
 
 <br>
+
 
 
 
@@ -1560,6 +1610,7 @@ get($map, $keys, $fallback)
 </details>
 
 <br>
+
 
 
 
@@ -1603,6 +1654,7 @@ grid-column-width($columns, $gap)
 
 
 
+
 #### is-between <a id="function-is-between">&nbsp;</a>
 Check if a number is between a min and max value
 
@@ -1628,6 +1680,7 @@ is-between($value, $min, $max)
 </details>
 
 <br>
+
 
 
 
@@ -1659,6 +1712,7 @@ is-contrasting($color1, $color2, $ratio)
 </details>
 
 <br>
+
 
 
 
@@ -1711,6 +1765,7 @@ is-property($property)
 
 
 
+
 #### is-pseudo <a id="function-is-pseudo">&nbsp;</a>
 Check whether a pseudo class is valid in CSS3
 
@@ -1754,6 +1809,41 @@ is-pseudo($pseudo, $string)
 
 
 
+
+#### keyframes-name <a id="function-keyframes-name">&nbsp;</a>
+Get a unique name for a keyframe animation with optional config
+
+```scss
+/* Get a unique name for a keyframe animation with optional config */
+keyframes-name($name, $config)
+```
+**Type:** function
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>name</td><td>The animation name</td><td><code>String</code></td><td>-</td></tr><tr><td>config</td><td>Configuration</td><td><code>Mixed</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/utility/unique-id-by-value.scss">unique-id-by-value</a>
+
+**File source:** <a href="/src/utility/keyframes-name.scss">src/utility/keyframes-name.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function keyframes-name($name, $config) {
+    @if not $config {
+        @return $name;
+    }
+    @return "#{$name}-#{unique-id-by-value($name, $config)}";
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### long-shadow <a id="function-long-shadow">&nbsp;</a>
 Return Long shadow
 
@@ -1788,6 +1878,7 @@ long-shadow($color, $length)
 
 
 
+
 #### luminance <a id="function-luminance">&nbsp;</a>
 Returns XYZ value to RGB channel
 
@@ -1818,6 +1909,7 @@ luminance($color)
 </details>
 
 <br>
+
 
 
 
@@ -1873,6 +1965,7 @@ merge($map1, $map2)
 
 
 
+
 #### num-to-length <a id="function-num-to-length">&nbsp;</a>
 Add `$unit` to `$value`
 
@@ -1903,6 +1996,7 @@ num-to-length($value, $unit)
 </details>
 
 <br>
+
 
 
 
@@ -1944,6 +2038,7 @@ px-to-em($px, $default)
 
 
 
+
 #### px-to-rem <a id="function-px-to-rem">&nbsp;</a>
 Px to Rem calculation
 
@@ -1982,6 +2077,7 @@ px-to-rem($px, $default)
 
 
 
+
 #### rem-to-em <a id="function-rem-to-em">&nbsp;</a>
 Change rem to em (units only, no calculations)
 
@@ -2009,6 +2105,7 @@ rem-to-em($rem)
 </details>
 
 <br>
+
 
 
 
@@ -2047,6 +2144,7 @@ rem-to-px($rem, $default)
 </details>
 
 <br>
+
 
 
 
@@ -2095,6 +2193,7 @@ remove-nth($list, $nth)
 </details>
 
 <br>
+
 
 
 
@@ -2147,6 +2246,7 @@ remove($map, $keys...)
 
 
 
+
 #### responsive-font-size <a id="function-responsive-font-size">&nbsp;</a>
 Viewport sized typography with minimum and maximum values
 
@@ -2182,6 +2282,7 @@ responsive-font-size($min-font-size, $min-viewport-width, $max-font-size, $max-v
 
 
 
+
 #### same-units <a id="function-same-units">&nbsp;</a>
 Check whether 2 numbers have the same units
 
@@ -2207,6 +2308,7 @@ same-units($number, $number2)
 </details>
 
 <br>
+
 
 
 
@@ -2247,6 +2349,7 @@ scale-light($color1, $color2, $ratio, $operation, $iterations)
 </details>
 
 <br>
+
 
 
 
@@ -2315,6 +2418,7 @@ scale-luminance($color, $luminance)
 
 
 
+
 #### select-after <a id="function-select-after">&nbsp;</a>
 Select all elements after a specific nth value
 
@@ -2342,6 +2446,7 @@ select-after($nth, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2376,6 +2481,7 @@ select-all-out-of-at-least($num, $selector)
 
 
 
+
 #### select-all-out-of-at-most <a id="function-select-all-out-of-at-most">&nbsp;</a>
 Select all elements if the number of elements in the container is at most a number
 
@@ -2404,6 +2510,7 @@ select-all-out-of-at-most($num, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2441,6 +2548,7 @@ select-all-out-of-between($min, $max, $selector)
 
 
 
+
 #### select-before <a id="function-select-before">&nbsp;</a>
 Select all elements before a specific nth value
 
@@ -2468,6 +2576,7 @@ select-before($nth, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2501,6 +2610,7 @@ select-between($first, $last, $selector)
 
 
 
+
 #### select-even-between <a id="function-select-even-between">&nbsp;</a>
 Select all even nth elements between a specific first and last nth value
 
@@ -2528,6 +2638,7 @@ select-even-between($first, $last, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2561,6 +2672,7 @@ select-even($selector)
 
 
 
+
 #### select-except-first-last <a id="function-select-except-first-last">&nbsp;</a>
 Select all elements except the first and last
 
@@ -2588,6 +2700,7 @@ select-except-first-last($selector)
 </details>
 
 <br>
+
 
 
 
@@ -2621,6 +2734,7 @@ select-except-only-child($selector)
 
 
 
+
 #### select-except <a id="function-select-except">&nbsp;</a>
 Select all elements except a specific nth
 
@@ -2648,6 +2762,7 @@ select-except($nth, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2681,6 +2796,7 @@ select-first-last($selector)
 
 
 
+
 #### select-first-of-type <a id="function-select-first-of-type">&nbsp;</a>
 Select the first of the type element
 
@@ -2708,6 +2824,7 @@ select-first-of-type($selector)
 </details>
 
 <br>
+
 
 
 
@@ -2741,6 +2858,7 @@ select-first-out-of($num, $selector)
 
 
 
+
 #### select-first <a id="function-select-first">&nbsp;</a>
 Select the first element
 
@@ -2768,6 +2886,7 @@ select-first($selector)
 </details>
 
 <br>
+
 
 
 
@@ -2801,6 +2920,7 @@ select-last-of-type($selector)
 
 
 
+
 #### select-last-out-of <a id="function-select-last-out-of">&nbsp;</a>
 Select last element if the number of elements in the container equals to a number
 
@@ -2828,6 +2948,7 @@ select-last-out-of($num, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2861,6 +2982,7 @@ select-last($selector)
 
 
 
+
 #### select-middle <a id="function-select-middle">&nbsp;</a>
 Select the middle element
 
@@ -2888,6 +3010,7 @@ select-middle($num, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2921,6 +3044,7 @@ select-nth-between($nth, $first, $last, $selector)
 
 
 
+
 #### select-nth-both-sides <a id="function-select-nth-both-sides">&nbsp;</a>
 Select nth elements from both sides of the container
 
@@ -2948,6 +3072,7 @@ select-nth-both-sides($nth, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -2981,6 +3106,7 @@ select-nth-from($nth, $from, $selector)
 
 
 
+
 #### select-nth <a id="function-select-nth">&nbsp;</a>
 Select every nth element
 
@@ -3008,6 +3134,7 @@ select-nth($nth, $selector)
 </details>
 
 <br>
+
 
 
 
@@ -3041,6 +3168,7 @@ select-odd-between($first, $last, $selector)
 
 
 
+
 #### select-odd <a id="function-select-odd">&nbsp;</a>
 Select all odd nth elements
 
@@ -3071,6 +3199,7 @@ select-odd($selector)
 
 
 
+
 #### select-only-child <a id="function-select-only-child">&nbsp;</a>
 Select element only if it is an only child of its container
 
@@ -3098,6 +3227,7 @@ select-only-child($selector)
 </details>
 
 <br>
+
 
 
 
@@ -3132,6 +3262,7 @@ select-owl($selectors)
 </details>
 
 <br>
+
 
 
 
@@ -3200,6 +3331,7 @@ selector-combine($selector1, $selector2)
 </details>
 
 <br>
+
 
 
 
@@ -3284,6 +3416,7 @@ set($map, $keys, $value, $recursive)
 
 
 
+
 #### shade <a id="function-shade">&nbsp;</a>
 Mix a color with black
 
@@ -3309,6 +3442,7 @@ shade($color, $ratio)
 </details>
 
 <br>
+
 
 
 
@@ -3342,6 +3476,7 @@ sides-bottom($value)
 
 
 
+
 #### sides-left <a id="function-sides-left">&nbsp;</a>
 Get the left value from a list like margin or padding
 
@@ -3369,6 +3504,7 @@ sides-left($value)
 </details>
 
 <br>
+
 
 
 
@@ -3402,6 +3538,7 @@ sides-right($value)
 
 
 
+
 #### sides-top <a id="function-sides-top">&nbsp;</a>
 Get the top value from a list like margin or padding
 
@@ -3429,6 +3566,7 @@ sides-top($value)
 </details>
 
 <br>
+
 
 
 
@@ -3470,6 +3608,7 @@ sides-x($value, $mode)
 
 
 
+
 #### sides-y <a id="function-sides-y">&nbsp;</a>
 Get the top-bottom value from a list like margin or padding
 
@@ -3505,6 +3644,7 @@ sides-y($value, $mode)
 </details>
 
 <br>
+
 
 
 
@@ -3564,6 +3704,7 @@ sides($value)
 
 
 
+
 #### srgb <a id="function-srgb">&nbsp;</a>
 Returns XYZ value to RGB channel
 
@@ -3594,6 +3735,7 @@ srgb($channel)
 </details>
 
 <br>
+
 
 
 
@@ -3633,6 +3775,7 @@ str-ends-with($haystack, $needle)
 
 
 
+
 #### str-replace <a id="function-str-replace">&nbsp;</a>
 Replace `$search` with `$replace` in `$string`
 
@@ -3667,6 +3810,7 @@ str-replace($string, $search, $replace)
 </details>
 
 <br>
+
 
 
 
@@ -3722,6 +3866,7 @@ str-split($string, $delimiter, $clean)
 
 
 
+
 #### str-starts-with <a id="function-str-starts-with">&nbsp;</a>
 Check if string starts with a substring
 
@@ -3755,6 +3900,7 @@ str-starts-with($haystack, $needle)
 </details>
 
 <br>
+
 
 
 
@@ -3808,6 +3954,7 @@ str-to-num($value)
 
 
 
+
 #### str-trim-end <a id="function-str-trim-end">&nbsp;</a>
 Trim whitespace from the end of a string
 
@@ -3836,6 +3983,7 @@ str-trim-end($string)
 </details>
 
 <br>
+
 
 
 
@@ -3870,6 +4018,7 @@ str-trim-start($string)
 
 
 
+
 #### str-trim <a id="function-str-trim">&nbsp;</a>
 Trim whitespace off a string
 
@@ -3897,6 +4046,7 @@ str-trim($string)
 </details>
 
 <br>
+
 
 
 
@@ -3933,6 +4083,7 @@ strip-unit($number)
 </details>
 
 <br>
+
 
 
 
@@ -3976,6 +4127,7 @@ svg-base64($svg, $fill)
 
 
 
+
 #### svg-url <a id="function-svg-url">&nbsp;</a>
 SVG base64 background url based on $svg with optional $fill color
 
@@ -4003,6 +4155,7 @@ svg-url($svg, $fill)
 </details>
 
 <br>
+
 
 
 
@@ -4034,6 +4187,7 @@ tetrad($color, $step)
 
 
 
+
 #### tint <a id="function-tint">&nbsp;</a>
 Mix a color with white
 
@@ -4062,6 +4216,7 @@ tint($color, $ratio)
 
 
 
+
 #### triad <a id="function-triad">&nbsp;</a>
 Get the triad pairs of a color
 
@@ -4087,6 +4242,7 @@ triad($color, $step)
 </details>
 
 <br>
+
 
 
 
@@ -4133,6 +4289,7 @@ unique-id-by-value($values...)
 
 
 
+
 #### xyz <a id="function-xyz">&nbsp;</a>
 Return an RGB channel processed as XYZ
 
@@ -4163,6 +4320,7 @@ xyz($channel)
 </details>
 
 <br>
+
 
 
 <a href="/README.md">Back to Sass Styler</a>

@@ -71,7 +71,7 @@ function writeLongEntity(e, type = 'mixin') {
         code = `@function ${e.context.name}(${e.parameter.map(p => `$${p.name}`).join(', ')}) {${e.context.code}}`
     }
     c += code ? `<details><summary><strong>Source</strong></summary>\n\n\`\`\`scss \n\n${code}\n\`\`\`\n\n</details>\n` : ''
-    c += '\n<br>\n'
+    c += '\n<br>\n\n'
     return c
 }
 

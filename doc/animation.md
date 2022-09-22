@@ -10,6 +10,7 @@ Sass versions of animista
   <thead>
     <tr>
       <th>Mixin</th>
+      <th>Variable</th>
     </tr>
   </thead>
   <tbody>
@@ -128,6 +129,8 @@ Sass versions of animista
         <a href="#mixin-animate-fade-out-top">animate-fade-out-top</a>
         <br>
         <a href="#mixin-animate-fade-out">animate-fade-out</a>
+        <br>
+        <a href="#mixin-animate-fade">animate-fade</a>
         <br>
         <a href="#mixin-animate-flicker-1">animate-flicker-1</a>
         <br>
@@ -1331,6 +1334,9 @@ Sass versions of animista
         <br>
         <a href="#mixin-animate-wobble">animate-wobble</a>
       </td>
+      <td style="vertical-align:top">
+        <a href="#variable-animate-fade-default-configuration">animate-fade-default-configuration</a>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -1358,6 +1364,7 @@ Animate bg pan bottom left
 
 
 
+
 #### animate-bg-pan-bottom-right <a id="mixin-animate-bg-pan-bottom-right">&nbsp;</a>
 Animate bg pan bottom right
 
@@ -1375,6 +1382,7 @@ Animate bg pan bottom right
 **File source:** <a href="/src/animation/bg\animate-bg-pan-bottom-right.scss">src/animation/bg\animate-bg-pan-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -1398,6 +1406,7 @@ Animate bg pan bottom
 
 
 
+
 #### animate-bg-pan-left <a id="mixin-animate-bg-pan-left">&nbsp;</a>
 Animate bg pan left
 
@@ -1415,6 +1424,7 @@ Animate bg pan left
 **File source:** <a href="/src/animation/bg\animate-bg-pan-left.scss">src/animation/bg\animate-bg-pan-left.scss</a>
 
 <br>
+
 
 
 
@@ -1438,6 +1448,7 @@ Animate bg pan right
 
 
 
+
 #### animate-bg-pan-top-left <a id="mixin-animate-bg-pan-top-left">&nbsp;</a>
 Animate bg pan top left
 
@@ -1455,6 +1466,7 @@ Animate bg pan top left
 **File source:** <a href="/src/animation/bg\animate-bg-pan-top-left.scss">src/animation/bg\animate-bg-pan-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -1478,6 +1490,7 @@ Animate bg pan top right
 
 
 
+
 #### animate-bg-pan-top <a id="mixin-animate-bg-pan-top">&nbsp;</a>
 Animate bg pan top
 
@@ -1495,6 +1508,7 @@ Animate bg pan top
 **File source:** <a href="/src/animation/bg\animate-bg-pan-top.scss">src/animation/bg\animate-bg-pan-top.scss</a>
 
 <br>
+
 
 
 
@@ -1518,6 +1532,7 @@ Animate blink alternative
 
 
 
+
 #### animate-blink <a id="mixin-animate-blink">&nbsp;</a>
 Animate blink
 
@@ -1535,6 +1550,7 @@ Animate blink
 **File source:** <a href="/src/animation/blink\animate-blink.scss">src/animation/blink\animate-blink.scss</a>
 
 <br>
+
 
 
 
@@ -1558,6 +1574,7 @@ Animate blur out contract backward
 
 
 
+
 #### animate-blur-out-contract <a id="mixin-animate-blur-out-contract">&nbsp;</a>
 Animate blur out contract
 
@@ -1575,6 +1592,7 @@ Animate blur out contract
 **File source:** <a href="/src/animation/blur\animate-blur-out-contract.scss">src/animation/blur\animate-blur-out-contract.scss</a>
 
 <br>
+
 
 
 
@@ -1598,6 +1616,7 @@ Animate blur out expand forward
 
 
 
+
 #### animate-blur-out-expand <a id="mixin-animate-blur-out-expand">&nbsp;</a>
 Animate blur out expand
 
@@ -1615,6 +1634,7 @@ Animate blur out expand
 **File source:** <a href="/src/animation/blur\animate-blur-out-expand.scss">src/animation/blur\animate-blur-out-expand.scss</a>
 
 <br>
+
 
 
 
@@ -1638,6 +1658,7 @@ Animate bounce bottom
 
 
 
+
 #### animate-bounce-in-backward <a id="mixin-animate-bounce-in-backward">&nbsp;</a>
 Animate bounce in backward
 
@@ -1655,6 +1676,7 @@ Animate bounce in backward
 **File source:** <a href="/src/animation/bounce\animate-bounce-in-backward.scss">src/animation/bounce\animate-bounce-in-backward.scss</a>
 
 <br>
+
 
 
 
@@ -1678,6 +1700,7 @@ Animate bounce in bottom
 
 
 
+
 #### animate-bounce-in-forward <a id="mixin-animate-bounce-in-forward">&nbsp;</a>
 Animate bounce in forward
 
@@ -1695,6 +1718,7 @@ Animate bounce in forward
 **File source:** <a href="/src/animation/bounce\animate-bounce-in-forward.scss">src/animation/bounce\animate-bounce-in-forward.scss</a>
 
 <br>
+
 
 
 
@@ -1718,6 +1742,7 @@ Animate bounce in left
 
 
 
+
 #### animate-bounce-in-right <a id="mixin-animate-bounce-in-right">&nbsp;</a>
 Animate bounce in right
 
@@ -1735,6 +1760,7 @@ Animate bounce in right
 **File source:** <a href="/src/animation/bounce\animate-bounce-in-right.scss">src/animation/bounce\animate-bounce-in-right.scss</a>
 
 <br>
+
 
 
 
@@ -1758,6 +1784,7 @@ Animate bounce in top
 
 
 
+
 #### animate-bounce-left <a id="mixin-animate-bounce-left">&nbsp;</a>
 Animate bounce left
 
@@ -1775,6 +1802,7 @@ Animate bounce left
 **File source:** <a href="/src/animation/bounce\animate-bounce-left.scss">src/animation/bounce\animate-bounce-left.scss</a>
 
 <br>
+
 
 
 
@@ -1798,6 +1826,7 @@ Animate bounce out backward
 
 
 
+
 #### animate-bounce-out-bottom <a id="mixin-animate-bounce-out-bottom">&nbsp;</a>
 Animate bounce out bottom
 
@@ -1815,6 +1844,7 @@ Animate bounce out bottom
 **File source:** <a href="/src/animation/bounce\animate-bounce-out-bottom.scss">src/animation/bounce\animate-bounce-out-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -1838,6 +1868,7 @@ Animate bounce out forward
 
 
 
+
 #### animate-bounce-out-left <a id="mixin-animate-bounce-out-left">&nbsp;</a>
 Animate bounce out left
 
@@ -1855,6 +1886,7 @@ Animate bounce out left
 **File source:** <a href="/src/animation/bounce\animate-bounce-out-left.scss">src/animation/bounce\animate-bounce-out-left.scss</a>
 
 <br>
+
 
 
 
@@ -1878,6 +1910,7 @@ Animate bounce out right
 
 
 
+
 #### animate-bounce-out-top <a id="mixin-animate-bounce-out-top">&nbsp;</a>
 Animate bounce out top
 
@@ -1895,6 +1928,7 @@ Animate bounce out top
 **File source:** <a href="/src/animation/bounce\animate-bounce-out-top.scss">src/animation/bounce\animate-bounce-out-top.scss</a>
 
 <br>
+
 
 
 
@@ -1918,6 +1952,7 @@ Animate bounce right
 
 
 
+
 #### animate-bounce-top <a id="mixin-animate-bounce-top">&nbsp;</a>
 Animate bounce top
 
@@ -1935,6 +1970,7 @@ Animate bounce top
 **File source:** <a href="/src/animation/bounce\animate-bounce-top.scss">src/animation/bounce\animate-bounce-top.scss</a>
 
 <br>
+
 
 
 
@@ -1958,6 +1994,7 @@ Animate bounce
 
 
 
+
 #### animate-color-change-2x <a id="mixin-animate-color-change-2x">&nbsp;</a>
 Animate color change 2x
 
@@ -1975,6 +2012,7 @@ Animate color change 2x
 **File source:** <a href="/src/animation/color\animate-color-change-2x.scss">src/animation/color\animate-color-change-2x.scss</a>
 
 <br>
+
 
 
 
@@ -1998,6 +2036,7 @@ Animate color change 3x
 
 
 
+
 #### animate-color-change-4x <a id="mixin-animate-color-change-4x">&nbsp;</a>
 Animate color change 4x
 
@@ -2015,6 +2054,7 @@ Animate color change 4x
 **File source:** <a href="/src/animation/color\animate-color-change-4x.scss">src/animation/color\animate-color-change-4x.scss</a>
 
 <br>
+
 
 
 
@@ -2038,6 +2078,7 @@ Animate color change 5x
 
 
 
+
 #### animate-fade-in-backward <a id="mixin-animate-fade-in-backward">&nbsp;</a>
 Animate fade in backward
 
@@ -2055,6 +2096,7 @@ Animate fade in backward
 **File source:** <a href="/src/animation/fade\animate-fade-in-backward.scss">src/animation/fade\animate-fade-in-backward.scss</a>
 
 <br>
+
 
 
 
@@ -2078,6 +2120,7 @@ Animate fade in bottom left
 
 
 
+
 #### animate-fade-in-bottom-right <a id="mixin-animate-fade-in-bottom-right">&nbsp;</a>
 Animate fade in bottom right
 
@@ -2095,6 +2138,7 @@ Animate fade in bottom right
 **File source:** <a href="/src/animation/fade\animate-fade-in-bottom-right.scss">src/animation/fade\animate-fade-in-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -2118,6 +2162,7 @@ Animate fade in bottom
 
 
 
+
 #### animate-fade-in-forward <a id="mixin-animate-fade-in-forward">&nbsp;</a>
 Animate fade in forward
 
@@ -2135,6 +2180,7 @@ Animate fade in forward
 **File source:** <a href="/src/animation/fade\animate-fade-in-forward.scss">src/animation/fade\animate-fade-in-forward.scss</a>
 
 <br>
+
 
 
 
@@ -2158,6 +2204,7 @@ Animate fade in left
 
 
 
+
 #### animate-fade-in-right <a id="mixin-animate-fade-in-right">&nbsp;</a>
 Animate fade in right
 
@@ -2175,6 +2222,7 @@ Animate fade in right
 **File source:** <a href="/src/animation/fade\animate-fade-in-right.scss">src/animation/fade\animate-fade-in-right.scss</a>
 
 <br>
+
 
 
 
@@ -2198,6 +2246,7 @@ Animate fade in top left
 
 
 
+
 #### animate-fade-in-top-right <a id="mixin-animate-fade-in-top-right">&nbsp;</a>
 Animate fade in top right
 
@@ -2215,6 +2264,7 @@ Animate fade in top right
 **File source:** <a href="/src/animation/fade\animate-fade-in-top-right.scss">src/animation/fade\animate-fade-in-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -2238,6 +2288,7 @@ Animate fade in top
 
 
 
+
 #### animate-fade-in <a id="mixin-animate-fade-in">&nbsp;</a>
 Animate fade in
 
@@ -2255,6 +2306,7 @@ Animate fade in
 **File source:** <a href="/src/animation/fade\animate-fade-in.scss">src/animation/fade\animate-fade-in.scss</a>
 
 <br>
+
 
 
 
@@ -2278,6 +2330,7 @@ Animate fade out backward
 
 
 
+
 #### animate-fade-out-bottom-left <a id="mixin-animate-fade-out-bottom-left">&nbsp;</a>
 Animate fade out bottom left
 
@@ -2295,6 +2348,7 @@ Animate fade out bottom left
 **File source:** <a href="/src/animation/fade\animate-fade-out-bottom-left.scss">src/animation/fade\animate-fade-out-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -2318,6 +2372,7 @@ Animate fade out bottom right
 
 
 
+
 #### animate-fade-out-bottom <a id="mixin-animate-fade-out-bottom">&nbsp;</a>
 Animate fade out bottom
 
@@ -2335,6 +2390,7 @@ Animate fade out bottom
 **File source:** <a href="/src/animation/fade\animate-fade-out-bottom.scss">src/animation/fade\animate-fade-out-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -2358,6 +2414,7 @@ Animate fade out forward
 
 
 
+
 #### animate-fade-out-left <a id="mixin-animate-fade-out-left">&nbsp;</a>
 Animate fade out left
 
@@ -2375,6 +2432,7 @@ Animate fade out left
 **File source:** <a href="/src/animation/fade\animate-fade-out-left.scss">src/animation/fade\animate-fade-out-left.scss</a>
 
 <br>
+
 
 
 
@@ -2398,6 +2456,7 @@ Animate fade out right
 
 
 
+
 #### animate-fade-out-top-left <a id="mixin-animate-fade-out-top-left">&nbsp;</a>
 Animate fade out top left
 
@@ -2415,6 +2474,7 @@ Animate fade out top left
 **File source:** <a href="/src/animation/fade\animate-fade-out-top-left.scss">src/animation/fade\animate-fade-out-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -2438,6 +2498,7 @@ Animate fade out top right
 
 
 
+
 #### animate-fade-out-top <a id="mixin-animate-fade-out-top">&nbsp;</a>
 Animate fade out top
 
@@ -2455,6 +2516,7 @@ Animate fade out top
 **File source:** <a href="/src/animation/fade\animate-fade-out-top.scss">src/animation/fade\animate-fade-out-top.scss</a>
 
 <br>
+
 
 
 
@@ -2478,6 +2540,28 @@ Animate fade out
 
 
 
+
+#### animate-fade <a id="mixin-animate-fade">&nbsp;</a>
+Animate configurable fade
+
+```scss
+/* Animate configurable fade */
+@include animate-fade($animation-settings, $configuration)
+```
+**Type:** mixin
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>animation-settings</td><td>Animation shorthand settings (anything except the animation-name)</td><td><code>List</code></td><td>null</td></tr><tr><td>configuration</td><td>Animation config (fallback to $animate-fade-default-configuration)</td><td><code>Null</code> <code>Map</code></td><td>null</td></tr></table>
+
+**Requires:** <a href="/src/utility/keyframes.scss">keyframes</a>, <a href="/src/utility/keyframes-name.scss">keyframes-name</a>, <a href="/src/utility/merge.scss">merge</a>, <a href="/src/utility/get.scss">get</a>, <a href="/src/animation/fade\animate-fade.scss">animate-fade-default-configuration</a>
+
+**File source:** <a href="/src/animation/fade\animate-fade.scss">src/animation/fade\animate-fade.scss</a>
+
+<br>
+
+
+
+
 #### animate-flicker-1 <a id="mixin-animate-flicker-1">&nbsp;</a>
 Animate flicker 1
 
@@ -2495,6 +2579,7 @@ Animate flicker 1
 **File source:** <a href="/src/animation/flicker\animate-flicker-1.scss">src/animation/flicker\animate-flicker-1.scss</a>
 
 <br>
+
 
 
 
@@ -2518,6 +2603,7 @@ Animate flicker 2
 
 
 
+
 #### animate-flicker-3 <a id="mixin-animate-flicker-3">&nbsp;</a>
 Animate flicker 3
 
@@ -2535,6 +2621,7 @@ Animate flicker 3
 **File source:** <a href="/src/animation/flicker\animate-flicker-3.scss">src/animation/flicker\animate-flicker-3.scss</a>
 
 <br>
+
 
 
 
@@ -2558,6 +2645,7 @@ Animate flicker 4
 
 
 
+
 #### animate-flicker-5 <a id="mixin-animate-flicker-5">&nbsp;</a>
 Animate flicker 5
 
@@ -2575,6 +2663,7 @@ Animate flicker 5
 **File source:** <a href="/src/animation/flicker\animate-flicker-5.scss">src/animation/flicker\animate-flicker-5.scss</a>
 
 <br>
+
 
 
 
@@ -2598,6 +2687,7 @@ Animate flicker in 1
 
 
 
+
 #### animate-flicker-in-2 <a id="mixin-animate-flicker-in-2">&nbsp;</a>
 Animate flicker in 2
 
@@ -2615,6 +2705,7 @@ Animate flicker in 2
 **File source:** <a href="/src/animation/flicker\animate-flicker-in-2.scss">src/animation/flicker\animate-flicker-in-2.scss</a>
 
 <br>
+
 
 
 
@@ -2638,6 +2729,7 @@ Animate flicker out 1
 
 
 
+
 #### animate-flicker-out-2 <a id="mixin-animate-flicker-out-2">&nbsp;</a>
 Animate flicker out 2
 
@@ -2655,6 +2747,7 @@ Animate flicker out 2
 **File source:** <a href="/src/animation/flicker\animate-flicker-out-2.scss">src/animation/flicker\animate-flicker-out-2.scss</a>
 
 <br>
+
 
 
 
@@ -2678,6 +2771,7 @@ Animate flip 2 horizontal bottom 1
 
 
 
+
 #### animate-flip-2-horizontal-bottom-2 <a id="mixin-animate-flip-2-horizontal-bottom-2">&nbsp;</a>
 Animate flip 2 horizontal bottom 2
 
@@ -2695,6 +2789,7 @@ Animate flip 2 horizontal bottom 2
 **File source:** <a href="/src/animation/flip\animate-flip-2-horizontal-bottom-2.scss">src/animation/flip\animate-flip-2-horizontal-bottom-2.scss</a>
 
 <br>
+
 
 
 
@@ -2718,6 +2813,7 @@ Animate flip 2 horizontal bottom backward
 
 
 
+
 #### animate-flip-2-horizontal-bottom-forward <a id="mixin-animate-flip-2-horizontal-bottom-forward">&nbsp;</a>
 Animate flip 2 horizontal bottom forward
 
@@ -2735,6 +2831,7 @@ Animate flip 2 horizontal bottom forward
 **File source:** <a href="/src/animation/flip\animate-flip-2-horizontal-bottom-forward.scss">src/animation/flip\animate-flip-2-horizontal-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -2758,6 +2855,7 @@ Animate flip 2 horizontal top 1
 
 
 
+
 #### animate-flip-2-horizontal-top-2 <a id="mixin-animate-flip-2-horizontal-top-2">&nbsp;</a>
 Animate flip 2 horizontal top 2
 
@@ -2775,6 +2873,7 @@ Animate flip 2 horizontal top 2
 **File source:** <a href="/src/animation/flip\animate-flip-2-horizontal-top-2.scss">src/animation/flip\animate-flip-2-horizontal-top-2.scss</a>
 
 <br>
+
 
 
 
@@ -2798,6 +2897,7 @@ Animate flip 2 horizontal top backward
 
 
 
+
 #### animate-flip-2-horizontal-top-forward <a id="mixin-animate-flip-2-horizontal-top-forward">&nbsp;</a>
 Animate flip 2 horizontal top forward
 
@@ -2815,6 +2915,7 @@ Animate flip 2 horizontal top forward
 **File source:** <a href="/src/animation/flip\animate-flip-2-horizontal-top-forward.scss">src/animation/flip\animate-flip-2-horizontal-top-forward.scss</a>
 
 <br>
+
 
 
 
@@ -2838,6 +2939,7 @@ Animate flip 2 vertical left 1
 
 
 
+
 #### animate-flip-2-vertical-left-2 <a id="mixin-animate-flip-2-vertical-left-2">&nbsp;</a>
 Animate flip 2 vertical left 2
 
@@ -2855,6 +2957,7 @@ Animate flip 2 vertical left 2
 **File source:** <a href="/src/animation/flip\animate-flip-2-vertical-left-2.scss">src/animation/flip\animate-flip-2-vertical-left-2.scss</a>
 
 <br>
+
 
 
 
@@ -2878,6 +2981,7 @@ Animate flip 2 vertical left backward
 
 
 
+
 #### animate-flip-2-vertical-left-forward <a id="mixin-animate-flip-2-vertical-left-forward">&nbsp;</a>
 Animate flip 2 vertical left forward
 
@@ -2895,6 +2999,7 @@ Animate flip 2 vertical left forward
 **File source:** <a href="/src/animation/flip\animate-flip-2-vertical-left-forward.scss">src/animation/flip\animate-flip-2-vertical-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -2918,6 +3023,7 @@ Animate flip 2 vertical right 1
 
 
 
+
 #### animate-flip-2-vertical-right-2 <a id="mixin-animate-flip-2-vertical-right-2">&nbsp;</a>
 Animate flip 2 vertical right 2
 
@@ -2935,6 +3041,7 @@ Animate flip 2 vertical right 2
 **File source:** <a href="/src/animation/flip\animate-flip-2-vertical-right-2.scss">src/animation/flip\animate-flip-2-vertical-right-2.scss</a>
 
 <br>
+
 
 
 
@@ -2958,6 +3065,7 @@ Animate flip 2 vertical right backward
 
 
 
+
 #### animate-flip-2-vertical-right-forward <a id="mixin-animate-flip-2-vertical-right-forward">&nbsp;</a>
 Animate flip 2 vertical right forward
 
@@ -2975,6 +3083,7 @@ Animate flip 2 vertical right forward
 **File source:** <a href="/src/animation/flip\animate-flip-2-vertical-right-forward.scss">src/animation/flip\animate-flip-2-vertical-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -2998,6 +3107,7 @@ Animate flip diagonal 1 backward
 
 
 
+
 #### animate-flip-diagonal-1-bottom-left <a id="mixin-animate-flip-diagonal-1-bottom-left">&nbsp;</a>
 Animate flip diagonal 1 bottom left
 
@@ -3015,6 +3125,7 @@ Animate flip diagonal 1 bottom left
 **File source:** <a href="/src/animation/flip\animate-flip-diagonal-1-bottom-left.scss">src/animation/flip\animate-flip-diagonal-1-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -3038,6 +3149,7 @@ Animate flip diagonal 1 forward
 
 
 
+
 #### animate-flip-diagonal-1-top-right <a id="mixin-animate-flip-diagonal-1-top-right">&nbsp;</a>
 Animate flip diagonal 1 top right
 
@@ -3055,6 +3167,7 @@ Animate flip diagonal 1 top right
 **File source:** <a href="/src/animation/flip\animate-flip-diagonal-1-top-right.scss">src/animation/flip\animate-flip-diagonal-1-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -3078,6 +3191,7 @@ Animate flip diagonal 2 backward
 
 
 
+
 #### animate-flip-diagonal-2-bottom-right <a id="mixin-animate-flip-diagonal-2-bottom-right">&nbsp;</a>
 Animate flip diagonal 2 bottom right
 
@@ -3095,6 +3209,7 @@ Animate flip diagonal 2 bottom right
 **File source:** <a href="/src/animation/flip\animate-flip-diagonal-2-bottom-right.scss">src/animation/flip\animate-flip-diagonal-2-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -3118,6 +3233,7 @@ Animate flip diagonal 2 forward
 
 
 
+
 #### animate-flip-diagonal-2-top-left <a id="mixin-animate-flip-diagonal-2-top-left">&nbsp;</a>
 Animate flip diagonal 2 top left
 
@@ -3135,6 +3251,7 @@ Animate flip diagonal 2 top left
 **File source:** <a href="/src/animation/flip\animate-flip-diagonal-2-top-left.scss">src/animation/flip\animate-flip-diagonal-2-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -3158,6 +3275,7 @@ Animate flip horizontal backward
 
 
 
+
 #### animate-flip-horizontal-bottom <a id="mixin-animate-flip-horizontal-bottom">&nbsp;</a>
 Animate flip horizontal bottom
 
@@ -3175,6 +3293,7 @@ Animate flip horizontal bottom
 **File source:** <a href="/src/animation/flip\animate-flip-horizontal-bottom.scss">src/animation/flip\animate-flip-horizontal-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -3198,6 +3317,7 @@ Animate flip horizontal forward
 
 
 
+
 #### animate-flip-horizontal-top <a id="mixin-animate-flip-horizontal-top">&nbsp;</a>
 Animate flip horizontal top
 
@@ -3215,6 +3335,7 @@ Animate flip horizontal top
 **File source:** <a href="/src/animation/flip\animate-flip-horizontal-top.scss">src/animation/flip\animate-flip-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -3238,6 +3359,7 @@ Animate flip in diagonal 1 bottom left
 
 
 
+
 #### animate-flip-in-diagonal-1-top-right <a id="mixin-animate-flip-in-diagonal-1-top-right">&nbsp;</a>
 Animate flip in diagonal 1 top right
 
@@ -3255,6 +3377,7 @@ Animate flip in diagonal 1 top right
 **File source:** <a href="/src/animation/flip\animate-flip-in-diagonal-1-top-right.scss">src/animation/flip\animate-flip-in-diagonal-1-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -3278,6 +3401,7 @@ Animate flip in diagonal 2 bottom right
 
 
 
+
 #### animate-flip-in-diagonal-2-top-left <a id="mixin-animate-flip-in-diagonal-2-top-left">&nbsp;</a>
 Animate flip in diagonal 2 top left
 
@@ -3295,6 +3419,7 @@ Animate flip in diagonal 2 top left
 **File source:** <a href="/src/animation/flip\animate-flip-in-diagonal-2-top-left.scss">src/animation/flip\animate-flip-in-diagonal-2-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -3318,6 +3443,7 @@ Animate flip in horizontal bottom
 
 
 
+
 #### animate-flip-in-horizontal-top <a id="mixin-animate-flip-in-horizontal-top">&nbsp;</a>
 Animate flip in horizontal top
 
@@ -3335,6 +3461,7 @@ Animate flip in horizontal top
 **File source:** <a href="/src/animation/flip\animate-flip-in-horizontal-top.scss">src/animation/flip\animate-flip-in-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -3358,6 +3485,7 @@ Animate flip in vertical left
 
 
 
+
 #### animate-flip-in-vertical-right <a id="mixin-animate-flip-in-vertical-right">&nbsp;</a>
 Animate flip in vertical right
 
@@ -3375,6 +3503,7 @@ Animate flip in vertical right
 **File source:** <a href="/src/animation/flip\animate-flip-in-vertical-right.scss">src/animation/flip\animate-flip-in-vertical-right.scss</a>
 
 <br>
+
 
 
 
@@ -3398,6 +3527,7 @@ Animate flip out diagonal 1 bottom left
 
 
 
+
 #### animate-flip-out-diagonal-1-top-right <a id="mixin-animate-flip-out-diagonal-1-top-right">&nbsp;</a>
 Animate flip out diagonal 1 top right
 
@@ -3415,6 +3545,7 @@ Animate flip out diagonal 1 top right
 **File source:** <a href="/src/animation/flip\animate-flip-out-diagonal-1-top-right.scss">src/animation/flip\animate-flip-out-diagonal-1-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -3438,6 +3569,7 @@ Animate flip out diagonal 2 bottom right
 
 
 
+
 #### animate-flip-out-diagonal-2-top-left <a id="mixin-animate-flip-out-diagonal-2-top-left">&nbsp;</a>
 Animate flip out diagonal 2 top left
 
@@ -3455,6 +3587,7 @@ Animate flip out diagonal 2 top left
 **File source:** <a href="/src/animation/flip\animate-flip-out-diagonal-2-top-left.scss">src/animation/flip\animate-flip-out-diagonal-2-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -3478,6 +3611,7 @@ Animate flip out horizontal bottom
 
 
 
+
 #### animate-flip-out-horizontal-top <a id="mixin-animate-flip-out-horizontal-top">&nbsp;</a>
 Animate flip out horizontal top
 
@@ -3495,6 +3629,7 @@ Animate flip out horizontal top
 **File source:** <a href="/src/animation/flip\animate-flip-out-horizontal-top.scss">src/animation/flip\animate-flip-out-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -3518,6 +3653,7 @@ Animate flip out vertical left
 
 
 
+
 #### animate-flip-out-vertical-right <a id="mixin-animate-flip-out-vertical-right">&nbsp;</a>
 Animate flip out vertical right
 
@@ -3535,6 +3671,7 @@ Animate flip out vertical right
 **File source:** <a href="/src/animation/flip\animate-flip-out-vertical-right.scss">src/animation/flip\animate-flip-out-vertical-right.scss</a>
 
 <br>
+
 
 
 
@@ -3558,6 +3695,7 @@ Animate flip scale 2 horizontal bottom
 
 
 
+
 #### animate-flip-scale-2-horizontal-top <a id="mixin-animate-flip-scale-2-horizontal-top">&nbsp;</a>
 Animate flip scale 2 horizontal top
 
@@ -3575,6 +3713,7 @@ Animate flip scale 2 horizontal top
 **File source:** <a href="/src/animation/flip\animate-flip-scale-2-horizontal-top.scss">src/animation/flip\animate-flip-scale-2-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -3598,6 +3737,7 @@ Animate flip scale 2 vertical left
 
 
 
+
 #### animate-flip-scale-2-vertical-right <a id="mixin-animate-flip-scale-2-vertical-right">&nbsp;</a>
 Animate flip scale 2 vertical right
 
@@ -3615,6 +3755,7 @@ Animate flip scale 2 vertical right
 **File source:** <a href="/src/animation/flip\animate-flip-scale-2-vertical-right.scss">src/animation/flip\animate-flip-scale-2-vertical-right.scss</a>
 
 <br>
+
 
 
 
@@ -3638,6 +3779,7 @@ Animate flip scale down diagonal 1
 
 
 
+
 #### animate-flip-scale-down-diagonal-2 <a id="mixin-animate-flip-scale-down-diagonal-2">&nbsp;</a>
 Animate flip scale down diagonal 2
 
@@ -3655,6 +3797,7 @@ Animate flip scale down diagonal 2
 **File source:** <a href="/src/animation/flip\animate-flip-scale-down-diagonal-2.scss">src/animation/flip\animate-flip-scale-down-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -3678,6 +3821,7 @@ Animate flip scale down horizontal
 
 
 
+
 #### animate-flip-scale-down-vertical <a id="mixin-animate-flip-scale-down-vertical">&nbsp;</a>
 Animate flip scale down vertical
 
@@ -3695,6 +3839,7 @@ Animate flip scale down vertical
 **File source:** <a href="/src/animation/flip\animate-flip-scale-down-vertical.scss">src/animation/flip\animate-flip-scale-down-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -3718,6 +3863,7 @@ Animate flip scale up diagonal 1
 
 
 
+
 #### animate-flip-scale-up-diagonal-2 <a id="mixin-animate-flip-scale-up-diagonal-2">&nbsp;</a>
 Animate flip scale up diagonal 2
 
@@ -3735,6 +3881,7 @@ Animate flip scale up diagonal 2
 **File source:** <a href="/src/animation/flip\animate-flip-scale-up-diagonal-2.scss">src/animation/flip\animate-flip-scale-up-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -3758,6 +3905,7 @@ Animate flip scale up horizontal
 
 
 
+
 #### animate-flip-scale-up-vertical <a id="mixin-animate-flip-scale-up-vertical">&nbsp;</a>
 Animate flip scale up vertical
 
@@ -3775,6 +3923,7 @@ Animate flip scale up vertical
 **File source:** <a href="/src/animation/flip\animate-flip-scale-up-vertical.scss">src/animation/flip\animate-flip-scale-up-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -3798,6 +3947,7 @@ Animate flip vertical backward
 
 
 
+
 #### animate-flip-vertical-forward <a id="mixin-animate-flip-vertical-forward">&nbsp;</a>
 Animate flip vertical forward
 
@@ -3815,6 +3965,7 @@ Animate flip vertical forward
 **File source:** <a href="/src/animation/flip\animate-flip-vertical-forward.scss">src/animation/flip\animate-flip-vertical-forward.scss</a>
 
 <br>
+
 
 
 
@@ -3838,6 +3989,7 @@ Animate flip vertical left
 
 
 
+
 #### animate-flip-vertical-right <a id="mixin-animate-flip-vertical-right">&nbsp;</a>
 Animate flip vertical right
 
@@ -3855,6 +4007,7 @@ Animate flip vertical right
 **File source:** <a href="/src/animation/flip\animate-flip-vertical-right.scss">src/animation/flip\animate-flip-vertical-right.scss</a>
 
 <br>
+
 
 
 
@@ -3878,6 +4031,7 @@ Animate focus in contract backward
 
 
 
+
 #### animate-focus-in-contract <a id="mixin-animate-focus-in-contract">&nbsp;</a>
 Animate focus in contract
 
@@ -3895,6 +4049,7 @@ Animate focus in contract
 **File source:** <a href="/src/animation/focus\animate-focus-in-contract.scss">src/animation/focus\animate-focus-in-contract.scss</a>
 
 <br>
+
 
 
 
@@ -3918,6 +4073,7 @@ Animate focus in expand forward
 
 
 
+
 #### animate-focus-in-expand <a id="mixin-animate-focus-in-expand">&nbsp;</a>
 Animate focus in expand
 
@@ -3935,6 +4091,7 @@ Animate focus in expand
 **File source:** <a href="/src/animation/focus\animate-focus-in-expand.scss">src/animation/focus\animate-focus-in-expand.scss</a>
 
 <br>
+
 
 
 
@@ -3958,6 +4115,7 @@ Animate jello diagonal 1
 
 
 
+
 #### animate-jello-diagonal-2 <a id="mixin-animate-jello-diagonal-2">&nbsp;</a>
 Animate jello diagonal 2
 
@@ -3975,6 +4133,7 @@ Animate jello diagonal 2
 **File source:** <a href="/src/animation/jello\animate-jello-diagonal-2.scss">src/animation/jello\animate-jello-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -3998,6 +4157,7 @@ Animate jello horizontal
 
 
 
+
 #### animate-jello-vertical <a id="mixin-animate-jello-vertical">&nbsp;</a>
 Animate jello vertical
 
@@ -4015,6 +4175,7 @@ Animate jello vertical
 **File source:** <a href="/src/animation/jello\animate-jello-vertical.scss">src/animation/jello\animate-jello-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -4038,6 +4199,7 @@ Animate jello
 
 
 
+
 #### animate-kenburns-bottom-left <a id="mixin-animate-kenburns-bottom-left">&nbsp;</a>
 Animate kenburns bottom left
 
@@ -4055,6 +4217,7 @@ Animate kenburns bottom left
 **File source:** <a href="/src/animation/kenburns\animate-kenburns-bottom-left.scss">src/animation/kenburns\animate-kenburns-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -4078,6 +4241,7 @@ Animate kenburns bottom right
 
 
 
+
 #### animate-kenburns-bottom <a id="mixin-animate-kenburns-bottom">&nbsp;</a>
 Animate kenburns bottom
 
@@ -4095,6 +4259,7 @@ Animate kenburns bottom
 **File source:** <a href="/src/animation/kenburns\animate-kenburns-bottom.scss">src/animation/kenburns\animate-kenburns-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -4118,6 +4283,7 @@ Animate kenburns left
 
 
 
+
 #### animate-kenburns-right <a id="mixin-animate-kenburns-right">&nbsp;</a>
 Animate kenburns right
 
@@ -4135,6 +4301,7 @@ Animate kenburns right
 **File source:** <a href="/src/animation/kenburns\animate-kenburns-right.scss">src/animation/kenburns\animate-kenburns-right.scss</a>
 
 <br>
+
 
 
 
@@ -4158,6 +4325,7 @@ Animate kenburns top left
 
 
 
+
 #### animate-kenburns-top-right <a id="mixin-animate-kenburns-top-right">&nbsp;</a>
 Animate kenburns top right
 
@@ -4175,6 +4343,7 @@ Animate kenburns top right
 **File source:** <a href="/src/animation/kenburns\animate-kenburns-top-right.scss">src/animation/kenburns\animate-kenburns-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -4198,6 +4367,7 @@ Animate kenburns top
 
 
 
+
 #### animate-ping <a id="mixin-animate-ping">&nbsp;</a>
 Animate ping
 
@@ -4215,6 +4385,7 @@ Animate ping
 **File source:** <a href="/src/animation/ping\animate-ping.scss">src/animation/ping\animate-ping.scss</a>
 
 <br>
+
 
 
 
@@ -4238,6 +4409,7 @@ Animate puff in bottom left
 
 
 
+
 #### animate-puff-in-bottom-right <a id="mixin-animate-puff-in-bottom-right">&nbsp;</a>
 Animate puff in bottom right
 
@@ -4255,6 +4427,7 @@ Animate puff in bottom right
 **File source:** <a href="/src/animation/puff\animate-puff-in-bottom-right.scss">src/animation/puff\animate-puff-in-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -4278,6 +4451,7 @@ Animate puff in bottom
 
 
 
+
 #### animate-puff-in-center <a id="mixin-animate-puff-in-center">&nbsp;</a>
 Animate puff in center
 
@@ -4295,6 +4469,7 @@ Animate puff in center
 **File source:** <a href="/src/animation/puff\animate-puff-in-center.scss">src/animation/puff\animate-puff-in-center.scss</a>
 
 <br>
+
 
 
 
@@ -4318,6 +4493,7 @@ Animate puff in horizontal
 
 
 
+
 #### animate-puff-in-left <a id="mixin-animate-puff-in-left">&nbsp;</a>
 Animate puff in left
 
@@ -4335,6 +4511,7 @@ Animate puff in left
 **File source:** <a href="/src/animation/puff\animate-puff-in-left.scss">src/animation/puff\animate-puff-in-left.scss</a>
 
 <br>
+
 
 
 
@@ -4358,6 +4535,7 @@ Animate puff in right
 
 
 
+
 #### animate-puff-in-top-left <a id="mixin-animate-puff-in-top-left">&nbsp;</a>
 Animate puff in top left
 
@@ -4375,6 +4553,7 @@ Animate puff in top left
 **File source:** <a href="/src/animation/puff\animate-puff-in-top-left.scss">src/animation/puff\animate-puff-in-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -4398,6 +4577,7 @@ Animate puff in top right
 
 
 
+
 #### animate-puff-in-top <a id="mixin-animate-puff-in-top">&nbsp;</a>
 Animate puff in top
 
@@ -4415,6 +4595,7 @@ Animate puff in top
 **File source:** <a href="/src/animation/puff\animate-puff-in-top.scss">src/animation/puff\animate-puff-in-top.scss</a>
 
 <br>
+
 
 
 
@@ -4438,6 +4619,7 @@ Animate puff in vertical
 
 
 
+
 #### animate-puff-out-bottom-left <a id="mixin-animate-puff-out-bottom-left">&nbsp;</a>
 Animate puff out bottom left
 
@@ -4455,6 +4637,7 @@ Animate puff out bottom left
 **File source:** <a href="/src/animation/puff\animate-puff-out-bottom-left.scss">src/animation/puff\animate-puff-out-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -4478,6 +4661,7 @@ Animate puff out bottom right
 
 
 
+
 #### animate-puff-out-bottom <a id="mixin-animate-puff-out-bottom">&nbsp;</a>
 Animate puff out bottom
 
@@ -4495,6 +4679,7 @@ Animate puff out bottom
 **File source:** <a href="/src/animation/puff\animate-puff-out-bottom.scss">src/animation/puff\animate-puff-out-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -4518,6 +4703,7 @@ Animate puff out center
 
 
 
+
 #### animate-puff-out-horizontal <a id="mixin-animate-puff-out-horizontal">&nbsp;</a>
 Animate puff out horizontal
 
@@ -4535,6 +4721,7 @@ Animate puff out horizontal
 **File source:** <a href="/src/animation/puff\animate-puff-out-horizontal.scss">src/animation/puff\animate-puff-out-horizontal.scss</a>
 
 <br>
+
 
 
 
@@ -4558,6 +4745,7 @@ Animate puff out left
 
 
 
+
 #### animate-puff-out-right <a id="mixin-animate-puff-out-right">&nbsp;</a>
 Animate puff out right
 
@@ -4575,6 +4763,7 @@ Animate puff out right
 **File source:** <a href="/src/animation/puff\animate-puff-out-right.scss">src/animation/puff\animate-puff-out-right.scss</a>
 
 <br>
+
 
 
 
@@ -4598,6 +4787,7 @@ Animate puff out top left
 
 
 
+
 #### animate-puff-out-top-right <a id="mixin-animate-puff-out-top-right">&nbsp;</a>
 Animate puff out top right
 
@@ -4615,6 +4805,7 @@ Animate puff out top right
 **File source:** <a href="/src/animation/puff\animate-puff-out-top-right.scss">src/animation/puff\animate-puff-out-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -4638,6 +4829,7 @@ Animate puff out top
 
 
 
+
 #### animate-puff-out-vertical <a id="mixin-animate-puff-out-vertical">&nbsp;</a>
 Animate puff out vertical
 
@@ -4655,6 +4847,7 @@ Animate puff out vertical
 **File source:** <a href="/src/animation/puff\animate-puff-out-vertical.scss">src/animation/puff\animate-puff-out-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -4678,6 +4871,7 @@ Animate pulsate backward
 
 
 
+
 #### animate-pulsate-forward <a id="mixin-animate-pulsate-forward">&nbsp;</a>
 Animate pulsate forward
 
@@ -4695,6 +4889,7 @@ Animate pulsate forward
 **File source:** <a href="/src/animation/pulsate\animate-pulsate-forward.scss">src/animation/pulsate\animate-pulsate-forward.scss</a>
 
 <br>
+
 
 
 
@@ -4718,6 +4913,7 @@ Animate pulsate
 
 
 
+
 #### animate-roll-in-blurred-bottom <a id="mixin-animate-roll-in-blurred-bottom">&nbsp;</a>
 Animate roll in blurred bottom
 
@@ -4735,6 +4931,7 @@ Animate roll in blurred bottom
 **File source:** <a href="/src/animation/roll\animate-roll-in-blurred-bottom.scss">src/animation/roll\animate-roll-in-blurred-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -4758,6 +4955,7 @@ Animate roll in blurred left
 
 
 
+
 #### animate-roll-in-blurred-right <a id="mixin-animate-roll-in-blurred-right">&nbsp;</a>
 Animate roll in blurred right
 
@@ -4775,6 +4973,7 @@ Animate roll in blurred right
 **File source:** <a href="/src/animation/roll\animate-roll-in-blurred-right.scss">src/animation/roll\animate-roll-in-blurred-right.scss</a>
 
 <br>
+
 
 
 
@@ -4798,6 +4997,7 @@ Animate roll in blurred top
 
 
 
+
 #### animate-roll-in-bottom <a id="mixin-animate-roll-in-bottom">&nbsp;</a>
 Animate roll in bottom
 
@@ -4815,6 +5015,7 @@ Animate roll in bottom
 **File source:** <a href="/src/animation/roll\animate-roll-in-bottom.scss">src/animation/roll\animate-roll-in-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -4838,6 +5039,7 @@ Animate roll in left
 
 
 
+
 #### animate-roll-in-right <a id="mixin-animate-roll-in-right">&nbsp;</a>
 Animate roll in right
 
@@ -4855,6 +5057,7 @@ Animate roll in right
 **File source:** <a href="/src/animation/roll\animate-roll-in-right.scss">src/animation/roll\animate-roll-in-right.scss</a>
 
 <br>
+
 
 
 
@@ -4878,6 +5081,7 @@ Animate roll in top
 
 
 
+
 #### animate-roll-in <a id="mixin-animate-roll-in">&nbsp;</a>
 Animate roll in
 
@@ -4895,6 +5099,7 @@ Animate roll in
 **File source:** <a href="/src/animation/roll\animate-roll-in.scss">src/animation/roll\animate-roll-in.scss</a>
 
 <br>
+
 
 
 
@@ -4918,6 +5123,7 @@ Animate roll out blurred bottom
 
 
 
+
 #### animate-roll-out-blurred-left <a id="mixin-animate-roll-out-blurred-left">&nbsp;</a>
 Animate roll out blurred left
 
@@ -4935,6 +5141,7 @@ Animate roll out blurred left
 **File source:** <a href="/src/animation/roll\animate-roll-out-blurred-left.scss">src/animation/roll\animate-roll-out-blurred-left.scss</a>
 
 <br>
+
 
 
 
@@ -4958,6 +5165,7 @@ Animate roll out blurred right
 
 
 
+
 #### animate-roll-out-blurred-top <a id="mixin-animate-roll-out-blurred-top">&nbsp;</a>
 Animate roll out blurred top
 
@@ -4975,6 +5183,7 @@ Animate roll out blurred top
 **File source:** <a href="/src/animation/roll\animate-roll-out-blurred-top.scss">src/animation/roll\animate-roll-out-blurred-top.scss</a>
 
 <br>
+
 
 
 
@@ -4998,6 +5207,7 @@ Animate roll out bottom
 
 
 
+
 #### animate-roll-out-left <a id="mixin-animate-roll-out-left">&nbsp;</a>
 Animate roll out left
 
@@ -5015,6 +5225,7 @@ Animate roll out left
 **File source:** <a href="/src/animation/roll\animate-roll-out-left.scss">src/animation/roll\animate-roll-out-left.scss</a>
 
 <br>
+
 
 
 
@@ -5038,6 +5249,7 @@ Animate roll out right
 
 
 
+
 #### animate-roll-out-top <a id="mixin-animate-roll-out-top">&nbsp;</a>
 Animate roll out top
 
@@ -5055,6 +5267,7 @@ Animate roll out top
 **File source:** <a href="/src/animation/roll\animate-roll-out-top.scss">src/animation/roll\animate-roll-out-top.scss</a>
 
 <br>
+
 
 
 
@@ -5078,6 +5291,7 @@ Animate roll out
 
 
 
+
 #### animate-rotate-90-bottom-clock-wise <a id="mixin-animate-rotate-90-bottom-clock-wise">&nbsp;</a>
 Animate rotate 90 bottom clock wise
 
@@ -5095,6 +5309,7 @@ Animate rotate 90 bottom clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-bottom-clock-wise.scss">src/animation/rotate\animate-rotate-90-bottom-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5118,6 +5333,7 @@ Animate rotate 90 bottom counter clock wise
 
 
 
+
 #### animate-rotate-90-bottom-left-clock-wise <a id="mixin-animate-rotate-90-bottom-left-clock-wise">&nbsp;</a>
 Animate rotate 90 bottom left clock wise
 
@@ -5135,6 +5351,7 @@ Animate rotate 90 bottom left clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-bottom-left-clock-wise.scss">src/animation/rotate\animate-rotate-90-bottom-left-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5158,6 +5375,7 @@ Animate rotate 90 bottom left counter clock wise
 
 
 
+
 #### animate-rotate-90-bottom-right-clock-wise <a id="mixin-animate-rotate-90-bottom-right-clock-wise">&nbsp;</a>
 Animate rotate 90 bottom right clock wise
 
@@ -5175,6 +5393,7 @@ Animate rotate 90 bottom right clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-bottom-right-clock-wise.scss">src/animation/rotate\animate-rotate-90-bottom-right-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5198,6 +5417,7 @@ Animate rotate 90 bottom right counter clock wise
 
 
 
+
 #### animate-rotate-90-clock-wise <a id="mixin-animate-rotate-90-clock-wise">&nbsp;</a>
 Animate rotate 90 clock wise
 
@@ -5215,6 +5435,7 @@ Animate rotate 90 clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-clock-wise.scss">src/animation/rotate\animate-rotate-90-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5238,6 +5459,7 @@ Animate rotate 90 counter clock wise
 
 
 
+
 #### animate-rotate-90-horizontal-backward <a id="mixin-animate-rotate-90-horizontal-backward">&nbsp;</a>
 Animate rotate 90 horizontal backward
 
@@ -5255,6 +5477,7 @@ Animate rotate 90 horizontal backward
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-horizontal-backward.scss">src/animation/rotate\animate-rotate-90-horizontal-backward.scss</a>
 
 <br>
+
 
 
 
@@ -5278,6 +5501,7 @@ Animate rotate 90 horizontal forward
 
 
 
+
 #### animate-rotate-90-left-clock-wise <a id="mixin-animate-rotate-90-left-clock-wise">&nbsp;</a>
 Animate rotate 90 left clock wise
 
@@ -5295,6 +5519,7 @@ Animate rotate 90 left clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-left-clock-wise.scss">src/animation/rotate\animate-rotate-90-left-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5318,6 +5543,7 @@ Animate rotate 90 left counter clock wise
 
 
 
+
 #### animate-rotate-90-right-clock-wise <a id="mixin-animate-rotate-90-right-clock-wise">&nbsp;</a>
 Animate rotate 90 right clock wise
 
@@ -5335,6 +5561,7 @@ Animate rotate 90 right clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-right-clock-wise.scss">src/animation/rotate\animate-rotate-90-right-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5358,6 +5585,7 @@ Animate rotate 90 right counter clock wise
 
 
 
+
 #### animate-rotate-90-top-clock-wise <a id="mixin-animate-rotate-90-top-clock-wise">&nbsp;</a>
 Animate rotate 90 top clock wise
 
@@ -5375,6 +5603,7 @@ Animate rotate 90 top clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-top-clock-wise.scss">src/animation/rotate\animate-rotate-90-top-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5398,6 +5627,7 @@ Animate rotate 90 top counter clock wise
 
 
 
+
 #### animate-rotate-90-top-left-clock-wise <a id="mixin-animate-rotate-90-top-left-clock-wise">&nbsp;</a>
 Animate rotate 90 top left clock wise
 
@@ -5415,6 +5645,7 @@ Animate rotate 90 top left clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-top-left-clock-wise.scss">src/animation/rotate\animate-rotate-90-top-left-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5438,6 +5669,7 @@ Animate rotate 90 top left counter clock wise
 
 
 
+
 #### animate-rotate-90-top-right-clock-wise <a id="mixin-animate-rotate-90-top-right-clock-wise">&nbsp;</a>
 Animate rotate 90 top right clock wise
 
@@ -5455,6 +5687,7 @@ Animate rotate 90 top right clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-top-right-clock-wise.scss">src/animation/rotate\animate-rotate-90-top-right-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5478,6 +5711,7 @@ Animate rotate 90 top right counter clock wise
 
 
 
+
 #### animate-rotate-90-vertical-backward <a id="mixin-animate-rotate-90-vertical-backward">&nbsp;</a>
 Animate rotate 90 vertical backward
 
@@ -5495,6 +5729,7 @@ Animate rotate 90 vertical backward
 **File source:** <a href="/src/animation/rotate\animate-rotate-90-vertical-backward.scss">src/animation/rotate\animate-rotate-90-vertical-backward.scss</a>
 
 <br>
+
 
 
 
@@ -5518,6 +5753,7 @@ Animate rotate 90 vertical forward
 
 
 
+
 #### animate-rotate-bottom-left <a id="mixin-animate-rotate-bottom-left">&nbsp;</a>
 Animate rotate bottom left
 
@@ -5535,6 +5771,7 @@ Animate rotate bottom left
 **File source:** <a href="/src/animation/rotate\animate-rotate-bottom-left.scss">src/animation/rotate\animate-rotate-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -5558,6 +5795,7 @@ Animate rotate bottom right
 
 
 
+
 #### animate-rotate-bottom <a id="mixin-animate-rotate-bottom">&nbsp;</a>
 Animate rotate bottom
 
@@ -5575,6 +5813,7 @@ Animate rotate bottom
 **File source:** <a href="/src/animation/rotate\animate-rotate-bottom.scss">src/animation/rotate\animate-rotate-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -5598,6 +5837,7 @@ Animate rotate center
 
 
 
+
 #### animate-rotate-diagonal-1 <a id="mixin-animate-rotate-diagonal-1">&nbsp;</a>
 Animate rotate diagonal 1
 
@@ -5615,6 +5855,7 @@ Animate rotate diagonal 1
 **File source:** <a href="/src/animation/rotate\animate-rotate-diagonal-1.scss">src/animation/rotate\animate-rotate-diagonal-1.scss</a>
 
 <br>
+
 
 
 
@@ -5638,6 +5879,7 @@ Animate rotate diagonal 2
 
 
 
+
 #### animate-rotate-diagonal-bottom-left <a id="mixin-animate-rotate-diagonal-bottom-left">&nbsp;</a>
 Animate rotate diagonal bottom left
 
@@ -5655,6 +5897,7 @@ Animate rotate diagonal bottom left
 **File source:** <a href="/src/animation/rotate\animate-rotate-diagonal-bottom-left.scss">src/animation/rotate\animate-rotate-diagonal-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -5678,6 +5921,7 @@ Animate rotate diagonal bottom right
 
 
 
+
 #### animate-rotate-diagonal-top-left <a id="mixin-animate-rotate-diagonal-top-left">&nbsp;</a>
 Animate rotate diagonal top left
 
@@ -5695,6 +5939,7 @@ Animate rotate diagonal top left
 **File source:** <a href="/src/animation/rotate\animate-rotate-diagonal-top-left.scss">src/animation/rotate\animate-rotate-diagonal-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -5718,6 +5963,7 @@ Animate rotate diagonal top right
 
 
 
+
 #### animate-rotate-horizontal-bottom <a id="mixin-animate-rotate-horizontal-bottom">&nbsp;</a>
 Animate rotate horizontal bottom
 
@@ -5735,6 +5981,7 @@ Animate rotate horizontal bottom
 **File source:** <a href="/src/animation/rotate\animate-rotate-horizontal-bottom.scss">src/animation/rotate\animate-rotate-horizontal-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -5758,6 +6005,7 @@ Animate rotate horizontal center
 
 
 
+
 #### animate-rotate-horizontal-top <a id="mixin-animate-rotate-horizontal-top">&nbsp;</a>
 Animate rotate horizontal top
 
@@ -5775,6 +6023,7 @@ Animate rotate horizontal top
 **File source:** <a href="/src/animation/rotate\animate-rotate-horizontal-top.scss">src/animation/rotate\animate-rotate-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -5798,6 +6047,7 @@ Animate rotate in 2 backward
 
 
 
+
 #### animate-rotate-in-2-bottom-left-clock-wise <a id="mixin-animate-rotate-in-2-bottom-left-clock-wise">&nbsp;</a>
 Animate rotate in 2 bottom left clock wise
 
@@ -5815,6 +6065,7 @@ Animate rotate in 2 bottom left clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-bottom-left-clock-wise.scss">src/animation/rotate\animate-rotate-in-2-bottom-left-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5838,6 +6089,7 @@ Animate rotate in 2 bottom left counter clock wise
 
 
 
+
 #### animate-rotate-in-2-bottom-right-clock-wise <a id="mixin-animate-rotate-in-2-bottom-right-clock-wise">&nbsp;</a>
 Animate rotate in 2 bottom right clock wise
 
@@ -5855,6 +6107,7 @@ Animate rotate in 2 bottom right clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-bottom-right-clock-wise.scss">src/animation/rotate\animate-rotate-in-2-bottom-right-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5878,6 +6131,7 @@ Animate rotate in 2 bottom right counter clock wise
 
 
 
+
 #### animate-rotate-in-2-clock-wise <a id="mixin-animate-rotate-in-2-clock-wise">&nbsp;</a>
 Animate rotate in 2 clock wise
 
@@ -5895,6 +6149,7 @@ Animate rotate in 2 clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-clock-wise.scss">src/animation/rotate\animate-rotate-in-2-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5918,6 +6173,7 @@ Animate rotate in 2 counter clock wise
 
 
 
+
 #### animate-rotate-in-2-forward <a id="mixin-animate-rotate-in-2-forward">&nbsp;</a>
 Animate rotate in 2 forward
 
@@ -5935,6 +6191,7 @@ Animate rotate in 2 forward
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-forward.scss">src/animation/rotate\animate-rotate-in-2-forward.scss</a>
 
 <br>
+
 
 
 
@@ -5958,6 +6215,7 @@ Animate rotate in 2 top left clock wise
 
 
 
+
 #### animate-rotate-in-2-top-left-counter-clock-wise <a id="mixin-animate-rotate-in-2-top-left-counter-clock-wise">&nbsp;</a>
 Animate rotate in 2 top left counter clock wise
 
@@ -5975,6 +6233,7 @@ Animate rotate in 2 top left counter clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-top-left-counter-clock-wise.scss">src/animation/rotate\animate-rotate-in-2-top-left-counter-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -5998,6 +6257,7 @@ Animate rotate in 2 top right clock wise
 
 
 
+
 #### animate-rotate-in-2-top-right-counter-clock-wise <a id="mixin-animate-rotate-in-2-top-right-counter-clock-wise">&nbsp;</a>
 Animate rotate in 2 top right counter clock wise
 
@@ -6015,6 +6275,7 @@ Animate rotate in 2 top right counter clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-2-top-right-counter-clock-wise.scss">src/animation/rotate\animate-rotate-in-2-top-right-counter-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6038,6 +6299,7 @@ Animate rotate in bottom left
 
 
 
+
 #### animate-rotate-in-bottom-right <a id="mixin-animate-rotate-in-bottom-right">&nbsp;</a>
 Animate rotate in bottom right
 
@@ -6055,6 +6317,7 @@ Animate rotate in bottom right
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-bottom-right.scss">src/animation/rotate\animate-rotate-in-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -6078,6 +6341,7 @@ Animate rotate in bottom
 
 
 
+
 #### animate-rotate-in-center <a id="mixin-animate-rotate-in-center">&nbsp;</a>
 Animate rotate in center
 
@@ -6095,6 +6359,7 @@ Animate rotate in center
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-center.scss">src/animation/rotate\animate-rotate-in-center.scss</a>
 
 <br>
+
 
 
 
@@ -6118,6 +6383,7 @@ Animate rotate in diagonal 1
 
 
 
+
 #### animate-rotate-in-diagonal-2 <a id="mixin-animate-rotate-in-diagonal-2">&nbsp;</a>
 Animate rotate in diagonal 2
 
@@ -6135,6 +6401,7 @@ Animate rotate in diagonal 2
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-diagonal-2.scss">src/animation/rotate\animate-rotate-in-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -6158,6 +6425,7 @@ Animate rotate in horizontal
 
 
 
+
 #### animate-rotate-in-left <a id="mixin-animate-rotate-in-left">&nbsp;</a>
 Animate rotate in left
 
@@ -6175,6 +6443,7 @@ Animate rotate in left
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-left.scss">src/animation/rotate\animate-rotate-in-left.scss</a>
 
 <br>
+
 
 
 
@@ -6198,6 +6467,7 @@ Animate rotate in right
 
 
 
+
 #### animate-rotate-in-top-left <a id="mixin-animate-rotate-in-top-left">&nbsp;</a>
 Animate rotate in top left
 
@@ -6215,6 +6485,7 @@ Animate rotate in top left
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-top-left.scss">src/animation/rotate\animate-rotate-in-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -6238,6 +6509,7 @@ Animate rotate in top right
 
 
 
+
 #### animate-rotate-in-top <a id="mixin-animate-rotate-in-top">&nbsp;</a>
 Animate rotate in top
 
@@ -6255,6 +6527,7 @@ Animate rotate in top
 **File source:** <a href="/src/animation/rotate\animate-rotate-in-top.scss">src/animation/rotate\animate-rotate-in-top.scss</a>
 
 <br>
+
 
 
 
@@ -6278,6 +6551,7 @@ Animate rotate in vertical
 
 
 
+
 #### animate-rotate-left <a id="mixin-animate-rotate-left">&nbsp;</a>
 Animate rotate left
 
@@ -6295,6 +6569,7 @@ Animate rotate left
 **File source:** <a href="/src/animation/rotate\animate-rotate-left.scss">src/animation/rotate\animate-rotate-left.scss</a>
 
 <br>
+
 
 
 
@@ -6318,6 +6593,7 @@ Animate rotate out 2 backward
 
 
 
+
 #### animate-rotate-out-2-bottom-left-clock-wise <a id="mixin-animate-rotate-out-2-bottom-left-clock-wise">&nbsp;</a>
 Animate rotate out 2 bottom left clock wise
 
@@ -6335,6 +6611,7 @@ Animate rotate out 2 bottom left clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-bottom-left-clock-wise.scss">src/animation/rotate\animate-rotate-out-2-bottom-left-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6358,6 +6635,7 @@ Animate rotate out 2 bottom left counter clock wise
 
 
 
+
 #### animate-rotate-out-2-bottom-right-clock-wise <a id="mixin-animate-rotate-out-2-bottom-right-clock-wise">&nbsp;</a>
 Animate rotate out 2 bottom right clock wise
 
@@ -6375,6 +6653,7 @@ Animate rotate out 2 bottom right clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-bottom-right-clock-wise.scss">src/animation/rotate\animate-rotate-out-2-bottom-right-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6398,6 +6677,7 @@ Animate rotate out 2 bottom right counter clock wise
 
 
 
+
 #### animate-rotate-out-2-clock-wise <a id="mixin-animate-rotate-out-2-clock-wise">&nbsp;</a>
 Animate rotate out 2 clock wise
 
@@ -6415,6 +6695,7 @@ Animate rotate out 2 clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-clock-wise.scss">src/animation/rotate\animate-rotate-out-2-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6438,6 +6719,7 @@ Animate rotate out 2 counter clock wise
 
 
 
+
 #### animate-rotate-out-2-forward <a id="mixin-animate-rotate-out-2-forward">&nbsp;</a>
 Animate rotate out 2 forward
 
@@ -6455,6 +6737,7 @@ Animate rotate out 2 forward
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-forward.scss">src/animation/rotate\animate-rotate-out-2-forward.scss</a>
 
 <br>
+
 
 
 
@@ -6478,6 +6761,7 @@ Animate rotate out 2 top left clock wise
 
 
 
+
 #### animate-rotate-out-2-top-left-counter-clock-wise <a id="mixin-animate-rotate-out-2-top-left-counter-clock-wise">&nbsp;</a>
 Animate rotate out 2 top left counter clock wise
 
@@ -6495,6 +6779,7 @@ Animate rotate out 2 top left counter clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-top-left-counter-clock-wise.scss">src/animation/rotate\animate-rotate-out-2-top-left-counter-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6518,6 +6803,7 @@ Animate rotate out 2 top right clock wise
 
 
 
+
 #### animate-rotate-out-2-top-right-counter-clock-wise <a id="mixin-animate-rotate-out-2-top-right-counter-clock-wise">&nbsp;</a>
 Animate rotate out 2 top right counter clock wise
 
@@ -6535,6 +6821,7 @@ Animate rotate out 2 top right counter clock wise
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-2-top-right-counter-clock-wise.scss">src/animation/rotate\animate-rotate-out-2-top-right-counter-clock-wise.scss</a>
 
 <br>
+
 
 
 
@@ -6558,6 +6845,7 @@ Animate rotate out bottom left
 
 
 
+
 #### animate-rotate-out-bottom-right <a id="mixin-animate-rotate-out-bottom-right">&nbsp;</a>
 Animate rotate out bottom right
 
@@ -6575,6 +6863,7 @@ Animate rotate out bottom right
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-bottom-right.scss">src/animation/rotate\animate-rotate-out-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -6598,6 +6887,7 @@ Animate rotate out bottom
 
 
 
+
 #### animate-rotate-out-center <a id="mixin-animate-rotate-out-center">&nbsp;</a>
 Animate rotate out center
 
@@ -6615,6 +6905,7 @@ Animate rotate out center
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-center.scss">src/animation/rotate\animate-rotate-out-center.scss</a>
 
 <br>
+
 
 
 
@@ -6638,6 +6929,7 @@ Animate rotate out diagonal 1
 
 
 
+
 #### animate-rotate-out-diagonal-2 <a id="mixin-animate-rotate-out-diagonal-2">&nbsp;</a>
 Animate rotate out diagonal 2
 
@@ -6655,6 +6947,7 @@ Animate rotate out diagonal 2
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-diagonal-2.scss">src/animation/rotate\animate-rotate-out-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -6678,6 +6971,7 @@ Animate rotate out horizontal
 
 
 
+
 #### animate-rotate-out-left <a id="mixin-animate-rotate-out-left">&nbsp;</a>
 Animate rotate out left
 
@@ -6695,6 +6989,7 @@ Animate rotate out left
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-left.scss">src/animation/rotate\animate-rotate-out-left.scss</a>
 
 <br>
+
 
 
 
@@ -6718,6 +7013,7 @@ Animate rotate out right
 
 
 
+
 #### animate-rotate-out-top-left <a id="mixin-animate-rotate-out-top-left">&nbsp;</a>
 Animate rotate out top left
 
@@ -6735,6 +7031,7 @@ Animate rotate out top left
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-top-left.scss">src/animation/rotate\animate-rotate-out-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -6758,6 +7055,7 @@ Animate rotate out top right
 
 
 
+
 #### animate-rotate-out-top <a id="mixin-animate-rotate-out-top">&nbsp;</a>
 Animate rotate out top
 
@@ -6775,6 +7073,7 @@ Animate rotate out top
 **File source:** <a href="/src/animation/rotate\animate-rotate-out-top.scss">src/animation/rotate\animate-rotate-out-top.scss</a>
 
 <br>
+
 
 
 
@@ -6798,6 +7097,7 @@ Animate rotate out vertical
 
 
 
+
 #### animate-rotate-right <a id="mixin-animate-rotate-right">&nbsp;</a>
 Animate rotate right
 
@@ -6815,6 +7115,7 @@ Animate rotate right
 **File source:** <a href="/src/animation/rotate\animate-rotate-right.scss">src/animation/rotate\animate-rotate-right.scss</a>
 
 <br>
+
 
 
 
@@ -6838,6 +7139,7 @@ Animate rotate scale down diagonal 1
 
 
 
+
 #### animate-rotate-scale-down-diagonal-2 <a id="mixin-animate-rotate-scale-down-diagonal-2">&nbsp;</a>
 Animate rotate scale down diagonal 2
 
@@ -6855,6 +7157,7 @@ Animate rotate scale down diagonal 2
 **File source:** <a href="/src/animation/rotate\animate-rotate-scale-down-diagonal-2.scss">src/animation/rotate\animate-rotate-scale-down-diagonal-2.scss</a>
 
 <br>
+
 
 
 
@@ -6878,6 +7181,7 @@ Animate rotate scale down horizontal
 
 
 
+
 #### animate-rotate-scale-down-vertical <a id="mixin-animate-rotate-scale-down-vertical">&nbsp;</a>
 Animate rotate scale down vertical
 
@@ -6895,6 +7199,7 @@ Animate rotate scale down vertical
 **File source:** <a href="/src/animation/rotate\animate-rotate-scale-down-vertical.scss">src/animation/rotate\animate-rotate-scale-down-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -6918,6 +7223,7 @@ Animate rotate scale down
 
 
 
+
 #### animate-rotate-scale-up-diagonal-1 <a id="mixin-animate-rotate-scale-up-diagonal-1">&nbsp;</a>
 Animate rotate scale up diagonal 1
 
@@ -6935,6 +7241,7 @@ Animate rotate scale up diagonal 1
 **File source:** <a href="/src/animation/rotate\animate-rotate-scale-up-diagonal-1.scss">src/animation/rotate\animate-rotate-scale-up-diagonal-1.scss</a>
 
 <br>
+
 
 
 
@@ -6958,6 +7265,7 @@ Animate rotate scale up diagonal 2
 
 
 
+
 #### animate-rotate-scale-up-horizontal <a id="mixin-animate-rotate-scale-up-horizontal">&nbsp;</a>
 Animate rotate scale up horizontal
 
@@ -6975,6 +7283,7 @@ Animate rotate scale up horizontal
 **File source:** <a href="/src/animation/rotate\animate-rotate-scale-up-horizontal.scss">src/animation/rotate\animate-rotate-scale-up-horizontal.scss</a>
 
 <br>
+
 
 
 
@@ -6998,6 +7307,7 @@ Animate rotate scale up vertical
 
 
 
+
 #### animate-rotate-scale-up <a id="mixin-animate-rotate-scale-up">&nbsp;</a>
 Animate rotate scale up
 
@@ -7015,6 +7325,7 @@ Animate rotate scale up
 **File source:** <a href="/src/animation/rotate\animate-rotate-scale-up.scss">src/animation/rotate\animate-rotate-scale-up.scss</a>
 
 <br>
+
 
 
 
@@ -7038,6 +7349,7 @@ Animate rotate top left
 
 
 
+
 #### animate-rotate-top-right <a id="mixin-animate-rotate-top-right">&nbsp;</a>
 Animate rotate top right
 
@@ -7055,6 +7367,7 @@ Animate rotate top right
 **File source:** <a href="/src/animation/rotate\animate-rotate-top-right.scss">src/animation/rotate\animate-rotate-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -7078,6 +7391,7 @@ Animate rotate top
 
 
 
+
 #### animate-rotate-vert-center <a id="mixin-animate-rotate-vert-center">&nbsp;</a>
 Animate rotate vert center
 
@@ -7095,6 +7409,7 @@ Animate rotate vert center
 **File source:** <a href="/src/animation/rotate\animate-rotate-vert-center.scss">src/animation/rotate\animate-rotate-vert-center.scss</a>
 
 <br>
+
 
 
 
@@ -7118,6 +7433,7 @@ Animate rotate vert left
 
 
 
+
 #### animate-rotate-vert-right <a id="mixin-animate-rotate-vert-right">&nbsp;</a>
 Animate rotate vert right
 
@@ -7135,6 +7451,7 @@ Animate rotate vert right
 **File source:** <a href="/src/animation/rotate\animate-rotate-vert-right.scss">src/animation/rotate\animate-rotate-vert-right.scss</a>
 
 <br>
+
 
 
 
@@ -7158,6 +7475,7 @@ Animate scale down bottom left
 
 
 
+
 #### animate-scale-down-bottom-right <a id="mixin-animate-scale-down-bottom-right">&nbsp;</a>
 Animate scale down bottom right
 
@@ -7175,6 +7493,7 @@ Animate scale down bottom right
 **File source:** <a href="/src/animation/scale\animate-scale-down-bottom-right.scss">src/animation/scale\animate-scale-down-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -7198,6 +7517,7 @@ Animate scale down bottom
 
 
 
+
 #### animate-scale-down-center <a id="mixin-animate-scale-down-center">&nbsp;</a>
 Animate scale down center
 
@@ -7215,6 +7535,7 @@ Animate scale down center
 **File source:** <a href="/src/animation/scale\animate-scale-down-center.scss">src/animation/scale\animate-scale-down-center.scss</a>
 
 <br>
+
 
 
 
@@ -7238,6 +7559,7 @@ Animate scale down horizontal center
 
 
 
+
 #### animate-scale-down-horizontal-left <a id="mixin-animate-scale-down-horizontal-left">&nbsp;</a>
 Animate scale down horizontal left
 
@@ -7255,6 +7577,7 @@ Animate scale down horizontal left
 **File source:** <a href="/src/animation/scale\animate-scale-down-horizontal-left.scss">src/animation/scale\animate-scale-down-horizontal-left.scss</a>
 
 <br>
+
 
 
 
@@ -7278,6 +7601,7 @@ Animate scale down horizontal right
 
 
 
+
 #### animate-scale-down-left <a id="mixin-animate-scale-down-left">&nbsp;</a>
 Animate scale down left
 
@@ -7295,6 +7619,7 @@ Animate scale down left
 **File source:** <a href="/src/animation/scale\animate-scale-down-left.scss">src/animation/scale\animate-scale-down-left.scss</a>
 
 <br>
+
 
 
 
@@ -7318,6 +7643,7 @@ Animate scale down right
 
 
 
+
 #### animate-scale-down-top-left <a id="mixin-animate-scale-down-top-left">&nbsp;</a>
 Animate scale down top left
 
@@ -7335,6 +7661,7 @@ Animate scale down top left
 **File source:** <a href="/src/animation/scale\animate-scale-down-top-left.scss">src/animation/scale\animate-scale-down-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -7358,6 +7685,7 @@ Animate scale down top right
 
 
 
+
 #### animate-scale-down-top <a id="mixin-animate-scale-down-top">&nbsp;</a>
 Animate scale down top
 
@@ -7375,6 +7703,7 @@ Animate scale down top
 **File source:** <a href="/src/animation/scale\animate-scale-down-top.scss">src/animation/scale\animate-scale-down-top.scss</a>
 
 <br>
+
 
 
 
@@ -7398,6 +7727,7 @@ Animate scale down vertical bottom
 
 
 
+
 #### animate-scale-down-vertical-center <a id="mixin-animate-scale-down-vertical-center">&nbsp;</a>
 Animate scale down vertical center
 
@@ -7415,6 +7745,7 @@ Animate scale down vertical center
 **File source:** <a href="/src/animation/scale\animate-scale-down-vertical-center.scss">src/animation/scale\animate-scale-down-vertical-center.scss</a>
 
 <br>
+
 
 
 
@@ -7438,6 +7769,7 @@ Animate scale down vertical top
 
 
 
+
 #### animate-scale-in-bottom-left <a id="mixin-animate-scale-in-bottom-left">&nbsp;</a>
 Animate scale in bottom left
 
@@ -7455,6 +7787,7 @@ Animate scale in bottom left
 **File source:** <a href="/src/animation/scale\animate-scale-in-bottom-left.scss">src/animation/scale\animate-scale-in-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -7478,6 +7811,7 @@ Animate scale in bottom right
 
 
 
+
 #### animate-scale-in-bottom <a id="mixin-animate-scale-in-bottom">&nbsp;</a>
 Animate scale in bottom
 
@@ -7495,6 +7829,7 @@ Animate scale in bottom
 **File source:** <a href="/src/animation/scale\animate-scale-in-bottom.scss">src/animation/scale\animate-scale-in-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -7518,6 +7853,7 @@ Animate scale in center
 
 
 
+
 #### animate-scale-in-horizontal-center <a id="mixin-animate-scale-in-horizontal-center">&nbsp;</a>
 Animate scale in horizontal center
 
@@ -7535,6 +7871,7 @@ Animate scale in horizontal center
 **File source:** <a href="/src/animation/scale\animate-scale-in-horizontal-center.scss">src/animation/scale\animate-scale-in-horizontal-center.scss</a>
 
 <br>
+
 
 
 
@@ -7558,6 +7895,7 @@ Animate scale in horizontal left
 
 
 
+
 #### animate-scale-in-horizontal-right <a id="mixin-animate-scale-in-horizontal-right">&nbsp;</a>
 Animate scale in horizontal right
 
@@ -7575,6 +7913,7 @@ Animate scale in horizontal right
 **File source:** <a href="/src/animation/scale\animate-scale-in-horizontal-right.scss">src/animation/scale\animate-scale-in-horizontal-right.scss</a>
 
 <br>
+
 
 
 
@@ -7598,6 +7937,7 @@ Animate scale in left
 
 
 
+
 #### animate-scale-in-right <a id="mixin-animate-scale-in-right">&nbsp;</a>
 Animate scale in right
 
@@ -7615,6 +7955,7 @@ Animate scale in right
 **File source:** <a href="/src/animation/scale\animate-scale-in-right.scss">src/animation/scale\animate-scale-in-right.scss</a>
 
 <br>
+
 
 
 
@@ -7638,6 +7979,7 @@ Animate scale in top left
 
 
 
+
 #### animate-scale-in-top-right <a id="mixin-animate-scale-in-top-right">&nbsp;</a>
 Animate scale in top right
 
@@ -7655,6 +7997,7 @@ Animate scale in top right
 **File source:** <a href="/src/animation/scale\animate-scale-in-top-right.scss">src/animation/scale\animate-scale-in-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -7678,6 +8021,7 @@ Animate scale in top
 
 
 
+
 #### animate-scale-in-vertical-bottom <a id="mixin-animate-scale-in-vertical-bottom">&nbsp;</a>
 Animate scale in vertical bottom
 
@@ -7695,6 +8039,7 @@ Animate scale in vertical bottom
 **File source:** <a href="/src/animation/scale\animate-scale-in-vertical-bottom.scss">src/animation/scale\animate-scale-in-vertical-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -7718,6 +8063,7 @@ Animate scale in vertical center
 
 
 
+
 #### animate-scale-in-vertical-top <a id="mixin-animate-scale-in-vertical-top">&nbsp;</a>
 Animate scale in vertical top
 
@@ -7735,6 +8081,7 @@ Animate scale in vertical top
 **File source:** <a href="/src/animation/scale\animate-scale-in-vertical-top.scss">src/animation/scale\animate-scale-in-vertical-top.scss</a>
 
 <br>
+
 
 
 
@@ -7758,6 +8105,7 @@ Animate scale out bottom left
 
 
 
+
 #### animate-scale-out-bottom-right <a id="mixin-animate-scale-out-bottom-right">&nbsp;</a>
 Animate scale out bottom right
 
@@ -7775,6 +8123,7 @@ Animate scale out bottom right
 **File source:** <a href="/src/animation/scale\animate-scale-out-bottom-right.scss">src/animation/scale\animate-scale-out-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -7798,6 +8147,7 @@ Animate scale out bottom
 
 
 
+
 #### animate-scale-out-center <a id="mixin-animate-scale-out-center">&nbsp;</a>
 Animate scale out center
 
@@ -7815,6 +8165,7 @@ Animate scale out center
 **File source:** <a href="/src/animation/scale\animate-scale-out-center.scss">src/animation/scale\animate-scale-out-center.scss</a>
 
 <br>
+
 
 
 
@@ -7838,6 +8189,7 @@ Animate scale out horizontal left
 
 
 
+
 #### animate-scale-out-horizontal-right <a id="mixin-animate-scale-out-horizontal-right">&nbsp;</a>
 Animate scale out horizontal right
 
@@ -7855,6 +8207,7 @@ Animate scale out horizontal right
 **File source:** <a href="/src/animation/scale\animate-scale-out-horizontal-right.scss">src/animation/scale\animate-scale-out-horizontal-right.scss</a>
 
 <br>
+
 
 
 
@@ -7878,6 +8231,7 @@ Animate scale out horizontal
 
 
 
+
 #### animate-scale-out-left <a id="mixin-animate-scale-out-left">&nbsp;</a>
 Animate scale out left
 
@@ -7895,6 +8249,7 @@ Animate scale out left
 **File source:** <a href="/src/animation/scale\animate-scale-out-left.scss">src/animation/scale\animate-scale-out-left.scss</a>
 
 <br>
+
 
 
 
@@ -7918,6 +8273,7 @@ Animate scale out right
 
 
 
+
 #### animate-scale-out-top-left <a id="mixin-animate-scale-out-top-left">&nbsp;</a>
 Animate scale out top left
 
@@ -7935,6 +8291,7 @@ Animate scale out top left
 **File source:** <a href="/src/animation/scale\animate-scale-out-top-left.scss">src/animation/scale\animate-scale-out-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -7958,6 +8315,7 @@ Animate scale out top right
 
 
 
+
 #### animate-scale-out-top <a id="mixin-animate-scale-out-top">&nbsp;</a>
 Animate scale out top
 
@@ -7975,6 +8333,7 @@ Animate scale out top
 **File source:** <a href="/src/animation/scale\animate-scale-out-top.scss">src/animation/scale\animate-scale-out-top.scss</a>
 
 <br>
+
 
 
 
@@ -7998,6 +8357,7 @@ Animate scale out vertical bottom
 
 
 
+
 #### animate-scale-out-vertical-top <a id="mixin-animate-scale-out-vertical-top">&nbsp;</a>
 Animate scale out vertical top
 
@@ -8015,6 +8375,7 @@ Animate scale out vertical top
 **File source:** <a href="/src/animation/scale\animate-scale-out-vertical-top.scss">src/animation/scale\animate-scale-out-vertical-top.scss</a>
 
 <br>
+
 
 
 
@@ -8038,6 +8399,7 @@ Animate scale out vertical
 
 
 
+
 #### animate-scale-up-bottom-left <a id="mixin-animate-scale-up-bottom-left">&nbsp;</a>
 Animate scale up bottom left
 
@@ -8055,6 +8417,7 @@ Animate scale up bottom left
 **File source:** <a href="/src/animation/scale\animate-scale-up-bottom-left.scss">src/animation/scale\animate-scale-up-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -8078,6 +8441,7 @@ Animate scale up bottom right
 
 
 
+
 #### animate-scale-up-bottom <a id="mixin-animate-scale-up-bottom">&nbsp;</a>
 Animate scale up bottom
 
@@ -8095,6 +8459,7 @@ Animate scale up bottom
 **File source:** <a href="/src/animation/scale\animate-scale-up-bottom.scss">src/animation/scale\animate-scale-up-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -8118,6 +8483,7 @@ Animate scale up center
 
 
 
+
 #### animate-scale-up-horizontal-center <a id="mixin-animate-scale-up-horizontal-center">&nbsp;</a>
 Animate scale up horizontal center
 
@@ -8135,6 +8501,7 @@ Animate scale up horizontal center
 **File source:** <a href="/src/animation/scale\animate-scale-up-horizontal-center.scss">src/animation/scale\animate-scale-up-horizontal-center.scss</a>
 
 <br>
+
 
 
 
@@ -8158,6 +8525,7 @@ Animate scale up horizontal left
 
 
 
+
 #### animate-scale-up-horizontal-right <a id="mixin-animate-scale-up-horizontal-right">&nbsp;</a>
 Animate scale up horizontal right
 
@@ -8175,6 +8543,7 @@ Animate scale up horizontal right
 **File source:** <a href="/src/animation/scale\animate-scale-up-horizontal-right.scss">src/animation/scale\animate-scale-up-horizontal-right.scss</a>
 
 <br>
+
 
 
 
@@ -8198,6 +8567,7 @@ Animate scale up left
 
 
 
+
 #### animate-scale-up-right <a id="mixin-animate-scale-up-right">&nbsp;</a>
 Animate scale up right
 
@@ -8215,6 +8585,7 @@ Animate scale up right
 **File source:** <a href="/src/animation/scale\animate-scale-up-right.scss">src/animation/scale\animate-scale-up-right.scss</a>
 
 <br>
+
 
 
 
@@ -8238,6 +8609,7 @@ Animate scale up top left
 
 
 
+
 #### animate-scale-up-top-right <a id="mixin-animate-scale-up-top-right">&nbsp;</a>
 Animate scale up top right
 
@@ -8255,6 +8627,7 @@ Animate scale up top right
 **File source:** <a href="/src/animation/scale\animate-scale-up-top-right.scss">src/animation/scale\animate-scale-up-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -8278,6 +8651,7 @@ Animate scale up top
 
 
 
+
 #### animate-scale-up-vertical-bottom <a id="mixin-animate-scale-up-vertical-bottom">&nbsp;</a>
 Animate scale up vertical bottom
 
@@ -8295,6 +8669,7 @@ Animate scale up vertical bottom
 **File source:** <a href="/src/animation/scale\animate-scale-up-vertical-bottom.scss">src/animation/scale\animate-scale-up-vertical-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -8318,6 +8693,7 @@ Animate scale up vertical center
 
 
 
+
 #### animate-scale-up-vertical-top <a id="mixin-animate-scale-up-vertical-top">&nbsp;</a>
 Animate scale up vertical top
 
@@ -8335,6 +8711,7 @@ Animate scale up vertical top
 **File source:** <a href="/src/animation/scale\animate-scale-up-vertical-top.scss">src/animation/scale\animate-scale-up-vertical-top.scss</a>
 
 <br>
+
 
 
 
@@ -8358,6 +8735,7 @@ Animate shadow drop 2 bottom left
 
 
 
+
 #### animate-shadow-drop-2-bottom-right <a id="mixin-animate-shadow-drop-2-bottom-right">&nbsp;</a>
 Animate shadow drop 2 bottom right
 
@@ -8375,6 +8753,7 @@ Animate shadow drop 2 bottom right
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-2-bottom-right.scss">src/animation/shadow\animate-shadow-drop-2-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -8398,6 +8777,7 @@ Animate shadow drop 2 bottom
 
 
 
+
 #### animate-shadow-drop-2-center <a id="mixin-animate-shadow-drop-2-center">&nbsp;</a>
 Animate shadow drop 2 center
 
@@ -8415,6 +8795,7 @@ Animate shadow drop 2 center
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-2-center.scss">src/animation/shadow\animate-shadow-drop-2-center.scss</a>
 
 <br>
+
 
 
 
@@ -8438,6 +8819,7 @@ Animate shadow drop 2 left right
 
 
 
+
 #### animate-shadow-drop-2-left <a id="mixin-animate-shadow-drop-2-left">&nbsp;</a>
 Animate shadow drop 2 left
 
@@ -8455,6 +8837,7 @@ Animate shadow drop 2 left
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-2-left.scss">src/animation/shadow\animate-shadow-drop-2-left.scss</a>
 
 <br>
+
 
 
 
@@ -8478,6 +8861,7 @@ Animate shadow drop 2 right
 
 
 
+
 #### animate-shadow-drop-2-top-bottom <a id="mixin-animate-shadow-drop-2-top-bottom">&nbsp;</a>
 Animate shadow drop 2 top bottom
 
@@ -8495,6 +8879,7 @@ Animate shadow drop 2 top bottom
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-2-top-bottom.scss">src/animation/shadow\animate-shadow-drop-2-top-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -8518,6 +8903,7 @@ Animate shadow drop 2 top left
 
 
 
+
 #### animate-shadow-drop-2-top-right <a id="mixin-animate-shadow-drop-2-top-right">&nbsp;</a>
 Animate shadow drop 2 top right
 
@@ -8535,6 +8921,7 @@ Animate shadow drop 2 top right
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-2-top-right.scss">src/animation/shadow\animate-shadow-drop-2-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -8558,6 +8945,7 @@ Animate shadow drop 2 top
 
 
 
+
 #### animate-shadow-drop-bottom-left <a id="mixin-animate-shadow-drop-bottom-left">&nbsp;</a>
 Animate shadow drop bottom left
 
@@ -8575,6 +8963,7 @@ Animate shadow drop bottom left
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-bottom-left.scss">src/animation/shadow\animate-shadow-drop-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -8598,6 +8987,7 @@ Animate shadow drop bottom right
 
 
 
+
 #### animate-shadow-drop-bottom <a id="mixin-animate-shadow-drop-bottom">&nbsp;</a>
 Animate shadow drop bottom
 
@@ -8615,6 +9005,7 @@ Animate shadow drop bottom
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-bottom.scss">src/animation/shadow\animate-shadow-drop-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -8638,6 +9029,7 @@ Animate shadow drop center
 
 
 
+
 #### animate-shadow-drop-left-right <a id="mixin-animate-shadow-drop-left-right">&nbsp;</a>
 Animate shadow drop left right
 
@@ -8655,6 +9047,7 @@ Animate shadow drop left right
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-left-right.scss">src/animation/shadow\animate-shadow-drop-left-right.scss</a>
 
 <br>
+
 
 
 
@@ -8678,6 +9071,7 @@ Animate shadow drop left
 
 
 
+
 #### animate-shadow-drop-right <a id="mixin-animate-shadow-drop-right">&nbsp;</a>
 Animate shadow drop right
 
@@ -8695,6 +9089,7 @@ Animate shadow drop right
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-right.scss">src/animation/shadow\animate-shadow-drop-right.scss</a>
 
 <br>
+
 
 
 
@@ -8718,6 +9113,7 @@ Animate shadow drop top bottom
 
 
 
+
 #### animate-shadow-drop-top-left <a id="mixin-animate-shadow-drop-top-left">&nbsp;</a>
 Animate shadow drop top left
 
@@ -8735,6 +9131,7 @@ Animate shadow drop top left
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-top-left.scss">src/animation/shadow\animate-shadow-drop-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -8758,6 +9155,7 @@ Animate shadow drop top right
 
 
 
+
 #### animate-shadow-drop-top <a id="mixin-animate-shadow-drop-top">&nbsp;</a>
 Animate shadow drop top
 
@@ -8775,6 +9173,7 @@ Animate shadow drop top
 **File source:** <a href="/src/animation/shadow\animate-shadow-drop-top.scss">src/animation/shadow\animate-shadow-drop-top.scss</a>
 
 <br>
+
 
 
 
@@ -8798,6 +9197,7 @@ Animate shadow inset bottom left
 
 
 
+
 #### animate-shadow-inset-bottom-right <a id="mixin-animate-shadow-inset-bottom-right">&nbsp;</a>
 Animate shadow inset bottom right
 
@@ -8815,6 +9215,7 @@ Animate shadow inset bottom right
 **File source:** <a href="/src/animation/shadow\animate-shadow-inset-bottom-right.scss">src/animation/shadow\animate-shadow-inset-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -8838,6 +9239,7 @@ Animate shadow inset bottom
 
 
 
+
 #### animate-shadow-inset-center <a id="mixin-animate-shadow-inset-center">&nbsp;</a>
 Animate shadow inset center
 
@@ -8855,6 +9257,7 @@ Animate shadow inset center
 **File source:** <a href="/src/animation/shadow\animate-shadow-inset-center.scss">src/animation/shadow\animate-shadow-inset-center.scss</a>
 
 <br>
+
 
 
 
@@ -8878,6 +9281,7 @@ Animate shadow inset left right
 
 
 
+
 #### animate-shadow-inset-left <a id="mixin-animate-shadow-inset-left">&nbsp;</a>
 Animate shadow inset left
 
@@ -8895,6 +9299,7 @@ Animate shadow inset left
 **File source:** <a href="/src/animation/shadow\animate-shadow-inset-left.scss">src/animation/shadow\animate-shadow-inset-left.scss</a>
 
 <br>
+
 
 
 
@@ -8918,6 +9323,7 @@ Animate shadow inset right
 
 
 
+
 #### animate-shadow-inset-top-bottom <a id="mixin-animate-shadow-inset-top-bottom">&nbsp;</a>
 Animate shadow inset top bottom
 
@@ -8935,6 +9341,7 @@ Animate shadow inset top bottom
 **File source:** <a href="/src/animation/shadow\animate-shadow-inset-top-bottom.scss">src/animation/shadow\animate-shadow-inset-top-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -8958,6 +9365,7 @@ Animate shadow inset top left
 
 
 
+
 #### animate-shadow-inset-top-right <a id="mixin-animate-shadow-inset-top-right">&nbsp;</a>
 Animate shadow inset top right
 
@@ -8975,6 +9383,7 @@ Animate shadow inset top right
 **File source:** <a href="/src/animation/shadow\animate-shadow-inset-top-right.scss">src/animation/shadow\animate-shadow-inset-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -8998,6 +9407,7 @@ Animate shadow inset top
 
 
 
+
 #### animate-shadow-pop-bottom-left <a id="mixin-animate-shadow-pop-bottom-left">&nbsp;</a>
 Animate shadow pop bottom left
 
@@ -9015,6 +9425,7 @@ Animate shadow pop bottom left
 **File source:** <a href="/src/animation/shadow\animate-shadow-pop-bottom-left.scss">src/animation/shadow\animate-shadow-pop-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -9038,6 +9449,7 @@ Animate shadow pop bottom right
 
 
 
+
 #### animate-shadow-pop-top-left <a id="mixin-animate-shadow-pop-top-left">&nbsp;</a>
 Animate shadow pop top left
 
@@ -9055,6 +9467,7 @@ Animate shadow pop top left
 **File source:** <a href="/src/animation/shadow\animate-shadow-pop-top-left.scss">src/animation/shadow\animate-shadow-pop-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -9078,6 +9491,7 @@ Animate shadow pop top right
 
 
 
+
 #### animate-shake-bottom-left <a id="mixin-animate-shake-bottom-left">&nbsp;</a>
 Animate shake bottom left
 
@@ -9095,6 +9509,7 @@ Animate shake bottom left
 **File source:** <a href="/src/animation/shake\animate-shake-bottom-left.scss">src/animation/shake\animate-shake-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -9118,6 +9533,7 @@ Animate shake bottom right
 
 
 
+
 #### animate-shake-bottom <a id="mixin-animate-shake-bottom">&nbsp;</a>
 Animate shake bottom
 
@@ -9135,6 +9551,7 @@ Animate shake bottom
 **File source:** <a href="/src/animation/shake\animate-shake-bottom.scss">src/animation/shake\animate-shake-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -9158,6 +9575,7 @@ Animate shake horizontal
 
 
 
+
 #### animate-shake-left-right <a id="mixin-animate-shake-left-right">&nbsp;</a>
 Animate shake left right
 
@@ -9175,6 +9593,7 @@ Animate shake left right
 **File source:** <a href="/src/animation/shake\animate-shake-left-right.scss">src/animation/shake\animate-shake-left-right.scss</a>
 
 <br>
+
 
 
 
@@ -9198,6 +9617,7 @@ Animate shake left
 
 
 
+
 #### animate-shake-right <a id="mixin-animate-shake-right">&nbsp;</a>
 Animate shake right
 
@@ -9215,6 +9635,7 @@ Animate shake right
 **File source:** <a href="/src/animation/shake\animate-shake-right.scss">src/animation/shake\animate-shake-right.scss</a>
 
 <br>
+
 
 
 
@@ -9238,6 +9659,7 @@ Animate shake top left
 
 
 
+
 #### animate-shake-top-right <a id="mixin-animate-shake-top-right">&nbsp;</a>
 Animate shake top right
 
@@ -9255,6 +9677,7 @@ Animate shake top right
 **File source:** <a href="/src/animation/shake\animate-shake-top-right.scss">src/animation/shake\animate-shake-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -9278,6 +9701,7 @@ Animate shake top
 
 
 
+
 #### animate-shake-vertical <a id="mixin-animate-shake-vertical">&nbsp;</a>
 Animate shake vertical
 
@@ -9295,6 +9719,7 @@ Animate shake vertical
 **File source:** <a href="/src/animation/shake\animate-shake-vertical.scss">src/animation/shake\animate-shake-vertical.scss</a>
 
 <br>
+
 
 
 
@@ -9318,6 +9743,7 @@ Animate shake
 
 
 
+
 #### animate-slide-backward-bottom-left <a id="mixin-animate-slide-backward-bottom-left">&nbsp;</a>
 Animate slide backward bottom left
 
@@ -9335,6 +9761,7 @@ Animate slide backward bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-backward-bottom-left.scss">src/animation/slide\animate-slide-backward-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -9358,6 +9785,7 @@ Animate slide backward bottom right
 
 
 
+
 #### animate-slide-backward-bottom <a id="mixin-animate-slide-backward-bottom">&nbsp;</a>
 Animate slide backward bottom
 
@@ -9375,6 +9803,7 @@ Animate slide backward bottom
 **File source:** <a href="/src/animation/slide\animate-slide-backward-bottom.scss">src/animation/slide\animate-slide-backward-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -9398,6 +9827,7 @@ Animate slide backward center
 
 
 
+
 #### animate-slide-backward-left <a id="mixin-animate-slide-backward-left">&nbsp;</a>
 Animate slide backward left
 
@@ -9415,6 +9845,7 @@ Animate slide backward left
 **File source:** <a href="/src/animation/slide\animate-slide-backward-left.scss">src/animation/slide\animate-slide-backward-left.scss</a>
 
 <br>
+
 
 
 
@@ -9438,6 +9869,7 @@ Animate slide backward right
 
 
 
+
 #### animate-slide-backward-top-left <a id="mixin-animate-slide-backward-top-left">&nbsp;</a>
 Animate slide backward top left
 
@@ -9455,6 +9887,7 @@ Animate slide backward top left
 **File source:** <a href="/src/animation/slide\animate-slide-backward-top-left.scss">src/animation/slide\animate-slide-backward-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -9478,6 +9911,7 @@ Animate slide backward top right
 
 
 
+
 #### animate-slide-backward-top <a id="mixin-animate-slide-backward-top">&nbsp;</a>
 Animate slide backward top
 
@@ -9495,6 +9929,7 @@ Animate slide backward top
 **File source:** <a href="/src/animation/slide\animate-slide-backward-top.scss">src/animation/slide\animate-slide-backward-top.scss</a>
 
 <br>
+
 
 
 
@@ -9518,6 +9953,7 @@ Animate slide bottom left
 
 
 
+
 #### animate-slide-bottom-right <a id="mixin-animate-slide-bottom-right">&nbsp;</a>
 Animate slide bottom right
 
@@ -9535,6 +9971,7 @@ Animate slide bottom right
 **File source:** <a href="/src/animation/slide\animate-slide-bottom-right.scss">src/animation/slide\animate-slide-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -9558,6 +9995,7 @@ Animate slide bottom
 
 
 
+
 #### animate-slide-forward-bottom-left <a id="mixin-animate-slide-forward-bottom-left">&nbsp;</a>
 Animate slide forward bottom left
 
@@ -9575,6 +10013,7 @@ Animate slide forward bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-forward-bottom-left.scss">src/animation/slide\animate-slide-forward-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -9598,6 +10037,7 @@ Animate slide forward bottom right
 
 
 
+
 #### animate-slide-forward-bottom <a id="mixin-animate-slide-forward-bottom">&nbsp;</a>
 Animate slide forward bottom
 
@@ -9615,6 +10055,7 @@ Animate slide forward bottom
 **File source:** <a href="/src/animation/slide\animate-slide-forward-bottom.scss">src/animation/slide\animate-slide-forward-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -9638,6 +10079,7 @@ Animate slide forward center
 
 
 
+
 #### animate-slide-forward-left <a id="mixin-animate-slide-forward-left">&nbsp;</a>
 Animate slide forward left
 
@@ -9655,6 +10097,7 @@ Animate slide forward left
 **File source:** <a href="/src/animation/slide\animate-slide-forward-left.scss">src/animation/slide\animate-slide-forward-left.scss</a>
 
 <br>
+
 
 
 
@@ -9678,6 +10121,7 @@ Animate slide forward right
 
 
 
+
 #### animate-slide-forward-top-left <a id="mixin-animate-slide-forward-top-left">&nbsp;</a>
 Animate slide forward top left
 
@@ -9695,6 +10139,7 @@ Animate slide forward top left
 **File source:** <a href="/src/animation/slide\animate-slide-forward-top-left.scss">src/animation/slide\animate-slide-forward-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -9718,6 +10163,7 @@ Animate slide forward top right
 
 
 
+
 #### animate-slide-forward-top <a id="mixin-animate-slide-forward-top">&nbsp;</a>
 Animate slide forward top
 
@@ -9735,6 +10181,7 @@ Animate slide forward top
 **File source:** <a href="/src/animation/slide\animate-slide-forward-top.scss">src/animation/slide\animate-slide-forward-top.scss</a>
 
 <br>
+
 
 
 
@@ -9758,6 +10205,7 @@ Animate slide in backward bottom left
 
 
 
+
 #### animate-slide-in-backward-bottom-right <a id="mixin-animate-slide-in-backward-bottom-right">&nbsp;</a>
 Animate slide in backward bottom right
 
@@ -9775,6 +10223,7 @@ Animate slide in backward bottom right
 **File source:** <a href="/src/animation/slide\animate-slide-in-backward-bottom-right.scss">src/animation/slide\animate-slide-in-backward-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -9798,6 +10247,7 @@ Animate slide in backward bottom
 
 
 
+
 #### animate-slide-in-backward-center <a id="mixin-animate-slide-in-backward-center">&nbsp;</a>
 Animate slide in backward center
 
@@ -9815,6 +10265,7 @@ Animate slide in backward center
 **File source:** <a href="/src/animation/slide\animate-slide-in-backward-center.scss">src/animation/slide\animate-slide-in-backward-center.scss</a>
 
 <br>
+
 
 
 
@@ -9838,6 +10289,7 @@ Animate slide in backward left
 
 
 
+
 #### animate-slide-in-backward-right <a id="mixin-animate-slide-in-backward-right">&nbsp;</a>
 Animate slide in backward right
 
@@ -9855,6 +10307,7 @@ Animate slide in backward right
 **File source:** <a href="/src/animation/slide\animate-slide-in-backward-right.scss">src/animation/slide\animate-slide-in-backward-right.scss</a>
 
 <br>
+
 
 
 
@@ -9878,6 +10331,7 @@ Animate slide in backward top left
 
 
 
+
 #### animate-slide-in-backward-top-right <a id="mixin-animate-slide-in-backward-top-right">&nbsp;</a>
 Animate slide in backward top right
 
@@ -9895,6 +10349,7 @@ Animate slide in backward top right
 **File source:** <a href="/src/animation/slide\animate-slide-in-backward-top-right.scss">src/animation/slide\animate-slide-in-backward-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -9918,6 +10373,7 @@ Animate slide in backward top
 
 
 
+
 #### animate-slide-in-blurred-bottom-left <a id="mixin-animate-slide-in-blurred-bottom-left">&nbsp;</a>
 Animate slide in blurred bottom left
 
@@ -9935,6 +10391,7 @@ Animate slide in blurred bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-in-blurred-bottom-left.scss">src/animation/slide\animate-slide-in-blurred-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -9958,6 +10415,7 @@ Animate slide in blurred bottom right
 
 
 
+
 #### animate-slide-in-blurred-bottom <a id="mixin-animate-slide-in-blurred-bottom">&nbsp;</a>
 Animate slide in blurred bottom
 
@@ -9975,6 +10433,7 @@ Animate slide in blurred bottom
 **File source:** <a href="/src/animation/slide\animate-slide-in-blurred-bottom.scss">src/animation/slide\animate-slide-in-blurred-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -9998,6 +10457,7 @@ Animate slide in blurred left
 
 
 
+
 #### animate-slide-in-blurred-right <a id="mixin-animate-slide-in-blurred-right">&nbsp;</a>
 Animate slide in blurred right
 
@@ -10015,6 +10475,7 @@ Animate slide in blurred right
 **File source:** <a href="/src/animation/slide\animate-slide-in-blurred-right.scss">src/animation/slide\animate-slide-in-blurred-right.scss</a>
 
 <br>
+
 
 
 
@@ -10038,6 +10499,7 @@ Animate slide in blurred top left
 
 
 
+
 #### animate-slide-in-blurred-top-right <a id="mixin-animate-slide-in-blurred-top-right">&nbsp;</a>
 Animate slide in blurred top right
 
@@ -10055,6 +10517,7 @@ Animate slide in blurred top right
 **File source:** <a href="/src/animation/slide\animate-slide-in-blurred-top-right.scss">src/animation/slide\animate-slide-in-blurred-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -10078,6 +10541,7 @@ Animate slide in blurred top
 
 
 
+
 #### animate-slide-in-bottom-left <a id="mixin-animate-slide-in-bottom-left">&nbsp;</a>
 Animate slide in bottom left
 
@@ -10095,6 +10559,7 @@ Animate slide in bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-in-bottom-left.scss">src/animation/slide\animate-slide-in-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -10118,6 +10583,7 @@ Animate slide in bottom right
 
 
 
+
 #### animate-slide-in-bottom <a id="mixin-animate-slide-in-bottom">&nbsp;</a>
 Animate slide in bottom
 
@@ -10135,6 +10601,7 @@ Animate slide in bottom
 **File source:** <a href="/src/animation/slide\animate-slide-in-bottom.scss">src/animation/slide\animate-slide-in-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -10158,6 +10625,7 @@ Animate slide in elliptic bottom backward
 
 
 
+
 #### animate-slide-in-elliptic-bottom-forward <a id="mixin-animate-slide-in-elliptic-bottom-forward">&nbsp;</a>
 Animate slide in elliptic bottom forward
 
@@ -10175,6 +10643,7 @@ Animate slide in elliptic bottom forward
 **File source:** <a href="/src/animation/slide\animate-slide-in-elliptic-bottom-forward.scss">src/animation/slide\animate-slide-in-elliptic-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -10198,6 +10667,7 @@ Animate slide in elliptic left backward
 
 
 
+
 #### animate-slide-in-elliptic-left-forward <a id="mixin-animate-slide-in-elliptic-left-forward">&nbsp;</a>
 Animate slide in elliptic left forward
 
@@ -10215,6 +10685,7 @@ Animate slide in elliptic left forward
 **File source:** <a href="/src/animation/slide\animate-slide-in-elliptic-left-forward.scss">src/animation/slide\animate-slide-in-elliptic-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -10238,6 +10709,7 @@ Animate slide in elliptic right backward
 
 
 
+
 #### animate-slide-in-elliptic-right-forward <a id="mixin-animate-slide-in-elliptic-right-forward">&nbsp;</a>
 Animate slide in elliptic right forward
 
@@ -10255,6 +10727,7 @@ Animate slide in elliptic right forward
 **File source:** <a href="/src/animation/slide\animate-slide-in-elliptic-right-forward.scss">src/animation/slide\animate-slide-in-elliptic-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -10278,6 +10751,7 @@ Animate slide in elliptic top backward
 
 
 
+
 #### animate-slide-in-elliptic-top-forward <a id="mixin-animate-slide-in-elliptic-top-forward">&nbsp;</a>
 Animate slide in elliptic top forward
 
@@ -10295,6 +10769,7 @@ Animate slide in elliptic top forward
 **File source:** <a href="/src/animation/slide\animate-slide-in-elliptic-top-forward.scss">src/animation/slide\animate-slide-in-elliptic-top-forward.scss</a>
 
 <br>
+
 
 
 
@@ -10318,6 +10793,7 @@ Animate slide in forward bottom left
 
 
 
+
 #### animate-slide-in-forward-bottom-right <a id="mixin-animate-slide-in-forward-bottom-right">&nbsp;</a>
 Animate slide in forward bottom right
 
@@ -10335,6 +10811,7 @@ Animate slide in forward bottom right
 **File source:** <a href="/src/animation/slide\animate-slide-in-forward-bottom-right.scss">src/animation/slide\animate-slide-in-forward-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -10358,6 +10835,7 @@ Animate slide in forward bottom
 
 
 
+
 #### animate-slide-in-forward-center <a id="mixin-animate-slide-in-forward-center">&nbsp;</a>
 Animate slide in forward center
 
@@ -10375,6 +10853,7 @@ Animate slide in forward center
 **File source:** <a href="/src/animation/slide\animate-slide-in-forward-center.scss">src/animation/slide\animate-slide-in-forward-center.scss</a>
 
 <br>
+
 
 
 
@@ -10398,6 +10877,7 @@ Animate slide in forward left
 
 
 
+
 #### animate-slide-in-forward-right <a id="mixin-animate-slide-in-forward-right">&nbsp;</a>
 Animate slide in forward right
 
@@ -10415,6 +10895,7 @@ Animate slide in forward right
 **File source:** <a href="/src/animation/slide\animate-slide-in-forward-right.scss">src/animation/slide\animate-slide-in-forward-right.scss</a>
 
 <br>
+
 
 
 
@@ -10438,6 +10919,7 @@ Animate slide in forward top left
 
 
 
+
 #### animate-slide-in-forward-top-right <a id="mixin-animate-slide-in-forward-top-right">&nbsp;</a>
 Animate slide in forward top right
 
@@ -10455,6 +10937,7 @@ Animate slide in forward top right
 **File source:** <a href="/src/animation/slide\animate-slide-in-forward-top-right.scss">src/animation/slide\animate-slide-in-forward-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -10478,6 +10961,7 @@ Animate slide in forward top
 
 
 
+
 #### animate-slide-in-left <a id="mixin-animate-slide-in-left">&nbsp;</a>
 Animate slide in left
 
@@ -10495,6 +10979,7 @@ Animate slide in left
 **File source:** <a href="/src/animation/slide\animate-slide-in-left.scss">src/animation/slide\animate-slide-in-left.scss</a>
 
 <br>
+
 
 
 
@@ -10518,6 +11003,7 @@ Animate slide in right
 
 
 
+
 #### animate-slide-in-top-left <a id="mixin-animate-slide-in-top-left">&nbsp;</a>
 Animate slide in top left
 
@@ -10535,6 +11021,7 @@ Animate slide in top left
 **File source:** <a href="/src/animation/slide\animate-slide-in-top-left.scss">src/animation/slide\animate-slide-in-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -10558,6 +11045,7 @@ Animate slide in top right
 
 
 
+
 #### animate-slide-in-top <a id="mixin-animate-slide-in-top">&nbsp;</a>
 Animate slide in top
 
@@ -10575,6 +11063,7 @@ Animate slide in top
 **File source:** <a href="/src/animation/slide\animate-slide-in-top.scss">src/animation/slide\animate-slide-in-top.scss</a>
 
 <br>
+
 
 
 
@@ -10598,6 +11087,7 @@ Animate slide left
 
 
 
+
 #### animate-slide-out-backward-bottom-left <a id="mixin-animate-slide-out-backward-bottom-left">&nbsp;</a>
 Animate slide out backward bottom left
 
@@ -10615,6 +11105,7 @@ Animate slide out backward bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-out-backward-bottom-left.scss">src/animation/slide\animate-slide-out-backward-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -10638,6 +11129,7 @@ Animate slide out backward bottom right
 
 
 
+
 #### animate-slide-out-backward-bottom <a id="mixin-animate-slide-out-backward-bottom">&nbsp;</a>
 Animate slide out backward bottom
 
@@ -10655,6 +11147,7 @@ Animate slide out backward bottom
 **File source:** <a href="/src/animation/slide\animate-slide-out-backward-bottom.scss">src/animation/slide\animate-slide-out-backward-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -10678,6 +11171,7 @@ Animate slide out backward center
 
 
 
+
 #### animate-slide-out-backward-left <a id="mixin-animate-slide-out-backward-left">&nbsp;</a>
 Animate slide out backward left
 
@@ -10695,6 +11189,7 @@ Animate slide out backward left
 **File source:** <a href="/src/animation/slide\animate-slide-out-backward-left.scss">src/animation/slide\animate-slide-out-backward-left.scss</a>
 
 <br>
+
 
 
 
@@ -10718,6 +11213,7 @@ Animate slide out backward right
 
 
 
+
 #### animate-slide-out-backward-top-left <a id="mixin-animate-slide-out-backward-top-left">&nbsp;</a>
 Animate slide out backward top left
 
@@ -10735,6 +11231,7 @@ Animate slide out backward top left
 **File source:** <a href="/src/animation/slide\animate-slide-out-backward-top-left.scss">src/animation/slide\animate-slide-out-backward-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -10758,6 +11255,7 @@ Animate slide out backward top right
 
 
 
+
 #### animate-slide-out-backward-top <a id="mixin-animate-slide-out-backward-top">&nbsp;</a>
 Animate slide out backward top
 
@@ -10775,6 +11273,7 @@ Animate slide out backward top
 **File source:** <a href="/src/animation/slide\animate-slide-out-backward-top.scss">src/animation/slide\animate-slide-out-backward-top.scss</a>
 
 <br>
+
 
 
 
@@ -10798,6 +11297,7 @@ Animate slide out blurred bottom left
 
 
 
+
 #### animate-slide-out-blurred-bottom-right <a id="mixin-animate-slide-out-blurred-bottom-right">&nbsp;</a>
 Animate slide out blurred bottom right
 
@@ -10815,6 +11315,7 @@ Animate slide out blurred bottom right
 **File source:** <a href="/src/animation/slide\animate-slide-out-blurred-bottom-right.scss">src/animation/slide\animate-slide-out-blurred-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -10838,6 +11339,7 @@ Animate slide out blurred bottom
 
 
 
+
 #### animate-slide-out-blurred-left <a id="mixin-animate-slide-out-blurred-left">&nbsp;</a>
 Animate slide out blurred left
 
@@ -10855,6 +11357,7 @@ Animate slide out blurred left
 **File source:** <a href="/src/animation/slide\animate-slide-out-blurred-left.scss">src/animation/slide\animate-slide-out-blurred-left.scss</a>
 
 <br>
+
 
 
 
@@ -10878,6 +11381,7 @@ Animate slide out blurred right
 
 
 
+
 #### animate-slide-out-blurred-top-left <a id="mixin-animate-slide-out-blurred-top-left">&nbsp;</a>
 Animate slide out blurred top left
 
@@ -10895,6 +11399,7 @@ Animate slide out blurred top left
 **File source:** <a href="/src/animation/slide\animate-slide-out-blurred-top-left.scss">src/animation/slide\animate-slide-out-blurred-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -10918,6 +11423,7 @@ Animate slide out blurred top right
 
 
 
+
 #### animate-slide-out-blurred-top <a id="mixin-animate-slide-out-blurred-top">&nbsp;</a>
 Animate slide out blurred top
 
@@ -10935,6 +11441,7 @@ Animate slide out blurred top
 **File source:** <a href="/src/animation/slide\animate-slide-out-blurred-top.scss">src/animation/slide\animate-slide-out-blurred-top.scss</a>
 
 <br>
+
 
 
 
@@ -10958,6 +11465,7 @@ Animate slide out bottom left
 
 
 
+
 #### animate-slide-out-bottom-right <a id="mixin-animate-slide-out-bottom-right">&nbsp;</a>
 Animate slide out bottom right
 
@@ -10975,6 +11483,7 @@ Animate slide out bottom right
 **File source:** <a href="/src/animation/slide\animate-slide-out-bottom-right.scss">src/animation/slide\animate-slide-out-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -10998,6 +11507,7 @@ Animate slide out bottom
 
 
 
+
 #### animate-slide-out-elliptic-bottom-backward <a id="mixin-animate-slide-out-elliptic-bottom-backward">&nbsp;</a>
 Animate slide out elliptic bottom backward
 
@@ -11015,6 +11525,7 @@ Animate slide out elliptic bottom backward
 **File source:** <a href="/src/animation/slide\animate-slide-out-elliptic-bottom-backward.scss">src/animation/slide\animate-slide-out-elliptic-bottom-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11038,6 +11549,7 @@ Animate slide out elliptic bottom forward
 
 
 
+
 #### animate-slide-out-elliptic-left-backward <a id="mixin-animate-slide-out-elliptic-left-backward">&nbsp;</a>
 Animate slide out elliptic left backward
 
@@ -11055,6 +11567,7 @@ Animate slide out elliptic left backward
 **File source:** <a href="/src/animation/slide\animate-slide-out-elliptic-left-backward.scss">src/animation/slide\animate-slide-out-elliptic-left-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11078,6 +11591,7 @@ Animate slide out elliptic left forward
 
 
 
+
 #### animate-slide-out-elliptic-right-backward <a id="mixin-animate-slide-out-elliptic-right-backward">&nbsp;</a>
 Animate slide out elliptic right backward
 
@@ -11095,6 +11609,7 @@ Animate slide out elliptic right backward
 **File source:** <a href="/src/animation/slide\animate-slide-out-elliptic-right-backward.scss">src/animation/slide\animate-slide-out-elliptic-right-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11118,6 +11633,7 @@ Animate slide out elliptic right forward
 
 
 
+
 #### animate-slide-out-elliptic-top-backward <a id="mixin-animate-slide-out-elliptic-top-backward">&nbsp;</a>
 Animate slide out elliptic top backward
 
@@ -11135,6 +11651,7 @@ Animate slide out elliptic top backward
 **File source:** <a href="/src/animation/slide\animate-slide-out-elliptic-top-backward.scss">src/animation/slide\animate-slide-out-elliptic-top-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11158,6 +11675,7 @@ Animate slide out elliptic top forward
 
 
 
+
 #### animate-slide-out-forward-bottom-left <a id="mixin-animate-slide-out-forward-bottom-left">&nbsp;</a>
 Animate slide out forward bottom left
 
@@ -11175,6 +11693,7 @@ Animate slide out forward bottom left
 **File source:** <a href="/src/animation/slide\animate-slide-out-forward-bottom-left.scss">src/animation/slide\animate-slide-out-forward-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -11198,6 +11717,7 @@ Animate slide out forward bottom right
 
 
 
+
 #### animate-slide-out-forward-bottom <a id="mixin-animate-slide-out-forward-bottom">&nbsp;</a>
 Animate slide out forward bottom
 
@@ -11215,6 +11735,7 @@ Animate slide out forward bottom
 **File source:** <a href="/src/animation/slide\animate-slide-out-forward-bottom.scss">src/animation/slide\animate-slide-out-forward-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -11238,6 +11759,7 @@ Animate slide out forward center
 
 
 
+
 #### animate-slide-out-forward-left <a id="mixin-animate-slide-out-forward-left">&nbsp;</a>
 Animate slide out forward left
 
@@ -11255,6 +11777,7 @@ Animate slide out forward left
 **File source:** <a href="/src/animation/slide\animate-slide-out-forward-left.scss">src/animation/slide\animate-slide-out-forward-left.scss</a>
 
 <br>
+
 
 
 
@@ -11278,6 +11801,7 @@ Animate slide out forward right
 
 
 
+
 #### animate-slide-out-forward-top-left <a id="mixin-animate-slide-out-forward-top-left">&nbsp;</a>
 Animate slide out forward top left
 
@@ -11295,6 +11819,7 @@ Animate slide out forward top left
 **File source:** <a href="/src/animation/slide\animate-slide-out-forward-top-left.scss">src/animation/slide\animate-slide-out-forward-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -11318,6 +11843,7 @@ Animate slide out forward top right
 
 
 
+
 #### animate-slide-out-forward-top <a id="mixin-animate-slide-out-forward-top">&nbsp;</a>
 Animate slide out forward top
 
@@ -11335,6 +11861,7 @@ Animate slide out forward top
 **File source:** <a href="/src/animation/slide\animate-slide-out-forward-top.scss">src/animation/slide\animate-slide-out-forward-top.scss</a>
 
 <br>
+
 
 
 
@@ -11358,6 +11885,7 @@ Animate slide out left
 
 
 
+
 #### animate-slide-out-right <a id="mixin-animate-slide-out-right">&nbsp;</a>
 Animate slide out right
 
@@ -11375,6 +11903,7 @@ Animate slide out right
 **File source:** <a href="/src/animation/slide\animate-slide-out-right.scss">src/animation/slide\animate-slide-out-right.scss</a>
 
 <br>
+
 
 
 
@@ -11398,6 +11927,7 @@ Animate slide out top left
 
 
 
+
 #### animate-slide-out-top-right <a id="mixin-animate-slide-out-top-right">&nbsp;</a>
 Animate slide out top right
 
@@ -11415,6 +11945,7 @@ Animate slide out top right
 **File source:** <a href="/src/animation/slide\animate-slide-out-top-right.scss">src/animation/slide\animate-slide-out-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -11438,6 +11969,7 @@ Animate slide out top
 
 
 
+
 #### animate-slide-right <a id="mixin-animate-slide-right">&nbsp;</a>
 Animate slide right
 
@@ -11455,6 +11987,7 @@ Animate slide right
 **File source:** <a href="/src/animation/slide\animate-slide-right.scss">src/animation/slide\animate-slide-right.scss</a>
 
 <br>
+
 
 
 
@@ -11478,6 +12011,7 @@ Animate slide rotate horizontal b backward
 
 
 
+
 #### animate-slide-rotate-horizontal-b-forward <a id="mixin-animate-slide-rotate-horizontal-b-forward">&nbsp;</a>
 Animate slide rotate horizontal b forward
 
@@ -11495,6 +12029,7 @@ Animate slide rotate horizontal b forward
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-horizontal-b-forward.scss">src/animation/slide\animate-slide-rotate-horizontal-b-forward.scss</a>
 
 <br>
+
 
 
 
@@ -11518,6 +12053,7 @@ Animate slide rotate horizontal bottom
 
 
 
+
 #### animate-slide-rotate-horizontal-t-backward <a id="mixin-animate-slide-rotate-horizontal-t-backward">&nbsp;</a>
 Animate slide rotate horizontal t backward
 
@@ -11535,6 +12071,7 @@ Animate slide rotate horizontal t backward
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-horizontal-t-backward.scss">src/animation/slide\animate-slide-rotate-horizontal-t-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11558,6 +12095,7 @@ Animate slide rotate horizontal t forward
 
 
 
+
 #### animate-slide-rotate-horizontal-top <a id="mixin-animate-slide-rotate-horizontal-top">&nbsp;</a>
 Animate slide rotate horizontal top
 
@@ -11575,6 +12113,7 @@ Animate slide rotate horizontal top
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-horizontal-top.scss">src/animation/slide\animate-slide-rotate-horizontal-top.scss</a>
 
 <br>
+
 
 
 
@@ -11598,6 +12137,7 @@ Animate slide rotate vertical l backward
 
 
 
+
 #### animate-slide-rotate-vertical-l-forward <a id="mixin-animate-slide-rotate-vertical-l-forward">&nbsp;</a>
 Animate slide rotate vertical l forward
 
@@ -11615,6 +12155,7 @@ Animate slide rotate vertical l forward
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-vertical-l-forward.scss">src/animation/slide\animate-slide-rotate-vertical-l-forward.scss</a>
 
 <br>
+
 
 
 
@@ -11638,6 +12179,7 @@ Animate slide rotate vertical left
 
 
 
+
 #### animate-slide-rotate-vertical-r-backward <a id="mixin-animate-slide-rotate-vertical-r-backward">&nbsp;</a>
 Animate slide rotate vertical r backward
 
@@ -11655,6 +12197,7 @@ Animate slide rotate vertical r backward
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-vertical-r-backward.scss">src/animation/slide\animate-slide-rotate-vertical-r-backward.scss</a>
 
 <br>
+
 
 
 
@@ -11678,6 +12221,7 @@ Animate slide rotate vertical r forward
 
 
 
+
 #### animate-slide-rotate-vertical-right <a id="mixin-animate-slide-rotate-vertical-right">&nbsp;</a>
 Animate slide rotate vertical right
 
@@ -11695,6 +12239,7 @@ Animate slide rotate vertical right
 **File source:** <a href="/src/animation/slide\animate-slide-rotate-vertical-right.scss">src/animation/slide\animate-slide-rotate-vertical-right.scss</a>
 
 <br>
+
 
 
 
@@ -11718,6 +12263,7 @@ Animate slide top left
 
 
 
+
 #### animate-slide-top-right <a id="mixin-animate-slide-top-right">&nbsp;</a>
 Animate slide top right
 
@@ -11735,6 +12281,7 @@ Animate slide top right
 **File source:** <a href="/src/animation/slide\animate-slide-top-right.scss">src/animation/slide\animate-slide-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -11758,6 +12305,7 @@ Animate slide top
 
 
 
+
 #### animate-slit-in-diagonal-1 <a id="mixin-animate-slit-in-diagonal-1">&nbsp;</a>
 Animate slit in diagonal 1
 
@@ -11775,6 +12323,7 @@ Animate slit in diagonal 1
 **File source:** <a href="/src/animation/slit\animate-slit-in-diagonal-1.scss">src/animation/slit\animate-slit-in-diagonal-1.scss</a>
 
 <br>
+
 
 
 
@@ -11798,6 +12347,7 @@ Animate slit in diagonal 2
 
 
 
+
 #### animate-slit-in-horizontal <a id="mixin-animate-slit-in-horizontal">&nbsp;</a>
 Animate slit in horizontal
 
@@ -11815,6 +12365,7 @@ Animate slit in horizontal
 **File source:** <a href="/src/animation/slit\animate-slit-in-horizontal.scss">src/animation/slit\animate-slit-in-horizontal.scss</a>
 
 <br>
+
 
 
 
@@ -11838,6 +12389,7 @@ Animate slit in vertical
 
 
 
+
 #### animate-slit-out-diagonal-1 <a id="mixin-animate-slit-out-diagonal-1">&nbsp;</a>
 Animate slit out diagonal 1
 
@@ -11855,6 +12407,7 @@ Animate slit out diagonal 1
 **File source:** <a href="/src/animation/slit\animate-slit-out-diagonal-1.scss">src/animation/slit\animate-slit-out-diagonal-1.scss</a>
 
 <br>
+
 
 
 
@@ -11878,6 +12431,7 @@ Animate slit out diagonal 2
 
 
 
+
 #### animate-slit-out-horizontal <a id="mixin-animate-slit-out-horizontal">&nbsp;</a>
 Animate slit out horizontal
 
@@ -11895,6 +12449,7 @@ Animate slit out horizontal
 **File source:** <a href="/src/animation/slit\animate-slit-out-horizontal.scss">src/animation/slit\animate-slit-out-horizontal.scss</a>
 
 <br>
+
 
 
 
@@ -11918,6 +12473,7 @@ Animate slit out vertical
 
 
 
+
 #### animate-flash <a id="mixin-animate-flash">&nbsp;</a>
 Animate flash
 
@@ -11935,6 +12491,7 @@ Animate flash
 **File source:** <a href="/src/animation/special\animate-flash.scss">src/animation/special\animate-flash.scss</a>
 
 <br>
+
 
 
 
@@ -11958,6 +12515,7 @@ Animate head shake
 
 
 
+
 #### animate-heartbeat <a id="mixin-animate-heartbeat">&nbsp;</a>
 Animate heartbeat
 
@@ -11975,6 +12533,7 @@ Animate heartbeat
 **File source:** <a href="/src/animation/special\animate-heartbeat.scss">src/animation/special\animate-heartbeat.scss</a>
 
 <br>
+
 
 
 
@@ -11998,6 +12557,7 @@ Animate hinge
 
 
 
+
 #### animate-jack-in-the-box <a id="mixin-animate-jack-in-the-box">&nbsp;</a>
 Animate jack in the box
 
@@ -12015,6 +12575,7 @@ Animate jack in the box
 **File source:** <a href="/src/animation/special\animate-jack-in-the-box.scss">src/animation/special\animate-jack-in-the-box.scss</a>
 
 <br>
+
 
 
 
@@ -12038,6 +12599,7 @@ Animate rubber band
 
 
 
+
 #### animate-tada <a id="mixin-animate-tada">&nbsp;</a>
 Animate tada
 
@@ -12055,6 +12617,7 @@ Animate tada
 **File source:** <a href="/src/animation/special\animate-tada.scss">src/animation/special\animate-tada.scss</a>
 
 <br>
+
 
 
 
@@ -12078,6 +12641,7 @@ Animate swing bottom backward
 
 
 
+
 #### animate-swing-bottom-forward <a id="mixin-animate-swing-bottom-forward">&nbsp;</a>
 Animate swing bottom forward
 
@@ -12095,6 +12659,7 @@ Animate swing bottom forward
 **File source:** <a href="/src/animation/swing\animate-swing-bottom-forward.scss">src/animation/swing\animate-swing-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12118,6 +12683,7 @@ Animate swing bottom left backward
 
 
 
+
 #### animate-swing-bottom-left-forward <a id="mixin-animate-swing-bottom-left-forward">&nbsp;</a>
 Animate swing bottom left forward
 
@@ -12135,6 +12701,7 @@ Animate swing bottom left forward
 **File source:** <a href="/src/animation/swing\animate-swing-bottom-left-forward.scss">src/animation/swing\animate-swing-bottom-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12158,6 +12725,7 @@ Animate swing bottom right backward
 
 
 
+
 #### animate-swing-bottom-right-forward <a id="mixin-animate-swing-bottom-right-forward">&nbsp;</a>
 Animate swing bottom right forward
 
@@ -12175,6 +12743,7 @@ Animate swing bottom right forward
 **File source:** <a href="/src/animation/swing\animate-swing-bottom-right-forward.scss">src/animation/swing\animate-swing-bottom-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12198,6 +12767,7 @@ Animate swing in bottom backward
 
 
 
+
 #### animate-swing-in-bottom-forward <a id="mixin-animate-swing-in-bottom-forward">&nbsp;</a>
 Animate swing in bottom forward
 
@@ -12215,6 +12785,7 @@ Animate swing in bottom forward
 **File source:** <a href="/src/animation/swing\animate-swing-in-bottom-forward.scss">src/animation/swing\animate-swing-in-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12238,6 +12809,7 @@ Animate swing in left backward
 
 
 
+
 #### animate-swing-in-left-forward <a id="mixin-animate-swing-in-left-forward">&nbsp;</a>
 Animate swing in left forward
 
@@ -12255,6 +12827,7 @@ Animate swing in left forward
 **File source:** <a href="/src/animation/swing\animate-swing-in-left-forward.scss">src/animation/swing\animate-swing-in-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12278,6 +12851,7 @@ Animate swing in right backward
 
 
 
+
 #### animate-swing-in-right-forward <a id="mixin-animate-swing-in-right-forward">&nbsp;</a>
 Animate swing in right forward
 
@@ -12295,6 +12869,7 @@ Animate swing in right forward
 **File source:** <a href="/src/animation/swing\animate-swing-in-right-forward.scss">src/animation/swing\animate-swing-in-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12318,6 +12893,7 @@ Animate swing in top backward
 
 
 
+
 #### animate-swing-in-top-forward <a id="mixin-animate-swing-in-top-forward">&nbsp;</a>
 Animate swing in top forward
 
@@ -12335,6 +12911,7 @@ Animate swing in top forward
 **File source:** <a href="/src/animation/swing\animate-swing-in-top-forward.scss">src/animation/swing\animate-swing-in-top-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12358,6 +12935,7 @@ Animate swing left backward
 
 
 
+
 #### animate-swing-left-forward <a id="mixin-animate-swing-left-forward">&nbsp;</a>
 Animate swing left forward
 
@@ -12375,6 +12953,7 @@ Animate swing left forward
 **File source:** <a href="/src/animation/swing\animate-swing-left-forward.scss">src/animation/swing\animate-swing-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12398,6 +12977,7 @@ Animate swing out bottom backward
 
 
 
+
 #### animate-swing-out-bottom-forward <a id="mixin-animate-swing-out-bottom-forward">&nbsp;</a>
 Animate swing out bottom forward
 
@@ -12415,6 +12995,7 @@ Animate swing out bottom forward
 **File source:** <a href="/src/animation/swing\animate-swing-out-bottom-forward.scss">src/animation/swing\animate-swing-out-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12438,6 +13019,7 @@ Animate swing out left backward
 
 
 
+
 #### animate-swing-out-left-forward <a id="mixin-animate-swing-out-left-forward">&nbsp;</a>
 Animate swing out left forward
 
@@ -12455,6 +13037,7 @@ Animate swing out left forward
 **File source:** <a href="/src/animation/swing\animate-swing-out-left-forward.scss">src/animation/swing\animate-swing-out-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12478,6 +13061,7 @@ Animate swing out right backward
 
 
 
+
 #### animate-swing-out-right-forward <a id="mixin-animate-swing-out-right-forward">&nbsp;</a>
 Animate swing out right forward
 
@@ -12495,6 +13079,7 @@ Animate swing out right forward
 **File source:** <a href="/src/animation/swing\animate-swing-out-right-forward.scss">src/animation/swing\animate-swing-out-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12518,6 +13103,7 @@ Animate swing out top backward
 
 
 
+
 #### animate-swing-out-top-forward <a id="mixin-animate-swing-out-top-forward">&nbsp;</a>
 Animate swing out top forward
 
@@ -12535,6 +13121,7 @@ Animate swing out top forward
 **File source:** <a href="/src/animation/swing\animate-swing-out-top-forward.scss">src/animation/swing\animate-swing-out-top-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12558,6 +13145,7 @@ Animate swing right backward
 
 
 
+
 #### animate-swing-right-forward <a id="mixin-animate-swing-right-forward">&nbsp;</a>
 Animate swing right forward
 
@@ -12575,6 +13163,7 @@ Animate swing right forward
 **File source:** <a href="/src/animation/swing\animate-swing-right-forward.scss">src/animation/swing\animate-swing-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12598,6 +13187,7 @@ Animate swing top backward
 
 
 
+
 #### animate-swing-top-forward <a id="mixin-animate-swing-top-forward">&nbsp;</a>
 Animate swing top forward
 
@@ -12615,6 +13205,7 @@ Animate swing top forward
 **File source:** <a href="/src/animation/swing\animate-swing-top-forward.scss">src/animation/swing\animate-swing-top-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12638,6 +13229,7 @@ Animate swing top left backward
 
 
 
+
 #### animate-swing-top-left-forward <a id="mixin-animate-swing-top-left-forward">&nbsp;</a>
 Animate swing top left forward
 
@@ -12655,6 +13247,7 @@ Animate swing top left forward
 **File source:** <a href="/src/animation/swing\animate-swing-top-left-forward.scss">src/animation/swing\animate-swing-top-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12678,6 +13271,7 @@ Animate swing top right backward
 
 
 
+
 #### animate-swing-top-right-forward <a id="mixin-animate-swing-top-right-forward">&nbsp;</a>
 Animate swing top right forward
 
@@ -12695,6 +13289,7 @@ Animate swing top right forward
 **File source:** <a href="/src/animation/swing\animate-swing-top-right-forward.scss">src/animation/swing\animate-swing-top-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12718,6 +13313,7 @@ Animate swing
 
 
 
+
 #### animate-swirl-in-backward <a id="mixin-animate-swirl-in-backward">&nbsp;</a>
 Animate swirl in backward
 
@@ -12735,6 +13331,7 @@ Animate swirl in backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-backward.scss">src/animation/swirl\animate-swirl-in-backward.scss</a>
 
 <br>
+
 
 
 
@@ -12758,6 +13355,7 @@ Animate swirl in bottom backward
 
 
 
+
 #### animate-swirl-in-bottom-forward <a id="mixin-animate-swirl-in-bottom-forward">&nbsp;</a>
 Animate swirl in bottom forward
 
@@ -12775,6 +13373,7 @@ Animate swirl in bottom forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-bottom-forward.scss">src/animation/swirl\animate-swirl-in-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12798,6 +13397,7 @@ Animate swirl in bottom left backward
 
 
 
+
 #### animate-swirl-in-bottom-left-forward <a id="mixin-animate-swirl-in-bottom-left-forward">&nbsp;</a>
 Animate swirl in bottom left forward
 
@@ -12815,6 +13415,7 @@ Animate swirl in bottom left forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-bottom-left-forward.scss">src/animation/swirl\animate-swirl-in-bottom-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12838,6 +13439,7 @@ Animate swirl in bottom right backward
 
 
 
+
 #### animate-swirl-in-bottom-right-forward <a id="mixin-animate-swirl-in-bottom-right-forward">&nbsp;</a>
 Animate swirl in bottom right forward
 
@@ -12855,6 +13457,7 @@ Animate swirl in bottom right forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-bottom-right-forward.scss">src/animation/swirl\animate-swirl-in-bottom-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -12878,6 +13481,7 @@ Animate swirl in forward
 
 
 
+
 #### animate-swirl-in-left-backward <a id="mixin-animate-swirl-in-left-backward">&nbsp;</a>
 Animate swirl in left backward
 
@@ -12895,6 +13499,7 @@ Animate swirl in left backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-left-backward.scss">src/animation/swirl\animate-swirl-in-left-backward.scss</a>
 
 <br>
+
 
 
 
@@ -12918,6 +13523,7 @@ Animate swirl in left forward
 
 
 
+
 #### animate-swirl-in-right-backward <a id="mixin-animate-swirl-in-right-backward">&nbsp;</a>
 Animate swirl in right backward
 
@@ -12935,6 +13541,7 @@ Animate swirl in right backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-right-backward.scss">src/animation/swirl\animate-swirl-in-right-backward.scss</a>
 
 <br>
+
 
 
 
@@ -12958,6 +13565,7 @@ Animate swirl in right forward
 
 
 
+
 #### animate-swirl-in-top-backward <a id="mixin-animate-swirl-in-top-backward">&nbsp;</a>
 Animate swirl in top backward
 
@@ -12975,6 +13583,7 @@ Animate swirl in top backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-top-backward.scss">src/animation/swirl\animate-swirl-in-top-backward.scss</a>
 
 <br>
+
 
 
 
@@ -12998,6 +13607,7 @@ Animate swirl in top forward
 
 
 
+
 #### animate-swirl-in-top-left-backward <a id="mixin-animate-swirl-in-top-left-backward">&nbsp;</a>
 Animate swirl in top left backward
 
@@ -13015,6 +13625,7 @@ Animate swirl in top left backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-top-left-backward.scss">src/animation/swirl\animate-swirl-in-top-left-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13038,6 +13649,7 @@ Animate swirl in top left forward
 
 
 
+
 #### animate-swirl-in-top-right-backward <a id="mixin-animate-swirl-in-top-right-backward">&nbsp;</a>
 Animate swirl in top right backward
 
@@ -13055,6 +13667,7 @@ Animate swirl in top right backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-in-top-right-backward.scss">src/animation/swirl\animate-swirl-in-top-right-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13078,6 +13691,7 @@ Animate swirl in top right forward
 
 
 
+
 #### animate-swirl-out-backward <a id="mixin-animate-swirl-out-backward">&nbsp;</a>
 Animate swirl out backward
 
@@ -13095,6 +13709,7 @@ Animate swirl out backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-backward.scss">src/animation/swirl\animate-swirl-out-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13118,6 +13733,7 @@ Animate swirl out bottom backward
 
 
 
+
 #### animate-swirl-out-bottom-forward <a id="mixin-animate-swirl-out-bottom-forward">&nbsp;</a>
 Animate swirl out bottom forward
 
@@ -13135,6 +13751,7 @@ Animate swirl out bottom forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-bottom-forward.scss">src/animation/swirl\animate-swirl-out-bottom-forward.scss</a>
 
 <br>
+
 
 
 
@@ -13158,6 +13775,7 @@ Animate swirl out bottom left backward
 
 
 
+
 #### animate-swirl-out-bottom-left-forward <a id="mixin-animate-swirl-out-bottom-left-forward">&nbsp;</a>
 Animate swirl out bottom left forward
 
@@ -13175,6 +13793,7 @@ Animate swirl out bottom left forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-bottom-left-forward.scss">src/animation/swirl\animate-swirl-out-bottom-left-forward.scss</a>
 
 <br>
+
 
 
 
@@ -13198,6 +13817,7 @@ Animate swirl out bottom right backward
 
 
 
+
 #### animate-swirl-out-bottom-right-forward <a id="mixin-animate-swirl-out-bottom-right-forward">&nbsp;</a>
 Animate swirl out bottom right forward
 
@@ -13215,6 +13835,7 @@ Animate swirl out bottom right forward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-bottom-right-forward.scss">src/animation/swirl\animate-swirl-out-bottom-right-forward.scss</a>
 
 <br>
+
 
 
 
@@ -13238,6 +13859,7 @@ Animate swirl out forward
 
 
 
+
 #### animate-swirl-out-left-backward <a id="mixin-animate-swirl-out-left-backward">&nbsp;</a>
 Animate swirl out left backward
 
@@ -13255,6 +13877,7 @@ Animate swirl out left backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-left-backward.scss">src/animation/swirl\animate-swirl-out-left-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13278,6 +13901,7 @@ Animate swirl out left forward
 
 
 
+
 #### animate-swirl-out-right-backward <a id="mixin-animate-swirl-out-right-backward">&nbsp;</a>
 Animate swirl out right backward
 
@@ -13295,6 +13919,7 @@ Animate swirl out right backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-right-backward.scss">src/animation/swirl\animate-swirl-out-right-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13318,6 +13943,7 @@ Animate swirl out right forward
 
 
 
+
 #### animate-swirl-out-top-backward <a id="mixin-animate-swirl-out-top-backward">&nbsp;</a>
 Animate swirl out top backward
 
@@ -13335,6 +13961,7 @@ Animate swirl out top backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-top-backward.scss">src/animation/swirl\animate-swirl-out-top-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13358,6 +13985,7 @@ Animate swirl out top forward
 
 
 
+
 #### animate-swirl-out-top-left-backward <a id="mixin-animate-swirl-out-top-left-backward">&nbsp;</a>
 Animate swirl out top left backward
 
@@ -13375,6 +14003,7 @@ Animate swirl out top left backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-top-left-backward.scss">src/animation/swirl\animate-swirl-out-top-left-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13398,6 +14027,7 @@ Animate swirl out top left forward
 
 
 
+
 #### animate-swirl-out-top-right-backward <a id="mixin-animate-swirl-out-top-right-backward">&nbsp;</a>
 Animate swirl out top right backward
 
@@ -13415,6 +14045,7 @@ Animate swirl out top right backward
 **File source:** <a href="/src/animation/swirl\animate-swirl-out-top-right-backward.scss">src/animation/swirl\animate-swirl-out-top-right-backward.scss</a>
 
 <br>
+
 
 
 
@@ -13438,6 +14069,7 @@ Animate swirl out top right forward
 
 
 
+
 #### animate-text-blur-out <a id="mixin-animate-text-blur-out">&nbsp;</a>
 Animate text blur out
 
@@ -13455,6 +14087,7 @@ Animate text blur out
 **File source:** <a href="/src/animation/text\animate-text-blur-out.scss">src/animation/text\animate-text-blur-out.scss</a>
 
 <br>
+
 
 
 
@@ -13478,6 +14111,7 @@ Animate text flicker in glow
 
 
 
+
 #### animate-text-flicker-out-glow <a id="mixin-animate-text-flicker-out-glow">&nbsp;</a>
 Animate text flicker out glow
 
@@ -13495,6 +14129,7 @@ Animate text flicker out glow
 **File source:** <a href="/src/animation/text\animate-text-flicker-out-glow.scss">src/animation/text\animate-text-flicker-out-glow.scss</a>
 
 <br>
+
 
 
 
@@ -13518,6 +14153,7 @@ Animate text focus in
 
 
 
+
 #### animate-text-pop-up-bottom-left <a id="mixin-animate-text-pop-up-bottom-left">&nbsp;</a>
 Animate text pop up bottom left
 
@@ -13535,6 +14171,7 @@ Animate text pop up bottom left
 **File source:** <a href="/src/animation/text\animate-text-pop-up-bottom-left.scss">src/animation/text\animate-text-pop-up-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -13558,6 +14195,7 @@ Animate text pop up bottom right
 
 
 
+
 #### animate-text-pop-up-bottom <a id="mixin-animate-text-pop-up-bottom">&nbsp;</a>
 Animate text pop up bottom
 
@@ -13575,6 +14213,7 @@ Animate text pop up bottom
 **File source:** <a href="/src/animation/text\animate-text-pop-up-bottom.scss">src/animation/text\animate-text-pop-up-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -13598,6 +14237,7 @@ Animate text pop up left
 
 
 
+
 #### animate-text-pop-up-right <a id="mixin-animate-text-pop-up-right">&nbsp;</a>
 Animate text pop up right
 
@@ -13615,6 +14255,7 @@ Animate text pop up right
 **File source:** <a href="/src/animation/text\animate-text-pop-up-right.scss">src/animation/text\animate-text-pop-up-right.scss</a>
 
 <br>
+
 
 
 
@@ -13638,6 +14279,7 @@ Animate text pop up top left
 
 
 
+
 #### animate-text-pop-up-top-right <a id="mixin-animate-text-pop-up-top-right">&nbsp;</a>
 Animate text pop up top right
 
@@ -13655,6 +14297,7 @@ Animate text pop up top right
 **File source:** <a href="/src/animation/text\animate-text-pop-up-top-right.scss">src/animation/text\animate-text-pop-up-top-right.scss</a>
 
 <br>
+
 
 
 
@@ -13678,6 +14321,7 @@ Animate text pop up top
 
 
 
+
 #### animate-text-shadow-drop-bottom-left <a id="mixin-animate-text-shadow-drop-bottom-left">&nbsp;</a>
 Animate text shadow drop bottom left
 
@@ -13695,6 +14339,7 @@ Animate text shadow drop bottom left
 **File source:** <a href="/src/animation/text\animate-text-shadow-drop-bottom-left.scss">src/animation/text\animate-text-shadow-drop-bottom-left.scss</a>
 
 <br>
+
 
 
 
@@ -13718,6 +14363,7 @@ Animate text shadow drop bottom right
 
 
 
+
 #### animate-text-shadow-drop-bottom <a id="mixin-animate-text-shadow-drop-bottom">&nbsp;</a>
 Animate text shadow drop bottom
 
@@ -13735,6 +14381,7 @@ Animate text shadow drop bottom
 **File source:** <a href="/src/animation/text\animate-text-shadow-drop-bottom.scss">src/animation/text\animate-text-shadow-drop-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -13758,6 +14405,7 @@ Animate text shadow drop center
 
 
 
+
 #### animate-text-shadow-drop-left <a id="mixin-animate-text-shadow-drop-left">&nbsp;</a>
 Animate text shadow drop left
 
@@ -13775,6 +14423,7 @@ Animate text shadow drop left
 **File source:** <a href="/src/animation/text\animate-text-shadow-drop-left.scss">src/animation/text\animate-text-shadow-drop-left.scss</a>
 
 <br>
+
 
 
 
@@ -13798,6 +14447,7 @@ Animate text shadow drop right
 
 
 
+
 #### animate-text-shadow-drop-top-left <a id="mixin-animate-text-shadow-drop-top-left">&nbsp;</a>
 Animate text shadow drop top left
 
@@ -13815,6 +14465,7 @@ Animate text shadow drop top left
 **File source:** <a href="/src/animation/text\animate-text-shadow-drop-top-left.scss">src/animation/text\animate-text-shadow-drop-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -13838,6 +14489,7 @@ Animate text shadow drop top right
 
 
 
+
 #### animate-text-shadow-drop-top <a id="mixin-animate-text-shadow-drop-top">&nbsp;</a>
 Animate text shadow drop top
 
@@ -13855,6 +14507,7 @@ Animate text shadow drop top
 **File source:** <a href="/src/animation/text\animate-text-shadow-drop-top.scss">src/animation/text\animate-text-shadow-drop-top.scss</a>
 
 <br>
+
 
 
 
@@ -13878,6 +14531,7 @@ Animate text shadow pop bottom left
 
 
 
+
 #### animate-text-shadow-pop-bottom-right <a id="mixin-animate-text-shadow-pop-bottom-right">&nbsp;</a>
 Animate text shadow pop bottom right
 
@@ -13895,6 +14549,7 @@ Animate text shadow pop bottom right
 **File source:** <a href="/src/animation/text\animate-text-shadow-pop-bottom-right.scss">src/animation/text\animate-text-shadow-pop-bottom-right.scss</a>
 
 <br>
+
 
 
 
@@ -13918,6 +14573,7 @@ Animate text shadow pop bottom
 
 
 
+
 #### animate-text-shadow-pop-left <a id="mixin-animate-text-shadow-pop-left">&nbsp;</a>
 Animate text shadow pop left
 
@@ -13935,6 +14591,7 @@ Animate text shadow pop left
 **File source:** <a href="/src/animation/text\animate-text-shadow-pop-left.scss">src/animation/text\animate-text-shadow-pop-left.scss</a>
 
 <br>
+
 
 
 
@@ -13958,6 +14615,7 @@ Animate text shadow pop right
 
 
 
+
 #### animate-text-shadow-pop-top-left <a id="mixin-animate-text-shadow-pop-top-left">&nbsp;</a>
 Animate text shadow pop top left
 
@@ -13975,6 +14633,7 @@ Animate text shadow pop top left
 **File source:** <a href="/src/animation/text\animate-text-shadow-pop-top-left.scss">src/animation/text\animate-text-shadow-pop-top-left.scss</a>
 
 <br>
+
 
 
 
@@ -13998,6 +14657,7 @@ Animate text shadow pop top right
 
 
 
+
 #### animate-text-shadow-pop-top <a id="mixin-animate-text-shadow-pop-top">&nbsp;</a>
 Animate text shadow pop top
 
@@ -14015,6 +14675,7 @@ Animate text shadow pop top
 **File source:** <a href="/src/animation/text\animate-text-shadow-pop-top.scss">src/animation/text\animate-text-shadow-pop-top.scss</a>
 
 <br>
+
 
 
 
@@ -14038,6 +14699,7 @@ Animate tracking in contract backward bottom
 
 
 
+
 #### animate-tracking-in-contract-backward-top <a id="mixin-animate-tracking-in-contract-backward-top">&nbsp;</a>
 Animate tracking in contract backward top
 
@@ -14055,6 +14717,7 @@ Animate tracking in contract backward top
 **File source:** <a href="/src/animation/tracking\animate-tracking-in-contract-backward-top.scss">src/animation/tracking\animate-tracking-in-contract-backward-top.scss</a>
 
 <br>
+
 
 
 
@@ -14078,6 +14741,7 @@ Animate tracking in contract backward
 
 
 
+
 #### animate-tracking-in-contract <a id="mixin-animate-tracking-in-contract">&nbsp;</a>
 Animate tracking in contract
 
@@ -14095,6 +14759,7 @@ Animate tracking in contract
 **File source:** <a href="/src/animation/tracking\animate-tracking-in-contract.scss">src/animation/tracking\animate-tracking-in-contract.scss</a>
 
 <br>
+
 
 
 
@@ -14118,6 +14783,7 @@ Animate tracking in expand forward bottom
 
 
 
+
 #### animate-tracking-in-expand-forward-top <a id="mixin-animate-tracking-in-expand-forward-top">&nbsp;</a>
 Animate tracking in expand forward top
 
@@ -14135,6 +14801,7 @@ Animate tracking in expand forward top
 **File source:** <a href="/src/animation/tracking\animate-tracking-in-expand-forward-top.scss">src/animation/tracking\animate-tracking-in-expand-forward-top.scss</a>
 
 <br>
+
 
 
 
@@ -14158,6 +14825,7 @@ Animate tracking in expand forward
 
 
 
+
 #### animate-tracking-in-expand <a id="mixin-animate-tracking-in-expand">&nbsp;</a>
 Animate tracking in expand
 
@@ -14175,6 +14843,7 @@ Animate tracking in expand
 **File source:** <a href="/src/animation/tracking\animate-tracking-in-expand.scss">src/animation/tracking\animate-tracking-in-expand.scss</a>
 
 <br>
+
 
 
 
@@ -14198,6 +14867,7 @@ Animate tracking out contract backward bottom
 
 
 
+
 #### animate-tracking-out-contract-backward-top <a id="mixin-animate-tracking-out-contract-backward-top">&nbsp;</a>
 Animate tracking out contract backward top
 
@@ -14215,6 +14885,7 @@ Animate tracking out contract backward top
 **File source:** <a href="/src/animation/tracking\animate-tracking-out-contract-backward-top.scss">src/animation/tracking\animate-tracking-out-contract-backward-top.scss</a>
 
 <br>
+
 
 
 
@@ -14238,6 +14909,7 @@ Animate tracking out contract backward
 
 
 
+
 #### animate-tracking-out-contract <a id="mixin-animate-tracking-out-contract">&nbsp;</a>
 Animate tracking out contract
 
@@ -14255,6 +14927,7 @@ Animate tracking out contract
 **File source:** <a href="/src/animation/tracking\animate-tracking-out-contract.scss">src/animation/tracking\animate-tracking-out-contract.scss</a>
 
 <br>
+
 
 
 
@@ -14278,6 +14951,7 @@ Animate tracking out expand forward bottom
 
 
 
+
 #### animate-tracking-out-expand-forward-top <a id="mixin-animate-tracking-out-expand-forward-top">&nbsp;</a>
 Animate tracking out expand forward top
 
@@ -14295,6 +14969,7 @@ Animate tracking out expand forward top
 **File source:** <a href="/src/animation/tracking\animate-tracking-out-expand-forward-top.scss">src/animation/tracking\animate-tracking-out-expand-forward-top.scss</a>
 
 <br>
+
 
 
 
@@ -14318,6 +14993,7 @@ Animate tracking out expand forward
 
 
 
+
 #### animate-tracking-out-expand <a id="mixin-animate-tracking-out-expand">&nbsp;</a>
 Animate tracking out expand
 
@@ -14335,6 +15011,7 @@ Animate tracking out expand
 **File source:** <a href="/src/animation/tracking\animate-tracking-out-expand.scss">src/animation/tracking\animate-tracking-out-expand.scss</a>
 
 <br>
+
 
 
 
@@ -14358,6 +15035,7 @@ Animate vibrate 1
 
 
 
+
 #### animate-vibrate-2 <a id="mixin-animate-vibrate-2">&nbsp;</a>
 Animate vibrate 2
 
@@ -14375,6 +15053,7 @@ Animate vibrate 2
 **File source:** <a href="/src/animation/vibrate\animate-vibrate-2.scss">src/animation/vibrate\animate-vibrate-2.scss</a>
 
 <br>
+
 
 
 
@@ -14398,6 +15077,7 @@ Animate vibrate 3
 
 
 
+
 #### animate-wobble-horizontal-bottom <a id="mixin-animate-wobble-horizontal-bottom">&nbsp;</a>
 Animate wobble horizontal bottom
 
@@ -14415,6 +15095,7 @@ Animate wobble horizontal bottom
 **File source:** <a href="/src/animation/wobble\animate-wobble-horizontal-bottom.scss">src/animation/wobble\animate-wobble-horizontal-bottom.scss</a>
 
 <br>
+
 
 
 
@@ -14438,6 +15119,7 @@ Animate wobble horizontal top
 
 
 
+
 #### animate-wobble-vertical-left <a id="mixin-animate-wobble-vertical-left">&nbsp;</a>
 Animate wobble vertical left
 
@@ -14455,6 +15137,7 @@ Animate wobble vertical left
 **File source:** <a href="/src/animation/wobble\animate-wobble-vertical-left.scss">src/animation/wobble\animate-wobble-vertical-left.scss</a>
 
 <br>
+
 
 
 
@@ -14478,6 +15161,7 @@ Animate wobble vertical right
 
 
 
+
 #### animate-wobble <a id="mixin-animate-wobble">&nbsp;</a>
 Animate wobble
 
@@ -14495,6 +15179,23 @@ Animate wobble
 **File source:** <a href="/src/animation/wobble\animate-wobble.scss">src/animation/wobble\animate-wobble.scss</a>
 
 <br>
+
+### Variables
+
+
+#### animate-fade-default-configuration <a id="variable-animate-fade-default-configuration">&nbsp;</a>
+Default configuration for the fade animation
+
+```scss
+/* Default configuration for the fade animation */
+$animate-fade-default-configuration
+```
+**Type:** variable
+
+**File source:** <a href="/src/animation/fade\animate-fade.scss">src/animation/fade\animate-fade.scss</a>
+
+<br>
+
 
 
 <a href="/README.md">Back to Sass Styler</a>

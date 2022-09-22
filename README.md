@@ -29,8 +29,18 @@ Styler is made up of 3 main modules
 @include define-vars($vars-map)
 ```
 ```scss
+/* Define CSS variables via a Sass map */
+/* alias of define-vars */
+@include vars($vars-map)
+```
+```scss
 /* Define CSS variable */
 @include define-var($name, $value)
+```
+```scss
+/* Define CSS variable */
+/* alias of define-var */
+@include v($name, $value)
 ```
 ```scss
 /* Add box shadow based on elevation settings */
@@ -377,6 +387,10 @@ is-property($property)
 ```scss
 /* Check whether a pseudo class is valid in CSS3 */
 is-pseudo($pseudo, $string)
+```
+```scss
+/* Get a unique name for a keyframe animation with optional config */
+keyframes-name($name, $config)
 ```
 ```scss
 /* Return Long shadow */
@@ -885,6 +899,10 @@ xyz($channel)
 ```scss
 /* Animate fade out */
 @include animate-fade-out($animation-settings)
+```
+```scss
+/* Animate configurable fade */
+@include animate-fade($animation-settings, $configuration)
 ```
 ```scss
 /* Animate flicker 1 */
@@ -3289,6 +3307,12 @@ xyz($channel)
 ```scss
 /* Animate wobble */
 @include animate-wobble($animation-settings)
+```
+#### Variables
+
+```scss
+/* Default configuration for the fade animation */
+$animate-fade-default-configuration
 ```
 </details>
 <!-- end automated part -->
