@@ -1,6 +1,6 @@
 {
   "name": "sass-styler",
-  "version": "3.0.0-beta.1",
+  "version": "2.5.0",
   "description": "Modular scss utility library to build better styles faster",
   "keywords": [
     "sass",
