@@ -15,7 +15,7 @@ Styler is made up of 3 main modules
 
 <details>
   <summary>
-    <h3 style="display:inline">Theme</h3> - helpers to create your own design system - <a href="doc/THEME.md">read docs</a>
+    <h3 style="display:inline">Theme</h3> - helpers to create your own design system - <a href="doc/theme.md">read docs</a>
   </summary>
 
 #### Mixins
@@ -164,7 +164,7 @@ $transition-settings
 </details>
 <details>
   <summary>
-    <h3 style="display:inline">Utilities</h3> - a huge array of mixins and functions - <a href="doc/UTILITY.md">read docs</a>
+    <h3 style="display:inline">Utilities</h3> - a huge array of mixins and functions - <a href="doc/utility.md">read docs</a>
   </summary>
 
 #### Mixins
@@ -667,7 +667,7 @@ xyz($channel)
 </details>
 <details>
   <summary>
-    <h3 style="display:inline">Animation</h3> - sass versions of animista - <a href="doc/ANIMATION.md">read docs</a>
+    <h3 style="display:inline">Animation</h3> - sass versions of animista - <a href="doc/animation.md">read docs</a>
   </summary>
 
 #### Mixins
