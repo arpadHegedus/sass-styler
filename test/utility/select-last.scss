@@ -1,0 +1,15 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-last.scss" as *;
+
+@include test-module("select-last [function]") {
+    @include test('Can select with select-last') {
+        @include assert-equal(
+            select-last(),
+            "&:last-child"
+        );
+        @include assert-equal(
+            select-last(5),
+            "&:nth-last-child(-n + 5)"
+        );
+    }
+}

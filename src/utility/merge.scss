@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "sass:meta";
+
+/// Merge maps recursively
+/// @param {Map} $map1 - Map 1
+/// @param {Map} $map2 - Map 2
+/// @group Utility
+
+@function merge($map1, $map2) {
+    @if meta.type-of($map2) != map {
+        @return $map1;
+    }
+    @if meta.type-of($map1) != map and meta.type-of($map2) == map {
+        @return $map2;
+    }
+    @if meta.type-of($map1) != map {
+        @return $map1;
+    }
+    $map: $map1;
+    @each $key, $value in $map2 {
+        @if meta.type-of($value) ==
+            map and
+            map.has-key($map1, $key) and
+            meta.type-of(map.get($map1, $key)) ==
+            map
+        {
+            $map: map.merge($map, ($key: merge(map.get($map1, $key), $value)));
+        } @else {
+            $map: map.merge($map, ( $key: $value ));
+        }
+    }
+    @return $map;
+}

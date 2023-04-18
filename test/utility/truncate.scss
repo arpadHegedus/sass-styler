@@ -1,0 +1,29 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/truncate.scss" as *;
+
+@include test-module("truncate [mixin]") {
+    @include test("Can truncate text") {
+        @include assert {
+            @include output {
+                @include truncate();
+            }
+            @include expect {
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        @include assert {
+            @include output {
+                @include truncate(100px);
+            }
+            @include expect {
+                max-width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

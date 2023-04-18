@@ -1,0 +1,64 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/keyframes.scss" as *;
+
+@include test-module("keyframes [mixin]") {
+    @include test("Can add keyframe") {
+        @include assert {
+            @include output {
+                @include keyframes(spin) {
+                    0% {
+                        transform: rotate(0);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                };
+            }
+            @include expect {
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                };
+            }
+        }
+    }
+    @include test("Can cache and prevent adding only once") {
+        @include assert {
+            @include output {
+                @include keyframes(spin2) {
+                    100% {
+                        transform: rotate(0);
+                    }
+                    0% {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                div {
+                    @include keyframes(spin2) {
+                        25% {
+                            transform: rotate(0);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    };
+                }
+            }
+            @include expect {
+                @keyframes spin2 {
+                    100% {
+                        transform: rotate(0);
+                    }
+                    0% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+}

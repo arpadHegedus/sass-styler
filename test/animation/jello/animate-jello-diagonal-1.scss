@@ -1,0 +1,51 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/jello/animate-jello-diagonal-1.scss" as *;
+
+@include test-module("animate-jello-diagonal-1 [mixin]") {
+    @include test("Can add animation animate-jello-diagonal-1") {
+        @include assert {
+            @include output {
+            @include animate-jello-diagonal-1();
+        }
+        @include expect {
+	animation: jello-diagonal-1;
+
+	@keyframes jello-diagonal-1 {
+		0%,
+		100% {
+			-webkit-transform: skew(0deg 0deg);
+			transform: skew(0deg 0deg);
+		}
+
+		30% {
+			-webkit-transform: skew(25deg 25deg);
+			transform: skew(25deg 25deg);
+		}
+
+		40% {
+			-webkit-transform: skew(-15deg, -15deg);
+			transform: skew(-15deg, -15deg);
+		}
+
+		50% {
+			-webkit-transform: skew(15deg, 15deg);
+			transform: skew(15deg, 15deg);
+		}
+
+		65% {
+			-webkit-transform: skew(-5deg, -5deg);
+			transform: skew(-5deg, -5deg);
+		}
+
+		75% {
+			-webkit-transform: skew(5deg, 5deg);
+			transform: skew(5deg, 5deg);
+		}
+	}
+}        }
+    }
+}

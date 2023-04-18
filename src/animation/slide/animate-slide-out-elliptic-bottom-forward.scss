@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide out elliptic bottom forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-out-elliptic-bottom-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-out-elliptic-bottom-fwd #{$animation-settings}"}, slide-out-elliptic-bottom-fwd);
+
+	@include keyframes(slide-out-elliptic-bottom-fwd) {
+		0% {
+			-webkit-transform: translateY(0) rotateX(0) scale(1);
+			transform: translateY(0) rotateX(0) scale(1);
+			-webkit-transform-origin: 50% 500px;
+			transform-origin: 50% 500px;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateY(600px) rotateX(-20deg) scale(6);
+			transform: translateY(600px) rotateX(-20deg) scale(6);
+			-webkit-transform-origin: 50% -100%;
+			transform-origin: 50% -100%;
+			opacity: 0;
+		}
+	}
+}
+

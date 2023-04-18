@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide top left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-top-left($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-tl #{$animation-settings}"}, slide-tl);
+
+	@include keyframes(slide-tl) {
+		0% {
+			-webkit-transform: translateY(0) translateX(0);
+			transform: translateY(0) translateX(0);
+		}
+
+		100% {
+			-webkit-transform: translateY(-100px) translateX(-100px);
+			transform: translateY(-100px) translateX(-100px);
+		}
+	}
+}
+

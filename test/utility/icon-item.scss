@@ -1,0 +1,60 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/icon-item.scss" as *;
+
+@include test-module("icon-item [mixin]") {
+    @include test("Can create icon-item") {
+        @include assert {
+            @include output {
+                @include icon-item();
+            }
+            @include expect {
+                display: grid;
+                grid-template-columns: 1em repeat(auto-fit, minmax(10px, 100%));
+
+                > img,
+                > svg {
+                    max-width: 1em;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include icon-item(2em, 0.5em, left, center, flex-end, flex-start);
+            }
+            @include expect {
+                display: grid;
+                justify-content: center;
+                align-items: flex-end;
+                gap: 0.5em;
+                grid-template-columns: 2em repeat(auto-fit, minmax(10px, 100%));
+
+                > img,
+                > svg {
+                    max-width: 2em;
+                    align-self: flex-start;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include icon-item(2em, 0.5em, left, center, flex-end, flex-start, 600px);
+            }
+            @include expect {
+                display: grid;
+                justify-content: center;
+                align-items: flex-end;
+                gap: 0.5em;
+
+                > img,
+                > svg {
+                    max-width: 2em;
+                    align-self: flex-start;
+                }
+
+                @media (min-width:600px) {
+                    grid-template-columns: 2em repeat(auto-fit, minmax(10px, 100%));
+                }
+            }
+        }
+    }
+}

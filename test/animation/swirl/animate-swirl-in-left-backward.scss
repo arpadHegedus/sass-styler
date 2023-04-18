@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/swirl/animate-swirl-in-left-backward.scss" as *;
+
+@include test-module("animate-swirl-in-left-backward [mixin]") {
+    @include test("Can add animation animate-swirl-in-left-backward") {
+        @include assert {
+            @include output {
+            @include animate-swirl-in-left-backward();
+        }
+        @include expect {
+	animation: swirl-in-left-bck;
+
+	@keyframes swirl-in-left-bck {
+		0% {
+			-webkit-transform: rotate(540deg) scale(5);
+			transform: rotate(540deg) scale(5);
+			-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: rotate(0) scale(1);
+			transform: rotate(0) scale(1);
+			-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-in-forward-right.scss" as *;
+
+@include test-module("animate-slide-in-forward-right [mixin]") {
+    @include test("Can add animation animate-slide-in-forward-right") {
+        @include assert {
+            @include output {
+            @include animate-slide-in-forward-right();
+        }
+        @include expect {
+	animation: slide-in-fwd-right;
+
+	@keyframes slide-in-fwd-right {
+		0% {
+			-webkit-transform: translateZ(-1400px) translateX(1000px);
+			transform: translateZ(-1400px) translateX(1000px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateZ(0) translateX(0);
+			transform: translateZ(0) translateX(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

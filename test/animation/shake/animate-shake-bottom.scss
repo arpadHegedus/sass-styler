@@ -1,0 +1,53 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/shake/animate-shake-bottom.scss" as *;
+
+@include test-module("animate-shake-bottom [mixin]") {
+    @include test("Can add animation animate-shake-bottom") {
+        @include assert {
+            @include output {
+            @include animate-shake-bottom();
+        }
+        @include expect {
+	animation: shake-bottom;
+
+	@keyframes shake-bottom {
+		0%,
+		100% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+		}
+
+		10%,
+		90% {
+			-webkit-transform: rotate(2deg);
+			transform: rotate(2deg);
+		}
+
+		20%,
+		40%,
+		60% {
+			-webkit-transform: rotate(-4deg);
+			transform: rotate(-4deg);
+		}
+
+		30%,
+		50%,
+		70% {
+			-webkit-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+
+		80% {
+			-webkit-transform: rotate(-2deg);
+			transform: rotate(-2deg);
+		}
+	}
+}        }
+    }
+}

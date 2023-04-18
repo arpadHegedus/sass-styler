@@ -1,0 +1,28 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/fade/animate-fade-out.scss" as *;
+
+@include test-module("animate-fade-out [mixin]") {
+    @include test("Can add animation animate-fade-out") {
+        @include assert {
+            @include output {
+            @include animate-fade-out();
+        }
+        @include expect {
+	animation: fade-out;
+
+	@keyframes fade-out {
+		0% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

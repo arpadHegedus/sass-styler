@@ -1,0 +1,27 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/escape-classname.scss" as styler;
+
+@include test-module("escape-classname [function]") {
+    @include test('Can escape classnames') {
+        @include assert-equal(
+            styler.escape-classname(".hello"),
+            ".hello"
+        );
+        @include assert-equal(
+            styler.escape-classname(".hello there"),
+            ".hello-there"
+        );
+        @include assert-equal(
+            styler.escape-classname(".hello-0.5"),
+            ".hello-0\\.5"
+        );
+        @include assert-equal(
+            styler.escape-classname(".hello-1/2"),
+            ".hello-1\\/2"
+        );
+        @include assert-equal(
+            styler.escape-classname(".hello 0.5 1/2"),
+            ".hello-0\\.5-1\\/2"
+        );
+    }
+}

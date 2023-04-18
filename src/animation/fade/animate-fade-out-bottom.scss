@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate fade out bottom
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-fade-out-bottom($animation-settings: null) {
+	animation: if($animation-settings, #{"fade-out-bottom #{$animation-settings}"}, fade-out-bottom);
+
+	@include keyframes(fade-out-bottom) {
+		0% {
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateY(50px);
+			transform: translateY(50px);
+			opacity: 0;
+		}
+	}
+}
+

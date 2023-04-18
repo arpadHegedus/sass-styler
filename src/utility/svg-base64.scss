@@ -1,0 +1,20 @@
+@use "str-replace" as *;
+
+/// Base64 encode svg code
+/// @param {String} $svg - The svg code
+/// @param {Color} $fill [null] - A fill color to be added to svg
+/// @group Utility
+
+@function svg-base64($svg, $fill: null) {
+    $svg: str-replace(
+        $svg,
+        "<svg ",
+        if($fill, '<svg fill="#{$fill}" ', "<svg ")
+    );
+    $svg: str-replace($svg, "<", "%3C");
+    $svg: str-replace($svg, ">", "%3E");
+    $svg: str-replace($svg, "#", "%23");
+    $svg: str-replace($svg, '"', "'");
+    $svg: str-replace($svg, "`", "'");
+    @return "data:image/svg+xml,#{$svg}";
+}

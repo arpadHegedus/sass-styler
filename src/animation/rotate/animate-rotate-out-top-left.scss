@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate out top left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-out-top-left($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-out-tl #{$animation-settings}"}, rotate-out-tl);
+
+	@include keyframes(rotate-out-tl) {
+		0% {
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			-webkit-transform-origin: top left;
+			transform-origin: top left;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotate(-360deg);
+			transform: rotate(-360deg);
+			-webkit-transform-origin: top left;
+			transform-origin: top left;
+			opacity: 0;
+		}
+	}
+}
+

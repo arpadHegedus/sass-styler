@@ -1,0 +1,12 @@
+@use "sass:string";
+@use "str-to-num" as *;
+@use "strip-unit" as *;
+
+/// Change em to rem (units only, no calculations)
+/// @param {Number} $em - Size value
+/// @return {Number}
+/// @group Utility
+
+@function em-to-rem($em) {
+    @return str-to-num(string.unquote(strip-unit($em) + "rem"));
+}

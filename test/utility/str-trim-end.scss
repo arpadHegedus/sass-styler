@@ -1,0 +1,15 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/str-trim-end.scss" as styler;
+
+@include test-module("str-trim-end [function]") {
+    @include test('Can trim string from the end') {
+        @include assert-equal(
+            styler.str-trim-end("i want it all "),
+            "i want it all"
+        );
+        @include assert-equal(
+            styler.str-trim-end("i want it all    "),
+            "i want it all"
+        );
+    }
+}

@@ -1,0 +1,56 @@
+@use "sass:list";
+@use "sass:math";
+
+/// CSS-only triangle
+/// @param {String} $direction [right] - The triangle pointing direction
+/// @param {Color} $color [#000] - The triangle color
+/// @param {Number|List} $size [0.5rem 0.75rem] - The width and height or size of the triangle
+/// @param {String|List} $selector ["&::after"] - The triangle selector
+/// @group Utility
+
+@mixin triangle($direction: right, $color: #000, $size: 0.5rem 0.75rem, $selector: "&::after") {
+    $width: $size;
+    $height: $size;
+
+    @if list.length($size) > 1 {
+        $width: list.nth($size, 1);
+        $height: list.nth($size, 2);
+    }
+
+    #{$selector} {
+        border-style: solid;
+        width: 0;
+        height: 0;
+
+        @if str-index($selector, ":before") or str-index($selector, ":after") {
+            content: "";
+        }
+
+        @if $direction == "up" {
+            border-color: transparent transparent $color;
+            border-width: 0 math.div($width, 2) $height;
+        } @else if $direction == "up-right" or $direction == "up right" {
+            border-color: transparent $color transparent transparent;
+            border-width: 0 $width $width 0;
+        } @else if $direction == "right" {
+            border-color: transparent transparent transparent $color;
+            border-width: math.div($height, 2) 0 math.div($height, 2) $width;
+        } @else if $direction == "down-right" or $direction == "down right" {
+            border-color: transparent transparent $color;
+            border-width: 0 0 $width $width;
+        } @else if $direction == "down" {
+            border-color: $color transparent transparent;
+            border-width: $height math.div($width, 2) 0;
+        } @else if $direction == "down-left" or $direction == "down left" {
+            border-color: transparent transparent transparent $color;
+            border-width: $width 0 0 $width;
+        } @else if $direction == "left" {
+            border-color: transparent $color transparent transparent;
+            border-width: math.div($height, 2) $width math.div($height, 2) 0;
+        } @else if $direction == "up-left" or $direction == "up left" {
+            border-color: $color transparent transparent;
+            border-width: $width $width 0 0;
+        }
+        @content;
+    }
+}

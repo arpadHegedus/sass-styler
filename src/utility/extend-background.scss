@@ -1,0 +1,33 @@
+/// Extend the background sideways of a container
+/// @param {Color|String} $background - The background value
+/// @param {String} $position [relative] - The position value
+/// @param {Number} $z-index [1] - The Z-index value
+/// @group Utility
+
+@mixin extend-background($background, $position: relative, $z-index: 1) {
+  position: $position;
+  background: $background;
+
+  > * {
+    position: $position;
+    z-index: $z-index;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    background: $background;
+  }
+
+  &::before {
+    right: 50%;
+  }
+
+  &::after {
+    left: 50%;
+  }
+}

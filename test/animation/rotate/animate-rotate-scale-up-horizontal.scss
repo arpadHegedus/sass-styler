@@ -1,0 +1,35 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-scale-up-horizontal.scss" as *;
+
+@include test-module("animate-rotate-scale-up-horizontal [mixin]") {
+    @include test("Can add animation animate-rotate-scale-up-horizontal") {
+        @include assert {
+            @include output {
+            @include animate-rotate-scale-up-horizontal();
+        }
+        @include expect {
+	animation: rotate-scale-up-hor;
+
+	@keyframes rotate-scale-up-hor {
+		0% {
+			-webkit-transform: scale(1) rotateX(0);
+			transform: scale(1) rotateX(0);
+		}
+
+		50% {
+			-webkit-transform: scale(2) rotateX(-180deg);
+			transform: scale(2) rotateX(-180deg);
+		}
+
+		100% {
+			-webkit-transform: scale(1) rotateX(-360deg);
+			transform: scale(1) rotateX(-360deg);
+		}
+	}
+}        }
+    }
+}

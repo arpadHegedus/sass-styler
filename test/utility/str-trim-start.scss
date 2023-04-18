@@ -1,0 +1,15 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/str-trim-start.scss" as styler;
+
+@include test-module("str-trim-start [function]") {
+    @include test('Can trim string from the start') {
+        @include assert-equal(
+            styler.str-trim-start(" i want it all"),
+            "i want it all"
+        );
+        @include assert-equal(
+            styler.str-trim-start("   i want it all"),
+            "i want it all"
+        );
+    }
+}

@@ -1,0 +1,24 @@
+@use "sass:math";
+@use "sass:meta";
+@use "str-to-num" as *;
+
+/// Remove units from a number
+/// @example
+///   $result: strip-unit(12px);    /* 12 */
+///   $result: strip-unit(-12em);   /* -12 */
+///   $result: strip-unit(12rem);   /* 12 */
+///   $result: strip-unit(2.2deg);  /* 2.2 */
+/// @param {Number} $number - Number with a unit
+/// @return {Number}
+/// @link https://github.com/terkel/mathsass/blob/master/dist/helpers/_strip-unit.scss
+/// @group Utility
+
+@function strip-unit($number) {
+    @if meta.type-of($number) == string and meta.type-of(str-to-num($number)) == number {
+        $number: str-to-num($number);
+    }
+    @if meta.type-of($number) == number and not math.is-unitless($number) {
+        @return math.div($number, ($number * 0 + 1));
+    }
+    @return $number;
+}

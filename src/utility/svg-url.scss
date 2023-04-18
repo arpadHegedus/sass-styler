@@ -1,0 +1,11 @@
+@use "svg-base64" as *;
+
+/// SVG base64 background url based on $svg with optional $fill color
+/// @param {String} $svg - The SVG code
+/// @param {Color} $fill [null] - Fill color for the icon
+/// @return {String}
+/// @group Utility
+
+@function svg-url($svg, $fill: null) {
+    @return url(svg-base64($svg, $fill));
+}

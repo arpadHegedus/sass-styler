@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-in-horizontal-center.scss" as *;
+
+@include test-module("animate-scale-in-horizontal-center [mixin]") {
+    @include test("Can add animation animate-scale-in-horizontal-center") {
+        @include assert {
+            @include output {
+            @include animate-scale-in-horizontal-center();
+        }
+        @include expect {
+	animation: scale-in-hor-center;
+
+	@keyframes scale-in-hor-center {
+		0% {
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

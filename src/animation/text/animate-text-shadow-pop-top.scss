@@ -1,0 +1,41 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate text shadow pop top
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-text-shadow-pop-top($animation-settings: null) {
+	animation: if($animation-settings, #{"text-shadow-pop-top #{$animation-settings}"}, text-shadow-pop-top);
+
+	@include keyframes(text-shadow-pop-top) {
+		0% {
+			text-shadow:
+				0 0 #555,
+				0 0 #555,
+				0 0 #555,
+				0 0 #555,
+				0 0 #555,
+				0 0 #555,
+				0 0 #555,
+				0 0 #555;
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+		}
+
+		100% {
+			text-shadow:
+				0 -1px #555,
+				0 -2px #555,
+				0 -3px #555,
+				0 -4px #555,
+				0 -5px #555,
+				0 -6px #555,
+				0 -7px #555,
+				0 -8px #555;
+			-webkit-transform: translateY(8px);
+			transform: translateY(8px);
+		}
+	}
+}
+

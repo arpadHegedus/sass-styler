@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate scale in left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-scale-in-left($animation-settings: null) {
+	animation: if($animation-settings, #{"scale-in-left #{$animation-settings}"}, scale-in-left);
+
+	@include keyframes(scale-in-left) {
+		0% {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+			-webkit-transform-origin: 0% 50%;
+			transform-origin: 0% 50%;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: 0% 50%;
+			transform-origin: 0% 50%;
+			opacity: 1;
+		}
+	}
+}
+

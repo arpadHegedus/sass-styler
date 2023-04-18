@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-up-horizontal-left.scss" as *;
+
+@include test-module("animate-scale-up-horizontal-left [mixin]") {
+    @include test("Can add animation animate-scale-up-horizontal-left") {
+        @include assert {
+            @include output {
+            @include animate-scale-up-horizontal-left();
+        }
+        @include expect {
+	animation: scale-up-hor-left;
+
+	@keyframes scale-up-hor-left {
+		0% {
+			-webkit-transform: scaleX(0.4);
+			transform: scaleX(0.4);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+		}
+
+		100% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+		}
+	}
+}        }
+    }
+}

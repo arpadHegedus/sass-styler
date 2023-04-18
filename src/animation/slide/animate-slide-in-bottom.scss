@@ -1,0 +1,25 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide in bottom
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-in-bottom($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-in-bottom #{$animation-settings}"}, slide-in-bottom);
+
+	@include keyframes(slide-in-bottom) {
+		0% {
+			-webkit-transform: translateY(1000px);
+			transform: translateY(1000px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
+

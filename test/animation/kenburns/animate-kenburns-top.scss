@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/kenburns/animate-kenburns-top.scss" as *;
+
+@include test-module("animate-kenburns-top [mixin]") {
+    @include test("Can add animation animate-kenburns-top") {
+        @include assert {
+            @include output {
+            @include animate-kenburns-top();
+        }
+        @include expect {
+	animation: kenburns-top;
+
+	@keyframes kenburns-top {
+		0% {
+			-webkit-transform: scale(1) translateY(0);
+			transform: scale(1) translateY(0);
+			-webkit-transform-origin: 50% 16%;
+			transform-origin: 50% 16%;
+		}
+
+		100% {
+			-webkit-transform: scale(1.25) translateY(-15px);
+			transform: scale(1.25) translateY(-15px);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/pulsate/animate-pulsate.scss" as *;
+
+@include test-module("animate-pulsate [mixin]") {
+    @include test("Can add animation animate-pulsate") {
+        @include assert {
+            @include output {
+            @include animate-pulsate();
+        }
+        @include expect {
+	animation: pulsate;
+
+	@keyframes pulsate {
+		0% {
+			transform: scale3d(1, 1, 1);
+		}
+
+		50% {
+			transform: scale3d(1.05, 1.05, 1.05);
+		}
+
+		100% {
+			transform: scale3d(1, 1, 1);
+		}
+	}
+}
+
+        }
+    }
+}

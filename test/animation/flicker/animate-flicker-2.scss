@@ -1,0 +1,40 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flicker/animate-flicker-2.scss" as *;
+
+@include test-module("animate-flicker-2 [mixin]") {
+    @include test("Can add animation animate-flicker-2") {
+        @include assert {
+            @include output {
+            @include animate-flicker-2();
+        }
+        @include expect {
+            animation: flicker-2;
+
+            @keyframes flicker-2 {
+                0%,
+    41.99%,
+    43.01%,
+    45.99%,
+    46.91%,
+    51.99%,
+    52.81%,
+                100% {
+      opacity: 1;
+    }
+
+                42%,
+                43%,
+                46%,
+    46.9%,
+                52%,
+    52.8% {
+      opacity: 0;
+    }
+  }
+}        }
+    }
+}

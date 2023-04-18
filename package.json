@@ -1,22 +1,65 @@
 {
   "name": "sass-styler",
-  "version": "2.0.1",
-  "description": "A collection of useful scss",
-  "main": "styler.scss",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arpadHegedus/sass-styler.git"
-  },
-  "readme": "README.md",
+  "version": "2.5.0",
+  "description": "Modular scss utility library to build better styles faster",
   "keywords": [
     "sass",
     "scss",
     "styler",
     "frontend",
     "utility",
+    "modular",
+    "library",
     "helper"
   ],
-  "author": "Arpad Hegedus <hegedus.arpad@gmail.com> (http://arpadhegedus.com)",
+  "type": "module",
+  "homepage": "https://github.com/arpadHegedus/sass-styler",
+  "bugs": "https://github.com/arpadHegedus/sass-styler/issues",
   "license": "ISC",
-  "homepage": "https://github.com/arpadHegedus/sass-styler"
+  "author": {
+    "name": "Arpad Hegedus",
+    "email": "hegedus.arpad@gmail.com",
+    "url": "http://arpadhegedus.com"
+  },
+  "contributors": [
+    {
+      "name": "Arpad Hegedus",
+      "email": "hegedus.arpad@gmail.com",
+      "url": "http://arpadhegedus.com"
+    }
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://www.paypal.com/donate?hosted_button_id=XWAPUXYW5UXYG"
+  },
+  "main": "src/styler.scss",
+  "exports": {
+    "animation": "./src/animation.scss",
+    "theme": "./src/theme.scss",
+    "utility": "./src/utility.scss",
+    "./animation": "./src/animation/",
+    "./theme": "./src/theme/",
+    "./utility": "./src/utility/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpadHegedus/sass-styler.git"
+  },
+  "devDependencies": {
+    "globby": "^11.0.4",
+    "jest": "^26.1.0",
+    "sass": "^1.43.4",
+    "sass-true": "^6.0.1",
+    "sassdoc": "^2.7.3",
+    "sassdoc-extras": "^3.0.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard-scss": "^2.0.1",
+    "stylelint-scss": "^4.0.0"
+  },
+  "engines": {},
+  "scripts": {
+    "doc": "node ./.dev/doc.js",
+    "stylelint": "stylelint ./src/**",
+    "test": "jest --env=node"
+  }
 }

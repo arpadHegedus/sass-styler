@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate kenburns right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-kenburns-right($animation-settings: null) {
+	animation: if($animation-settings, #{"kenburns-right #{$animation-settings}"}, kenburns-right);
+
+	@include keyframes(kenburns-right) {
+		0% {
+			-webkit-transform: scale(1) translate(0, 0);
+			transform: scale(1) translate(0, 0);
+			-webkit-transform-origin: 84% 50%;
+			transform-origin: 84% 50%;
+		}
+
+		100% {
+			-webkit-transform: scale(1.25) translateX(20px);
+			transform: scale(1.25) translateX(20px);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+		}
+	}
+}
+

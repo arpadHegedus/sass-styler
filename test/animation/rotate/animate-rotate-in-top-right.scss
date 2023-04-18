@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-in-top-right.scss" as *;
+
+@include test-module("animate-rotate-in-top-right [mixin]") {
+    @include test("Can add animation animate-rotate-in-top-right") {
+        @include assert {
+            @include output {
+            @include animate-rotate-in-top-right();
+        }
+        @include expect {
+	animation: rotate-in-tr;
+
+	@keyframes rotate-in-tr {
+		0% {
+			-webkit-transform: rotate(-360deg);
+			transform: rotate(-360deg);
+			-webkit-transform-origin: top right;
+			transform-origin: top right;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transform-origin: top right;
+			transform-origin: top right;
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

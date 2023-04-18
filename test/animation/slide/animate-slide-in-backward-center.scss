@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-in-backward-center.scss" as *;
+
+@include test-module("animate-slide-in-backward-center [mixin]") {
+    @include test("Can add animation animate-slide-in-backward-center") {
+        @include assert {
+            @include output {
+            @include animate-slide-in-backward-center();
+        }
+        @include expect {
+	animation: slide-in-bck-center;
+
+	@keyframes slide-in-bck-center {
+		0% {
+			-webkit-transform: translateZ(600px);
+			transform: translateZ(600px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

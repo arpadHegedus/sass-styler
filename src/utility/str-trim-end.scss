@@ -1,0 +1,13 @@
+@use "sass:string";
+
+/// Trim whitespace from the end of a string
+/// @param {String} $string String to trim
+/// @return {String}
+/// @group Utility
+
+@function str-trim-end($string) {
+    @if string.slice($string, string.length($string), -1) == " " {
+        @return str-trim-end(string.slice($string, 1, -2));
+    }
+    @return $string;
+}

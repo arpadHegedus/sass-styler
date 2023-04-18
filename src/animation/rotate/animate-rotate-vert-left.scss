@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate vert left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-vert-left($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-vert-left #{$animation-settings}"}, rotate-vert-left);
+
+	@include keyframes(rotate-vert-left) {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+			-webkit-transform-origin: left;
+			transform-origin: left;
+		}
+
+		100% {
+			-webkit-transform: rotateY(360deg);
+			transform: rotateY(360deg);
+			-webkit-transform-origin: left;
+			transform-origin: left;
+		}
+	}
+}
+

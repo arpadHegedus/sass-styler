@@ -1,0 +1,51 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/vibrate/animate-vibrate-3.scss" as *;
+
+@include test-module("animate-vibrate-3 [mixin]") {
+    @include test("Can add animation animate-vibrate-3") {
+        @include assert {
+            @include output {
+            @include animate-vibrate-3();
+        }
+        @include expect {
+	animation: vibrate-3;
+
+	@keyframes vibrate-3 {
+		0%,
+		100% {
+			-webkit-transform: translate(0);
+			transform: translate(0);
+		}
+
+		10%,
+		50%,
+		80% {
+			-webkit-transform: translate(-2px, -2px);
+			transform: translate(-2px, -2px);
+		}
+
+		20%,
+		60%,
+		90% {
+			-webkit-transform: translate(2px, -2px);
+			transform: translate(2px, -2px);
+		}
+
+		30%,
+		70% {
+			-webkit-transform: translate(-2px, 2px);
+			transform: translate(-2px, 2px);
+		}
+
+		40% {
+			-webkit-transform: translate(2px, 2px);
+			transform: translate(2px, 2px);
+		}
+	}
+}        }
+    }
+}

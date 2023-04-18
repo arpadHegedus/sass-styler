@@ -1,0 +1,54 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate bounce out left
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-bounce-out-left($animation-settings: null) {
+  animation: if($animation-settings, #{"bounce-out-left #{$animation-settings}"}, bounce-out-left);
+
+  @include keyframes(bounce-out-left) {
+    0%,
+    15%,
+    38%,
+    70% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+
+    5% {
+      -webkit-transform: translateX(-30px);
+      transform: translateX(-30px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+
+    25% {
+      -webkit-transform: translateX(-38px);
+      transform: translateX(-38px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+
+    52% {
+      -webkit-transform: translateX(-80px);
+      transform: translateX(-80px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+
+    85% {
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+  }
+}
+

@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate shadow drop 2 top right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-shadow-drop-2-top-right($animation-settings: null) {
+	animation: if($animation-settings, #{"shadow-drop-2-tr #{$animation-settings}"}, shadow-drop-2-tr);
+
+	@include keyframes(shadow-drop-2-tr) {
+		0% {
+			-webkit-transform: translateZ(0) translateX(0) translateY(0);
+			transform: translateZ(0) translateX(0) translateY(0);
+			-webkit-box-shadow: 0 0 0 0 transparent;
+			box-shadow: 0 0 0 0 transparent;
+		}
+
+		100% {
+			-webkit-transform: translateZ(50px) translateX(-12px) translateY(12px);
+			transform: translateZ(50px) translateX(-12px) translateY(12px);
+			-webkit-box-shadow: 12px -12px 20px -12px rgba(0, 0, 0, 0.35);
+			box-shadow: 12px -12px 20px -12px rgba(0, 0, 0, 0.35);
+		}
+	}
+}
+

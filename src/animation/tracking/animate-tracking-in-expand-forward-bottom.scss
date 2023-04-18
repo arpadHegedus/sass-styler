@@ -1,0 +1,30 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate tracking in expand forward bottom
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-tracking-in-expand-forward-bottom($animation-settings: null) {
+	animation: if($animation-settings, #{"tracking-in-expand-fwd-bottom #{$animation-settings}"}, tracking-in-expand-fwd-bottom);
+
+	@include keyframes(tracking-in-expand-fwd-bottom) {
+		0% {
+			letter-spacing: -0.5em;
+			-webkit-transform: translateZ(-700px) translateY(500px);
+			transform: translateZ(-700px) translateY(500px);
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0.6;
+		}
+
+		100% {
+			-webkit-transform: translateZ(0) translateY(0);
+			transform: translateZ(0) translateY(0);
+			opacity: 1;
+		}
+	}
+}
+

@@ -1,0 +1,28 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate scale down horizontal
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-scale-down-horizontal($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-scale-down-hor #{$animation-settings}"}, rotate-scale-down-hor);
+
+	@include keyframes(rotate-scale-down-hor) {
+		0% {
+			-webkit-transform: scale(1) rotateX(0);
+			transform: scale(1) rotateX(0);
+		}
+
+		50% {
+			-webkit-transform: scale(0.5) rotateX(-180deg);
+			transform: scale(0.5) rotateX(-180deg);
+		}
+
+		100% {
+			-webkit-transform: scale(1) rotateX(-360deg);
+			transform: scale(1) rotateX(-360deg);
+		}
+	}
+}
+

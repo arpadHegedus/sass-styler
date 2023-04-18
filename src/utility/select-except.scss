@@ -1,0 +1,11 @@
+@use "selector-combine" as *;
+
+/// Select all elements except a specific nth
+/// @param {Number} $nth - The nth element
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group Utility
+
+@function select-except($nth, $selector: "&") {
+    @return selector-combine($selector, "&:not(:nth-child(#{$nth}))");
+}

@@ -1,0 +1,11 @@
+@use "sass:color";
+
+/// Get the tetrad pairs of a color
+/// @param {Color} $color - Color
+/// @param {Number} $step [1] - Which tetrad to get
+/// @return {Color}
+/// @group Utility
+
+@function tetrad($color, $step: 1) {
+    @return color.adjust($color, $hue: $step * 90);
+}

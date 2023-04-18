@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate puff out horizontal
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-puff-out-horizontal($animation-settings: null) {
+	animation: if($animation-settings, #{"puff-out-hor #{$animation-settings}"}, puff-out-hor);
+
+	@include keyframes(puff-out-hor) {
+		0% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scaleX(2);
+			transform: scaleX(2);
+			-webkit-filter: blur(2px);
+			filter: blur(2px);
+			opacity: 0;
+		}
+	}
+}
+

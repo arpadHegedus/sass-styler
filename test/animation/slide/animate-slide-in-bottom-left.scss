@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-in-bottom-left.scss" as *;
+
+@include test-module("animate-slide-in-bottom-left [mixin]") {
+    @include test("Can add animation animate-slide-in-bottom-left") {
+        @include assert {
+            @include output {
+            @include animate-slide-in-bottom-left();
+        }
+        @include expect {
+	animation: slide-in-bl;
+
+	@keyframes slide-in-bl {
+		0% {
+			-webkit-transform: translateY(1000px) translateX(-1000px);
+			transform: translateY(1000px) translateX(-1000px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateY(0) translateX(0);
+			transform: translateY(0) translateX(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,11 @@
+/// Prevent elements flowing around floating elements
+/// @param {String} $selector ["&::after"] - Selector for the clearfix code
+/// @group Utility
+
+@mixin clearfix($selector: "&::after") {
+    #{$selector} {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

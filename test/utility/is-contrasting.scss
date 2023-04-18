@@ -1,0 +1,71 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/is-contrasting.scss" as styler;
+
+@include test-module("is-contrasting [function]") {
+    @include test('Can get if 2 colours contrast AA or AAALG') {
+        @include assert-equal(
+            styler.is-contrasting(#000, #fff),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#000, #000),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#2666a1, #fff),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #fff),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #df31e2),
+            false
+        );
+    }
+    @include test('Can get if 2 colours contrast AAA') {
+        @include assert-equal(
+            styler.is-contrasting(#000, #fff, AAA),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#000, #000, AAA),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#2666a1, #fff, AAA),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #fff, AAA),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #df31e2, AAA),
+            false
+        );
+    }
+    @include test('Can get if 2 colours contrast AALG') {
+        @include assert-equal(
+            styler.is-contrasting(#000, #fff, AALG),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#000, #000, AALG),
+            false
+        );
+        @include assert-equal(
+            styler.is-contrasting(#2666a1, #fff, AALG),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #fff, AALG),
+            true
+        );
+        @include assert-equal(
+            styler.is-contrasting(#318de2, #df31e2, AALG),
+            false
+        );
+    }
+}

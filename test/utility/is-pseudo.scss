@@ -1,0 +1,79 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/is-pseudo.scss" as styler;
+
+@include test-module("is-pseudo [function]") {
+    @include test("Can understand pseudo selectors") {
+        @include assert-equal(styler.is-pseudo(active), true);
+        @include assert-equal(styler.is-pseudo(after), true);
+        @include assert-equal(styler.is-pseudo(before), true);
+        @include assert-equal(styler.is-pseudo(checked), true);
+        @include assert-equal(styler.is-pseudo(disabled), true);
+        @include assert-equal(styler.is-pseudo(empty), true);
+        @include assert-equal(styler.is-pseudo(enabled), true);
+        @include assert-equal(styler.is-pseudo(first-child), true);
+        @include assert-equal(styler.is-pseudo(first-letter), true);
+        @include assert-equal(styler.is-pseudo(first-line), true);
+        @include assert-equal(styler.is-pseudo(first-of-type), true);
+        @include assert-equal(styler.is-pseudo(focus), true);
+        @include assert-equal(styler.is-pseudo(hover), true);
+        @include assert-equal(styler.is-pseudo(in-range), true);
+        @include assert-equal(styler.is-pseudo(invalid), true);
+        @include assert-equal(styler.is-pseudo(last-child), true);
+        @include assert-equal(styler.is-pseudo(last-of-type), true);
+        @include assert-equal(styler.is-pseudo(link), true);
+        @include assert-equal(styler.is-pseudo(only-of-type), true);
+        @include assert-equal(styler.is-pseudo(only-child), true);
+        @include assert-equal(styler.is-pseudo(optional), true);
+        @include assert-equal(styler.is-pseudo(out-of-range), true);
+        @include assert-equal(styler.is-pseudo(read-only), true);
+        @include assert-equal(styler.is-pseudo(read-write), true);
+        @include assert-equal(styler.is-pseudo(required), true);
+        @include assert-equal(styler.is-pseudo(root), true);
+        @include assert-equal(styler.is-pseudo(selection), true);
+        @include assert-equal(styler.is-pseudo(target), true);
+        @include assert-equal(styler.is-pseudo(valid), true);
+        @include assert-equal(styler.is-pseudo(visited), true);
+        @include assert-equal(styler.is-pseudo(color), false);
+        @include assert-equal(styler.is-pseudo(border), false);
+    }
+    @include test("Can understand pseudo selectors with quotes") {
+        @include assert-equal(styler.is-pseudo(":active"), true);
+        @include assert-equal(styler.is-pseudo(":after"), true);
+        @include assert-equal(styler.is-pseudo("::after"), true);
+        @include assert-equal(styler.is-pseudo(":before"), true);
+        @include assert-equal(styler.is-pseudo("::before"), true);
+        @include assert-equal(styler.is-pseudo(":checked"), true);
+        @include assert-equal(styler.is-pseudo(":disabled"), true);
+        @include assert-equal(styler.is-pseudo(":empty"), true);
+        @include assert-equal(styler.is-pseudo(":enabled"), true);
+        @include assert-equal(styler.is-pseudo(":first-child"), true);
+        @include assert-equal(styler.is-pseudo(":first-letter"), true);
+        @include assert-equal(styler.is-pseudo(":first-line"), true);
+        @include assert-equal(styler.is-pseudo(":first-of-type"), true);
+        @include assert-equal(styler.is-pseudo(":focus"), true);
+        @include assert-equal(styler.is-pseudo(":hover"), true);
+        @include assert-equal(styler.is-pseudo(":in-range"), true);
+        @include assert-equal(styler.is-pseudo(":invalid"), true);
+        @include assert-equal(styler.is-pseudo(":last-child"), true);
+        @include assert-equal(styler.is-pseudo(":last-of-type"), true);
+        @include assert-equal(styler.is-pseudo(":link"), true);
+        @include assert-equal(styler.is-pseudo(":only-of-type"), true);
+        @include assert-equal(styler.is-pseudo(":only-child"), true);
+        @include assert-equal(styler.is-pseudo(":optional"), true);
+        @include assert-equal(styler.is-pseudo(":out-of-range"), true);
+        @include assert-equal(styler.is-pseudo(":read-only"), true);
+        @include assert-equal(styler.is-pseudo(":read-write"), true);
+        @include assert-equal(styler.is-pseudo(":required"), true);
+        @include assert-equal(styler.is-pseudo(":root"), true);
+        @include assert-equal(styler.is-pseudo(":selection"), true);
+        @include assert-equal(styler.is-pseudo(":target"), true);
+        @include assert-equal(styler.is-pseudo(":valid"), true);
+        @include assert-equal(styler.is-pseudo(":visited"), true);
+        @include assert-equal(styler.is-pseudo(":color"), false);
+        @include assert-equal(styler.is-pseudo(":border"), false);
+    }
+    @include test("Can understand compound pseudo selectors") {
+        @include assert-equal(styler.is-pseudo(":not(p)"), true);
+        @include assert-equal(styler.is-pseudo(":not(:hover)"), true);
+    }
+}

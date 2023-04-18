@@ -1,0 +1,22 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate roll in
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-roll-in($animation-settings: null) {
+	animation: if($animation-settings, #{"roll-in #{$animation-settings}"}, roll-in);
+
+	@include keyframes(roll-in) {
+		0% {
+			opacity: 0;
+			transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}

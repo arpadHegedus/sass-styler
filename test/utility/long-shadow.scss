@@ -1,0 +1,11 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/long-shadow.scss" as *;
+
+@include test-module("long-shadow [function]") {
+    @include test("Can get long shadow settings") {
+        @include assert-equal(
+            "#{long-shadow(black)}",
+            "0 0 black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black, 9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px black, 17px 17px black, 18px 18px black, 19px 19px black, 20px 20px black"
+        );
+    }
+}

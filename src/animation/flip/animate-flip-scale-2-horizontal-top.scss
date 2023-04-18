@@ -1,0 +1,34 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate flip scale 2 horizontal top
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-flip-scale-2-horizontal-top($animation-settings: null) {
+	animation: if($animation-settings, #{"flip-scale-2-hor-top #{$animation-settings}"}, flip-scale-2-hor-top);
+
+	@include keyframes(flip-scale-2-hor-top) {
+		0% {
+			-webkit-transform: translateY(0) rotateX(0) scale(1);
+			transform: translateY(0) rotateX(0) scale(1);
+			-webkit-transform-origin: 50% 0%;
+			transform-origin: 50% 0%;
+		}
+
+		50% {
+			-webkit-transform: translateY(-50%) rotateX(-90deg) scale(2);
+			transform: translateY(-50%) rotateX(-90deg) scale(2);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+		}
+
+		100% {
+			-webkit-transform: translateY(-100%) rotateX(-180deg) scale(1);
+			transform: translateY(-100%) rotateX(-180deg) scale(1);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+		}
+	}
+}
+

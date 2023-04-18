@@ -1,0 +1,30 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flip/animate-flip-diagonal-1-top-right.scss" as *;
+
+@include test-module("animate-flip-diagonal-1-top-right [mixin]") {
+    @include test("Can add animation animate-flip-diagonal-1-top-right") {
+        @include assert {
+            @include output {
+            @include animate-flip-diagonal-1-top-right();
+        }
+        @include expect {
+	animation: flip-diagonal-1-tr;
+
+	@keyframes flip-diagonal-1-tr {
+		0% {
+			-webkit-transform: rotate3d(1, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate3d(1, 1, 0, 180deg);
+			transform: rotate3d(1, 1, 0, 180deg);
+		}
+	}
+}        }
+    }
+}

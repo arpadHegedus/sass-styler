@@ -1,0 +1,10 @@
+@use "selector-combine" as *;
+
+/// Select the last of the type element
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group Utility
+
+@function select-last-of-type($selector: "&") {
+    @return selector-combine($selector, "&:last-of-type");
+}

@@ -1,0 +1,101 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/remove.scss" as styler;
+
+$test: (
+    string: "top level",
+    number: 1,
+    list: 1 2 3 4,
+    map: (
+        string: "1st level",
+        map: (
+            string: "2nd level",
+            map: (
+                string: "3rd level"
+            )
+        )
+    )
+);
+
+@include test-module("remove [function]") {
+    @include test('Can remove keys maps') {
+        @include assert-equal(
+            styler.remove($test, number),
+            (
+                string: "top level",
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.remove($test, list),
+            (
+                string: "top level",
+                number: 1,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can remove maps deeply') {
+        @include assert-equal(
+            styler.remove($test, map string),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.remove($test, map map map),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level"
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.remove($test, map map map string),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: ()
+                    )
+                )
+            )
+        );
+    }
+}

@@ -1,0 +1,19 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/rem-to-em.scss" as styler;
+
+@include test-module("rem-to-em [function]") {
+    @include test('Can convert values') {
+        @include assert-equal(
+            styler.rem-to-em(1rem),
+            1em
+        );
+        @include assert-equal(
+            styler.rem-to-em(1.5rem),
+            1.5em
+        );
+        @include assert-equal(
+            styler.rem-to-em("1.25rem"),
+            1.25em
+        );
+    }
+}

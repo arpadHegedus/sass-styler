@@ -1,0 +1,15 @@
+@use "sass:color";
+@use "sass:math";
+@use "luminance" as *;
+
+/// Get the contrast between 2 colors
+/// @param {Color} $color1 - Color 1
+/// @param {Color} $color2 - Color 2
+/// @return {Number}
+/// @group Utility
+
+@function contrast-between($color1, $color2) {
+    $lum1: luminance($color1);
+    $lum2: luminance($color2);
+    @return math.div((math.max($lum1, $lum2) + 0.05), (math.min($lum1, $lum2)) + 0.05);
+}

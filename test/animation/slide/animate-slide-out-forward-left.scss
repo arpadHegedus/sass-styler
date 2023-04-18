@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/slide/animate-slide-out-forward-left.scss" as *;
+
+@include test-module("animate-slide-out-forward-left [mixin]") {
+    @include test("Can add animation animate-slide-out-forward-left") {
+        @include assert {
+            @include output {
+            @include animate-slide-out-forward-left();
+        }
+        @include expect {
+	animation: slide-out-fwd-left;
+
+	@keyframes slide-out-fwd-left {
+		0% {
+			-webkit-transform: translateZ(0) translateX(0);
+			transform: translateZ(0) translateX(0);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateZ(600px) translateX(-400px);
+			transform: translateZ(600px) translateX(-400px);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

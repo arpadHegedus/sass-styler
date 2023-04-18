@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-bottom-right.scss" as *;
+
+@include test-module("animate-rotate-bottom-right [mixin]") {
+    @include test("Can add animation animate-rotate-bottom-right") {
+        @include assert {
+            @include output {
+            @include animate-rotate-bottom-right();
+        }
+        @include expect {
+	animation: rotate-br;
+
+	@keyframes rotate-br {
+		0% {
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			-webkit-transform-origin: bottom right;
+			transform-origin: bottom right;
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+			-webkit-transform-origin: bottom right;
+			transform-origin: bottom right;
+		}
+	}
+}        }
+    }
+}

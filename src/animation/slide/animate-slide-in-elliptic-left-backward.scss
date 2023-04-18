@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide in elliptic left backward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-in-elliptic-left-backward($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-in-elliptic-left-bck #{$animation-settings}"}, slide-in-elliptic-left-bck);
+
+	@include keyframes(slide-in-elliptic-left-bck) {
+		0% {
+			-webkit-transform: translateX(-800px) rotateY(-30deg) scale(6.5);
+			transform: translateX(-800px) rotateY(-30deg) scale(6.5);
+			-webkit-transform-origin: 200% 50%;
+			transform-origin: 200% 50%;
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-transform: translateX(0) rotateY(0) scale(1);
+			transform: translateX(0) rotateY(0) scale(1);
+			-webkit-transform-origin: -600px 50%;
+			transform-origin: -600px 50%;
+			opacity: 1;
+		}
+	}
+}
+

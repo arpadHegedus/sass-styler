@@ -1,0 +1,24 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate pulsate forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-pulsate-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"pulsate-fwd #{$animation-settings}"}, pulsate-fwd);
+
+	@include keyframes(pulsate-fwd) {
+		0%,
+		100% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+
+		50% {
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+	}
+}
+

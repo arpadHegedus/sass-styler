@@ -1,0 +1,29 @@
+@use "../utility/get" as *;
+
+/// Elevation level box-shadow settings
+/// @type Map
+/// @group Theme
+
+$elevations: (
+	"1": 0 1px 3px rgba(0, 0, 0, 0.05),
+	"2": 0 2px 5px 1px rgba(0, 0, 0, 0.05),
+	"3": 0 3px 7px 2px rgba(0, 0, 0, 0.05),
+	"4": 0 4px 9px 3px rgba(0, 0, 0, 0.05),
+	"5": 0 5px 11px 4px rgba(0, 0, 0, 0.05),
+) !default;
+
+/// Return box shadow based on elevation settings
+/// @param {Number} $level [1] - Level of elevation
+/// @group Theme
+
+@function elevation($level: 1) {
+	@return get($elevations, $level);
+}
+
+/// Add box shadow based on elevation settings
+/// @param {Number} $level [1] - Level of elevation
+/// @group Theme
+
+@mixin elevation($level: 1) {
+    box-shadow: elevation($level);
+}

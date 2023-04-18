@@ -1,0 +1,37 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/tracking/animate-tracking-out-contract-backward.scss" as *;
+
+@include test-module("animate-tracking-out-contract-backward [mixin]") {
+    @include test("Can add animation animate-tracking-out-contract-backward") {
+        @include assert {
+            @include output {
+            @include animate-tracking-out-contract-backward();
+        }
+        @include expect {
+	animation: tracking-out-contract-bck;
+
+	@keyframes tracking-out-contract-bck {
+		0% {
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			opacity: 1;
+		}
+
+		60% {
+			opacity: 1;
+		}
+
+		100% {
+			letter-spacing: -0.5em;
+			-webkit-transform: translateZ(-500px);
+			transform: translateZ(-500px);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

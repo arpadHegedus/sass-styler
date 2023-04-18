@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-out-bottom-left.scss" as *;
+
+@include test-module("animate-rotate-out-bottom-left [mixin]") {
+    @include test("Can add animation animate-rotate-out-bottom-left") {
+        @include assert {
+            @include output {
+            @include animate-rotate-out-bottom-left();
+        }
+        @include expect {
+	animation: rotate-out-bl;
+
+	@keyframes rotate-out-bl {
+		0% {
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			-webkit-transform-origin: bottom left;
+			transform-origin: bottom left;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotate(-360deg);
+			transform: rotate(-360deg);
+			-webkit-transform-origin: bottom left;
+			transform-origin: bottom left;
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

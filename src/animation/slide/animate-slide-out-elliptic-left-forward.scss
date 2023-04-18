@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide out elliptic left forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-out-elliptic-left-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-out-elliptic-left-fwd #{$animation-settings}"}, slide-out-elliptic-left-fwd);
+
+	@include keyframes(slide-out-elliptic-left-fwd) {
+		0% {
+			-webkit-transform: translateX(0) rotateY(0) scale(1);
+			transform: translateX(0) rotateY(0) scale(1);
+			-webkit-transform-origin: -500px 50%;
+			transform-origin: -500px 50%;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateX(-1000px) rotateY(-20deg) scale(6);
+			transform: translateX(-1000px) rotateY(-20deg) scale(6);
+			-webkit-transform-origin: 200% 50%;
+			transform-origin: 200% 50%;
+			opacity: 0;
+		}
+	}
+}
+

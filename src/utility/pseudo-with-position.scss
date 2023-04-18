@@ -1,0 +1,35 @@
+@use "pseudo" as *;
+@use "position" as *;
+
+/// Add a pseduo element with position
+/// @param {Number} $top [auto] - Top property
+/// @param {Number} $right [auto] - Right property
+/// @param {Number} $bottom [auto] - Bottom property
+/// @param {Number} $left [auto] - Left property
+/// @param {String} $position [static] - Position value
+/// @param {String} $width [static] - Width value
+/// @param {String} $height [static] - Height value
+/// @param {String} $z-index [static] - Z-index value
+/// @param {String} $content [""] - The content value
+/// @param {String} $display [block] - The display value
+/// @param {String|List} $selector ["&"] - The selector
+/// @group Utility
+
+@mixin pseudo-with-position(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $position: absolute,
+  $width: null,
+  $height: null,
+  $z-index: null,
+  $content: "",
+  $display: block,
+  $selector: "&::before"
+) {
+    @include pseudo($content, $display, $selector) {
+        @include position($top, $right, $bottom, $left, $position, $width, $height, $z-index);
+        @content;
+    }
+}

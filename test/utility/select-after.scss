@@ -1,0 +1,11 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-after.scss" as *;
+
+@include test-module("select-after [function]") {
+    @include test('Can select with select-after') {
+        @include assert-equal(
+            select-after(3),
+            "&:nth-child(n + 4)"
+        );
+    }
+}

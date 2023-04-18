@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate scale down horizontal right
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-scale-down-horizontal-right($animation-settings: null) {
+	animation: if($animation-settings, #{"scale-down-hor-right #{$animation-settings}"}, scale-down-hor-right);
+
+	@include keyframes(scale-down-hor-right) {
+		0% {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+		}
+
+		100% {
+			-webkit-transform: scaleX(0.3);
+			transform: scaleX(0.3);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+		}
+	}
+}
+

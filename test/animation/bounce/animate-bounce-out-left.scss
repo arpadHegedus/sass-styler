@@ -1,0 +1,61 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/bounce/animate-bounce-out-left.scss" as *;
+
+@include test-module("animate-bounce-out-left [mixin]") {
+    @include test("Can add animation animate-bounce-out-left") {
+        @include assert {
+            @include output {
+            @include animate-bounce-out-left();
+        }
+        @include expect {
+            animation: bounce-out-left;
+
+            @keyframes bounce-out-left {
+                0%,
+                15%,
+                38%,
+                70% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+    }
+
+                5% {
+      -webkit-transform: translateX(-30px);
+      transform: translateX(-30px);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+
+                25% {
+      -webkit-transform: translateX(-38px);
+      transform: translateX(-38px);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+
+                52% {
+      -webkit-transform: translateX(-80px);
+      transform: translateX(-80px);
+      -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+
+                85% {
+      opacity: 1;
+    }
+
+                100% {
+      -webkit-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+  }
+}        }
+    }
+}

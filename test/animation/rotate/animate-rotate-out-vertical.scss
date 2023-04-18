@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/rotate/animate-rotate-out-vertical.scss" as *;
+
+@include test-module("animate-rotate-out-vertical [mixin]") {
+    @include test("Can add animation animate-rotate-out-vertical") {
+        @include assert {
+            @include output {
+            @include animate-rotate-out-vertical();
+        }
+        @include expect {
+	animation: rotate-out-ver;
+
+	@keyframes rotate-out-ver {
+		0% {
+			-webkit-transform: rotateY(360deg);
+			transform: rotateY(360deg);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

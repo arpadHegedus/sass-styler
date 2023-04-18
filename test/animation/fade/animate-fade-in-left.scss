@@ -1,0 +1,32 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/fade/animate-fade-in-left.scss" as *;
+
+@include test-module("animate-fade-in-left [mixin]") {
+    @include test("Can add animation animate-fade-in-left") {
+        @include assert {
+            @include output {
+            @include animate-fade-in-left();
+        }
+        @include expect {
+            animation: fade-in-left;
+
+            @keyframes fade-in-left {
+                0% {
+      -webkit-transform: translateX(-50px);
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+
+                100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}        }
+    }
+}

@@ -1,0 +1,29 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate flicker 1
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-flicker-1($animation-settings: null) {
+  animation: if($animation-settings, #{"flicker-1 #{$animation-settings}"}, flicker-1);
+
+  @include keyframes(flicker-1) {
+    0%,
+    41.99%,
+    43.01%,
+    47.99%,
+    49.01%,
+    100% {
+      opacity: 1;
+    }
+
+    42%,
+    43%,
+    48%,
+    49% {
+      opacity: 0;
+    }
+  }
+}
+

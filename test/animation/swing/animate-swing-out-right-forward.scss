@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/swing/animate-swing-out-right-forward.scss" as *;
+
+@include test-module("animate-swing-out-right-forward [mixin]") {
+    @include test("Can add animation animate-swing-out-right-forward") {
+        @include assert {
+            @include output {
+            @include animate-swing-out-right-forward();
+        }
+        @include expect {
+	animation: swing-out-right-fwd;
+
+	@keyframes swing-out-right-fwd {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: rotateY(70deg);
+			transform: rotateY(70deg);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

@@ -1,0 +1,35 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/flip/animate-flip-scale-up-diagonal-2.scss" as *;
+
+@include test-module("animate-flip-scale-up-diagonal-2 [mixin]") {
+    @include test("Can add animation animate-flip-scale-up-diagonal-2") {
+        @include assert {
+            @include output {
+            @include animate-flip-scale-up-diagonal-2();
+        }
+        @include expect {
+	animation: flip-scale-up-diag-2;
+
+	@keyframes flip-scale-up-diag-2 {
+		0% {
+			-webkit-transform: scale(1) rotate3d(-1, 1, 0, 0deg);
+			transform: scale(1) rotate3d(-1, 1, 0, 0deg);
+		}
+
+		50% {
+			-webkit-transform: scale(2.5) rotate3d(-1, 1, 0, 90deg);
+			transform: scale(2.5) rotate3d(-1, 1, 0, 90deg);
+		}
+
+		100% {
+			-webkit-transform: scale(1) rotate3d(-1, 1, 0, 180deg);
+			transform: scale(1) rotate3d(-1, 1, 0, 180deg);
+		}
+	}
+}        }
+    }
+}

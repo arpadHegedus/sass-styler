@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate swing right forward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-swing-right-forward($animation-settings: null) {
+	animation: if($animation-settings, #{"swing-right-fwd #{$animation-settings}"}, swing-right-fwd);
+
+	@include keyframes(swing-right-fwd) {
+		0% {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+		}
+
+		100% {
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+		}
+	}
+}
+

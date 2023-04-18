@@ -1,0 +1,63 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/bounce/animate-bounce-out-forward.scss" as *;
+
+@include test-module("animate-bounce-out-forward [mixin]") {
+    @include test("Can add animation animate-bounce-out-forward") {
+        @include assert {
+            @include output {
+            @include animate-bounce-out-forward();
+        }
+        @include expect {
+	animation: bounce-out-fwd;
+
+	@keyframes bounce-out-fwd {
+		0%,
+		15%,
+		38%,
+		70% {
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-animation-timing-function: ease-out;
+	            animation-timing-function: ease-out;
+		}
+
+		5% {
+			-webkit-transform: translateZ(90px);
+			transform: translateZ(90px);
+			-webkit-animation-timing-function: ease-in;
+	            animation-timing-function: ease-in;
+		}
+
+		25% {
+			-webkit-transform: translateZ(95px);
+			transform: translateZ(95px);
+			-webkit-animation-timing-function: ease-in;
+	            animation-timing-function: ease-in;
+		}
+
+		52% {
+			-webkit-transform: translateZ(150px);
+			transform: translateZ(150px);
+			-webkit-animation-timing-function: ease-in;
+	            animation-timing-function: ease-in;
+		}
+
+		85% {
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: translateZ(500px);
+			transform: translateZ(500px);
+			-webkit-animation-timing-function: ease-in;
+	            animation-timing-function: ease-in;
+			opacity: 0;
+		}
+	}
+}        }
+    }
+}

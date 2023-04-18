@@ -1,0 +1,27 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate kenburns top
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-kenburns-top($animation-settings: null) {
+	animation: if($animation-settings, #{"kenburns-top #{$animation-settings}"}, kenburns-top);
+
+	@include keyframes(kenburns-top) {
+		0% {
+			-webkit-transform: scale(1) translateY(0);
+			transform: scale(1) translateY(0);
+			-webkit-transform-origin: 50% 16%;
+			transform-origin: 50% 16%;
+		}
+
+		100% {
+			-webkit-transform: scale(1.25) translateY(-15px);
+			transform: scale(1.25) translateY(-15px);
+			-webkit-transform-origin: top;
+			transform-origin: top;
+		}
+	}
+}
+

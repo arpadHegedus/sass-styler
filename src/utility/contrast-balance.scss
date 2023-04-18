@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "is-between" as *;
+@use "contrast-with" as *;
+@use "is-contrasting" as *;
+@use "luminance" as *;
+
+/// Change 2 colors contrast ratio by weighted balance(0-100)
+/// 0 means only second color is changed, while 100 means only the first one
+/// @param {Color} $color1 - Color 1
+/// @param {Color} $color2 - Color 2
+/// @param {Number|String} $ratio ["AA"] - Name or value of contrast ratio
+/// @param {Number} $balance [50] - Balance
+/// @return {List}
+/// @group Utility
+
+@function contrast-balance($color1, $color2, $ratio: "AA", $balance: 50) {
+    $fixed1: contrast-with($color1, $color2, $ratio);
+    $fixed2: contrast-with($color2, $color1, $ratio);
+    $color1: color.mix($fixed1, $color1, $balance);
+    $color2: color.mix($fixed2, $color2, $balance);
+    @if not is-contrasting($color1, $color2, $ratio) {
+        @if not is-between(luminance($fixed2), 0.00002, 0.99936) {
+            $color1: contrast-with($color1, $color2, $ratio);
+        }
+        @if not is-between(luminance($fixed1), 0.00002, 0.99936) {
+            $color2: contrast-with($color2, $color1, $ratio);
+        }
+    }
+    @return $color1, $color2;
+}

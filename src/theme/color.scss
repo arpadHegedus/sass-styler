@@ -1,0 +1,200 @@
+/// Named colors palette
+/// @type Map
+/// @group Theme
+
+$color-palette: (
+    transparent: transparent,
+    black: #000,
+    white: #fff,
+    grey: (
+        default: #9ca3af,
+        50: #f9fafb,
+        100: #f3f4f6,
+        200: #e5e7eb,
+        300: #d1d5db,
+        400: #9ca3af,
+        500: #6b7280,
+        600: #4b5563,
+        700: #374151,
+        800: #1f2937,
+        900: #111827,
+    ),
+    red: (
+        default: #dc2626,
+        50: #fef2f2,
+        100: #fee2e2,
+        200: #fecaca,
+        300: #fca5a5,
+        400: #f87171,
+        500: #ef4444,
+        600: #dc2626,
+        700: #b91c1c,
+        800: #991b1b,
+        900: #7f1d1d,
+    ),
+    yellow: (
+        default: #fbbf24,
+        50: #fffbeb,
+        100: #fef3c7,
+        200: #fde68a,
+        300: #fcd34d,
+        400: #fbbf24,
+        500: #f59e0b,
+        600: #d97706,
+        700: #b45309,
+        800: #92400e,
+        900: #78350f,
+    ),
+    green: (
+        default: #10b981,
+        50: #ecfdf5,
+        100: #d1fae5,
+        200: #a7f3d0,
+        300: #6ee7b7,
+        400: #34d399,
+        500: #10b981,
+        600: #059669,
+        700: #047857,
+        800: #065f46,
+        900: #064e3b,
+    ),
+    blue: (
+        default: #3b82f6,
+        50: #eff6ff,
+        100: #dbeafe,
+        200: #bfdbfe,
+        300: #93c5fd,
+        400: #60a5fa,
+        500: #3b82f6,
+        600: #2563eb,
+        700: #1d4ed8,
+        800: #1e40af,
+        900: #1e3a8a,
+    ),
+    indigo: (
+        default: #4338ca,
+        50: #eef2ff,
+        100: #e0e7ff,
+        200: #c7d2fe,
+        300: #a5b4fc,
+        400: #818cf8,
+        500: #6366f1,
+        600: #4f46e5,
+        700: #4338ca,
+        800: #3730a3,
+        900: #312e81,
+    ),
+    violet: (
+        default: #6d28d9,
+        50: #f5f3ff,
+        100: #ede9fe,
+        200: #ddd6fe,
+        300: #c4b5fd,
+        400: #a78bfa,
+        500: #8b5cf6,
+        600: #7c3aed,
+        700: #6d28d9,
+        800: #5b21b6,
+        900: #4c1d95,
+    ),
+    pink: (
+        default: #ec4899,
+        50: #fdf2f8,
+        100: #fce7f3,
+        200: #fbcfe8,
+        300: #f9a8d4,
+        400: #f472b6,
+        500: #ec4899,
+        600: #db2777,
+        700: #be185d,
+        800: #9d174d,
+        900: #831843,
+    ),
+) !default;
+
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+@use "define-vars" as *;
+@use "../utility/get" as *;
+@use "../utility/best-contrast" as *;
+
+/// Return and manipulate color
+/// @param {List|Color|String|Number} $args - Color name, level and/or "contrast-of"
+/// @return {Null|Color}
+/// @group Theme
+
+@function color($args...) {
+    $color: null;
+    $color-map: null;
+    $level: null;
+    $contrast: null;
+    @each $item in $args {
+        @if meta.type-of($item) == color {
+            $color: $item;
+        }
+        @if map.has-key($color-palette, $item) {
+            $color-map: get($color-palette, $item, $item);
+            @if meta.type-of($color-map) == color {
+                $color: $color-map;
+                $color-map: null;
+            }
+        }
+        @if meta.type-of($item) == number {
+            $level: $item;
+        }
+        @if $item == contrast-of or $item == contrast {
+            $contrast: true;
+        }
+    }
+    @if $color-map and $level and map.has-key($color-map, $level) {
+        $color: get($color-map, $level);
+        $color-map: null;
+        $level: null;
+    }
+    @if $color-map {
+        $color: get($color-map, default);
+        $color-map: null;
+    }
+    @if meta.type-of($color) != color {
+        @return $color;
+    }
+    @if $level {
+        $level: if($level > 1, math.div($level, 1000), $level);
+        $color: color.change($color, $lightness: (1% - $level) * 100);
+    }
+    @if $contrast {
+        $color: best-contrast($color);
+    }
+    $alpha: if(string.index($color + "", "rgba"), color.alpha($color), var(--text-opacity, 1));
+    $color: rgba(color.red($color), color.green($color), color.blue($color), $alpha);
+    @return $color;
+}
+
+/// Return and manipulate color
+/// @param {List|Color|String|Number} $args - Color name, level and/or "contrast-of"
+/// @return {Null|Color}
+/// @alias color
+/// @group Theme
+
+@function c($args...) {
+    @return color($args...);
+}
+
+/// Define color CSS variables for the palette
+/// @group Theme
+
+@mixin define-color-palette-vars() {
+    @each $name, $color in $color-palette {
+        @if meta.type-of($color) == map {
+            @each $level, $level-color in $color {
+                $name-with-level: if($level == "default", $name, "#{$name}-#{$level}");
+                @include define-var("color-#{$name-with-level}", $level-color);
+            }
+        } @else {
+            @include define-var("color-#{$name}", $color);
+        }
+    }
+}

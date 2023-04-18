@@ -1,0 +1,13 @@
+
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-except.scss" as *;
+
+@include test-module("select-except [function]") {
+    @include test('Can select with select-except') {
+        @include assert-equal(
+            select-except(3),
+            "&:not(:nth-child(3))"
+        );
+    }
+
+}

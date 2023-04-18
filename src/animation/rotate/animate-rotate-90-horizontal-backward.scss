@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate rotate 90 horizontal backward
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-rotate-90-horizontal-backward($animation-settings: null) {
+	animation: if($animation-settings, #{"rotate-90-horizontal-bck #{$animation-settings}"}, rotate-90-horizontal-bck);
+
+	@include keyframes(rotate-90-horizontal-bck) {
+		0% {
+			-webkit-transform: rotateX(0);
+			transform: rotateX(0);
+		}
+
+		100% {
+			-webkit-transform: rotateX(-90deg);
+			transform: rotateX(-90deg);
+		}
+	}
+}
+

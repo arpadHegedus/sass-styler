@@ -1,0 +1,12 @@
+@use "../../node_modules/sass-true" as *;
+@use "../../src/utility/select-even-between.scss" as *;
+
+@include test-module("select-even-between [function]") {
+    @include test('Can select with select-even-between') {
+        @include assert-equal(
+            select-even-between(2, 5),
+            "&:nth-child(even):nth-child(n + 2):nth-child(-n + 5)"
+        );
+    }
+
+}

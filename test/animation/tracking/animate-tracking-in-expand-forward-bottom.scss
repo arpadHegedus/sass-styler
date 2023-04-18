@@ -1,0 +1,37 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/tracking/animate-tracking-in-expand-forward-bottom.scss" as *;
+
+@include test-module("animate-tracking-in-expand-forward-bottom [mixin]") {
+    @include test("Can add animation animate-tracking-in-expand-forward-bottom") {
+        @include assert {
+            @include output {
+            @include animate-tracking-in-expand-forward-bottom();
+        }
+        @include expect {
+	animation: tracking-in-expand-fwd-bottom;
+
+	@keyframes tracking-in-expand-fwd-bottom {
+		0% {
+			letter-spacing: -0.5em;
+			-webkit-transform: translateZ(-700px) translateY(500px);
+			transform: translateZ(-700px) translateY(500px);
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0.6;
+		}
+
+		100% {
+			-webkit-transform: translateZ(0) translateY(0);
+			transform: translateZ(0) translateY(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

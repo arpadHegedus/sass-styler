@@ -1,0 +1,30 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate tracking out contract backward top
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-tracking-out-contract-backward-top($animation-settings: null) {
+	animation: if($animation-settings, #{"tracking-out-contract-bck-top #{$animation-settings}"}, tracking-out-contract-bck-top);
+
+	@include keyframes(tracking-out-contract-bck-top) {
+		0% {
+			-webkit-transform: translateZ(0) translateY(0);
+			transform: translateZ(0) translateY(0);
+			opacity: 1;
+		}
+
+		60% {
+			opacity: 1;
+		}
+
+		100% {
+			letter-spacing: -0.5em;
+			-webkit-transform: translateZ(-500px) translateY(-300px);
+			transform: translateZ(-500px) translateY(-300px);
+			opacity: 0;
+		}
+	}
+}
+

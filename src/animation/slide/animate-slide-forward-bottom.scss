@@ -1,0 +1,23 @@
+@use "../../utility/keyframes" as *;
+
+/// Animate slide forward bottom
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@mixin animate-slide-forward-bottom($animation-settings: null) {
+	animation: if($animation-settings, #{"slide-fwd-bottom #{$animation-settings}"}, slide-fwd-bottom);
+
+	@include keyframes(slide-fwd-bottom) {
+		0% {
+			-webkit-transform: translateZ(0) translateY(0);
+			transform: translateZ(0) translateY(0);
+		}
+
+		100% {
+			-webkit-transform: translateZ(160px) translateY(100px);
+			transform: translateZ(160px) translateY(100px);
+		}
+	}
+}
+

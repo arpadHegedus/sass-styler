@@ -1,0 +1,12 @@
+@use "selector-combine" as *;
+
+/// Select all elements between a specific first and last nth value
+/// @param {Number} $first - The first nth element
+/// @param {Number} $last - The last nth element
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+/// @group Utility
+
+@function select-between($first, $last, $selector: "&") {
+    @return selector-combine($selector, "&:nth-child(n + #{$first}):nth-child(-n + #{$last})");
+}

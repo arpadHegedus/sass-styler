@@ -1,0 +1,33 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/focus/animate-focus-in-expand.scss" as *;
+
+@include test-module("animate-focus-in-expand [mixin]") {
+    @include test("Can add animation animate-focus-in-expand") {
+        @include assert {
+            @include output {
+            @include animate-focus-in-expand();
+        }
+        @include expect {
+	animation: focus-in-expand;
+
+	@keyframes focus-in-expand {
+		0% {
+			letter-spacing: -0.5em;
+			-webkit-filter: blur(12px);
+			filter: blur(12px);
+			opacity: 0;
+		}
+
+		100% {
+			-webkit-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+		}
+	}
+}        }
+    }
+}

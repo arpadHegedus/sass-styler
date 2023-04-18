@@ -1,0 +1,36 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/color/animate-color-change-4x.scss" as *;
+
+@include test-module("animate-color-change-4x [mixin]") {
+    @include test("Can add animation animate-color-change-4x") {
+        @include assert {
+            @include output {
+            @include animate-color-change-4x();
+        }
+        @include expect {
+            animation: color-change-4x;
+
+            @keyframes color-change-4x {
+                0% {
+      background: #19dcea;
+    }
+
+    33.3333% {
+      background: #b22cff;
+    }
+
+    66.666% {
+      background: #ea2222;
+    }
+
+                100% {
+      background: #f5be10;
+    }
+  }
+}        }
+    }
+}

@@ -1,0 +1,34 @@
+/// @param {List} $animation-settings [null] - Animation shorthand settings (anything except the animation-name)
+/// @group Animation
+/// @link https://animista.net/
+
+@use "../../../node_modules/sass-true" as *;
+@use "../../../src/animation/scale/animate-scale-up-top-right.scss" as *;
+
+@include test-module("animate-scale-up-top-right [mixin]") {
+    @include test("Can add animation animate-scale-up-top-right") {
+        @include assert {
+            @include output {
+            @include animate-scale-up-top-right();
+        }
+        @include expect {
+	animation: scale-up-tr;
+
+	@keyframes scale-up-tr {
+		0% {
+			-webkit-transform: scale(0.5);
+			transform: scale(0.5);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+
+		100% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: 100% 0%;
+			transform-origin: 100% 0%;
+		}
+	}
+}        }
+    }
+}
