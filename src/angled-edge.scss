@@ -58,6 +58,7 @@
     }
     $top: auto;
     $bottom: auto;
+
     @if ($location == inside-top) {
         $top: 0;
     } @else if ($location == outside-top) {

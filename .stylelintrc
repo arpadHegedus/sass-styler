@@ -1,0 +1,8 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "syntax": "scss",
+    "rules": {
+        "number-max-precision": null,
+        "scss/dollar-variable-pattern": null
+    }
+}
