@@ -1,0 +1,85 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/ensure-unit.scss" as styler;
+
+@include test-module("ensure-unit [function]") {
+    @include test('Can ensure units for simple numbers') {
+        @include assert-equal(
+            styler.ensure-unit(15, px),
+            15px
+        );
+        @include assert-equal(
+            styler.ensure-unit(15, "px"),
+            15px
+        );
+    }
+    @include test('Can ensure units by conversion em-to-px') {
+        @include assert-equal(
+            styler.ensure-unit(1em, px),
+            16px
+        );
+        @include assert-equal(
+            styler.ensure-unit(1.5em, "px"),
+            24px
+        );
+    }
+    @include test('Can ensure units by conversion em-to-rem') {
+        @include assert-equal(
+            styler.ensure-unit(1em, rem),
+            1rem
+        );
+        @include assert-equal(
+            styler.ensure-unit(1.5em, "rem"),
+            1.5rem
+        );
+    }
+    @include test('Can ensure units by conversion px-to-em') {
+        @include assert-equal(
+            styler.ensure-unit(16px, em),
+            1em
+        );
+        @include assert-equal(
+            styler.ensure-unit(24px, "em"),
+            1.5em
+        );
+    }
+    @include test('Can ensure units by conversion px-to-rem') {
+        @include assert-equal(
+            styler.ensure-unit(16px, rem),
+            1rem
+        );
+        @include assert-equal(
+            styler.ensure-unit(24px, "rem"),
+            1.5rem
+        );
+    }
+    @include test('Can ensure units by conversion rem-to-em') {
+        @include assert-equal(
+            styler.ensure-unit(1rem, em),
+            1em
+        );
+        @include assert-equal(
+            styler.ensure-unit(1.5rem, "em"),
+            1.5em
+        );
+    }
+    @include test('Can ensure units by conversion rem-to-px') {
+        @include assert-equal(
+            styler.ensure-unit(1rem, px),
+            16px
+        );
+        @include assert-equal(
+            styler.ensure-unit(1.5rem, "px"),
+            24px
+        );
+    }
+    @include test('Can ensure units by conversion to odd units') {
+        @include assert-equal(
+            styler.ensure-unit(15em, "%"),
+            15%
+        );
+        @include assert-equal(
+            styler.ensure-unit(15, "deg"),
+            15deg
+        );
+    }
+}

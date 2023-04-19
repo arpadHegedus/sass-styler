@@ -1,0 +1,9 @@
+@use "selector-combine" as *;
+
+/// Select all even nth elements
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-even($selector: "&") {
+    @return selector-combine($selector, "&:nth-child(even)");
+}

@@ -1,0 +1,53 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/is-property.scss" as styler;
+
+@include test-module("is-property [function]") {
+    @include test('Can understand properties') {
+        @include assert-equal(
+            styler.is-property(color),
+            true
+        );
+        @include assert-equal(
+            styler.is-property(border),
+            true
+        );
+        @include assert-equal(
+            styler.is-property(border-top),
+            true
+        );
+        @include assert-equal(
+            styler.is-property(border-bottom),
+            true
+        );
+        @include assert-equal(
+            styler.is-property(-webkit-appearance),
+            true
+        );
+        @include assert-equal(
+            styler.is-property("color"),
+            true
+        );
+        @include assert-equal(
+            styler.is-property("-webkit-appearance"),
+            true
+        );
+    }
+    @include test('Can understand non-properties') {
+        @include assert-equal(
+            styler.is-property(non-prop),
+            false
+        );
+        @include assert-equal(
+            styler.is-property(list value),
+            false
+        );
+        @include assert-equal(
+            styler.is-property(15px),
+            false
+        );
+        @include assert-equal(
+            styler.is-property((map: true)),
+            false
+        );
+    }
+}

@@ -1,0 +1,12 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-nth-from.scss" as *;
+
+@include test-module("select-nth-from [function]") {
+    @include test('Can select with select-nth-from') {
+        @include assert-equal(
+            select-nth-from(2, 5),
+            "&:nth-child(2n + 5)"
+        );
+    }
+
+}

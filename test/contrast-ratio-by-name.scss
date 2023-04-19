@@ -1,0 +1,23 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/contrast-ratio-by-name.scss" as styler;
+
+@include test-module("contrast-ratio-by-name [function]") {
+    @include test('Can get named values') {
+        @include assert-equal(
+            styler.contrast-ratio-by-name(AA),
+            4.5
+        );
+        @include assert-equal(
+            styler.contrast-ratio-by-name(AAA),
+            7
+        );
+        @include assert-equal(
+            styler.contrast-ratio-by-name(AALG),
+            3
+        );
+        @include assert-equal(
+            styler.contrast-ratio-by-name(AAALG),
+            4.5
+        );
+    }
+}

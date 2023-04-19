@@ -1,0 +1,35 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/unique-id-by-value.scss" as styler;
+
+$for-px: styler.unique-id-by-value(15px);
+$for-list: styler.unique-id-by-value(15px 20px);
+$for-map: styler.unique-id-by-value((map: "string"));
+
+@include test-module("unique-id-by-value [function]") {
+    @include test('Get the same id for values') {
+        @include assert-equal(
+            styler.unique-id-by-value(15px),
+            $for-px
+        );
+        @include assert-equal(
+            styler.unique-id-by-value(15px 20px),
+            $for-list
+        );
+        @include assert-equal(
+            styler.unique-id-by-value((map: "string")),
+            $for-map
+        );
+        @include assert-unequal(
+            $for-px,
+            $for-list
+        );
+        @include assert-unequal(
+            $for-px,
+            $for-map
+        );
+        @include assert-unequal(
+            $for-map,
+            $for-list
+        );
+    }
+}

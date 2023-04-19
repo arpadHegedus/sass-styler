@@ -1,0 +1,10 @@
+@use "str-trim-end" as *;
+@use "str-trim-start" as *;
+
+/// Trim whitespace off a string
+/// @param {String} $string String to trim
+/// @return {String}
+
+@function str-trim($string) {
+    @return str-trim-start(str-trim-end($string));
+}

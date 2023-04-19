@@ -1,0 +1,135 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/merge.scss" as styler;
+
+$test: (
+    string: "top level",
+    number: 1,
+    list: 1 2 3 4,
+    map: (
+        string: "1st level",
+        map: (
+            string: "2nd level",
+            map: (
+                string: "3rd level"
+            )
+        )
+    )
+);
+
+@include test-module("merge [function]") {
+    @include test('Can merge maps') {
+        @include assert-equal(
+            styler.merge($test, (number: 2)),
+            (
+                string: "top level",
+                number: 2,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.merge($test, (string: "new string")),
+            (
+                string: "new string",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.merge($test, (string: (map: "string to map"))),
+            (
+                string: (
+                    map: "string to map"
+                ),
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can merge maps deeply') {
+        @include assert-equal(
+            styler.merge($test, (map: (string: "new string"))),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "new string",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.merge($test, (map: (map: (new: "new string")))),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        ),
+                        new: "new string"
+                    )
+                )
+            )
+        );
+        @include assert-equal(
+            styler.merge($test, (map: (map: (string: (new: (map: (string: "4th level"))))))),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: (
+                            new: (
+                                map: (
+                                    string: "4th level"
+                                )
+                            )
+                        ),
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+}

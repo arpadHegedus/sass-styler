@@ -1,0 +1,18 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/pseudo.scss" as *;
+
+@include test-module("pseudo [mixin]") {
+    @include test("Can apply pseudo") {
+        @include assert {
+            @include output {
+                @include pseudo();
+            }
+            @include expect {
+                &::before {
+                    content: "";
+                    display: block;
+                }
+            }
+        }
+    }
+}

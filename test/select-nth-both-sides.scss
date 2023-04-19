@@ -1,0 +1,12 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-nth-both-sides.scss" as *;
+
+@include test-module("select-nth-both-sides [function]") {
+    @include test('Can select with select-nth-both-sides') {
+        @include assert-equal(
+            select-nth-both-sides(5, 1, 5),
+            "&:nth-child(5), &:nth-last-child(5)"
+        );
+    }
+
+}

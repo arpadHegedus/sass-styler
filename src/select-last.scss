@@ -1,0 +1,9 @@
+@use "selector-combine" as *;
+
+/// Select the last element
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-last($nth: 1, $selector: "&") {
+    @return selector-combine($selector, if($nth == 1, "&:last-child", "&:nth-last-child(-n + #{$nth})"));
+}

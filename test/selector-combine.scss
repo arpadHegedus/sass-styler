@@ -1,0 +1,31 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/selector-combine.scss" as *;
+
+@include test-module("selector-combine [function]") {
+    @include test('Can combine selectors with &') {
+        @include assert-equal(
+            selector-combine("&", "&:first-child"),
+            "&:first-child"
+        );
+        @include assert-equal(
+            selector-combine("& li", "&:first-child"),
+            "& li:first-child"
+        );
+    }
+    @include test('Can combine selectors with & and non &') {
+        @include assert-equal(
+            selector-combine("&", "a:first-child"),
+            "& a:first-child"
+        );
+        @include assert-equal(
+            selector-combine("a", "&:first-child"),
+            "a:first-child"
+        );
+    }
+    @include test('Can combine selectors with non &') {
+        @include assert-equal(
+            selector-combine("a", "span:first-child"),
+            "a, span:first-child"
+        );
+    }
+}

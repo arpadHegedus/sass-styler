@@ -1,0 +1,28 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/remove-nth.scss" as styler;
+
+$test: 1 2 3 4 5;
+$test2: 1, 2, 3, 4, 5;
+
+@include test-module("remove-nth [function]") {
+    @include test('Can remove from list') {
+        @include assert-equal(
+            styler.remove-nth($test, 2),
+            1 3 4 5
+        );
+        @include assert-equal(
+            styler.remove-nth($test, 4),
+            1 2 3 5
+        );
+    }
+    @include test('Can remove from comma-separated list') {
+        @include assert-equal(
+            styler.remove-nth($test2, 2),
+            (1, 3, 4, 5)
+        );
+        @include assert-equal(
+            styler.remove-nth($test2, 4),
+            (1, 2, 3, 5)
+        );
+    }
+}

@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "is-contrasting" as *;
+
+/// Scale lightness by iterations to fix rounding issues
+/// @param {Color} $color1 - Color 1
+/// @param {Color} $color2 - Color 2
+/// @param {String} $ratio ["AA"] - Ratio
+/// @param {String} $operation [darken] - Operation
+/// @param {Number} $iterations [5] - Iterations
+/// @return {Color}
+
+@function scale-light(
+    $color1,
+    $color2,
+    $ratio: "AA",
+    $operation: darken,
+    $iterations: 3
+) {
+    @for $i from 1 through $iterations {
+        @if is-contrasting($color1, $color2, $ratio) {
+            @return $color1;
+        } @else {
+            $color1: color.adjust(
+                $color1,
+                $lightness: if($operation == lighten, 0.1%, -0.1%)
+            );
+        }
+    }
+    @return $color1;
+}

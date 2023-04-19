@@ -1,0 +1,34 @@
+@use "sass:math";
+@use "sass:list";
+@use "ensure-unit" as *;
+
+/// Substract 2 numbers or return calc if they are incompatible
+/// @param {Number} $left - Number on the left of the operation
+/// @param {Number} $right - Number on the right of the operation
+/// @param {Number} $ensure-unit [false] - Try to convert numbers so that they are compatible
+/// @return {Number|String}
+
+@function calc-substract($left, $right, $ensure-unit: false) {
+    @if math.is-unitless($left) and math.is-unitless($right) == false {
+        $left: ensure-unit($left, math.unit($right));
+    }
+    @if math.is-unitless($right) and math.is-unitless($left) == false {
+        $right: ensure-unit($right, math.unit($left));
+    }
+    @if math.compatible($left, $right) {
+        @return if(
+            $ensure-unit,
+            ensure-unit($left, $ensure-unit) - ensure-unit($right, $ensure-unit),
+            $left - $right
+        );
+    }
+    @if $ensure-unit and
+        list.index(px em rem, math.unit($left)) and
+        list.index(px em rem, math.unit($right))
+    {
+        $left: ensure-unit($left, $ensure-unit);
+        $right: ensure-unit($right, $ensure-unit);
+        @return $left - $right;
+    }
+    @return calc(#{$left} - #{$right});
+}

@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/fluid-size.scss" as *;
+
+@include test-module("fluid-size [function]") {
+    @include test('Can create calc value') {
+        @include assert-equal(
+            "#{fluid-size(16px, 320px, 46px, 1200px)}",
+            "clamp(16px, calc(1rem + ((1vw - 3.2px) * 3.4090909091)), 46px)"
+        );
+    }
+}

@@ -1,0 +1,46 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/str-split.scss" as styler;
+
+@include test-module("str-split [function]") {
+    @include test('Can split strings') {
+        @include assert-equal(
+            styler.str-split(i-want-it-all),
+            (i want it all)
+        );
+        @include assert-equal(
+            styler.str-split("i-want-it-all"),
+            (i want it all)
+        );
+    }
+    @include test('Can split strings (along special characters)') {
+        @include assert-equal(
+            styler.str-split("i want it all", " "),
+            (i want it all)
+        );
+        @include assert-equal(
+            styler.str-split("i:want:it:all", ":"),
+            (i want it all)
+        );
+        @include assert-equal(
+            styler.str-split("i\"want\"it\"all", "\""),
+            (i want it all)
+        );
+        @include assert-equal(
+            styler.str-split('i"want"it"all', "\""),
+            (i want it all)
+        );
+    }
+    @include test('Can split strings (along characters)') {
+        @include assert-equal(
+            styler.str-split("i want it all", "i"),
+            (" want " "t all")
+        );
+    }
+    @include test('Can split strings (and keep empty strings in the array)') {
+        @include assert-equal(
+            styler.str-split("i want it all", "i", false),
+            ("" " want " "t all")
+        );
+
+    }
+}

@@ -1,0 +1,12 @@
+@use "sass:selector";
+
+/// Replace part of the current selector
+/// @param {String} $from - Selector part to be changed
+/// @param {String} $to - Replacement of the selector part
+/// @param {String} $select-after [null] - Append additional selectors
+
+@mixin replace-context($from, $to, $select-after: null) {
+    @at-root #{selector.replace(&, $from, $to)} #{if($select-after, ', ' + $select-after, '')} {
+        @content;
+    }
+}

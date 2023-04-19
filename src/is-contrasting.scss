@@ -1,0 +1,13 @@
+@use "contrast-between" as *;
+@use "contrast-ratio-by-name" as *;
+
+/// Check if 2 colors contrast enough
+/// @param {Color} $color1 - Color 1
+/// @param {Color} $color2 - Color 2
+/// @param {String} $ratio ["AA"] - Ratio codename
+/// @return {Color}
+
+@function is-contrasting($color1, $color2, $ratio: "AA") {
+    $ratio: contrast-ratio-by-name($ratio);
+    @return if(contrast-between($color1, $color2) >= $ratio, true, false);
+}

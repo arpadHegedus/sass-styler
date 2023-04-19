@@ -1,0 +1,20 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/hide-text-except-pseudo.scss" as *;
+
+@include test-module("hide-text-except-pseudo [mixin]") {
+    @include test("Can apply hide-text-except-pseudo") {
+        @include assert {
+            @include output {
+                @include hide-text-except-pseudo();
+            }
+            @include expect {
+                font-size: 0;
+
+                &::before,
+                &::after {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

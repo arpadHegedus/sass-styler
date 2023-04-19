@@ -1,0 +1,23 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/str-ends-with.scss" as styler;
+
+@include test-module("str-ends-with [function]") {
+    @include test('Can check if string ends with') {
+        @include assert-equal(
+            styler.str-ends-with("i want it all", "l"),
+            true
+        );
+        @include assert-equal(
+            styler.str-ends-with("i want it all", "all"),
+            true
+        );
+        @include assert-equal(
+            styler.str-ends-with("i want it all", "a"),
+            false
+        );
+        @include assert-equal(
+            styler.str-ends-with("i want it all", "al"),
+            false
+        );
+    }
+}

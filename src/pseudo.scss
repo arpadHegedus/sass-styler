@@ -1,0 +1,16 @@
+/// Add a pseduo element
+/// @param {String} $content [""] - The content value
+/// @param {String} $display [block] - The display value
+/// @param {String|List} $selector ["&"] - The selector
+
+@mixin pseudo(
+    $content: "",
+    $display: block,
+    $selector: "&::before"
+) {
+    #{$selector} {
+        content: $content;
+        display: $display;
+        @content;
+    }
+}

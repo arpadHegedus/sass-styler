@@ -1,0 +1,24 @@
+@use "sass:meta";
+
+/// Align an icon and text next to one another
+/// @param {Size} $icon-size [1em] - Icon size (width)
+/// @param {Size} $gap [null] - Gap between icon and text
+/// @param {String} $side [left] - Whether the icon is on the left or the right side
+/// @param {String} $justify-content [null] - Horizontal alignment of icon and text
+/// @param {String} $align-items [null] - Vertical alignment of icon and text
+/// @param {String} $align-icon [null] - Vertically align the icon in a different way
+
+@mixin icon-item($icon-size: 1em, $gap: null, $side: left, $justify-content: null, $align-items: null, $align-icon: null) {
+    $template: if($side == left, $icon-size repeat(auto-fit, minmax(10px, 100%)), repeat(auto-fit, minmax(10px, 100%)) $icon-size);
+    display: grid;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+    grid-template-columns: $template;
+
+    > img,
+    > svg {
+        max-width: $icon-size;
+        align-self: $align-icon;
+    }
+}

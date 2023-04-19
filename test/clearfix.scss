@@ -1,0 +1,31 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/clearfix.scss" as *;
+
+@include test-module("clearfix [mixin]") {
+    @include test("Can clearfix") {
+        @include assert {
+            @include output {
+                @include clearfix();
+            }
+            @include expect {
+                &::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include clearfix("&::before");
+            }
+            @include expect {
+                &::before {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+        }
+    }
+}

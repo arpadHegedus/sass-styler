@@ -1,0 +1,24 @@
+///  Make a list horizontal and add a pipe separator (border) between the items
+/// @param {Number} $gap [null] - The gap between items
+/// @param {List} $border [null] - The border (the pipe) styles
+/// @param {String} $justify-content [null] - The justify-content value
+/// @param {String} $align-items [null] - The align-items value
+/// @param {String} $flex-wrap [null] - The flex-wrap value
+/// @param {String} $side [left] - Side to calculate indent from
+
+@mixin pipe-list($gap: null, $border: null, $justify-content: null, $align-items: null, $flex-wrap: null, $side: left) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+    list-style: none;
+    padding-#{$side}: 0;
+
+    > * + * {
+        @if $gap {
+            margin-#{$side}: 0.5 * $gap;
+            padding-#{$side}: 0.5 * $gap;
+        }
+        border-#{$side}: $border;
+    }
+}

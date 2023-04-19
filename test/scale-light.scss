@@ -1,0 +1,23 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/scale-light.scss" as styler;
+
+@include test-module("scale-light [function]") {
+    @include test('Can scale luminance for colours') {
+        @include assert-equal(
+            styler.scale-light(#318de2, #fff),
+            #308ce2
+        );
+        @include assert-equal(
+            styler.scale-light(#318de2, #49c8ff),
+            #308ce2
+        );
+        @include assert-equal(
+            styler.scale-light(#318de2, #12416c, $iterations: 10),
+            #2d8be1
+        );
+        @include assert-equal(
+            styler.scale-light(#318de2, #000),
+            #318de2
+        );
+    }
+}

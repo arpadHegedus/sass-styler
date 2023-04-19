@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-middle.scss" as *;
+
+@include test-module("select-middle [function]") {
+    @include test('Can select with select-middle') {
+        @include assert-equal(
+            select-middle(5),
+            "&:nth-child(3)"
+        );
+    }
+}

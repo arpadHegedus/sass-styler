@@ -1,0 +1,51 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/on-circle.scss" as *;
+
+@include test-module("on-circle [mixin]") {
+    @include test("Can add elements on circle") {
+        @include assert {
+            @include output {
+                @include on-circle(3, 20vw, 5vw);
+            }
+            @include expect {
+                position: relative;
+                width: 20vw;
+                height: 20vw;
+                padding: 0;
+                border-radius: 50%;
+                list-style: none;
+
+                > * {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 5vw;
+                    height: 5vw;
+                    margin: -2.5vw;
+
+                    &:nth-of-type(1) {
+                        transform:
+                            rotate(0deg)
+                            translate(10vw)
+                            rotate(0deg);
+                    }
+
+                    &:nth-of-type(2) {
+                        transform:
+                            rotate(120deg)
+                            translate(10vw)
+                            rotate(-120deg);
+                    }
+
+                    &:nth-of-type(3) {
+                        transform:
+                            rotate(240deg)
+                            translate(10vw)
+                            rotate(-240deg);
+                    }
+                }
+            }
+        }
+    }
+}

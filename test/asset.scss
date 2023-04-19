@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/asset.scss" as *;
+
+@include test-module("asset [function]") {
+    @include test('Can get asset url') {
+        @include assert-equal(
+            asset("load.png"),
+            url("../load.png")
+        );
+    }
+};

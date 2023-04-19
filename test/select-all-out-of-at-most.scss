@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-all-out-of-at-most.scss" as *;
+
+@include test-module("select-all-out-of-at-most [function]") {
+    @include test('Can select with select-all-out-of-at-most') {
+        @include assert-equal(
+            select-all-out-of-at-most(3),
+            "&:nth-last-child(-n + 3):first-child, &:nth-last-child(-n + 3):first-child ~ &"
+        );
+    }
+}

@@ -1,0 +1,18 @@
+@use "sass:string";
+
+/// Check if string starts with a substring
+/// @param {String} $haystack String to search in
+/// @param {String} $needle String to search for
+/// @return {String}
+
+@function str-starts-with($haystack, $needle) {
+    $haystack-length: string.length($haystack);
+    $needle-length: string.length($needle);
+    @if $haystack-length < $needle-length {
+        @return false;
+    }
+    @if $haystack-length == $needle-length and $haystack == $needle {
+        @return true;
+    }
+    @return if($needle == string.slice($haystack, 1, $needle-length), true, false);
+}

@@ -1,0 +1,37 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/triangle.scss" as *;
+
+@include test-module("triangle [mixin]") {
+    @include test("Can create triangle") {
+        @include assert {
+            @include output {
+                @include triangle();
+            }
+            @include expect {
+                &::after {
+                    border-style: solid;
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    border-color: transparent transparent transparent #000;
+                    border-width: 0.375rem 0 0.375rem 0.5rem;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include triangle(left, white, 1rem, "&::before");
+            }
+            @include expect {
+                &::before {
+                    border-style: solid;
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    border-color: transparent white transparent transparent;
+                    border-width: 0.5rem 1rem 0.5rem 0;
+                }
+            }
+        }
+    }
+}

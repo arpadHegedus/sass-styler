@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "selector-combine" as *;
+
+/// Select the middle element
+/// @param {Number} $num Number of elements in the container
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-middle($num, $selector: "&") {
+    @return selector-combine($selector, "&:nth-child(#{math.round(math.div($num, 2))})");
+}

@@ -1,0 +1,53 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/sides-y.scss" as styler;
+
+@include test-module("sides-y [function]") {
+    @include test('Can extract values from a full list in average mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px 3px 4px),
+            2px
+        );
+    }
+    @include test('Can extract values from a list 3 numbers in average mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px 3px),
+            2px
+        );
+    }
+    @include test('Can extract values from a list 2 numbers in average mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px),
+            1px
+        );
+    }
+    @include test('Can extract values from a number in average mode') {
+        @include assert-equal(
+            styler.sides-y(1px),
+            1px
+        );
+    }
+    @include test('Can extract values from a full list in summary mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px 3px 4px, summary),
+            4px
+        );
+    }
+    @include test('Can extract values from a list 3 numbers in summary mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px 3px, summary),
+            4px
+        );
+    }
+    @include test('Can extract values from a list 2 numbers in summary mode') {
+        @include assert-equal(
+            styler.sides-y(1px 2px, summary),
+            2px
+        );
+    }
+    @include test('Can extract values from a number in summary mode') {
+        @include assert-equal(
+            styler.sides-y(1px, summary),
+            2px
+        );
+    }
+}

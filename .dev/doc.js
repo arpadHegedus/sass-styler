@@ -1,5 +1,5 @@
-import sassdoc from 'sassdoc'
-import { readFile, writeFile } from 'fs/promises'
+const sassdoc = require('sassdoc')
+const { readFile, writeFile } = require('fs/promises')
 
 async function getReadme() {
     const readme = (await readFile('README.md')).toString()
@@ -13,39 +13,14 @@ async function getReadme() {
 
 function parseData(data) {
     const parsed = {
-        theme: {
-            name: 'Theme',
-            description: 'helpers to create your own design system',
-            data: {
-                mixin: [],
-                function: [],
-                variable: []
-            }
-        },
-        utility: {
-            name: 'Utilities',
-            description: 'a huge array of mixins and functions',
-            data: {
-                mixin: [],
-                function: [],
-                variable: []
-            }
-        },
-        animation: {
-            name: 'Animation',
-            description: 'sass versions of animista',
-            data: {
-                mixin: [],
-                function: [],
-                variable: []
-            }
-        }
+        mixin: [],
+        function: [],
+        variable: []
     }
     data.forEach(d => {
         if ('public' === d.access) {
-            let group = d.group[0]
             let type = d.context.type
-            parsed[group].data[type].push(d)
+            parsed[type].push(d)
         }
     })
     return parsed
@@ -75,45 +50,6 @@ function writeLongEntity(e, type = 'mixin') {
     return c
 }
 
-function getTypesByGroup(group) {
-    const types = {
-        mixin: false,
-        function: false,
-        variable: false,
-        list: []
-    };
-    (['mixin', 'function', 'variable']).forEach(t => {
-        if (group.data[t].length > 0) {
-            types[t] = true
-            types.list.push(t)
-        }
-    });
-    return types
-}
-
-async function writeToDocs(data) {
-    Object.entries(data).map(([slug, group]) => {
-        let types = getTypesByGroup(group)
-        let c = `# SASS STYLER\n\n## ${slug.toUpperCase()}\n\n${group.description[0].toUpperCase() + group.description.slice(1)}\n\n`
-        c += '**Table of Content**\n\n'
-        c += '<table>\n  <thead>\n    <tr>\n'
-        c += types.list.map(t => `      <th>${t[0].toUpperCase() + t.slice(1)}</th>`).join('\n')
-        c += '\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n'
-        c += types.mixin ? `      <td style="vertical-align:top">\n${group.data.mixin.map(e => `        <a href="#mixin-${e.context.name}">${e.context.name}</a>`).join('\n        <br>\n')}\n      </td>\n` : ''
-        c += types.function ? `      <td style="vertical-align:top">\n${group.data.function.map(e => `        <a href="#function-${e.context.name}">${e.context.name}</a>`).join('\n        <br>\n')}\n      </td>\n` : ''
-        c += types.variable ? `      <td style="vertical-align:top">\n${group.data.variable.map(e => `        <a href="#variable-${e.context.name}">${e.context.name}</a>`).join('\n        <br>\n')}\n      </td>\n` : ''
-        c += '    </tr>\n  </tbody>\n</table>\n\n';
-
-        c += types.mixin ? `### Mixins\n\n${group.data.mixin.map(e => writeLongEntity(e, 'mixin')).join('\n\n')}` : ''
-        c += types.function ? `### Functions\n\n${group.data.function.map(e => writeLongEntity(e, 'function')).join('\n\n')}` : ''
-        c += types.variable ? `### Variables\n\n${group.data.variable.map(e => writeLongEntity(e, 'variable')).join('\n\n')}` : ''
-
-        c += '\n\n<a href="/README.md">Back to Sass Styler</a>\n'
-
-        writeFile(`./doc/${slug.toUpperCase()}.md`, c)
-    })
-}
-
 function writeShortEntity(e, type = 'mixin') {
     let prepend = 'variable' === type ? '$' : ('mixin' === type ? '@include ' : '')
     let append = e.parameter ? `(${e.parameter.map(p => `$${p.name}`).join(', ')})` : ''
@@ -126,20 +62,34 @@ function writeShortEntity(e, type = 'mixin') {
 async function writeToReadme(data) {
     let readme = await getReadme()
     if (!readme) return
+    data = parseData(data)
     let doc = '<!-- start automated part -->\n'
-    Object.entries(data).forEach(([slug, group]) => {
-        let types = getTypesByGroup(group)
-        let c = ''
-        c += types.mixin ? `\n#### Mixins\n\n${group.data.mixin.map(e => writeShortEntity(e, 'mixin')).join('\n')}` : ''
-        c += types.function ? `\n#### Functions\n\n${group.data.function.map(e => writeShortEntity(e, 'function')).join('\n')}` : ''
-        c += types.variable ? `\n#### Variables\n\n${group.data.variable.map(e => writeShortEntity(e, 'variable')).join('\n')}` : ''
-        if (0 !== c.length) {
-            doc += '\n<details>'
-            doc += `\n  <summary>\n    <h3 style="display:inline">${group.name}</h3> - ${group.description} - <a href="doc/${slug.toUpperCase()}.md">read docs</a>\n  </summary>\n`
-            doc += c
-            doc += '\n</details>'
-        }
-    })
+    doc += '**Table of Content**\n\n'
+    doc += '<table>\n'
+    doc += '<tbody>\n'
+    doc += '    <tr>\n'
+    doc += `      <td style="vertical-align:top" rowspan="${data.mixin.length}">Mixins</td>\n`
+    doc += `      <td style="vertical-align:top">${data.mixin.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += '    </tr>\n'
+    doc += data.mixin.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+
+    doc += '    <tr>\n'
+    doc += `      <td style="vertical-align:top" rowspan="${data.function.length}">Functions</td>\n`
+    doc += `      <td style="vertical-align:top">${data.function.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += '    </tr>\n'
+    doc += data.function.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+
+    doc += '    <tr>\n'
+    doc += `      <td style="vertical-align:top" rowspan="${data.variable.length}">Variables</td>\n`
+    doc += `      <td style="vertical-align:top">${data.variable.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += '    </tr>\n'
+    doc += data.variable.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+
+    doc += '\n  </tbody>\n</table>\n\n';
+
+    doc += data.mixin ? `### Mixins\n\n${data.mixin.map(e => writeLongEntity(e, 'mixin')).join('\n\n')}` : ''
+    doc += data.function ? `### Functions\n\n${data.function.map(e => writeLongEntity(e, 'function')).join('\n\n')}` : ''
+    doc += data.variable ? `### Variables\n\n${data.variable.map(e => writeLongEntity(e, 'variable')).join('\n\n')}` : ''
     doc += '\n<!-- end automated part -->'
     readme = readme.replace('#############insert#############', doc)
     writeFile('README.md', readme)
@@ -148,8 +98,4 @@ async function writeToReadme(data) {
 sassdoc.parse('./src', {
     verbose: true,
     autofill: true
-}).then(async data => {
-    data = parseData(data)
-    writeToReadme(data)
-    writeToDocs(data)
-})
+}).then(async data => writeToReadme(data))

@@ -1,0 +1,22 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+@use "escape-classname" as *;
+@use "str-split" as *;
+
+/// Add multiple extends
+/// @param {List|String} $keywords - CSS utility component ids to apply
+
+@mixin apply($keywords...) {
+    @if list.length($keywords) == 1 {
+        $keyword: list.nth($keywords, 1);
+        @if meta.type-of($keyword) == list {
+            $keywords: $keyword;
+        } @else if meta.type-of($keyword) == string and string.index($keyword, " ") {
+            $keywords: str-split($keyword, " ");
+        }
+    }
+    @each $keyword in $keywords {
+        @extend #{escape-classname("%#{$keyword}")} !optional;
+    }
+}

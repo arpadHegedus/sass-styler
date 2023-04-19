@@ -1,0 +1,27 @@
+/// Create object fitted elements
+/// @param {String} $object-fit [cover] - The object fit
+/// @param {Number|List} $object-position [50% 50%] - The object position
+/// @param {String} $position [null] - Element position
+/// @param {Number} $width [100%] - The element width
+/// @param {Number} $height [100%] - The element height
+
+@mixin object-fit(
+    $object-fit: cover,
+    $object-position: 50% 50%,
+    $position: null,
+    $width: 100%,
+    $height: 100%
+) {
+    width: $width;
+    height: $height;
+    object-fit: $object-fit;
+    object-position: $object-position;
+    position: $position;
+    @if $position == absolute {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    @content;
+}

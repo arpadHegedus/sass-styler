@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "sass:math";
+@use "sides" as *;
+
+/// Get the right-left value from a list like margin or padding
+/// @param {Number|List} $value - The list value
+/// @param {String} $mode [average] - Whether to return the average or summary of the values
+/// @return {Null|Number}
+
+@function sides-x($value, $mode: average) {
+    $sides: sides($value);
+    @if map.get($sides, right) == null or map.get($sides, left) == null {
+        @return null;
+    }
+    @if $mode == average {
+        @return math.div((map.get($sides, right) + map.get($sides, left)), 2);
+    } @else {
+        @return map.get($sides, right) + map.get($sides, left);
+    }
+}

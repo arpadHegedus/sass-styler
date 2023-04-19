@@ -1,0 +1,12 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-odd-between.scss" as *;
+
+@include test-module("select-odd-between [function]") {
+    @include test('Can select with select-odd-between') {
+        @include assert-equal(
+            select-odd-between(1, 5),
+            "&:nth-child(odd):nth-child(n + 1):nth-child(-n + 5)"
+        );
+    }
+
+}

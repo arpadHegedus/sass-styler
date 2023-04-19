@@ -1,0 +1,31 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/same-units.scss" as styler;
+
+@include test-module("same-units [function]") {
+    @include test('Can check units') {
+        @include assert-equal(
+            styler.same-units(0.4, 15),
+            true
+        );
+        @include assert-equal(
+            styler.same-units(15px, 10px),
+            true
+        );
+        @include assert-equal(
+            styler.same-units(1em, 10px),
+            false
+        );
+        @include assert-equal(
+            styler.same-units(1.5em, 15deg),
+            false
+        );
+        @include assert-equal(
+            styler.same-units(50%, 15%),
+            true
+        );
+        @include assert-equal(
+            styler.same-units(1.5em, 15%),
+            false
+        );
+    }
+}
