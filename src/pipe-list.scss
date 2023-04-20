@@ -19,6 +19,7 @@
             margin-#{$side}: 0.5 * $gap;
             padding-#{$side}: 0.5 * $gap;
         }
+
         border-#{$side}: $border;
     }
 }

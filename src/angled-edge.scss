@@ -33,42 +33,32 @@
         lower-left: "0,0 #{$width},#{$height} #{$width},0",
         lower-right: "0,0 #{$width},0 0,#{$height}"
     );
-    $img:
-        '<svg xmlns="http://www.w3.org/2000/svg" ' +
-            'width="#{$width}" ' +
-            'height="#{$height}" ' +
-            'fill="#{$fill-rgb}" ' +
-            'fill-opacity="#{$fill-alpha}"' +
-        '><polygon points=\'#{map.get($points, $hypotenuse)}\'></polygon></svg>';
+    $img: '<svg xmlns="http://www.w3.org/2000/svg" width="#{$width}" height="#{$height}" fill="#{$fill-rgb}" fill-opacity="#{$fill-alpha}"><polygon points=\'#{map.get($points, $hypotenuse)}\'></polygon></svg>';
 
-    @if ($width == null) {
+    @if not $width {
         $points: (
             upper-left: "0,#{$height} 100,#{$height} 100,0",
             upper-right: "0,#{$height} 100,#{$height} 0,0",
             lower-left: "0,0 100,#{$height} 100,0",
             lower-right: "0,0 100,0 0,#{$height}"
         );
-        $img:
-            '<svg xmlns="http://www.w3.org/2000/svg" ' +
-                'preserveAspectRatio="none" ' +
-                'viewBox="0 0 100 #{$height}" ' +
-                'fill="#{$fill-rgb}" ' +
-                'fill-opacity="#{$fill-alpha}"' +
-            '><polygon points=\'#{map.get($points, $hypotenuse)}\'></polygon></svg>';
+        $img: '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 #{$height}" fill="#{$fill-rgb}" fill-opacity="#{$fill-alpha}"><polygon points=\'#{map.get($points, $hypotenuse)}\'></polygon></svg>';
     }
     $top: auto;
     $bottom: auto;
 
-    @if ($location == inside-top) {
+    @if $location == inside-top {
         $top: 0;
-    } @else if ($location == outside-top) {
+    } @else if $location == outside-top {
         $top: -$height * 1px;
-    } @else if ($location == inside-bottom) {
+    } @else if $location == inside-bottom {
         $bottom: 0;
-    } @else if ($location == outside-bottom) {
+    } @else if $location == outside-bottom {
         $bottom: -$height * 1px;
     }
+
     position: relative;
+
     #{$selector} {
         content: "";
         position: absolute;
@@ -85,7 +75,7 @@
         @if $fill-background {
             background-color: $fill-background;
         }
-        @if ($width == null) {
+        @if not $width {
             background-size: 100% 100%;
         }
         @content;

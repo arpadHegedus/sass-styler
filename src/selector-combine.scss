@@ -25,7 +25,7 @@
                     str-replace($s1, "&", $s2),
                     comma
                 );
-            } @else if (string.index($s1, "&") == null or str-ends-with($s1, "&") == false) and string.index($s2, "&") and str-starts-with($s2, "&") {
+            } @else if string.index($s2, "&") and str-starts-with($s2, "&") and (not string.index($s1, "&") or str-ends-with($s1, "&") == false) {
                 $s2: string.slice($s2, 2);
                 $selector-list: list.append(
                     $selector-list,

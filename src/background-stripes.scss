@@ -17,7 +17,9 @@
             }
             $stripes: list.append($stripes, list.nth($colors, $i) $stripe, comma);
         }
+
         background-image: linear-gradient($direction, list.join((), $stripes, $separator: comma));
     }
+
     background-color: list.nth($colors, 1);
 }

@@ -2029,17 +2029,7 @@ is-property($property)
     @if list.index($_properties, $property) {
         @return true;
     }
-    @if string.index($property, "--") ==
-        1 or
-        string.index($property, "-webkit-") ==
-        1 or
-        string.index($property, "-moz-") ==
-        1 or
-        string.index($property, "-ms-") ==
-        1 or
-        string.index($property, "-o-") ==
-        1
-    {
+    @if string.index($property, "--") == 1 or string.index($property, "-webkit-") == 1 or string.index($property, "-moz-") == 1 or string.index($property, "-ms-") == 1 or string.index($property, "-o-") == 1 {
         @return true;
     }
     @return false;
@@ -2231,12 +2221,7 @@ merge($map1, $map2)
     }
     $map: $map1;
     @each $key, $value in $map2 {
-        @if meta.type-of($value) ==
-            map and
-            map.has-key($map1, $key) and
-            meta.type-of(map.get($map1, $key)) ==
-            map
-        {
+        @if meta.type-of($value) == map and map.has-key($map1, $key) and meta.type-of(map.get($map1, $key)) == map {
             $map: map.merge($map, ($key: merge(map.get($map1, $key), $value)));
         } @else {
             $map: map.merge($map, ( $key: $value ));
@@ -2453,13 +2438,7 @@ remove-nth($list, $nth)
 ```scss 
 
 @function remove-nth($list, $nth) {
-    @if meta.type-of($list) !=
-        list or
-        meta.type-of($nth) !=
-        number or
-        math.abs($nth) >=
-        list.length($list)
-    {
+    @if meta.type-of($list) != list or meta.type-of($nth) != number or math.abs($nth) >= list.length($list) {
         @return $list;
     }
     $result: ();
@@ -3550,7 +3529,7 @@ selector-combine($selector1, $selector2)
                     str-replace($s1, "&", $s2),
                     comma
                 );
-            } @else if (string.index($s1, "&") == null or str-ends-with($s1, "&") == false) and string.index($s2, "&") and str-starts-with($s2, "&") {
+            } @else if string.index($s2, "&") and str-starts-with($s2, "&") and (not string.index($s1, "&") or str-ends-with($s1, "&") == false) {
                 $s2: string.slice($s2, 2);
                 $selector-list: list.append(
                     $selector-list,
@@ -3632,7 +3611,7 @@ set($map, $keys, $value, $recursive)
         $current-key: list.nth($keys, $i);
         $current-map: list.nth($maps, -1);
         $current-get: map.get($current-map, $current-key);
-        @if $current-get == null {
+        @if not $current-get {
             @return $map;
         }
         $maps: list.append($maps, $current-get);
@@ -3842,7 +3821,7 @@ sides-x($value, $mode)
 
 @function sides-x($value, $mode) {
     $sides: sides($value);
-    @if map.get($sides, right) == null or map.get($sides, left) == null {
+    @if not map.get($sides, right) or not map.get($sides, left) {
         @return null;
     }
     @if $mode == average {
@@ -3881,7 +3860,7 @@ sides-y($value, $mode)
 
 @function sides-y($value, $mode) {
     $sides: sides($value);
-    @if map.get($sides, top) == null or map.get($sides, bottom) == null {
+    @if not map.get($sides, top) or not map.get($sides, bottom) {
         @return null;
     }
     @if $mode == average {
@@ -3974,12 +3953,7 @@ srgb($channel)
 ```scss 
 
 @function srgb($channel) {
-    @return 255 *
-        if(
-            $value <= 0.0031308,
-            $value * 12.92,
-            1.055 * math.pow($value, math.div(1, 2.4)) - 0.055
-        );
+    @return 255 * if($value <= 0.0031308, $value * 12.92, 1.055 * math.pow($value, math.div(1, 2.4)) - 0.055);
 }
 ```
 
@@ -4047,12 +4021,7 @@ str-replace($string, $search, $replace)
 @function str-replace($string, $search, $replace) {
     $index: string.index($string, $search);
     @if $index {
-        @return string.slice($string, 1, $index - 1) + $replace +
-            str-replace(
-                string.slice($string, $index + string.length($search)),
-                $search,
-                $replace
-            );
+        @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
     }
     @return $string;
 }

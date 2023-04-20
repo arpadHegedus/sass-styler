@@ -17,12 +17,7 @@
     }
     $map: $map1;
     @each $key, $value in $map2 {
-        @if meta.type-of($value) ==
-            map and
-            map.has-key($map1, $key) and
-            meta.type-of(map.get($map1, $key)) ==
-            map
-        {
+        @if meta.type-of($value) == map and map.has-key($map1, $key) and meta.type-of(map.get($map1, $key)) == map {
             $map: map.merge($map, ($key: merge(map.get($map1, $key), $value)));
         } @else {
             $map: map.merge($map, ( $key: $value ));

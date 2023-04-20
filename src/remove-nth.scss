@@ -8,13 +8,7 @@
 /// @return {List|Mixed}
 
 @function remove-nth($list, $nth) {
-    @if meta.type-of($list) !=
-        list or
-        meta.type-of($nth) !=
-        number or
-        math.abs($nth) >=
-        list.length($list)
-    {
+    @if meta.type-of($list) != list or meta.type-of($nth) != number or math.abs($nth) >= list.length($list) {
         @return $list;
     }
     $result: ();

@@ -569,17 +569,7 @@ $_properties: (
     @if list.index($_properties, $property) {
         @return true;
     }
-    @if string.index($property, "--") ==
-        1 or
-        string.index($property, "-webkit-") ==
-        1 or
-        string.index($property, "-moz-") ==
-        1 or
-        string.index($property, "-ms-") ==
-        1 or
-        string.index($property, "-o-") ==
-        1
-    {
+    @if string.index($property, "--") == 1 or string.index($property, "-webkit-") == 1 or string.index($property, "-moz-") == 1 or string.index($property, "-ms-") == 1 or string.index($property, "-o-") == 1 {
         @return true;
     }
     @return false;

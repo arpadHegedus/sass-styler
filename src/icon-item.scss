@@ -10,6 +10,7 @@
 
 @mixin icon-item($icon-size: 1em, $gap: null, $side: left, $justify-content: null, $align-items: null, $align-icon: null) {
     $template: if($side == left, $icon-size repeat(auto-fit, minmax(10px, 100%)), repeat(auto-fit, minmax(10px, 100%)) $icon-size);
+
     display: grid;
     justify-content: $justify-content;
     align-items: $align-items;

@@ -9,7 +9,7 @@
 
 @function sides-x($value, $mode: average) {
     $sides: sides($value);
-    @if map.get($sides, right) == null or map.get($sides, left) == null {
+    @if not map.get($sides, right) or not map.get($sides, left) {
         @return null;
     }
     @if $mode == average {

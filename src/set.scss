@@ -36,7 +36,7 @@
         $current-key: list.nth($keys, $i);
         $current-map: list.nth($maps, -1);
         $current-get: map.get($current-map, $current-key);
-        @if $current-get == null {
+        @if not $current-get {
             @return $map;
         }
         $maps: list.append($maps, $current-get);
