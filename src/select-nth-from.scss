@@ -1,0 +1,11 @@
+@use "selector-combine" as *;
+
+/// Select nth elements from after a value
+/// @param {Number} $nth - The segment number
+/// @param {Number} $from - The starting element
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-nth-from($nth, $from, $selector: "&") {
+    @return selector-combine($selector, "&:nth-child(#{$nth}n + #{$from})");
+}

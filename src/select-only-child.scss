@@ -1,0 +1,9 @@
+@use "selector-combine" as *;
+
+/// Select element only if it is an only child of its container
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-only-child($selector: "&") {
+    @return selector-combine($selector, "&::only-child");
+}

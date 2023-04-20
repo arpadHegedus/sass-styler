@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "sides" as *;
+
+/// Get the bottom value from a list like margin or padding
+/// @param {Number|List} $value - The list value
+/// @return {Null|Number}
+
+@function sides-bottom($value) {
+    @return map.get(sides($value), bottom);
+}

@@ -1,0 +1,31 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/tetrad.scss" as styler;
+
+@include test-module("tetrad [function]") {
+    @include test('Can get tetrads') {
+        @include assert-equal(
+            styler.tetrad(#318de2),
+            #df31e2
+        );
+        @include assert-equal(
+            styler.tetrad(#318de2, 2),
+            #e28631
+        );
+        @include assert-equal(
+            styler.tetrad(#318de2, 3),
+            #35e231
+        );
+        @include assert-equal(
+            styler.tetrad(#ccc),
+            #ccc
+        );
+        @include assert-equal(
+            styler.tetrad(#ccc, 2),
+            #ccc
+        );
+        @include assert-equal(
+            styler.tetrad(#ccc, 3),
+            #ccc
+        );
+    }
+}

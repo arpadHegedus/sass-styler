@@ -1,0 +1,16 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/unstyled-list.scss" as *;
+
+@include test-module("unstyled-list [mixin]") {
+    @include test("Can apply unstyled-list") {
+        @include assert {
+            @include output {
+                @include unstyled-list();
+            }
+            @include expect {
+                list-style: none;
+                padding-left: 0;
+            }
+        }
+    }
+}

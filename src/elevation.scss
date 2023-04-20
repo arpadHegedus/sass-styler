@@ -1,0 +1,15 @@
+/// Return box shadow based on elevation settings
+/// @param {Number} $level [1] - Level of elevation
+/// @param {Color} $color [rgba(0, 0, 0, 0.1)] - Shadow color
+
+@function elevation($level: 1, $color: rgba(0, 0, 0, 0.1)) {
+	@return 0 #{$level}px #{2 * $level + 1}px #{if($level > 1, #{$level - 1}px, null)} #{$color};
+}
+
+/// Add box shadow based on elevation settings
+/// @param {Number} $level [1] - Level of elevation
+/// @param {Color} $color [rgba(0, 0, 0, 0.1)] - Shadow color
+
+@mixin elevation($level: 1, $color: rgba(0, 0, 0, 0.1)) {
+    box-shadow: elevation($level, $color);
+}

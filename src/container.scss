@@ -1,0 +1,16 @@
+@use "calc-add" as *;
+
+/// Create a width-limited container with side-margin on smaller screens
+/// @param {number} $width - The width-limit
+/// @param {number} $margin - The margin size (on smaller screens)
+
+@mixin container($width, $margin) {
+    max-width: $width;
+    margin-right: $margin;
+    margin-left: $margin;
+
+    @media only screen and (min-width: #{calc-add($width, 2 * $margin, px)}) {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

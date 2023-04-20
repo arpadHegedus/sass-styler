@@ -1,0 +1,16 @@
+@use "sass:math";
+@use "../node_modules/sass-true" as *;
+@use "../src/aspect-ratio-padding.scss" as *;
+
+@include test-module("aspect-ratio-padding [mixin]") {
+    @include test("Can apply aspect-ratio-padding") {
+        @include assert {
+            @include output {
+                @include aspect-ratio-padding();
+            }
+            @include expect {
+                padding: (math.div(9, 16) * 100%) 0 0 0;
+            }
+        }
+    }
+}

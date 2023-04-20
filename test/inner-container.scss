@@ -1,0 +1,37 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/inner-container.scss" as *;
+
+@include test-module("inner-container [mixin]") {
+    @include test("Can apply inner-container") {
+        @include assert {
+            @include output {
+                @include inner-container(1024px, 16px);
+            }
+            @include expect {
+                padding-right: 16px;
+                padding-left: 16px;
+
+                > * {
+                    max-width: 1024px;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include inner-container(64em, 16px, ">div");
+            }
+            @include expect {
+                padding-right: 16px;
+                padding-left: 16px;
+
+                > div {
+                    max-width: 64em;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}

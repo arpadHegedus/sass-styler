@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/keyframes-name.scss" as *;
+
+@include test-module("keyframes-name [function]") {
+    @include test("Can generate unique, but reporducable keyframe name") {
+        @include assert-equal (
+            keyframes-name(fade, 1s),
+            keyframes-name(fade, 1s)
+        );
+    }
+}

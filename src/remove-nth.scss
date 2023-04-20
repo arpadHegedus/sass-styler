@@ -1,0 +1,26 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
+
+/// Remove the $nth value of a $list
+/// @param {List} $list - The list
+/// @param {Number} $nth - Index of the value to be removed from list
+/// @return {List|Mixed}
+
+@function remove-nth($list, $nth) {
+    @if meta.type-of($list) != list or meta.type-of($nth) != number or math.abs($nth) >= list.length($list) {
+        @return $list;
+    }
+    $result: ();
+    $nth: if($nth < 0, list.length($list) + $nth + 1, $nth);
+    @for $i from 1 through list.length($list) {
+        @if $i != $nth {
+            $result: list.append($result, list.nth($list, $i));
+        }
+    }
+    @return if(
+        list.length($result) == 1,
+        list.nth($result, 1),
+        list.join((), $result, $separator: list.separator($list))
+    );
+}

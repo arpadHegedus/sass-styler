@@ -1,9 +1,0 @@
-
-/// Remove list styles
-/// @param {String} $side [left] - Side to remove indent from
-/// @group Utility
-
-@mixin unstyled-list($side: left) {
-    list-style: none;
-    padding-#{$side}: 0;
-}

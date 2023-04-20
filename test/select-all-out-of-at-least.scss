@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-all-out-of-at-least.scss" as *;
+
+@include test-module("select-all-out-of-at-least [function]") {
+    @include test('Can select with select-all-out-of-at-least') {
+        @include assert-equal(
+            select-all-out-of-at-least(3),
+            "&:nth-last-child(n + 3), &:nth-last-child(n + 3) ~ &"
+        );
+    }
+}

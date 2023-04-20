@@ -1,0 +1,9 @@
+@use "selector-combine" as *;
+
+/// Select the first and last elements
+/// @param {String|List} $selector ["&"] - The base selector
+/// @link https://lukyvj.github.io/family.scss/
+
+@function select-first-last($selector: "&") {
+    @return selector-combine($selector, "&:first-child, &:last-child");
+}

@@ -1,0 +1,12 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-first-last.scss" as *;
+
+@include test-module("select-first-last [function]") {
+    @include test('Can select with select-first-last') {
+        @include assert-equal(
+            select-first-last(),
+            "&:first-child, &:last-child"
+        );
+    }
+
+}

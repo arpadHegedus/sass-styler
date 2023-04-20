@@ -1,0 +1,22 @@
+@use "sass:list";
+@use "contrast-between" as *;
+
+/// Get the best contrasting color from a list of colors compared to a base
+/// @param {Color} $base - Base color
+/// @param {Color|List} $colors [#fff, #000] - Contrasting candidates (default: #fff #000)
+/// @param {Number} $tolerance [0] - Tolerance of checks
+/// @return {Color}
+
+@function best-contrast($base, $colors: #fff #000, $tolerance: 0) {
+    $best: list.nth($colors, 1);
+    $contrast: contrast-between($base, $best);
+    @for $i from 2 through list.length($colors) {
+        $current: list.nth($colors, $i);
+        $current-contrast: contrast-between($base, $current);
+        @if $current-contrast - $contrast > $tolerance {
+            $best: $current;
+            $contrast: $current-contrast;
+        }
+    }
+    @return $best;
+}

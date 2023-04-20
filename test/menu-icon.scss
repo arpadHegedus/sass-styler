@@ -1,0 +1,61 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/menu-icon.scss" as *;
+
+@include test-module("menu-icon [mixin]") {
+    @include test("Can apply menu-icon") {
+        @include assert {
+            @include output {
+                @include menu-icon();
+
+                &:hover {
+                    @include menu-icon-close();
+                }
+            }
+            @include expect {
+                position: relative;
+                margin-top: 0.4375em;
+                margin-bottom: 0.4375em;
+                user-select: none;
+
+                &,
+                &::before,
+                &::after {
+                    display: block;
+                    width: 1em;
+                    height: 0.125em;
+                    background-color: currentColor;
+                    outline: 1px solid transparent;
+                    border-radius: 0;
+                    transition-property: background-color, transform;
+                    transition-duration: 0.3s;
+                }
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: "";
+                }
+
+                &::before {
+                    top: -0.4375em;
+                }
+
+                &::after {
+                    bottom: -0.4375em;
+                }
+
+                &:hover {
+                    background-color: transparent;
+
+                    &::before {
+                        transform: translateY(0.4375em) rotate(45deg)
+                    }
+
+                    &::after {
+                        transform: translateY(-0.4375em) rotate(-45deg)
+                    }
+                }
+            }
+        }
+    }
+}

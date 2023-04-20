@@ -1,0 +1,39 @@
+@use "sass:meta";
+@use "sass:list";
+@use "selector-combine" as *;
+@use "grid-column-width" as *;
+
+/// Create a flexbox grid from the wrapper and direct children elements
+/// @param {List|String} $columns [1 of 2] - The columns ratio (x of y)
+/// @param {Number} $gap [0] - The gap
+/// @param {Number} $gap [0] - The vertical gap
+/// @param {String} $justify-content [center] - The justify content value
+/// @param {String} $align-items [stretch] - The align items value
+/// @param {String|List} $selector [">*"] - The child selector
+
+@mixin flex-grid($columns: 1 of 2, $gap: 1rem, $vgap: $gap, $justify-content: center, $align-items: stretch, $selector: "> *") {
+    $col: list.nth($columns, 1);
+    $of: list.nth($columns, 3);
+    $selector-gap: selector-combine($selector, "&:nth-child(#{$of}n+1)");
+    $selector-vgap: selector-combine($selector, "&:nth-child(n+#{($of + 1)})");
+    $width: grid-column-width($columns, $gap);
+
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: wrap;
+
+    #{$selector} {
+        flex: 1 0 auto;
+        width: $width;
+        margin-left: $gap;
+    }
+
+    #{$selector-gap} {
+        margin-left: 0;
+    }
+
+    #{$selector-vgap} {
+        margin-top: $vgap;
+    }
+}

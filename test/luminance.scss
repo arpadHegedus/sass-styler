@@ -1,0 +1,28 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/luminance.scss" as styler;
+@use "../src/decimal-round.scss" as *;
+
+@include test-module("luminance [function]") {
+    @include test('Can get luminances') {
+        @include assert-equal(
+            styler.luminance(#000),
+            0
+        );
+        @include assert-equal(
+            styler.luminance(#fff),
+            1
+        );
+        @include assert-equal(
+            decimal-round(styler.luminance(#ccc), 4),
+            decimal-round(0.6038, 4)
+        );
+        @include assert-equal(
+            decimal-round(styler.luminance(#6aaeee), 4),
+            decimal-round(0.3951, 4)
+        );
+        @include assert-equal(
+            decimal-round(styler.luminance(#0d3f6e), 4),
+            decimal-round(0.0477, 4)
+        );
+    }
+}

@@ -5,5 +5,7 @@ test
 .gitignore
 .npmignore
 .nvmrc
-.stylelintrc.json
+.stylelintrc
+jest.config.js
+pnpm-lock.yaml
 test.js

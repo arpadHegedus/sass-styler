@@ -1,0 +1,35 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/num-to-length.scss" as styler;
+
+@include test-module("num-to-length [function]") {
+    @include test('Can convert numbers to lengths') {
+        @include assert-equal(
+            styler.num-to-length(15, "px"),
+            15px
+        );
+        @include assert-equal(
+            styler.num-to-length(15, "%"),
+            15%
+        );
+        @include assert-equal(
+            styler.num-to-length(15, "em"),
+            15em
+        );
+        @include assert-equal(
+            styler.num-to-length(15, "rem"),
+            15rem
+        );
+        @include assert-equal(
+            styler.num-to-length(15, "deg"),
+            15deg
+        );
+        @include assert-equal(
+            styler.num-to-length(15),
+            15px
+        );
+        @include assert-equal(
+            styler.num-to-length("15", "px"),
+            15px
+        );
+    }
+}

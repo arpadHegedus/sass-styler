@@ -1,0 +1,12 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select-even.scss" as *;
+
+@include test-module("select-even [function]") {
+    @include test('Can select with select-even') {
+        @include assert-equal(
+            select-even(),
+            "&:nth-child(even)"
+        );
+    }
+
+}

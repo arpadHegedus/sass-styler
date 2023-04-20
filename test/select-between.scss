@@ -1,0 +1,11 @@
+@use "sass:selector";@use "../node_modules/sass-true" as *;
+@use "../src/select-between.scss" as *;
+
+@include test-module("select-between [function]") {
+    @include test('Can select with select-between') {
+        @include assert-equal(
+            select-between(1, 5),
+            "&:nth-child(n + 1):nth-child(-n + 5)"
+        );
+    }
+}

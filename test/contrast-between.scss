@@ -1,0 +1,24 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/contrast-between.scss" as styler;
+@use "../src/decimal-round.scss" as *;
+
+@include test-module("contrast-between [function]") {
+    @include test('Can get contrast values') {
+        @include assert-equal(
+            decimal-round(styler.contrast-between(#000, #fff), 2),
+            decimal-round(21, 2)
+        );
+        @include assert-equal(
+            decimal-round(styler.contrast-between(#000, #000), 2),
+            decimal-round(1, 2)
+        );
+        @include assert-equal(
+            decimal-round(styler.contrast-between(#318de2, #fff), 2),
+            decimal-round(3.48, 2)
+        );
+        @include assert-equal(
+            decimal-round(styler.contrast-between(#318de2, #df31e2), 2),
+            decimal-round(1.06, 2)
+        );
+    }
+}

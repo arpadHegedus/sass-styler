@@ -1,0 +1,13 @@
+/// Fallback for possibly null values
+/// @param {List} $values... Values
+/// @return {Mixed}
+
+@function fallback($values...) {
+    $value: null;
+    @each $v in $values {
+        @if $v {
+            @return $v;
+        }
+    }
+    @return $value;
+}

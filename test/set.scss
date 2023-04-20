@@ -1,0 +1,167 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/set.scss" as styler;
+
+$test: (
+    string: "top level",
+    number: 1,
+    list: 1 2 3 4,
+    map: (
+        string: "1st level",
+        map: (
+            string: "2nd level",
+            map: (
+                string: "3rd level"
+            )
+        )
+    )
+);
+
+@include test-module("set [function]") {
+    @include test('Can set inside map') {
+        @include assert-equal(
+            styler.set($test, string, "new string"),
+            (
+                string: "new string",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can deeply set from 1st level of map') {
+        @include assert-equal(
+            styler.set($test, map string, "new string"),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string:  "new string",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can deeply set from 2nd level of map') {
+        @include assert-equal(
+            styler.set($test, map map string, "new string"),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "new string",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can deeply set from 3rd level of map') {
+        @include assert-equal(
+            styler.set($test, map map map string, "new string"),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "new string",
+                        )
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can set even if no key exist') {
+        @include assert-equal(
+            styler.set($test, nokey, "new string"),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    )
+                ),
+                nokey: "new string"
+            )
+        );
+    }
+    @include test('Can set deeply even if no key exist') {
+        @include assert-equal(
+            styler.set($test, map map nokey, "new string"),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        ),
+                        nokey: "new string"
+                    )
+                )
+            )
+        );
+    }
+    @include test('Can override instead of merge') {
+        @include assert-equal(
+            styler.set($test, map, (new: "new string"), true),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    string: "1st level",
+                    map: (
+                        string: "2nd level",
+                        map: (
+                            string: "3rd level"
+                        )
+                    ),
+                    new: "new string"
+                )
+            )
+        );
+        @include assert-equal(
+            styler.set($test, map, (new: "new string"), false),
+            (
+                string: "top level",
+                number: 1,
+                list: 1 2 3 4,
+                map: (
+                    new: "new string"
+                )
+            )
+        );
+    }
+}

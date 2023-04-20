@@ -1,0 +1,57 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/loader.scss" as *;
+
+@include test-module("loader [mixin]") {
+    @include test("Can add loader") {
+        @include assert {
+            @include output {
+                @include loader();
+            }
+            @include expect {
+                position: relative;
+
+                > * {
+                    opacity: 0.5;
+                }
+
+                &::before,
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: auto;
+                    bottom: auto;
+                    left: 50%;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-width: 2px;
+                    border-radius: 100%;
+                    border-style: solid;
+                    transform: translate3d(-50%, -50%, 0);
+                }
+
+                &::before {
+                    z-index: 1;
+                    border-color: rgba(0, 0, 0, 0.2);
+                }
+
+                &::after {
+                    z-index: 2;
+                    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
+                    animation: loader-spin 1s linear infinite;
+
+                    @keyframes loader-spin {
+                        0% {
+                            transform: translate3d(-50%, -50%, 0) rotate(0);
+                        }
+
+                        100% {
+                            transform: translate3d(-50%, -50%, 0) rotate(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

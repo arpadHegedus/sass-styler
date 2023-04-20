@@ -1,0 +1,31 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/position.scss" as *;
+
+@include test-module("position [mixin]") {
+    @include test("Can apply position") {
+        @include assert {
+            @include output {
+                @include position();
+            }
+            @include expect {
+                position: absolute;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+            }
+        }
+        @include assert {
+            @include output {
+                @include position(0, 50%);
+            }
+            @include expect {
+                position: absolute;
+                top: 0;
+                right: 50%;
+                bottom: auto;
+                left: auto;
+            }
+        }
+    }
+}

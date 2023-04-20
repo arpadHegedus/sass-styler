@@ -1,0 +1,16 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/xyz.scss" as styler;
+@use "../src/decimal-round.scss" as *;
+
+@include test-module("xyz [function]") {
+    @include test('Can get xyz value') {
+        @include assert-equal(
+            decimal-round(styler.xyz(200), 6),
+            decimal-round(0.57758, 6)
+        );
+        @include assert-equal(
+            decimal-round(styler.xyz(100), 6),
+            decimal-round(0.127438, 6)
+        );
+    }
+}
