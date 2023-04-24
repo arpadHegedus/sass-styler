@@ -1139,7 +1139,7 @@ asset($file)
 **File source:** <a href="/src/asset.scss">src/asset.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function asset($file) {
     @return url($asset-path + $file);
@@ -1170,7 +1170,7 @@ best-contrast($base, $colors, $tolerance)
 **File source:** <a href="/src/best-contrast.scss">src/best-contrast.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function best-contrast($base, $colors, $tolerance) {
     $best: list.nth($colors, 1);
@@ -1211,7 +1211,7 @@ calc-add($left, $right, $ensure-unit)
 **File source:** <a href="/src/calc-add.scss">src/calc-add.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function calc-add($left, $right, $ensure-unit) {
     @if math.is-unitless($left) and math.is-unitless($right) == false {
@@ -1263,7 +1263,7 @@ calc-substract($left, $right, $ensure-unit)
 **File source:** <a href="/src/calc-substract.scss">src/calc-substract.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function calc-substract($left, $right, $ensure-unit) {
     @if math.is-unitless($left) and math.is-unitless($right) == false {
@@ -1313,7 +1313,7 @@ cmyk($color)
 **File source:** <a href="/src/cmyk.scss">src/cmyk.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function cmyk($color) {
     $black: 1 - math.div(math.max(color.red($color), color.green($color), color.blue($color)), 255);
@@ -1356,7 +1356,7 @@ color-from($value)
 **File source:** <a href="/src/color-from.scss">src/color-from.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function color-from($value) {
     @if meta.type-of($value) == color {
@@ -1397,7 +1397,7 @@ contrast-balance($color1, $color2, $ratio, $balance)
 **File source:** <a href="/src/contrast-balance.scss">src/contrast-balance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-balance($color1, $color2, $ratio, $balance) {
     $fixed1: contrast-with($color1, $color2, $ratio);
@@ -1440,7 +1440,7 @@ contrast-between($color1, $color2)
 **File source:** <a href="/src/contrast-between.scss">src/contrast-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-between($color1, $color2) {
     $lum1: luminance($color1);
@@ -1471,7 +1471,7 @@ contrast-ratio-by-name($ratio)
 **File source:** <a href="/src/contrast-ratio-by-name.scss">src/contrast-ratio-by-name.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-ratio-by-name($ratio) {
     @if $ratio == "AA" or $ratio == "AAALG" {
@@ -1509,7 +1509,7 @@ contrast-with($color, $target, $ratio, $iterations)
 **File source:** <a href="/src/contrast-with.scss">src/contrast-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-with($color, $target, $ratio, $iterations) {
     $ratio: contrast-ratio-by-name($ratio);
@@ -1574,7 +1574,7 @@ decimal-round($number, $digits, $mode)
 **File source:** <a href="/src/decimal-round.scss">src/decimal-round.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function decimal-round($number, $digits, $mode) {
     $n: 1;
@@ -1619,7 +1619,7 @@ elevation($level, $color)
 **File source:** <a href="/src/elevation.scss">src/elevation.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function elevation($level, $color) {
 	@return 0 #{$level}px #{2 * $level + 1}px #{if($level > 1, #{$level - 1}px, null)} #{$color};
@@ -1650,7 +1650,7 @@ em-to-px($em, $default)
 **File source:** <a href="/src/em-to-px.scss">src/em-to-px.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function em-to-px($em, $default) {
     $default: if(
@@ -1689,7 +1689,7 @@ em-to-rem($em)
 **File source:** <a href="/src/em-to-rem.scss">src/em-to-rem.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function em-to-rem($em) {
     @return str-to-num(string.unquote(strip-unit($em) + "rem"));
@@ -1720,7 +1720,7 @@ ensure-unit($num, $unit, $default)
 **File source:** <a href="/src/ensure-unit.scss">src/ensure-unit.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function ensure-unit($num, $unit, $default) {
     $num-unit: math.unit($num);
@@ -1778,7 +1778,7 @@ escape-classname($classname)
 **File source:** <a href="/src/escape-classname.scss">src/escape-classname.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function escape-classname($classname) {
     $starts-with-dot: false;
@@ -1819,7 +1819,7 @@ fallback($values...)
 **File source:** <a href="/src/fallback.scss">src/fallback.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function fallback($values...) {
     $value: null;
@@ -1856,7 +1856,7 @@ fluid-size($min-size, $min-viewport, $max-size, $max-viewport, $clamp, $px-mode,
 **File source:** <a href="/src/fluid-size.scss">src/fluid-size.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function fluid-size($min-size, $min-viewport, $max-size, $max-viewport, $clamp, $px-mode, $default-font-size, $viewport-unit) {
     $calc: calc(#{if($px-mode, $min-size, px-to-rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
@@ -1886,7 +1886,7 @@ get($map, $keys, $fallback)
 **File source:** <a href="/src/get.scss">src/get.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function get($map, $keys, $fallback) {
     @each $key in $keys {
@@ -1922,7 +1922,7 @@ grid-column-width($columns, $gap)
 **File source:** <a href="/src/grid-column-width.scss">src/grid-column-width.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function grid-column-width($columns, $gap) {
     $col: list.nth($columns, 1);
@@ -1963,7 +1963,7 @@ is-between($value, $min, $max)
 **File source:** <a href="/src/is-between.scss">src/is-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-between($value, $min, $max) {
     @return if($value >= $min and $value <= $max, true, false);
@@ -1994,7 +1994,7 @@ is-contrasting($color1, $color2, $ratio)
 **File source:** <a href="/src/is-contrasting.scss">src/is-contrasting.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-contrasting($color1, $color2, $ratio) {
     $ratio: contrast-ratio-by-name($ratio);
@@ -2026,7 +2026,7 @@ is-property($property)
 **File source:** <a href="/src/is-property.scss">src/is-property.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-property($property) {
     @if meta.type-of($property) != string {
@@ -2066,7 +2066,7 @@ is-pseudo($pseudo, $string)
 **File source:** <a href="/src/is-pseudo.scss">src/is-pseudo.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-pseudo($pseudo, $string) {
     @if $strict and string.index($pseudo, ":") != 1 {
@@ -2110,7 +2110,7 @@ keyframes-name($name, $config)
 **File source:** <a href="/src/keyframes-name.scss">src/keyframes-name.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function keyframes-name($name, $config) {
     @if not $config {
@@ -2142,7 +2142,7 @@ long-shadow($color, $length)
 **File source:** <a href="/src/long-shadow.scss">src/long-shadow.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function long-shadow($color, $length) {
     $val: 0 0 $color;
@@ -2179,7 +2179,7 @@ luminance($color)
 **File source:** <a href="/src/luminance.scss">src/luminance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function luminance($color) {
     $red: xyz(color.red($color));
@@ -2213,7 +2213,7 @@ merge($map1, $map2)
 **File source:** <a href="/src/merge.scss">src/merge.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function merge($map1, $map2) {
     @if meta.type-of($map2) != map {
@@ -2261,7 +2261,7 @@ num-to-length($value, $unit)
 **File source:** <a href="/src/num-to-length.scss">src/num-to-length.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function num-to-length($value, $unit) {
     @if meta.type-of($value) != number {
@@ -2295,7 +2295,7 @@ px-to-em($px, $default)
 **File source:** <a href="/src/px-to-em.scss">src/px-to-em.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function px-to-em($px, $default) {
     $default: if(
@@ -2334,7 +2334,7 @@ px-to-rem($px, $default)
 **File source:** <a href="/src/px-to-rem.scss">src/px-to-rem.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function px-to-rem($px, $default) {
     $default: if(
@@ -2373,7 +2373,7 @@ rem-to-em($rem)
 **File source:** <a href="/src/rem-to-em.scss">src/rem-to-em.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function rem-to-em($rem) {
     @return str-to-num(string.unquote(strip-unit($rem) + "em"));
@@ -2404,7 +2404,7 @@ rem-to-px($rem, $default)
 **File source:** <a href="/src/rem-to-px.scss">src/rem-to-px.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function rem-to-px($rem, $default) {
     $default: if(
@@ -2441,7 +2441,7 @@ remove-nth($list, $nth)
 **File source:** <a href="/src/remove-nth.scss">src/remove-nth.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function remove-nth($list, $nth) {
     @if meta.type-of($list) != list or meta.type-of($nth) != number or math.abs($nth) >= list.length($list) {
@@ -2486,7 +2486,7 @@ remove($map, $keys...)
 **File source:** <a href="/src/remove.scss">src/remove.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function remove($map, $keys...) {
     @if meta.type-of($map) != map {
@@ -2534,7 +2534,7 @@ same-units($number, $number2)
 **File source:** <a href="/src/same-units.scss">src/same-units.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function same-units($number, $number2) {
     @return math.unit($number) == math.unit($number2);
@@ -2565,7 +2565,7 @@ scale-light($color1, $color2, $ratio, $operation, $iterations)
 **File source:** <a href="/src/scale-light.scss">src/scale-light.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function scale-light($color1, $color2, $ratio, $operation, $iterations) {
     @for $i from 1 through $iterations {
@@ -2606,7 +2606,7 @@ scale-luminance($color, $luminance)
 **File source:** <a href="/src/scale-luminance.scss">src/scale-luminance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function scale-luminance($color, $luminance) {
     $scale: math.div($luminance, luminance($color));
@@ -2672,7 +2672,7 @@ select-after($nth, $selector)
 **File source:** <a href="/src/select-after.scss">src/select-after.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-after($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(n + #{$nth + 1})");
@@ -2703,7 +2703,7 @@ select-all-out-of-at-least($num, $selector)
 **File source:** <a href="/src/select-all-out-of-at-least.scss">src/select-all-out-of-at-least.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-at-least($num, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2735,7 +2735,7 @@ select-all-out-of-at-most($num, $selector)
 **File source:** <a href="/src/select-all-out-of-at-most.scss">src/select-all-out-of-at-most.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-at-most($num, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2767,7 +2767,7 @@ select-all-out-of-between($min, $max, $selector)
 **File source:** <a href="/src/select-all-out-of-between.scss">src/select-all-out-of-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-between($min, $max, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2802,7 +2802,7 @@ select-before($nth, $selector)
 **File source:** <a href="/src/select-before.scss">src/select-before.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-before($nth, $selector) {
     @return selector-combine($selector, "&:nth-last-child(#{$nth})");
@@ -2833,7 +2833,7 @@ select-between($first, $last, $selector)
 **File source:** <a href="/src/select-between.scss">src/select-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -2864,7 +2864,7 @@ select-even-between($first, $last, $selector)
 **File source:** <a href="/src/select-even-between.scss">src/select-even-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-even-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -2895,7 +2895,7 @@ select-even($selector)
 **File source:** <a href="/src/select-even.scss">src/select-even.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-even($selector) {
     @return selector-combine($selector, "&:nth-child(even)");
@@ -2926,7 +2926,7 @@ select-except-first-last($selector)
 **File source:** <a href="/src/select-except-first-last.scss">src/select-except-first-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except-first-last($selector) {
     @return selector-combine($selector, "&:not(:first-child):not(:last-child)");
@@ -2957,7 +2957,7 @@ select-except-only-child($selector)
 **File source:** <a href="/src/select-except-only-child.scss">src/select-except-only-child.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except-only-child($selector) {
     @return selector-combine($selector, "&:not(:only-child)");
@@ -2988,7 +2988,7 @@ select-except($nth, $selector)
 **File source:** <a href="/src/select-except.scss">src/select-except.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except($nth, $selector) {
     @return selector-combine($selector, "&:not(:nth-child(#{$nth}))");
@@ -3019,7 +3019,7 @@ select-first-last($selector)
 **File source:** <a href="/src/select-first-last.scss">src/select-first-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-last($selector) {
     @return selector-combine($selector, "&:first-child, &:last-child");
@@ -3050,7 +3050,7 @@ select-first-of-type($selector)
 **File source:** <a href="/src/select-first-of-type.scss">src/select-first-of-type.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-of-type($selector) {
     @return selector-combine($selector, "&:first-of-type");
@@ -3081,7 +3081,7 @@ select-first-out-of($num, $selector)
 **File source:** <a href="/src/select-first-out-of.scss">src/select-first-out-of.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-out-of($num, $selector) {
 	@return selector-combine($selector, "&:nth-last-child(#{$num}):first-child");
@@ -3112,7 +3112,7 @@ select-first($selector)
 **File source:** <a href="/src/select-first.scss">src/select-first.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first($selector) {
     @return selector-combine($selector, if($nth == 1, "&:first-child", "&:nth-first-child(-n + #{$nth})"));
@@ -3143,7 +3143,7 @@ select-last-of-type($selector)
 **File source:** <a href="/src/select-last-of-type.scss">src/select-last-of-type.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last-of-type($selector) {
     @return selector-combine($selector, "&:last-of-type");
@@ -3174,7 +3174,7 @@ select-last-out-of($num, $selector)
 **File source:** <a href="/src/select-last-out-of.scss">src/select-last-out-of.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last-out-of($num, $selector) {
     @return selector-combine($selector, "&:nth-of-type(#{$num}):nth-last-of-type(1)");
@@ -3205,7 +3205,7 @@ select-last($selector)
 **File source:** <a href="/src/select-last.scss">src/select-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last($selector) {
     @return selector-combine($selector, if($nth == 1, "&:last-child", "&:nth-last-child(-n + #{$nth})"));
@@ -3236,7 +3236,7 @@ select-middle($num, $selector)
 **File source:** <a href="/src/select-middle.scss">src/select-middle.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-middle($num, $selector) {
     @return selector-combine($selector, "&:nth-child(#{math.round(math.div($num, 2))})");
@@ -3267,7 +3267,7 @@ select-nth-between($nth, $first, $last, $selector)
 **File source:** <a href="/src/select-nth-between.scss">src/select-nth-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-between($nth, $first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -3298,7 +3298,7 @@ select-nth-both-sides($nth, $selector)
 **File source:** <a href="/src/select-nth-both-sides.scss">src/select-nth-both-sides.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-both-sides($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}), &:nth-last-child(#{$nth})");
@@ -3329,7 +3329,7 @@ select-nth-from($nth, $from, $selector)
 **File source:** <a href="/src/select-nth-from.scss">src/select-nth-from.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-from($nth, $from, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n + #{$from})");
@@ -3360,7 +3360,7 @@ select-nth($nth, $selector)
 **File source:** <a href="/src/select-nth.scss">src/select-nth.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n)");
@@ -3391,7 +3391,7 @@ select-odd-between($first, $last, $selector)
 **File source:** <a href="/src/select-odd-between.scss">src/select-odd-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-odd-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -3422,7 +3422,7 @@ select-odd($selector)
 **File source:** <a href="/src/select-odd.scss">src/select-odd.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-odd($selector) {
     @return selector-combine($selector, "&:nth-child(odd)");
@@ -3453,7 +3453,7 @@ select-only-child($selector)
 **File source:** <a href="/src/select-only-child.scss">src/select-only-child.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-only-child($selector) {
     @return selector-combine($selector, "&::only-child");
@@ -3484,7 +3484,7 @@ select-owl($selectors)
 **File source:** <a href="/src/select-owl.scss">src/select-owl.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-owl($selectors) {
     @return selector.replace(
@@ -3519,7 +3519,7 @@ selector-combine($selector1, $selector2)
 **File source:** <a href="/src/selector-combine.scss">src/selector-combine.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function selector-combine($selector1, $selector2) {
     $selector-list: ();
@@ -3588,7 +3588,7 @@ set($map, $keys, $value, $recursive)
 **File source:** <a href="/src/set.scss">src/set.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function set($map, $keys, $value, $recursive) {
     @if meta.type-of($map) != map {
@@ -3668,7 +3668,7 @@ shade($color, $ratio)
 **File source:** <a href="/src/shade.scss">src/shade.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function shade($color, $ratio) {
     @return color.mix(#000, $color, $ratio);
@@ -3699,7 +3699,7 @@ sides-bottom($value)
 **File source:** <a href="/src/sides-bottom.scss">src/sides-bottom.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-bottom($value) {
     @return map.get(sides($value), bottom);
@@ -3730,7 +3730,7 @@ sides-left($value)
 **File source:** <a href="/src/sides-left.scss">src/sides-left.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-left($value) {
     @return map.get(sides($value), left);
@@ -3761,7 +3761,7 @@ sides-right($value)
 **File source:** <a href="/src/sides-right.scss">src/sides-right.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-right($value) {
     @return map.get(sides($value), right);
@@ -3792,7 +3792,7 @@ sides-top($value)
 **File source:** <a href="/src/sides-top.scss">src/sides-top.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-top($value) {
     @return map.get(sides($value), top);
@@ -3823,7 +3823,7 @@ sides-x($value, $mode)
 **File source:** <a href="/src/sides-x.scss">src/sides-x.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-x($value, $mode) {
     $sides: sides($value);
@@ -3862,7 +3862,7 @@ sides-y($value, $mode)
 **File source:** <a href="/src/sides-y.scss">src/sides-y.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-y($value, $mode) {
     $sides: sides($value);
@@ -3899,7 +3899,7 @@ sides($value)
 **File source:** <a href="/src/sides.scss">src/sides.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides($value) {
     $top: null;
@@ -3956,7 +3956,7 @@ srgb($channel)
 **File source:** <a href="/src/srgb.scss">src/srgb.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function srgb($channel) {
     @return 255 * if($value <= 0.0031308, $value * 12.92, 1.055 * math.pow($value, math.div(1, 2.4)) - 0.055);
@@ -3985,7 +3985,7 @@ str-ends-with($haystack, $needle)
 **File source:** <a href="/src/str-ends-with.scss">src/str-ends-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-ends-with($haystack, $needle) {
     $haystack-length: string.length($haystack);
@@ -4022,7 +4022,7 @@ str-replace($string, $search, $replace)
 **File source:** <a href="/src/str-replace.scss">src/str-replace.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-replace($string, $search, $replace) {
     $index: string.index($string, $search);
@@ -4055,7 +4055,7 @@ str-split($string, $delimiter, $clean)
 **File source:** <a href="/src/str-split.scss">src/str-split.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-split($string, $delimiter, $clean) {
     $result: ();
@@ -4108,7 +4108,7 @@ str-starts-with($haystack, $needle)
 **File source:** <a href="/src/str-starts-with.scss">src/str-starts-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-starts-with($haystack, $needle) {
     $haystack-length: string.length($haystack);
@@ -4147,7 +4147,7 @@ str-to-num($value)
 **File source:** <a href="/src/str-to-num.scss">src/str-to-num.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-to-num($value) {
     @if meta.type-of($value) == number {
@@ -4196,7 +4196,7 @@ str-trim-end($string)
 **File source:** <a href="/src/str-trim-end.scss">src/str-trim-end.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim-end($string) {
     @if string.slice($string, string.length($string), -1) == " " {
@@ -4228,7 +4228,7 @@ str-trim-start($string)
 **File source:** <a href="/src/str-trim-start.scss">src/str-trim-start.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim-start($string) {
     @if string.slice($string, 1, 1) == " " {
@@ -4262,7 +4262,7 @@ str-trim($string)
 **File source:** <a href="/src/str-trim.scss">src/str-trim.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim($string) {
     @return str-trim-start(str-trim-end($string));
@@ -4293,7 +4293,7 @@ strip-unit($number)
 **File source:** <a href="/src/strip-unit.scss">src/strip-unit.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function strip-unit($number) {
     @if meta.type-of($number) == string and meta.type-of(str-to-num($number)) == number {
@@ -4330,7 +4330,7 @@ svg-base64($svg, $fill)
 **File source:** <a href="/src/svg-base64.scss">src/svg-base64.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function svg-base64($svg, $fill) {
     $svg: str-replace(
@@ -4371,7 +4371,7 @@ svg-url($svg, $fill)
 **File source:** <a href="/src/svg-url.scss">src/svg-url.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function svg-url($svg, $fill) {
     @return url(svg-base64($svg, $fill));
@@ -4400,7 +4400,7 @@ tetrad($color, $step)
 **File source:** <a href="/src/tetrad.scss">src/tetrad.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function tetrad($color, $step) {
     @return color.adjust($color, $hue: $step * 90);
@@ -4429,7 +4429,7 @@ tint($color, $ratio)
 **File source:** <a href="/src/tint.scss">src/tint.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function tint($color, $ratio) {
     @return color.mix(#fff, $color, $ratio);
@@ -4458,7 +4458,7 @@ triad($color, $step)
 **File source:** <a href="/src/triad.scss">src/triad.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function triad($color, $step) {
     @return color.adjust($color, $hue: $step * 120);
@@ -4489,7 +4489,7 @@ unique-id-by-value($values...)
 **File source:** <a href="/src/unique-id-by-value.scss">src/unique-id-by-value.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function unique-id-by-value($values...) {
     $found: list.index(map.values($_unique-ids), $values);
@@ -4531,7 +4531,7 @@ xyz($channel)
 **File source:** <a href="/src/xyz.scss">src/xyz.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function xyz($channel) {
     $channel: math.div($channel, 255);
