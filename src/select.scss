@@ -1,0 +1,71 @@
+/// List of selector shorthands
+
+$selectors: (
+  abbr: "abbr[title]",
+  bold: "b, strong, dt",
+  button: "button, [type=\"button\"], [type=\"reset\"], [type=\"submit\"]",
+  caption: "caption",
+  cite: "cite",
+  code: "code, kdb, samp",
+  dialog: "dialog",
+  fieldset: "fieldset",
+  figcaption: "figcaption",
+  figure: "figure",
+  heading: "h1, h2, h3, h4, h5, h6",
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h5",
+  hr: "hr",
+  html: "html",
+  img: "img",
+  indent: "ul, ol, dd, blockquote, q",
+  inline: "a, abbr, audio, bdi, bdo, button, canvas, cite, code, dfn, em, embed, i, img, input, ins, kbd, label, map, mark, object, optgroup, output, picture, q, s, samp, select, small, source, span, strong, sub, sup, textarea, time, u, var, video, wbr",
+  input: "input:not([type]), [type=\"color\"], [type=\"date\"], [type=\"datetime\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"image\"], [type=\"month\"], [type=\"number\"], [type=\"password\"], [type=\"search\"], [type=\"tel\"], [type=\"text\"], [type=\"time\"], [type=\"url\"], [type=\"week\"], select, textarea",
+  input-clickable: "[type=\"checkbox\"], [type=\"radio\"]",
+  input-clickable-gap: "label > [type=\"checkbox\"], label > [type=\"radio\"], [type=\"checkbox\"] label, [type=\"radio\"] + label",
+  input-file: "[type=\"file\"]",
+  input-multiline: "textarea, select[multiple]",
+  italic: "em, dfn, var",
+  label: "label",
+  legend: "legend",
+  line-through: "del, s",
+  link: "a",
+  link-states: "a, a:hover, a:focus, a:active, a:visited",
+  list: "ul, ol",
+  mark: "mark",
+  optgroup: "optgroup",
+  quote: "blockquote, q",
+  select: "select",
+  select-singular: "select:not([multiple])",
+  selection: "::-webkit-selection, ::-moz-selection, ::selection, input::-webkit-selection, input::-moz-selection, input::selection, textarea::-webkit-selection, textarea::-moz-selection, textarea::selection",
+  small: "small",
+  spacing: "h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details",
+  sub: "sub",
+  summary: "summary",
+  sup: "sup",
+  table: "table",
+  table-cell: "th, td",
+  table-column-odd: "td:nth-child(2n+1), th:nth-child(2n+1)",
+  table-column-even: "td:nth-child(2n+1), th:nth-child(2n+1)",
+  tfoot: "tfoot",
+  table-footer: "tfoot th, tfoot td",
+  thead: "thead",
+  table-header: "th, thead td",
+  table-row: "tr",
+  table-row-odd: "tr:nth-child(2n + 1) td, tr:nth-child(2n + 1) th",
+  table-row-even: "tr:nth-child(2n) td, tr:nth-child(2n) th",
+  textarea: "textarea",
+  underline: "ins, u"
+) !default;
+
+@use "sass:map";
+
+/// Select common element groups via shorthands
+/// @param {Number} $key - Selector group key
+
+@function select($key) {
+    @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
+}

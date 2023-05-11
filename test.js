@@ -96,6 +96,7 @@ sassTrue.runSass({ describe, it }, path.resolve('./test/select-odd-between.scss'
 sassTrue.runSass({ describe, it }, path.resolve('./test/select-odd.scss'))
 sassTrue.runSass({ describe, it }, path.resolve('./test/select-only-child.scss'))
 sassTrue.runSass({ describe, it }, path.resolve('./test/select-owl.scss'))
+sassTrue.runSass({ describe, it }, path.resolve('./test/select.scss'))
 sassTrue.runSass({ describe, it }, path.resolve('./test/selector-combine.scss'))
 sassTrue.runSass({ describe, it }, path.resolve('./test/set.scss'))
 sassTrue.runSass({ describe, it }, path.resolve('./test/shade.scss'))

@@ -4,9 +4,9 @@
 /// The padding trick to keep a container the same ratio in different screen sizes
 /// @param {Number} $x [16] - Width ratio
 /// @param {Number} $y [9] - Height raio
-/// @param {String|List} $position [null] - Position
+/// @param {String|List} $position [relative] - Position
 
-@mixin aspect-ratio-padding($x: 16, $y: 9, $position: null) {
+@mixin aspect-ratio-padding($x: 16, $y: 9, $position: relative) {
     position: $position;
     padding: (math.div($y, $x) * 100%) 0 0 0;
     @content;

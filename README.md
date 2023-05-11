@@ -132,7 +132,7 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-unstyled-list">unstyled-list</a></td><td style="vertical-align:top">Remove list styles</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="92">Functions</td>
+      <td style="vertical-align:top" rowspan="93">Functions</td>
       <td style="vertical-align:top"><a href="#mixin-asset">asset</a></td><td style="vertical-align:top">Get an asset url prepended by a default base path</td>
     </tr>
     <tr>
@@ -329,6 +329,9 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-select-owl">select-owl</a></td><td style="vertical-align:top">Mingle a list of selectors to go before and after the other adjacently</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-select">select</a></td><td style="vertical-align:top">Select common element groups via shorthands</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-selector-combine">selector-combine</a></td><td style="vertical-align:top">Combine 2 CSS selectors</td>
     </tr>
     <tr>
@@ -410,8 +413,11 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-xyz">xyz</a></td><td style="vertical-align:top">Return an RGB channel processed as XYZ</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="1">Variables</td>
+      <td style="vertical-align:top" rowspan="2">Variables</td>
       <td style="vertical-align:top"><a href="#mixin-asset-path">asset-path</a></td><td style="vertical-align:top">The default asset path to prepend</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-selectors">selectors</a></td><td style="vertical-align:top">List of selector shorthands</td>
     </tr>
 
   </tbody>
@@ -491,7 +497,7 @@ The padding trick to keep a container the same ratio in different screen sizes
 **Type:** mixin
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>x</td><td>Width ratio</td><td><code>Number</code></td><td>16</td></tr><tr><td>y</td><td>Height raio</td><td><code>Number</code></td><td>9</td></tr><tr><td>position</td><td>Position</td><td><code>String</code> <code>List</code></td><td>null</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>x</td><td>Width ratio</td><td><code>Number</code></td><td>16</td></tr><tr><td>y</td><td>Height raio</td><td><code>Number</code></td><td>9</td></tr><tr><td>position</td><td>Position</td><td><code>String</code> <code>List</code></td><td>relative</td></tr></table>
 
 **File source:** <a href="/src/aspect-ratio-padding.scss">src/aspect-ratio-padding.scss</a>
 
@@ -3502,6 +3508,37 @@ select-owl($selectors)
 
 
 
+#### select <a id="function-select">&nbsp;</a>
+Select common element groups via shorthands
+
+```scss
+/* Select common element groups via shorthands */
+select($key)
+```
+**Type:** function
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key</td><td><code>Number</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/get.scss">get</a>, <a href="/src/select.scss">selectors</a>
+
+**File source:** <a href="/src/select.scss">src/select.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function select($key) {
+    @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### selector-combine <a id="function-selector-combine">&nbsp;</a>
 Combine 2 CSS selectors
 
@@ -4560,6 +4597,22 @@ $asset-path
 **Type:** variable
 
 **File source:** <a href="/src/asset.scss">src/asset.scss</a>
+
+<br>
+
+
+
+
+#### selectors <a id="variable-selectors">&nbsp;</a>
+List of selector shorthands
+
+```scss
+/* List of selector shorthands */
+$selectors
+```
+**Type:** variable
+
+**File source:** <a href="/src/select.scss">src/select.scss</a>
 
 <br>
 

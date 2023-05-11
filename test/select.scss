@@ -1,0 +1,11 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/select.scss" as *;
+
+@include test-module("select [function]") {
+    @include test('Can select with select') {
+        @include assert-equal(
+            select(button),
+            "button, [type=\"button\"], [type=\"reset\"], [type=\"submit\"]"
+        );
+    }
+}
