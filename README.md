@@ -890,9 +890,12 @@ Normalize with best practices combined from bootstrap, tailwind, etc
 
 ```scss
 /* Normalize with best practices combined from bootstrap, tailwind, etc */
-@include normalize
+@include normalize($root)
 ```
 **Type:** mixin
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>root</td><td>Whether the normalize should run for the root styles.</td><td><code>Boolean</code></td><td>true</td></tr></table>
 
 **File source:** <a href="/src/normalize.scss">src/normalize.scss</a>
 
