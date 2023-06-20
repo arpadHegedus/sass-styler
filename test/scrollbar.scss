@@ -1,0 +1,33 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/scrollbar.scss" as *;
+
+@include test-module("scrollbar [mixin]") {
+    @include test("Can style scrollbar") {
+        @include assert {
+            @include output {
+                @include scrollbar(1em, black, white, red);
+            }
+            @include expect {
+                scrollbar-width: thin;
+
+                &::-webkit-scrollbar {
+                    width: 1em;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: black;
+
+
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: white;
+
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}

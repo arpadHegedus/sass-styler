@@ -9,7 +9,7 @@
         box-sizing: border-box;
         border-width: 0;
         border-style: solid;
-        border-color: var(--color-border, currentColor);
+        border-color: var(--border-color, currentColor);
         transition-property: none;
         transition-duration: var(--transition-duration, 0.3s);
         transition-timing-function: var(--transition-easing, ease-in-out);
@@ -40,7 +40,7 @@
         ));
         font-size: var(--font-size, 16px);
         font-weight: var(--font-weight, normal);
-        line-height: var(--line-height, 1);
+        line-height: var(--line-height, 1.25);
         color: var(--color, #333);
         text-rendering: optimizespeed;
         -webkit-font-smoothing: antialiased;
@@ -171,7 +171,7 @@
     [type='reset'],
     [type='submit'] {
         -webkit-appearance: button;
-        background-color: transparent;
+        background-color: if($root, transparent, null);
         background-image: none;
     }
 
@@ -275,7 +275,7 @@
     input::placeholder,
     textarea::placeholder {
         opacity: 1;
-        color: var(--color-placeholder, #999);
+        color: inherit;
     }
 
     button,
@@ -303,6 +303,7 @@
         vertical-align: middle;
     }
 
+    iframe,
     img,
     video {
         max-width: 100%;

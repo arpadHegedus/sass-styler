@@ -1,0 +1,30 @@
+/// Style scrollbars
+/// @param {Number} $width - The width of the scrollbar (webkit only)
+/// @param {Color} $track-color - Color of the scrollbar track
+/// @param {Color} $thumb-color - Color of the scrollbar handle
+/// @param {Color} $thumb-hover-color - Color of the scrollbar handle when hovered
+/// @param {Color} $scrollbar-width [thin] - The width of the scrollbar (moz)
+///
+@mixin scrollbar($width: null, $track-color: null, $thumb-color: null, $thumb-hover-color: null, $scrollbar-width: thin) {
+    scrollbar-width: $scrollbar-width;
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $track-color;
+
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $thumb-color;
+
+        &:hover {
+            background-color: $thumb-hover-color;
+        }
+
+        @content;
+    }
+}
