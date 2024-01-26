@@ -8,7 +8,7 @@
 /// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
 /// @return {Number}
 
-@function em-to-px($em, $default: null) {
+@function em2px($em, $default: null) {
     $default: if(
         $default,
         $default,

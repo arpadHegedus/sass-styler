@@ -3,19 +3,19 @@
 @use "str-to-num" as *;
 @use "strip-unit" as *;
 
-/// Rem to Px calculation
-/// @param {Number} $rem - Size value
+/// Px to Em calculation
+/// @param {Number} $px - Size value
 /// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
 /// @return {Number}
 
-@function rem-to-px($rem, $default: null) {
+@function px2em($px, $default: null) {
     $default: if(
         $default,
         $default,
         if(meta.global-variable-exists("font-size"), $font-size, 16px)
     );
     @if $default and math.unit($default) == px {
-        @return strip-unit($rem) * $default;
+        @return math.div(1em * strip-unit($px), strip-unit($default));
     }
-    @return str-to-num($rem);
+    @return str-to-num($px);
 }

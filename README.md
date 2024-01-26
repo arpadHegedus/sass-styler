@@ -2,7 +2,7 @@
 [![NPM](https://img.shields.io/npm/v/sass-styler.svg?label=sass-styler)](https://www.npmjs.com/package/sass-styler)
 [![Sass](https://img.shields.io/badge/sass-1.69.5-blue)](https://sass-lang.com/)
 [![Github issues](https://img.shields.io/github/issues/arpadhegedus/sass-styler)](https://github.com/arpadHegedus/sass-styler/issues)
-[![Tests](https://img.shields.io/badge/passed%20tests-205-brightgreen)](https://github.com/arpadHegedus/sass-styler/blob/master/test.js)
+[![Tests](https://img.shields.io/badge/passed%20tests-218-brightgreen)](https://github.com/arpadHegedus/sass-styler/blob/master/test.js)
 [![License](https://img.shields.io/github/license/arpadhegedus/sass-styler)](https://github.com/arpadHegedus/sass-styler/blob/master/LICENSE)
 
 Modular scss utility library to build better styles faster
@@ -23,7 +23,7 @@ Styler is made up of mixins, functions and variables
 <table>
 <tbody>
     <tr>
-      <td style="vertical-align:top" rowspan="37">Mixins</td>
+      <td style="vertical-align:top" rowspan="39">Mixins</td>
       <td style="vertical-align:top"><a href="#mixin-angled-edge">angled-edge</a></td><td style="vertical-align:top">Add an angled edge to a container using a generated SVG</td>
     </tr>
     <tr>
@@ -87,6 +87,9 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-loader">loader</a></td><td style="vertical-align:top">Create a dynamic, animated CSS circle loader spinner</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-media">media</a></td><td style="vertical-align:top">Generate media queries via saved keywords or simplified syntax</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-menu-icon">menu-icon</a></td><td style="vertical-align:top">Generate a menu icon from a single element</td>
     </tr>
     <tr>
@@ -123,6 +126,9 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-scrollbar">scrollbar</a></td><td style="vertical-align:top">Style scrollbars</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-select">select</a></td><td style="vertical-align:top">Select common element groups via shorthands</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-triangle">triangle</a></td><td style="vertical-align:top">CSS-only triangle</td>
     </tr>
     <tr>
@@ -135,11 +141,14 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-unstyled-list">unstyled-list</a></td><td style="vertical-align:top">Remove list styles</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="93">Functions</td>
+      <td style="vertical-align:top" rowspan="99">Functions</td>
       <td style="vertical-align:top"><a href="#mixin-asset">asset</a></td><td style="vertical-align:top">Get an asset url prepended by a default base path</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-best-contrast">best-contrast</a></td><td style="vertical-align:top">Get the best contrasting color from a list of colors compared to a base</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-blacken">blacken</a></td><td style="vertical-align:top">Mix a color with black</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-calc-add">calc-add</a></td><td style="vertical-align:top">Add 2 numbers or return calc if they are incompatible</td>
@@ -152,6 +161,12 @@ Styler is made up of mixins, functions and variables
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-color-from">color-from</a></td><td style="vertical-align:top">Get the color value from a list like border or background</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-color">color</a></td><td style="vertical-align:top">Return and manipulate color from a palette</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-c">c</a></td><td style="vertical-align:top">Return and manipulate color from a palette (alias of color)</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-contrast-balance">contrast-balance</a></td><td style="vertical-align:top">Change 2 colors contrast ratio by weighted balance(0-100)
@@ -173,10 +188,13 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-elevation">elevation</a></td><td style="vertical-align:top">Return box shadow based on elevation settings</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-em-to-px">em-to-px</a></td><td style="vertical-align:top">Em to Px conversion</td>
+      <td style="vertical-align:top"><a href="#mixin-em2px">em2px</a></td><td style="vertical-align:top">Em to Px conversion</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-em-to-rem">em-to-rem</a></td><td style="vertical-align:top">Change em to rem (units only, no calculations)</td>
+      <td style="vertical-align:top"><a href="#mixin-em2rem">em2rem</a></td><td style="vertical-align:top">Change em to rem (units only, no calculations)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-emval">emval</a></td><td style="vertical-align:top">Get value of a number in ems</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-ensure-unit">ensure-unit</a></td><td style="vertical-align:top">Convert a number to another unit</td>
@@ -218,28 +236,37 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-luminance">luminance</a></td><td style="vertical-align:top">Returns XYZ value to RGB channel</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-media">media</a></td><td style="vertical-align:top">Get generated media query string via saved keywords or simplified syntax</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-merge">merge</a></td><td style="vertical-align:top">Merge maps recursively</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-num-to-length">num-to-length</a></td><td style="vertical-align:top">Add `$unit` to `$value`</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-px-to-em">px-to-em</a></td><td style="vertical-align:top">Px to Em calculation</td>
+      <td style="vertical-align:top"><a href="#mixin-px2em">px2em</a></td><td style="vertical-align:top">Px to Em calculation</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-px-to-rem">px-to-rem</a></td><td style="vertical-align:top">Px to Rem calculation</td>
+      <td style="vertical-align:top"><a href="#mixin-px2rem">px2rem</a></td><td style="vertical-align:top">Px to Rem calculation</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-rem-to-em">rem-to-em</a></td><td style="vertical-align:top">Change rem to em (units only, no calculations)</td>
+      <td style="vertical-align:top"><a href="#mixin-pxval">pxval</a></td><td style="vertical-align:top">Get value of a number in pixels</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-rem-to-px">rem-to-px</a></td><td style="vertical-align:top">Rem to Px calculation</td>
+      <td style="vertical-align:top"><a href="#mixin-rem2em">rem2em</a></td><td style="vertical-align:top">Change rem to em (units only, no calculations)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-rem2px">rem2px</a></td><td style="vertical-align:top">Rem to Px calculation</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-remove-nth">remove-nth</a></td><td style="vertical-align:top">Remove the $nth value of a $list</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-remove">remove</a></td><td style="vertical-align:top">Remove $keys (deeply) from $map</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-remval">remval</a></td><td style="vertical-align:top">Get value of a number in rems</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-same-units">same-units</a></td><td style="vertical-align:top">Check whether 2 numbers have the same units</td>
@@ -332,16 +359,13 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-select-owl">select-owl</a></td><td style="vertical-align:top">Mingle a list of selectors to go before and after the other adjacently</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-select">select</a></td><td style="vertical-align:top">Select common element groups via shorthands</td>
+      <td style="vertical-align:top"><a href="#mixin-select">select</a></td><td style="vertical-align:top">Return selectors for common element groups via shorthands</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-selector-combine">selector-combine</a></td><td style="vertical-align:top">Combine 2 CSS selectors</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-set">set</a></td><td style="vertical-align:top">Recusrively set map values based on keys</td>
-    </tr>
-    <tr>
-      <td style="vertical-align:top"><a href="#mixin-shade">shade</a></td><td style="vertical-align:top">Mix a color with black</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-sides-bottom">sides-bottom</a></td><td style="vertical-align:top">Get the bottom value from a list like margin or padding</td>
@@ -404,20 +428,28 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-tetrad">tetrad</a></td><td style="vertical-align:top">Get the tetrad pairs of a color</td>
     </tr>
     <tr>
-      <td style="vertical-align:top"><a href="#mixin-tint">tint</a></td><td style="vertical-align:top">Mix a color with white</td>
-    </tr>
-    <tr>
       <td style="vertical-align:top"><a href="#mixin-triad">triad</a></td><td style="vertical-align:top">Get the triad pairs of a color</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-unique-id-by-value">unique-id-by-value</a></td><td style="vertical-align:top">Generate a unique ID based on passed-in attributes</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-whiten">whiten</a></td><td style="vertical-align:top">Mix a color with white</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-xyz">xyz</a></td><td style="vertical-align:top">Return an RGB channel processed as XYZ</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="2">Variables</td>
+      <td style="vertical-align:top" rowspan="4">Variables</td>
       <td style="vertical-align:top"><a href="#mixin-asset-path">asset-path</a></td><td style="vertical-align:top">The default asset path to prepend</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-color-palette">color-palette</a></td><td style="vertical-align:top">Named colors palette</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-media-queries">media-queries</a></td><td style="vertical-align:top">Named shorthands for media queries
+(values should be full media query strings or a number value)
+(if a number value, the value will be used as min-width or a calculated value when used as max-width - see examples)</td>
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-selectors">selectors</a></td><td style="vertical-align:top">List of selector shorthands</td>
@@ -433,10 +465,10 @@ Styler is made up of mixins, functions and variables
 Add an angled edge to a container using a generated SVG
 
 ```scss
-/* Add an angled edge to a container using a generated SVG */
 @include angled-edge($fill, $height, $location, $hypotenuse, $width, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>fill</td><td>The color of the angled area</td><td><code>Color</code></td><td>-</td></tr><tr><td>height</td><td>The height of the angled area</td><td><code>Number</code></td><td>50</td></tr><tr><td>location</td><td>Where to put the angle (outside-top, outside-bottom, inside-top, inside-bottom)</td><td><code>String</code></td><td>outside-top</td></tr><tr><td>hypotenuse</td><td>The hypotenuse of the angled area (upper-left, upper-right, lower-left, lower-right)</td><td><code>Srting</code></td><td>upper-left</td></tr><tr><td>width</td><td>The width of the angled area</td><td><code>Number</code></td><td>null</td></tr><tr><td>selector</td><td>The selector the angled area should be generated in</td><td><code>String</code> <code>List</code></td><td>"&::after"</td></tr></table>
@@ -454,10 +486,10 @@ Add an angled edge to a container using a generated SVG
 A tritone angled CSS background
 
 ```scss
-/* A tritone angled CSS background */
 @include angled-tritone-background($base, $color1, $color2, $angle1, $angle2, $position1, $position2)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>base</td><td>The base color</td><td><code>Color</code></td><td>transparent</td></tr><tr><td>color1</td><td>The first color</td><td><code>Color</code></td><td>rgba(#000, 0.1)</td></tr><tr><td>color2</td><td>The second color</td><td><code>Color</code></td><td>rgba(#fff, 0.1)</td></tr><tr><td>angle1</td><td>The angle for the first color</td><td><code>Number</code></td><td>-20deg</td></tr><tr><td>angle2</td><td>The angle for the second color</td><td><code>Number</code></td><td>-110deg</td></tr><tr><td>position1</td><td>The position of the first color change</td><td><code>Number</code></td><td>30%</td></tr><tr><td>position2</td><td>The position of the second color change</td><td><code>Number</code></td><td>30%</td></tr></table>
@@ -473,10 +505,10 @@ A tritone angled CSS background
 Add multiple extends
 
 ```scss
-/* Add multiple extends */
 @include apply($keywords)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>keywords</td><td>CSS utility component ids to apply</td><td><code>List</code> <code>String</code></td><td>-</td></tr></table>
@@ -494,10 +526,10 @@ Add multiple extends
 The padding trick to keep a container the same ratio in different screen sizes
 
 ```scss
-/* The padding trick to keep a container the same ratio in different screen sizes */
 @include aspect-ratio-padding($x, $y, $position)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>x</td><td>Width ratio</td><td><code>Number</code></td><td>16</td></tr><tr><td>y</td><td>Height raio</td><td><code>Number</code></td><td>9</td></tr><tr><td>position</td><td>Position</td><td><code>String</code> <code>List</code></td><td>relative</td></tr></table>
@@ -513,10 +545,10 @@ The padding trick to keep a container the same ratio in different screen sizes
 Background gradient stripes from a list of colors
 
 ```scss
-/* Background gradient stripes from a list of colors */
 @include background-stripes($direction, $colors)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>direction</td><td>Gradient direction</td><td><code>String</code> <code>Number</code></td><td>-</td></tr><tr><td>colors</td><td>List of colors</td><td><code>List</code></td><td>-</td></tr></table>
@@ -532,10 +564,10 @@ Background gradient stripes from a list of colors
 Prevent elements flowing around floating elements
 
 ```scss
-/* Prevent elements flowing around floating elements */
 @include clearfix($selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>Selector for the clearfix code</td><td><code>String</code></td><td>"&::after"</td></tr></table>
@@ -551,10 +583,10 @@ Prevent elements flowing around floating elements
 Create a width-limited container with side-margin on smaller screens
 
 ```scss
-/* Create a width-limited container with side-margin on smaller screens */
 @include container($width, $margin)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>width</td><td>The width-limit</td><td><code>number</code></td><td>-</td></tr><tr><td>margin</td><td>The margin size (on smaller screens)</td><td><code>number</code></td><td>-</td></tr></table>
@@ -572,10 +604,10 @@ Create a width-limited container with side-margin on smaller screens
 Cover a container with a link
 
 ```scss
-/* Cover a container with a link */
 @include cover-link($selector, $position, $z-index)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The cover to be generated to</td><td><code>String</code> <code>List</code></td><td>"a::before"</td></tr><tr><td>position</td><td>The position of the parent container</td><td><code>String</code></td><td>relative</td></tr><tr><td>z-index</td><td>The z-indx value of the cover</td><td><code>Number</code></td><td>2</td></tr></table>
@@ -593,10 +625,17 @@ Cover a container with a link
 Declare properties via sass maps
 
 ```scss
-/* Declare properties via sass maps */
 @include declare-map($map)
 ```
+**Example:**
+```scss
+@include declare-map((color: red, margin: 0));                       /* color: red; margin: 0; */
+@include declare-map((color: red, "&:hover": (color: blue)));         /* color: red; &:hover { color: blue; } */
+@include declare-map((color: red, "&:hover, &:focus": (color: blue))); /* color: red; &:hover, &:focus { color: blue; } */
+```
+
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>map</td><td>Property declaration</td><td><code>Map</code></td><td>()</td></tr></table>
@@ -614,10 +653,10 @@ Declare properties via sass maps
 Add box shadow based on elevation settings
 
 ```scss
-/* Add box shadow based on elevation settings */
 @include elevation($level, $color)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>level</td><td>Level of elevation</td><td><code>Number</code></td><td>1</td></tr><tr><td>color</td><td>Shadow color</td><td><code>Color</code></td><td>rgba(0, 0, 0, 0.1)</td></tr></table>
@@ -635,10 +674,10 @@ Add box shadow based on elevation settings
 Extend the background sideways of a container
 
 ```scss
-/* Extend the background sideways of a container */
 @include extend-background($background, $position, $z-index)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>background</td><td>The background value</td><td><code>Color</code> <code>String</code></td><td>-</td></tr><tr><td>position</td><td>The position value</td><td><code>String</code></td><td>relative</td></tr><tr><td>z-index</td><td>The Z-index value</td><td><code>Number</code></td><td>1</td></tr></table>
@@ -654,10 +693,10 @@ Extend the background sideways of a container
 Create a flexbox grid from the wrapper and direct children elements
 
 ```scss
-/* Create a flexbox grid from the wrapper and direct children elements */
 @include flex-grid($columns, $gap, $gap, $justify-content, $align-items, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>columns</td><td>The columns ratio (x of y)</td><td><code>List</code> <code>String</code></td><td>1 of 2</td></tr><tr><td>gap</td><td>The gap</td><td><code>Number</code></td><td>0</td></tr><tr><td>gap</td><td>The vertical gap</td><td><code>Number</code></td><td>0</td></tr><tr><td>justify-content</td><td>The justify content value</td><td><code>String</code></td><td>center</td></tr><tr><td>align-items</td><td>The align items value</td><td><code>String</code></td><td>stretch</td></tr><tr><td>selector</td><td>The child selector</td><td><code>String</code> <code>List</code></td><td>">*"</td></tr></table>
@@ -675,10 +714,10 @@ Create a flexbox grid from the wrapper and direct children elements
 Turn on the hardware acceleration of the browser for element
 
 ```scss
-/* Turn on the hardware acceleration of the browser for element */
 @include hardware-accelerate($perspective, $hide-backface)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>perspective</td><td>The perspective value</td><td><code>Number</code></td><td>1000</td></tr><tr><td>hide-backface</td><td>Hide backface visibility</td><td><code>Boolean</code></td><td>true</td></tr></table>
@@ -694,10 +733,10 @@ Turn on the hardware acceleration of the browser for element
 Hide text within a container but keep pesudo elements visible
 
 ```scss
-/* Hide text within a container but keep pesudo elements visible */
 @include hide-text-except-pseudo($font-size, $color, $line-height, $font-family, $text-align)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>font-size</td><td>Font size of the pseudo elements</td><td><code>Number</code></td><td>1rem</td></tr><tr><td>color</td><td>Color of the pseudo elements</td><td><code>Color</code></td><td>null</td></tr><tr><td>line-height</td><td>Line height of the pseudo elements</td><td><code>Number</code></td><td>null</td></tr><tr><td>font-family</td><td>Font family of the pseudo elements</td><td><code>String</code> <code>List</code></td><td>null</td></tr><tr><td>text-align</td><td>Text alignment of the pseudo elements</td><td><code>String</code></td><td>null</td></tr></table>
@@ -713,10 +752,10 @@ Hide text within a container but keep pesudo elements visible
 Visually hide an element
 
 ```scss
-/* Visually hide an element */
 @include hide-visually($position, $overflow, $visibility, $opacity, $left)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>position</td><td>Position value</td><td><code>String</code></td><td>absolute</td></tr><tr><td>overflow</td><td>Overflow value</td><td><code>String</code></td><td>hidden</td></tr><tr><td>visibility</td><td>Visibility value</td><td><code>String</code></td><td>hidden</td></tr><tr><td>opacity</td><td>Opacity value</td><td><code>Number</code></td><td>0.00001</td></tr><tr><td>left</td><td>Left property</td><td><code>Number</code></td><td>-999999px</td></tr></table>
@@ -732,10 +771,10 @@ Visually hide an element
 Make a list horizontal
 
 ```scss
-/* Make a list horizontal */
 @include horizontal-list($gap, $justify-content, $align-items, $flex-wrap, $side)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr><tr><td>side</td><td>Side to calculate indent from</td><td><code>String</code></td><td>left</td></tr></table>
@@ -751,10 +790,10 @@ Make a list horizontal
 Align an icon and text next to one another
 
 ```scss
-/* Align an icon and text next to one another */
 @include icon-item($icon-size, $gap, $side, $justify-content, $align-items, $align-icon)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>icon-size</td><td>Icon size (width)</td><td><code>Size</code></td><td>1em</td></tr><tr><td>gap</td><td>Gap between icon and text</td><td><code>Size</code></td><td>null</td></tr><tr><td>side</td><td>Whether the icon is on the left or the right side</td><td><code>String</code></td><td>left</td></tr><tr><td>justify-content</td><td>Horizontal alignment of icon and text</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>Vertical alignment of icon and text</td><td><code>String</code></td><td>null</td></tr><tr><td>align-icon</td><td>Vertically align the icon in a different way</td><td><code>String</code></td><td>null</td></tr></table>
@@ -770,10 +809,10 @@ Align an icon and text next to one another
 Increment z-index value for each element in a container
 
 ```scss
-/* Increment z-index value for each element in a container */
 @include increment-z-index($from, $to, $index, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>from</td><td>Starting element index</td><td><code>String</code></td><td>-</td></tr><tr><td>to</td><td>Ending element index</td><td><code>String</code></td><td>-</td></tr><tr><td>index</td><td>Starting z-index</td><td><code>Number</code></td><td>1</td></tr><tr><td>selector</td><td>The selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -789,10 +828,10 @@ Increment z-index value for each element in a container
 Set styles for containers without media queries where you use a main and a wrapper element
 
 ```scss
-/* Set styles for containers without media queries where you use a main and a wrapper element */
 @include inner-container($width, $padding, $inner-selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>width</td><td>Max-width value</td><td><code>Number</code></td><td>-</td></tr><tr><td>padding</td><td>Padding value</td><td><code>Number</code></td><td>-</td></tr><tr><td>inner-selector</td><td>The inner element selector within the wrapper</td><td><code>String</code> <code>List</code></td><td>">*"</td></tr></table>
@@ -808,10 +847,10 @@ Set styles for containers without media queries where you use a main and a wrapp
 Add CSS animation only once
 
 ```scss
-/* Add CSS animation only once */
 @include keyframes($name)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>name</td><td>The animation name</td><td><code>String</code></td><td>-</td></tr></table>
@@ -829,10 +868,10 @@ Add CSS animation only once
 Create a dynamic, animated CSS circle loader spinner
 
 ```scss
-/* Create a dynamic, animated CSS circle loader spinner */
 @include loader($color, $bg, $size, $width, $animation-speed, $inner-opacity, $inner-color)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>The spinner circle segment color</td><td><code>Color</code></td><td>rgba(#000, 0.5)</td></tr><tr><td>bg</td><td>The spinner circle background</td><td><code>Color</code></td><td>rgba(#000, 0.2)</td></tr><tr><td>size</td><td>The size of the circle</td><td><code>Number</code></td><td>1.5rem</td></tr><tr><td>width</td><td>The width of the circle line</td><td><code>Number</code></td><td>2px</td></tr><tr><td>animation-speed</td><td>Animation speed</td><td><code>Number</code></td><td>1s</td></tr><tr><td>inner-opacity</td><td>The opacity of the elements in the container</td><td><code>Number</code></td><td>0.5</td></tr><tr><td>inner-color</td><td>Set the container font color</td><td><code>Color</code></td><td>null</td></tr></table>
@@ -846,14 +885,54 @@ Create a dynamic, animated CSS circle loader spinner
 
 
 
+#### media <a id="mixin-media">&nbsp;</a>
+Generate media queries via saved keywords or simplified syntax
+
+```scss
+@include media($query...)
+```
+**Example:**
+```scss
+@include media(1024px);                    /* @media (min-width: 1024px) */
+@include media(800px 1024px);              /* @media (min-width: 800px) and (max-width: 1024px) */
+@include media(max 1024px);                /* @media (max-width: 1024px) */
+@include media(620px, max 1024px);         /* @media (min-width: 620px), (max-width: 1024px) */
+$media-queries: (
+  large: 1024px,
+  wide: 75rem,
+  dark: "(prefers-color-scheme: dark)"
+);
+@include media(large);                     /* @media (min-width: 1024px) */
+@include media(max large);                 /* @media (max-width: 1023px) */
+@include media(wide);                      /* @media (min-width: 75rem) */
+@include media(max wide);                  /* @media (max-width: 74.999rem) */
+@include media(large wide);                /* @media (min-width: 1024px) and (max-width: 74.999rem) */
+@include media(dark large wide);           /* @media (prefers-color-scheme: dark) and (min-width: 1024px) and (max-width: 74.999rem) */
+```
+
+**Type:** mixin
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>query...</td><td>Number value for min width, or number value preceeded by "max" for max width, or 2 number values for min and max width (alternatively keyword from $media-queries instead of any number value)</td><td><code>List</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/media.scss">media</a>
+
+**File source:** <a href="/src/media.scss">src/media.scss</a>
+
+<br>
+
+
+
+
 #### menu-icon <a id="mixin-menu-icon">&nbsp;</a>
 Generate a menu icon from a single element
 
 ```scss
-/* Generate a menu icon from a single element */
 @include menu-icon($width, $height, $gutter, $color, $border-radius, $transition-duration)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>width</td><td>Width of the menu icon lines</td><td><code>Number</code></td><td>1em</td></tr><tr><td>height</td><td>Height of an individual menu icon line</td><td><code>Number</code></td><td>0.125em</td></tr><tr><td>gutter</td><td>Gutter between menu lines</td><td><code>Number</code></td><td>0.3125em</td></tr><tr><td>color</td><td>Color of the menu lines</td><td><code>Color</code></td><td>currentColor</td></tr><tr><td>border-radius</td><td>Menu line border radius</td><td><code>Number</code></td><td>0</td></tr><tr><td>transition-duration</td><td>Transition speed for animations</td><td><code>Number</code></td><td>0.3s</td></tr></table>
@@ -871,10 +950,10 @@ Generate a menu icon from a single element
 Morph menu icon to a close (x) icon
 
 ```scss
-/* Morph menu icon to a close (x) icon */
 @include menu-icon-close($color)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Overwrite icon line color (use auto to keep existing color)</td><td><code>Color</code></td><td>auto</td></tr></table>
@@ -892,13 +971,15 @@ Morph menu icon to a close (x) icon
 Normalize with best practices combined from bootstrap, tailwind, etc
 
 ```scss
-/* Normalize with best practices combined from bootstrap, tailwind, etc */
 @include normalize($root)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>root</td><td>Whether the normalize should run for the root styles.</td><td><code>Boolean</code></td><td>true</td></tr></table>
+
+**Requires:** <a href="/src/media.scss">media</a>
 
 **File source:** <a href="/src/normalize.scss">src/normalize.scss</a>
 
@@ -911,10 +992,10 @@ Normalize with best practices combined from bootstrap, tailwind, etc
 Create object fitted elements
 
 ```scss
-/* Create object fitted elements */
 @include object-fit($object-fit, $object-position, $position, $width, $height)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>object-fit</td><td>The object fit</td><td><code>String</code></td><td>cover</td></tr><tr><td>object-position</td><td>The object position</td><td><code>Number</code> <code>List</code></td><td>50% 50%</td></tr><tr><td>position</td><td>Element position</td><td><code>String</code></td><td>null</td></tr><tr><td>width</td><td>The element width</td><td><code>Number</code></td><td>100%</td></tr><tr><td>height</td><td>The element height</td><td><code>Number</code></td><td>100%</td></tr></table>
@@ -930,10 +1011,10 @@ Create object fitted elements
 Mixin to place items on a circle
 
 ```scss
-/* Mixin to place items on a circle */
 @include on-circle($item-count, $circle-size, $item-size)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>item-count</td><td>Number of items on the circle</td><td><code>Integer</code></td><td>-</td></tr><tr><td>circle-size</td><td>Large circle size</td><td><code>Length</code></td><td>-</td></tr><tr><td>item-size</td><td>Single item size</td><td><code>Length</code></td><td>-</td></tr></table>
@@ -949,10 +1030,10 @@ Mixin to place items on a circle
  Make a list horizontal and add a pipe separator (border) between the items
 
 ```scss
-/* Make a list horizontal and add a pipe separator (border) between the items */
 @include pipe-list($gap, $border, $justify-content, $align-items, $flex-wrap, $side)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>border</td><td>The border (the pipe) styles</td><td><code>List</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr><tr><td>side</td><td>Side to calculate indent from</td><td><code>String</code></td><td>left</td></tr></table>
@@ -968,10 +1049,10 @@ Mixin to place items on a circle
 Set position top, right, bottom, left, position, width, height and z-index values
 
 ```scss
-/* Set position top, right, bottom, left, position, width, height and z-index values */
 @include position($top, $right, $bottom, $left, $position, $width, $height, $z-index)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>top</td><td>Top property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>right</td><td>Right property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>bottom</td><td>Bottom property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>left</td><td>Left property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>position</td><td>Position value</td><td><code>String</code></td><td>static</td></tr><tr><td>width</td><td>Width value</td><td><code>String</code></td><td>static</td></tr><tr><td>height</td><td>Height value</td><td><code>String</code></td><td>static</td></tr><tr><td>z-index</td><td>Z-index value</td><td><code>String</code></td><td>static</td></tr></table>
@@ -987,10 +1068,10 @@ Set position top, right, bottom, left, position, width, height and z-index value
 Add a pseduo element with position
 
 ```scss
-/* Add a pseduo element with position */
 @include pseudo-with-position($top, $right, $bottom, $left, $position, $width, $height, $z-index, $content, $display, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>top</td><td>Top property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>right</td><td>Right property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>bottom</td><td>Bottom property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>left</td><td>Left property</td><td><code>Number</code></td><td>auto</td></tr><tr><td>position</td><td>Position value</td><td><code>String</code></td><td>static</td></tr><tr><td>width</td><td>Width value</td><td><code>String</code></td><td>static</td></tr><tr><td>height</td><td>Height value</td><td><code>String</code></td><td>static</td></tr><tr><td>z-index</td><td>Z-index value</td><td><code>String</code></td><td>static</td></tr><tr><td>content</td><td>The content value</td><td><code>String</code></td><td>""</td></tr><tr><td>display</td><td>The display value</td><td><code>String</code></td><td>block</td></tr><tr><td>selector</td><td>The selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -1008,10 +1089,10 @@ Add a pseduo element with position
 Add a pseduo element
 
 ```scss
-/* Add a pseduo element */
 @include pseudo($content, $display, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>content</td><td>The content value</td><td><code>String</code></td><td>""</td></tr><tr><td>display</td><td>The display value</td><td><code>String</code></td><td>block</td></tr><tr><td>selector</td><td>The selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -1027,10 +1108,10 @@ Add a pseduo element
 Replace part of the current selector
 
 ```scss
-/* Replace part of the current selector */
 @include replace-context($from, $to, $select-after)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>from</td><td>Selector part to be changed</td><td><code>String</code></td><td>-</td></tr><tr><td>to</td><td>Replacement of the selector part</td><td><code>String</code></td><td>-</td></tr><tr><td>select-after</td><td>Append additional selectors</td><td><code>String</code></td><td>null</td></tr></table>
@@ -1046,7 +1127,6 @@ Replace part of the current selector
 Reset styles
 
 ```scss
-/* Reset styles */
 @include reset
 ```
 **Type:** mixin
@@ -1062,10 +1142,10 @@ Reset styles
 Style scrollbars
 
 ```scss
-/* Style scrollbars */
 @include scrollbar($width, $track-color, $thumb-color, $thumb-hover-color, $scrollbar-width)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>width</td><td>The width of the scrollbar (webkit only)</td><td><code>Number</code></td><td>-</td></tr><tr><td>track-color</td><td>Color of the scrollbar track</td><td><code>Color</code></td><td>-</td></tr><tr><td>thumb-color</td><td>Color of the scrollbar handle</td><td><code>Color</code></td><td>-</td></tr><tr><td>thumb-hover-color</td><td>Color of the scrollbar handle when hovered</td><td><code>Color</code></td><td>-</td></tr><tr><td>scrollbar-width</td><td>The width of the scrollbar (moz)</td><td><code>Color</code></td><td>thin</td></tr></table>
@@ -1077,14 +1157,35 @@ Style scrollbars
 
 
 
+#### select <a id="mixin-select">&nbsp;</a>
+Select common element groups via shorthands
+
+```scss
+@include select($key)
+```
+**Type:** mixin
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key</td><td><code>Number</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/select.scss">select</a>
+
+**File source:** <a href="/src/select.scss">src/select.scss</a>
+
+<br>
+
+
+
+
 #### triangle <a id="mixin-triangle">&nbsp;</a>
 CSS-only triangle
 
 ```scss
-/* CSS-only triangle */
 @include triangle($direction, $color, $size, $selector)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>direction</td><td>The triangle pointing direction</td><td><code>String</code></td><td>right</td></tr><tr><td>color</td><td>The triangle color</td><td><code>Color</code></td><td>#000</td></tr><tr><td>size</td><td>The width and height or size of the triangle</td><td><code>Number</code> <code>List</code></td><td>0.5rem 0.75rem</td></tr><tr><td>selector</td><td>The triangle selector</td><td><code>String</code> <code>List</code></td><td>"&::after"</td></tr></table>
@@ -1100,10 +1201,10 @@ CSS-only triangle
 Truncate text in a container
 
 ```scss
-/* Truncate text in a container */
 @include truncate($width)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>width</td><td>The max-width of the container</td><td><code>Number</code></td><td>100%</td></tr></table>
@@ -1119,10 +1220,10 @@ Truncate text in a container
 Unhide a previously visually hidden element
 
 ```scss
-/* Unhide a previously visually hidden element */
 @include unhide-visually($position, $overflow, $visibility, $opacity, $left)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>position</td><td>Position value</td><td><code>String</code></td><td>static</td></tr><tr><td>overflow</td><td>Overflow value</td><td><code>String</code></td><td>visible</td></tr><tr><td>visibility</td><td>Visibility value</td><td><code>String</code></td><td>visible</td></tr><tr><td>opacity</td><td>Opacity value</td><td><code>Number</code></td><td>1</td></tr><tr><td>left</td><td>Left property</td><td><code>Number</code></td><td>auto</td></tr></table>
@@ -1138,10 +1239,10 @@ Unhide a previously visually hidden element
 Remove list styles
 
 ```scss
-/* Remove list styles */
 @include unstyled-list($side)
 ```
 **Type:** mixin
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>side</td><td>Side to remove indent from</td><td><code>String</code></td><td>left</td></tr></table>
@@ -1157,10 +1258,10 @@ Remove list styles
 Get an asset url prepended by a default base path
 
 ```scss
-/* Get an asset url prepended by a default base path */
 asset($file)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>file</td><td>The file url relative to the base</td><td><code>String</code></td><td>-</td></tr></table>
@@ -1170,7 +1271,7 @@ asset($file)
 **File source:** <a href="/src/asset.scss">src/asset.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function asset($file) {
     @return url($asset-path + $file);
@@ -1188,10 +1289,10 @@ asset($file)
 Get the best contrasting color from a list of colors compared to a base
 
 ```scss
-/* Get the best contrasting color from a list of colors compared to a base */
 best-contrast($base, $colors, $tolerance)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>base</td><td>Base color</td><td><code>Color</code></td><td>-</td></tr><tr><td>colors</td><td>Contrasting candidates (default: #fff #000)</td><td><code>Color</code> <code>List</code></td><td>#fff, #000</td></tr><tr><td>tolerance</td><td>Tolerance of checks</td><td><code>Number</code></td><td>0</td></tr></table>
@@ -1201,7 +1302,7 @@ best-contrast($base, $colors, $tolerance)
 **File source:** <a href="/src/best-contrast.scss">src/best-contrast.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function best-contrast($base, $colors, $tolerance) {
     $best: list.nth($colors, 1);
@@ -1225,14 +1326,43 @@ best-contrast($base, $colors, $tolerance)
 
 
 
+#### blacken <a id="function-blacken">&nbsp;</a>
+Mix a color with black
+
+```scss
+blacken($color, $ratio)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio</td><td><code>Number</code></td><td>50%</td></tr></table>
+
+**File source:** <a href="/src/blacken.scss">src/blacken.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function blacken($color, $ratio) {
+    @return color.mix(#000, $color, $ratio);
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### calc-add <a id="function-calc-add">&nbsp;</a>
 Add 2 numbers or return calc if they are incompatible
 
 ```scss
-/* Add 2 numbers or return calc if they are incompatible */
 calc-add($left, $right, $ensure-unit)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>left</td><td>Number on the left of the operation</td><td><code>Number</code></td><td>-</td></tr><tr><td>right</td><td>Number on the right of the operation</td><td><code>Number</code></td><td>-</td></tr><tr><td>ensure-unit</td><td>Try to convert numbers so that they are compatible</td><td><code>Number</code></td><td>false</td></tr></table>
@@ -1242,7 +1372,7 @@ calc-add($left, $right, $ensure-unit)
 **File source:** <a href="/src/calc-add.scss">src/calc-add.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function calc-add($left, $right, $ensure-unit) {
     @if math.is-unitless($left) and math.is-unitless($right) == false {
@@ -1281,10 +1411,10 @@ calc-add($left, $right, $ensure-unit)
 Substract 2 numbers or return calc if they are incompatible
 
 ```scss
-/* Substract 2 numbers or return calc if they are incompatible */
 calc-substract($left, $right, $ensure-unit)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>left</td><td>Number on the left of the operation</td><td><code>Number</code></td><td>-</td></tr><tr><td>right</td><td>Number on the right of the operation</td><td><code>Number</code></td><td>-</td></tr><tr><td>ensure-unit</td><td>Try to convert numbers so that they are compatible</td><td><code>Number</code></td><td>false</td></tr></table>
@@ -1294,7 +1424,7 @@ calc-substract($left, $right, $ensure-unit)
 **File source:** <a href="/src/calc-substract.scss">src/calc-substract.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function calc-substract($left, $right, $ensure-unit) {
     @if math.is-unitless($left) and math.is-unitless($right) == false {
@@ -1333,10 +1463,10 @@ calc-substract($left, $right, $ensure-unit)
 Get CMYK values from a color
 
 ```scss
-/* Get CMYK values from a color */
 cmyk($color)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>base color</td><td><code>Color</code></td><td>-</td></tr></table>
@@ -1344,7 +1474,7 @@ cmyk($color)
 **File source:** <a href="/src/cmyk.scss">src/cmyk.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function cmyk($color) {
     $black: 1 - math.div(math.max(color.red($color), color.green($color), color.blue($color)), 255);
@@ -1376,10 +1506,10 @@ cmyk($color)
 Get the color value from a list like border or background
 
 ```scss
-/* Get the color value from a list like border or background */
 color-from($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Color</code> <code>List</code></td><td>-</td></tr></table>
@@ -1387,7 +1517,7 @@ color-from($value)
 **File source:** <a href="/src/color-from.scss">src/color-from.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function color-from($value) {
     @if meta.type-of($value) == color {
@@ -1409,16 +1539,163 @@ color-from($value)
 
 
 
+#### color <a id="function-color">&nbsp;</a>
+Return and manipulate color from a palette
+
+```scss
+color($args)
+```
+**Example:**
+```scss
+$color: color(red);                      /* #dc2626 */
+$color: color(red, 500);                 /* #ef4444 */
+$color: color(red, contrast);            /* white - best contrasting with #dc2626 out of black or white */
+```
+
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>args</td><td>Color or palette key, and optionally Shade level, and optionally "contrast" "triad" "triad-2" "tetrad" "tetrad-2" or "tetrad-3" for manipulation</td><td><code>List</code> <code>Color</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/get.scss">get</a>, <a href="/src/triad.scss">triad</a>, <a href="/src/tetrad.scss">tetrad</a>, <a href="/src/best-contrast.scss">best-contrast</a>, <a href="/src/color.scss">c</a>, <a href="/src/color.scss">color-palette</a>
+
+**File source:** <a href="/src/color.scss">src/color.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function color($args) {
+    $color: null;
+    $color-map: null;
+    $level: null;
+    $contrast: null;
+    $triad: null;
+    $tetrad: null;
+    $black-and-white: null;
+    @if meta.type-of($options) != list {
+        $options: ($options);
+    }
+    @each $option in $options {
+        @if meta.type-of($option) == color {
+            $color: $option;
+        }
+        @if map.has-key($color-palette, $option) {
+            $color-map: map.get($color-palette, $option);
+            @if meta.type-of($color-map) == color {
+                $color: $color-map;
+                $color-map: null;
+            }
+        }
+        @if meta.type-of($option) == number {
+            $level: $option;
+        }
+        @if $option == contrast {
+            $contrast: true;
+        }
+        @if $option == triad {
+            $triad: 1;
+        }
+        @if $option == triad-2 {
+            $triad: 2;
+        }
+        @if $option == tetrad {
+            $tetrad: 1;
+        }
+        @if $option == tetrad-2 {
+            $tetrad: 2;
+        }
+        @if $option == tetrad-3 {
+            $tetrad: 3;
+        }
+        @if meta.type-of($option) == list and list.length($option) == 2 {
+            $black-and-white: $option;
+        }
+    }
+    @if $color-map and $level and map.has-key($color-map, $level) {
+        $color: map.get($color-map, $level);
+        $color-map: null;
+        $level: null;
+    }
+    @if $color-map and map.has-key($color-map, default) {
+        $color: map.get($color-map, default);
+        $color-map: null;
+    }
+    @if $color-map {
+        $key: if(map.has-key($color-map, 500), 500, list.nth(map.keys($color-map), 1));
+        $color: map.get($color-map, $key);
+        $color-map: null;
+    }
+    @if meta.type-of($color) != color {
+        @return $color;
+    }
+    @if $level {
+        $level: if($level > 1, math.div($level, 1000), $level);
+        $color: color.change($color, $lightness: (1% - $level) * 100);
+    }
+    @if $triad {
+        $color: triad($color, $triad);
+    }
+    @if $tetrad {
+        $color: tetrad($color, $tetrad);
+    }
+    @if $contrast {
+        $color: best-contrast($color, if($black-and-white, $black-and-white, c(black) c(white)));
+    }
+    @return $color;
+}
+```
+
+</details>
+
+<br>
+
+
+
+
+#### c <a id="function-c">&nbsp;</a>
+Return and manipulate color from a palette
+
+
+```scss
+c($args)
+```
+**Type:** function
+
+**Alias of:** color
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>args</td><td>Color or palette key, and optionally Shade level, and optionally "contrast" "triad" "triad 2" "tetrad" "tetrad 2" or "tetrad 3" for manipulation</td><td><code>List</code> <code>Color</code> <code>String</code> <code>Number</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/color.scss">color</a>
+
+**File source:** <a href="/src/color.scss">src/color.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function c($args) {
+    @return color($options...);
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### contrast-balance <a id="function-contrast-balance">&nbsp;</a>
 Change 2 colors contrast ratio by weighted balance(0-100)
 0 means only second color is changed, while 100 means only the first one
 
 ```scss
-/* Change 2 colors contrast ratio by weighted balance(0-100)
-0 means only second color is changed, while 100 means only the first one */
 contrast-balance($color1, $color2, $ratio, $balance)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color1</td><td>Color 1</td><td><code>Color</code></td><td>-</td></tr><tr><td>color2</td><td>Color 2</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Name or value of contrast ratio</td><td><code>Number</code> <code>String</code></td><td>"AA"</td></tr><tr><td>balance</td><td>Balance</td><td><code>Number</code></td><td>50%</td></tr></table>
@@ -1428,7 +1705,7 @@ contrast-balance($color1, $color2, $ratio, $balance)
 **File source:** <a href="/src/contrast-balance.scss">src/contrast-balance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-balance($color1, $color2, $ratio, $balance) {
     $fixed1: contrast-with($color1, $color2, $ratio);
@@ -1458,10 +1735,10 @@ contrast-balance($color1, $color2, $ratio, $balance)
 Get the contrast between 2 colors
 
 ```scss
-/* Get the contrast between 2 colors */
 contrast-between($color1, $color2)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color1</td><td>Color 1</td><td><code>Color</code></td><td>-</td></tr><tr><td>color2</td><td>Color 2</td><td><code>Color</code></td><td>-</td></tr></table>
@@ -1471,7 +1748,7 @@ contrast-between($color1, $color2)
 **File source:** <a href="/src/contrast-between.scss">src/contrast-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-between($color1, $color2) {
     $lum1: luminance($color1);
@@ -1491,10 +1768,10 @@ contrast-between($color1, $color2)
 Get a contrast ratio by its official codename
 
 ```scss
-/* Get a contrast ratio by its official codename */
 contrast-ratio-by-name($ratio)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>ratio</td><td>Ratio</td><td><code>String</code></td><td>-</td></tr></table>
@@ -1502,7 +1779,7 @@ contrast-ratio-by-name($ratio)
 **File source:** <a href="/src/contrast-ratio-by-name.scss">src/contrast-ratio-by-name.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-ratio-by-name($ratio) {
     @if $ratio == "AA" or $ratio == "AAALG" {
@@ -1527,10 +1804,10 @@ contrast-ratio-by-name($ratio)
 Adjust color towards a target color until it reaches a contrast ratio
 
 ```scss
-/* Adjust color towards a target color until it reaches a contrast ratio */
 contrast-with($color, $target, $ratio, $iterations)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>target</td><td>Target color</td><td><code>Color</code></td><td>#fff</td></tr><tr><td>ratio</td><td>Contrast ratio</td><td><code>String</code> <code>Number</code></td><td>"AA"</td></tr><tr><td>iterations</td><td>Iteration count for checking</td><td><code>Number</code></td><td>5</td></tr></table>
@@ -1540,7 +1817,7 @@ contrast-with($color, $target, $ratio, $iterations)
 **File source:** <a href="/src/contrast-with.scss">src/contrast-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function contrast-with($color, $target, $ratio, $iterations) {
     $ratio: contrast-ratio-by-name($ratio);
@@ -1594,10 +1871,20 @@ contrast-with($color, $target, $ratio, $iterations)
 Round a number to specified digits
 
 ```scss
-/* Round a number to specified digits */
 decimal-round($number, $digits, $mode)
 ```
+**Example:**
+```scss
+$result: decimal-round(0.333);    /* 0 */
+$result: decimal-round(0.333, 1); /* 0.3 */
+$result: decimal-round(0.333, 2); /* 0.33 */
+$result: decimal-round(0.666);    /* 1 */
+$result: decimal-round(0.666, 1); /* 0.7 */
+$result: decimal-round(0.666, 2); /* 0.67 */
+```
+
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>number</td><td>The base number</td><td><code>Number</code></td><td>-</td></tr><tr><td>digits</td><td>Digits to output</td><td><code>Number</code></td><td>0</td></tr><tr><td>mode</td><td>How to round the number</td><td><code>String</code></td><td>round</td></tr></table>
@@ -1605,7 +1892,7 @@ decimal-round($number, $digits, $mode)
 **File source:** <a href="/src/decimal-round.scss">src/decimal-round.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function decimal-round($number, $digits, $mode) {
     $n: 1;
@@ -1639,10 +1926,10 @@ decimal-round($number, $digits, $mode)
 Return box shadow based on elevation settings
 
 ```scss
-/* Return box shadow based on elevation settings */
 elevation($level, $color)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>level</td><td>Level of elevation</td><td><code>Number</code></td><td>1</td></tr><tr><td>color</td><td>Shadow color</td><td><code>Color</code></td><td>rgba(0, 0, 0, 0.1)</td></tr></table>
@@ -1650,7 +1937,7 @@ elevation($level, $color)
 **File source:** <a href="/src/elevation.scss">src/elevation.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function elevation($level, $color) {
 	@return 0 #{$level}px #{2 * $level + 1}px #{if($level > 1, #{$level - 1}px, null)} #{$color};
@@ -1664,26 +1951,26 @@ elevation($level, $color)
 
 
 
-#### em-to-px <a id="function-em-to-px">&nbsp;</a>
+#### em2px <a id="function-em2px">&nbsp;</a>
 Em to Px conversion
 
 ```scss
-/* Em to Px conversion */
-em-to-px($em, $default)
+em2px($em, $default)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>em</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
 
 **Requires:** <a href="/src/strip-unit.scss">strip-unit</a>, <a href="/src/str-to-num.scss">str-to-num</a>
 
-**File source:** <a href="/src/em-to-px.scss">src/em-to-px.scss</a>
+**File source:** <a href="/src/em2px.scss">src/em2px.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function em-to-px($em, $default) {
+@function em2px($em, $default) {
     $default: if(
         $default,
         $default,
@@ -1703,27 +1990,67 @@ em-to-px($em, $default)
 
 
 
-#### em-to-rem <a id="function-em-to-rem">&nbsp;</a>
+#### em2rem <a id="function-em2rem">&nbsp;</a>
 Change em to rem (units only, no calculations)
 
 ```scss
-/* Change em to rem (units only, no calculations) */
-em-to-rem($em)
+em2rem($em)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>em</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/str-to-num.scss">str-to-num</a>, <a href="/src/strip-unit.scss">strip-unit</a>
 
-**File source:** <a href="/src/em-to-rem.scss">src/em-to-rem.scss</a>
+**File source:** <a href="/src/em2rem.scss">src/em2rem.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function em-to-rem($em) {
+@function em2rem($em) {
     @return str-to-num(string.unquote(strip-unit($em) + "rem"));
+}
+```
+
+</details>
+
+<br>
+
+
+
+
+#### emval <a id="function-emval">&nbsp;</a>
+Get value of a number in ems
+
+```scss
+emval($value, $default)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>Size value in px, em or rem</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
+
+**Requires:** <a href="/src/rem2em.scss">rem2em</a>, <a href="/src/px2em.scss">px2em</a>
+
+**File source:** <a href="/src/emval.scss">src/emval.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function emval($value, $default) {
+    @if math.unit($value) == "em" {
+        @return $value;
+    }
+    @if math.unit($value) == "rem" {
+        @return rem2em($value);
+    }
+    @if math.unit($value) == "px" {
+        @return px2em($value, $default);
+    }
+    @return 0;
 }
 ```
 
@@ -1738,20 +2065,20 @@ em-to-rem($em)
 Convert a number to another unit
 
 ```scss
-/* Convert a number to another unit */
 ensure-unit($num, $unit, $default)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr><tr><td>unit</td><td>The required unit</td><td><code>String</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
 
-**Requires:** <a href="/src/em-to-px.scss">em-to-px</a>, <a href="/src/em-to-rem.scss">em-to-rem</a>, <a href="/src/rem-to-em.scss">rem-to-em</a>, <a href="/src/rem-to-px.scss">rem-to-px</a>, <a href="/src/px-to-em.scss">px-to-em</a>, <a href="/src/px-to-rem.scss">px-to-rem</a>, <a href="/src/num-to-length.scss">num-to-length</a>, <a href="/src/strip-unit.scss">strip-unit</a>
+**Requires:** <a href="/src/rem2px.scss">rem2px</a>, <a href="/src/em2rem.scss">em2rem</a>, <a href="/src/rem2em.scss">rem2em</a>, <a href="/src/px2em.scss">px2em</a>, <a href="/src/px2rem.scss">px2rem</a>, <a href="/src/num-to-length.scss">num-to-length</a>, <a href="/src/strip-unit.scss">strip-unit</a>
 
 **File source:** <a href="/src/ensure-unit.scss">src/ensure-unit.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function ensure-unit($num, $unit, $default) {
     $num-unit: math.unit($num);
@@ -1764,22 +2091,22 @@ ensure-unit($num, $unit, $default)
         if(meta.global-variable-exists("font-size"), $font-size, 16px)
     );
     @if $num-unit == em and $unit == px {
-        @return em-to-px($num, $default);
+        @return rem2px($num, $default);
     }
     @if $num-unit == em and $unit == rem {
-        @return em-to-rem($num);
+        @return em2rem($num);
     }
     @if $num-unit == rem and $unit == em {
-        @return rem-to-em($num);
+        @return rem2em($num);
     }
     @if $num-unit == rem and $unit == px {
-        @return rem-to-px($num, $default);
+        @return rem2px($num, $default);
     }
     @if $num-unit == px and $unit == em {
-        @return px-to-em($num, $default);
+        @return px2em($num, $default);
     }
     @if $num-unit == px and $unit == rem {
-        @return px-to-rem($num, $default);
+        @return px2rem($num, $default);
     }
     @return num-to-length(strip-unit($num), $unit);
 }
@@ -1796,10 +2123,10 @@ ensure-unit($num, $unit, $default)
 Escape string to work as a classname
 
 ```scss
-/* Escape string to work as a classname */
 escape-classname($classname)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>classname</td><td>The classname to escape</td><td><code>String</code></td><td>-</td></tr></table>
@@ -1809,7 +2136,7 @@ escape-classname($classname)
 **File source:** <a href="/src/escape-classname.scss">src/escape-classname.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function escape-classname($classname) {
     $starts-with-dot: false;
@@ -1839,10 +2166,10 @@ escape-classname($classname)
 Fallback for possibly null values
 
 ```scss
-/* Fallback for possibly null values */
 fallback($values...)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>values...</td><td>Values</td><td><code>List</code></td><td>-</td></tr></table>
@@ -1850,7 +2177,7 @@ fallback($values...)
 **File source:** <a href="/src/fallback.scss">src/fallback.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function fallback($values...) {
     $value: null;
@@ -1874,23 +2201,23 @@ fallback($values...)
 Fluid size depending on viewport with minimum and maximum values
 
 ```scss
-/* Fluid size depending on viewport with minimum and maximum values */
 fluid-size($min-size, $min-viewport, $max-size, $max-viewport, $clamp, $px-mode, $default-font-size, $viewport-unit)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>min-size</td><td>Minimum size</td><td><code>Number</code></td><td>-</td></tr><tr><td>min-viewport</td><td>Minimum viewport size</td><td><code>Number</code></td><td>-</td></tr><tr><td>max-size</td><td>Maximum size</td><td><code>Number</code></td><td>-</td></tr><tr><td>max-viewport</td><td>Maximum viewport size</td><td><code>Number</code></td><td>-</td></tr><tr><td>clamp</td><td>Whether to use clamping or just return the fluid calculation</td><td><code>Boolean</code></td><td>true</td></tr><tr><td>px-mode</td><td>Whether to use px instead of rem for the fluid calculation</td><td><code>Boolean</code></td><td>false</td></tr><tr><td>default-font-size</td><td>The default root font-size</td><td><code>Number</code></td><td>16px</td></tr><tr><td>viewport-unit</td><td>The viewport width or height unit to base the calculation on</td><td><code>Number</code></td><td>1vw</td></tr></table>
 
-**Requires:** <a href="/src/px-to-rem.scss">px-to-rem</a>
+**Requires:** <a href="/src/px2rem.scss">px2rem</a>
 
 **File source:** <a href="/src/fluid-size.scss">src/fluid-size.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function fluid-size($min-size, $min-viewport, $max-size, $max-viewport, $clamp, $px-mode, $default-font-size, $viewport-unit) {
-    $calc: calc(#{if($px-mode, $min-size, px-to-rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
+    $calc: calc(#{if($px-mode, $min-size, px2rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
     @return if($clamp, clamp(#{$min-size}, #{$calc}, #{$max-size}), #{$calc});
 }
 ```
@@ -1906,10 +2233,10 @@ fluid-size($min-size, $min-viewport, $max-size, $max-viewport, $clamp, $px-mode,
 Deeply get a value from a map
 
 ```scss
-/* Deeply get a value from a map */
 get($map, $keys, $fallback)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>map</td><td>The map</td><td><code>Map</code></td><td>-</td></tr><tr><td>keys</td><td>The key or list of keys (if lookup is supposed to go deeper)</td><td><code>List</code> <code>String</code></td><td>-</td></tr><tr><td>fallback</td><td>A fallback value if the key is not found</td><td><code>*</code></td><td>null</td></tr></table>
@@ -1917,7 +2244,7 @@ get($map, $keys, $fallback)
 **File source:** <a href="/src/get.scss">src/get.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function get($map, $keys, $fallback) {
     @each $key in $keys {
@@ -1942,10 +2269,10 @@ get($map, $keys, $fallback)
 Calculate the coluns width from a columns ratio and a gap value
 
 ```scss
-/* Calculate the coluns width from a columns ratio and a gap value */
 grid-column-width($columns, $gap)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>columns</td><td>The columns ratio (x of y)</td><td><code>List</code> <code>String</code></td><td>1 of 2</td></tr><tr><td>gap</td><td>The gap value</td><td><code>Number</code></td><td>0</td></tr></table>
@@ -1953,7 +2280,7 @@ grid-column-width($columns, $gap)
 **File source:** <a href="/src/grid-column-width.scss">src/grid-column-width.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function grid-column-width($columns, $gap) {
     $col: list.nth($columns, 1);
@@ -1983,10 +2310,19 @@ grid-column-width($columns, $gap)
 Check if a number is between a min and max value
 
 ```scss
-/* Check if a number is between a min and max value */
 is-between($value, $min, $max)
 ```
+**Example:**
+```scss
+$result: is-between(1);         /* false */
+$result: is-between(-1);        /* false */
+$result: is-between(7, 3, 5);   /* false */
+$result: is-between(15, 0, 10); /* false */
+$result: is-between(6, 0, 10);  /* true */
+```
+
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The value to constrain</td><td><code>Number</code></td><td>-</td></tr><tr><td>min</td><td>The minimum value</td><td><code>Number</code></td><td>0.0001</td></tr><tr><td>max</td><td>The maximum value</td><td><code>Number</code></td><td>0.9999</td></tr></table>
@@ -1994,7 +2330,7 @@ is-between($value, $min, $max)
 **File source:** <a href="/src/is-between.scss">src/is-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-between($value, $min, $max) {
     @return if($value >= $min and $value <= $max, true, false);
@@ -2012,10 +2348,10 @@ is-between($value, $min, $max)
 Check if 2 colors contrast enough
 
 ```scss
-/* Check if 2 colors contrast enough */
 is-contrasting($color1, $color2, $ratio)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color1</td><td>Color 1</td><td><code>Color</code></td><td>-</td></tr><tr><td>color2</td><td>Color 2</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio codename</td><td><code>String</code></td><td>"AA"</td></tr></table>
@@ -2025,7 +2361,7 @@ is-contrasting($color1, $color2, $ratio)
 **File source:** <a href="/src/is-contrasting.scss">src/is-contrasting.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-contrasting($color1, $color2, $ratio) {
     $ratio: contrast-ratio-by-name($ratio);
@@ -2044,10 +2380,10 @@ is-contrasting($color1, $color2, $ratio)
 Check whether a property is valid in CSS3
 
 ```scss
-/* Check whether a property is valid in CSS3 */
 is-property($property)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>property</td><td>The property</td><td><code>String</code></td><td>-</td></tr></table>
@@ -2057,7 +2393,7 @@ is-property($property)
 **File source:** <a href="/src/is-property.scss">src/is-property.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-property($property) {
     @if meta.type-of($property) != string {
@@ -2084,10 +2420,10 @@ is-property($property)
 Check whether a pseudo class is valid in CSS3
 
 ```scss
-/* Check whether a pseudo class is valid in CSS3 */
 is-pseudo($pseudo, $string)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>pseudo</td><td>The state</td><td><code>String</code></td><td>-</td></tr><tr><td>string</td><td>Whether to check it strictly</td><td><code>Boolean</code></td><td>false</td></tr></table>
@@ -2097,7 +2433,7 @@ is-pseudo($pseudo, $string)
 **File source:** <a href="/src/is-pseudo.scss">src/is-pseudo.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function is-pseudo($pseudo, $string) {
     @if $strict and string.index($pseudo, ":") != 1 {
@@ -2128,10 +2464,10 @@ is-pseudo($pseudo, $string)
 Get a unique name for a keyframe animation with optional config
 
 ```scss
-/* Get a unique name for a keyframe animation with optional config */
 keyframes-name($name, $config)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>name</td><td>The animation name</td><td><code>String</code></td><td>-</td></tr><tr><td>config</td><td>Configuration</td><td><code>Mixed</code></td><td>-</td></tr></table>
@@ -2141,7 +2477,7 @@ keyframes-name($name, $config)
 **File source:** <a href="/src/keyframes-name.scss">src/keyframes-name.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function keyframes-name($name, $config) {
     @if not $config {
@@ -2162,10 +2498,10 @@ keyframes-name($name, $config)
 Return Long shadow
 
 ```scss
-/* Return Long shadow */
 long-shadow($color, $length)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>The color of the shadow</td><td><code>Color</code></td><td>-</td></tr><tr><td>length</td><td>The color of the shadow</td><td><code>Color</code></td><td>200</td></tr></table>
@@ -2173,7 +2509,7 @@ long-shadow($color, $length)
 **File source:** <a href="/src/long-shadow.scss">src/long-shadow.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function long-shadow($color, $length) {
     $val: 0 0 $color;
@@ -2197,10 +2533,10 @@ long-shadow($color, $length)
 Returns XYZ value to RGB channel
 
 ```scss
-/* Returns XYZ value to RGB channel */
 luminance($color)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr></table>
@@ -2210,7 +2546,7 @@ luminance($color)
 **File source:** <a href="/src/luminance.scss">src/luminance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function luminance($color) {
     $red: xyz(color.red($color));
@@ -2227,14 +2563,47 @@ luminance($color)
 
 
 
+#### media <a id="function-media">&nbsp;</a>
+Get generated media query string via saved keywords or simplified syntax
+
+```scss
+media($query...)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>query...</td><td>Number value for min width, or number value preceeded by "max" for max width, or 2 number values for min and max width (alternatively keyword from $media-queries instead of any number value)</td><td><code>List</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/media.scss">_media-parse-phrases</a>, <a href="/src/media.scss">_media-parse-phrase</a>
+
+**File source:** <a href="/src/media.scss">src/media.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function media($query...) {
+    $is-list: if(list.length($query) > 1, true, false);
+    $query: if($is-list, _media-parse-phrases($query), _media-parse-phrase(list.nth($query, 1)));
+    @return "#{$query}";
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### merge <a id="function-merge">&nbsp;</a>
 Merge maps recursively
 
 ```scss
-/* Merge maps recursively */
 merge($map1, $map2)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>map1</td><td>Map 1</td><td><code>Map</code></td><td>-</td></tr><tr><td>map2</td><td>Map 2</td><td><code>Map</code></td><td>-</td></tr></table>
@@ -2244,7 +2613,7 @@ merge($map1, $map2)
 **File source:** <a href="/src/merge.scss">src/merge.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function merge($map1, $map2) {
     @if meta.type-of($map2) != map {
@@ -2279,10 +2648,10 @@ merge($map1, $map2)
 Add `$unit` to `$value`
 
 ```scss
-/* Add `$unit` to `$value` */
 num-to-length($value, $unit)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The number value</td><td><code>Number</code></td><td>-</td></tr><tr><td>unit</td><td>The unit (eg. px)</td><td><code>String</code></td><td>px</td></tr></table>
@@ -2292,7 +2661,7 @@ num-to-length($value, $unit)
 **File source:** <a href="/src/num-to-length.scss">src/num-to-length.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function num-to-length($value, $unit) {
     @if meta.type-of($value) != number {
@@ -2309,26 +2678,26 @@ num-to-length($value, $unit)
 
 
 
-#### px-to-em <a id="function-px-to-em">&nbsp;</a>
+#### px2em <a id="function-px2em">&nbsp;</a>
 Px to Em calculation
 
 ```scss
-/* Px to Em calculation */
-px-to-em($px, $default)
+px2em($px, $default)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>px</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
 
 **Requires:** <a href="/src/strip-unit.scss">strip-unit</a>, <a href="/src/str-to-num.scss">str-to-num</a>
 
-**File source:** <a href="/src/px-to-em.scss">src/px-to-em.scss</a>
+**File source:** <a href="/src/px2em.scss">src/px2em.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function px-to-em($px, $default) {
+@function px2em($px, $default) {
     $default: if(
         $default,
         $default,
@@ -2348,26 +2717,26 @@ px-to-em($px, $default)
 
 
 
-#### px-to-rem <a id="function-px-to-rem">&nbsp;</a>
+#### px2rem <a id="function-px2rem">&nbsp;</a>
 Px to Rem calculation
 
 ```scss
-/* Px to Rem calculation */
-px-to-rem($px, $default)
+px2rem($px, $default)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>px</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
 
 **Requires:** <a href="/src/strip-unit.scss">strip-unit</a>, <a href="/src/str-to-num.scss">str-to-num</a>
 
-**File source:** <a href="/src/px-to-rem.scss">src/px-to-rem.scss</a>
+**File source:** <a href="/src/px2rem.scss">src/px2rem.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function px-to-rem($px, $default) {
+@function px2rem($px, $default) {
     $default: if(
         $default,
         $default,
@@ -2387,26 +2756,66 @@ px-to-rem($px, $default)
 
 
 
-#### rem-to-em <a id="function-rem-to-em">&nbsp;</a>
+#### pxval <a id="function-pxval">&nbsp;</a>
+Get value of a number in pixels
+
+```scss
+pxval($value, $default)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>Size value in px, em or rem</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
+
+**Requires:** <a href="/src/em2px.scss">em2px</a>, <a href="/src/rem2px.scss">rem2px</a>
+
+**File source:** <a href="/src/pxval.scss">src/pxval.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function pxval($value, $default) {
+    @if math.unit($value) == "px" {
+        @return $value;
+    }
+    @if math.unit($value) == "em" {
+        @return em2px($value, $default);
+    }
+    @if math.unit($value) == "rem" {
+        @return rem2px($value, $default);
+    }
+    @return 0;
+}
+```
+
+</details>
+
+<br>
+
+
+
+
+#### rem2em <a id="function-rem2em">&nbsp;</a>
 Change rem to em (units only, no calculations)
 
 ```scss
-/* Change rem to em (units only, no calculations) */
-rem-to-em($rem)
+rem2em($rem)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>rem</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/str-to-num.scss">str-to-num</a>, <a href="/src/strip-unit.scss">strip-unit</a>
 
-**File source:** <a href="/src/rem-to-em.scss">src/rem-to-em.scss</a>
+**File source:** <a href="/src/rem2em.scss">src/rem2em.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function rem-to-em($rem) {
+@function rem2em($rem) {
     @return str-to-num(string.unquote(strip-unit($rem) + "em"));
 }
 ```
@@ -2418,26 +2827,26 @@ rem-to-em($rem)
 
 
 
-#### rem-to-px <a id="function-rem-to-px">&nbsp;</a>
+#### rem2px <a id="function-rem2px">&nbsp;</a>
 Rem to Px calculation
 
 ```scss
-/* Rem to Px calculation */
-rem-to-px($rem, $default)
+rem2px($rem, $default)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>rem</td><td>Size value</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
 
 **Requires:** <a href="/src/strip-unit.scss">strip-unit</a>, <a href="/src/str-to-num.scss">str-to-num</a>
 
-**File source:** <a href="/src/rem-to-px.scss">src/rem-to-px.scss</a>
+**File source:** <a href="/src/rem2px.scss">src/rem2px.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
-@function rem-to-px($rem, $default) {
+@function rem2px($rem, $default) {
     $default: if(
         $default,
         $default,
@@ -2461,10 +2870,10 @@ rem-to-px($rem, $default)
 Remove the $nth value of a $list
 
 ```scss
-/* Remove the $nth value of a $list */
 remove-nth($list, $nth)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>list</td><td>The list</td><td><code>List</code></td><td>-</td></tr><tr><td>nth</td><td>Index of the value to be removed from list</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -2472,7 +2881,7 @@ remove-nth($list, $nth)
 **File source:** <a href="/src/remove-nth.scss">src/remove-nth.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function remove-nth($list, $nth) {
     @if meta.type-of($list) != list or meta.type-of($nth) != number or math.abs($nth) >= list.length($list) {
@@ -2504,10 +2913,10 @@ remove-nth($list, $nth)
 Remove $keys (deeply) from $map
 
 ```scss
-/* Remove $keys (deeply) from $map */
 remove($map, $keys...)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>map</td><td>The map to remove keys from</td><td><code>Map</code></td><td>-</td></tr><tr><td>keys...</td><td>Keys to be removed</td><td><code>String</code> <code>List</code></td><td>-</td></tr></table>
@@ -2517,7 +2926,7 @@ remove($map, $keys...)
 **File source:** <a href="/src/remove.scss">src/remove.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function remove($map, $keys...) {
     @if meta.type-of($map) != map {
@@ -2550,14 +2959,54 @@ remove($map, $keys...)
 
 
 
+#### remval <a id="function-remval">&nbsp;</a>
+Get value of a number in rems
+
+```scss
+remval($value, $default)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>Size value in px, em or rem</td><td><code>Number</code></td><td>-</td></tr><tr><td>default</td><td>Set a default font size (fallback to global variable $font-size)</td><td><code>Number</code></td><td>null</td></tr></table>
+
+**Requires:** <a href="/src/em2rem.scss">em2rem</a>, <a href="/src/px2rem.scss">px2rem</a>
+
+**File source:** <a href="/src/remval.scss">src/remval.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function remval($value, $default) {
+    @if math.unit($value) == "rem" {
+        @return $value;
+    }
+    @if math.unit($value) == "em" {
+        @return em2rem($value);
+    }
+    @if math.unit($value) == "px" {
+        @return px2rem($value, $default);
+    }
+    @return 0;
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### same-units <a id="function-same-units">&nbsp;</a>
 Check whether 2 numbers have the same units
 
 ```scss
-/* Check whether 2 numbers have the same units */
 same-units($number, $number2)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>number</td><td>Number 1</td><td><code>Number</code></td><td>-</td></tr><tr><td>number2</td><td>Number 2</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -2565,7 +3014,7 @@ same-units($number, $number2)
 **File source:** <a href="/src/same-units.scss">src/same-units.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function same-units($number, $number2) {
     @return math.unit($number) == math.unit($number2);
@@ -2583,10 +3032,10 @@ same-units($number, $number2)
 Scale lightness by iterations to fix rounding issues
 
 ```scss
-/* Scale lightness by iterations to fix rounding issues */
 scale-light($color1, $color2, $ratio, $operation, $iterations)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color1</td><td>Color 1</td><td><code>Color</code></td><td>-</td></tr><tr><td>color2</td><td>Color 2</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio</td><td><code>String</code></td><td>"AA"</td></tr><tr><td>operation</td><td>Operation</td><td><code>String</code></td><td>darken</td></tr><tr><td>iterations</td><td>Iterations</td><td><code>Number</code></td><td>5</td></tr></table>
@@ -2596,7 +3045,7 @@ scale-light($color1, $color2, $ratio, $operation, $iterations)
 **File source:** <a href="/src/scale-light.scss">src/scale-light.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function scale-light($color1, $color2, $ratio, $operation, $iterations) {
     @for $i from 1 through $iterations {
@@ -2624,10 +3073,10 @@ scale-light($color1, $color2, $ratio, $operation, $iterations)
 Scale a luminance of a color by a set value
 
 ```scss
-/* Scale a luminance of a color by a set value */
 scale-luminance($color, $luminance)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>luminance</td><td>Luminance</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -2637,7 +3086,7 @@ scale-luminance($color, $luminance)
 **File source:** <a href="/src/scale-luminance.scss">src/scale-luminance.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function scale-luminance($color, $luminance) {
     $scale: math.div($luminance, luminance($color));
@@ -2690,10 +3139,10 @@ scale-luminance($color, $luminance)
 Select all elements after a specific nth value
 
 ```scss
-/* Select all elements after a specific nth value */
 select-after($nth, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2703,7 +3152,7 @@ select-after($nth, $selector)
 **File source:** <a href="/src/select-after.scss">src/select-after.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-after($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(n + #{$nth + 1})");
@@ -2721,10 +3170,10 @@ select-after($nth, $selector)
 Select all elements if the number of elements in the container is at least a number
 
 ```scss
-/* Select all elements if the number of elements in the container is at least a number */
 select-all-out-of-at-least($num, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>The number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2734,7 +3183,7 @@ select-all-out-of-at-least($num, $selector)
 **File source:** <a href="/src/select-all-out-of-at-least.scss">src/select-all-out-of-at-least.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-at-least($num, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2753,10 +3202,10 @@ select-all-out-of-at-least($num, $selector)
 Select all elements if the number of elements in the container is at most a number
 
 ```scss
-/* Select all elements if the number of elements in the container is at most a number */
 select-all-out-of-at-most($num, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>The number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2766,7 +3215,7 @@ select-all-out-of-at-most($num, $selector)
 **File source:** <a href="/src/select-all-out-of-at-most.scss">src/select-all-out-of-at-most.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-at-most($num, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2785,10 +3234,10 @@ select-all-out-of-at-most($num, $selector)
 Select all elements if the number of elements in the container is between a min and max number
 
 ```scss
-/* Select all elements if the number of elements in the container is between a min and max number */
 select-all-out-of-between($min, $max, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>min</td><td>The minimum number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>max</td><td>The maximum number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2798,7 +3247,7 @@ select-all-out-of-between($min, $max, $selector)
 **File source:** <a href="/src/select-all-out-of-between.scss">src/select-all-out-of-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-all-out-of-between($min, $max, $selector) {
 	$child: list.nth(list.nth($selector, -1), -1);
@@ -2820,10 +3269,10 @@ select-all-out-of-between($min, $max, $selector)
 Select all elements before a specific nth value
 
 ```scss
-/* Select all elements before a specific nth value */
 select-before($nth, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2833,7 +3282,7 @@ select-before($nth, $selector)
 **File source:** <a href="/src/select-before.scss">src/select-before.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-before($nth, $selector) {
     @return selector-combine($selector, "&:nth-last-child(#{$nth})");
@@ -2851,10 +3300,10 @@ select-before($nth, $selector)
 Select all elements between a specific first and last nth value
 
 ```scss
-/* Select all elements between a specific first and last nth value */
 select-between($first, $last, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>first</td><td>The first nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>last</td><td>The last nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2864,7 +3313,7 @@ select-between($first, $last, $selector)
 **File source:** <a href="/src/select-between.scss">src/select-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -2882,10 +3331,10 @@ select-between($first, $last, $selector)
 Select all even nth elements between a specific first and last nth value
 
 ```scss
-/* Select all even nth elements between a specific first and last nth value */
 select-even-between($first, $last, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>first</td><td>The first nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>last</td><td>The last nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2895,7 +3344,7 @@ select-even-between($first, $last, $selector)
 **File source:** <a href="/src/select-even-between.scss">src/select-even-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-even-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -2913,10 +3362,10 @@ select-even-between($first, $last, $selector)
 Select all even nth elements
 
 ```scss
-/* Select all even nth elements */
 select-even($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2926,7 +3375,7 @@ select-even($selector)
 **File source:** <a href="/src/select-even.scss">src/select-even.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-even($selector) {
     @return selector-combine($selector, "&:nth-child(even)");
@@ -2944,10 +3393,10 @@ select-even($selector)
 Select all elements except the first and last
 
 ```scss
-/* Select all elements except the first and last */
 select-except-first-last($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2957,7 +3406,7 @@ select-except-first-last($selector)
 **File source:** <a href="/src/select-except-first-last.scss">src/select-except-first-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except-first-last($selector) {
     @return selector-combine($selector, "&:not(:first-child):not(:last-child)");
@@ -2975,10 +3424,10 @@ select-except-first-last($selector)
 Select all elements except the only child
 
 ```scss
-/* Select all elements except the only child */
 select-except-only-child($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -2988,7 +3437,7 @@ select-except-only-child($selector)
 **File source:** <a href="/src/select-except-only-child.scss">src/select-except-only-child.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except-only-child($selector) {
     @return selector-combine($selector, "&:not(:only-child)");
@@ -3006,10 +3455,10 @@ select-except-only-child($selector)
 Select all elements except a specific nth
 
 ```scss
-/* Select all elements except a specific nth */
 select-except($nth, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3019,7 +3468,7 @@ select-except($nth, $selector)
 **File source:** <a href="/src/select-except.scss">src/select-except.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-except($nth, $selector) {
     @return selector-combine($selector, "&:not(:nth-child(#{$nth}))");
@@ -3037,10 +3486,10 @@ select-except($nth, $selector)
 Select the first and last elements
 
 ```scss
-/* Select the first and last elements */
 select-first-last($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3050,7 +3499,7 @@ select-first-last($selector)
 **File source:** <a href="/src/select-first-last.scss">src/select-first-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-last($selector) {
     @return selector-combine($selector, "&:first-child, &:last-child");
@@ -3068,10 +3517,10 @@ select-first-last($selector)
 Select the first of the type element
 
 ```scss
-/* Select the first of the type element */
 select-first-of-type($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3081,7 +3530,7 @@ select-first-of-type($selector)
 **File source:** <a href="/src/select-first-of-type.scss">src/select-first-of-type.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-of-type($selector) {
     @return selector-combine($selector, "&:first-of-type");
@@ -3099,10 +3548,10 @@ select-first-of-type($selector)
 Select first element if the number of elements in the container equals to a number
 
 ```scss
-/* Select first element if the number of elements in the container equals to a number */
 select-first-out-of($num, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>The number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3112,7 +3561,7 @@ select-first-out-of($num, $selector)
 **File source:** <a href="/src/select-first-out-of.scss">src/select-first-out-of.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first-out-of($num, $selector) {
 	@return selector-combine($selector, "&:nth-last-child(#{$num}):first-child");
@@ -3130,10 +3579,10 @@ select-first-out-of($num, $selector)
 Select the first element
 
 ```scss
-/* Select the first element */
 select-first($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3143,7 +3592,7 @@ select-first($selector)
 **File source:** <a href="/src/select-first.scss">src/select-first.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-first($selector) {
     @return selector-combine($selector, if($nth == 1, "&:first-child", "&:nth-first-child(-n + #{$nth})"));
@@ -3161,10 +3610,10 @@ select-first($selector)
 Select the last of the type element
 
 ```scss
-/* Select the last of the type element */
 select-last-of-type($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3174,7 +3623,7 @@ select-last-of-type($selector)
 **File source:** <a href="/src/select-last-of-type.scss">src/select-last-of-type.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last-of-type($selector) {
     @return selector-combine($selector, "&:last-of-type");
@@ -3192,10 +3641,10 @@ select-last-of-type($selector)
 Select last element if the number of elements in the container equals to a number
 
 ```scss
-/* Select last element if the number of elements in the container equals to a number */
 select-last-out-of($num, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>The number of elements</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3205,7 +3654,7 @@ select-last-out-of($num, $selector)
 **File source:** <a href="/src/select-last-out-of.scss">src/select-last-out-of.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last-out-of($num, $selector) {
     @return selector-combine($selector, "&:nth-of-type(#{$num}):nth-last-of-type(1)");
@@ -3223,10 +3672,10 @@ select-last-out-of($num, $selector)
 Select the last element
 
 ```scss
-/* Select the last element */
 select-last($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3236,7 +3685,7 @@ select-last($selector)
 **File source:** <a href="/src/select-last.scss">src/select-last.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-last($selector) {
     @return selector-combine($selector, if($nth == 1, "&:last-child", "&:nth-last-child(-n + #{$nth})"));
@@ -3254,10 +3703,10 @@ select-last($selector)
 Select the middle element
 
 ```scss
-/* Select the middle element */
 select-middle($num, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>num</td><td>Number of elements in the container</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3267,7 +3716,7 @@ select-middle($num, $selector)
 **File source:** <a href="/src/select-middle.scss">src/select-middle.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-middle($num, $selector) {
     @return selector-combine($selector, "&:nth-child(#{math.round(math.div($num, 2))})");
@@ -3285,10 +3734,10 @@ select-middle($num, $selector)
 Select all nth elements between a first and a last value
 
 ```scss
-/* Select all nth elements between a first and a last value */
 select-nth-between($nth, $first, $last, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The segment number</td><td><code>Number</code></td><td>-</td></tr><tr><td>first</td><td>The first nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>last</td><td>The last nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3298,7 +3747,7 @@ select-nth-between($nth, $first, $last, $selector)
 **File source:** <a href="/src/select-nth-between.scss">src/select-nth-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-between($nth, $first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -3316,10 +3765,10 @@ select-nth-between($nth, $first, $last, $selector)
 Select nth elements from both sides of the container
 
 ```scss
-/* Select nth elements from both sides of the container */
 select-nth-both-sides($nth, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The segment number</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3329,7 +3778,7 @@ select-nth-both-sides($nth, $selector)
 **File source:** <a href="/src/select-nth-both-sides.scss">src/select-nth-both-sides.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-both-sides($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}), &:nth-last-child(#{$nth})");
@@ -3347,10 +3796,10 @@ select-nth-both-sides($nth, $selector)
 Select nth elements from after a value
 
 ```scss
-/* Select nth elements from after a value */
 select-nth-from($nth, $from, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The segment number</td><td><code>Number</code></td><td>-</td></tr><tr><td>from</td><td>The starting element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3360,7 +3809,7 @@ select-nth-from($nth, $from, $selector)
 **File source:** <a href="/src/select-nth-from.scss">src/select-nth-from.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth-from($nth, $from, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n + #{$from})");
@@ -3378,10 +3827,10 @@ select-nth-from($nth, $from, $selector)
 Select every nth element
 
 ```scss
-/* Select every nth element */
 select-nth($nth, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>nth</td><td>The nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3391,7 +3840,7 @@ select-nth($nth, $selector)
 **File source:** <a href="/src/select-nth.scss">src/select-nth.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-nth($nth, $selector) {
     @return selector-combine($selector, "&:nth-child(#{$nth}n)");
@@ -3409,10 +3858,10 @@ select-nth($nth, $selector)
 Select all odd nth elements between a specific first and last nth value
 
 ```scss
-/* Select all odd nth elements between a specific first and last nth value */
 select-odd-between($first, $last, $selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>first</td><td>The first nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>last</td><td>The last nth element</td><td><code>Number</code></td><td>-</td></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3422,7 +3871,7 @@ select-odd-between($first, $last, $selector)
 **File source:** <a href="/src/select-odd-between.scss">src/select-odd-between.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-odd-between($first, $last, $selector) {
     @return selector-combine($selector, "&:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last})");
@@ -3440,10 +3889,10 @@ select-odd-between($first, $last, $selector)
 Select all odd nth elements
 
 ```scss
-/* Select all odd nth elements */
 select-odd($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3453,7 +3902,7 @@ select-odd($selector)
 **File source:** <a href="/src/select-odd.scss">src/select-odd.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-odd($selector) {
     @return selector-combine($selector, "&:nth-child(odd)");
@@ -3471,10 +3920,10 @@ select-odd($selector)
 Select element only if it is an only child of its container
 
 ```scss
-/* Select element only if it is an only child of its container */
 select-only-child($selector)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector</td><td>The base selector</td><td><code>String</code> <code>List</code></td><td>"&"</td></tr></table>
@@ -3484,7 +3933,7 @@ select-only-child($selector)
 **File source:** <a href="/src/select-only-child.scss">src/select-only-child.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-only-child($selector) {
     @return selector-combine($selector, "&::only-child");
@@ -3502,10 +3951,10 @@ select-only-child($selector)
 Mingle a list of selectors to go before and after the other adjacently
 
 ```scss
-/* Mingle a list of selectors to go before and after the other adjacently */
 select-owl($selectors)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selectors</td><td>The base selectors</td><td><code>List</code> <code>String</code></td><td>-</td></tr></table>
@@ -3515,7 +3964,7 @@ select-owl($selectors)
 **File source:** <a href="/src/select-owl.scss">src/select-owl.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select-owl($selectors) {
     @return selector.replace(
@@ -3534,13 +3983,13 @@ select-owl($selectors)
 
 
 #### select <a id="function-select">&nbsp;</a>
-Select common element groups via shorthands
+Return selectors for common element groups via shorthands
 
 ```scss
-/* Select common element groups via shorthands */
 select($key)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -3550,7 +3999,7 @@ select($key)
 **File source:** <a href="/src/select.scss">src/select.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function select($key) {
     @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
@@ -3568,10 +4017,10 @@ select($key)
 Combine 2 CSS selectors
 
 ```scss
-/* Combine 2 CSS selectors */
 selector-combine($selector1, $selector2)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>selector1</td><td>Left selector</td><td><code>String</code> <code>List</code></td><td>-</td></tr><tr><td>selector2</td><td>Right selector</td><td><code>String</code> <code>List</code></td><td>-</td></tr></table>
@@ -3581,7 +4030,7 @@ selector-combine($selector1, $selector2)
 **File source:** <a href="/src/selector-combine.scss">src/selector-combine.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function selector-combine($selector1, $selector2) {
     $selector-list: ();
@@ -3637,10 +4086,10 @@ selector-combine($selector1, $selector2)
 Recusrively set map values based on keys
 
 ```scss
-/* Recusrively set map values based on keys */
 set($map, $keys, $value, $recursive)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>map</td><td>The base map</td><td><code>Map</code></td><td>-</td></tr><tr><td>keys</td><td>The key or list of keys (if lookup is supposed to go deeper)</td><td><code>List</code> <code>String</code></td><td>-</td></tr><tr><td>value</td><td>The value to be set</td><td><code>Mixed</code></td><td>-</td></tr><tr><td>recursive</td><td>Whether the system should set recursively</td><td><code>Boolean</code></td><td>true</td></tr></table>
@@ -3650,7 +4099,7 @@ set($map, $keys, $value, $recursive)
 **File source:** <a href="/src/set.scss">src/set.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function set($map, $keys, $value, $recursive) {
     @if meta.type-of($map) != map {
@@ -3715,43 +4164,14 @@ set($map, $keys, $value, $recursive)
 
 
 
-#### shade <a id="function-shade">&nbsp;</a>
-Mix a color with black
-
-```scss
-/* Mix a color with black */
-shade($color, $ratio)
-```
-**Type:** function
-**Parameters:**
-<table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio</td><td><code>Number</code></td><td>50%</td></tr></table>
-
-**File source:** <a href="/src/shade.scss">src/shade.scss</a>
-<details><summary><strong>Source</strong></summary>
-
-```scss
-
-@function shade($color, $ratio) {
-    @return color.mix(#000, $color, $ratio);
-}
-```
-
-</details>
-
-<br>
-
-
-
-
 #### sides-bottom <a id="function-sides-bottom">&nbsp;</a>
 Get the bottom value from a list like margin or padding
 
 ```scss
-/* Get the bottom value from a list like margin or padding */
 sides-bottom($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr></table>
@@ -3761,7 +4181,7 @@ sides-bottom($value)
 **File source:** <a href="/src/sides-bottom.scss">src/sides-bottom.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-bottom($value) {
     @return map.get(sides($value), bottom);
@@ -3779,10 +4199,10 @@ sides-bottom($value)
 Get the left value from a list like margin or padding
 
 ```scss
-/* Get the left value from a list like margin or padding */
 sides-left($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr></table>
@@ -3792,7 +4212,7 @@ sides-left($value)
 **File source:** <a href="/src/sides-left.scss">src/sides-left.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-left($value) {
     @return map.get(sides($value), left);
@@ -3810,10 +4230,10 @@ sides-left($value)
 Get the right value from a list like margin or padding
 
 ```scss
-/* Get the right value from a list like margin or padding */
 sides-right($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr></table>
@@ -3823,7 +4243,7 @@ sides-right($value)
 **File source:** <a href="/src/sides-right.scss">src/sides-right.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-right($value) {
     @return map.get(sides($value), right);
@@ -3841,10 +4261,10 @@ sides-right($value)
 Get the top value from a list like margin or padding
 
 ```scss
-/* Get the top value from a list like margin or padding */
 sides-top($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr></table>
@@ -3854,7 +4274,7 @@ sides-top($value)
 **File source:** <a href="/src/sides-top.scss">src/sides-top.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-top($value) {
     @return map.get(sides($value), top);
@@ -3872,10 +4292,10 @@ sides-top($value)
 Get the right-left value from a list like margin or padding
 
 ```scss
-/* Get the right-left value from a list like margin or padding */
 sides-x($value, $mode)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr><tr><td>mode</td><td>Whether to return the average or summary of the values</td><td><code>String</code></td><td>average</td></tr></table>
@@ -3885,7 +4305,7 @@ sides-x($value, $mode)
 **File source:** <a href="/src/sides-x.scss">src/sides-x.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-x($value, $mode) {
     $sides: sides($value);
@@ -3911,10 +4331,10 @@ sides-x($value, $mode)
 Get the top-bottom value from a list like margin or padding
 
 ```scss
-/* Get the top-bottom value from a list like margin or padding */
 sides-y($value, $mode)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The list value</td><td><code>Number</code> <code>List</code></td><td>-</td></tr><tr><td>mode</td><td>Whether to return the average or summary of the values</td><td><code>String</code></td><td>average</td></tr></table>
@@ -3924,7 +4344,7 @@ sides-y($value, $mode)
 **File source:** <a href="/src/sides-y.scss">src/sides-y.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides-y($value, $mode) {
     $sides: sides($value);
@@ -3950,10 +4370,18 @@ sides-y($value, $mode)
 Get a map of sides from a value or list (like margin, padding)
 
 ```scss
-/* Get a map of sides from a value or list (like margin, padding) */
 sides($value)
 ```
+**Example:**
+```scss
+sides(1px)             /* (top: 1px, right: 1px, bottom: 1px, left: 1px) */
+sides(1px 2px)         /* (top: 1px, right: 2px, bottom: 1px, left: 2px) */
+sides(1px 2px 3px)     /* (top: 1px, right: 2px, bottom: 3px, left: 2px) */
+sides(1px 2px 3px 4px) /* (top: 1px, right: 2px, bottom: 3px, left: 4px) */
+```
+
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>Multi-size value (like margin, padding)</td><td><code>Number</code> <code>List</code></td><td>-</td></tr></table>
@@ -3961,7 +4389,7 @@ sides($value)
 **File source:** <a href="/src/sides.scss">src/sides.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function sides($value) {
     $top: null;
@@ -4007,10 +4435,10 @@ sides($value)
 Returns XYZ value to RGB channel
 
 ```scss
-/* Returns XYZ value to RGB channel */
 srgb($channel)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>channel</td><td>Channel value</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -4018,7 +4446,7 @@ srgb($channel)
 **File source:** <a href="/src/srgb.scss">src/srgb.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function srgb($channel) {
     @return 255 * if($value <= 0.0031308, $value * 12.92, 1.055 * math.pow($value, math.div(1, 2.4)) - 0.055);
@@ -4036,10 +4464,10 @@ srgb($channel)
 Check if string ends with a substring
 
 ```scss
-/* Check if string ends with a substring */
 str-ends-with($haystack, $needle)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>haystack</td><td>String to search in</td><td><code>String</code></td><td>-</td></tr><tr><td>needle</td><td>String to search for</td><td><code>String</code></td><td>-</td></tr></table>
@@ -4047,7 +4475,7 @@ str-ends-with($haystack, $needle)
 **File source:** <a href="/src/str-ends-with.scss">src/str-ends-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-ends-with($haystack, $needle) {
     $haystack-length: string.length($haystack);
@@ -4073,10 +4501,10 @@ str-ends-with($haystack, $needle)
 Replace `$search` with `$replace` in `$string`
 
 ```scss
-/* Replace `$search` with `$replace` in `$string` */
 str-replace($string, $search, $replace)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>string</td><td>Initial string</td><td><code>String</code></td><td>-</td></tr><tr><td>search</td><td>Substring to replace</td><td><code>String</code></td><td>-</td></tr><tr><td>replace</td><td>New value</td><td><code>String</code></td><td>""</td></tr></table>
@@ -4084,7 +4512,7 @@ str-replace($string, $search, $replace)
 **File source:** <a href="/src/str-replace.scss">src/str-replace.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-replace($string, $search, $replace) {
     $index: string.index($string, $search);
@@ -4106,10 +4534,10 @@ str-replace($string, $search, $replace)
 Split a string into a list of strings along a delimiter
 
 ```scss
-/* Split a string into a list of strings along a delimiter */
 str-split($string, $delimiter, $clean)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>string</td><td>The string to split</td><td><code>String</code></td><td>-</td></tr><tr><td>delimiter</td><td>The delimiter to split along</td><td><code>String</code></td><td>"-"</td></tr><tr><td>clean</td><td>Whether to remove empty strings from the array</td><td><code>Boolean</code></td><td>true</td></tr></table>
@@ -4117,7 +4545,7 @@ str-split($string, $delimiter, $clean)
 **File source:** <a href="/src/str-split.scss">src/str-split.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-split($string, $delimiter, $clean) {
     $result: ();
@@ -4159,10 +4587,10 @@ str-split($string, $delimiter, $clean)
 Check if string starts with a substring
 
 ```scss
-/* Check if string starts with a substring */
 str-starts-with($haystack, $needle)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>haystack</td><td>String to search in</td><td><code>String</code></td><td>-</td></tr><tr><td>needle</td><td>String to search for</td><td><code>String</code></td><td>-</td></tr></table>
@@ -4170,7 +4598,7 @@ str-starts-with($haystack, $needle)
 **File source:** <a href="/src/str-starts-with.scss">src/str-starts-with.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-starts-with($haystack, $needle) {
     $haystack-length: string.length($haystack);
@@ -4196,10 +4624,10 @@ str-starts-with($haystack, $needle)
 Cast a string `$value` into a number
 
 ```scss
-/* Cast a string `$value` into a number */
 str-to-num($value)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>value</td><td>The value to be cast</td><td><code>Number</code> <code>String</code></td><td>-</td></tr></table>
@@ -4209,7 +4637,7 @@ str-to-num($value)
 **File source:** <a href="/src/str-to-num.scss">src/str-to-num.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-to-num($value) {
     @if meta.type-of($value) == number {
@@ -4247,10 +4675,10 @@ str-to-num($value)
 Trim whitespace from the end of a string
 
 ```scss
-/* Trim whitespace from the end of a string */
 str-trim-end($string)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>string</td><td>String to trim</td><td><code>String</code></td><td>-</td></tr></table>
@@ -4258,7 +4686,7 @@ str-trim-end($string)
 **File source:** <a href="/src/str-trim-end.scss">src/str-trim-end.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim-end($string) {
     @if string.slice($string, string.length($string), -1) == " " {
@@ -4279,10 +4707,10 @@ str-trim-end($string)
 Trim whitespace from the beginning of a string
 
 ```scss
-/* Trim whitespace from the beginning of a string */
 str-trim-start($string)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>string</td><td>String to trim</td><td><code>String</code></td><td>-</td></tr></table>
@@ -4290,7 +4718,7 @@ str-trim-start($string)
 **File source:** <a href="/src/str-trim-start.scss">src/str-trim-start.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim-start($string) {
     @if string.slice($string, 1, 1) == " " {
@@ -4311,10 +4739,10 @@ str-trim-start($string)
 Trim whitespace off a string
 
 ```scss
-/* Trim whitespace off a string */
 str-trim($string)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>string</td><td>String to trim</td><td><code>String</code></td><td>-</td></tr></table>
@@ -4324,7 +4752,7 @@ str-trim($string)
 **File source:** <a href="/src/str-trim.scss">src/str-trim.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function str-trim($string) {
     @return str-trim-start(str-trim-end($string));
@@ -4342,10 +4770,18 @@ str-trim($string)
 Remove units from a number
 
 ```scss
-/* Remove units from a number */
 strip-unit($number)
 ```
+**Example:**
+```scss
+$result: strip-unit(12px);    /* 12 */
+$result: strip-unit(-12em);   /* -12 */
+$result: strip-unit(12rem);   /* 12 */
+$result: strip-unit(2.2deg);  /* 2.2 */
+```
+
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>number</td><td>Number with a unit</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -4355,7 +4791,7 @@ strip-unit($number)
 **File source:** <a href="/src/strip-unit.scss">src/strip-unit.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function strip-unit($number) {
     @if meta.type-of($number) == string and meta.type-of(str-to-num($number)) == number {
@@ -4379,10 +4815,10 @@ strip-unit($number)
 Base64 encode svg code
 
 ```scss
-/* Base64 encode svg code */
 svg-base64($svg, $fill)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>svg</td><td>The svg code</td><td><code>String</code></td><td>-</td></tr><tr><td>fill</td><td>A fill color to be added to svg</td><td><code>Color</code></td><td>null</td></tr></table>
@@ -4392,7 +4828,7 @@ svg-base64($svg, $fill)
 **File source:** <a href="/src/svg-base64.scss">src/svg-base64.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function svg-base64($svg, $fill) {
     $svg: str-replace(
@@ -4420,10 +4856,10 @@ svg-base64($svg, $fill)
 SVG base64 background url based on $svg with optional $fill color
 
 ```scss
-/* SVG base64 background url based on $svg with optional $fill color */
 svg-url($svg, $fill)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>svg</td><td>The SVG code</td><td><code>String</code></td><td>-</td></tr><tr><td>fill</td><td>Fill color for the icon</td><td><code>Color</code></td><td>null</td></tr></table>
@@ -4433,7 +4869,7 @@ svg-url($svg, $fill)
 **File source:** <a href="/src/svg-url.scss">src/svg-url.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function svg-url($svg, $fill) {
     @return url(svg-base64($svg, $fill));
@@ -4451,10 +4887,10 @@ svg-url($svg, $fill)
 Get the tetrad pairs of a color
 
 ```scss
-/* Get the tetrad pairs of a color */
 tetrad($color, $step)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>step</td><td>Which tetrad to get</td><td><code>Number</code></td><td>1</td></tr></table>
@@ -4462,39 +4898,10 @@ tetrad($color, $step)
 **File source:** <a href="/src/tetrad.scss">src/tetrad.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function tetrad($color, $step) {
     @return color.adjust($color, $hue: $step * 90);
-}
-```
-
-</details>
-
-<br>
-
-
-
-
-#### tint <a id="function-tint">&nbsp;</a>
-Mix a color with white
-
-```scss
-/* Mix a color with white */
-tint($color, $ratio)
-```
-**Type:** function
-**Parameters:**
-<table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio</td><td><code>Number</code></td><td>50</td></tr></table>
-
-**File source:** <a href="/src/tint.scss">src/tint.scss</a>
-<details><summary><strong>Source</strong></summary>
-
-```scss
-
-@function tint($color, $ratio) {
-    @return color.mix(#fff, $color, $ratio);
 }
 ```
 
@@ -4509,10 +4916,10 @@ tint($color, $ratio)
 Get the triad pairs of a color
 
 ```scss
-/* Get the triad pairs of a color */
 triad($color, $step)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>step</td><td>Which triad to get</td><td><code>Number</code></td><td>1</td></tr></table>
@@ -4520,7 +4927,7 @@ triad($color, $step)
 **File source:** <a href="/src/triad.scss">src/triad.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function triad($color, $step) {
     @return color.adjust($color, $hue: $step * 120);
@@ -4538,10 +4945,10 @@ triad($color, $step)
 Generate a unique ID based on passed-in attributes
 
 ```scss
-/* Generate a unique ID based on passed-in attributes */
 unique-id-by-value($values...)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>values...</td><td>Attributes</td><td><code>Mixed</code></td><td>-</td></tr></table>
@@ -4551,7 +4958,7 @@ unique-id-by-value($values...)
 **File source:** <a href="/src/unique-id-by-value.scss">src/unique-id-by-value.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function unique-id-by-value($values...) {
     $found: list.index(map.values($_unique-ids), $values);
@@ -4578,14 +4985,43 @@ unique-id-by-value($values...)
 
 
 
+#### whiten <a id="function-whiten">&nbsp;</a>
+Mix a color with white
+
+```scss
+whiten($color, $ratio)
+```
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>color</td><td>Color</td><td><code>Color</code></td><td>-</td></tr><tr><td>ratio</td><td>Ratio</td><td><code>Number</code></td><td>50</td></tr></table>
+
+**File source:** <a href="/src/whiten.scss">src/whiten.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function whiten($color, $ratio) {
+    @return color.mix(#fff, $color, $ratio);
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### xyz <a id="function-xyz">&nbsp;</a>
 Return an RGB channel processed as XYZ
 
 ```scss
-/* Return an RGB channel processed as XYZ */
 xyz($channel)
 ```
 **Type:** function
+
 **Parameters:**
 <table>
   <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>channel</td><td>Channel value</td><td><code>Number</code></td><td>-</td></tr></table>
@@ -4593,7 +5029,7 @@ xyz($channel)
 **File source:** <a href="/src/xyz.scss">src/xyz.scss</a>
 <details><summary><strong>Source</strong></summary>
 
-```scss
+```scss 
 
 @function xyz($channel) {
     $channel: math.div($channel, 255);
@@ -4616,7 +5052,6 @@ xyz($channel)
 The default asset path to prepend
 
 ```scss
-/* The default asset path to prepend */
 $asset-path
 ```
 **Type:** variable
@@ -4628,11 +5063,42 @@ $asset-path
 
 
 
+#### color-palette <a id="variable-color-palette">&nbsp;</a>
+Named colors palette
+
+```scss
+$color-palette
+```
+**Type:** variable
+
+**File source:** <a href="/src/color.scss">src/color.scss</a>
+
+<br>
+
+
+
+
+#### media-queries <a id="variable-media-queries">&nbsp;</a>
+Named shorthands for media queries
+(values should be full media query strings or a number value)
+(if a number value, the value will be used as min-width or a calculated value when used as max-width - see examples)
+
+```scss
+$media-queries
+```
+**Type:** variable
+
+**File source:** <a href="/src/media.scss">src/media.scss</a>
+
+<br>
+
+
+
+
 #### selectors <a id="variable-selectors">&nbsp;</a>
 List of selector shorthands
 
 ```scss
-/* List of selector shorthands */
 $selectors
 ```
 **Type:** variable

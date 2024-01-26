@@ -1,0 +1,90 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/color.scss" as *;
+
+$color-palette: (
+    white: #fff,
+    black: #000,
+    grey: (
+        default: #9ca3af,
+        50: #f9fafb,
+        100: #f3f4f6,
+        200: #e5e7eb,
+        300: #d1d5db,
+        400: #9ca3af,
+        500: #6b7280,
+        600: #4b5563,
+        700: #374151,
+        800: #1f2937,
+        900: #111827,
+    ),
+    red: (
+        default: #dc2626,
+        50: #fef2f2,
+        100: #fee2e2,
+        200: #fecaca,
+        300: #fca5a5,
+        400: #f87171,
+        500: #ef4444,
+        600: #dc2626,
+        700: #b91c1c,
+        800: #991b1b,
+        900: #7f1d1d,
+    ),
+    teal: #0b8d7e
+);
+
+@include test-module("color [function]") {
+
+    @include test('Can return values') {
+        @include assert-equal(
+            color(red),
+            #dc2626
+        );
+        @include assert-equal(
+            color(red 400),
+            #f87171
+        );
+        @include assert-equal(
+            color(red 900),
+            #7f1d1d
+        );
+    }
+    @include test('Can work with colors not on the palette') {
+        @include assert-equal(
+            color(darkred),
+            darkred
+        );
+        @include assert-equal(
+            color(darkred 400),
+            #ff3333
+        );
+    }
+    @include test('Can work with levels that are not on the palette') {
+        @include assert-equal(
+            color(red 550),
+            #c62020
+        );
+        @include assert-equal(
+            color(grey 110),
+            #e0e2e6
+        );
+    }
+    @include test('Can work with non-map colours on the palette') {
+        @include assert-equal(
+            color(black),
+            #000
+        );
+        @include assert-equal(
+            color(teal),
+            #0b8d7e
+        );
+        @include assert-equal(
+            color(black 400),
+            #999999
+        );
+        @include assert-equal(
+            color(teal 300),
+            #71f4e5
+        );
+    }
+}

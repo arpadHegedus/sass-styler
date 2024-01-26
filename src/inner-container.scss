@@ -3,9 +3,9 @@
 /// @param {Number} $padding - Padding value
 /// @param {String|List} $inner-selector [">*"] - The inner element selector within the wrapper
 
-@mixin inner-container($width, $margin, $inner-selector: ">*") {
-    padding-right: $margin;
-    padding-left: $margin;
+@mixin inner-container($width, $padding, $inner-selector: ">*") {
+    padding-right: $padding;
+    padding-left: $padding;
 
     #{$inner-selector} {
         max-width: $width;

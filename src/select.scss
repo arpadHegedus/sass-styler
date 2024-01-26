@@ -42,7 +42,7 @@ $selectors: (
   select-singular: "select:not([multiple])",
   selection: "::-webkit-selection, ::-moz-selection, ::selection, input::-webkit-selection, input::-moz-selection, input::selection, textarea::-webkit-selection, textarea::-moz-selection, textarea::selection",
   small: "small",
-  spacing: "h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, figure, pre, table, dorm, details",
+  spacing: "h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, dl, dt, address, picture, img, video, figure, pre, table, dorm, details",
   sub: "sub",
   summary: "summary",
   sup: "sup",
@@ -63,9 +63,18 @@ $selectors: (
 
 @use "sass:map";
 
-/// Select common element groups via shorthands
+/// Return selectors for common element groups via shorthands
 /// @param {Number} $key - Selector group key
 
 @function select($key) {
     @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
+}
+
+/// Select common element groups via shorthands
+/// @param {Number} $key - Selector group key
+
+@mixin select($key) {
+    #{select($key)} {
+        @content;
+    }
 }

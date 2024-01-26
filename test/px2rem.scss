@@ -1,18 +1,18 @@
 @use "../node_modules/sass-true" as *;
-@use "../src/px-to-rem.scss" as styler;
+@use "../src/px2rem.scss" as styler;
 
-@include test-module("px-to-rem [function]") {
+@include test-module("px2rem [function]") {
     @include test('Can convert values') {
         @include assert-equal(
-            styler.px-to-rem(16px),
+            styler.px2rem(16px),
             1rem
         );
         @include assert-equal(
-            styler.px-to-rem(24px),
+            styler.px2rem(24px),
             1.5rem
         );
         @include assert-equal(
-            styler.px-to-rem("20px"),
+            styler.px2rem("20px"),
             1.25rem
         );
     }

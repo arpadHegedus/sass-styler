@@ -1,0 +1,19 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/emval.scss" as styler;
+
+@include test-module("emval [function]") {
+    @include test('Can convert values') {
+        @include assert-equal(
+            styler.emval(1em),
+            1em
+        );
+        @include assert-equal(
+            styler.emval(1.5rem),
+            1.5em
+        );
+        @include assert-equal(
+            styler.emval(16px),
+            1em
+        );
+    }
+}

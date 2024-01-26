@@ -6,6 +6,6 @@
 /// @param {Number} $em - Size value
 /// @return {Number}
 
-@function em-to-rem($em) {
+@function em2rem($em) {
     @return str-to-num(string.unquote(strip-unit($em) + "rem"));
 }

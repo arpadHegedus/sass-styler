@@ -8,7 +8,7 @@
 /// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
 /// @return {Number}
 
-@function px-to-rem($px, $default: null) {
+@function px2rem($px, $default: null) {
     $default: if(
         $default,
         $default,

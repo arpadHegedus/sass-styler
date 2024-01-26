@@ -1,40 +1,40 @@
 @use "../node_modules/sass-true" as *;
-@use "../src/shade.scss" as styler;
+@use "../src/blacken.scss" as styler;
 
-@include test-module("shade [function]") {
-    @include test('Can shade colours') {
+@include test-module("blacken [function]") {
+    @include test('Can blacken colours') {
         @include assert-equal(
-            styler.shade(#318de2),
+            styler.blacken(#318de2),
             #194771
         );
         @include assert-equal(
-            styler.shade(#8de231),
+            styler.blacken(#8de231),
             #477119
         );
         @include assert-equal(
-            styler.shade(#ccc),
+            styler.blacken(#ccc),
             #666666
         );
         @include assert-equal(
-            styler.shade(#000),
+            styler.blacken(#000),
             #000
         );
         @include assert-equal(
-            styler.shade(#fff),
+            styler.blacken(#fff),
             #808080
         );
     }
-    @include test('Can shade colours with different ratio') {
+    @include test('Can blacken colours with different ratio') {
         @include assert-equal(
-            styler.shade(#318de2, 10%),
+            styler.blacken(#318de2, 10%),
             #2c7fcb
         );
         @include assert-equal(
-            styler.shade(#8de231, 90%),
+            styler.blacken(#8de231, 90%),
             #0e1705
         );
         @include assert-equal(
-            styler.shade(#000, 100%),
+            styler.blacken(#000, 100%),
             #000
         );
     }

@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "px2em" as *;
+@use "rem2em" as *;
+
+/// Get value of a number in ems
+/// @param {Number} $value - Size value in px, em or rem
+/// @param {Number} $default [null] - Set a default font size (fallback to global variable $font-size)
+/// @return {Number}
+
+@function emval($value, $default: null) {
+    @if math.unit($value) == "em" {
+        @return $value;
+    }
+    @if math.unit($value) == "rem" {
+        @return rem2em($value);
+    }
+    @if math.unit($value) == "px" {
+        @return px2em($value, $default);
+    }
+    @return 0;
+}

@@ -31,9 +31,11 @@ function writeLongEntity(e, type = 'mixin') {
     c += '\n'
     c += `#### ${e.context.name} <a id="${type}-${e.context.name}">&nbsp;</a>\n${e.description}\n`
     c += writeShortEntity(e, type)
+    c += e.example ? `\n**Example:**\n\`\`\`scss\n${e.example.map(ex => ex.code).join('')}\n\`\`\`\n` : ''
     c += `\n**Type:** ${type}\n`
+    c += e.alias ? `\n**Alias of:** ${e.alias}\n` : ''
     if (e.parameter && e.parameter.length > 0) {
-        c += `**Parameters:**\n<table>\n  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr>`
+        c += `\n**Parameters:**\n<table>\n  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr>`
         e.parameter.forEach(p => {
             c += `<tr><td>${p.name}</td><td>${p.description}</td><td>${p.type.split('|').map(pt => `<code>${pt}</code>`).join(' ')}</td><td>${p.default || '-'}</td></tr>`
         })
@@ -53,10 +55,7 @@ function writeLongEntity(e, type = 'mixin') {
 function writeShortEntity(e, type = 'mixin') {
     let prepend = 'variable' === type ? '$' : ('mixin' === type ? '@include ' : '')
     let append = e.parameter ? `(${e.parameter.map(p => `$${p.name}`).join(', ')})` : ''
-    if (e.alias) {
-        prepend = `/* alias of ${e.alias} */\n${prepend}`
-    }
-    return `\`\`\`scss\n/* ${e.description.trim()} */\n${prepend}${e.context.name}${append}\n\`\`\``
+    return `\`\`\`scss\n${prepend}${e.context.name}${append}\n\`\`\``
 }
 
 async function writeToReadme(data) {
@@ -69,21 +68,21 @@ async function writeToReadme(data) {
     doc += '<tbody>\n'
     doc += '    <tr>\n'
     doc += `      <td style="vertical-align:top" rowspan="${data.mixin.length}">Mixins</td>\n`
-    doc += `      <td style="vertical-align:top">${data.mixin.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += `      <td style="vertical-align:top">${data.mixin.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}`)}</td>\n`
     doc += '    </tr>\n'
-    doc += data.mixin.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+    doc += data.mixin.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}</td>\n    </tr>\n`).join('')
 
     doc += '    <tr>\n'
     doc += `      <td style="vertical-align:top" rowspan="${data.function.length}">Functions</td>\n`
-    doc += `      <td style="vertical-align:top">${data.function.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += `      <td style="vertical-align:top">${data.function.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}`)}</td>\n`
     doc += '    </tr>\n'
-    doc += data.function.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+    doc += data.function.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}</td>\n    </tr>\n`).join('')
 
     doc += '    <tr>\n'
     doc += `      <td style="vertical-align:top" rowspan="${data.variable.length}">Variables</td>\n`
-    doc += `      <td style="vertical-align:top">${data.variable.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}`)}</td>\n`
+    doc += `      <td style="vertical-align:top">${data.variable.filter((e,i) => i === 0).map(e => `<a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}`)}</td>\n`
     doc += '    </tr>\n'
-    doc += data.variable.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}</td>\n    </tr>\n`).join('')
+    doc += data.variable.filter((e, i) => i !== 0).map(e => `    <tr>\n      <td style="vertical-align:top"><a href="#mixin-${e.context.name}">${e.context.name}</a></td><td style="vertical-align:top">${e.description.trim()}${e.alias ? ` (alias of ${e.alias})` : ''}</td>\n    </tr>\n`).join('')
 
     doc += '\n  </tbody>\n</table>\n\n';
 

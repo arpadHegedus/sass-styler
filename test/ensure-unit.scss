@@ -12,7 +12,7 @@
             15px
         );
     }
-    @include test('Can ensure units by conversion em-to-px') {
+    @include test('Can ensure units by conversion rem2px') {
         @include assert-equal(
             styler.ensure-unit(1em, px),
             16px
@@ -22,7 +22,7 @@
             24px
         );
     }
-    @include test('Can ensure units by conversion em-to-rem') {
+    @include test('Can ensure units by conversion em2rem') {
         @include assert-equal(
             styler.ensure-unit(1em, rem),
             1rem
@@ -32,7 +32,7 @@
             1.5rem
         );
     }
-    @include test('Can ensure units by conversion px-to-em') {
+    @include test('Can ensure units by conversion px2em') {
         @include assert-equal(
             styler.ensure-unit(16px, em),
             1em
@@ -42,7 +42,7 @@
             1.5em
         );
     }
-    @include test('Can ensure units by conversion px-to-rem') {
+    @include test('Can ensure units by conversion px2rem') {
         @include assert-equal(
             styler.ensure-unit(16px, rem),
             1rem
@@ -52,7 +52,7 @@
             1.5rem
         );
     }
-    @include test('Can ensure units by conversion rem-to-em') {
+    @include test('Can ensure units by conversion rem2em') {
         @include assert-equal(
             styler.ensure-unit(1rem, em),
             1em
@@ -62,7 +62,7 @@
             1.5em
         );
     }
-    @include test('Can ensure units by conversion rem-to-px') {
+    @include test('Can ensure units by conversion rem2px') {
         @include assert-equal(
             styler.ensure-unit(1rem, px),
             16px

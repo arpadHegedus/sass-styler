@@ -5,6 +5,6 @@
 /// @param {Number} $ratio [50] - Ratio
 /// @return {Color}
 
-@function tint($color, $ratio: 50%) {
+@function whiten($color, $ratio: 50%) {
     @return color.mix(#fff, $color, $ratio);
 }

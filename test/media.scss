@@ -1,0 +1,233 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/media.scss" as *;
+
+$media-queries: (
+    large: 1024px,
+    wide: 75rem,
+    complex: 600px 800px,
+    dark: "(prefers-color-scheme: dark)",
+    screen: "only screen",
+);
+
+@include test-module("media [mixin]") {
+    @include test('Can work with numbers') {
+        @include assert {
+            @include output {
+                @include media(1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    @include test('Can work with max value') {
+        @include assert {
+            @include output {
+                @include media(max 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (max-width: 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    @include test('Can work with named values') {
+        @include assert {
+            @include output {
+                @include media(large) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(wide) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 75rem) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    @include test('Can work with named values reversed') {
+        @include assert {
+            @include output {
+                @include media(max large) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (max-width: 1023px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(max wide) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (max-width: 74.999rem) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    @include test('Can work with combined named values') {
+        @include assert {
+            @include output {
+                @include media(large wide) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 1024px) and (max-width: 74.999rem) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(screen large wide) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media only screen and (min-width: 1024px) and (max-width: 74.999rem) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(wide large) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 75rem) and (min-width: 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(wide, large) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 75rem), (min-width: 1024px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    @include test('Can work with combined multi-level named values') {
+        @include assert {
+            @include output {
+                @include media(complex) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media (min-width: 600px) and (max-width: 799px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(screen complex) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media only screen and (min-width: 600px) and (max-width: 799px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+        @include assert {
+            @include output {
+                @include media(screen complex height 200px 300px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+            @include expect {
+                @media only screen and (min-width: 600px) and (max-width: 799px) and (min-height: 200px) and (max-height: 300px) {
+                    body {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

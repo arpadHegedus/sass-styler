@@ -1,0 +1,177 @@
+/// Named shorthands for media queries
+/// (values should be full media query strings or a number value)
+/// (if a number value, the value will be used as min-width or a calculated value when used as max-width - see examples)
+/// @type Map
+
+$media-queries: (
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    print: "print",
+    motion-safe: "(prefers-reduced-motion: no-preference)",
+    motion-reduce: "(prefers-reduced-motion: reduce)",
+    dark: "(prefers-color-scheme: dark)",
+    light: "(prefers-color-scheme: light)",
+    screen: "only screen",
+) !default;
+
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+@use "pxval" as *;
+@use "str-to-num" as *;
+
+/// Generate media queries via saved keywords or simplified syntax
+/// @example
+///   @include media(1024px);                    /* @media (min-width: 1024px) */
+///   @include media(800px 1024px);              /* @media (min-width: 800px) and (max-width: 1024px) */
+///   @include media(max 1024px);                /* @media (max-width: 1024px) */
+///   @include media(620px, max 1024px);         /* @media (min-width: 620px), (max-width: 1024px) */
+///   $media-queries: (
+///     large: 1024px,
+///     wide: 75rem,
+///     dark: "(prefers-color-scheme: dark)"
+///   );
+///   @include media(large);                     /* @media (min-width: 1024px) */
+///   @include media(max large);                 /* @media (max-width: 1023px) */
+///   @include media(wide);                      /* @media (min-width: 75rem) */
+///   @include media(max wide);                  /* @media (max-width: 74.999rem) */
+///   @include media(large wide);                /* @media (min-width: 1024px) and (max-width: 74.999rem) */
+///   @include media(dark large wide);           /* @media (prefers-color-scheme: dark) and (min-width: 1024px) and (max-width: 74.999rem) */
+///
+/// @param {List} $query... - Number value for min width, or number value preceeded by "max" for max width, or 2 number values for min and max width (alternatively keyword from $media-queries instead of any number value)
+
+@mixin media($query...) {
+    @media #{media($query...)} {
+        @content;
+    }
+}
+
+/// Get generated media query string via saved keywords or simplified syntax
+/// @param {List} $query... - Number value for min width, or number value preceeded by "max" for max width, or 2 number values for min and max width (alternatively keyword from $media-queries instead of any number value)
+
+@function media($query...) {
+    $is-list: if(list.length($query) > 1, true, false);
+    $query: if($is-list, _media-parse-phrases($query), _media-parse-phrase(list.nth($query, 1)));
+    @return "#{$query}";
+}
+
+/// Get parsed list of media query phrases
+/// @param {List} $phrases - List of media query phrases
+
+@function _media-parse-phrases($phrases) {
+    $query: null;
+    @each $phrase in $phrases {
+        $phrase: _media-parse-phrase($phrase);
+        @if $query {
+            $query: "#{$query}, #{$phrase}";
+        } @else {
+            $query: $phrase;
+        }
+    }
+    @return $query;
+}
+
+/// Get parsed media query phrase
+/// @param {Mixed} $phrase - Media query phrase
+
+@function _media-parse-phrase($phrase) {
+    @if meta.type-of($phrase) == list {
+        $has-named-query: false;
+        $phrases: ();
+        @each $clause in $phrase {
+            @if map.has-key($media-queries, $clause) {
+                $has-named-query: true;
+                $clause: map.get($media-queries, $clause);
+                $phrases: list.append($phrases, __named, $separator: space);
+                @if meta.type-of($clause) == list {
+                    @each $item in $clause {
+                        $phrases: list.append($phrases, $item, $separator: space);
+                    }
+                } @else {
+                    $phrases: list.append($phrases, $clause, $separator: space);
+                }
+                $phrases: list.append($phrases, __unnamed, $separator: space);
+            } @else {
+                $phrases: list.append($phrases, $clause, $separator: space);
+            }
+        }
+        @if $has-named-query {
+            @return _media-parse-phrase($phrases);
+        }
+        $clauses: ();
+        $modifier: false;
+        $named: false;
+        $min: false;
+        $mintype: null;
+        $reset-min: false;
+        @each $clause in $phrase {
+            @if meta.type-of($clause) == string {
+                $clause: string.unquote($clause);
+            }
+            @if list.index(min min-width width max max-width min-height height max-height, $clause) {
+                $modifier: $clause;
+                $clause: null;
+            }
+            @if $clause == __named {
+                $named: true;
+                $clause: null;
+            }
+            @if $clause == __unnamed {
+                $named: false;
+                $clause: null;
+            }
+            @if meta.type-of($clause) == number {
+                $type: if(list.index(min-height height max-height, $modifier), height, width);
+                @if $min and pxval($clause) > pxval($min) and $mintype == $type {
+                    $modifier: if(not $modifier, max, if(list.index(height min-height, $modifier), max-height, $modifier));
+                }
+                @if $named and list.index(max max-width max-height, $modifier) {
+                    $clause: if(math.unit($clause) == "px", $clause - 1, $clause - 0.001);
+                }
+                $min: $clause;
+                $mintype: $type;
+            }
+            @if $clause {
+                @if list.length($clauses) > 0 {
+                    $clauses: list.append($clauses, and, $separator: space);
+                }
+                $clauses: list.append($clauses, _media-parse($clause, $modifier), $separator: space);
+            }
+        }
+        @return $clauses;
+    }
+    @if map.has-key($media-queries, $phrase) {
+        $phrase: map.get($media-queries, $phrase);
+        @if meta.type-of($phrase) == list {
+            $phrases: ();
+            $phrases: list.append($phrases, __named, $separator: space);
+            @each $item in $phrase {
+                $phrases: list.append($phrases, $item, $separator: space);
+            }
+            $phrases: list.append($phrases, __unnamed, $separator: space);
+            @return _media-parse-phrase($phrases);
+        }
+        $phrase: _media-parse-phrase($phrase);
+    }
+    @return _media-parse($phrase);
+}
+
+/// Get parsed media query clause
+/// @param {Mixed} $clause - Media query clause
+/// @param {String|Boolean} $modifier - Media query modifier
+
+@function _media-parse($clause, $modifier: false) {
+    @if meta.type-of($clause) == number {
+        $property: min-width;
+        @if $modifier == max or $modifier == max-width { $property: max-width }
+        @if $modifier == min-height or $modifier == height { $property: min-height }
+        @if $modifier == max-height { $property: max-height }
+        @return "(#{$property}: #{$clause})";
+    }
+    @return $clause;
+}
+

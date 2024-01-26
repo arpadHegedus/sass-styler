@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "px-to-rem" as *;
+@use "px2rem" as *;
 
 /// Fluid size depending on viewport with minimum and maximum values
 /// @author Mike Foskett
@@ -23,6 +23,6 @@
     $default-font-size: 16px,
     $viewport-unit: 1vw
 ) {
-    $calc: calc(#{if($px-mode, $min-size, px-to-rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
+    $calc: calc(#{if($px-mode, $min-size, px2rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
     @return if($clamp, clamp(#{$min-size}, #{$calc}, #{$max-size}), #{$calc});
 }
