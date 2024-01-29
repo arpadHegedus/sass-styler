@@ -34,7 +34,6 @@ $color-palette: (
 );
 
 @include test-module("color [function]") {
-
     @include test('Can return values') {
         @include assert-equal(
             color(red),
@@ -85,6 +84,29 @@ $color-palette: (
         @include assert-equal(
             color(teal 300),
             #71f4e5
+        );
+    }
+    @include test('Can work with passed-in maps') {
+        $map: ( default: red, 800: darkred );
+        @include assert-equal(
+            color($map),
+            red
+        );
+        @include assert-equal(
+            color($map 800),
+            darkred
+        );
+        @include assert-equal(
+            color($map raw),
+            ( default: red, 800: darkred )
+        );
+        @include assert-equal(
+            color($map 200),
+            #ff9999
+        );
+        @include assert-equal(
+            color($map contrast),
+            #000
         );
     }
 }

@@ -123,10 +123,12 @@ $color-palette: (
 
 /// Return and manipulate color from a palette
 /// @example
-///   $color: color(red);                      /* #dc2626 */
-///   $color: color(red, 500);                 /* #ef4444 */
-///   $color: color(red, contrast);            /* white - best contrasting with #dc2626 out of black or white */
-///
+///   $color: color(red);                          /* #dc2626 */
+///   $color: color(red 500);                      /* #ef4444 */
+///   $color: color(red contrast);                 /* white - best contrasting with #dc2626 out of black or white */
+///   $primary: ( default: red, 800: darkred );
+///   $color: color($primary);                     /* red */
+///   $color: color($primary 800);                 /* darkred */
 /// @param {List|Color} $args - Color or palette key, and optionally Shade level, and optionally "contrast" "triad" "triad-2" "tetrad" "tetrad-2" or "tetrad-3" for manipulation
 /// @return {Null|Color}
 
@@ -137,9 +139,10 @@ $color-palette: (
     $contrast: null;
     $triad: null;
     $tetrad: null;
+    $raw: false;
     $black-and-white: null;
     @if meta.type-of($options) != list {
-        $options: ($options);
+        $options: ($options,);
     }
     @each $option in $options {
         @if meta.type-of($option) == color {
@@ -154,6 +157,9 @@ $color-palette: (
         }
         @if meta.type-of($option) == number {
             $level: $option;
+        }
+        @if meta.type-of($option) == map {
+            $color-map: $option;
         }
         @if $option == contrast {
             $contrast: true;
@@ -173,9 +179,15 @@ $color-palette: (
         @if $option == tetrad-3 {
             $tetrad: 3;
         }
+        @if $option == raw {
+            $raw: true;
+        }
         @if meta.type-of($option) == list and list.length($option) == 2 {
             $black-and-white: $option;
         }
+    }
+    @if $color-map and $raw {
+        @return $color-map;
     }
     @if $color-map and $level and map.has-key($color-map, $level) {
         $color: map.get($color-map, $level);
