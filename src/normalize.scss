@@ -10,6 +10,7 @@
         border-width: 0;
         border-style: solid;
         border-color: var(--border-color, currentColor);
+        color: var(--color, currentColor);
         transition-property: none;
         transition-duration: var(--transition-duration, 0.3s);
         transition-timing-function: var(--transition-easing, cubic-bezier(0.4, 0, 0.2, 1));
@@ -67,7 +68,7 @@
     hr {
         height: 0;
         color: inherit;
-        border-top-width: 1px;
+        border-top-width: var(--border-width, 1px);
     }
 
     abbr[title] {
