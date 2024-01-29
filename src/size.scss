@@ -1,0 +1,53 @@
+/// A map of named sizes (each may have one value or a list of values)
+/// @type Map
+
+$sizes: (
+    xxs: 0.12rem 0.19rem 0.31rem,
+    xs: 0.31rem 0.44rem 0.62rem,
+    s: 0.62rem 0.94rem 1.25rem,
+    m: 0.94rem 1.25rem 1.88rem,
+    l: 1.56rem 2.19rem 3.12rem,
+    xl: 2.5rem 4.06rem 5rem,
+    xxl: 3.12rem 5rem 6.25rem,
+    xxxl: 4.69rem 7.5rem 9.38rem
+) !default;
+
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
+/// Return a named size
+/// @example
+///   padding: s(m);                 /* #dc2626 */
+///   margin: s(m, 3);               /* #ef4444 */
+///   font-size: s(m, 2);            /* white - best contrasting with #dc2626 out of black or white */
+///
+/// @param {List|Color} $size - The named size
+/// @param {Null|Number} $value - Null for returning the size as a css var (default), or a number to return the multiplier of the size or the nth number from the list of the named size
+/// @return {String|Number}
+
+@function size($size, $value: null) {
+    @if not $value {
+        @return var(--#{$size});
+    }
+    @if map.has-key($sizes, $size) and meta.type-of($value) == number {
+        $size: map.get($sizes, $size);
+        @if meta.type-of($size) == number {
+            $size: $size * $value;
+        }
+        @if meta.type-of($size) == list {
+            $size: nth($size, $value);
+        }
+    }
+    @return $size;
+}
+
+/// Return a named size
+/// @param {List|Color} $size - The named size
+/// @param {Null|Number} $value - Null for returning the size as a css var (default), or a number to return the multiplier of the size or the nth number from the list of the named size
+/// @return {String|Number}
+/// @alias size
+
+@function s($size, $value: null) {
+    @return size($size, $value);
+}

@@ -141,7 +141,7 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-unstyled-list">unstyled-list</a></td><td style="vertical-align:top">Remove list styles</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="99">Functions</td>
+      <td style="vertical-align:top" rowspan="101">Functions</td>
       <td style="vertical-align:top"><a href="#mixin-asset">asset</a></td><td style="vertical-align:top">Get an asset url prepended by a default base path</td>
     </tr>
     <tr>
@@ -389,6 +389,12 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-sides">sides</a></td><td style="vertical-align:top">Get a map of sides from a value or list (like margin, padding)</td>
     </tr>
     <tr>
+      <td style="vertical-align:top"><a href="#mixin-size">size</a></td><td style="vertical-align:top">Return a named size</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-s">s</a></td><td style="vertical-align:top">Return a named size (alias of size)</td>
+    </tr>
+    <tr>
       <td style="vertical-align:top"><a href="#mixin-srgb">srgb</a></td><td style="vertical-align:top">Returns XYZ value to RGB channel</td>
     </tr>
     <tr>
@@ -440,7 +446,7 @@ Styler is made up of mixins, functions and variables
       <td style="vertical-align:top"><a href="#mixin-xyz">xyz</a></td><td style="vertical-align:top">Return an RGB channel processed as XYZ</td>
     </tr>
     <tr>
-      <td style="vertical-align:top" rowspan="4">Variables</td>
+      <td style="vertical-align:top" rowspan="5">Variables</td>
       <td style="vertical-align:top"><a href="#mixin-asset-path">asset-path</a></td><td style="vertical-align:top">The default asset path to prepend</td>
     </tr>
     <tr>
@@ -453,6 +459,9 @@ Styler is made up of mixins, functions and variables
     </tr>
     <tr>
       <td style="vertical-align:top"><a href="#mixin-selectors">selectors</a></td><td style="vertical-align:top">List of selector shorthands</td>
+    </tr>
+    <tr>
+      <td style="vertical-align:top"><a href="#mixin-sizes">sizes</a></td><td style="vertical-align:top">A map of named sizes (each may have one value or a list of values)</td>
     </tr>
 
   </tbody>
@@ -1676,7 +1685,7 @@ c($args)
 ```scss 
 
 @function c($args) {
-    @return color($options...);
+    @return color($options);
 }
 ```
 
@@ -4431,6 +4440,89 @@ sides(1px 2px 3px 4px) /* (top: 1px, right: 2px, bottom: 3px, left: 4px) */
 
 
 
+#### size <a id="function-size">&nbsp;</a>
+Return a named size
+
+```scss
+size($size, $value)
+```
+**Example:**
+```scss
+padding: s(m);                 /* #dc2626 */
+margin: s(m, 3);               /* #ef4444 */
+font-size: s(m, 2);            /* white - best contrasting with #dc2626 out of black or white */
+```
+
+**Type:** function
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>size</td><td>The named size</td><td><code>List</code> <code>Color</code></td><td>-</td></tr><tr><td>value</td><td>Null for returning the size as a css var (default), or a number to return the multiplier of the size or the nth number from the list of the named size</td><td><code>Null</code> <code>Number</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/get.scss">get</a>, <a href="/src/size.scss">sizes</a>
+
+**File source:** <a href="/src/size.scss">src/size.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function size($size, $value) {
+    @if not $value {
+        @return var(--#{$size});
+    }
+    @if map.has-key($sizes, $size) and meta.type-of($value) == number {
+        $size: map.get($sizes, $size);
+        @if meta.type-of($size) == number {
+            $size: $size * $value;
+        }
+        @if meta.type-of($size) == list {
+            $size: nth($size, $value);
+        }
+    }
+    @return $size;
+}
+```
+
+</details>
+
+<br>
+
+
+
+
+#### s <a id="function-s">&nbsp;</a>
+Return a named size
+
+```scss
+s($size, $value)
+```
+**Type:** function
+
+**Alias of:** size
+
+**Parameters:**
+<table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>size</td><td>The named size</td><td><code>List</code> <code>Color</code></td><td>-</td></tr><tr><td>value</td><td>Null for returning the size as a css var (default), or a number to return the multiplier of the size or the nth number from the list of the named size</td><td><code>Null</code> <code>Number</code></td><td>-</td></tr></table>
+
+**Requires:** <a href="/src/size.scss">size</a>
+
+**File source:** <a href="/src/size.scss">src/size.scss</a>
+<details><summary><strong>Source</strong></summary>
+
+```scss 
+
+@function s($size, $value) {
+    @return size($size, $value);
+}
+```
+
+</details>
+
+<br>
+
+
+
+
 #### srgb <a id="function-srgb">&nbsp;</a>
 Returns XYZ value to RGB channel
 
@@ -5104,6 +5196,21 @@ $selectors
 **Type:** variable
 
 **File source:** <a href="/src/select.scss">src/select.scss</a>
+
+<br>
+
+
+
+
+#### sizes <a id="variable-sizes">&nbsp;</a>
+A map of named sizes (each may have one value or a list of values)
+
+```scss
+$sizes
+```
+**Type:** variable
+
+**File source:** <a href="/src/size.scss">src/size.scss</a>
 
 <br>
 

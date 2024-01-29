@@ -1,0 +1,52 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/size.scss" as *;
+
+$sizes: (
+    xxs: 0.12rem 0.19rem 0.31rem,
+    xs: 0.31rem 0.44rem 0.62rem,
+    s: 0.62rem 0.94rem 1.25rem,
+    m: 0.94rem 1.25rem 1.88rem,
+    l: 1.56rem 2.19rem 3.12rem,
+    xl: 2.5rem 4.06rem 5rem,
+    xxl: 3.12rem 5rem 6.25rem,
+    xxxl: 4.69rem 7.5rem 9.38rem,
+    big: 2rem,
+);
+
+@include test-module("size [function]") {
+
+    @include test('Can return values') {
+        @include assert-equal(
+            size(m),
+            var(--m)
+        );
+        @include assert-equal(
+            size(xl, null),
+            var(--xl)
+        );
+        @include assert-equal(
+            s(big),
+            var(--big)
+        );
+    }
+    @include test('Can work with specific values') {
+        @include assert-equal(
+            size(m, 2),
+            1.25rem
+        );
+        @include assert-equal(
+            size(m, 3),
+            1.88rem
+        );
+    }
+    @include test('Can work with multiplications') {
+        @include assert-equal(
+            size(big, 2),
+            4rem
+        );
+        @include assert-equal(
+            s(big, 1.5),
+            3rem
+        );
+    }
+}

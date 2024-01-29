@@ -216,6 +216,6 @@ $color-palette: (
 /// @return {Null|Color}
 /// @alias color
 
-@function c($options...) {
-    @return color($options...);
+@function c($options) {
+    @return color($options);
 }
