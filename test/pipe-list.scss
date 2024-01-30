@@ -10,7 +10,7 @@
             @include expect {
                 display: flex;
                 list-style: none;
-                padding-left: 0;
+                padding-inline-start: 0;
             }
         }
         @include assert {
@@ -20,12 +20,12 @@
             @include expect {
                 display: flex;
                 list-style: none;
-                padding-left: 0;
+                padding-inline-start: 0;
 
                 > * + * {
-                    margin-left: 0.5em;
-                    padding-left: 0.5em;
-                    border-left: 1px solid black;
+                    margin-inline-start: 0.5em;
+                    padding-inline-start: 0.5em;
+                    border-inline-start: 1px solid black;
                 }
             }
         }

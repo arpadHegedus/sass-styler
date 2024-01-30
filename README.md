@@ -780,13 +780,13 @@ Visually hide an element
 Make a list horizontal
 
 ```scss
-@include horizontal-list($gap, $justify-content, $align-items, $flex-wrap, $side)
+@include horizontal-list($gap, $justify-content, $align-items, $flex-wrap)
 ```
 **Type:** mixin
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr><tr><td>side</td><td>Side to calculate indent from</td><td><code>String</code></td><td>left</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr></table>
 
 **File source:** <a href="/src/horizontal-list.scss">src/horizontal-list.scss</a>
 
@@ -1039,13 +1039,13 @@ Mixin to place items on a circle
  Make a list horizontal and add a pipe separator (border) between the items
 
 ```scss
-@include pipe-list($gap, $border, $justify-content, $align-items, $flex-wrap, $side)
+@include pipe-list($gap, $border, $justify-content, $align-items, $flex-wrap)
 ```
 **Type:** mixin
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>border</td><td>The border (the pipe) styles</td><td><code>List</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr><tr><td>side</td><td>Side to calculate indent from</td><td><code>String</code></td><td>left</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>gap</td><td>The gap between items</td><td><code>Number</code></td><td>null</td></tr><tr><td>border</td><td>The border (the pipe) styles</td><td><code>List</code></td><td>null</td></tr><tr><td>justify-content</td><td>The justify-content value</td><td><code>String</code></td><td>null</td></tr><tr><td>align-items</td><td>The align-items value</td><td><code>String</code></td><td>null</td></tr><tr><td>flex-wrap</td><td>The flex-wrap value</td><td><code>String</code></td><td>null</td></tr></table>
 
 **File source:** <a href="/src/pipe-list.scss">src/pipe-list.scss</a>
 
@@ -1248,13 +1248,9 @@ Unhide a previously visually hidden element
 Remove list styles
 
 ```scss
-@include unstyled-list($side)
+@include unstyled-list
 ```
 **Type:** mixin
-
-**Parameters:**
-<table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>side</td><td>Side to remove indent from</td><td><code>String</code></td><td>left</td></tr></table>
 
 **File source:** <a href="/src/unstyled-list.scss">src/unstyled-list.scss</a>
 
