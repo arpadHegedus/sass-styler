@@ -14,7 +14,7 @@ $_burger-gutter: null;
 /// @param {Number} $transition-duration [0.3s] Transition speed for animations
 /// @link https://github.com/jorenvanhee/sass-burger
 
-@mixin menu-icon($color: currentColor, $border-radius: 0, $width: 0.875em, $height: 0.125em, $gutter: 0.275em, $transition-duration: 0.3s) {
+@mixin menu-icon($color: currentColor, $border-radius: 0, $width: 0.875em, $height: 0.125em, $gutter: 0.15em, $transition-duration: 0.3s) {
     $_burger-height: $height !global;
     $_burger-gutter: $gutter !global;
 

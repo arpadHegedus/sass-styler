@@ -13,8 +13,8 @@
             }
             @include expect {
                 position: relative;
-                margin-top: 0.4em;
-                margin-bottom: 0.4em;
+                margin-top: 0.275em;
+                margin-bottom: 0.275em;
                 user-select: none;
 
                 &,
@@ -37,22 +37,22 @@
                 }
 
                 &::before {
-                    top: -0.4em;
+                    top: -0.275em;
                 }
 
                 &::after {
-                    bottom: -0.4em;
+                    bottom: -0.275em;
                 }
 
                 &:hover {
                     background-color: transparent;
 
                     &::before {
-                        transform: translateY(0.4em) rotate(45deg)
+                        transform: translateY(0.275em) rotate(45deg)
                     }
 
                     &::after {
-                        transform: translateY(-0.4em) rotate(-45deg)
+                        transform: translateY(-0.275em) rotate(-45deg)
                     }
                 }
             }
