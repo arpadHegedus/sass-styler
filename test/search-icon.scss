@@ -1,0 +1,69 @@
+@use "../node_modules/sass-true" as *;
+@use "../src/search-icon.scss" as *;
+
+@include test-module("search-icon [mixin]") {
+    @include test("Can apply search-icon") {
+        @include assert {
+            @include output {
+                @include search-icon();
+
+                &:hover {
+                    @include search-icon-close();
+                }
+            }
+            @include expect {
+                & {
+                  position: relative;
+                  width: 0.875em;
+                  height: 0.875em;
+                  background-color: transparent;
+                  outline: 0.125em solid currentColor;
+                  outline-offset: -0.25em;
+                  border-radius: 100%;
+                  transform: translate3d(-5%, -5%, 0) rotate(-45deg);
+                  user-select: none;
+                }
+                &,
+                &::before,
+                &::after {
+                  transition-property: outline-color, background-color, transform;
+                  transition-duration: 0.3s;
+                }
+                &::before,
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  display: block;
+                  width: 0.875em;
+                  height: 0.125em;
+                  background-color: currentColor;
+                  outline: 1px solid transparent;
+                  border-radius: 0;
+                }
+                &::before {
+                  background: transparent;
+                  transform: translate3d(-50%, -50%, 0) rotate(0deg) scaleX(0.3);
+                }
+                &::after {
+                  transform: translate3d(-50%, 275%, 0) rotate(90deg) scaleX(0.3);
+                }
+                &:hover {
+                  transform: translate3d(0, 0, 0) rotate(-45deg);
+                  outline-color: transparent;
+                }
+                &:hover::before,
+                &:hover::after {
+                  background-color: currentColor;
+                }
+                &:hover::before {
+                  transform: translate3d(-50%, -50%, 0) rotate(0deg) scaleX(1);
+                }
+                &:hover::after {
+                  transform: translate3d(-50%, -50%, 0) rotate(90deg) scaleX(1);
+                }
+            }
+        }
+    }
+}

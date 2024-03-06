@@ -1,0 +1,78 @@
+@use "sass:math";
+@use "calc-substract" as *;
+
+$_search-color: null;
+
+/// Generate a search icon from a single element
+/// @param {Color} $color [currentColor] Color of the menu lines
+/// @param {Number} $border-radius [0] Menu line border radius
+/// @param {Number} $size [1em] Size of the icon altogether
+/// @param {Number} $thickness [0.125em] Thickness of an individual icon line
+/// @param {Number} $transition-duration [0.3s] Transition speed for animations
+
+@mixin search-icon($color: currentColor, $border-radius: 0, $size: 0.875em, $thickness: 0.125em, $transition-duration: 0.3s) {
+    $_search-color: $color !global;
+
+    position: relative;
+    width: $size;
+    height: $size;
+    background-color: transparent;
+    outline: $thickness solid $color;
+    outline-offset: -2 * $thickness;
+    border-radius: 100%;
+    transform: translate3d(-5%, -5%, 0) rotate(-45deg);
+    user-select: none;
+
+    &,
+    &::before,
+    &::after {
+        transition-property: outline-color, background-color, transform;
+        transition-duration: $transition-duration;
+        @content;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: $size;
+        height: $thickness;
+        background-color: $color;
+        outline: 1px solid transparent;
+        border-radius: $border-radius;
+    }
+
+    &::before {
+        background: transparent;
+        transform: translate3d(-50%, -50%, 0) rotate(0deg) scaleX(0.3);
+    }
+
+    &::after {
+        transform: translate3d(-50%, 275%, 0) rotate(90deg) scaleX(0.3);
+    }
+}
+
+/// Morph search icon to a close (x) icon
+/// @param {Color} $color [auto] Overwrite icon line color (use auto to keep existing color)
+
+@mixin search-icon-close($color: auto) {
+    $color: if($color == auto, if($_search-color, $_search-color, null), $color);
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+    outline-color: transparent;
+
+    &::before,
+    &::after {
+        background-color: $color;
+    }
+
+    &::before {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg) scaleX(1);
+    }
+
+    &::after {
+        transform: translate3d(-50%, -50%, 0) rotate(90deg) scaleX(1);
+    }
+}

@@ -6,15 +6,15 @@ $_burger-height: null;
 $_burger-gutter: null;
 
 /// Generate a menu icon from a single element
+/// @param {Color} $color [currentColor] Color of the menu lines
+/// @param {Number} $border-radius [0] Menu line border radius
 /// @param {Number} $width [1em] Width of the menu icon lines
 /// @param {Number} $height [0.125em] Height of an individual menu icon line
 /// @param {Number} $gutter [0.3125em] Gutter between menu lines
-/// @param {Color} $color [currentColor] Color of the menu lines
-/// @param {Number} $border-radius [0] Menu line border radius
 /// @param {Number} $transition-duration [0.3s] Transition speed for animations
 /// @link https://github.com/jorenvanhee/sass-burger
 
-@mixin menu-icon($width: 1em, $height: 0.125em, $gutter: 0.3125em, $color: currentColor, $border-radius: 0, $transition-duration: 0.3s) {
+@mixin menu-icon($color: currentColor, $border-radius: 0, $width: 0.875em, $height: 0.125em, $gutter: 0.275em, $transition-duration: 0.3s) {
     $_burger-height: $height !global;
     $_burger-gutter: $gutter !global;
 

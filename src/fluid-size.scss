@@ -1,17 +1,21 @@
 @use "sass:math";
-@use "px2rem" as *;
+@use "sass:meta";
+@use "sass:string";
+@use "strip-unit" as *;
+@use "emval" as *;
+@use "pxval" as *;
+@use "remval" as *;
 
 /// Fluid size depending on viewport with minimum and maximum values
-/// @author Mike Foskett
 /// @param {Number} $min-size - Minimum size
 /// @param {Number} $min-viewport - Minimum viewport size
 /// @param {Number} $max-size - Maximum size
 /// @param {Number} $max-viewport - Maximum viewport size
 /// @param {Boolean} $clamp [true] - Whether to use clamping or just return the fluid calculation
-/// @param {Boolean} $px-mode [false] - Whether to use px instead of rem for the fluid calculation
-/// @param {Number} $default-font-size [16px] - The default root font-size
-/// @param {Number} $viewport-unit [1vw] - The viewport width or height unit to base the calculation on
-/// @link https://websemantics.uk/tools/fluid-responsive-property-calculator/
+/// @param {Boolean} $multiplier [null] - An optional multiplier to apply to the fluid calculation, can be a unitless number or a css variable
+/// @param {Number} $default-font-size [null] - The default root font-size
+/// @param {Number} $viewport-unit [100vw] - The viewport width or height unit to base the calculation on
+/// @link https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/
 
 @function fluid-size(
     $min-size,
@@ -19,10 +23,27 @@
     $max-size,
     $max-viewport,
     $clamp: true,
-    $px-mode: true,
-    $default-font-size: 16px,
-    $viewport-unit: 1vw
+    $multiplier: null,
+    $default-font-size: null,
+    $viewport-unit: 100vw,
+    $units: 'auto'
 ) {
-    $calc: calc(#{if($px-mode, $min-size, px2rem($min-size, $default-font-size))} + ((#{$viewport-unit} - #{math.div($min-viewport, 100)}) * #{math.div(100 * ($max-size - $min-size), $max-viewport - $min-viewport)}));
-    @return if($clamp, clamp(#{$min-size}, #{$calc}, #{$max-size}), #{$calc});
+    $multiplier-mode: if($multiplier, if(meta.type-of($multiplier) == number and math.is-unitless($multiplier), 'number', 'var'), false);
+    $units: if($units == px, pxval, if($units == em, emval, if($units == rem, remval, null)));
+    $size-fn: meta.get-function(if($units, $units, if(math.unit($max-size) == px, pxval, if(math.unit($max-size) == em and $multiplier-mode != 'var', emval, remval))));
+    $viewport-fn: meta.get-function(if($units, $units, if(math.unit($max-viewport) == px, pxval, remval)));
+    $min-size: meta.call($size-fn, $min-size, $default-font-size);
+    $max-size: meta.call($size-fn, $max-size, $default-font-size);
+    $min-viewport: meta.call($viewport-fn, $min-viewport, $default-font-size);
+    $max-viewport: meta.call($viewport-fn, $max-viewport, $default-font-size);
+    $min-size-viewport: meta.call($viewport-fn, $min-size, $default-font-size);
+    $max-size-viewport: meta.call($viewport-fn, $max-size, $default-font-size);
+    $calc: "#{$min-size} + #{strip-unit($max-size-viewport - $min-size-viewport)} * (#{$viewport-unit} - #{$min-viewport}) / #{strip-unit($max-viewport - $min-viewport)}";
+    @if $multiplier {
+        $min-size: if($multiplier-mode == 'number', $multiplier * $min-size, "calc(#{$multiplier} * #{$min-size})");
+        $max-size: if($multiplier-mode == 'number', $multiplier * $max-size, "calc(#{$multiplier} * #{$max-size})");
+        $calc: "#{$multiplier} * (#{$calc})";
+    }
+    @return string.unquote(if($clamp, "clamp(#{$min-size}, calc(#{$calc}), #{$max-size})", "calc(#{$calc})"));
 }
+
