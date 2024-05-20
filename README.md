@@ -1214,13 +1214,13 @@ Morph search icon to a close (x) icon
 Select common element groups via shorthands
 
 ```scss
-@include select($key)
+@include select($keys)
 ```
 **Type:** mixin
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key</td><td><code>Number</code></td><td>-</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key(s)</td><td><code>String|List</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/select.scss">select</a>
 
@@ -4063,13 +4063,13 @@ select-owl($selectors)
 Return selectors for common element groups via shorthands
 
 ```scss
-select($key)
+select($keys)
 ```
 **Type:** function
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key</td><td><code>Number</code></td><td>-</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key(s)</td><td><code>String|List</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/get.scss">get</a>, <a href="/src/select.scss">selectors</a>
 

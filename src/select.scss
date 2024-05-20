@@ -64,17 +64,22 @@ $selectors: (
 @use "sass:map";
 
 /// Return selectors for common element groups via shorthands
-/// @param {Number} $key - Selector group key
+/// @param {String|List} $keys - Selector group key(s)
 
-@function select($key) {
-    @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
+@function select($keys...) {
+	$selector: "";
+	@each $key in $keys {
+		$selector: if($selector == "", "", "#{$selector}, ");
+		$selector: "#{$selector}#{if(map.has-key($selectors, $key), map.get($selectors, $key), $key)}";
+	}
+    @return $selector;
 }
 
 /// Select common element groups via shorthands
-/// @param {Number} $key - Selector group key
+/// @param {String|List} $keys - Selector group key(s)
 
-@mixin select($key) {
-    #{select($key)} {
+@mixin select($keys...) {
+    #{select($keys...)} {
         @content;
     }
 }
