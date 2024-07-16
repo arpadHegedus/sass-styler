@@ -7,7 +7,11 @@
 /// @param {Number} $z-index [2] - The z-indx value of the cover
 
 @mixin cover-link($selector: "a::before", $position: relative, $z-index: 2) {
-    position: $position;
+
+	& {
+		position: $position;
+	}
+
     #{$selector} {
         z-index: $z-index;
         @include position(0, 0, 0, 0, absolute, 100%, 100%);
