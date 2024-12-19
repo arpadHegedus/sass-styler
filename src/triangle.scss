@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:math";
+@use "sass:string";
 
 /// CSS-only triangle
 /// @param {String} $direction [right] - The triangle pointing direction
@@ -21,7 +22,7 @@
         width: 0;
         height: 0;
 
-        @if str-index($selector, ":before") or str-index($selector, ":after") {
+        @if string.index($selector, ":before") or string.index($selector, ":after") {
             content: "";
         }
 

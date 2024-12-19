@@ -6,5 +6,5 @@
 /// @return {Color}
 
 @function blacken($color, $ratio: 50%) {
-    @return color.mix(#000, $color, $ratio);
+    @return color.mix(#000, $color, $ratio, $method: rgb);
 }

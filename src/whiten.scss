@@ -6,5 +6,5 @@
 /// @return {Color}
 
 @function whiten($color, $ratio: 50%) {
-    @return color.mix(#fff, $color, $ratio);
+    @return color.mix(#fff, $color, $ratio, $method: rgb);
 }

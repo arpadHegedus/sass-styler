@@ -9,11 +9,13 @@
         );
         @include assert-equal(
             styler.contrast-with(#eee),
-            #767676
+            rgb(118.6563569803, 118.6563569803, 118.6563569803),
+            $inspect: true
         );
         @include assert-equal(
             styler.contrast-with(#ccc),
-            #767676
+            rgb(118.6563569803, 118.6563569803, 118.6563569803),
+            $inspect: true
         );
         @include assert-equal(
             styler.contrast-with(#0d3f6e),
@@ -21,7 +23,8 @@
         );
         @include assert-equal(
             styler.contrast-with(#222, #000),
-            #757575
+            rgb(116.1093139925, 116.1093139925, 116.1093139925),
+            $inspect: true
         );
     }
 }

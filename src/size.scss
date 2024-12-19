@@ -36,7 +36,7 @@ $sizes: (
             $size: $size * $value;
         }
         @if meta.type-of($size) == list {
-            $size: nth($size, $value);
+            $size: list.nth($size, $value);
         }
     }
     @return $size;

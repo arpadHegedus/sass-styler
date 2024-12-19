@@ -5,7 +5,7 @@
     @include test('Can get tetrads') {
         @include assert-equal(
             styler.tetrad(#318de2),
-            #df31e2
+            rgb(222.5, 49, 226)
         );
         @include assert-equal(
             styler.tetrad(#318de2, 2),
@@ -13,7 +13,7 @@
         );
         @include assert-equal(
             styler.tetrad(#318de2, 3),
-            #35e231
+            rgb(52.5, 226, 49)
         );
         @include assert-equal(
             styler.tetrad(#ccc),

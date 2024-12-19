@@ -5,19 +5,19 @@
     @include test('Can whiten colours') {
         @include assert-equal(
             styler.whiten(#318de2),
-            #98c6f1
+            rgb(152, 198, 240.5)
         );
         @include assert-equal(
             styler.whiten(#8de231),
-            #c6f198
+            rgb(198, 240.5, 152)
         );
         @include assert-equal(
             styler.whiten(#ccc),
-            #e6e6e6
+            rgb(229.5, 229.5, 229.5)
         );
         @include assert-equal(
             styler.whiten(#000),
-            #808080
+            rgb(127.5, 127.5, 127.5)
         );
         @include assert-equal(
             styler.whiten(#fff),
@@ -27,11 +27,11 @@
     @include test('Can whiten colours with different ratio') {
         @include assert-equal(
             styler.whiten(#318de2, 10%),
-            #4698e5
+            rgb(69.6, 152.4, 228.9)
         );
         @include assert-equal(
             styler.whiten(#8de231, 90%),
-            #f4fcea
+            rgb(243.6, 252.1, 234.4)
         );
         @include assert-equal(
             styler.whiten(#ccc, 100%),

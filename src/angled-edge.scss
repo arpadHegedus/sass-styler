@@ -25,8 +25,8 @@
         $fill-background: list.nth($fill, 2);
         $fill: list.nth($fill, 1);
     }
-    $fill-rgb: "rgb(#{math.round(color.red($fill))},#{math.round(color.green($fill))},#{math.round(color.blue($fill))})";
-    $fill-alpha: alpha($fill);
+    $fill-rgb: "rgb(#{math.round(color.channel($fill, "red", $space: rgb))},#{math.round(color.channel($fill, "green", $space: rgb))},#{math.round(color.channel($fill, "blue", $space: rgb))})";
+    $fill-alpha: color.alpha($fill);
     $points: (
         upper-left: "0,#{$height} #{$width},#{$height} #{$width},0",
         upper-right: "0,#{$height} #{$width},#{$height} 0,0",

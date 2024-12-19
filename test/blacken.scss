@@ -5,11 +5,11 @@
     @include test('Can blacken colours') {
         @include assert-equal(
             styler.blacken(#318de2),
-            #194771
+            rgb(24.5, 70.5, 113)
         );
         @include assert-equal(
             styler.blacken(#8de231),
-            #477119
+            rgb(70.5, 113, 24.5)
         );
         @include assert-equal(
             styler.blacken(#ccc),
@@ -21,17 +21,17 @@
         );
         @include assert-equal(
             styler.blacken(#fff),
-            #808080
+            rgb(127.5, 127.5, 127.5)
         );
     }
     @include test('Can blacken colours with different ratio') {
         @include assert-equal(
             styler.blacken(#318de2, 10%),
-            #2c7fcb
+            rgb(44.1, 126.9, 203.4)
         );
         @include assert-equal(
             styler.blacken(#8de231, 90%),
-            #0e1705
+            rgb(14.1, 22.6, 4.9)
         );
         @include assert-equal(
             styler.blacken(#000, 100%),

@@ -61,11 +61,12 @@ $color-palette: (
     @include test('Can work with levels that are not on the palette') {
         @include assert-equal(
             color(red 550),
-            #c62020
+            rgb(197.625, 31.875, 31.875)
         );
         @include assert-equal(
             color(grey 110),
-            #e0e2e6
+            rgb(223.9726256983, 226.1664804469, 229.9273743017),
+            $inspect: true
         );
     }
     @include test('Can work with non-map colours on the palette') {
@@ -83,7 +84,8 @@ $color-palette: (
         );
         @include assert-equal(
             color(teal 300),
-            #71f4e5
+            rgb(113.0723684211, 243.9276315789, 228.8289473684),
+            $inspect: true
         );
     }
     @include test('Can work with passed-in maps') {

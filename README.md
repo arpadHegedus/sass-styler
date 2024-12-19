@@ -1,6 +1,6 @@
 # SASS STYLER
 [![NPM](https://img.shields.io/npm/v/sass-styler.svg?label=sass-styler)](https://www.npmjs.com/package/sass-styler)
-[![Sass](https://img.shields.io/badge/sass-1.69.5-blue)](https://sass-lang.com/)
+[![Sass](https://img.shields.io/badge/sass-1.83.0-blue)](https://sass-lang.com/)
 [![Github issues](https://img.shields.io/github/issues/arpadhegedus/sass-styler)](https://github.com/arpadHegedus/sass-styler/issues)
 [![Tests](https://img.shields.io/badge/passed%20tests-223-brightgreen)](https://github.com/arpadHegedus/sass-styler/blob/master/test.js)
 [![License](https://img.shields.io/github/license/arpadhegedus/sass-styler)](https://github.com/arpadHegedus/sass-styler/blob/master/LICENSE)
@@ -1220,7 +1220,7 @@ Select common element groups via shorthands
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key(s)</td><td><code>String|List</code></td><td>-</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>keys</td><td>Selector group key(s)</td><td><code>String</code> <code>List</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/select.scss">select</a>
 
@@ -1393,7 +1393,7 @@ blacken($color, $ratio)
 ```scss
 
 @function blacken($color, $ratio) {
-    @return color.mix(#000, $color, $ratio);
+    @return color.mix(#000, $color, $ratio, $method: rgb);
 }
 ```
 
@@ -1526,10 +1526,10 @@ cmyk($color)
 ```scss
 
 @function cmyk($color) {
-    $black: 1 - math.div(math.max(color.red($color), color.green($color), color.blue($color)), 255);
-    $cyan: if($black < 1, 1 - math.div(math.div(color.red($color), 255), (1 - $black)), 0);
-    $magenta: if($black < 1, 1 - math.div(math.div(color.green($color), 255), (1 - $black)), 0);
-    $yellow: if($black < 1, 1 - math.div(math.div(color.blue($color), 255), (1 - $black)), 0);
+    $black: 1 - math.div(math.max(color.channel($color, "red", $space: rgb), color.channel($color, "green", $space: rgb), color.channel($color, "blue", $space: rgb)), 255);
+    $cyan: if($black < 1, 1 - math.div(math.div(color.channel($color, "red", $space: rgb), 255), (1 - $black)), 0);
+    $magenta: if($black < 1, 1 - math.div(math.div(color.channel($color, "green", $space: rgb), 255), (1 - $black)), 0);
+    $yellow: if($black < 1, 1 - math.div(math.div(color.channel($color, "blue", $space: rgb), 255), (1 - $black)), 0);
 
     @return (
         c: $cyan,
@@ -2626,9 +2626,9 @@ luminance($color)
 ```scss
 
 @function luminance($color) {
-    $red: xyz(color.red($color));
-    $green: xyz(color.green($color));
-    $blue: xyz(color.blue($color));
+    $red: xyz(color.channel($color, "red", $space: rgb));
+    $green: xyz(color.channel($color, "green", $space: rgb));
+    $blue: xyz(color.channel($color, "blue", $space: rgb));
     @return $red * 0.2126 + $green * 0.7152 + $blue * 0.0722;
 }
 ```
@@ -3167,9 +3167,9 @@ scale-luminance($color, $luminance)
 
 @function scale-luminance($color, $luminance) {
     $scale: math.div($luminance, luminance($color));
-    $red: math.clamp(xyz(color.red($color)), 0, 1) * $scale;
-    $green: math.clamp(xyz(color.green($color)), 0, 1) * $scale;
-    $blue: math.clamp(xyz(color.blue($color)), 0, 1) * $scale;
+    $red: math.clamp(xyz(color.channel($color, "red", $space: rgb)), 0, 1) * $scale;
+    $green: math.clamp(xyz(color.channel($color, "green", $space: rgb)), 0, 1) * $scale;
+    $blue: math.clamp(xyz(color.channel($color, "blue", $space: rgb)), 0, 1) * $scale;
     $red-passes: is-between($red);
     $green-passes: is-between($green);
     $blue-passes: is-between($blue);
@@ -4069,7 +4069,7 @@ select($keys)
 
 **Parameters:**
 <table>
-  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>key</td><td>Selector group key(s)</td><td><code>String|List</code></td><td>-</td></tr></table>
+  <tr><th>name</th><th>description</th><th>type</th><th>default</th></tr><tr><td>keys</td><td>Selector group key(s)</td><td><code>String</code> <code>List</code></td><td>-</td></tr></table>
 
 **Requires:** <a href="/src/get.scss">get</a>, <a href="/src/select.scss">selectors</a>
 
@@ -4078,8 +4078,13 @@ select($keys)
 
 ```scss
 
-@function select($key) {
-    @return if(map.has-key($selectors, $key), map.get($selectors, $key), $key);
+@function select($keys) {
+	$selector: "";
+	@each $key in $keys {
+		$selector: if($selector == "", "", "#{$selector}, ");
+		$selector: "#{$selector}#{if(map.has-key($selectors, $key), map.get($selectors, $key), $key)}";
+	}
+    @return $selector;
 }
 ```
 
@@ -4544,7 +4549,7 @@ font-size: s(m, 2);            /* white - best contrasting with #dc2626 out of b
             $size: $size * $value;
         }
         @if meta.type-of($size) == list {
-            $size: nth($size, $value);
+            $size: list.nth($size, $value);
         }
     }
     @return $size;
@@ -5163,7 +5168,7 @@ whiten($color, $ratio)
 ```scss
 
 @function whiten($color, $ratio) {
-    @return color.mix(#fff, $color, $ratio);
+    @return color.mix(#fff, $color, $ratio, $method: rgb);
 }
 ```
 
